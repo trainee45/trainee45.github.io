@@ -1,0 +1,15 @@
+{
+  "background_color": "purple",
+  "description": "CN Spiritwood Sub equipment roster.",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "icon/eeyore.JPG",
+      "sizes": "192x192",
+      "type": "image/JPG"
+    }
+  ],
+  "name": "CNSpiritwoodPWA",
+  "short_name": "ModelR",
+  "start_url": "/web-projects/MDN Learning/JavaScript/ClientStorage/IndexedDB/TableNotesVer29/TableNotesVer29.html"
+  }

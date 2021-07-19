@@ -1,0 +1,769 @@
+/*TableNotesVer29.css from scrollTableNotesVer27.css*/
+/*testPrefTableNotesVer26.css June 13*/
+/*fixed position of prefWin in Safari portrait June14*/
+/*fixLabelLinkTableNotesVer25.css Added class .td_size used in displayTable if(!label) June 11 better positioning of prefs window
+Added css for table background colors May21
+Added max-width: 800px; in #menu to better align menu on screen in Safari increased height of new-note window to 400px May24
+jQueryTableNotesVer25.css May22
+restoreBackupTableNotesVer23.css Apr16
+fileNamesTableNotesVer21.css from fileNamesTableNotesVer21 from notesOSfileNamesTableNotesVer21.css from fileNamesTableNotesVer21.css
+/*TableNotesVer19.css Date: Feb 9 2021*/
+/*retestTableNotesVer17.css 
+Date: Dec 21 2020 WORKING ON CSS FOR #createTableWin position: absolute sticky;/*was absolute sticky added to make table appear in view if long record list Nov 30 2020. works.. in createTableWin changed back to absolute without the sticky! Dec2 uses settings above for position: fixed top 0. This keeps section in viewport but iT did not scroll properly. So changed height to 700 ox which forces scroll...overflow does not happen unless data height exceeds height of div, so lessen div height to make it scroll? absolute sticky locks save table create table out of view so changed back to absolute*/
+/*position: absolute;*//* added sticky so window appears in view. fixed did not work !REPLACE IF POSITION CODE BELOW MESSES UP!!!!*/
+html {
+  font-family: sans-serif;
+ /* padding: 5px;/*added from tables .css*/
+}
+
+body {
+  margin: 0 auto;
+  max-width: 800px;
+  
+    /*background-color: black;
+	color: white;*/
+	/*background-color: white;
+	color: black;*/
+
+}
+
+header, footer {
+  background-color: darkblue;/*was green*/
+  color: white;
+  line-height: 75px;/*was 100px*/
+  padding: 0 20px;
+}
+
+header {
+	text-align: center;
+}
+
+.new-note, .note-display {
+  padding: 20px;
+}
+
+.new-note {
+  background: #ddd;
+}
+/*. new note governs colours of the add note screen*/
+#new-note {
+	position: fixed; /*absolute was relative */
+       top: 250px; /* 200px was 190 then 100%*/
+        transform: translate(-50%,-50%);
+        width: 400px;
+       height: 400px;/*350;310 was 300 increased so border seen if pref window on screen at same time date: Jan 29 2021 increased height so decoder title entry is not on bottom edge of window May24 2021*/
+		border: 5px solid red;
+		border-radius: 10px;
+		padding: 20px;
+       /* border: none;/*was 10px solid red;*/
+        /*border-radius: 10px; */
+        background-color: #eee;
+	
+	}
+
+h1 {
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+div {
+  margin-bottom: 10px;
+}
+
+.highlight {
+		background-color: yellow;
+		font-weight: bold;
+		/*font-style: italic; */
+		text-decoration: none;
+		
+		}
+		
+	.highlightgreen {
+	background-color: lightgreen;
+	font-weight: bold;
+	font-style: italic;
+	text-decoration: underline;
+	/*font-variant: small-caps;*/
+	}
+	
+.yellowonly {
+	/*border: none;*/
+		background-color: yellow;
+		color: black;
+		/*font-weight: bold;*/
+	/*	font-style: italic; */
+		
+		}
+		
+ .special {
+  background-color: rgb(79,185,227);
+  padding: 10px;
+  color: #fff;
+}
+	
+.positioned {
+  position: relative;
+  background: rgba(255,84,104,.3);
+  border: 2px solid rgb(255,84,104);
+  top: 30px;
+  left: 30px;
+}
+
+/*added td from createTables.css*/
+td,.funcLib {
+  background-color:yellow;/*was yellow trying to keep link cells same as other table cells*/
+  padding: 5px;/*10px;*/
+  color: black;
+  border: 2px solid rgb(255,84,104);
+  border-radius: .5em;
+  z-index:10;/*added june 30 not sure why*/
+  
+}
+
+/*added from createTables.css*/
+thead th {
+	/*margin: 0 auto;*/
+	width: margin 0 auto;
+	text-align: center;
+	background-color: lightpink;
+	border: 2px solid red;
+}
+
+td {
+	width: auto;
+	/*height: 30px;/*added height June7 2021 was all automatic before and that worked, so remove height if messes up! */
+	/*overflow: scroll;*/
+	scroll-snap-align:start;/*for horizontal scroll?*/
+}
+/*css of table not quite right. need table contents to scroll horizontally??. may need to erase #forRows and # STforRows??*/
+/*ADDED THIS JUNE 10 2021 see display table if !label*/
+.td_size {   
+  background-color:;	
+  width:200px; 
+  height:30px;/*was 50px*/
+  max-width:200px;
+  min-width:200px; 
+  max-height:30px; /*was 50px*/
+  min-height:30px;/*was 50px*/
+  /*overflow:hidden, scroll; /*(Optional)This might be useful for some overflow contents*/   
+  overflow: scroll;
+}
+
+textarea {
+	size: 80px 
+	cols: 80 rows: 4
+}
+
+#forRows {
+	border: 3px solid black;
+	overflow: scroll;
+	/*width: 400px;/*auto=*/
+	/*overflow-y: scroll;
+	overflow-x: scroll;*/
+}
+
+
+
+.simulator {
+background-color: lightpink;
+  padding: 10px;
+  color: black;
+  text-align: center;
+  border: 3px solid rgb(255,84,104);
+  border-radius: .5em;
+font-size: small;
+}
+
+ .hidden {
+        left: -50%;
+      }
+
+ .showing {
+        left: 50%;
+	}
+	
+#menu {
+	background-color: lightpink;
+  padding: 10px;
+  color: black;
+  text-align: center;
+  border: 3px solid rgb(255,84,104);
+  border-radius: .5em;
+  
+	position: fixed;
+	bottom: 50px;/*was 70px set to 50 to allow edit delete buttons of bottom note to be visualized*/
+	margin: 0 auto;
+	width: 95%;
+	max-width: 800px;
+/*	max-width: 800px;/* was 96%;*/
+	/*width: 480 px 100%;
+	height: 75px; */
+}
+	/*li and li p govern colours of note display*/
+li {
+  background-color: yellow;
+  padding: 10px;
+  color: black;
+  border: 2px solid rgb(255,84,104);
+  border-radius: .5em;
+  
+    /*might have to erase lines below*/
+	
+}
+
+li p {
+	
+	height: 100px;
+	overflow: scroll;
+	border: 2px solid lightgreen;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+
+#gobackeditWin {
+        position: relative; /*was absolute */
+        top: 50%; /* was 190 then 100 %*/
+        transform: translate(-50%,-50%);
+        width: 480px;
+        height: 400px;
+       /* border: none;/*was 10px solid red;*/
+        /*border-radius: 10px; */
+        background-color: #eee;
+        /*background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.1)); */
+	} 
+	
+	/*added prefWin here June14 to fix positioning in Safari portrait mode made top = 40px in prefWin group. This seems to work ok June21*/
+#prefWin, #deleteWin, #displayFullNote, #editWin, #editNewFieldWin, #documentationWin, #tableWin, #tableScrn, #createTableWin, #searchWin, #deleteFieldWin, #sortWin {
+        position: fixed; /*was absolute, "relative fixed positions relative tp viewport*/
+       top: 40px; width: 480px; margin: 0 auto;   /*top 0 locates at very top corner viewport. top 20 allows position below banner top: 100%; was 190 then 100%*/
+	   margin-top: 430px; /*460 works with portrait but off bottom in landscape..so try */
+        transform: translate(-50%,-50%);
+       /* width: 480px; */
+       height: 800px; /*1350was 1400px*/
+	   overflow: scroll;/*still need scroll if note is too large to fit on screen*/
+		border: 5px solid red;
+		border-radius: 10px;
+		padding: 10px;
+       /* border: none;/*was 10px solid red;*/
+        /*border-radius: 10px; */
+        background-color: #eee;
+        /*background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.1)); */
+	}
+	
+	#prefWin {
+		top: 40px;
+		
+	}
+	/*tableWin width added May23 2021*/
+	#tableWin {
+		width: 90%;
+		/*height:1100px;/*added June21*/
+	}
+	
+/*	#createTableWin {
+		top: 20;
+		
+	} */
+	
+	/*Create A Table screen with red background from which you have table options..display table edit table new table is the #tableScrn*/
+	
+	/*<section id = #tableWin is the transformed hidden/show panel for the table stuff .. #STCreateTable is the <div> element in tableWin that contains table title hidden menu and the table itself… #STforRows is the table itself including the table header and has class funcLib from html*/
+	
+/*to move all the table stuff (the <div> element in the table window panel up from the bottom of the tableWin border try : 
+To get to edit date or other cell contents and the return btn and save btn to appear below the table stuff I changed the position of the closing </div> tag in html to include these elements June21 this did not work so made a separate div in html id = bottomTableMenu
+*/
+	
+	/*if too many records in resultList, window won't scroll to see buttons below set height to 700px to force scroll*/
+	
+	#searchWin {
+		height: 700px;
+		overflow: scroll;
+	overflow-y: scroll;
+	overflow-x: scroll;
+	}
+
+/*	#tableWin {
+		position: sticky;
+		top: 20px;
+		
+	}*/
+	
+	#displayFullNote {
+		font-size: large;
+		text-decoration: bold;
+	}
+	
+	
+	/*added from createTable.css position: absolute sticky keeps tableWin and createTableWin in view if long record list. Originally this was just position: absolute!*/
+	 #createTableWin {
+	 height: 700px;/*800px .. 900px*/
+	 /*uses settings above for position: fixed top 0. This keeps section in viewport but iT did not scroll properly. So changed height to 700 ox which forces scroll...overflow does not happen unless data height exceeds height of div, so lessen div height to make it scroll? absolute sticky locks save table create table out of view so changed back to absolute*/
+	/*position: absolute;*//* added sticky so window appears in view. fixed did not work !REPLACE IF POSITION CODE BELOW MESSES UP!!!!*/
+	
+	 overflow: scroll;
+	overflow-y: scroll;
+	 overflow-x: scroll;
+ }
+ /*TableWin does not exist???*/
+ /*I changed TableWin to tableWin !!!! */
+  #tableWin {
+	 height: 700px;
+	 position: absolute sticky;/*was absolute sticky added to make table appear in view if long record list Nov 30 2020. works!*/
+	 bottom: 50px;
+	 overflow: scroll;
+	overflow-y: scroll;
+	overflow-x: scroll;
+}
+	/*added above from createTable.css*/
+	
+#workDiv {
+	position: absolute; /*was relative */
+        top: 100%; /* was 190 then 100%*/
+        transform: translate(-50%,-50%);
+        width: 480px;
+       height: 500px;
+		border: 5px solid red;
+		border-radius: 10px;
+		padding: 10px;
+       /* border: none;/*was 10px solid red;*/
+        /*border-radius: 10px; */
+        background-color: #eee;
+	
+}
+/*prefWin was here moved to sort search group June 14 trying to fix prefWin position in Safari portrait */
+#reNameWin, #aboutDBWin, #memoryWindow, #newFieldWin, #fileNames, #createNewDBWin, #manageFilesWin, #backupFilesWin, #backingUpDBWin, #restoreDBWin {
+	position: fixed; /*was absolute relative fixed didn't work */
+        top: 250px; /* 200px 100% was 190 then 100%*/
+        transform: translate(-50%,-50%);
+        width: 400px;
+       height: 300px;
+		border: 5px solid red;
+		border-radius: 10px;
+		padding: 10px;
+       /* border: none;/*was 10px solid red;*/
+        /*border-radius: 10px; */
+        background-color: #eee;
+	
+	}
+	
+/*#prefWin {
+	/*top: 80vh;*/
+/*	top: 380px; /*390 400 300px 250px 200px 100% was 190 then 100%*/
+	/*trying to fix pref window position. In Safari in portrait mode its top and return to notes bar is not seen so have to turn to landscape to get out of it*/
+/*	margin-top: 430px;/*remove if messes up to fix pref window position in Safarii portrait 
+/*	height: 740px;/*640px was 520px 435 400 375 370 was 310px 350 will increase to accommodate caseSwitch*/
+/*height: 82vh;/*was 90vh*/
+/*position: fixed;
+}*/
+
+#manageFilesWin, #backupFilesWin, #backingUpDBWin, #restoreDBWin {
+	top: 450px;/*was 340px 300 px */
+	height: 540px;
+	overflow: scroll;
+	
+}
+
+#fileNames {
+	top: 350px;
+	height: 550px;/*was 500 px*/
+	overflow: scroll;
+}
+
+#newFieldWin {
+	height: 350px;
+	
+}
+
+#caseSwitch {
+	border: 3px solid red;
+		border-radius: 10px;
+		padding: 10px;
+}
+	
+#aboutDBWin {
+	height: 350px;/*340 in ver4A? */
+}
+	
+#changeColoursWin {
+	position: fixed; /*was absolute relative fixed didn't work */
+        top: 250px; /* 200px 100% was 190 then 100%*/
+        transform: translate(-50%,-50%);
+        width: 400px;
+       height: 450px;/*was 350px */
+		border: 5px solid red;
+		border-radius: 10px;
+		padding: 10px;
+       /* border: none;/*was 10px solid red;*/
+        /*border-radius: 10px; */
+        background-color: #eee;
+		overflow: scroll;/* so the xtraField is visualized in changeColours window*/
+		}
+	
+	.edBan {
+	background-color: lightgreen;
+	color: black;	
+		
+	}
+	
+	
+	  .edWinScroll  {
+		  
+	background-color: yellow;
+border: 2px solid red;	
+border-radius: 10px;
+padding: 10px;
+
+/*might have to erase lines below*/
+  height: 175px;/*was 150 100px
+  overflow: scroll;
+	  }
+	  
+  .noScroll  {
+		  
+	background-color: yellow;
+border: 2px solid red;	
+border-radius: 10px;
+padding: 10px;
+font-size: large;
+height: 500px;/* 500 was 1260 px to large a note makes ok return button non visible on screen */
+overflow-y: scroll;
+overflow-x: scroll;
+}
+
+  .edWinScroll ul {
+	  list-style-type:disc;
+	  border:none;
+  }
+  
+   .edWinScroll li {
+	  list-style-type:disc;
+	  border:none;
+  }
+  
+  #dataBaseList li {
+	  /*list-style-type:disc;*/
+	   }
+	   
+#backupDataBaseList {
+	border: red 4px;
+}
+
+#backupFileNamesList {
+	
+	border: red 5px;
+}
+	   
+	#fileNamesList {
+		border: red 2px;
+		overflow: scroll;
+	}
+	
+  
+ .noScroll  {
+		  
+	background-color: yellow;
+border: 2px solid red;	
+border-radius: 10px;
+padding: 10px;
+font-size: large;
+height: 475px;/* 500 was 1260 px to large a note makes ok return button non visible on screen */
+overflow-y: scroll;
+overflow-x: scroll;
+}
+
+#fullTxt {
+	font-size: 1.5rem;/* new change date: Aug 11 2020*/
+}
+
+ .ppref  {
+		  
+	background-color: yellow;
+border: 2px solid red;	
+border-radius: 10px;
+padding: 10px;
+font-size: large;
+height: 100px;/* 500 was 1260 px to large a note makes ok return button non visible on screen */
+overflow-y: scroll;
+overflow-x: scroll;
+}
+#changes, #editNewFieldChanges {
+	
+	height: 100px;
+	width: 300px;;
+	font-size: large;
+	overflow: scroll;
+}
+
+.date {
+	height: 10px;
+	/*border: 2px solid red;*/
+	font-weight: bold;
+	font-size: small;
+	/*border: 2px solid lightgrey;*/
+	padding: 5px;
+}
+/* dateWhite doesn't seem to work?*/
+.dateWhite {
+	height: 10px;
+	color: solid white;
+	font-weight: bold;
+	font-size: small;
+	/*border: 2px solid lightgrey;*/
+	padding: 5px;
+	color: white;/* this did not work .?why?*/
+}
+
+
+#changeColourListItem {
+	/*height: 100px;*//*remove when this messes up*/
+	overflow: scroll;
+	
+}
+
+.colorBtn {
+	
+	background-color: yellow; border-radius: 10px; border: 2px solid red; padding: 4px
+}
+
+#settingsScreen {
+	position: fixed;
+	bottom: 20px;/* was 70px*/
+	width: 96%;; /*was absolute, relative */
+       top: 0; width: 480px; margin: 0 auto;   /*top 0 locates at very top corner viewport. top 20 allows position below banner top: 100%; was 190 then 100%*/
+	   margin-top: 430px; /*460 works with portrait but off bottom in landscape..so try */
+        transform: translate(-50%,-50%);
+       /* width: 480px; */
+       height: 600px; /*550 1350was 1400px*/
+	   overflow: scroll;/*still need scroll if note is too large to fit on screen*/
+		border: 5px solid red;
+		border-radius: 10px;
+		padding: 10px;
+       /* border: none;/*was 10px solid red;*/
+        /*border-radius: 10px; */
+        background-color: #eee;
+        /*background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.1)); */
+	
+}
+
+#cvValues li {
+	
+	background-color: white; height:30px; width: 90%; padding: 10px; border: 2px solid red; border-radius: 10px; text-align: center; position:;
+}
+#cvValues {
+	text-align:
+}
+
+.attentionBtn, #timeDateFlag, #timeIndicator {
+	background-color: lightgreen; 
+	border-radius: 10px; 
+	border: 2px solid red; 
+	padding: 4px
+}
+
+.normalBtn {
+	background-color: lightgrey; 
+	border-radius: 10px; 
+	border: 1px solid black; 
+	padding: 4px
+}
+
+/*definitions of #STforRows etc
+*/
+/*	#createTableWin {
+		top: 20;
+	}*/
+	
+	/*<section id = #tableWin is the transformed hidden/show panel for the table stuff .. #STCreateTable is the <div> element in tableWin that contains table title hidden menu and the table itself… #STforRows is the table itself including the table header and has class funcLib from html*/
+	
+/*to move all the table stuff (the <div> element in the table window panel up from the bottom of the tableWin border try : 
+To get to edit date or other cell contents and the return btn and save btn to appear below the table stuff I changed the position of the closing </div> tag in html to include these elements June21 this did not work so made a separate div in html id = bottomTableMenu
+*/
+	
+	/*if too many records in resultList, window won't scroll to see buttons below set height to 700px to force scroll*/
+	
+	
+	
+
+	
+
+input ::placeholder {
+  color: blue;
+}
+
+input, .custom {
+  caret-color: red;
+  font: 16px "Helvetica", "Arial", "sans-serif"
+}
+
+/*input:focus {
+  color: black;
+  background-color: yellow;
+}*/
+
+.myBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 20px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: 2px solid red; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: darkblue; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 5px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+#myBtn:hover {
+  background-color: lightgrey;/*#555; /* Add a dark-grey background on hover */
+}
+
+.bottomBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  top: 20px; /* Place the button at the top of the page */
+ /* right: 20px; /* Place the button 30px from the right */
+ right: 20px; /* Place the button 30px from the left */
+  z-index: 99; /* Make sure it does not overlap */
+  border: 2px solid red; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: darkblue; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 5px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+#bottomBtn:hover {
+  background-color: lightgrey;/*#555; /* Add a dark-grey background on hover */
+}
+
+.scrollBtn {
+	position: fixed;
+}
+
+.darkMode {
+	background-color: darkblue;
+	color: white;
+}
+
+.lightMode {
+	background-color: white;
+	color: black;
+}
+
+.defaultMode {
+	background-color: yellow;
+	color: black;
+}
+
+.wrap-it{
+word-wrap: break-word;
+}
+
+.blur {
+	font-size: 20pt;   
+	text-shadow: rgba(0,0,255,1) -1px -2px 0.5em; 
+}
+
+/*added from createTables.css scroll Table horizontal and vertical*/
+#STheadName {
+	left: 0;
+  z-index: 1002;
+  border-left: 0;
+}
+#headRow td, #STheadRow td {
+	/*position: sticky;*/
+	position: sticky;
+	background-color: lightpink;
+	font-weight: bold;
+	color: black;
+	scroll-snap-align: start;
+	  top: 0;
+  border-top: 0;
+  background-clip: padding-box;
+	/*scroll table*/
+	  /*left: 0;
+
+  z-index: 1001;
+
+  border-left: 0;*/
+}
+tbody {
+  z-index: 10;
+  position: relative;
+}
+tbody td {
+  position: sticky;
+  left: 0;
+}
+/*for horizontal scroll to keep title column in view*/
+#STforRows td:first-child {
+	background-color: lightblue;
+	position: sticky;
+	z-index:1002;
+}
+
+/*added above from createTables.css for horizontal scroll?*/
+
+/*ADD THIS CSS TO ALLOW SCROLL OF TABLE ROWS UNDER TABLE HEADING June 29 2021*/
+#STheadRow td {
+	background-color:lightpink;/*green;*/
+	top: -20px;/*this setting -20 hides top edge of table rows when scrolling up10*/
+	position:sticky;/*this fixes head row at top of tablewin so records scroll underneath*/
+	/*margin:10;*/
+	margin:10;
+/*	z-index:1001;/*z-index  OT  needed to make table rows disappear under the headings1001*/
+	/*padding:10px;*/
+}
+
+/*#STthheader {
+	top: 0px;
+	/*position:sticky;if this statement stays db title header disappears under the head row*/
+	/*z-index:-10;
+	margin:0;*/
+
+
+#STheadRow {
+	top:0px;
+	/*padding-bottom: ;*/
+	z-index: 1000;
+}
+
+#STforRows {
+	top: 0px;
+	/*z-index:10;*/
+}
+
+#STforRows {
+/*position: sticky;/*NOT  neceesary statement to have STHeader appear*/
+	position: relative;
+	border: 3px solid black;
+	width: auto;
+	overflow-y: scroll;
+	overflow-x: scroll;
+}
+
+/*tbody th {
+
+  position: sticky;
+  z-index: 1001;
+  left: 0;
+
+}*/
+
+tbody {
+
+  z-index: 10;
+
+  position: relative;
+
+}
+
