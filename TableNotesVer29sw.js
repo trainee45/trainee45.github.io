@@ -7,7 +7,9 @@ self.addEventListener('install', function(e) {
   caches.open(cacheName).then(function(cache) {
      return cache.addAll([
        'https://github.com/trainee45/trainee45.github.io',//directory path to project folder
-       'https://github.com/trainee45/trainee45.github.io/TableNotesVer29.html',//directory path to project folder/app name.html file
+       'https://github.com/trainee45/trainee45.github.io/index.html',//directory path to project folder/app name.html file
+	   
+	    // 'https://github.com/trainee45/trainee45.github.io/TableNotesVer29.html',//directory path to project folder/app name.html file
        'https://github.com/trainee45/trainee45.github.io/TableNotesVer29.js',//directory path to project folder/app name.js file
        'https://github.com/trainee45/trainee45.github.io/TableNotesVer29.css'////directory path to project folder/app name.css file
 	   'https://github.com/trainee45/trainee45.github.io/trainsDBTableNotes.webmanifest'////directory path to project folder/app name.trainmanifest file
