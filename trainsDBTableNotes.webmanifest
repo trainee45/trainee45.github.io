@@ -4,7 +4,7 @@
   "display": "fullscreen",
   "icons": [
     {
-      "src": "icon/eeyore.JPG",
+      "src": "eeyore.JPG",
       "sizes": "192x192",
       "type": "image/JPG"
     }
