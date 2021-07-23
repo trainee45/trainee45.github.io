@@ -1386,7 +1386,7 @@ getDataBaseName(1,dataBaseName,objectStoreName).then(function(result) {
 
 
 
-alert('version = ' + ver);
+alert('Installing DougieBase.. Install version = ' + ver);
 
 	// console.log('setup = ' + setup + '  going to getDataBaseName to see if there is a prexisting database!');
 	//if (!list.firstChild) {
