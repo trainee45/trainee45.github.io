@@ -1,4 +1,5 @@
-//TableNotesVer29.js from scrollPrefsTableNotesVer27.js
+//TableNotesVer29.js from scrollPrefsTableNotesVer27.js USING THIS FILE IN DOUGIEBASE WORKINGCOPY TO COMMIT TO GITHUB REPOSITORY JULY 23 24
+//chaged alert notice from version 1 to Installing DougieBase version 1
 //Added option in preferences to center record title Date: July 3 Added document.querySelector('#STforRows').children[matchedRecordIndex].scrollIntoView(true); july 8 to scroll to searched item
 //from Added horizontal and vertical table scroll fallBackJune19xtraSaveBtnfoundRecordsListTableNotesVer26.js added xtraSaveBtn at bottom of table. Deleted recordList in Search if loading in a new db to prevent operational error in search if clicking on a now gone filename june19 improved colour guides flow in restoreDB fixed dbName successfully restored
 //TableNotesVer26.js from Current June19 backupTableNotesVer26.js June15 2021 cleared foundRecordList in Search records if loading in a new database to prevent operational error if a user taps on the residual recoord list after loading i a new db June18
@@ -3556,7 +3557,7 @@ function saveVariables () {
 	saveBtn.setAttribute('class', 'normalBtn');
 	saveBtn.textContent = 'SAVED';
 	
-	alert('Saving Variables. Tap OK to continue.');
+	alert('Saving Variables. Tap CLOSE to continue.');
 	//newItem might not have to be here??
 	newItem = { title: xtraField,
 		created: todayString, body: newFieldName };
