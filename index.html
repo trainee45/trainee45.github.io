@@ -6,7 +6,7 @@
     <link href="TableNotesVer29.css" rel="stylesheet">
 	<link rel="manifest" href="trainsDBTableNotes.webmanifest">
 	
-<!-- 	USE THIS VERSION AS OF July 22  2021 This version has been installed on github pages ! Added links to documentation docx and pdf<script src="fileNamesTableNotesVer21.js" defer type="text/javascript"></script> -->
+<!-- 	USE THIS VERSION AS OF July 22  2021 This version has been installed on github pages ! Added links to documentation docx and pdf<script src="fileNamesTableNotesVer21.js" defer type="text/javascript"></script> Added p info statement to Create Table window -->
 
 <!-- Line below adds jQuery library from jQuery file in same directory as the .js file. It works without internet connection. The google CDN has to have the internet connection IMPORTANT CONSIDERATION WHEN USING MORE jQuery code!! At the moment as of May17 2021 the only thing using jQuery is the table menu and hide scroll btns in preferences-->
 
@@ -548,12 +548,14 @@ color: black;
 	  <!--the TABLE screen window-->
 	  <div id="tableScrn" class="hidden">
 		  
-		  <h2 class="tableBan">Create A Table</h2>
+		  <h2 class="tableBan">Create A Table or Display Current Table</h2>
 		    <div id="clearTableWindow" class="simulator">TAP HERE TO CREATE TABLE or to EDIT an existing one.</div>
 		  <p id ="tableInstructions" class="edWinScroll"></p>
 		  <p></p>
 		 
 		  <p></p> 
+		  <p class = "attentionBtn">Tap Disply Table button to show current table</p>
+		  <p></p>
 		   <button id ="returnToNotes">Return to HOME SCREEN</button>
 		   <button id = "displayTable">DISPLAY TABLE</button>
 	   </div>
