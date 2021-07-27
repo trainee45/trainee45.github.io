@@ -2462,7 +2462,9 @@ function editItem(e) {
 	console.log('In editItem. xtraFieldBtnExists (not yet) = ' + xtraFieldBtnExists);
 	//make edit window appear
 	editWindow.setAttribute('class','showing');
-	
+	//trying to fix field header display going awry if edit notes before table initiated July 26 2021
+	if(DTBtnTappedOnce ===0 & tableExists){initializeTable();}
+	//trying to fix field header display going awry if edit notes before table initiated	
 	
 	//from updating an entry in the database
 	let noteId = Number(e.target.parentNode.getAttribute('data-note-id'));
