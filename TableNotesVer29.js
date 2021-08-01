@@ -7919,7 +7919,7 @@ Note that you actually have to pass the exported data as a string, not as a JSON
 
   if('serviceWorker' in navigator) {
     navigator.serviceWorker
-             .register('https://github.com/trainee45/trainee45.github.io/TableNotesVer29sw.js')
+             .register('/TableNotesVer29sw.js')
              .then(function() { console.log('Service Worker Registered'); });
 			alert('Service Worker Registered!'); navigator.storage.estimate().then(function(estimate) {
   document.getElementById("percent").value =
