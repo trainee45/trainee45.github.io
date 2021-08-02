@@ -7915,11 +7915,16 @@ Note that you actually have to pass the exported data as a string, not as a JSON
 
 
  /* DISABLED/ENABLED SERVICE WORKER CODE FOR TESTING NEW CODE IN THIS VERSION !!!!*/
-
+ 
+ /* should code read : if('serviceWorker' in navigator) {
+    navigator.serviceWorker
+             .register('./TableNotesVer29sw.js')
+             .then(function()*/
+/*add the '.' before the slash? Same in start url in manifest…'./index.html' DID NOT CHANGE THIS BECAUSE AS OF AUG 1 app seems to be working off line and after a reboot…not sure what is going on???*/
 
   if('serviceWorker' in navigator) {
     navigator.serviceWorker
-             .register('/TableNotesVer29sw.js')
+             .register('./TableNotesVer29sw.js')
              .then(function() { console.log('Service Worker Registered'); });
 			alert('Service Worker Registered!'); navigator.storage.estimate().then(function(estimate) {
   document.getElementById("percent").value =
