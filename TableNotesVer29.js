@@ -7920,11 +7920,11 @@ Note that you actually have to pass the exported data as a string, not as a JSON
     navigator.serviceWorker
              .register('./TableNotesVer29sw.js')
              .then(function()*/
-/*add the '.' before the slash? Same in start url in manifest…'./index.html' DID NOT CHANGE THIS BECAUSE AS OF AUG 1 app seems to be working off line and after a reboot…not sure what is going on???*/
+/*add the '.' before the slash? Same in start url in manifest…'./index.html' DID NOT CHANGE THIS BECAUSE AS OF AUG 1 app seems to be working off line and after a reboot…not sure what is going on??? REMOVED '.' Aug 3 in both js and manifest*/
 
   if('serviceWorker' in navigator) {
     navigator.serviceWorker
-             .register('./TableNotesVer29sw.js')
+             .register('/TableNotesVer29sw.js')
              .then(function() { console.log('Service Worker Registered'); });
 			alert('Service Worker Registered!'); navigator.storage.estimate().then(function(estimate) {
   document.getElementById("percent").value =
