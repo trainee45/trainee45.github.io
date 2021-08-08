@@ -2442,6 +2442,8 @@ doneSettingsButton = document.querySelector('#okSettingsViewed');
 	finishedReadingSettings.setAttribute('class','hidden');
 	settingsScreen.setAttribute('class','hidden');
 	aboutDBWindow.setAttribute('class','showing');
+	//Aug 8 settings btn gets disabled when variables reset when going to new/changeDB?
+	viewSettingsBtn.disabled === false;
 	};//end doneSettingsButton.onclick
 
 	//alert('Scroll up or down if RETURN TO NOTES Button is not on screen! (Move scroll bar on right to bottom of screen.)');
