@@ -2444,7 +2444,7 @@ doneSettingsButton = document.querySelector('#okSettingsViewed');
 	aboutDBWindow.setAttribute('class','showing');
 	};//end doneSettingsButton.onclick
 
-	alert('Scroll up or down if RETURN TO NOTES Button is not on screen! (Move scroll bar on right to bottom of screen.)');
+	//alert('Scroll up or down if RETURN TO NOTES Button is not on screen! (Move scroll bar on right to bottom of screen.)');
 
 //remove up to here
 
