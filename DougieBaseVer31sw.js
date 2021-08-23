@@ -1,4 +1,5 @@
-//TableNotesVer29sw.js
+//DougieBaseVer31sw.js
+//from … TableNotesVer30sw.js
 var cacheName = 'DougieBase-v1'
 self.addEventListener('install', function(e) {
  e.waitUntil(
@@ -10,8 +11,8 @@ self.addEventListener('install', function(e) {
        '/index.html',//directory path to project folder/app name.html file
 	   
 	    // 'https://github.com/trainee45/trainee45.github.io/TableNotesVer29.html',//directory path to project folder/app name.html file
-       '/TableNotesVer29.js',//directory path to project folder/app name.js file
-       '/TableNotesVer29.css'////directory path to project folder/app name.css file
+       '/DougieBaseVer31.js',//directory path to project folder/app name.js file
+       '/DougieBaseVer31.css'////directory path to project folder/app name.css file
 	   '/trainsDBTableNotes.webmanifest'////directory path to project folder/app name.trainmanifest file
 	   '/jquery-3.6.0.min.js'////directory path to project folder/app name.jQuery file
      ]);
