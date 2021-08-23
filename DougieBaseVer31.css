@@ -1,4 +1,5 @@
-/*TableNotesVer29.css from scrollTableNotesVer27.css*/
+/*DougieBaseVer31.css*/
+/*from TableNotesVer30.css from scrollTableNotesVer27.css*/
 /*testPrefTableNotesVer26.css June 13*/
 /*fixed position of prefWin in Safari portrait June14*/
 /*fixLabelLinkTableNotesVer25.css Added class .td_size used in displayTable if(!label) June 11 better positioning of prefs window
@@ -334,8 +335,8 @@ To get to edit date or other cell contents and the return btn and save btn to ap
         background-color: #eee;
 	
 }
-/*prefWin was here moved to sort search group June 14 trying to fix prefWin position in Safari portrait */
-#reNameWin, #aboutDBWin, #memoryWindow, #newFieldWin, #fileNames, #createNewDBWin, #manageFilesWin, #backupFilesWin, #backingUpDBWin, #restoreDBWin {
+/*prefWin was here moved to sort search group June 14 trying to fix prefWin position in Safari portrait copySampleDb Aug 14*/
+#reNameWin, #aboutDBWin, #memoryWindow, #newFieldWin, #fileNames, #createNewDBWin, #manageFilesWin, #backupFilesWin, #backingUpDBWin, #restoreDBWin, #copySampleDb {
 	position: fixed; /*was absolute relative fixed didn't work */
         top: 250px; /* 200px 100% was 190 then 100%*/
         transform: translate(-50%,-50%);
@@ -360,7 +361,7 @@ To get to edit date or other cell contents and the return btn and save btn to ap
 /*position: fixed;
 }*/
 
-#manageFilesWin, #backupFilesWin, #backingUpDBWin, #restoreDBWin {
+#manageFilesWin, #backupFilesWin, #backingUpDBWin, #restoreDBWin, #copySampleDb {
 	top: 450px;/*was 340px 300 px */
 	height: 540px;
 	overflow: scroll;
