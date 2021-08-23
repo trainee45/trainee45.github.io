@@ -1,4 +1,12 @@
-//TableNotesVer29.js from scrollPrefsTableNotesVer27.js USING THIS FILE IN DOUGIEBASE WORKINGCOPY TO COMMIT TO GITHUB REPOSITORY JULY 23 24
+//DougieBaseVer31.js Aug 22
+//copyOffixBkupRestoreDougieBaseVer31js
+//from …CleanUpTableNotesVer30Copy2xSampleDb
+//fixed viewSettingsBtn disabled locked after a user taps aboutDBBtn without there being a database loaded
+//TableNotesVer30Copy2xSampleDb from -
+//Yes this worked!
+// AS OF AUG 16 2021:
+// TableNotesVer30Copy2xSampleDb.html using TableNotesVer30Copy2xSampleDb.js and TableNotesVer30.css works! This version has a Load Sample database demo in it WITHOUT using copy and paste. Needs some dressing up to make its method use clearer to understand.
+//TableNotesVer30.js from scrollPrefsTableNotesVer27.js USING THIS FILE IN DOUGIEBASE WORKINGCOPY TO COMMIT TO GITHUB REPOSITORY JULY 23 24
 //chaged alert notice from version 1 to Installing DougieBase version 1 added alert to initialize table if necessary if edit note so table field headers are displayed correctly
 //Added option in preferences to center record title Date: July 3 Added document.querySelector('#STforRows').children[matchedRecordIndex].scrollIntoView(true); july 8 to scroll to searched item
 //from Added horizontal and vertical table scroll fallBackJune19xtraSaveBtnfoundRecordsListTableNotesVer26.js added xtraSaveBtn at bottom of table. Deleted recordList in Search if loading in a new db to prevent operational error in search if clicking on a now gone filename june19 improved colour guides flow in restoreDB fixed dbName successfully restored
@@ -146,6 +154,17 @@ const backupFilesWin = document.querySelector('#backupFilesWin');
 const selectedDBNameP = document.querySelector('#selectedDBName');
 const backupBtn = document.querySelector('#backupBtn');
 const restoreFileBtn = document.querySelector('#restoreFileBtn');
+const loadSampleDbBtn = document.querySelector('#loadSampleDbBtn');
+//create sample db declarations
+
+const copySampleDbWin = document.querySelector('#copySampleDb');
+const copySampleDbData = document.querySelector('#copySampleDbData');
+const continuBtn = document.querySelector('#continueBtn');
+const restoreDBWinTitle = document.querySelector('#restoreDBWinTitle');
+const restoreInfoP = document.querySelector('#restoreInfoP');
+const restoreInfo1P = document.querySelector('#restoreInfo1P');
+const restoreInfo2P = document.querySelector('#restoreInfo2P');
+const nowDo = document.querySelector('#nowDo');
 
 //new code for managing databases and database names for loading Mar 23
 
@@ -222,6 +241,7 @@ let dbName;//global variable for database name..currently notes_dbx replaced wit
 let dataBaseName = "";//make global variable so can use in viewSettings
 let newDBflag = false; //signify from createNewDataBase
  let defaultDBName = "";//used in restore database
+ let loadSampleDb = false;//used in restore database to force load sample code Aug 12 2021
 let blocked = false;//flag used in deleteDB and getFileNames to indicate a faile deleteDB
  
 let noteListItemColour;
@@ -349,6 +369,8 @@ let fromFullViewItem = false;//used for proper creation of table view after a fu
 let fromDeleteField = false;//to add field headers back on if going to displayTable from deleteField
 let fromNew = false;//flag to not show make changes Btn if New table being created
 let foundRecordsList = false;//flag to clear a prexisting foundRecordsList so that a fresh loaded db does not use an old foundRecordList June 18 2021
+//let json;//used in restore DB Made global variable Aug 12 2021
+let sampleDbData = "";//used in restore DB if loading in sample db
 const resultList = document.querySelector("#result-list");	//declared as global variable so flag above will work!!!BUT DOES ALL THIS SLOW DOWN PROGRAM FLOW??????June 18 2021
 //add tableArray here
 
@@ -381,6 +403,8 @@ const timeDateFlagP = document.querySelector('#timeDateFlag');//this made global
 const addNoteBtn = document.querySelector('#add');
 //addNoteBtn.onclick references the Add Note button in the NAV menu, which takes you to the create note screen. the create note button is referenced by the form button in html, this being the only button in the html form section. so tapping create new note button means form.onsubmit which takes you to add data function.
 const aboutDBBtn = document.querySelector('#aboutDB');
+//disable aboutDBBtn until there is a file loaded so as to prevent aboutDB being locked if user taps aboutDB before a file is loaded re-enables via aboutDBBtn.onclick = choices;
+
 
 //load and save
 
@@ -448,6 +472,9 @@ tableScreen.setAttribute('style','background-color: red');
 searchWindow.setAttribute('class','hidden');
 createNewDBWindow.setAttribute('class','hidden');
 manageFilesWindow.setAttribute('class','hidden');
+copySampleDbWin.setAttribute('class',
+'hidden');
+
 
 if(showScroll) {
 	//ERROR TypeError: Argument 1 ('node') to Node.appendChild must be an instance of Node
@@ -565,11 +592,14 @@ let json ="";
 function getFileNames(dataBaseName) {
 //flag that prevents dbList from repeating May 8. THIS WORKS!
 console.log('At getFileNames. dbListExists = ' + dbListExists);
-	if(dbListExists) {
+	if(dbListExists || loadSampleDb) {
 		while (dataBaseList.firstChild) {
    dataBaseList.removeChild(dataBaseList.firstChild);
-};//end while
+		};//end while
+loadSampleDb = false;
 	};//end if dbListExists
+	
+	loadSampleDb = false;//added Aug 20
 	console.log('In getFileNames. Here from a re-run OR menu button..New/ChangeDB');
 	getFileNamesSwitch = false;
 fileNamesWindow.setAttribute('class','showing');	
@@ -688,6 +718,32 @@ restoreDataBaseBtn.onclick = function() {
 	restoreDataBase();
 	fileNamesWindow.setAttribute('class','hidden');	
 };//end firstManageBtn.onclick
+
+//start loadSampleDbBtn.onclick
+loadSampleDbBtn.onclick = function () {
+console.log('loadSampleDbBtn Button clicked. FileNamesWin hidden.');
+	fileNamesWindow.setAttribute('class','hidden');	
+	//set loadSampleDb flag to true
+	loadSampleDb = true;
+	copySampleDbWin.setAttribute('class',
+	'showing');
+	continueBtn.setAttribute('class','attentionBtn');
+	
+	//copySampleDbData.value should now be sample database
+	
+	
+	
+	continueBtn.onclick = function () {
+		continueBtn.setAttribute('class','normalBtn');
+		copySampleDbWin.setAttribute('class',
+		'hidden');
+		//loadSampleDb = true; //should be here ? Aug 21
+		restoreDataBase();
+	}//end continueBtn.onclick
+	
+	
+}//end loadSampleDbBtn.onclick restoreDataBase(dataBaseName);
+
 	
 
 
@@ -1025,6 +1081,8 @@ console.log('RestoreFile Button clicked. backupFilesWin hidden.');	backupFilesWi
 	restoreDataBase(dataBaseName);
 	
 }//end restoreFileBtn.onclick restoreDataBase(dataBaseName);
+
+
 
 
 cancelbackupDataBaseButton.onclick = function() {
@@ -2442,11 +2500,9 @@ doneSettingsButton = document.querySelector('#okSettingsViewed');
 	finishedReadingSettings.setAttribute('class','hidden');
 	settingsScreen.setAttribute('class','hidden');
 	aboutDBWindow.setAttribute('class','showing');
-	//Aug 8 settings btn gets disabled when variables reset when going to new/changeDB?
-	viewSettingsBtn.disabled === false;
 	};//end doneSettingsButton.onclick
 
-	//alert('Scroll up or down if RETURN TO NOTES Button is not on screen! (Move scroll bar on right to bottom of screen.)');
+	alert('Scroll up or down if RETURN TO NOTES Button is not on screen! (Move scroll bar on right to bottom of screen.)');
 
 //remove up to here
 
@@ -3504,6 +3560,13 @@ aboutDBWindow.setAttribute('class','showing');
 	} else if (setup===1) {
 		viewSettingsBtn.disabled === false;
 	}//end if setup
+//trying to prevent viewSettings btn getting disabled if user taps aboutDB without a database being loaded Aug 17
+if(dataBaseName === "" || dataBaseName === null) {
+	viewSettingsBtn.disabled === true;
+} else {
+	viewSettingsBtn.disabled === false;
+}
+	
 //CHANGE BACK TO viewSettings;	Apr10
 	viewSettingsBtn.onclick = viewSettings;
 	
@@ -3512,7 +3575,10 @@ aboutDBWindow.setAttribute('class','showing');
 	
 	clearAboutDBWindow.onclick = function () {
 		aboutDBWindow.removeChild(numberNotes);
-	aboutDBBtn.disabled = false;	aboutDBWindow.setAttribute('class','hidden');}; //end clearAboutDBWindow.onclick
+	aboutDBBtn.disabled = false;
+	//trying to prevent viewSettings btn getting disabled if user taps aboutDB without a database being loaded Aug 17
+	viewSettingsBtn.disabled = false;
+	aboutDBWindow.setAttribute('class','hidden');}; //end clearAboutDBWindow.onclick
 	}//end function choices
 
 function documentation () {
@@ -7060,7 +7126,7 @@ function sleepUntil(f, timeoutMs) {
 
 //function backup database
 function backupDataBase(dataBaseName) {
-	
+	//THE FOLLOWING CODE PUTS THE SELECTED DATABASE TO BACKUP INTO THE VARIABLE json AS A JAVASCRIPT OBJECT NOTATION. 
 	//alert('in function backup database: ' + dataBaseName);
 	let string = "";
 	backingUpDBWin.setAttribute('class','showing');
@@ -7070,7 +7136,7 @@ function backupDataBase(dataBaseName) {
 	const doneCopyBtn = document.querySelector('#doneCopy');
 	
 	//enable disable DONE btn in backup window
-	doneCopyBtn.disabled = true;
+	//doneCopyBtn.disabled = true;
 	//enable disable DONE btn in backup window
 	// finishedCopyBtn = document.createElement('button');
 	// finishedCopyBtn.textContent = 'DONE';
@@ -7078,37 +7144,39 @@ function backupDataBase(dataBaseName) {
 	
 	
 	copyClipboardBtn.onclick = function () {
-		copyClipboardBtn.setAttribute('class','normalBtn');
+	copyToClipboard(string);	copyClipboardBtn.setAttribute('class','normalBtn');
 	// doneCopyBtn.disabled = false;	doneCopyBtn.setAttribute('class','attentionBtn');
+	//doneCopyBtn.disabled = false;
+	doneCopyBtn.setAttribute('class','attentionBtn');	
 		textarea.setAttribute('class','colorBtn');
 		console.log('In copyClipboardBtn.onclick function.  textarea.value = ' + textarea.value);
 		//copyToClipboard(textarea.value);
-		copyInstructionP = document.createElement('p');
-		copyInstructionP.textContent = 'A manual Copy/Paste operation is now necessary to copy backup to the Clipboard. Tap the upper left corner of the text window above. When the options menu appears choose SELECT ALL and wait for the options menu to re-appear. Choose COPY (to clipboard). You are simply doing a native iOS copy/paste operation here. COPY saves the text contents to the clipboard. Now SAVE (PASTE) THE CLIPBOARD CONTENTS TO WHATEVER EXTERNAL FOLDER YOU WISH TO USE TO STORE YOUR BACKUPS. When finished with the clipboard, tap DONE to return to HOME screen.';
-		backingUpDBWin.appendChild(copyInstructionP);
+		// copyInstructionP = document.createElement('p');
+		// copyInstructionP.textContent = ' Now SAVE (PASTE) THE CLIPBOARD CONTENTS TO WHATEVER EXTERNAL FOLDER YOU WISH TO USE TO STORE YOUR BACKUPS. When finished with the clipboard, tap DONE to return to HOME screen.';
+		// backingUpDBWin.appendChild(copyInstructionP);
 		//backingUpDBWin.appendChild(finishedCopyBtn);
 		
 		//this code better times the activation of the done btn by waiting for the textarea to be tapped on first
-		textarea.onclick = function() {
-		doneCopyBtn.disabled = false;	doneCopyBtn.setAttribute('class','attentionBtn');	
+		// textarea.onclick = function() {
+		// doneCopyBtn.disabled = false;	doneCopyBtn.setAttribute('class','attentionBtn');	
 			
-		}//end textarea.onclick
+		// }//end textarea.onclick
 		//this code above better times the activation of the done btn by waiting for the textarea to be tapped on first
+		// copyToClipboard(string);
+		// doneCopyBtn.onclick = function () {
+		// 	//enable disable DONE btn in backup window
+		// 	doneCopyBtn.disabled = true;
+		// 	//enable disable DONE btn in backup window
+		// 	doneCopyBtn.setAttribute('class','normalBtn');
+		// 	textarea.setAttribute('class','normalBtn');
+		// backingUpDBWin.removeChild(copyInstructionP);
+		// //backingUpDBWin.removeChild(finishedCopyBtn);
 		
-		doneCopyBtn.onclick = function () {
-			//enable disable DONE btn in backup window
-			doneCopyBtn.disabled = true;
-			//enable disable DONE btn in backup window
-			doneCopyBtn.setAttribute('class','normalBtn');
-			textarea.setAttribute('class','normalBtn');
-		backingUpDBWin.removeChild(copyInstructionP);
-		//backingUpDBWin.removeChild(finishedCopyBtn);
-		
-		backingUpDBWin.setAttribute('class','hidden');
-		backupFilesWin.setAttribute('class','hidden');
-		alert('The database named..' + dataBaseName + ' has been copied to the clipboard! You can now PASTE it into your external BACKUP storage file.');
+		// backingUpDBWin.setAttribute('class','hidden');
+		// backupFilesWin.setAttribute('class','hidden');
+		// alert('The database named..' + dataBaseName + ' has been copied to the clipboard! You can now PASTE it into your external BACKUP storage file.');
 			
-		}//end function finishedCopyBtn.onclick
+		// }//end function finishedCopyBtn.onclick
 		
 	}//end copyClipboardBtn.onclick
 	
@@ -7119,6 +7187,9 @@ function backupDataBase(dataBaseName) {
 //ReferenceError: Cannot access uninitialized variable.
 		//WRAP A FUNCTION AROUND THIS CODE
 	//WRAP A FUNCTION AROUND THIS CODE
+	
+	//OPEN THE DELECTED DATABASE FOR BACKINGUP AND PUT IT IN JSON OBJECT FORMAT
+	
 		var dbName = dataBaseName;
 var json;
 //var textarea;
@@ -7190,12 +7261,20 @@ try {
   console.log('Database has been exported:')
   console.log(' ')
   console.log(json)
-  string = textarea.value;
+  //string won't = anything here? Because json has not yet been put into textArea?
+  
+  //iosCopyToClipboard(textarea,json) PUTS json INTO THE TEXTAREA (el)
+   string = textarea.value;
 iosCopyToClipboard(textarea,json)
+
+//NOW textArea = json after returning from iosCopyToClipboard function SO NOW MAKE string = textArea?
+
 //copyClipboardBtn.onclick = copyToClipboard(textarea.value);
  //copyClipboardBtn.onclick = copyToClipboard(textarea.innerHTML.value);
  // copyToClipboard(json);
   console.log(' ')
+  string = textarea.value;
+  console.log("returned from iosCopyToClipboard! string now = " + string );
 // copyToClipboard(textarea.value)
 } catch(error) {
   console.error(error)
@@ -7251,6 +7330,7 @@ iosCopyToClipboard(textarea,json)
 // //   return true;
 //  }
 
+//the el (element) is textArea so code below puts json into the textArea!
 function iosCopyToClipboard(el,json) {
 	console.log('In iosCopyToClipboard function.')
     var oldContentEditable = el.contentEditable,
@@ -7270,20 +7350,26 @@ el.textContent = json;
     el.contentEditable = oldContentEditable;
     el.readOnly = oldReadOnly;
 console.log('in iosCopyToClipboard function. json = '+ json);
+console.log("el.textContent = " + el.textContent);
+textarea.value = json;
 console.log('in iosCopyToClipboard function. textarea.value = '+ textarea.value);
- success =   document.execCommand('copy');
+//el.textContent = json; in iosCopyToClipboard function. textarea.value =  above has made textArea = json!
+
+ //success =   document.execCommand('copy');
+ // //UNCOMMENTED LINES BELOW AUG 20
  // if(success) {alert('Success! Backup copied to clipboard.')}
  // if(!success) {alert('Whoops. document.execCommand Copy failed.')}
 
-}
+}// I THINK THIS IS END FUNCTION iosCopyToClipboard(el,json) ??
 
-		//WRAP A FUNCTION AROUND THIS CODE
+//NOW GOING BACK TO line 7195 +2?
+	//WRAP A FUNCTION AROUND THIS CODE
 		
 		
 //}//end function backup database
 
 function copyToClipboard(string) {
-  const textarea = document.querySelector('#textAreaClip')
+ // const textarea = document.querySelector('#textAreaClip') //Aug20
   let result;
 
   try {
@@ -7314,8 +7400,12 @@ console.log('in copyToClipboard function. textarea.value = '+ textarea.value)
   } finally {
     document.execCommand('copy');
 	  //document.body.removeChild(textarea);
-  }
-
+	  //CODE TO CLEAR COPY RANGE
+	 // sel.removeAllRanges();
+	  textarea.value = "";
+	  textarea.textContent = "";
+  }//end function try?
+}//END FUNCTION copyToClipboard? Moved from below!
   // manual copy fallback using prompt
 //   if (!result) {
 //     const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
@@ -7326,20 +7416,84 @@ console.log('in copyToClipboard function. textarea.value = '+ textarea.value)
 //     }
 //   }
 //   return true;
-}
+alert("Copying to Clipboard. On the next Backup screen, first tap the green highlighted button 'Click here first'. Then Tap DONE to return to Notes!");
+doneCopyBtn.onclick = function () {
+			//enable disable DONE btn in backup window
+		//	doneCopyBtn.disabled = true;
+			//enable disable DONE btn in backup window
+			doneCopyBtn.setAttribute('class','normalBtn');
+			textarea.setAttribute('class','normalBtn');
+		//backingUpDBWin.removeChild(copyInstructionP);
+		//copyInstructionP,textContent = "";
+		//backingUpDBWin.removeChild(finishedCopyBtn);
+		
+		backingUpDBWin.setAttribute('class','hidden');
+		backupFilesWin.setAttribute('class','hidden');
+		alert('The database named..' + dataBaseName + ' has been copied to the clipboard! You can now PASTE it into your external BACKUP storage file.');
+			
+	}//end function finishedCopyBtn.onclick
+	// }//END FUNCTION copyToClipboard?
 }//end function backup database	
 
 //start function restoreDataBase(dataBaseName)
 function restoreDataBase(restoredDBName) {
+	restoreTextArea.setAttribute('style', 'border: 5px solid red; text-align: center');
+	if(loadSampleDb) {
+		alert("Remember to Tap the Text-Area box ONCE only to CONTINUE. This initiates loading of database sample.");
+		//change html text to reflect SAMPLE
+		nowDo.textContent = "TAP TextArea element box TO INITIATE LOADING OF DATABASE SAMPLE. \nTHEN TAP SUBMIT.";
+		restoreTextArea.textContent = "TAP HERE TO INITIATE LOADING OF DATABASE SAMPLE. \nTHEN TAP SUBMIT.";
+		//restoreTextArea.textContent = "TAP HERE TO LOAD DATABASE SAMPLE!";
 	
 	restoreTextArea.onclick = function() {
-		getJsonBtn.setAttribute('class','attentionBtn');
-	}//end restoreTextArea.onclick
+		//alert("Tapped restoreTextArea.onclick. copySampleDbData.value = " + copySampleDbData.value);
+		restoreTextArea.setAttribute('style', 'border: 3px solid blue');
+		nowDo.textContent = "THANK YOU!. \nNOW TAP SUBMIT to load SAMPLE DATABASE..";
+		restoreTextArea.textContent = "THANK YOU!. \nNOW TAP SUBMIT to load SAMPLE DATABASE..";
+	getJsonBtn.setAttribute('class','attentionBtn');
+			}//end restoreTextArea.onclick
+	
+	 } else { 
+		 alert("Remember to FIRST TAP Text-Area box ONCE. SUBMIT btn turns green, then PASTE backup text");
+		 restoreTextArea.setAttribute('style', 'border: 3px solid blue');
+		 nowDo.textContent = "FIRST TAP Text-Area box ONCE. SUBMIT btn turns green, then PASTE backup text into text area...";
+		 restoreTextArea.textContent = "FIRST TAP ONCE. SUBMIT btn turns green, then PASTE backup text here....";
+		 restoreTextArea.onclick = function() {
+			//clear text area prior to paste
+			nowDo.textContent = "Now PASTE data into TextArea box!";
+			 restoreTextArea.textContent = "";	getJsonBtn.setAttribute('class','attentionBtn');
+			}//end restoreTextArea.onclick
+		 
+	}//end if loadSampleDb else	
+	 
+	 
+	 
+	 
 	console.log('In restoreDataBase(dataBaseName) function');
 	//alert('restoreDataBase(dataBaseName ). ' + dataBaseName);
 		const restoreFromClipboardBtn = document.querySelector('#restoreFromClipboard');
 fromRestore = true;	restoreDBWindow.setAttribute('class','showing');
-	restoreInstructionsP.textContent = "Paste Backup data into text area. Tap 'Submit Backup data'. Tap RESTORE your database. Tap FINISHED. DoubleTap on restored file name in database list to view file.";
+if (loadSampleDb) {
+	//change heading title of window for SAMPLE
+	restoreDBWinTitle.textContent = "….LOADING A SAMPLE DATABASE DEMONSTRATION";
+	
+	restoreInstructionsP.textContent = "Tap the Text-Area input window to CONTINUE! Then tap 'SUBMIT Sample DB data' to Load the sample database. Tap RESTORE your database. Tap FINISHED. DoubleTap on restored file name in database list to view file.";
+	restoreInfoP.textContent = "After tapping on the Text-Area element, the Submit button turns green indicating DougieBase is ready to continue creating the SAMPLE database.";
+	
+	//added id to html p 1
+	restoreInfo1P.textContent = "First! Tap the RED text-area input element ONCE to initialize. The Submit button will turn green. Tap the SUBMIT button, tap RESTORE DATABASE button,  the CONFIRMATION window appears. ";
+	restoreInfo2P.textContent ="Summary to create the database SAMPLE: Tap the Text-Area input window. Tap the SUBMIT button, tap RESTORE DATABASE button, tap FINISHED, then double-tap the name of the SAMPLE database in the database list of file names in the Change DB window."
+	getJsonBtn.textContent = "SUBMIT Sample DB data";
+} else {
+	restoreDBWinTitle.textContent = "Restore a database from its Backup via the Clipboard";
+	restoreInstructionsP.textContent = "Paste Backup data into the text area element. Tap 'Submit Backup data'. Tap RESTORE your database. Tap FINISHED. DoubleTap on restored file name in database list in the Current File Names window to view file.";
+	restoreInfo1P.textContent = "FIRST! Tap the blue text input area to initialize the Paste area. The Submit button will turn green telling you DougieBase is ready for PASTE. After Pasting, Tap the SUBMIT button and your database will be restored.";
+	restoreInfoP.textContent = "Dougiebase will create a new shell to structure the restored data. Enter the previously saved backup data of the database to be restored into the text area window below using Copy/Paste from the clipboard or from your external storage source."
+	restoreInfo2P.textContent = "Copy backup data text from your storage source to the clipboard, and then Paste the Backup data for the database you are restoring, into the Text Area below:"
+	getJsonBtn.textContent = "SUBMIT Backup data";
+}//end if else loadSampleDb
+
+	
 	//dataBaseName = notes_dbx
 	//console.log('dataBaseName = ' + dataBaseName)
 	//restoreDBNameInput.textContent = dataBaseName;
@@ -7386,13 +7540,23 @@ fromRestore = true;	restoreDBWindow.setAttribute('class','showing');
 	finishedRestoreBtn.onclick = function (restoredDBName) {
 		dbRestored = true;//flag to allow notification of restore in getFileNames May12
 	//clear textarea for next use
+	// loadSampleDb = false;
+	nowDo.textContent = "FIRST TAP Text-Area box ONCE. SUBMIT btn turns green, then PASTE backup text into text area...";
+	restoreTextArea.textContent = "FIRST TAP ONCE. SUBMIT btn turns green, then PASTE backup text here...."
 	restoreTextArea.value = "";//May8
 	console.log('finishedRestoreBtn has been tapped.');
 	//clearDatabase(dataBaseName);
 	//ReferenceError: Can't find variable: getJsonBtn
 getJsonBtn.setAttribute('class','normalBtn');
+console.log("loadSampleDb === " + loadSampleDb);
+//if (loadSampleDb) {
+//	getJsonBtn.textContent = "SUBMIT SAMPLE data";
+//}//end if (loadSampleDb)
 getJsonBtn.textContent = "SUBMIT Backup data";
 restoreFromClipboardBtn.setAttribute('class','normalBtn');
+// if (loadSampleDb) {
+// 	restoreFromClipboardBtn.textContent = "Click here to LOAD the DataBase Sample.";
+// }//end if(loadSampleDb)
 restoreFromClipboardBtn.textContent = "Click here to RESTORE your DataBase.";
 finishedRestoreBtn.setAttribute('class','normalBtn');
 		restoreDBWindow.removeChild(finishedRestoreBtn);
@@ -7400,14 +7564,31 @@ finishedRestoreBtn.setAttribute('class','normalBtn');
 	restoreDBWindow.setAttribute('class','hidden');
 	console.log('restoredDBName = ' + restoredDBName);
 	dataBaseName = defaultDBName;
+	
+	if (loadSampleDb) {
+		selectedDBinfoP.textContent =  " successfully LOADED SAMPLE .." + dataBaseName +"!";
+		fileChosenP.textContent = "Successfully LOADED SAMPLE .." + dataBaseName +"!";
+// 		loadSampleDb = false;
+// 			if(dbListExists) {
+// 		while (dataBaseList.firstChild) {
+//    dataBaseList.removeChild(dataBaseList.firstChild);
+// };//end while
+// };//end if dbListExists
+//???should loadSampleDb = false here???Aug20
+		getFileNames();//remove to return to notes?
+		return//Aapdded Aug 12 should REMOVE!,
+	} else {//end if (loadSampleDb)
+	
 	selectedDBinfoP.textContent =  " successfully RESTORED .." + dataBaseName +"!";
 	fileChosenP.textContent = "Successfully RESTORED .." + dataBaseName +"!";
-	
+	}//end if(loadSampleDb) else
 		getFileNames();//remove to return to notes?
 	}//end finishedRestoreBtn.onclick
 		
 cancelRestoreBtn.onclick = function () {
+	loadSampleDb = false;
 	//clear textarea for next use
+	restoreTextArea.textContent = "Paste Backup data here"
 	restoreTextArea.value = "";//May8
 	console.log('cancelRestoreBtn has been tapped.');
 	//clearDatabase(dataBaseName);
@@ -7424,12 +7605,13 @@ finishedRestoreBtn.setAttribute('class','normalBtn');
 
 	//
 	getJsonBtn.onclick = function (){
-		// if(formatFailed) {
-		// 	formatFailed = false;
-		// 	restoreDataBase();
-		// }//end if formatFailed
-	  let json = restoreTextArea.value;
-	  console.log('restoreTextArea.value = ' + restoreTextArea.value);
+		if (loadSampleDb) {
+			json = copySampleDbData.value;
+		} else {
+			json = restoreTextArea.value;
+		}//end if else loadSampleDb
+	
+    console.log('restoreTextArea.value = ' + restoreTextArea.value + "json = " + json);
 	  checkFormat(json);
 	  defaultDBName = getRestoredDBName(json);
 	 //removed reset variables May7 ?makes setup = 0 so that diables viewSettings btn in aboutDB..NOT GOOD, Its removal fixed the messed up field headers in table after first view of table from a restoreDB.AND FIXED THE DISABLED VIEWSETTINGS BTN
@@ -7466,6 +7648,7 @@ finishedRestoreBtn.disabled=false;
 	restoredDBName = prompt("Confirming the name of the database to restore?",defaultDBName)
 	//var restoredDBName = prompt("What's the name of the database to restore?")
 	if(restoredDBName === null) {
+		restoreTextArea.textContent = "Paste Backup data here"
 		restoreTextArea.value = "";//May8
 	console.log('cancelRestoreBtn has been tapped.');
 	//clearDatabase(dataBaseName);
@@ -7523,7 +7706,13 @@ objectStore.createIndex('title', 'title', { unique: false });
 //changed passes var restoredDB To restoredDBName May12
 request.onsuccess = function importFromJson(e,restoredDBName, json) {
 	console.log('In request.onsuccess function');
-	json = restoreTextArea.value;
+	//COMMENTED OUT LINE BELOW NOT SURE IT IS NEEDED AND ITS PRESENCE MESSES UP JSON!!!! Aug 16 json = something has to be here otherwise undefined error!
+	if (loadSampleDb) {
+			json = copySampleDbData.value;
+		} else {
+			json = restoreTextArea.value;
+		}//end if else loadSampleDb
+   // json = restoreTextArea.value;
 	//SyntaxError: Cannot declare a let variable twice: 'db'.
 	restoredDB = e.target.result;
 //  return new Promise((resolve, reject,json) => 
@@ -7534,7 +7723,10 @@ request.onsuccess = function importFromJson(e,restoredDBName, json) {
     )
     //transaction.addEventListener('error', reject)
 console.log('json = ' + json);
-    var importObject = JSON.parse(json)
+
+    var importObject = JSON.parse(json);
+	//SyntaxError: JSON Parse error: Unterminated string
+	//SyntaxError: JSON Parse error: Unexpected identifier "undefined"
 	console.log('After JSON.parse(json) importObject = ' + importObject);
     for (const storeName of restoredDB.objectStoreNames) {
 		console.log('storeName = ' + storeName);
@@ -7576,6 +7768,7 @@ function checkFormat (json) {
 		
 		alert('Improper file format? Re-paste the backup data');
 		//clear textarea for next use
+	restoreTextArea.textContent = "Paste Backup data here";
 	restoreTextArea.value = "";//May8
 	json = "";//added May29 2021
 	console.log('fileFormat check failed.. cancel code initiated. Going back to restoreDataBase()');
@@ -7664,7 +7857,7 @@ function clearData() {
 
   transaction.onerror = function(event) {
 	  console.log('DataBase  error!');
-   // note.innerHTML += '<li>Transaction not opened due to error: ' + transaction.error + '</li>';
+   // note.innerHTML += '<li>Transaction not opened due to error: ' + transaction.error + '</%li>';
   };
 
   // create an object store on the transaction
@@ -7924,9 +8117,13 @@ Note that you actually have to pass the exported data as a string, not as a JSON
              .then(function()*/
 /*add the '.' before the slash? Same in start url in manifest…'./index.html' DID NOT CHANGE THIS BECAUSE AS OF AUG 1 app seems to be working off line and after a reboot…not sure what is going on??? REMOVED '.' Aug 3 in both js and manifest*/
 
+
+//DISABLED SERVICE WORKER
+/*
+
   if('serviceWorker' in navigator) {
     navigator.serviceWorker
-             .register('/TableNotesVer29sw.js')
+             .register('/DougieBaseVer31sw.js')
              .then(function() { console.log('Service Worker Registered'); });
 			alert('Service Worker Registered!'); navigator.storage.estimate().then(function(estimate) {
   document.getElementById("percent").value =
