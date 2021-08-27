@@ -1,4 +1,7 @@
-//DougieBaseVer31.js Aug 22
+//DougieBase Ver32.js
+//FIXED
+//fixRepeatCreatenewDBtutorialDougieBaseVer31.js
+//tutorialDougieBaseVer31.js Aug 22
 //copyOffixBkupRestoreDougieBaseVer31js
 //from …CleanUpTableNotesVer30Copy2xSampleDb
 //fixed viewSettingsBtn disabled locked after a user taps aboutDBBtn without there being a database loaded
@@ -155,11 +158,22 @@ const selectedDBNameP = document.querySelector('#selectedDBName');
 const backupBtn = document.querySelector('#backupBtn');
 const restoreFileBtn = document.querySelector('#restoreFileBtn');
 const loadSampleDbBtn = document.querySelector('#loadSampleDbBtn');
+const loadTutorialDbBtn = document.querySelector('#loadTutorialDbBtn');
 //create sample db declarations
-
 const copySampleDbWin = document.querySelector('#copySampleDb');
 const copySampleDbData = document.querySelector('#copySampleDbData');
 const continuBtn = document.querySelector('#continueBtn');
+
+
+//start tutorial example of Sample database# declaration  references
+
+const tutorialSampleDbWin = document.querySelector('#tutorialSampleDb');
+const tutorialSampleDbData = document.querySelector('#tutorialSampleDbData');
+const tutorialContinuBtn = document.querySelector('#tutorialContinueBtn');
+
+
+//end tutorial example of Sample database references
+
 const restoreDBWinTitle = document.querySelector('#restoreDBWinTitle');
 const restoreInfoP = document.querySelector('#restoreInfoP');
 const restoreInfo1P = document.querySelector('#restoreInfo1P');
@@ -209,6 +223,8 @@ const dateColorBtn = document.createElement('button');//see function viewCreatio
 //references for new, tables, manage, search
 const newDBBtn = document.querySelector('#new');//HTML button in menu
 	newDBBtn.disabled = false;
+const newDBGuideP = document.createElement('p');//for guidance info during create newDB
+newDBGuideP.setAttribute('class','attentionBtn');
 	
 const xtraFieldBtn = document.createElement('button');//make this a global variable? See editItem
 	
@@ -240,8 +256,11 @@ let centerTitle = false;//flag set in preferences to center the record title in 
 let dbName;//global variable for database name..currently notes_dbx replaced with dataBaseName
 let dataBaseName = "";//make global variable so can use in viewSettings
 let newDBflag = false; //signify from createNewDataBase
+let newDBGuidance; // so not made false on rerun = false;//flag to force display of createNewDB instructions
+let prefBtnGreen = false;// Aug25 flag for resetting prefBtn and add note btn back to status quo after creating new db
  let defaultDBName = "";//used in restore database
  let loadSampleDb = false;//used in restore database to force load sample code Aug 12 2021
+ let loadTutorialDb = false;//used in restore database to force load tutorial sample code Aug 22 2021
 let blocked = false;//flag used in deleteDB and getFileNames to indicate a faile deleteDB
  
 let noteListItemColour;
@@ -474,6 +493,8 @@ createNewDBWindow.setAttribute('class','hidden');
 manageFilesWindow.setAttribute('class','hidden');
 copySampleDbWin.setAttribute('class',
 'hidden');
+tutorialSampleDbWin.setAttribute('class',
+'hidden');
 
 
 if(showScroll) {
@@ -590,16 +611,23 @@ let json ="";
 //variables and references for FileNames^
 
 function getFileNames(dataBaseName) {
+	
+	
+	
+	
+	
 //flag that prevents dbList from repeating May 8. THIS WORKS!
 console.log('At getFileNames. dbListExists = ' + dbListExists);
-	if(dbListExists || loadSampleDb) {
+	if(dbListExists || loadSampleDb || loadTutorialDb) {
 		while (dataBaseList.firstChild) {
    dataBaseList.removeChild(dataBaseList.firstChild);
 		};//end while
 loadSampleDb = false;
+loadTutorialDb = false;
 	};//end if dbListExists
 	
 	loadSampleDb = false;//added Aug 20
+	loadTutorialDb = false;//added Aug 22
 	console.log('In getFileNames. Here from a re-run OR menu button..New/ChangeDB');
 	getFileNamesSwitch = false;
 fileNamesWindow.setAttribute('class','showing');	
@@ -717,7 +745,7 @@ firstManageBtn.onclick = function() {
 restoreDataBaseBtn.onclick = function() {
 	restoreDataBase();
 	fileNamesWindow.setAttribute('class','hidden');	
-};//end firstManageBtn.onclick
+};//end restore database …firstManageBtn.onclick
 
 //start loadSampleDbBtn.onclick
 loadSampleDbBtn.onclick = function () {
@@ -744,6 +772,30 @@ console.log('loadSampleDbBtn Button clicked. FileNamesWin hidden.');
 	
 }//end loadSampleDbBtn.onclick restoreDataBase(dataBaseName);
 
+//start tutorial SampleDbBtn.onclick
+loadTutorialDbBtn.onclick = function () {
+console.log('loadTutorialDbBtn Button clicked. FileNamesWin hidden.');
+	fileNamesWindow.setAttribute('class','hidden');	
+	//set loadSampleDb flag to true
+	loadTutorialDb = true;
+	tutorialSampleDbWin.setAttribute('class',
+	'showing');
+	tutorialContinueBtn.setAttribute('class','attentionBtn');
+	
+	//copySampleDbData.value should now be sample database
+	
+	
+	
+	tutorialContinueBtn.onclick = function () {
+		tutorialContinueBtn.setAttribute('class','normalBtn');
+		tutorialSampleDbWin.setAttribute('class',
+		'hidden');
+		//loadTutorialDb = true; //should be here ? Aug 21
+		restoreDataBase();
+	}//end continueBtn.onclick
+	
+	
+}//end loadTutorialDbBtn.onclick
 	
 
 
@@ -752,9 +804,11 @@ console.log('loadSampleDbBtn Button clicked. FileNamesWin hidden.');
 function createNewDB () {
 	console.log('In the createNewDB function. Resetting some variables if the start creating new db btn is pressed..')
 	//come here from newDB button in menu or from fileNames screen
+	//should xtraField = 0 for a reset if creating more than one new db?
 	newDBflag = true;
+	newDBGuidance = true;//newDBflag is made false after addNote and displayNote so to continue instructions for createNewDB after addNote this flag is set (won't disturb when newDBflag is made false)
 	//clear the fileNamesList in preparation for a return to getFileNames
-	
+	//const newDBGuideP = document.createElement('p'); //made a global variable reference
 //if (!fromResore) {
 	while (dataBaseList.firstChild) {
    dataBaseList.removeChild(dataBaseList.firstChild);
@@ -762,17 +816,35 @@ function createNewDB () {
 //}//end if !fromRestore
 getFileNamesSwitch = false;//so getFileNames does not run again after creating new DB
 createNewDBWindow.setAttribute('class','showing');
+console.log("In start createNewDB: newDBGuidance = " + newDBGuidance + "newDBflag = " + newDBflag + " xtraField = " + xtraField);
+//for guidance creating newDB
+newDBGuideP.textContent = "Type the name of your database into the text entry element and then tap 'Start creating new database'. The Preferences button in the main menu will now be high-lighted green indicating you now OPEN PREFERENCES..";
+createNewDBWindow.appendChild(newDBGuideP);
+//end for guidance creating newDB
 	submitNameButton.onclick = function() {
 		dataBaseName = newDBTitleInput.value;
 		// createNewDBWindow.setAttribute('class','hidden');
+		
+		//for guidance creating newDB
+newDBGuideP.textContent = "";
+createNewDBWindow.removeChild(newDBGuideP);
+//end for guidance creating newDB
+
 		resetVariables();
 		console.log('Sending new db name  ' + dataBaseName + ' to the loadTheDataBase function. ResetVariables function has run!');
+		console.log("In createNewDb after resetVariables, and going to loadTheDataBase: xtraField = " + xtraField);
+		//In createNewDb after resetVariables, and going to loadTheDataBase: xtraField = 0
 		loadTheDataBase(dataBaseName);
+	//Aug26 ? Should getFileNames be here..don't think so	
 		
 		}//end submitNameButton.onclick
 	//cancel
 	cancelNewDBButton.onclick = function() {
 		newDBTitleInput.value = "";
+		//for guidance creating newDB
+newDBGuideP.textContent = "";
+createNewDBWindow.removeChild(newDBGuideP);
+//end for guidance creating newDB
 	console.log('CANCEL newDBButton clicked. Returning to getFileNames.');	createNewDBWindow.setAttribute('class','hidden');
 	//REMOVE BELOW IF MESSES UP!!!!Mar27
 	//ReferenceError: Can't find variable: databases
@@ -1265,7 +1337,7 @@ function deleteDataBase (dataBaseName) {
         req.onblocked = function (e) {
 			blocked = true;
             console.log('In onblocked of delete(dataBaseName)…still blocked');
-			alert('Sorry. Database ' + dataBaseName + ' is still blocked by browser and therefore unable to delete. Do not open or use ' +dataBaseName + ' file until deletion is complete! Opening another database will/might force close ' + dataBaseName + ' and its DELETION process will complete.InvalidStateError: Failed to read the result property from IDBRequest: The request has not finished.');
+			alert('Sorry. Database ' + dataBaseName + ' is still blocked by browser and therefore unable to delete. Do not open or use ' +dataBaseName + ' file until deletion is complete! Opening another database will/might force close ' + dataBaseName + ' and its DELETION process will complete. Wait for browser to time-out its lock on ' + dataBaseName + ' before trying to re-access.   InvalidStateError: Failed to read the result property from IDBRequest: The request has not finished.');
 			//InvalidStateError: Failed to read the 'result' property from 'IDBRequest': The request has not finished.
 			//remove if messes upREMOVED May13
 			//e.target.result.close();
@@ -1593,6 +1665,19 @@ function addData(e) {
 //!!!!!!!REMOVE setup=1 if not working!!!!!!
 //setup = 1;
 //!!!!!!
+
+//createNewDBGuide
+//for guidance creating newDB
+console.log("In addData function after Add Note btn - theCreateNewNote button tapped (the newDBflag is made false when you tap the SAVE button) : newDBGuidance = " + newDBGuidance + "newDBflag = " + newDBflag + " xtraField = " + xtraField);
+if(newDBGuidance) {
+	addNoteWindow.removeChild(newDBGuideP);
+newDBGuideP.textContent = "For creating a new database, now tap ADD RELABEL FIELD', then EDIT your first record to add data to the second NOTES data field of this record. Return to Preferences and tap 'Show Extra field'";
+prefWindow.appendChild(newDBGuideP);
+}//end if newDBflag
+//end for guidance creating newDB
+
+//createNewDBGuide
+
 addNoteWindow.setAttribute('class','hidden');
 //is above line needed?? YES. THIS CLEARS THE ADD NOTE WINDOW FROM addNoteBtn.onclick line 815?
   // prevent default - we don't want the form to submit in the conventional way
@@ -2057,7 +2142,33 @@ if (viewDateWritten) {dateP.textContent = cursor.value.created;}	//end if viewDa
 	//  Left off here Dec 9
     }//end else
   };//end opencursor.onsuccess
-  console.log('At end of displayData: tableTitle = ' + tableTitle + '. tableTitle.length = ' + tableTitle.length);
+  
+  
+  //AUG 25 make prefbtn green so user is directed to prefs after creating first record of new db
+console.log("End display data .. at make pref btn green");
+console.log("(In wanting to restore to status quo) (make pref btn green): newDBGuidance = " + newDBGuidance + " newDBflag = " + newDBflag + " xtraField = " + xtraField + "counter = " + counter);
+//(In wanting to restore to status quo) (make pref btn green): newDBGuidance = undefined newDBflag = falsextraField = 0
+if (newDBGuidance === undefined && !newDBflag && xtraField === 0 && counter === 0) {
+addNoteBtn.setAttribute('class','normalBtn');
+  addNoteBtn.disabled = true;
+  settingsBtn.setAttribute('class', 'attentionBtn');//preferences
+  prefBtnGreen = true;
+}//end if (newDBGuidance === undefined && !newDBflag && xtraField === 0) {
+	//make prefbtn green so user is directed to prefs after creating first record of db
+	
+//Aug25 restore status quo of preferences and add note btns after new db creation done Aug25
+	
+  if (!newDBGuidance && !newDBflag && xtraField === 1 && counter > 1) {
+addNoteBtn.setAttribute('class','attentionBtn');
+  addNoteBtn.disabled = false;
+  settingsBtn.setAttribute('class', 'normalBtn');//preferences
+}//end if (newDBGuidance === undefined && !newDBflag && xtraField === 0)
+//restore statusbquo after finishing creating new db
+
+
+
+
+console.log('At end of displayData: tableTitle = ' + tableTitle + '. tableTitle.length = ' + tableTitle.length);
  	
 			console.log('after displayData, paraBody = '+ paraBody);
 			console.log('after displayData, displayXtraFieldData = '+ displayXtraFieldData);
@@ -2791,6 +2902,21 @@ settingsBtn.onclick = options;
 
 
 function options () {
+	
+	
+	//Aug25 restore status quo of preferences and add note btns after new db creation done Aug25
+	
+  if (prefBtnGreen) {
+addNoteBtn.setAttribute('class','attentionBtn');
+  addNoteBtn.disabled = false;
+  settingsBtn.setAttribute('class', 'normalBtn');//preferences
+  prefBtnGreen = false;
+}//end if (newDBGuidance === undefined && !newDBflag && xtraField === 0)
+//restore statusbquo after finishing creating new db
+
+
+
+
 	const renameBtn = document.querySelector('#renameDB');
 	const workDiv = document.querySelector('#workDiv');
 	const reNameWin = document.querySelector('#reNameWin');
@@ -3033,7 +3159,22 @@ addFieldBtn.setAttribute('class','attentionBtn');
 	prefWindow.setAttribute('class','showing');
 	if(newDBflag) {
 		renameBtn.setAttribute('class','attentionBtn');//if creating newDB do this first
+		addFieldBtn.setAttribute('class','normalBtn');
+		addFieldBtn.disabled = true;
+		//for guidance creating newDB
+		newDBGuideP.textContent = " Tap RENAME DATABASE, tap RESET DISPLAY, then SAVE (now high-lighted in yellow) ";
+	prefWindow.appendChild(newDBGuideP);
 	}//end if newDBflag
+	
+	//when creating newDB arriving in preferences after add note stage, make condition for displaying next newDBGuidance that newDBflag has been ccancelled (back at saveVariables), and that newDBGuidance is stii active(true)bThen in addField remove this guidanceP
+	console.log("In options: newDBGuidance = " + newDBGuidance + " newDBflag = " + newDBflag);
+	//In options: newDBGuidance = falsenewDBflag = false reset newDBGuidance after rerun and make true again to complete guidance until DONEbutton Aug 25
+	if (newDBGuidance === undefined && !newDBflag && xtraField === 0) {
+		newDBGuideP.textContent = "When creating a new database, now tap 'ADD/RELABEL FIELD' button to initialize the Notes second data field.";
+		prefWindow.appendChild(newDBGuideP);
+		newDBGuidance = true;
+	}//end if newDBGuidance && !newDBflag
+	
 	
 	//put search case sensitive stuff here???
 	
@@ -3337,6 +3478,29 @@ fontColourBtn.textContent = 'Text - WHITE';
 		displayDataBtn.setAttribute('class','colorBtn');
 	//color save btn yellow so user knows to save xtraField variable now = 1	prefWindow.setAttribute('class','hidden');
 	saveBtn.setAttribute('class', 'colorBtn');
+	console.log("In addField function: newDBGuidance = " + newDBGuidance + "newDBflag = " + newDBflag);
+	
+	//Aug25 make prefbtn green so user is directed to prefs after creating first record of db
+	console.log("at make pref btn green");
+	console.log("In wanting to restore to status quo (make pref btn green): newDBGuidance = " + newDBGuidance + " newDBflag = " + newDBflag);
+if (newDBGuidance === undefined && !newDBflag && xtraField === 0) {
+addNoteBtn.setAttribute('class','attentionBtn');
+  addNoteBtn.disabled = false;
+  settingsBtn.setAttribute('class', 'normalBtn');//preferences
+}//end if (newDBGuidance === undefined && !newDBflag && xtraField === 0) {
+	//make prefbtn green so user is directed to prefs after creating first record of db…reset back to status quo Aug25
+	
+	
+	
+	
+	//do I need to add xtraField === 0 condition here too? Aug 25 2021
+	if (newDBGuidance && !newDBflag) {
+		newDBGuideP.textContent = "If creating a new database, REMEMBER TO TAP RESET/DISPLAY DATA, and return to the first record and tap EDIT to enter data into the second Notes data field. Finally Tap the SAVE button..(It will be high-lighted YELLOW). Your new database is created! Remember to return to Preferences to enable 'Show Extra Field'";
+		prefWin.removeChild(newDBGuideP);
+		addFieldWin.appendChild(newDBGuideP);
+	//added addFieldWin to prefWin group in CSS to make room for newGuideP
+	}//end if newDBGuidance && !newDBflag
+	
 		addFieldWin.setAttribute('class','showing');
 		//js code for addField here
 		
@@ -3364,7 +3528,15 @@ fontColourBtn.textContent = 'Text - WHITE';
 	//	alert('newFieldName = ' + newFieldName);
 	xtraField = 1;
 	//ver = 2;//commented out in fileNamesTableNotesVer21 ?? Not sure of its purpose????Apr4 because early on addField reset the objectStore, but I changed that so there is always an xtraField, but it contains the admin record data for first record. So onupgradeneeded never runs here now so I commented out the appropriate code including verb= 2 which was designed to force onupgradeneeded
-		  addFieldWin.removeChild(doneBtn);	addFieldWin.setAttribute('class','hidden');//change back to hidden!!!
+		  addFieldWin.removeChild(doneBtn);
+		  
+	if (newDBGuidance && !newDBflag) {
+		newDBGuideP.textContent = "";
+		addFieldWin.removeChild(newDBGuideP);
+		newDBGuidance = false;
+		
+	}//end if newDBGuidance && !newDBflag	 
+	 addFieldWin.setAttribute('class','hidden');//change back to hidden!!!
 	 //commented out hide pref window here so user can tap reset display after relabelling secondary field Marh 21
 	 //prefWindow.setAttribute('class','hidden');//change back to hidden
 	// displayData();//to reset display after added field Mar27 this line is present in fileNamesTableNotesVer21%
@@ -3498,7 +3670,38 @@ addNoteBtn.onclick = function () {
 //saveBtn.disabled = false;//change back to false remove if messed up
 	counter = counter + 1;
 
-console.log('at addNoteBtn.onclick'); addNoteWindow.setAttribute('class','showing');
+console.log('at addNoteBtn.onclick');
+
+//createNewDBGuide
+//for guidance creating newDB
+if(newDBGuidance) {
+newDBGuideP.textContent = "After entering first record's title and text for NOTES' first data segment, tap 'Create new note button'. When the list of database names appears, double-tap the new database name to reload it. Then return to Preferences and tap the 'Add/Relabel Field' button";
+addNoteWindow.appendChild(newDBGuideP);
+//At addNoteBtn.onclick: newDBGuidance = true newDBflag = false xtraField = 0
+
+}//end if newDBGuidance
+
+//trying to fix secondary field input from showing in sitation where repeating a CreateNewDB
+if (newDBGuidance && xtraField === 0 && instructionPxtraFieldData.textContent !== "") {
+	addNoteWindow.removeChild(inputXtraFieldData);
+	instructionPxtraFieldData.textContent = "";
+	
+}//end instructionPxtraFieldData.textContent !==""
+
+// //AUG 25 make prefbtn green so user is directed to prefs after creating first record of db
+// console.log("at make pref btn green");
+// console.log("In wanting to restore to status quo (make pref btn green): newDBGuidance = " + newDBGuidance + " newDBflag = " + newDBflag);
+// if (newDBGuidance === undefined && !newDBflag && xtraField === 0) {
+// addNoteBtn.setAttribute('class','normalBtn');
+//   addNoteBtn.disabled = true;
+//   settingsBtn.setAttribute('class', 'attentionBtn');//preferences
+// }//end if (newDBGuidance === undefined && !newDBflag && xtraField === 0) {
+// 	//make prefbtn green so user is directed to prefs after creating first record of db
+
+//end for guidance creating newDB
+
+//createNewDBGuide
+addNoteWindow.setAttribute('class','showing');
  //add date button here?
  addDateBtn = document.querySelector('#addDate');
 	addDateBtn.onclick = function (e) {
@@ -3517,14 +3720,18 @@ console.log('at addNoteBtn.onclick'); addNoteWindow.setAttribute('class','showin
 };//end addDateBtn.onclickBtn.onclick
 /**/
  //CODE FOR XTRA FIELD INPUT FOR NEW NOTE
-
- if (xtraField===1) {
+console.log("At addNoteBtn.onclick: newDBGuidance = " + newDBGuidance + " newDBflag = " + newDBflag + " xtraField = " + xtraField);
+ if (xtraField===1 && !newDBflag) {
 
 addNoteWindow.appendChild(inputXtraFieldData);
 	instructionPxtraFieldData.textContent = 'Add data for ' +  newFieldName + ' here:';
 	inputXtraFieldData.onsubmit = function () {
 		xtraFieldData = inputXtraFieldData.value;
 		//form.onsubmit (createnote button should now take you to addData()
+	//Aug26 if creating newDB twice in a row the newDb gets the added field added before it should so remove from the last time Aug26
+	addNoteWindow.removeChild(inputXtraFieldData);
+	instructionPxtraFieldData.textContent = "";
+	
 	};//end inputXtraFieldData.onsubmit
  }//end if xtraField
  
@@ -3533,6 +3740,14 @@ addNoteWindow.appendChild(inputXtraFieldData);
 	cancelNewNoteBtn.onclick = function (e) {
 	 //added preventDefault to prevent keyboard from appearing after pressing cancel button.
 		e.preventDefault();
+		
+	//for guidance creating newDB
+	if(newDBGuidance) {
+newDBGuideP.textContent = "";
+addNoteWindow.removeChild(newDBGuideP);
+newDBGuidance = false;
+}//end if newDBGuidance flag
+//end for guidance creating newDB
 	addNoteWindow.setAttribute('class','hidden');
 		};//end cancelNewNoteBtn.onclick
 		
@@ -3611,6 +3826,14 @@ function addDate () {
 //second try saveVariables
 
 function saveVariables () {
+	
+	//create newDB guidance
+	// if (newDBflag) {
+		
+	// newDBGuideP.textContent = "Now ADD NOTE";	list.appendChild(newDBGuideP);
+	// }//end if newDBFlag
+		//create newDB guidance
+	
 	// 	if (tableExists) {
 // 		copyOfTableArray = tableArray.slice();
 //  copyOfTableTitle = tableTitle.slice();
@@ -4227,7 +4450,7 @@ function getDataBaseName (key,dataBaseName,objectStoreName) {
   console.log('In upgradeneeded;will now go back to getDataBaseName() after creating the objectStore. dataVobj.tableArray = ' +dataVobj.tableArray);
   //need code here to move to TOP of view window so directions are visible
   if(!fromRestore) {
- dbTableName.value = 'Creating new Database. In PREFERENCES, RENAME database and tap SAVE to initialize the database. Then ADD FIRST NOTE. When the file names list reappears Double-Tap on name of newly created database to start the new database.';
+ dbTableName.value = 'Creating new Database. In PREFERENCES, RENAME database (again) and tap SAVE to initialize the database. Then ADD FIRST NOTE. When the file names list reappears Double-Tap on name of newly created database to start the new database.';
 
 //at this point the program stops because of undefined is not an object in evaluating data.variable1 and I tap SAVE ..then go to saveVariables
 //scroll to top so directions for creating new db are visible
@@ -7438,7 +7661,7 @@ doneCopyBtn.onclick = function () {
 //start function restoreDataBase(dataBaseName)
 function restoreDataBase(restoredDBName) {
 	restoreTextArea.setAttribute('style', 'border: 5px solid red; text-align: center');
-	if(loadSampleDb) {
+	if(loadSampleDb || loadTutorialDb) {
 		alert("Remember to Tap the Text-Area box ONCE only to CONTINUE. This initiates loading of database sample.");
 		//change html text to reflect SAMPLE
 		nowDo.textContent = "TAP TextArea element box TO INITIATE LOADING OF DATABASE SAMPLE. \nTHEN TAP SUBMIT.";
@@ -7464,7 +7687,7 @@ function restoreDataBase(restoredDBName) {
 			 restoreTextArea.textContent = "";	getJsonBtn.setAttribute('class','attentionBtn');
 			}//end restoreTextArea.onclick
 		 
-	}//end if loadSampleDb else	
+	}//end if loadSampleDb || loadTutorialDb else	
 	 
 	 
 	 
@@ -7473,7 +7696,7 @@ function restoreDataBase(restoredDBName) {
 	//alert('restoreDataBase(dataBaseName ). ' + dataBaseName);
 		const restoreFromClipboardBtn = document.querySelector('#restoreFromClipboard');
 fromRestore = true;	restoreDBWindow.setAttribute('class','showing');
-if (loadSampleDb) {
+if (loadSampleDb || loadTutorialDb) {
 	//change heading title of window for SAMPLE
 	restoreDBWinTitle.textContent = "….LOADING A SAMPLE DATABASE DEMONSTRATION";
 	
@@ -7491,7 +7714,7 @@ if (loadSampleDb) {
 	restoreInfoP.textContent = "Dougiebase will create a new shell to structure the restored data. Enter the previously saved backup data of the database to be restored into the text area window below using Copy/Paste from the clipboard or from your external storage source."
 	restoreInfo2P.textContent = "Copy backup data text from your storage source to the clipboard, and then Paste the Backup data for the database you are restoring, into the Text Area below:"
 	getJsonBtn.textContent = "SUBMIT Backup data";
-}//end if else loadSampleDb
+}//end if else loadSampleDb || loadTutorialDb
 
 	
 	//dataBaseName = notes_dbx
@@ -7548,7 +7771,7 @@ if (loadSampleDb) {
 	//clearDatabase(dataBaseName);
 	//ReferenceError: Can't find variable: getJsonBtn
 getJsonBtn.setAttribute('class','normalBtn');
-console.log("loadSampleDb === " + loadSampleDb);
+console.log("loadSampleDb === " + loadSampleDb + "loadTutorialDb = " + loadTutorialDb);
 //if (loadSampleDb) {
 //	getJsonBtn.textContent = "SUBMIT SAMPLE data";
 //}//end if (loadSampleDb)
@@ -7565,7 +7788,7 @@ finishedRestoreBtn.setAttribute('class','normalBtn');
 	console.log('restoredDBName = ' + restoredDBName);
 	dataBaseName = defaultDBName;
 	
-	if (loadSampleDb) {
+	if (loadSampleDb || loadTutorialDb) {
 		selectedDBinfoP.textContent =  " successfully LOADED SAMPLE .." + dataBaseName +"!";
 		fileChosenP.textContent = "Successfully LOADED SAMPLE .." + dataBaseName +"!";
 // 		loadSampleDb = false;
@@ -7587,6 +7810,7 @@ finishedRestoreBtn.setAttribute('class','normalBtn');
 		
 cancelRestoreBtn.onclick = function () {
 	loadSampleDb = false;
+	loadTutorialDb = false;
 	//clear textarea for next use
 	restoreTextArea.textContent = "Paste Backup data here"
 	restoreTextArea.value = "";//May8
@@ -7607,9 +7831,11 @@ finishedRestoreBtn.setAttribute('class','normalBtn');
 	getJsonBtn.onclick = function (){
 		if (loadSampleDb) {
 			json = copySampleDbData.value;
+		} else if (loadTutorialDb) {
+			json = tutorialSampleDbData.value;
 		} else {
 			json = restoreTextArea.value;
-		}//end if else loadSampleDb
+		}//end if else loadSampleDb || loadTutorialDb
 	
     console.log('restoreTextArea.value = ' + restoreTextArea.value + "json = " + json);
 	  checkFormat(json);
@@ -7709,9 +7935,11 @@ request.onsuccess = function importFromJson(e,restoredDBName, json) {
 	//COMMENTED OUT LINE BELOW NOT SURE IT IS NEEDED AND ITS PRESENCE MESSES UP JSON!!!! Aug 16 json = something has to be here otherwise undefined error!
 	if (loadSampleDb) {
 			json = copySampleDbData.value;
+		} else if (loadTutorialDb) {
+			json = tutorialSampleDbData.value;
 		} else {
 			json = restoreTextArea.value;
-		}//end if else loadSampleDb
+		}//end if else loadSampleDb || loadTutorialDb
    // json = restoreTextArea.value;
 	//SyntaxError: Cannot declare a let variable twice: 'db'.
 	restoredDB = e.target.result;
@@ -8118,12 +8346,12 @@ Note that you actually have to pass the exported data as a string, not as a JSON
 /*add the '.' before the slash? Same in start url in manifest…'./index.html' DID NOT CHANGE THIS BECAUSE AS OF AUG 1 app seems to be working off line and after a reboot…not sure what is going on??? REMOVED '.' Aug 3 in both js and manifest*/
 
 
-//DISABLED SERVICE WORKER
-/*
+//DISABLED..Enabled SERVICE WORKER
+
 
   if('serviceWorker' in navigator) {
     navigator.serviceWorker
-             .register('/DougieBaseVer31sw.js')
+             .register('/DougieBaseVer32sw.js')
              .then(function() { console.log('Service Worker Registered'); });
 			alert('Service Worker Registered!'); navigator.storage.estimate().then(function(estimate) {
   document.getElementById("percent").value =
@@ -8140,7 +8368,7 @@ Note that you actually have to pass the exported data as a string, not as a JSON
 	
 	//what about the manifest file? triggered by oninstall? A2HS?	 
 //If the service worker API is supported in the browser, it is registered against the site using the ServiceWorkerContainer.register() method. Its contents reside in the sw.js file, and can be executed after the registration is successful. It's the only piece of Service Worker code that sits inside the app.js file; everything else that is Service Worker-specific is written in the sw.js file itself.
-//END OF DISABLED SERVICE WORKER !!!*/
+//END OF DISABLED SERVICE WORKER !!!
 
 
 };//end window.onload function
