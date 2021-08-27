@@ -238,7 +238,7 @@ li p {
 	} 
 	
 	/*added prefWin here June14 to fix positioning in Safari portrait mode made top = 40px in prefWin group. This seems to work ok June21*/
-#prefWin, #deleteWin, #displayFullNote, #editWin, #editNewFieldWin, #documentationWin, #tableWin, #tableScrn, #createTableWin, #searchWin, #deleteFieldWin, #sortWin {
+#prefWin, #deleteWin, #displayFullNote, #editWin, #editNewFieldWin, #documentationWin, #tableWin, #tableScrn, #createTableWin, #searchWin, #deleteFieldWin, #sortWin, #newFieldWin {
         position: fixed; /*was absolute, "relative fixed positions relative tp viewport*/
        top: 40px; width: 480px; margin: 0 auto;   /*top 0 locates at very top corner viewport. top 20 allows position below banner top: 100%; was 190 then 100%*/
 	   margin-top: 430px; /*460 works with portrait but off bottom in landscape..so try */
@@ -335,8 +335,9 @@ To get to edit date or other cell contents and the return btn and save btn to ap
         background-color: #eee;
 	
 }
-/*prefWin was here moved to sort search group June 14 trying to fix prefWin position in Safari portrait copySampleDb Aug 14*/
-#reNameWin, #aboutDBWin, #memoryWindow, #newFieldWin, #fileNames, #createNewDBWin, #manageFilesWin, #backupFilesWin, #backingUpDBWin, #restoreDBWin, #copySampleDb, #tutorialSampleDb {
+/*prefWin was here moved to sort search group June 14 trying to fix prefWin position in Safari portrait copySampleDb Aug 14* Put #newFieldWin in prefWin category Aug27*/
+
+#reNameWin, #aboutDBWin, #memoryWindow, #fileNames, #createNewDBWin, #manageFilesWin, #backupFilesWin, #backingUpDBWin, #restoreDBWin, #copySampleDb, #tutorialSampleDb {
 	position: fixed; /*was absolute relative fixed didn't work */
         top: 250px; /* 200px 100% was 190 then 100%*/
         transform: translate(-50%,-50%);
