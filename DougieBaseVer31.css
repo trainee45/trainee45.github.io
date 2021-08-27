@@ -1,5 +1,5 @@
-/*DougieBaseVer31.css*/
-/*from TableNotesVer30.css from scrollTableNotesVer27.css*/
+/*DougieBaseVer32.css*/
+/*changed #newFieldWin for more height Aug 25 from TableNotesVer30.css from scrollTableNotesVer27.css*/
 /*testPrefTableNotesVer26.css June 13*/
 /*fixed position of prefWin in Safari portrait June14*/
 /*fixLabelLinkTableNotesVer25.css Added class .td_size used in displayTable if(!label) June 11 better positioning of prefs window
@@ -46,13 +46,13 @@ header {
 .new-note {
   background: #ddd;
 }
-/*. new note governs colours of the add note screen*/
+/*. new note governs colours of the add note screen ? Need to increase height so creating a new db twice in a row gets everything on screen..? Maybe would be fixed by xtraField = 0 reset?*/
 #new-note {
 	position: fixed; /*absolute was relative */
        top: 250px; /* 200px was 190 then 100%*/
         transform: translate(-50%,-50%);
         width: 400px;
-       height: 400px;/*350;310 was 300 increased so border seen if pref window on screen at same time date: Jan 29 2021 increased height so decoder title entry is not on bottom edge of window May24 2021*/
+       height: 600px;/*change back to 400px if xtraField = 0 reset fixes repeat of  createNewDB! 350;310 was 300 increased so border seen if pref window on screen at same time date: Jan 29 2021 increased height so decoder title entry is not on bottom edge of window May24 2021*/
 		border: 5px solid red;
 		border-radius: 10px;
 		padding: 20px;
@@ -336,7 +336,7 @@ To get to edit date or other cell contents and the return btn and save btn to ap
 	
 }
 /*prefWin was here moved to sort search group June 14 trying to fix prefWin position in Safari portrait copySampleDb Aug 14*/
-#reNameWin, #aboutDBWin, #memoryWindow, #newFieldWin, #fileNames, #createNewDBWin, #manageFilesWin, #backupFilesWin, #backingUpDBWin, #restoreDBWin, #copySampleDb {
+#reNameWin, #aboutDBWin, #memoryWindow, #newFieldWin, #fileNames, #createNewDBWin, #manageFilesWin, #backupFilesWin, #backingUpDBWin, #restoreDBWin, #copySampleDb, #tutorialSampleDb {
 	position: fixed; /*was absolute relative fixed didn't work */
         top: 250px; /* 200px 100% was 190 then 100%*/
         transform: translate(-50%,-50%);
@@ -361,7 +361,7 @@ To get to edit date or other cell contents and the return btn and save btn to ap
 /*position: fixed;
 }*/
 
-#manageFilesWin, #backupFilesWin, #backingUpDBWin, #restoreDBWin, #copySampleDb {
+#manageFilesWin, #backupFilesWin, #backingUpDBWin, #restoreDBWin, #copySampleDb, #tutorialSampleDb {
 	top: 450px;/*was 340px 300 px */
 	height: 540px;
 	overflow: scroll;
@@ -375,7 +375,7 @@ To get to edit date or other cell contents and the return btn and save btn to ap
 }
 
 #newFieldWin {
-	height: 350px;
+	height: 700px;/*was 520 350px;
 	
 }
 
