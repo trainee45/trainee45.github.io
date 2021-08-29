@@ -356,7 +356,7 @@ To get to edit date or other cell contents and the return btn and save btn to ap
 	/*top: 80vh;*/
 /*	top: 380px; /*390 400 300px 250px 200px 100% was 190 then 100%*/
 	/*trying to fix pref window position. In Safari in portrait mode its top and return to notes bar is not seen so have to turn to landscape to get out of it*/
-/*	margin-top: 430px;/*remove if messes up to fix pref window position in Safarii portrait 
+/*	margin-top: 430px;/*remove if messes up to fix pref window position in Safarii portrait */
 /*	height: 740px;/*640px was 520px 435 400 375 370 was 310px 350 will increase to accommodate caseSwitch*/
 /*height: 82vh;/*was 90vh*/
 /*position: fixed;
@@ -376,7 +376,7 @@ To get to edit date or other cell contents and the return btn and save btn to ap
 }
 
 #newFieldWin {
-	height: 700px;/*was 520 350px;
+	height: 700px;/*was 520 350px;*/
 	
 }
 
@@ -387,7 +387,7 @@ To get to edit date or other cell contents and the return btn and save btn to ap
 }
 	
 #aboutDBWin {
-	height: 350px;/*340 in ver4A? */
+	height:350px;/*340 in ver4A? */
 }
 	
 #changeColoursWin {
