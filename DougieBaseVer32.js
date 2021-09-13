@@ -1,5 +1,5 @@
-//DougieBase Ver32.js
-//FIXED
+//DougieBase Ver32.js using with WorkingCopy
+//FIXED date:Sept9 2021 added code to prevent error if Backup without a file selected
 //fixRepeatCreatenewDBtutorialDougieBaseVer31.js
 //tutorialDougieBaseVer31.js Aug 22
 //copyOffixBkupRestoreDougieBaseVer31js
@@ -891,6 +891,8 @@ databaseNameMLi[i] = document.createElement('li');
 		 
 		// fileChosenP.textContent = ' Database Selected: '+ databases[i].name;
 		 console.log('dataBaseName = ' + dataBaseName);
+		 
+
 	 //confirm choice window
 		 if (window.confirm("DataBase SELECTED is: " + " \n" + dataBaseName +  " \n" + "  CANCEL will UNDO")) {
 			// for (let i = 0; i< databases.length; i++) { 
@@ -992,7 +994,18 @@ deleteFileButton.onclick = function() {
 backupFileButton.onclick = function() {
 	console.log('backupFileButton clicked!');
 	
-	 //confirm choice window
+//error code to make sure a file name is selected if backing up to prevent issue where a blank filename is created in the filenames list
+if (dataBaseName === "") {
+	alert("You need to select a database file first. Try again!");
+	//manageFilesWindow.setAttribute('class','showing');
+	manageDataBases();
+	return;
+}//end if database name === ""
+//error code to make sure a file name is selected if backing up to prevent issue where a blank filename is created in the filenames list	
+
+
+
+	//confirm choice window
 		 if (window.confirm("DataBase to BACKUP is: " + " \n" + dataBaseName +  " \n" + "  CANCEL will UNDO")) {
 			// for (let i = 0; i< databases.length; i++) { 
 			// 	backupDataBaseList.removeChild(dataBaseBKUPNameLi[i]);
@@ -1141,6 +1154,16 @@ manageFilesWindow.setAttribute('class','hidden');
 //});//end promise.then databases
 //}//end function backupRestoreFileBtn.onclick	
 backupBtn.onclick = function () {
+	
+//error code to make sure a file name is selected if backing up to prevent issue where a blank filename is created in the filenames list
+if (dataBaseName === "") {
+	alert("You need to select a database file first. Tap CANCEL and Try again!");
+	//manageFilesWindow.setAttribute('class','showing');
+	manageDataBases();
+	return;
+}//end if database name === ""
+//error code to make sure a file name is selected if backing up to prevent issue where a blank filename is created in the filenames list		
+	
 console.log('Backup Button clicked. backupFilesWin hidden.');	backupFilesWin.setAttribute('class','hidden');
 	
 	backupDataBase(dataBaseName);
