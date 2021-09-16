@@ -1,5 +1,5 @@
 //DougieBase Ver32.js using with WorkingCopy
-//FIXED date:Sept9 2021 added code to prevent error if Backup without a file selected fixed cancel createNewDB so preferences still doesn't think you are creating a new db if you cancelledchanged tableArray declaration by making recordCounter = 1 added code for newDBGuidance to insure table created before adding new record.. cleaned up createTable screen Sept15
+//FIXED date:Sept9 2021 added code to prevent error if Backup without a file selected fixed cancel createNewDB so preferences still doesn't think you are creating a new db if you cancelledchanged tableArray declaration by making recordCounter = 1 added code for newDBGuidance to insure table created before adding new record.. cleaned up createTable screen Sept15 goHomeBtn.disabled
 //fixRepeatCreatenewDBtutorialDougieBaseVer31.js
 //tutorialDougieBaseVer31.js Aug 22
 //copyOffixBkupRestoreDougieBaseVer31js
@@ -5471,6 +5471,10 @@ showOrEdit.appendChild(showBtn);
 //showBtn from createTable goes to displayTable function
 showBtn.onclick = function () {
 	console.log('At showBtn.onclick..DISPLAY TABLE');
+	
+	//code to reactivate goHomeBtn in edit table window which was locked by number od added dynamic fields enter btn
+	
+	goHomeBtn.disabled = false;
 	createTable.removeChild(showOrEdit);
 	//should I clear all rows be here if coming from edit? To prevent repeat of all records
 	//!!!!!REMOVE CODE BELOW IF SCREW UP!
@@ -6862,6 +6866,9 @@ console.log('dynamicFieldTotal = ' + dynamicFieldTotal);
 submitBtn.setAttribute('class','attentionBtn');
 submitBtn.disabled = false;
 createTableWindow.removeChild(addToDynamicFields);
+
+//code to disable goToHomeScreen btn so table is not messed up if user taps returnToHome screen after having entered a number into the add dynamic fields input..forces finish of this process
+goHomeBtn.disabled = true;
   }//end FieldsBtn.onclick
 }//end editMoreFields function
 
