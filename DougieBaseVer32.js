@@ -1,5 +1,5 @@
 //DougieBase Ver32.js using with WorkingCopy
-//FIXED date:Sept9 2021 added code to prevent error if Backup without a file selected
+//FIXED date:Sept9 2021 added code to prevent error if Backup without a file selected fixed cancel createNewDB so preferences still doesn't think you are creating a new db if you cancelledchanged tableArray declaration by making recordCounter = 1 added code for newDBGuidance to insure table created before adding new record.. cleaned up createTable screen Sept15
 //fixRepeatCreatenewDBtutorialDougieBaseVer31.js
 //tutorialDougieBaseVer31.js Aug 22
 //copyOffixBkupRestoreDougieBaseVer31js
@@ -253,6 +253,8 @@ let searchCaseSensitive = 0;	//make global
 let tableDateTime=true;//flag show time in DATE cell of table
 let showScroll = true;//flag to show or hide scroll buttons via preferences setting see options March 19 2021
 let centerTitle = false;//flag set in preferences to center the record title in notes display
+let highlightDoneBtn = false;//flag used in addField function preferences
+let doneRelabelBtn = document.createElement('button');//made global see addField function ?should be const ?
 let dbName;//global variable for database name..currently notes_dbx replaced with dataBaseName
 let dataBaseName = "";//make global variable so can use in viewSettings
 let newDBflag = false; //signify from createNewDataBase
@@ -321,8 +323,8 @@ let
 // let otherVariablesArray = [tableExists,showExtraField,nextFieldName,numberOfFields,numberOfAdditionalFields,tableTitle,paraBody,displayXtraFieldData];
 // let variable3 = "more variables here";
 //TABLE SECTION VARIABLES
-let recordCounter = 50;//MUST BE SET TO 50 or more..OTHERWISE TABLE ARRAY IS NOT CREATED. To try and reduce space in tableArray will try messing with the redefineTableArray function? April 30 2021
-//let recordCounter;//to declare tableArray with a fixed number of records. Hoping to correct error in buildRecordRows re tableArray[][] undefined is not an object??
+//let recordCounter = 50;//MUST BE SET TO 50 or more..OTHERWISE TABLE ARRAY IS NOT CREATED. To try and reduce space in tableArray will try messing with the redefineTableArray function? April 30 2021
+let recordCounter = 1;//REDUCES NUMBER OF NULLS IN DB DATA .. SEPT12 2021 .. to declare tableArray with a fixed number of records. Hoping to correct error in buildRecordRows re tableArray[][] undefined is not an object??
 let tableTitle = [];
 let copyOfTableTitle = [];
 let copyOfTableArray = [];
@@ -840,6 +842,9 @@ createNewDBWindow.removeChild(newDBGuideP);
 		}//end submitNameButton.onclick
 	//cancel
 	cancelNewDBButton.onclick = function() {
+//prevent newDBGuidance appearing on preferences if create newDB was cancelled Sept13 2021
+		newDBflag = false;
+		newDBGuidance = false;
 		newDBTitleInput.value = "";
 		//for guidance creating newDB
 newDBGuideP.textContent = "";
@@ -3496,6 +3501,13 @@ fontColourBtn.textContent = 'Text - WHITE';
 	
 	//start function addField from addFieldBtn.onclick via settings.preferences window
 	function addField () {
+//code added Sept13 to add a cancel button to the addField window
+let cancelAddFieldBtn = document.createElement('button');
+      cancelAddFieldBtn.textContent = 'CANCEL';
+      addFieldWin.appendChild(cancelAddFieldBtn);
+	//  addFieldWin.appendChild(doneRelabelBtn);
+	//code added above Sept13 to add a cancel button to the addField window		
+		
 		const enterNewFieldName = document.querySelector('#newFieldName');
 		const confirmNewFieldName = document.querySelector('#confirm');
 		displayDataBtn.setAttribute('class','colorBtn');
@@ -3518,7 +3530,7 @@ addNoteBtn.setAttribute('class','attentionBtn');
 	
 	//do I need to add xtraField === 0 condition here too? Aug 25 2021
 	if (newDBGuidance && !newDBflag) {
-		newDBGuideP.textContent = "If creating a new database, REMEMBER TO TAP RESET/DISPLAY DATA, and return to the first record and tap EDIT to enter data into the second Notes data field. Finally Tap the SAVE button..(It will be high-lighted YELLOW). Your new database is created! Remember to return to Preferences to enable 'Show Extra Field'";
+		newDBGuideP.textContent = "If creating a new database, REMEMBER TO TAP RESET/DISPLAY DATA, and return to the first record and tap EDIT to enter data into the second Notes data field. Finally Tap the SAVE button..(It will be high-lighted YELLOW). Your new database is created! Remember to return to Preferences to enable 'Show Extra Field'. NEXT CREATE THE TABLE FOR THE NEW DATABASE BEFORE ADDING ANY NEW RECORDS!";
 		prefWin.removeChild(newDBGuideP);
 		addFieldWin.appendChild(newDBGuideP);
 	//added addFieldWin to prefWin group in CSS to make room for newGuideP
@@ -3530,33 +3542,59 @@ addNoteBtn.setAttribute('class','attentionBtn');
 	//	const enterNewFieldName = document.querySelector('#newFieldName');
 	//	const enterNewFieldData = document.querySelector('#newFieldData');
 		enterNewFieldName.addEventListener('input', function () {
+			
+			//flag to highlight Done btn if user enteres new name
+			highlightDoneBtn = true;
 			//alert('in addField newFieldName = ' + enterNewFieldName.value);
 			newFieldName = enterNewFieldName.value;
-		confirmNewFieldName.textContent = 'New Field name entered is ' + newFieldName;
+		confirmNewFieldName.textContent = 'New NOTES data Field name entered is ' + newFieldName;
 			//alert('newFieldName = ' + newFieldName);
-	 });//end enterNewFieldName.onsubmit
+			
+			
+	// });//end enterNewFieldName.onsubmit
+	 
+	 
 	/*	enterNewFieldData.onsubmit = function () {
 			xtraFieldData = enterNewFieldData.value;
 		};//end enterNewFieldData.onsubmit */
 		//finished with addField
-		let doneBtn = document.createElement('button');
-      doneBtn.textContent = 'DONE';
-      addFieldWin.appendChild(doneBtn);
+		//let doneRelabelBtn = document.createElement('button');//made global
+		
+      doneRelabelBtn.textContent = 'DONE';
+	   // if (highlightDoneBtn) {
+		 doneRelabelBtn.setAttribute('class','attentionBtn');
+	//	 highlightDoneBtn = false;
+	// }//end if highlightDoneBtn
+      addFieldWin.appendChild(doneRelabelBtn);
 	  
 	 const rerunNotice = document.querySelector('#resetAddField');
 	  rerunNotice.textContent = 'Tap DONE when finished.';
-	  doneBtn.onclick = function () {
+	  doneRelabelBtn.onclick = function () {
+		  doneRelabelBtn.setAttribute('class','normalBtn');  
 		  //code for done here
 		//get app code to rerun?!!
 	//	alert('newFieldName = ' + newFieldName);
 	xtraField = 1;
 	//ver = 2;//commented out in fileNamesTableNotesVer21 ?? Not sure of its purpose????Apr4 because early on addField reset the objectStore, but I changed that so there is always an xtraField, but it contains the admin record data for first record. So onupgradeneeded never runs here now so I commented out the appropriate code including verb= 2 which was designed to force onupgradeneeded
-		  addFieldWin.removeChild(doneBtn);
+	
+		  addFieldWin.removeChild(doneRelabelBtn);
+		  highlightDoneBtn = false; addFieldWin.removeChild(cancelAddFieldBtn);
+		  
 		  
 	if (newDBGuidance && !newDBflag) {
 		newDBGuideP.textContent = "";
 		addFieldWin.removeChild(newDBGuideP);
-		newDBGuidance = false;
+		
+		//will set newDBGuidance = false in new table code section
+		newDBGuidance = true;
+		//alert("Remember to create the table for the new database BEFORE ADDING ANY NEW RECORDS!");
+		
+		//disable ADD NOTE and activate TABLE
+	addNoteBtn.setAttribute('class','attentionBtn');
+  addNoteBtn.disabled = true;
+  settingsBtn.setAttribute('class', 'normalBtn');//preferences	
+  tableScreenBtn.setAttribute('class','attentionBtn');
+		
 		
 	}//end if newDBGuidance && !newDBflag	 
 	 addFieldWin.setAttribute('class','hidden');//change back to hidden!!!
@@ -3611,7 +3649,24 @@ addNoteBtn.setAttribute('class','attentionBtn');
 
 
 
-  };//end doneBtn.onclick
+  };//end doneRelabelBtn.onclick
+  
+ });//end enterNewFieldName.onsubmit  
+ 
+ 
+ //more cancel addField code
+cancelAddFieldBtn.onclick = function () {
+	addFieldWin.removeChild(cancelAddFieldBtn);
+	if(highlightDoneBtn){
+		addFieldWin.removeChild(doneRelabelBtn);
+		highlightDoneBtn = false;
+	}//end if 
+	//addFieldWin.removeChild(doneRelabelBtn);
+saveBtn.setAttribute('class', 'normalBtn');	addFieldWin.setAttribute('class','hidden');
+	
+	
+};//end cancelAddFieldBtn.onclick
+//end cancel addField
 		
 }//end curly bracket function addField
 		//end function addField
@@ -5077,6 +5132,21 @@ newOrEdit.appendChild(deleteFieldBtn);
 newOrEdit.appendChild(goHomeBtn);
 
 newBtn.onclick = function() {
+	//code for guiding create newDB
+		//will set newDBGuidance = false in new table code section
+		if (newDBGuidance) {
+		newDBGuidance = false;
+		//alert("Remember to create the table for the new database BEFORE ADDING ANY NEW RECORDS!");
+		
+		//disable ADD NOTE and activate TABLE
+	addNoteBtn.setAttribute('class','attentionBtn');
+  addNoteBtn.disabled = false;
+  settingsBtn.setAttribute('class', 'normalBtn');//preferences	
+  tableScreenBtn.setAttribute('class','normalBtn');
+}//end if newDBGuidance
+	//end code for guiding create newDB
+	
+	
 	fromNew = true;
 	console.log('At newBtn.onclick...tableExists = ' + tableExists + '. edit =  ' + edit);
 	newBtn.setAttribute('class', 'normalBtn');
@@ -5104,6 +5174,16 @@ newBtn.onclick = function() {
 	makeTable();
 }//end function newBtn.onclick
 editBtn.onclick = function () {
+//code to clean up create new table screen to prepare for edit table
+	if(fromNew) {
+		fromNew = false;
+	//empirically added line below
+	createTable.removeChild(saveTableP);
+	createTable.removeChild(addFieldsDirectionP);
+	createTable.removeChild(buildRecordsP);
+}//end if from new
+//code to clean up create new table screen to prepare for edit table	
+
 	fromNew = false;
 	console.log('At editBtn.onclick...tableExists = ' + tableExists + '. edit =  ' + edit);
 	
