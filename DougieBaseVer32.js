@@ -5327,7 +5327,7 @@ function makeTable () {
 if(edit === 1) {
 	addFieldsDirectionP.textContent = 'Make changes to the Dynamic Field titles below: ';
 } else if (edit === 0) {
-	addFieldsDirectionP.textContent = 'Enter the added field/column titles below: ';
+	addFieldsDirectionP.textContent = 'Enter the dynamic field/column titles below: ';
 }//end if else if edit construct
 	createTable.appendChild(addFieldsDirectionP);
 	//create the inputs for  added fields required
@@ -5383,13 +5383,13 @@ buildRecordsP.textContent = ' Enter titles of '+ numberOfAdditionalFields + ' dy
 buildRecordsP.onclick = function () {
 	console.log('At buildRecordsP.onclick');
 	if (edit === 1) {
-		addFieldsDirectionP.textContent = 'Make changes to labels of added fields below.';
+		addFieldsDirectionP.textContent = 'Make changes to labels of dynamic fields below.';
 		//removeChild(buildRecordsP if edit === 1??)
-		buildRecordsP.textContent = 'Make changes to added field titles/labels! When finished tap here to SAVE TABLE';
+		buildRecordsP.textContent = 'Make changes to dynamic field titles/labels! When finished tap here to SAVE TABLE';
 		//might have to remove this line
 		createTable.removeChild(buildRecordsP);
 	} else {
-	addFieldsDirectionP.textContent = 'Now enter data into the added fields.';
+	addFieldsDirectionP.textContent = 'Now enter data into the dynamic fields.';
 	buildRecordsP.textContent = 'Now enter data into the fields! When finished tap here to SAVE TABLE';
 }//end if edit === 1
 	//remove fieldName entry inputs
