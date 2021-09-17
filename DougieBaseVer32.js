@@ -5235,6 +5235,10 @@ goHomeBtn.onclick = function () {
 		if(edit ===1) {
 		//remove how many more fields to you wish to edit...Dynamic fields input.....Do I have to remove the input and enter Btn as well? Or will they go with addToDynamicFields
 	//LEFT OFF HERE JAN 18	createTableWindow.removeChild(addToDynamicFields)
+	
+	//clear moreFieldsInput.value in prep for next edit Sept16
+	moreFieldsInput.value = "";
+	
 	removeEditMoreFieldsElements();
 		}//end if edit = 1
 		}//end gohomeScreenBtn.onclick
@@ -6872,8 +6876,9 @@ console.log('dynamicFieldTotal = ' + dynamicFieldTotal);
 	additionalFields.value = numberOfAdditionalFields;  
 submitBtn.setAttribute('class','attentionBtn');
 submitBtn.disabled = false;
-//clear moreFieldsInput in preparation for next edit Sept16
-//moreFieldsInput.value = "";//this line kills the add fields edit not sure why?
+
+//clear moreFieldsInput.value in preparation for next edit Sept16
+moreFieldsInput.value = "";//this line kills the add fields edit not sure why?
 
 createTableWindow.removeChild(addToDynamicFields);
 
