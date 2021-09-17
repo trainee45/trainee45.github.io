@@ -6855,7 +6855,14 @@ function editMoreFields () {
 	 addToDynamicFields.appendChild(fieldsBtn);
 	 createTableWindow.appendChild(addToDynamicFields);
 	 
-	 fieldsBtn.onclick =  function() {moreFields = moreFieldsInput.value;
+	 fieldsBtn.onclick =  function() {
+		 //code to ensure a number is entered..otherwise havoc follows in rest of program
+		 if(moreFieldsInput.value = "") {
+			alert("You must enter a number! To skip just enter '0'!") ;
+			editMoreFields();
+		 }//end if moreFieldsInput =""
+		 
+		 moreFields = moreFieldsInput.value;
 		let addFields = Number(moreFields); 
 		  console.log('addFields = ' + addFields);
 		dynamicFieldTotal = Number(numberOfAdditionalFields) + Number(addFields);
@@ -6865,6 +6872,9 @@ console.log('dynamicFieldTotal = ' + dynamicFieldTotal);
 	additionalFields.value = numberOfAdditionalFields;  
 submitBtn.setAttribute('class','attentionBtn');
 submitBtn.disabled = false;
+//clear moreFieldsInput in preparation for next edit Sept16
+moreFieldsInput.value = "";
+
 createTableWindow.removeChild(addToDynamicFields);
 
 //code to disable goToHomeScreen btn so table is not messed up if user taps returnToHome screen after having entered a number into the add dynamic fields input..forces finish of this process
