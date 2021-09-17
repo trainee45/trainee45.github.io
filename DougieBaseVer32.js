@@ -6857,10 +6857,10 @@ function editMoreFields () {
 	 
 	 fieldsBtn.onclick =  function() {
 		 //code to ensure a number is entered..otherwise havoc follows in rest of program
-		 if(moreFieldsInput.value = "") {
-			alert("You must enter a number! To skip just enter '0'!") ;
-			editMoreFields();
-		 }//end if moreFieldsInput =""
+		// if(moreFieldsInput.value = "") {
+			//alert("You must enter a number! To skip just enter '0'!") ;
+			//editMoreFields();
+		// }//end if moreFieldsInput =""
 		 
 		 moreFields = moreFieldsInput.value;
 		let addFields = Number(moreFields); 
