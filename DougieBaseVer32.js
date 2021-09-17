@@ -6873,7 +6873,7 @@ console.log('dynamicFieldTotal = ' + dynamicFieldTotal);
 submitBtn.setAttribute('class','attentionBtn');
 submitBtn.disabled = false;
 //clear moreFieldsInput in preparation for next edit Sept16
-moreFieldsInput.value = "";
+//moreFieldsInput.value = "";//this line kills the add fields edit not sure why?
 
 createTableWindow.removeChild(addToDynamicFields);
 
