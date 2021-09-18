@@ -1,5 +1,5 @@
 //DougieBase Ver32.js using with WorkingCopy
-//FIXED date:Sept9 2021 added code to prevent error if Backup without a file selected fixed cancel createNewDB so preferences still doesn't think you are creating a new db if you cancelledchanged tableArray declaration by making recordCounter = 1 added code for newDBGuidance to insure table created before adding new record.. cleaned up createTable screen Sept15 goHomeBtn.disabled working copy version works in textastic
+//FIXED date:Sept9 2021 added code to prevent error if Backup without a file selected fixed cancel createNewDB so preferences still doesn't think you are creating a new db if you cancelledchanged tableArray declaration by making recordCounter = 1 added code for newDBGuidance to insure table created before adding new record.. cleaned up createTable screen Sept15 goHomeBtn.disabled cleaned up add dynamic fields working copy version works in textastic
 //fixRepeatCreatenewDBtutorialDougieBaseVer31.js
 //tutorialDougieBaseVer31.js Aug 22
 //copyOffixBkupRestoreDougieBaseVer31js
@@ -150,6 +150,10 @@ const createNewDBWindow = document.querySelector('#createNewDBWin');//referenced
 const manageFilesWindow = document.querySelector('#manageFilesWin');
 const deleteFileButton = document.querySelector('#deleteFileBtn');
 const clearFileButton = document.querySelector('#clearFileBtn');
+//temporarily disable clearFileButton this button until clear is supported
+clearFileButton.disabled = true;
+//temporarily disable clearFileButton button until clear is supported
+
 const backupFileButton = document.querySelector('#backupFileBtn');
 const cancelDeleteDataBaseButton = document.querySelector('#cancelDeleteDataBaseBtn');
 const backupRestoreFileBtn = document.querySelector('#backupRestoreFileBtn');
@@ -1051,7 +1055,7 @@ if (dataBaseName === "") {
 	
 	}//end backupFileButton.onclick
 
-
+//clear database temporarily disabled until code written to support it see declaration above Sept17 2021
 //clear database
 clearFileButton.onclick = function() {
 	console.log('clearFileButton clicked!');
