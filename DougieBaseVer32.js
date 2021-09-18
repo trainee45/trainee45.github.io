@@ -3893,9 +3893,14 @@ function documentation () {
 		//get ready for next instance of viewing documentation
 		documentationWin.removeChild(doneBtn);
       	documentationWin.setAttribute('class','hidden');
-	  aboutDBWindow.setAttribute('class','showing');
+//if coming from HELP btn (previous LOAD btn don't open aboutDBwindow because this locks program flow
+	if(!fromHELP) {
+	aboutDBWindow.setAttribute('class','showing');
+	}//end if(!fromHELP)
+	  
   };//end doneBtn.onclick
-	//documentation manual code goes here
+    //documentation manual code goes here
+  fromHELP = false;
 }//end documentation function
 
 //addDate function keep here until deciding if needed in edit note section
