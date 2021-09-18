@@ -1,5 +1,5 @@
 //DougieBase Ver32.js using with WorkingCopy
-//FIXED date:Sept9 2021 added code to prevent error if Backup without a file selected fixed cancel createNewDB so preferences still doesn't think you are creating a new db if you cancelledchanged tableArray declaration by making recordCounter = 1 added code for newDBGuidance to insure table created before adding new record.. cleaned up createTable screen Sept15 goHomeBtn.disabled cleaned up add dynamic fields working copy version works in textastic
+//FIXED date:Sept9 2021 added code to prevent error if Backup without a file selected fixed cancel createNewDB so preferences still doesn't think you are creating a new db if you cancelledchanged tableArray declaration by making recordCounter = 1 added code for newDBGuidance to insure table created before adding new record.. cleaned up createTable screen Sept15 goHomeBtn.disabled cleaned up add dynamic fields disabled clearFileBtntn added HELP BTN (LOAD) working copy version works in textastic
 //fixRepeatCreatenewDBtutorialDougieBaseVer31.js
 //tutorialDougieBaseVer31.js Aug 22
 //copyOffixBkupRestoreDougieBaseVer31js
@@ -135,6 +135,7 @@ let os = 2;
 let noteNumber;
 let deleteRecord = 0;//flag to indicate a record has been deleted so as to avoid going to buildRecordRows in refeshTable() Dec 6
 let linked = false;//flag to indicate link in table data
+let fromHELP = false;//flag that keeps aboutDBwindow from opening if documentation reached by HELP btn Sept17 2021
 //SyntaxError: Unexpected token '['. Expected ';' after variable declaration.
 //let keepTableNote = [];//keep data preceding the : so it can be prexappended to the link ..not used? So should erase
 let preLinkInfo = "";//used to prePend data to link in table
@@ -1675,7 +1676,11 @@ saveBtn.onclick = function () {
 		}//end if newDBflag
 	saveVariables();//need to add the brackets here to have the save function work! May23
 	}//end function saveBtn.onclick May23
-loadBtn.onclick = load;
+loadBtn.onclick = function() {
+	documentation();//this line was loadBtn.onclick = load; loadBtn now labelled HELP see html
+	fromHELP = true;
+}//end function loadBtn.onclick
+
 tableScreenBtn.onclick = tableScreenOptions;
 searchBtn.onclick = searchRecords;
 newDBBtn.onclick = function () {console.log('new/changeDBBtn tapped.'); changeDB = true;
