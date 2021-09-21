@@ -1,5 +1,5 @@
-//DougieBase Ver32.js using with WorkingCopy
-//FIXED date:Sept9 2021 added code to prevent error if Backup without a file selected fixed cancel createNewDB so preferences still doesn't think you are creating a new db if you cancelledchanged tableArray declaration by making recordCounter = 1 added code for newDBGuidance to insure table created before adding new record.. cleaned up createTable screen Sept15 goHomeBtn.disabled cleaned up add dynamic fields disabled clearFileBtntn added HELP BTN (LOAD) working copy version works in textastic
+//tryAgainDougieBase Ver33.js in Textastic
+//FIXED date:Sept9 2021 added code to prevent error if Backup without a file selected fixed cancel createNewDB so preferences still doesn't think you are creating a new db if you cancelledchanged tableArray declaration by making recordCounter = 1 added code for newDBGuidance to insure table created before adding new record .. cleaned up createTable screen goHomeBtn.disabled cleared add dynamic fieds input number disabled clearFileBtntn added HELP BTN (LOAD)
 //fixRepeatCreatenewDBtutorialDougieBaseVer31.js
 //tutorialDougieBaseVer31.js Aug 22
 //copyOffixBkupRestoreDougieBaseVer31js
@@ -329,7 +329,7 @@ let
 // let variable3 = "more variables here";
 //TABLE SECTION VARIABLES
 //let recordCounter = 50;//MUST BE SET TO 50 or more..OTHERWISE TABLE ARRAY IS NOT CREATED. To try and reduce space in tableArray will try messing with the redefineTableArray function? April 30 2021
-let recordCounter = 1;//REDUCES NUMBER OF NULLS IN DB DATA .. SEPT12 2021 .. to declare tableArray with a fixed number of records. Hoping to correct error in buildRecordRows re tableArray[][] undefined is not an object??
+let recordCounter = 1;//TO REDUCE NUMBER OF NULLS IN DB DATA .. SEPT12 2021 .. to declare tableArray with a fixed number of records. Hoping to correct error in buildRecordRows re tableArray[][] undefined is not an object??
 let tableTitle = [];
 let copyOfTableTitle = [];
 let copyOfTableArray = [];
@@ -901,8 +901,6 @@ databaseNameMLi[i] = document.createElement('li');
 		 
 		// fileChosenP.textContent = ' Database Selected: '+ databases[i].name;
 		 console.log('dataBaseName = ' + dataBaseName);
-		 
-
 	 //confirm choice window
 		 if (window.confirm("DataBase SELECTED is: " + " \n" + dataBaseName +  " \n" + "  CANCEL will UNDO")) {
 			// for (let i = 0; i< databases.length; i++) { 
@@ -1003,7 +1001,7 @@ deleteFileButton.onclick = function() {
 //backup code from manage windoe backup button
 backupFileButton.onclick = function() {
 	console.log('backupFileButton clicked!');
-	
+
 //error code to make sure a file name is selected if backing up to prevent issue where a blank filename is created in the filenames list
 if (dataBaseName === "") {
 	alert("You need to select a database file first. Try again!");
@@ -1012,10 +1010,10 @@ if (dataBaseName === "") {
 	return;
 }//end if database name === ""
 //error code to make sure a file name is selected if backing up to prevent issue where a blank filename is created in the filenames list	
-
-
-
-	//confirm choice window
+	
+	
+	
+	 //confirm choice window
 		 if (window.confirm("DataBase to BACKUP is: " + " \n" + dataBaseName +  " \n" + "  CANCEL will UNDO")) {
 			// for (let i = 0; i< databases.length; i++) { 
 			// 	backupDataBaseList.removeChild(dataBaseBKUPNameLi[i]);
@@ -1165,15 +1163,14 @@ manageFilesWindow.setAttribute('class','hidden');
 //}//end function backupRestoreFileBtn.onclick	
 backupBtn.onclick = function () {
 	
-//error code to make sure a file name is selected if backing up to prevent issue where a blank filename is created in the filenames list
+	//error code to make sure a file name is selected if backing up to prevent issue where a blank filename is created in the filenames list
 if (dataBaseName === "") {
-	alert("You need to select a database file first. Tap CANCEL and Try again!");
+	alert("You need to select a database file first! Select CANCEL and try again!");
 	//manageFilesWindow.setAttribute('class','showing');
 	manageDataBases();
 	return;
 }//end if database name === ""
-//error code to make sure a file name is selected if backing up to prevent issue where a blank filename is created in the filenames list		
-	
+// //error code to make sure a file name is selected if backing up to prevent issue where a blank filename is created in the filenames list	
 console.log('Backup Button clicked. backupFilesWin hidden.');	backupFilesWin.setAttribute('class','hidden');
 	
 	backupDataBase(dataBaseName);
@@ -1676,11 +1673,12 @@ saveBtn.onclick = function () {
 		}//end if newDBflag
 	saveVariables();//need to add the brackets here to have the save function work! May23
 	}//end function saveBtn.onclick May23
+	
 loadBtn.onclick = function() {
 	documentation();//this line was loadBtn.onclick = load; loadBtn now labelled HELP see html
 	fromHELP = true;
-}//end function loadBtn.onclick
-
+	}//end function loadBtn.onclick
+	
 tableScreenBtn.onclick = tableScreenOptions;
 searchBtn.onclick = searchRecords;
 newDBBtn.onclick = function () {console.log('new/changeDBBtn tapped.'); changeDB = true;
@@ -2473,7 +2471,7 @@ displayFullNote.setAttribute('class','showing');
 
 //TypeError: undefined is not an object (evaluating 'e.target')
   
-
+//Sept20 2021: tableTittle label #> probably represents original note-id when first creted. searchNote from search function represents the i array index of the current tableArray. If there have been record deletions these two numbers might be different because indexedDB does not delete the id number when creating a new record but instead just creates a new one incremented from the original id list. Might this become a source of error in retriving the full view note from search????? fullViewBtn.textContent = 'View Entire Note - Record#: '+ noteNumber; noteNumber is derived from note-data-id when item is created..se displayData()…listItem.setAttribute('data-note-id', cursor.value.id);
 if (fromSearchRecord) {
 	noteId = Number(searchNote);
 	fromSearchRecord = false;
@@ -3515,7 +3513,7 @@ let cancelAddFieldBtn = document.createElement('button');
       cancelAddFieldBtn.textContent = 'CANCEL';
       addFieldWin.appendChild(cancelAddFieldBtn);
 	//  addFieldWin.appendChild(doneRelabelBtn);
-	//code added above Sept13 to add a cancel button to the addField window		
+	//code added above Sept13 to add a cancel button to the addField window			
 		
 		const enterNewFieldName = document.querySelector('#newFieldName');
 		const confirmNewFieldName = document.querySelector('#confirm');
@@ -3579,13 +3577,12 @@ addNoteBtn.setAttribute('class','attentionBtn');
 	 const rerunNotice = document.querySelector('#resetAddField');
 	  rerunNotice.textContent = 'Tap DONE when finished.';
 	  doneRelabelBtn.onclick = function () {
-		  doneRelabelBtn.setAttribute('class','normalBtn');  
+		  doneRelabelBtn.setAttribute('class','normalBtn'); 
 		  //code for done here
 		//get app code to rerun?!!
 	//	alert('newFieldName = ' + newFieldName);
 	xtraField = 1;
 	//ver = 2;//commented out in fileNamesTableNotesVer21 ?? Not sure of its purpose????Apr4 because early on addField reset the objectStore, but I changed that so there is always an xtraField, but it contains the admin record data for first record. So onupgradeneeded never runs here now so I commented out the appropriate code including verb= 2 which was designed to force onupgradeneeded
-	
 		  addFieldWin.removeChild(doneRelabelBtn);
 		  highlightDoneBtn = false; addFieldWin.removeChild(cancelAddFieldBtn);
 		  
@@ -3596,13 +3593,14 @@ addNoteBtn.setAttribute('class','attentionBtn');
 		
 		//will set newDBGuidance = false in new table code section
 		newDBGuidance = true;
-		//alert("Remember to create the table for the new database BEFORE ADDING ANY NEW RECORDS!");
+		//alert("Remember to  create the table for the new database BEFORE ADDING ANY NEW RECORDS!");
 		
 		//disable ADD NOTE and activate TABLE
 	addNoteBtn.setAttribute('class','attentionBtn');
   addNoteBtn.disabled = true;
   settingsBtn.setAttribute('class', 'normalBtn');//preferences	
   tableScreenBtn.setAttribute('class','attentionBtn');
+  
 		
 		
 	}//end if newDBGuidance && !newDBflag	 
@@ -3660,9 +3658,9 @@ addNoteBtn.setAttribute('class','attentionBtn');
 
   };//end doneRelabelBtn.onclick
   
- });//end enterNewFieldName.onsubmit  
+   });//end enterNewFieldName.onsubmit  
  
- 
+
  //more cancel addField code
 cancelAddFieldBtn.onclick = function () {
 	addFieldWin.removeChild(cancelAddFieldBtn);
@@ -3897,10 +3895,10 @@ function documentation () {
 	if(!fromHELP) {
 	aboutDBWindow.setAttribute('class','showing');
 	}//end if(!fromHELP)
-	  
+
   };//end doneBtn.onclick
-    //documentation manual code goes here
-  fromHELP = false;
+	//documentation manual code goes here
+	fromHELP = false;
 }//end documentation function
 
 //addDate function keep here until deciding if needed in edit note section
@@ -4130,7 +4128,8 @@ if (!deleteTableRecord) {
 
 function searchRecords () {
 //should I add a count to find record clicks to force clearing of resultList after so many elements appear to not allow btns to disappear off screen? Jan 22
-
+let matchTDCell = "";
+let gotIt = 0;//counter to keep track of number of hits in search if more than one
 //if first run check that table has been initialized March 21 2021
 if(DTBtnTappedOnce ===0 & tableExists){initializeTable();}
 if (tableExists & tableTitle.length>originalNumberRecords || editNote) {
@@ -4264,11 +4263,49 @@ console.log('caseSensitive = ' + caseSensitive);
 	  // resultList.innerHTML.textContent = tableTitle[matchedRecordIndex];
 	  //  resultList.innerHTML += `<li class="list-group-item">tableTitle[matchedRecordIndex]</li>`;
 	  if (matchedRecordIndex === -1) {
-	//changed query to searchTitleInput.value so the actual search input is shown..not the corrected lowercase input Date: Feb 11	  
-		  liMatchedRecord.textContent = searchTitleInput.value + " .. Record not found";
+	//changed query to searchTitleInput.value so the actual search input is shown..not the corrected lowercase input Date: Feb 11	 
+//query = "Econami PNP "	
+	
+for(i = 0; i < tableTitle.length; ++i) {
+	for (c = 1; c < fieldNamesArray.length; ++c) {
+		matchTDCell = tableArray[i][c];
+		if(matchTDCell === "" || matchTDCell === null || matchTDCell === undefined) {matchTDCell = "0"}//to prevent undefined is not an object when evaluating etc should this be "0" vrs 0 type mismatch????
+		if(!caseSensitive) {
+			matchTDCell = matchTDCell.toLowerCase()
+		}//end if caseSensitive
+		console.log("matchTDCell = " + matchTDCell);
+		//matchTDCell = query;
+		if(matchTDCell === query) {
+			matchedRecordIndex = i;
+			gotIt = gotIt + 1;
+			alert("stop gotIt = " + gotIt);
+			//return;
+	//	} else {
+	//		matchedRecordIndex = -1;
+		}//end if matchTDCell=query
+		
+	}//end of for c=1
+}//end of for i=0
+
+}//end of if (matchedRecordIndex === -1)
+
+
+
+
+
+if(matchedRecordIndex === -1) {
+	liMatchedRecord.textContent = searchTitleInput.value + " .. Record not found";
 	//NotFoundError: The object can not be found here.	  resultList.removeChild(matchedRecord);
 	  }//end if matchedRecordIndex = -1
 	  // liMatchedRecord.textContent = tableTitle[matchedRecordIndex];
+	  
+//keep track of multiple hits. 
+if(gotIt > 1) {
+	alert("More than 1 hit for search:  \n" + query + "\n The last hit is highlighted in the table.");
+	gotIt = 0;
+}//end if gotIt > 1
+//keep track of multiple hits
+
 	   let findRecord = tableTitle[matchedRecordIndex];
 	  console.log("findRecord = " + findRecord);
 		matchedRecord.textContent = tableTitle[matchedRecordIndex];
@@ -4365,7 +4402,7 @@ function highlightTable () {
 //end search records code section
 
 
-
+//load code bypassed currently..not used..load btn now labelled HELP and is directed to documentation .. see loadBtn.onclick at top of program Sept17 2021
 function load () {  
 	if(saveBtn.textContent === 'SAVED') {
 		saveBtn.textContent ='SAVE';
@@ -5345,7 +5382,7 @@ function makeTable () {
 if(edit === 1) {
 	addFieldsDirectionP.textContent = 'Make changes to the Dynamic Field titles below: ';
 } else if (edit === 0) {
-	addFieldsDirectionP.textContent = 'Enter the dynamic field/column titles below: ';
+	addFieldsDirectionP.textContent = 'Enter the added field/column titles below: ';
 }//end if else if edit construct
 	createTable.appendChild(addFieldsDirectionP);
 	//create the inputs for  added fields required
@@ -5401,13 +5438,13 @@ buildRecordsP.textContent = ' Enter titles of '+ numberOfAdditionalFields + ' dy
 buildRecordsP.onclick = function () {
 	console.log('At buildRecordsP.onclick');
 	if (edit === 1) {
-		addFieldsDirectionP.textContent = 'Make changes to labels of dynamic fields below.';
+		addFieldsDirectionP.textContent = 'Make changes to labels of added fields below.';
 		//removeChild(buildRecordsP if edit === 1??)
-		buildRecordsP.textContent = 'Make changes to dynamic field titles/labels! When finished tap here to SAVE TABLE';
+		buildRecordsP.textContent = 'Make changes to added field titles/labels! When finished tap here to SAVE TABLE';
 		//might have to remove this line
 		createTable.removeChild(buildRecordsP);
 	} else {
-	addFieldsDirectionP.textContent = 'Now enter data into the dynamic fields.';
+	addFieldsDirectionP.textContent = 'Now enter data into the added fields.';
 	buildRecordsP.textContent = 'Now enter data into the fields! When finished tap here to SAVE TABLE';
 }//end if edit === 1
 	//remove fieldName entry inputs
@@ -5488,11 +5525,9 @@ showOrEdit.appendChild(showBtn);
 //showOrEdit.appendChild(changesBtn);
 //showBtn from createTable goes to displayTable function
 showBtn.onclick = function () {
-	console.log('At showBtn.onclick..DISPLAY TABLE');
-	
-	//code to reactivate goHomeBtn in edit table window which was locked by number od added dynamic fields enter btn
-	
+	//code to disable goToHomeScreen btn so table is not messed up if user taps returnToHome screen after having entered a number into the add dynamic fields input..forces finish of this process
 	goHomeBtn.disabled = false;
+	console.log('At showBtn.onclick..DISPLAY TABLE');
 	createTable.removeChild(showOrEdit);
 	//should I clear all rows be here if coming from edit? To prevent repeat of all records
 	//!!!!!REMOVE CODE BELOW IF SCREW UP!
@@ -6874,11 +6909,11 @@ function editMoreFields () {
 	 createTableWindow.appendChild(addToDynamicFields);
 	 
 	 fieldsBtn.onclick =  function() {
-		 //code to ensure a number is entered..otherwise havoc follows in rest of program
-		// if(moreFieldsInput.value = "") {
-			//alert("You must enter a number! To skip just enter '0'!") ;
-			//editMoreFields();
-		// }//end if moreFieldsInput =""
+		 
+		 // if(moreFieldsInput.value = "") {
+			//  moreFieldsInput.value = "0";
+			//  alert("No new dynamic fields will be added. (Same as entering 0");
+		 // }//end if moreFieldsInput.value=""
 		 
 		 moreFields = moreFieldsInput.value;
 		let addFields = Number(moreFields); 
@@ -6891,8 +6926,8 @@ console.log('dynamicFieldTotal = ' + dynamicFieldTotal);
 submitBtn.setAttribute('class','attentionBtn');
 submitBtn.disabled = false;
 
-//clear moreFieldsInput.value in preparation for next edit Sept16
-moreFieldsInput.value = "";//this line kills the add fields edit not sure why?
+//clear moreFieldsInput.value in prep for next edit Sept16
+moreFieldsInput.value = "";
 
 createTableWindow.removeChild(addToDynamicFields);
 
@@ -7488,6 +7523,9 @@ function sleepUntil(f, timeoutMs) {
 
 //function backup database
 function backupDataBase(dataBaseName) {
+	
+	
+	
 	//THE FOLLOWING CODE PUTS THE SELECTED DATABASE TO BACKUP INTO THE VARIABLE json AS A JAVASCRIPT OBJECT NOTATION. 
 	//alert('in function backup database: ' + dataBaseName);
 	let string = "";
@@ -8485,12 +8523,12 @@ Note that you actually have to pass the exported data as a string, not as a JSON
 /*add the '.' before the slash? Same in start url in manifest…'./index.html' DID NOT CHANGE THIS BECAUSE AS OF AUG 1 app seems to be working off line and after a reboot…not sure what is going on??? REMOVED '.' Aug 3 in both js and manifest*/
 
 
-//DISABLED..Enabled SERVICE WORKER
-
+//DISABLED SERVICE WORKER
+/*
 
   if('serviceWorker' in navigator) {
     navigator.serviceWorker
-             .register('/DougieBaseVer32sw.js')
+             .register('/DougieBaseVer33sw.js')
              .then(function() { console.log('Service Worker Registered'); });
 			alert('Service Worker Registered!'); navigator.storage.estimate().then(function(estimate) {
   document.getElementById("percent").value =
@@ -8507,7 +8545,7 @@ Note that you actually have to pass the exported data as a string, not as a JSON
 	
 	//what about the manifest file? triggered by oninstall? A2HS?	 
 //If the service worker API is supported in the browser, it is registered against the site using the ServiceWorkerContainer.register() method. Its contents reside in the sw.js file, and can be executed after the registration is successful. It's the only piece of Service Worker code that sits inside the app.js file; everything else that is Service Worker-specific is written in the sw.js file itself.
-//END OF DISABLED SERVICE WORKER !!!
+//END OF DISABLED SERVICE WORKER !!!*/
 
 
 };//end window.onload function
