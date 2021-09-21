@@ -1,4 +1,5 @@
-//tryAgainDougieBase Ver33.js in Textastic
+//DougieBase Ver33.js in WorkingCopy Sept 21 2021
+//from tryAgainDougieBase Ver33.js in Textastic
 //FIXED date:Sept9 2021 added code to prevent error if Backup without a file selected fixed cancel createNewDB so preferences still doesn't think you are creating a new db if you cancelledchanged tableArray declaration by making recordCounter = 1 added code for newDBGuidance to insure table created before adding new record .. cleaned up createTable screen goHomeBtn.disabled cleared add dynamic fieds input number disabled clearFileBtntn added HELP BTN (LOAD)
 //fixRepeatCreatenewDBtutorialDougieBaseVer31.js
 //tutorialDougieBaseVer31.js Aug 22
@@ -4278,7 +4279,7 @@ for(i = 0; i < tableTitle.length; ++i) {
 		if(matchTDCell === query) {
 			matchedRecordIndex = i;
 			gotIt = gotIt + 1;
-			alert("stop gotIt = " + gotIt);
+			//alert("stop gotIt = " + gotIt);
 			//return;
 	//	} else {
 	//		matchedRecordIndex = -1;
@@ -8523,8 +8524,8 @@ Note that you actually have to pass the exported data as a string, not as a JSON
 /*add the '.' before the slash? Same in start url in manifest…'./index.html' DID NOT CHANGE THIS BECAUSE AS OF AUG 1 app seems to be working off line and after a reboot…not sure what is going on??? REMOVED '.' Aug 3 in both js and manifest*/
 
 
-//DISABLED SERVICE WORKER
-/*
+//DISABLED ENABLED SERVICE WORKER
+
 
   if('serviceWorker' in navigator) {
     navigator.serviceWorker
@@ -8545,7 +8546,7 @@ Note that you actually have to pass the exported data as a string, not as a JSON
 	
 	//what about the manifest file? triggered by oninstall? A2HS?	 
 //If the service worker API is supported in the browser, it is registered against the site using the ServiceWorkerContainer.register() method. Its contents reside in the sw.js file, and can be executed after the registration is successful. It's the only piece of Service Worker code that sits inside the app.js file; everything else that is Service Worker-specific is written in the sw.js file itself.
-//END OF DISABLED SERVICE WORKER !!!*/
+//END OF DISABLED SERVICE WORKER !!!
 
 
 };//end window.onload function
