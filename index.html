@@ -2,8 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>index.html</title>
-    <link href="DougieBaseVer32.css" rel="stylesheet">
+    <title>DougieBaseVer33.html</title>
+    <link href="DougieBaseVer33.css" rel="stylesheet">
 	<link rel="manifest" href="trainsDBTableNotes.webmanifest">
 	
 <!-- 	USE THIS VERSION AS OF July 22  2021 This version has been installed on github pages ! Added links to documentation docx and pdf<script src="fileNamesTableNotesVer21.js" defer type="text/javascript"></script> Added p info statement to Create Table window -->
@@ -12,7 +12,7 @@
 
  <script src="jquery-3.6.0.min.js"></script>
 
-    <script src="DougieBaseVer32.js" defer></script>
+    <script src="DougieBaseVer33.js" defer></script>
 	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
 	<!-- <scrip src="jquery-3.6.0.slim.min.js"></script> -->
 <!-- 	<script src="jquery-3.6.0.slim.min.js" defer></script> -->
@@ -73,7 +73,7 @@ color: black;
 	
 	  
     <header>
-      <h1>DougieBase Version 32</h1>
+      <h1>DougieBase Version 33</h1>
     </header>
 	<p></p>
 <div id = "scrolling">
@@ -100,7 +100,7 @@ color: black;
 		
 		<section id = "fileNames" class = "hidden">
 			  <h2 id="">Current Database File Names</h2>
-			   <p style="color: lightblue font-size: small">(Scroll up ⬆️ to see menu of options)</p>
+			  <p style="color: lightblue font-size: small">(Scroll up ⬆️ to see menu of options)</p>
 			  <div id="fileNamesList">
 				  <h3>Double Tap on the Database Name to Load</h3>
 				  <ol id = "dataBaseList">
@@ -404,10 +404,10 @@ color: black;
 		  <div id="searchWin" class="hidden">
 		  <h2 class="edBan">Search for record by its first field title</h2>
 	 <div class ="edWinScroll">
-		 <p class = "highlight">Instructions for Search:</p>
+		 <p class = "highlight">Instructions for Table Search:     ⬆️ </p>
 		 <ul>
-			 <li>Enter the title of the record to be searched for in the text input window (spaces count) and tap the Find Record button.</li>
-			 <li>If found the record title appears in the Found Record List........(SCOLL UP for more ⬆️ ...)</li>
+			 <li>Enter the title of the record or the text to be searched for from any field in the text input window (spaces count) and tap the Find Record button.</li>
+			 <li>If found the title of the record containing the search phrase appears in the Found Record List.....(SCOLL UP for more ⬆️ ...)</li>
 			 <li>Double Tap the title in the Found Record List to view its notes in the Full View screen.</li>
 			 <li>Tap the Highlight Table Record button to stand out in table.</li>
 		</ul>
@@ -415,14 +415,14 @@ color: black;
 		  <p class="searchInstruction"></p> -->
 	</div> 
 	
-		  <p>Enter text of Record Title into the search input window. Double tap the record in the Found Record List to view its notes.</p>
-		  <label for="searchTitle" class="edBan">Search Record Title: </label>
+		  <p>Enter text of search phrase into the search input element. Double tap the record in the Found Record List to view its notes.</p>
+		  <label for="searchTitle" class="edBan">Search Phrase: </label>
 		 <input id = "inputSearchRecord" name = "searchTitle"
 		  type="search" class = "custom"
 		  placeholder="search..">
 		  <button id="searchForRecord">Find Record</button>
 		  <p id = "caseIndicator" class = "simulator"></p>
-		<p id = "matchedRecord" class = "simulator">If record found it will appear below:</p>  
+		<p id = "matchedRecord" class = "simulator">If record containing search phrase found it will appear below:</p>  
 		  
 		  <ul id="result-list">
        <!--  <li>sample result</li>
@@ -431,7 +431,7 @@ color: black;
     </ul>
 		  
 		  
-		    <button id="clearSearchTitle">Clear Search Title</button>
+		    <button id="clearSearchTitle">Clear Search Phrase</button>
 			<!-- <p></p> -->
 		 
 			
@@ -513,8 +513,8 @@ color: black;
 			
 			<!--start newField window -->
 			<div id="newFieldWin" class="hidden">
-			<h3>Relabel or Enter Name/Label for the secondary data (fixed) field. This label is used for all records until Relabelled here in Preferences. Note: You must tap Reset Display Data to view and save the title change.</h3>
-			<label for="newFieldName">Enter new Field name here: </label>
+			<h3>Relabel or Enter Name/Label for the secondary NOTES data (fixed) field. This label is used for all records until Relabelled here in Preferences. Note: You must tap Reset Display Data to view and save the title change.</h3>
+			<label for="newFieldName">Enter Title for NOTES Second Data Field: </label>
 			<input type="text" name="newFieldName" id="newFieldName" value="" required/>
 			<p id="confirm"></p>
 			<!--
