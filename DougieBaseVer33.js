@@ -1,4 +1,5 @@
-//DougieBase Ver33.js in WorkingCopy Sept 21 2021
+//DougieBaseVer33.js in WorkingCopy
+//from multipleHitsDougieBase Ver33.js in Textastic Sept 22 2021
 //from tryAgainDougieBase Ver33.js in Textastic
 //FIXED date:Sept9 2021 added code to prevent error if Backup without a file selected fixed cancel createNewDB so preferences still doesn't think you are creating a new db if you cancelledchanged tableArray declaration by making recordCounter = 1 added code for newDBGuidance to insure table created before adding new record .. cleaned up createTable screen goHomeBtn.disabled cleared add dynamic fieds input number disabled clearFileBtntn added HELP BTN (LOAD)
 //fixRepeatCreatenewDBtutorialDougieBaseVer31.js
@@ -336,6 +337,8 @@ let copyOfTableTitle = [];
 let copyOfTableArray = [];
 let searchedRecordTitle = [];
 //let tableTitle = ['CN6035', 'CN3205', 'CN6700'];//tableTitle array needs to be created in dbNotes?
+let hits = [];//hits array used in display - highlight table has to be global
+
 	let XtableTitle;//remove when tables fixed!!!!
 //let paraBody;
 //let XparaBody;
@@ -4132,6 +4135,9 @@ function searchRecords () {
 let matchTDCell = "";
 let gotIt = 0;//counter to keep track of number of hits in search if more than one
 //if first run check that table has been initialized March 21 2021
+// let hits[];//hits array used in display - highlight table has to be global
+let x = 0;//hits index counter
+
 if(DTBtnTappedOnce ===0 & tableExists){initializeTable();}
 if (tableExists & tableTitle.length>originalNumberRecords || editNote) {
 	alert('Update the table first prior to Search.');
@@ -4266,21 +4272,28 @@ console.log('caseSensitive = ' + caseSensitive);
 	  if (matchedRecordIndex === -1) {
 	//changed query to searchTitleInput.value so the actual search input is shown..not the corrected lowercase input Date: Feb 11	 
 //query = "Econami PNP "	
-	
+	//console.log("tableArray[2][10] = " + tableArray[2][10]);
+	//In displayTable.  tableArray[2][10] = undefined
 for(i = 0; i < tableTitle.length; ++i) {
 	for (c = 1; c < fieldNamesArray.length; ++c) {
 		matchTDCell = tableArray[i][c];
-		if(matchTDCell === "" || matchTDCell === null || matchTDCell === undefined) {matchTDCell = "0"}//to prevent undefined is not an object when evaluating etc should this be "0" vrs 0 type mismatch????
+		if(matchTDCell === "" || matchTDCell === null || matchTDCell === undefined) {matchTDCell = "XXX"}//to prevent undefined is not an object when evaluating etc should this be "0" vrs 0 type mismatch????
+		console.log("i = " + i + " matchTDCell = " + matchTDCell);
 		if(!caseSensitive) {
 			matchTDCell = matchTDCell.toLowerCase()
+			//TypeError: matchTDCell.toLowerCase is not a function. (In 'matchTDCell.toLowerCase()', 'matchTDCell.toLowerCase' is undefined)
+			//In displayTable.  tableArray[2][10] = undefined
 		}//end if caseSensitive
 		console.log("matchTDCell = " + matchTDCell);
 		//matchTDCell = query;
 		if(matchTDCell === query) {
 			matchedRecordIndex = i;
+			console.log("A hit! matchedRecordIndex = " + i);
 			gotIt = gotIt + 1;
 			//alert("stop gotIt = " + gotIt);
-			//return;
+			
+			hits[x]= i;
+			x = x+1;
 	//	} else {
 	//		matchedRecordIndex = -1;
 		}//end if matchTDCell=query
@@ -4291,7 +4304,7 @@ for(i = 0; i < tableTitle.length; ++i) {
 }//end of if (matchedRecordIndex === -1)
 
 
-
+console.log("matchedRecordIndex = " +matchedRecordIndex);
 
 
 if(matchedRecordIndex === -1) {
@@ -4302,7 +4315,7 @@ if(matchedRecordIndex === -1) {
 	  
 //keep track of multiple hits. 
 if(gotIt > 1) {
-	alert("More than 1 hit for search:  \n" + query + "\n The last hit is highlighted in the table.");
+	alert("More than 1 hit for search:  \n" + query + "\n Number of hits = " + gotIt + ". \n \nDougieBase scrolls to the last hit (highlighted) in the table.");
 	gotIt = 0;
 }//end if gotIt > 1
 //keep track of multiple hits
@@ -4397,6 +4410,7 @@ function highlightTable () {
 		displayTable();
 		renewed = 0;
 		refreshed = 0;
+		if(hits.length>1) {hits.length = 0;}
 	}//end function highlightTable
 
 
@@ -6053,16 +6067,57 @@ console.log('Now just creating records!');
 		// {STrecordItem.setAttribute('class','darkMode')}//end if darkMode
 		// else {STrecordItem.setAttribute('class','lightMode')}//end else if dark light mode
 		//highlight record row if target of search Jan8 THIS CHANGED THE FONT SIZE,!! and underlined IF A REFRESHTABLE OCCURRED AS IN A CELL EDIT! So maybe create the show record button to Reid’s play the table?
-		if(i=== matchedRecordIndex & fromSearchRecord) {
+//highlight hits
+if (fromSearchRecord) {
+	
+	if(hits.length>1) {
+		for (j=0;j<hits.length; ++j) {
+			if(i===hits[j]) {
+				STrecordItem.setAttribute('class','highlightgreen');
+			//hitsArray[k] = tableArray[i]
+			}//if i=hits[j]
+			
+		}//end for loop j -hits.length
+document.querySelector('#STforRows').children[i].scrollIntoView(true);
+	
+	} else if(i=== matchedRecordIndex & fromSearchRecord) {
 			fromSearchRecord = false;
 		STrecordItem.setAttribute('class','highlightgreen');
 	//scroll to searched item added July 8. Test to make sure this doesn't slow down program!!!
-document.querySelector('#STforRows').children[matchedRecordIndex].scrollIntoView(true);	
+	document.querySelector('#STforRows').children[matchedRecordIndex].scrollIntoView(true);	
+	fromSearchRecord = false;
+
+ }//end if hits.length >1	
+
+}//end ifhfromSearchRecord
+	
+	
+	
+	
+	
+	
+	
+//comment out old code
+// 		if(i=== matchedRecordIndex & fromSearchRecord) {
+// 			fromSearchRecord = false;
+// 		STrecordItem.setAttribute('class','highlightgreen');
+// 	//scroll to searched item added July 8. Test to make sure this doesn't slow down program!!!
+// document.querySelector('#STforRows').children[matchedRecordIndex].scrollIntoView(true);	
 
 
-		// //May28
-		// STrecordItem.setAttribute('style','text-decoration:over-line');
-		}//end if i=matched record index
+// 		// //May28
+// 		// STrecordItem.setAttribute('style','text-decoration:over-line');
+// 		}//end if i=matched record index
+		
+//comment out old code
+		
+		
+		
+		
+		
+		
+		
+		
 		//add a row to the table
 		STrows.appendChild(STrecordItem);//maybe not [i]
 		//add field data for each td in the row
