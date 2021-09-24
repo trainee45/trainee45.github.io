@@ -4286,7 +4286,8 @@ for(i = 0; i < tableTitle.length; ++i) {
 		}//end if caseSensitive
 		console.log("matchTDCell = " + matchTDCell);
 		//matchTDCell = query;
-		if(matchTDCell === query) {
+		//trim() removes all white space from start and end of string
+		if(matchTDCell.trim() === query.trim()) {
 			matchedRecordIndex = i;
 			console.log("A hit! matchedRecordIndex = " + i);
 			gotIt = gotIt + 1;
@@ -4406,7 +4407,8 @@ function highlightTable () {
 		while (STrows.firstChild) {
    STrows.removeChild(STrows.firstChild);
 }//end while
-
+//put search phrase in top menu bar
+flipMenu.textContent = " ✅ Search phrase: " + query;
 		displayTable();
 		renewed = 0;
 		refreshed = 0;
@@ -6557,6 +6559,9 @@ STrows.appendChild(STtableHeader);
 		homeScreenBtn.onclick = function () {
 			fromViewSort = false;//turn off sort flag
 			console.log('homeScreenBtn clicked');
+			
+//return menu bar in table back to original if post search
+//flipMenu.textContent = "Click - Tap to show / hide TABLE MENU";
 	//keeping track of save Btn Date: Feb 26 2021
 	saveTableBtn.setAttribute('class','normalBtn');	
 	saveTableBtn2.setAttribute('class','normalBtn');	
@@ -6600,6 +6605,8 @@ STrows.appendChild(STtableHeader);
 		//$("#flip").css({"background-color": "yellow", "border": "red"});
 	//$$LEFT OFF HERE,!!!	
 	saveTableBtn.onclick = function () { 
+	//return menu bar in table back to original if post search
+	flipMenu.textContent = "Click - Tap to show / hide TABLE MENU";	
 		
 		//function clickedSaveTableBtns
 			let abortSave = false;
@@ -6660,6 +6667,9 @@ console.log('copyOfTableTitle = ' + copyOfTableTitle);
 	//for saveTableBtn2
 	
 	saveTableBtn2.onclick = function () { 
+		
+		//return menu bar in table back to original if post search
+		flipMenu.textContent = "Click - Tap to show / hide TABLE MENU";
 		
 		//function clickedSaveTableBtns
 			let abortSave = false;
@@ -6734,6 +6744,10 @@ console.log('copyOfTableTitle = ' + copyOfTableTitle);
 	
 	const toEditTableScrBtn = document.querySelector('#toEditTableScr');
 		toEditTableScrBtn.onclick = function () {
+			
+		//return menu bar in table back to original if post search
+		flipMenu.textContent = "Click - Tap to show / hide TABLE MENU";
+		
 			fromViewSort = false;//turn off sort flag
 			console.log('toEditTableScrBtn clicked');
 			
@@ -6747,6 +6761,10 @@ console.log('copyOfTableTitle = ' + copyOfTableTitle);
 	const toSortScrBtn = document.querySelector('#toSortScr');
 	
 		toSortScrBtn.onclick = function () {
+			
+			//return menu bar in table back to original if post search
+			//flipMenu.textContent = "Click - Tap to show / hide TABLE MENU";
+			
 			console.log('toSortScrBtn clicked');
 		//fromViewSort = false;//turn off sort flag
 			showTable.setAttribute('class', 'hidden');
