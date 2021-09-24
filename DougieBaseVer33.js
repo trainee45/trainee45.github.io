@@ -7452,6 +7452,10 @@ function sortTableArray (chosenSort,typeSort) {
 		}//end if chosenSort = 1
 		
 		if (chosenSort === 2) {
+			
+			//return menu bar in table back to original if post search
+		flipMenu.textContent = "Click - Tap to show / hide TABLE MENU";
+			
 			originalOrder = true;//flag used to prevent accidental loss of original table order by a save after a sort
 			console.log('copyOfTableArray = ' + copyOfTableArray);
 	tableArray = copyOfTableArray.slice();
