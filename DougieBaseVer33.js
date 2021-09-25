@@ -5748,6 +5748,10 @@ function displayTable () {
 		const tableBackgroundBtn = document.querySelector('#tableBackground');
 	
 	 	tableBackgroundBtn.onclick = function () {
+			
+		//return menu bar in table back to original if post search
+		flipMenu.textContent = "Click - Tap to show / hide TABLE MENU";
+		
 		console.log('tableBackgroundBtn clicked');
 		
 		if(darkMode) {
@@ -5776,6 +5780,10 @@ STrows.appendChild(STheadRow);
 	
 	//doubleClick
 	tableBackgroundBtn.ondblclick = function () {
+		
+		//return menu bar in table back to original if post search
+		flipMenu.textContent = "Click - Tap to show / hide TABLE MENU";
+		
 		console.log('tableBackgroundBtn dblclicked');
 		darkMode = null;
 			//resetTable
