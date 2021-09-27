@@ -1,6 +1,6 @@
-//DougieBaseVer33.js in WorkingCopy
-//from multipleHitsDougieBase Ver33.js in Textastic Sept 22 2021 Sept 26 made search inclusive of sub strings
-//from tryAgainDougieBase Ver33.js in Textastic
+//DougieBaseVer33.js Sept26
+//multipleHitsDougieBase Ver33.js in Textastic Sept 22 2021
+//from tryAgainDougieBase Ver33.js in Textastic subString inclusive! Sept26
 //FIXED date:Sept9 2021 added code to prevent error if Backup without a file selected fixed cancel createNewDB so preferences still doesn't think you are creating a new db if you cancelledchanged tableArray declaration by making recordCounter = 1 added code for newDBGuidance to insure table created before adding new record .. cleaned up createTable screen goHomeBtn.disabled cleared add dynamic fieds input number disabled clearFileBtntn added HELP BTN (LOAD)
 //fixRepeatCreatenewDBtutorialDougieBaseVer31.js
 //tutorialDougieBaseVer31.js Aug 22
@@ -256,6 +256,7 @@ const searchBtn = document.querySelector('#search');//HTML button in menu to go 
 	//searchBtn.disabled = false;
 const searchTitleInput = document.querySelector('#inputSearchRecord');//input for what record to search for in searchRecord function
 let caseSensitive = false;	//make global
+let includesSubstring = true;//flag to make search inclusive of search phrase NOT IMPLEMENTED as probably not necessary. Code left in place and flag set to true to default to inclusive
 let searchCaseSensitive = 0;	//make global
 let tableDateTime=true;//flag show time in DATE cell of table
 let showScroll = true;//flag to show or hide scroll buttons via preferences setting see options March 19 2021
@@ -4131,6 +4132,7 @@ if (!deleteTableRecord) {
 //search records code section
 
 function searchRecords () {
+	//includesSubstring = false;//not implemented!
 //should I add a count to find record clicks to force clearing of resultList after so many elements appear to not allow btns to disappear off screen? Jan 22
 let matchTDCell = "";
 let gotIt = 0;//counter to keep track of number of hits in search if more than one
@@ -4275,7 +4277,7 @@ console.log('caseSensitive = ' + caseSensitive);
 	//console.log("tableArray[2][10] = " + tableArray[2][10]);
 	//In displayTable.  tableArray[2][10] = undefined
 for(i = 0; i < tableTitle.length; ++i) {
-	for (c = 0; c < fieldNamesArray.length; ++c) {
+	for (c = 0 ; c < fieldNamesArray.length; ++c) {
 		matchTDCell = tableArray[i][c];
 		if(matchTDCell === "" || matchTDCell === null || matchTDCell === undefined) {matchTDCell = "XXX"}//to prevent undefined is not an object when evaluating etc should this be "0" vrs 0 type mismatch????
 		console.log("i = " + i + " matchTDCell = " + matchTDCell);
@@ -4287,6 +4289,9 @@ for(i = 0; i < tableTitle.length; ++i) {
 		console.log("matchTDCell = " + matchTDCell);
 		//matchTDCell = query;
 		//trim() removes all white space from start and end of string
+		
+//currently defaults to includesSubstring = true No code written to switch flag in preferences	
+if(includesSubstring) {
 		if(matchTDCell.trim() === query.trim() || matchTDCell.includes(query)) {
 			matchedRecordIndex = i;
 			console.log("A hit! matchedRecordIndex = " + i);
@@ -4298,8 +4303,24 @@ for(i = 0; i < tableTitle.length; ++i) {
 	//	} else {
 	//		matchedRecordIndex = -1;
 		}//end if matchTDCell=query
+	}//end if(includesSubstring)	
+	
+if(!includesSubstring) {
+	if(matchTDCell.trim() === query.trim()) {
+			matchedRecordIndex = i;
+			console.log("A hit! matchedRecordIndex = " + i);
+			gotIt = gotIt + 1;
+			//alert("stop gotIt = " + gotIt);
+			
+			hits[x]= i;
+			x = x+1;
+	//	} else {
+	//		matchedRecordIndex = -1;
+		}//end if matchTDCell=query	
+	}//end if(!includesSubstring)		
 		
-	}//end of for c=1
+		
+	}//end of for c=1..changed to c = 0 Sept26 2021 so record title is included in substring search
 }//end of for i=0
 
 }//end of if (matchedRecordIndex === -1)
@@ -4409,12 +4430,14 @@ function highlightTable () {
 }//end while
 //put search phrase in top menu bar
 flipMenu.textContent = " ✅ Search phrase: " + query;
+$("#flip").css({"border-color": "red"});
+
 		displayTable();
 		renewed = 0;
 		refreshed = 0;
 		if(hits.length>1) {hits.length = 0;}
 	}//end function highlightTable
-
+// flipMenu.textContent = "Click to show / hide TABLE MENU";
 
 //end search records code section
 
@@ -5749,9 +5772,9 @@ function displayTable () {
 	
 	 	tableBackgroundBtn.onclick = function () {
 			
-		//return menu bar in table back to original if post search
-		flipMenu.textContent = "Click - Tap to show / hide TABLE MENU";
-		
+			//return menu bar in table back to original if post search
+			flipMenu.textContent = "Click - Tap to show / hide TABLE MENU";
+			
 		console.log('tableBackgroundBtn clicked');
 		
 		if(darkMode) {
@@ -6569,7 +6592,7 @@ STrows.appendChild(STtableHeader);
 			console.log('homeScreenBtn clicked');
 			
 //return menu bar in table back to original if post search
-//flipMenu.textContent = "Click - Tap to show / hide TABLE MENU";
+//flipMenu.textContent = "Click - Tap to show / hide TABLE MENU";		
 	//keeping track of save Btn Date: Feb 26 2021
 	saveTableBtn.setAttribute('class','normalBtn');	
 	saveTableBtn2.setAttribute('class','normalBtn');	
@@ -6613,8 +6636,10 @@ STrows.appendChild(STtableHeader);
 		//$("#flip").css({"background-color": "yellow", "border": "red"});
 	//$$LEFT OFF HERE,!!!	
 	saveTableBtn.onclick = function () { 
-	//return menu bar in table back to original if post search
-	flipMenu.textContent = "Click - Tap to show / hide TABLE MENU";	
+		
+		//return menu bar in table back to original if post search
+		flipMenu.textContent = "Click - Tap to show / hide TABLE MENU";
+		
 		
 		//function clickedSaveTableBtns
 			let abortSave = false;
@@ -6755,7 +6780,7 @@ console.log('copyOfTableTitle = ' + copyOfTableTitle);
 			
 		//return menu bar in table back to original if post search
 		flipMenu.textContent = "Click - Tap to show / hide TABLE MENU";
-		
+			
 			fromViewSort = false;//turn off sort flag
 			console.log('toEditTableScrBtn clicked');
 			
@@ -7460,10 +7485,6 @@ function sortTableArray (chosenSort,typeSort) {
 		}//end if chosenSort = 1
 		
 		if (chosenSort === 2) {
-			
-			//return menu bar in table back to original if post search
-		flipMenu.textContent = "Click - Tap to show / hide TABLE MENU";
-			
 			originalOrder = true;//flag used to prevent accidental loss of original table order by a save after a sort
 			console.log('copyOfTableArray = ' + copyOfTableArray);
 	tableArray = copyOfTableArray.slice();
