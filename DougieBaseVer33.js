@@ -1,5 +1,5 @@
 //DougieBaseVer33.js in WorkingCopy
-//from multipleHitsDougieBase Ver33.js in Textastic Sept 22 2021
+//from multipleHitsDougieBase Ver33.js in Textastic Sept 22 2021 Sept 26 made search inclusive of sub strings
 //from tryAgainDougieBase Ver33.js in Textastic
 //FIXED date:Sept9 2021 added code to prevent error if Backup without a file selected fixed cancel createNewDB so preferences still doesn't think you are creating a new db if you cancelledchanged tableArray declaration by making recordCounter = 1 added code for newDBGuidance to insure table created before adding new record .. cleaned up createTable screen goHomeBtn.disabled cleared add dynamic fieds input number disabled clearFileBtntn added HELP BTN (LOAD)
 //fixRepeatCreatenewDBtutorialDougieBaseVer31.js
@@ -4275,7 +4275,7 @@ console.log('caseSensitive = ' + caseSensitive);
 	//console.log("tableArray[2][10] = " + tableArray[2][10]);
 	//In displayTable.  tableArray[2][10] = undefined
 for(i = 0; i < tableTitle.length; ++i) {
-	for (c = 1; c < fieldNamesArray.length; ++c) {
+	for (c = 0; c < fieldNamesArray.length; ++c) {
 		matchTDCell = tableArray[i][c];
 		if(matchTDCell === "" || matchTDCell === null || matchTDCell === undefined) {matchTDCell = "XXX"}//to prevent undefined is not an object when evaluating etc should this be "0" vrs 0 type mismatch????
 		console.log("i = " + i + " matchTDCell = " + matchTDCell);
@@ -4287,7 +4287,7 @@ for(i = 0; i < tableTitle.length; ++i) {
 		console.log("matchTDCell = " + matchTDCell);
 		//matchTDCell = query;
 		//trim() removes all white space from start and end of string
-		if(matchTDCell.trim() === query.trim()) {
+		if(matchTDCell.trim() === query.trim() || matchTDCell.includes(query)) {
 			matchedRecordIndex = i;
 			console.log("A hit! matchedRecordIndex = " + i);
 			gotIt = gotIt + 1;
