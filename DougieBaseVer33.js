@@ -1,6 +1,6 @@
-//DougieBaseVer33.js Sept26
-//multipleHitsDougieBase Ver33.js in Textastic Sept 22 2021
-//from tryAgainDougieBase Ver33.js in Textastic subString inclusive! Sept26
+//DougieBaseVer33.js
+//includesSubstringDougieBase Ver33.js in Textastic Sept 29 2021
+//from tryAgainDougieBase Ver33.js in Textastic
 //FIXED date:Sept9 2021 added code to prevent error if Backup without a file selected fixed cancel createNewDB so preferences still doesn't think you are creating a new db if you cancelledchanged tableArray declaration by making recordCounter = 1 added code for newDBGuidance to insure table created before adding new record .. cleaned up createTable screen goHomeBtn.disabled cleared add dynamic fieds input number disabled clearFileBtntn added HELP BTN (LOAD)
 //fixRepeatCreatenewDBtutorialDougieBaseVer31.js
 //tutorialDougieBaseVer31.js Aug 22
@@ -256,8 +256,10 @@ const searchBtn = document.querySelector('#search');//HTML button in menu to go 
 	//searchBtn.disabled = false;
 const searchTitleInput = document.querySelector('#inputSearchRecord');//input for what record to search for in searchRecord function
 let caseSensitive = false;	//make global
-let includesSubstring = true;//flag to make search inclusive of search phrase NOT IMPLEMENTED as probably not necessary. Code left in place and flag set to true to default to inclusive
+let includesSubstring = false;//flag to make search inclusive of search phrase NOT IMPLEMENTED as probably not necessary. Code left in place and flag set to true to default to inclusive
 let searchCaseSensitive = 0;	//make global
+let searchIncludesSubstring = 0; //make global
+
 let tableDateTime=true;//flag show time in DATE cell of table
 let showScroll = true;//flag to show or hide scroll buttons via preferences setting see options March 19 2021
 let centerTitle = false;//flag set in preferences to center the record title in notes display
@@ -3251,6 +3253,42 @@ addFieldBtn.setAttribute('class','attentionBtn');
 	//}//end function caseSenseSitive.onchange
 	//search case sensitive code above
 	
+		//put contains sub string stuff here???
+		
+		//SS = SubString
+	
+	const includesSubstringSwitch = document.querySelector('#includesSubstring');
+	const noSS = document.querySelector('#noSS');
+	const yesSS = document.querySelector('#yesSS');
+	//let searchCaseSensitive;	//make global
+	includesSubstringSwitch.onchange = function(){
+		searchIncludesSubstring = includesSubstringSwitch.value;
+		console.log('searchIncludesSubstring = ' + searchIncludesSubstring);
+	//NOTE! caseSensitiveSwitch.value returns a number as type string so conditional below must use quotes around the number!!	
+	//}//end function caseSenseSitive.onchange
+	
+	//console.log('caseSensitive = ' + caseSensitive);
+	if (searchIncludesSubstring === "1") {
+		includesSubstring = true;
+		console.log('includesSubstring = ' + includesSubstring);
+		yesSS.setAttribute('class', 'colorBtn');
+		noSS.setAttribute('class', 'normalBtn');
+		
+	} //end if searchCaseSensitive === 1
+	else if (searchIncludesSubstring === "0") {
+	
+		includesSubstring = false;
+		console.log('includesSubstring = ' + includesSubstring);
+		yesSS.setAttribute('class', 'normalBtn');
+		noSS.setAttribute('class', 'colorBtn');
+		
+	}//end if searchCaseSensitive === 0
+	console.log('includesSubstring = ' + includesSubstring);
+	};//end function caseSenseSitive.onchange
+	//}//end function caseSenseSitive.onchange
+	//search case sensitive code above
+	
+	
 	clearPrefWindow.onclick = function () {
 		//Tap here to return to notes
 	/*prefWindow.removeChild(notifyP);*/
@@ -4202,10 +4240,14 @@ searchWindow.setAttribute('class','showing');
 	const addP = document.createElement('p');
 	//let caseSensitive = false;	//make global
 	const caseIndicator = document.querySelector('#caseIndicator');
-	if (caseSensitive) {
-		caseIndicator.textContent = "Search is CASE SENSITIVE! (Change in Preferences)";
-	} else if (!caseSensitive) {
-		caseIndicator.textContent = "Search is NOT CASE SENSITIVE (Change in Preferences)";
+	if (caseSensitive && includesSubstring) {
+		caseIndicator.textContent = "Search is CASE SENSITIVE and CONTAINS search phrase!";
+	} else if (!caseSensitive && includesSubstring) {
+		caseIndicator.textContent = "Search is NOT CASE SENSITIVE and CONTAINS search phrase.";
+	} else if (caseSensitive && !includesSubstring) {
+		caseIndicator.textContent = "Search is CASE SENSITIVE and SPECIFIC for Search Phrase !";
+	} else if (!caseSensitive && !includesSubstring) {
+		caseIndicator.textContent = "Search is NOT CASE SENSITIVE but SPECIFIC for Search Phrase.";
 	}//end if caseSensitive
 
 //LEFT OFF HERE JAN22 now need to make caseSensitive Btn!!	
