@@ -2,11 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>DougieBaseVer33-1.html</title>
+    <title>DougieBaseVer33.html</title>
     <link href="DougieBaseVer33.css" rel="stylesheet">
 	<link rel="manifest" href="trainsDBTableNotes.webmanifest">
 	
-<!-- 	USE THIS VERSION AS OF July 22  2021 This version has been installed on github pages ! Added links to documentation docx and pdf<script src="fileNamesTableNotesVer21.js" defer type="text/javascript"></script> Added p info statement to Create Table window -->
+<!-- 	USE THIS VERSION AS OF Sept 29 2021 2021 This version has been installed on github pages ! Added links to documentation docx and pdf<script src="fileNamesTableNotesVer21.js" defer type="text/javascript"></script> Added p info statement to Create Table window -->
 
 <!-- Line below adds jQuery library from jQuery file in same directory as the .js file. It works without internet connection. The google CDN has to have the internet connection IMPORTANT CONSIDERATION WHEN USING MORE jQuery code!! At the moment as of May17 2021 the only thing using jQuery is the table menu and hide scroll btns in preferences-->
 
@@ -73,7 +73,7 @@ color: black;
 	
 	  
     <header>
-      <h1>DougieBase Version 33.2</h1>
+      <h1>DougieBase Version 33.1</h1>
     </header>
 	<p></p>
 <div id = "scrolling">
@@ -406,10 +406,12 @@ color: black;
 	 <div class ="edWinScroll">
 		 <p class = "highlight">Instructions for Table Search:     ⬆️ </p>
 		 <ul>
-			 <li>Enter the title of the record or the text (from any field) to be searched for into the text input window (spaces count) and tap the Find Record button.</li>
+			 <li>Enter the title of the record or the text to be searched for from any field in the text input window (spaces count) and tap the Find Record button.</li>
 			 <li>If found the title of the record containing the search phrase appears in the Found Record List.....(SCOLL UP for more ⬆️ ...)</li>
 			 <li>Double Tap the title in the Found Record List to view its notes in the Full View screen.</li>
 			 <li>Tap the Highlight Table Record button to stand out in table.</li>
+			 <li>If the Search Phrase is set to SPECIFIC, the record is returned only if one of its fields is the complete search phrase. CONTAINS means a record is returned if any of its fields just contains the search phrase either as a complete string or as a sub string. For example '3' will return any record containing '3' or '33' or year 2023 etc. So to return a record containing a number 3 only, set Search Phrase to SPECIFIC. These settings are changed in Preferences.</li>
+			 <li>Scroll table slightly to left to see successful hits 'tagged'.</li>
 		</ul>
 	<!-- 	  <p id ="searchField" class="edWinScroll"></p>
 		  <p class="searchInstruction"></p> -->
@@ -473,7 +475,7 @@ color: black;
 		  <h2 class="edBan">PREFERENCES</h2>
 		   <p></p>
 		   <div id="clearPrefWindow" class="simulator">TAP HERE TO RETURN TO NOTES</div>
-		   <p class="ppref">The Preferences window allows you to alter some settings.You can change the name of the database, show or hide the  additional text data entry field in Notes, or change the background colours of the text windows, and alter other display options.</p>
+		   <p class="ppref">The Preferences window allows you to alter some settings.You can change the name of the database, show or hide the  additional text data entry field in Notes, or change the background colours of the text windows, and alter other display options. If the Search Phrase is set to SPECIFIC, the record is returned only if one of its fields is the complete search phrase. CONTAINS means a record is returned if any of its fields just contains the search phrase either as a complete string or as a sub string. For example '3' will return any record containing '3' or '33' or year 2023 etc. So to return a record containing a number 3 only, set Search Phrase to SPECIFIC.</p>
 		   <p></p>
 		   <button id="renameDB">Rename DataBase</button>
 		<button id="newField">Add/Relabel Field</button>
@@ -495,8 +497,17 @@ color: black;
 			 
  			 <input type="range" id="caseSensitive" name="case"
          min="0" max="1" step = 1 value = "0">
-  			<label for="case">Search Case Sensitive?</label>
- 		 <p><span id ="no">No</span> .................. <span id ="yes">Yes</span>:</p>
+  			<label for="case">SEARCH PHRASE: Case Sensitive?</label>
+ 		 <p><span id ="no">NO</span> .................. <span id ="yes">YES</span></p>
+		 
+	<!-- return record if contains sub string -->
+		 
+		  <input type="range" id="includesSubstring" name="includesSubstring"
+         min="0" max="1" step = 1 value = "0">
+  			<label for="includesSubstring">SPECIFIC or just CONTAINS ?</label>
+ <p><span id ="noSS">SPECIFIC</span> ..... <span id ="yesSS">CONTAINS</span></p>
+		 
+		 
 			</div> <!--end div caseSensitive-->
 			
 		 </div> <!--end of the preferences window--> 
