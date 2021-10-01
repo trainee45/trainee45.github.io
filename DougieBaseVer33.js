@@ -1489,6 +1489,7 @@ if (upgraded === 1) {
 
 function loadTheDataBase (dataBaseName) {
 	console.log('In loadTheDataBase function.');
+flipMenu.textContent = "Tap - Click to show / hide TABLE MENU";//clear flipMenu so search phrase from previous database does not show 
 	const loadingDataBase= document.querySelector('#openDB');
 	console.log('Name of database to load is ' + dataBaseName);
 	//special case
