@@ -5463,7 +5463,7 @@ function makeTable () {
 	//directions info P..h3 declared as global variable
 //	const addFieldsDirectionP = document.createElement('h4');
 if(edit === 1) {
-	addFieldsDirectionP.textContent = 'Make changes to the Dynamic Field titles below: ';
+	addFieldsDirectionP.textContent = 'Make changes to the Dynamic Field titles below:  ⬇️';
 } else if (edit === 0) {
 	addFieldsDirectionP.textContent = 'Enter the added field/column titles below: ';
 }//end if else if edit construct
