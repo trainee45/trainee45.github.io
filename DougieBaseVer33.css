@@ -31,6 +31,7 @@ body {
 
 button {
 	color: black;/*iOS 15 changed font color of button text to blue why? So I force it to black in css..its blue in Edge too!*/
+	font-size: large;
 }
 
 header, footer {
