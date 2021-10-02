@@ -1,4 +1,5 @@
-/*DougieBaseVer32.css*/
+/*DougieBaseVer33.css in WorkingCopy*/
+/*font color of button text is blue in iOS 15 why? Forced it to black Oct2 2021
 /*changed #newFieldWin for more height Aug 25 from TableNotesVer30.css from scrollTableNotesVer27.css*/
 /*testPrefTableNotesVer26.css June 13*/
 /*fixed position of prefWin in Safari portrait June14*/
@@ -28,6 +29,10 @@ body {
 
 }
 
+button {
+	color: black;/*iOS 15 changed font color of button text to blue why? So I force it to black in css..its blue in Edge too!*/
+}
+
 header, footer {
   background-color: darkblue;/*was green*/
   color: white;
@@ -52,7 +57,7 @@ header {
        top: 250px; /* 200px was 190 then 100%*/
         transform: translate(-50%,-50%);
         width: 400px;
-       height: 400px;/*was 600 Aug26 change back to 400px if xtraField = 0 reset fixes repeat of  createNewDB! 350;310 was 300 increased so border seen if pref window on screen at same time date: Jan 29 2021 increased height so decoder title entry is not on bottom edge of window May24 2021*/
+       height: 600px;/*change back to 400px if xtraField = 0 reset fixes repeat of  createNewDB! 350;310 was 300 increased so border seen if pref window on screen at same time date: Jan 29 2021 increased height so decoder title entry is not on bottom edge of window May24 2021*/
 		border: 5px solid red;
 		border-radius: 10px;
 		padding: 20px;
@@ -237,7 +242,7 @@ li p {
         /*background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.1)); */
 	} 
 	
-	/*added prefWin here June14 to fix positioning in Safari portrait mode made top = 40px in prefWin group. This seems to work ok June21*/
+	/*added prefWin here June14 to fix positioning in Safari portrait mode made top = 40px in prefWin group. This seems to work ok June21 REMOVE #newFieldWin AUG27*/
 #prefWin, #deleteWin, #displayFullNote, #editWin, #editNewFieldWin, #documentationWin, #tableWin, #tableScrn, #createTableWin, #searchWin, #deleteFieldWin, #sortWin, #newFieldWin {
         position: fixed; /*was absolute, "relative fixed positions relative tp viewport*/
        top: 40px; width: 480px; margin: 0 auto;   /*top 0 locates at very top corner viewport. top 20 allows position below banner top: 100%; was 190 then 100%*/
@@ -335,8 +340,7 @@ To get to edit date or other cell contents and the return btn and save btn to ap
         background-color: #eee;
 	
 }
-/*prefWin was here moved to sort search group June 14 trying to fix prefWin position in Safari portrait copySampleDb Aug 14* Put #newFieldWin in prefWin category Aug27*/
-
+/*prefWin was here moved to sort search group June 14 trying to fix prefWin position in Safari portrait copySampleDb Aug 14 Put #newFieldWin in the prefWin category Aug27*/
 #reNameWin, #aboutDBWin, #memoryWindow, #fileNames, #createNewDBWin, #manageFilesWin, #backupFilesWin, #backingUpDBWin, #restoreDBWin, #copySampleDb, #tutorialSampleDb {
 	position: fixed; /*was absolute relative fixed didn't work */
         top: 250px; /* 200px 100% was 190 then 100%*/
@@ -356,7 +360,7 @@ To get to edit date or other cell contents and the return btn and save btn to ap
 	/*top: 80vh;*/
 /*	top: 380px; /*390 400 300px 250px 200px 100% was 190 then 100%*/
 	/*trying to fix pref window position. In Safari in portrait mode its top and return to notes bar is not seen so have to turn to landscape to get out of it*/
-/*	margin-top: 430px;/*remove if messes up to fix pref window position in Safarii portrait */
+/*	margin-top: 430px;/*remove if messes up to fix pref window position in Safarii portrait 
 /*	height: 740px;/*640px was 520px 435 400 375 370 was 310px 350 will increase to accommodate caseSwitch*/
 /*height: 82vh;/*was 90vh*/
 /*position: fixed;
@@ -387,7 +391,7 @@ To get to edit date or other cell contents and the return btn and save btn to ap
 }
 	
 #aboutDBWin {
-	height:350px;/*340 in ver4A? */
+	height: 350px;/*340 in ver4A? */
 }
 	
 #changeColoursWin {
