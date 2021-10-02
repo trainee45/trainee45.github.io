@@ -31,7 +31,8 @@ body {
 
 button {
 	color: black;/*iOS 15 changed font color of button text to blue why? So I force it to black in css..its blue in Edge too!*/
-	border: solid red 2px;
+	border: 2px solid red;
+	border-radius: .5em;
 	font-size: medium;
 }
 
