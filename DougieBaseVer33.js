@@ -457,7 +457,7 @@ const scrollBtn = document.createElement('button');
 const bottomBtn = document.createElement("button");
 bottomBtn.textContent = 'Bottom';
 bottomBtn.setAttribute('class','bottomBtn');
-scrollBtn.textContent = 'Scroll ¥';
+scrollBtn.textContent = 'Scroll ⬇️';
 scrollBtn.setAttribute('class','scrollBtn');
 const mybutton = document.createElement("button");
 mybutton.textContent = 'Top';
