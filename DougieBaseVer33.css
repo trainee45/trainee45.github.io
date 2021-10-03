@@ -1,5 +1,5 @@
 /*DougieBaseVer33.css in WorkingCopy*/
-/*font color of button text is blue in iOS 15 why? Forced it to black large Oct2 2021 touch-action: manipulation; to prevent double tap zoom
+/*font color of button text is blue in iOS 15 why? Forced it to black large Oct2 2021 touch-action: manipulation; to prevent double tap zoom … DID NOT WORK
 /*changed #newFieldWin for more height Aug 25 from TableNotesVer30.css from scrollTableNotesVer27.css*/
 /*testPrefTableNotesVer26.css June 13*/
 /*fixed position of prefWin in Safari portrait June14*/
@@ -31,9 +31,13 @@ body {
 
 button {
 	color: black;/*iOS 15 changed font color of button text to blue why? So I force it to black in css..its blue in Edge too!*/
-	border: 2px solid red;
+	border: 2px solid black;
 	border-radius: .5em;
-	font-size: medium;
+	font-size: 120%/*smaller;*//*medium is default*/
+	/*Recently added to buttons Oct3*/
+	font-weight: bold;
+	text-align: center;
+	background-color: rgb(240, 248, 255); /*AliceBlue*/
 }
 
 header, footer {
@@ -399,7 +403,7 @@ To get to edit date or other cell contents and the return btn and save btn to ap
 }
 	
 #aboutDBWin {
-	height: 350px;/*340 in ver4A? */
+	height: 360px;/*was 350 340 in ver4A? */
 }
 	
 #changeColoursWin {
