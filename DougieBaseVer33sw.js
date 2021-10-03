@@ -1,4 +1,4 @@
-//DougieBaseVer33sw.js
+//DougieBaseVer33sw.js in Working Copy
 //from … TableNotesVer30sw.js
 var cacheName = 'DougieBase-v1'
 self.addEventListener('install', function(e) {
@@ -41,26 +41,69 @@ self.addEventListener('install', function(e) {
 
 
 
+// //RE-INSTATE CODE BELOW AFTER EXPERIMENT,!!!?
+
+// //service worker fetch code I know works! Below
+
+// self.addEventListener('fetch', (e) => {
+//   e.respondWith(
+//     caches.match(e.request).then((r) => {
+//           console.log('[Service Worker] Fetching resource: '+e.request.url);
+//       return r || fetch(e.request).then((response) => {
+//                 return caches.open(cacheName).then((cache) => {
+//           console.log('[Service Worker] Caching new resource: '+e.request.url);
+//           cache.put(e.request, response.clone());
+//           return response;
+//         });
+//       });
+//     })
+//   );
+// });
+
+// ////service worker fetch code I know works! Above
+// //RE-INSTATE CODE ABOVE AFTER EXPERIMENT
 
 
-//service worker fetch code I know works! Below
+//try this Oct2 2021 below
+self.addEventListener("fetch", function(e) {
+    if (new URL(e.request.url).origin !== location.origin) return;
 
-self.addEventListener('fetch', (e) => {
-  e.respondWith(
-    caches.match(e.request).then((r) => {
-          console.log('[Service Worker] Fetching resource: '+e.request.url);
-      return r || fetch(e.request).then((response) => {
-                return caches.open(cacheName).then((cache) => {
-          console.log('[Service Worker] Caching new resource: '+e.request.url);
-          cache.put(e.request, response.clone());
-          return response;
-        });
-      });
-    })
-  );
+    if (e.request.mode === "navigate" && navigator.onLine) {
+        e.respondWith(
+            fetch(e.request).then(function(response) {
+                return caches.open(cacheName).then(function(cache) {
+                    cache.put(e.request, response.clone());
+                    return response;
+                });
+            })
+        );
+        return;
+    }
+
+    e.respondWith(
+        caches
+            .match(e.request)
+            .then(function(response) {
+                return (
+                    response ||
+                    fetch(e.request).then(function(response) {
+                        return caches.open(cacheName).then(function(cache) {
+                            cache.put(e.request, response.clone());
+                            return response;
+                        });
+                    })
+                );
+            })
+            .catch(function() {
+                return caches.match(offlinePage);
+            })
+    );
 });
+//try this Oct2 2021 above
 
-////service worker fetch code I know works! Above
+
+
+
 
 
 //try this fetch code below NOPE INTRODUCED ERROR
