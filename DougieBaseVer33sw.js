@@ -1,5 +1,5 @@
 //DougieBaseVer33sw.js in Working Copy
-//from … TableNotesVer30sw.js
+//from … TableNotesVer30sw.js ALTERED FETCH CODE OCT 2 2021
 var cacheName = 'DougieBase-v1'
 self.addEventListener('install', function(e) {
  e.waitUntil(
@@ -41,65 +41,65 @@ self.addEventListener('install', function(e) {
 
 
 
-// //RE-INSTATE CODE BELOW AFTER EXPERIMENT,!!!?
+//RE-INSTATE CODE BELOW AFTER EXPERIMENT,!!!?
 
-// //service worker fetch code I know works! Below
+//service worker fetch code I know works! Below
 
-// self.addEventListener('fetch', (e) => {
-//   e.respondWith(
-//     caches.match(e.request).then((r) => {
-//           console.log('[Service Worker] Fetching resource: '+e.request.url);
-//       return r || fetch(e.request).then((response) => {
-//                 return caches.open(cacheName).then((cache) => {
-//           console.log('[Service Worker] Caching new resource: '+e.request.url);
-//           cache.put(e.request, response.clone());
-//           return response;
-//         });
-//       });
-//     })
-//   );
-// });
-
-// ////service worker fetch code I know works! Above
-// //RE-INSTATE CODE ABOVE AFTER EXPERIMENT
-
-
-//try this Oct2 2021 below
-self.addEventListener("fetch", function(e) {
-    if (new URL(e.request.url).origin !== location.origin) return;
-
-    if (e.request.mode === "navigate" && navigator.onLine) {
-        e.respondWith(
-            fetch(e.request).then(function(response) {
-                return caches.open(cacheName).then(function(cache) {
-                    cache.put(e.request, response.clone());
-                    return response;
-                });
-            })
-        );
-        return;
-    }
-
-    e.respondWith(
-        caches
-            .match(e.request)
-            .then(function(response) {
-                return (
-                    response ||
-                    fetch(e.request).then(function(response) {
-                        return caches.open(cacheName).then(function(cache) {
-                            cache.put(e.request, response.clone());
-                            return response;
-                        });
-                    })
-                );
-            })
-            .catch(function() {
-                return caches.match(offlinePage);
-            })
-    );
+self.addEventListener('fetch', (e) => {
+  e.respondWith(
+    caches.match(e.request).then((r) => {
+          console.log('[Service Worker] Fetching resource: '+e.request.url);
+      return r || fetch(e.request).then((response) => {
+                return caches.open(cacheName).then((cache) => {
+          console.log('[Service Worker] Caching new resource: '+e.request.url);
+          cache.put(e.request, response.clone());
+          return response;
+        });
+      });
+    })
+  );
 });
-//try this Oct2 2021 above
+
+////service worker fetch code I know works! Above
+//RE-INSTATE CODE ABOVE AFTER EXPERIMENT
+
+
+// //try this Oct2 2021 below
+// self.addEventListener("fetch", function(e) {
+//     if (new URL(e.request.url).origin !== location.origin) return;
+
+//     if (e.request.mode === "navigate" && navigator.onLine) {
+//         e.respondWith(
+//             fetch(e.request).then(function(response) {
+//                 return caches.open(cacheName).then(function(cache) {
+//                     cache.put(e.request, response.clone());
+//                     return response;
+//                 });
+//             })
+//         );
+//         return;
+//     }
+
+//     e.respondWith(
+//         caches
+//             .match(e.request)
+//             .then(function(response) {
+//                 return (
+//                     response ||
+//                     fetch(e.request).then(function(response) {
+//                         return caches.open(cacheName).then(function(cache) {
+//                             cache.put(e.request, response.clone());
+//                             return response;
+//                         });
+//                     })
+//                 );
+//             })
+//             .catch(function() {
+//                 return caches.match(offlinePage);
+//             })
+//     );
+// });
+// //try this Oct2 2021 above
 
 
 
