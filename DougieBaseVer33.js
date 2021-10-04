@@ -1,4 +1,5 @@
 //DougieBaseVer33.js
+//removed alert in view full note ?hangs up sometimes?
 //includesSubstringDougieBase Ver33.js in Textastic Sept 29 2021
 //from tryAgainDougieBase Ver33.js in Textastic
 //FIXED date:Sept9 2021 added code to prevent error if Backup without a file selected fixed cancel createNewDB so preferences still doesn't think you are creating a new db if you cancelledchanged tableArray declaration by making recordCounter = 1 added code for newDBGuidance to insure table created before adding new record .. cleaned up createTable screen goHomeBtn.disabled cleared add dynamic fieds input number disabled clearFileBtntn added HELP BTN (LOAD)
@@ -2560,8 +2561,8 @@ finishedReading.setAttribute('class','hidden'); displayFullNote.setAttribute('cl
 	searchRecords();//to help asthetics of search screen..extra p element won't appear otherwise
 };//end function goToSearchBtn.onclick
 
-
-	alert('Scroll up or down if RETURN TO NOTES Button is not on screen! (Move scroll bar on right to bottom of screen.)');
+//might this Alert be cause of program hang up when viewing complete note???
+	//alert('Scroll up or down if RETURN TO NOTES Button is not on screen! (Move scroll bar on right to bottom of screen.)');
 
 };//end of request.onsuccess
   // a request to view the object store identified with noteId.
