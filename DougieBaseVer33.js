@@ -1,5 +1,5 @@
 //DougieBaseVer33.js
-//removed alert in view full note ?hangs up sometimes?
+//removed alert in view full note ?hangs up sometimes? Cosmetic fixes Oct 3 2021
 //includesSubstringDougieBase Ver33.js in Textastic Sept 29 2021
 //from tryAgainDougieBase Ver33.js in Textastic
 //FIXED date:Sept9 2021 added code to prevent error if Backup without a file selected fixed cancel createNewDB so preferences still doesn't think you are creating a new db if you cancelledchanged tableArray declaration by making recordCounter = 1 added code for newDBGuidance to insure table created before adding new record .. cleaned up createTable screen goHomeBtn.disabled cleared add dynamic fieds input number disabled clearFileBtntn added HELP BTN (LOAD)
@@ -4182,7 +4182,7 @@ let x = 0;//hits index counter
 
 if(DTBtnTappedOnce ===0 & tableExists){initializeTable();}
 if (tableExists & tableTitle.length>originalNumberRecords || editNote) {
-	alert('Update the table first prior to Search.');
+	alert('Update and SAVE the table first prior to Search.');
 	tableScreenOptions();
 }//end if upDateNeeded
 
@@ -4381,7 +4381,7 @@ if(matchedRecordIndex === -1) {
 	  
 //keep track of multiple hits. 
 if(gotIt > 1) {
-	alert("More than 1 hit for search:  \n" + query + "\n Number of hits = " + gotIt + ". \n \nDougieBase scrolls to the last hit (highlighted) in the table.");
+	alert("More than 1 hit for search phrase:  \n" + query + "\n Number of hits = " + gotIt + ". \n \nDougieBase scrolls to the last hit (highlighted) in the table.");
 	gotIt = 0;
 }//end if gotIt > 1
 //keep track of multiple hits
