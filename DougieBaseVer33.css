@@ -1,5 +1,5 @@
 /*DougieBaseVer33.css in WorkingCopy*/
-/*font color of button text is blue in iOS 15 why? Forced it to black large Oct2 2021 touch-action: manipulation; to prevent double tap zoom … DID NOT WORK
+/*font color of button text is blue in iOS 15 why? Forced it to black large Oct2 2021 touch-action: manipulation; to prevent double tap zoom … DID NOT WORK added titleBanner for About db
 /*changed #newFieldWin for more height Aug 25 from TableNotesVer30.css from scrollTableNotesVer27.css*/
 /*testPrefTableNotesVer26.css June 13*/
 /*fixed position of prefWin in Safari portrait June14*/
@@ -545,6 +545,12 @@ overflow-x: scroll;
 .colorBtn {
 	
 	background-color: yellow; border-radius: 10px; border: 2px solid red; padding: 4px
+}
+
+.titleBanner {
+	
+	background-color: linen; border-radius: 10px; border: 2px solid red; padding: 4px;
+	text-align: center;
 }
 
 #settingsScreen {
