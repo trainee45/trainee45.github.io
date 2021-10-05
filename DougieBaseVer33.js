@@ -1,5 +1,5 @@
 //DougieBaseVer33.js
-//removed alert in view full note ?hangs up sometimes? Cosmetic fixes Oct 3 2021
+//removed alert in view full note ?hangs up sometimes? Cosmetic fixes Oct 3 2021 titleBanner in About db
 //includesSubstringDougieBase Ver33.js in Textastic Sept 29 2021
 //from tryAgainDougieBase Ver33.js in Textastic
 //FIXED date:Sept9 2021 added code to prevent error if Backup without a file selected fixed cancel createNewDB so preferences still doesn't think you are creating a new db if you cancelledchanged tableArray declaration by making recordCounter = 1 added code for newDBGuidance to insure table created before adding new record .. cleaned up createTable screen goHomeBtn.disabled cleared add dynamic fieds input number disabled clearFileBtntn added HELP BTN (LOAD)
@@ -2601,6 +2601,7 @@ request.onsuccess = function(event) {
 	console.log('Will display settings screen item # ' + data.id + ' ' + data.body);
  
  const viewSettingsBanner = document.querySelector('h2.viewSettings');
+ const dbNameInfo = document.createElement('p');
 const variablesViewed = document.querySelector('#variables');
 const theListHeading = document.querySelector('#theListHeading');
 
@@ -2620,7 +2621,12 @@ let cvItem = document.createElement('li');
 
 //above for new code to list variables
 //const fullViewP = document.querySelector('p.fullViewInstruction'); removed this because button off screen if note title >3 lines
- viewSettingsBanner.textContent = 'The Settings screen reveals the values of variables as currently set in database ' + dbName;
+ 
+   // viewSettingsBanner.textContent = 'The Settings screen reveals the values of variables as currently set in database: ' + dbName;
+  viewSettingsBanner.textContent = 'The Settings screen reveals the values of variables as currently set in database: ';
+  dbNameInfo.setAttribute('class','titleBanner');
+  dbNameInfo.textContent = dbName;
+  viewSettingsBanner.appendChild(dbNameInfo);
  //trying to get title light pink
 /* let pinkTitle = document.createElement('p.yellowonly');
  
