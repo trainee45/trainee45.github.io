@@ -1,4 +1,5 @@
-/*DougieBaseVer33.css in WorkingCopy*/
+/*DougieBaseVer34.css in WorkingCopy*/
+/* //Date:Oct5 2021 Removed Double tap to avoid magnification in Manage files view full screen search select filenames. iOS15 safari has no way to disable double tap for magnification. More cosmetics with dataBaseName titles added .titleBanner to CSS*/
 /*font color of button text is blue in iOS 15 why? Forced it to black large Oct2 2021 touch-action: manipulation; to prevent double tap zoom … DID NOT WORK added titleBanner for About db
 /*changed #newFieldWin for more height Aug 25 from TableNotesVer30.css from scrollTableNotesVer27.css*/
 /*testPrefTableNotesVer26.css June 13*/
@@ -170,6 +171,12 @@ textarea {
 	cols: 80 rows: 4
 }
 
+
+/*.hovering tr:hover {
+    background-color: lightblue ;
+} 
+*/
+
 #forRows {
 	border: 3px solid black;
 	overflow: scroll;
@@ -222,7 +229,7 @@ li {
   color: black;
   border: 2px solid rgb(255,84,104);
   border-radius: .5em;
-  
+  /*touch-action: manipulation;*/
     /*might have to erase lines below*/
 	
 }
