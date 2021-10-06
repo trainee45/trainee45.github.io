@@ -1,4 +1,5 @@
-//DougieBaseVer33.js
+//DougieBaseVer34.js
+//Date:Oct5 2021 Removed Double tap to avoid magnification in Manage files view full screen search select filenames. iOS15 safari has no way to disable double tap for magnification. More cosmetics with dataBaseName titles
 //removed alert in view full note ?hangs up sometimes? Cosmetic fixes Oct 3 2021 titleBanner in About db
 //includesSubstringDougieBase Ver33.js in Textastic Sept 29 2021
 //from tryAgainDougieBase Ver33.js in Textastic
@@ -148,6 +149,11 @@ let theLink = "";//used to hold the link in displayTable
 let linkLabel = false;//flag to allow using trailing text as link label instead of actual link .. see displayTableCHANGED TRUE JUNE8
 let scrollTable = true;//horizontal Table scroll is default
 //new code for managing databases and database names for loading Mar 23
+
+const dbNameInfo = document.createElement('p');//used in about db manage files
+dbNameInfo.setAttribute('class','titleBanner');
+
+
 const fileNamesWindow = document.querySelector('#fileNames');
 const dataBaseList = document.querySelector('#dataBaseList');
 const createNewDBWindow = document.querySelector('#createNewDBWin');//referenced this earlier because it is used onwindow open
@@ -607,6 +613,7 @@ const backupDataBaseList = document.querySelector('#backupDataBaseList');
 const selectedDBinfoP = document.querySelector('#selectedDBinfo');
 const backupFileNamesList = document.querySelector('#backupFileNamesList');
 const backingUpDBWin = document.querySelector('#backingUpDBWin');
+const backingUpBanner = document.querySelector('#backingUpBanner');
 const textarea = document.querySelector('#textAreaClip');//made global
 const restoreDBWindow = document.querySelector('#restoreDBWin');//made global
 const restoreDBInstructions = document.querySelector('#restoreDBInstructions');//made global HTML DIV
@@ -658,7 +665,10 @@ promise.then(databases => {
 	  console.log('Database # ['+ dbNumber +'] is ' + databases[i].name);
 databaseNameLi[i] = document.createElement('li');
 	 databaseNameLi[i].textContent = databases[i].name;
-	 databaseNameLi[i].addEventListener('dblclick', function () {
+	 
+//changed dblclick to just click in addEventListener to avoid magnification Date: Oct5 2021	
+
+databaseNameLi[i].addEventListener('click', function () {
 		//put name of database in global variable dataBaseName
 		dataBaseName = databases[i].name;
 		
@@ -833,7 +843,7 @@ getFileNamesSwitch = false;//so getFileNames does not run again after creating n
 createNewDBWindow.setAttribute('class','showing');
 console.log("In start createNewDB: newDBGuidance = " + newDBGuidance + "newDBflag = " + newDBflag + " xtraField = " + xtraField);
 //for guidance creating newDB
-newDBGuideP.textContent = "Type the name of your database into the text entry element and then tap 'Start creating new database'. The Preferences button in the main menu will now be high-lighted green indicating you now OPEN PREFERENCES..";
+newDBGuideP.textContent = "Type the name of your database into the text entry element and then tap 'Start creating new database'. The Preferences button in the main menu will now be high-lighted green indicating you must now OPEN PREFERENCES..";
 createNewDBWindow.appendChild(newDBGuideP);
 //end for guidance creating newDB
 	submitNameButton.onclick = function() {
@@ -898,7 +908,9 @@ promise.then(databases => {
 	  console.log('Database # ['+ dbNumber +'] is ' + databases[i].name);
 databaseNameMLi[i] = document.createElement('li');
 	 databaseNameMLi[i].textContent = databases[i].name;
-	 databaseNameMLi[i].addEventListener('dblclick', function () {
+	//try click instead of dblclick
+	//changed dblclick to just click in addEventListener to avoid magnification Date: Oct5 2021	
+	databaseNameMLi[i].addEventListener('click', function () {
 		//put name of database in global variable dataBaseName
 		dataBaseName = databases[i].name;
 		
@@ -917,7 +929,9 @@ databaseNameMLi[i] = document.createElement('li');
 			 //manageFilesWindow.setAttribute('class','hidden');
 			 console.log('At manage DB Files window.');
 			// deleteDataBase(dataBaseName);
-			selectedDBinfoP.textContent = "Selected Database Name is : " + dataBaseName;
+		selectedDBinfoP.textContent = "Selected Database Name is : ";
+		dbNameInfo.textContent = dataBaseName;
+		selectedDBinfoP.appendChild(dbNameInfo);
 		// fileChosenP.textContent = ' Database Selected: '+ databases[i].name;
 		console.log('dataBaseName = ' + dataBaseName);
 			
@@ -968,7 +982,10 @@ deleteFileButton.onclick = function() {
 			// 	backupDataBaseList.removeChild(dataBaseBKUPNameLi[i]);
 			// }//end for loop
 			
-			selectedDBNameP.textContent = "DELETING database ..." + dataBaseName;
+			selectedDBNameP.textContent = "DELETING database ...";
+			
+			dbNameInfo.textContent = dataBaseName;
+			selectedDBNameP.appendChild(dbNameInfo);
 			
 			// backupBtn.onclick = backupDataBase(dataBaseName);
 			
@@ -1027,8 +1044,10 @@ if (dataBaseName === "") {
 			// 	backupDataBaseList.removeChild(dataBaseBKUPNameLi[i]);
 			// }//end for loop
 			
-			selectedDBNameP.textContent = "BACKINGUP database ..." + dataBaseName;
+			selectedDBNameP.textContent = "BACKINGUP database ...";
 			
+		dbNameInfo.textContent = dataBaseName;
+		selectedDBinfoP.appendChild(dbNameInfo);
 			// backupBtn.onclick = backupDataBase(dataBaseName);
 			
 			// restoreFileBtn.onclick = restoreDataBase(dataBaseName);
@@ -1137,7 +1156,11 @@ manageFilesWindow.setAttribute('class','hidden');
 			// for (let i = 0; i< databases.length; i++) { 
 			// 	backupDataBaseList.removeChild(dataBaseBKUPNameLi[i]);
 			// }//end for loop
-			selectedDBNameP.textContent = "Tap BACKUP or RESTORE ..." + dataBaseName;
+			selectedDBNameP.textContent = "Tap BACKUP to SAVE ...";
+	dbNameInfo.textContent = dataBaseName;
+	selectedDBNameP.appendChild(dbNameInfo);
+
+			
 			
 			// backupBtn.onclick = backupDataBase(dataBaseName);
 			
@@ -2601,7 +2624,8 @@ request.onsuccess = function(event) {
 	console.log('Will display settings screen item # ' + data.id + ' ' + data.body);
  
  const viewSettingsBanner = document.querySelector('h2.viewSettings');
- const dbNameInfo = document.createElement('p');
+ // const dbNameInfo = document.createElement('p'); made global
+ 
 const variablesViewed = document.querySelector('#variables');
 const theListHeading = document.querySelector('#theListHeading');
 
@@ -2621,10 +2645,11 @@ let cvItem = document.createElement('li');
 
 //above for new code to list variables
 //const fullViewP = document.querySelector('p.fullViewInstruction'); removed this because button off screen if note title >3 lines
- 
-   // viewSettingsBanner.textContent = 'The Settings screen reveals the values of variables as currently set in database: ' + dbName;
+
+ // viewSettingsBanner.textContent = 'The Settings screen reveals the values of variables as currently set in database: ' + dbName;
   viewSettingsBanner.textContent = 'The Settings screen reveals the values of variables as currently set in database: ';
-  dbNameInfo.setAttribute('class','titleBanner');
+  // dbNameInfo.setAttribute('class','titleBanner'); made global
+  
   dbNameInfo.textContent = dbName;
   viewSettingsBanner.appendChild(dbNameInfo);
  //trying to get title light pink
@@ -4409,7 +4434,8 @@ if(gotIt > 1) {
 		//TypeError: Argument 1 ('node') to Node.appendChild must be an instance of Node
 		//ReferenceError: Can't find variable: $algo
 		//experiment change resultList to matchedRecord
-		matchedRecord.addEventListener('dblclick', function (e) {
+	//changed dblclick to click Oct5
+	matchedRecord.addEventListener('click', function (e) {
 			//remove if messes up tdying to prevent repeat registration of addEventListener
 			resultList.appendChild(addP);
 			//let once = true;
@@ -4432,7 +4458,9 @@ if(gotIt > 1) {
  console.log(this.className)           // logs the className of my_element
  console.log(e.currentTarget === this) // logs `true
  if (e.currentTarget) {
-	 matchedRecord.removeEventListener('dblclick', function (e) {
+	//was dblclick Date: Oct5
+
+	matchedRecord.removeEventListener('click', function (e) {
 	 	
 	 });
  }//end if e.currentTarget
@@ -4452,7 +4480,7 @@ clearRecordListBtn.onclick = function() {
 }//end while
 console.log('Clearing the record list after clearRecordListBtn.onclick..foundRecordsList = ' + foundRecordsList);
 
-liMatchedRecord.textContent = "If record found it will appear below: Double tap to view its notes";
+liMatchedRecord.textContent = "If record found it will appear below: Tap record title to view its notes";
 }//end clearFoundRecordLizt
 
 
@@ -5367,6 +5395,10 @@ deleteFieldBtn.onclick = function() {
 
 	deleteFieldWindow.setAttribute('class', 'showing');
 	deleteFieldTableName.textContent = "DELETE a field\/column from the table in: " + dbTableName.value;
+	
+		dbNameInfo.textContent = dbTableName.value;
+		deleteFieldTableName.appendChild(dbNameInfo);
+	
 	deleteTableField ();
 }//end deleteFieldBtn.onclick
 
@@ -6143,6 +6175,10 @@ console.log('Now just creating records!');
 		//alert('at for i loop: i = ' +i + ' c = ');
 		
 		const STrecordItem = document.createElement('tr');
+//STrecordItem.setAttribute('class','hovering');
+
+
+
 		// const STlinkTdAfter=document.createElement('p');//to add the text after the link
 		
 //june6	//	const STlinkTdBefore=document.createElement('p');//to add the text before the link
@@ -7688,6 +7724,10 @@ function backupDataBase(dataBaseName) {
 	let string = "";
 	backingUpDBWin.setAttribute('class','showing');
 	
+	dbNameInfo.textContent = dataBaseName;
+	backingUpBanner.appendChild(dbNameInfo);
+	
+	
 	const copyClipboardBtn = document.querySelector('#copyClipboardBtn');
 	copyClipboardBtn.setAttribute('class','attentionBtn');
 	const doneCopyBtn = document.querySelector('#doneCopy');
@@ -8685,7 +8725,7 @@ Note that you actually have to pass the exported data as a string, not as a JSON
 
   if('serviceWorker' in navigator) {
     navigator.serviceWorker
-             .register('/DougieBaseVer33sw.js')
+             .register('/DougieBaseVer34sw.js')
              .then(function() { console.log('Service Worker Registered'); });
 			alert('Service Worker Registered!'); navigator.storage.estimate().then(function(estimate) {
   document.getElementById("percent").value =
