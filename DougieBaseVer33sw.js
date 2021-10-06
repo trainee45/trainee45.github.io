@@ -1,5 +1,5 @@
-//DougieBaseVer33sw.js in Working Copy
-//from … TableNotesVer30sw.js ALTERED FETCH CODE OCT 2 2021
+//DougieBaseVer34sw.js
+//from … TableNotesVer30sw.js
 var cacheName = 'DougieBase-v1'
 self.addEventListener('install', function(e) {
  e.waitUntil(
@@ -11,8 +11,8 @@ self.addEventListener('install', function(e) {
        '/index.html',//directory path to project folder/app name.html file
 	   
 	    // 'https://github.com/trainee45/trainee45.github.io/TableNotesVer29.html',//directory path to project folder/app name.html file
-       '/DougieBaseVer33.js',//directory path to project folder/app name.js file
-       '/DougieBaseVer33.css'////directory path to project folder/app name.css file
+       '/DougieBaseVer34.js',//directory path to project folder/app name.js file
+       '/DougieBaseVer34.css'////directory path to project folder/app name.css file
 	   '/trainsDBTableNotes.webmanifest'////directory path to project folder/app name.trainmanifest file
 	   '/jquery-3.6.0.min.js'////directory path to project folder/app name.jQuery file
      ]);
@@ -41,7 +41,7 @@ self.addEventListener('install', function(e) {
 
 
 
-//RE-INSTATE CODE BELOW AFTER EXPERIMENT,!!!?
+
 
 //service worker fetch code I know works! Below
 
@@ -61,49 +61,6 @@ self.addEventListener('fetch', (e) => {
 });
 
 ////service worker fetch code I know works! Above
-//RE-INSTATE CODE ABOVE AFTER EXPERIMENT
-
-
-// //try this Oct2 2021 below
-// self.addEventListener("fetch", function(e) {
-//     if (new URL(e.request.url).origin !== location.origin) return;
-
-//     if (e.request.mode === "navigate" && navigator.onLine) {
-//         e.respondWith(
-//             fetch(e.request).then(function(response) {
-//                 return caches.open(cacheName).then(function(cache) {
-//                     cache.put(e.request, response.clone());
-//                     return response;
-//                 });
-//             })
-//         );
-//         return;
-//     }
-
-//     e.respondWith(
-//         caches
-//             .match(e.request)
-//             .then(function(response) {
-//                 return (
-//                     response ||
-//                     fetch(e.request).then(function(response) {
-//                         return caches.open(cacheName).then(function(cache) {
-//                             cache.put(e.request, response.clone());
-//                             return response;
-//                         });
-//                     })
-//                 );
-//             })
-//             .catch(function() {
-//                 return caches.match(offlinePage);
-//             })
-//     );
-// });
-// //try this Oct2 2021 above
-
-
-
-
 
 
 //try this fetch code below NOPE INTRODUCED ERROR
