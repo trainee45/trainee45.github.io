@@ -2,9 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>DougieBaseVer33.html</title>
-    <link href="DougieBaseVer33.css" rel="stylesheet">
+    <title>DougieBaseVer34.html</title>
+    <link href="DougieBaseVer34.css" rel="stylesheet">
 	<link rel="manifest" href="trainsDBTableNotes.webmanifest">
+
 	
 <!-- 	USE THIS VERSION AS OF Sept 29 2021 2021 This version has been installed on github pages ! Added links to documentation docx and pdf<script src="fileNamesTableNotesVer21.js" defer type="text/javascript"></script> Added p info statement to Create Table window -->
 
@@ -12,7 +13,7 @@
 
  <script src="jquery-3.6.0.min.js"></script>
 
-    <script src="DougieBaseVer33.js" defer></script>
+    <script src="DougieBaseVer34.js" defer></script>
 	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
 	<!-- <scrip src="jquery-3.6.0.slim.min.js"></script> -->
 <!-- 	<script src="jquery-3.6.0.slim.min.js" defer></script> -->
@@ -73,7 +74,7 @@ color: black;
 	
 	  
     <header>
-      <h1>DougieBase Version 33.2</h1>
+      <h1>DougieBase Version 34.0</h1>
     </header>
 	<p></p>
 <div id = "scrolling">
@@ -102,7 +103,7 @@ color: black;
 			  <h2 id="">Current Database File Names</h2>
 			  <p style="color: lightblue font-size: small">(Scroll up ⬆️ to see menu of options)</p>
 			  <div id="fileNamesList">
-				  <h3>Double Tap on the Database Name to Load</h3>
+				  <h3>Tap on the Database Name to Load</h3>
 				  <ol id = "dataBaseList">
 					  
 				  </ol>
@@ -136,20 +137,20 @@ color: black;
 	<h2 id="">Manage the Database Files </h2>
 	  <p></p>
 	    <div id="manageFileNamesList">
-				  <h3>Double Tap on the Database Name to SELECT</h3>
+				  <h3>Tap on the Database Name to SELECT</h3>
 				  <ol id = "manageDataBaseList">
 					  
 				  </ol>
 			  </div>
 			  
-		  <p class="edBan">Choose the file from list above and Double-tap to SELECT the DataBase: </p>
+		  <p class="edBan">Choose the file from list above. Tap to SELECT the DataBase: </p>
 		  <p></p>
 		   	<p id = "selectedDBinfo" class = "simulator"></p> 
 			<p></p>
 		  
 		  
 		   <button id="deleteFileBtn" class ="attentionBtn">DELETE DataBase</button>
-		    <button id="clearFileBtn" class ="attentionBtn">Clear DataBase</button>
+		    <button id="clearFileBtn" class ="normalBtn">Clear DataBase</button>
 			<button id="backupFileBtn" class ="attentionBtn">BACKUP DataBase</button>
 			
 			<button id = "cancelDeleteDataBaseBtn">CANCEL</button>
@@ -175,7 +176,7 @@ color: black;
 		  <label for="backupBtn">Tap BACKUP button to save a backup.</label>
 		  <button id= "backupBtn" name = "backupBtn" class = "attentionBtn">BACKUP</button>
 		  <p></p>
-		    <label for="restoreFileBtn" class="edBan"> Tap RESTORE DataBase to reclaim a lost Database. </label>
+		    <label for="restoreFileBtn" class="edBan"> Tap RESTORE DataBase to reclaim any lost Database from your external storage.. </label>
 		  <p></p>
 		    <!-- <button id="backupFileBtn" class ="attentionBtn">Backup DataBase</button> -->
 			   <button id="restoreFileBtn" class ="attentionBtn">Restore DataBase</button>
@@ -188,7 +189,7 @@ color: black;
 		<!-- Backing up database window -->
 		
 	<section id = "backingUpDBWin" class ="hidden">
-	<h2 id="">Backing up your database data to the Clipboard! </h2>
+	<h2 id="backingUpBanner">Backing up your database data to the Clipboard! </h2>
 	  <p></p>
 	   <button id="copyClipboardBtn">Click here first!</button>
 	   <button id ="doneCopy">DONE</button>
@@ -408,7 +409,7 @@ color: black;
 		 <ul>
 			 <li>Enter the title of the record or the text to be searched for from any field in the text input window (spaces count) and tap the Find Record button.</li>
 			 <li>If found the title of the record containing the search phrase appears in the Found Record List.....(SCOLL UP for more ⬆️ ...)</li>
-			 <li>Double Tap the title in the Found Record List to view its notes in the Full View screen.</li>
+			 <li>Tap the title in the Found Record List to view its notes in the Full View screen.</li>
 			 <li>Tap the Highlight Table Record button to stand out in table.</li>
 			 <li>If the Search Phrase is set to SPECIFIC, the record is returned only if one of its fields is the complete search phrase. CONTAINS means a record is returned if any of its fields just contains the search phrase either as a complete string or as a sub string. For example '3' will return any record containing '3' or '33' or year 2023 etc. So to return a record containing a number 3 only, set Search Phrase to SPECIFIC. These settings are changed in Preferences.</li>
 			 <li>Scroll table slightly to left to see successful hits 'tagged'.</li>
@@ -417,7 +418,7 @@ color: black;
 		  <p class="searchInstruction"></p> -->
 	</div> 
 	
-		  <p>Enter text of search phrase into the search input element. Double tap the record in the Found Record List to view its notes.</p>
+		  <p>Enter text of search phrase into the search input element. Tap the record in the Found Record List to view its notes.</p>
 		  <label for="searchTitle" class="edBan">Search Phrase: </label>
 		 <input id = "inputSearchRecord" name = "searchTitle"
 		  type="search" class = "custom"
@@ -655,7 +656,7 @@ color: black;
 <!-- start deleteField window -->
 <section id="deleteFieldWin" class = "hidden">
 		<h2 id="deleteFieldTableName"></h2>
-			<p>Choose the dynamic field you wish to DELETE from the current list of fields. (Tap the choose field input window). The first four FIXED fields can not be deleted.</p>
+			<p>Choose the DYNAMIC field you wish to DELETE from the current list of fields. (Tap the choose field input element). The first four FIXED fields can not be deleted. (SCROLL to LEFT).</p>
 	<div id = "fieldHeaders"></div>
 	
 		<label for="myFields">Choose a field to delete from this list:</label>
@@ -695,7 +696,7 @@ color: black;
 	<!-- test jQuery -->
 	
 	
-		<table id="STforRows" class="funcLib" style="background-color:black;">
+		<table id="STforRows" class = "funcLib"  style="background-color:black;">
 			
 			<thead>
 				<tr>
