@@ -258,7 +258,7 @@ li p {
 	} 
 	
 	/*added prefWin here June14 to fix positioning in Safari portrait mode made top = 40px in prefWin group. This seems to work ok June21 REMOVE #newFieldWin AUG27*/
-#prefWin, #deleteWin, #displayFullNote, #editWin, #editNewFieldWin, #documentationWin, #tableWin, #tableScrn, #createTableWin, #searchWin, #deleteFieldWin, #sortWin, #newFieldWin {
+#prefWin, #deleteWin, #displayFullNote, #editWin, #editNewFieldWin, #documentationWin, #tableWin, #tableScrn, #createTableWin, #searchWin, #deleteFieldWin, #sortWin, #newFieldWin, #chooseColoursWin {
         position: fixed; /*was absolute, "relative fixed positions relative tp viewport*/
        top: 40px; width: 480px; margin: 0 auto;   /*top 0 locates at very top corner viewport. top 20 allows position below banner top: 100%; was 190 then 100%*/
 	   margin-top: 430px; /*460 works with portrait but off bottom in landscape..so try */
@@ -429,12 +429,12 @@ To get to edit date or other cell contents and the return btn and save btn to ap
 		overflow: scroll;/* so the xtraField is visualized in changeColours window*/
 		}
 		
-#chooseColoursWin {
+/*#chooseColoursWin {
 	position: fixed; /*was absolute relative fixed didn't work */
-        top: 300px; /* 250 200px 100% was 190 then 100%*/
+        top: 320px; /* 300 250 200px 100% was 190 then 100%*/
         transform: translate(-50%,-50%);
         width: 400px;
-       height: 650px;/*was 450px  350px */
+       height: 700px;/*was650 450px  350px */
 		border: 5px solid red;
 		border-radius: 10px;
 		padding: 10px;
@@ -442,7 +442,7 @@ To get to edit date or other cell contents and the return btn and save btn to ap
         /*border-radius: 10px; */
         background-color: #eee;
 		overflow: scroll;/* so the xtraField is visualized in changeColours window*/
-		}
+		}*/
 		
 	
 	.edBan {
