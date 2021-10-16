@@ -1,4 +1,5 @@
-/*DougieBaseVer34.css in WorkingCopy*/
+/*DougieBaseVer35.css added chooseColoursWin from..*/
+/*clearBkgrdDougieBaseVer34.css in WorkingCopy allow background image*/
 /* //Date:Oct5 2021 Removed Double tap to avoid magnification in Manage files view full screen search select filenames. iOS15 safari has no way to disable double tap for magnification. More cosmetics with dataBaseName titles added .titleBanner to CSS*/
 /*font color of button text is blue in iOS 15 why? Forced it to black large Oct2 2021 touch-action: manipulation; to prevent double tap zoom … DID NOT WORK added titleBanner for About db
 /*changed #newFieldWin for more height Aug 25 from TableNotesVer30.css from scrollTableNotesVer27.css*/
@@ -415,10 +416,10 @@ To get to edit date or other cell contents and the return btn and save btn to ap
 	
 #changeColoursWin {
 	position: fixed; /*was absolute relative fixed didn't work */
-        top: 250px; /* 200px 100% was 190 then 100%*/
+        top: 310px; /* 300 250 200px 100% was 190 then 100%*/
         transform: translate(-50%,-50%);
         width: 400px;
-       height: 450px;/*was 350px */
+       height: 565px;/*was 550 450px was 350px */
 		border: 5px solid red;
 		border-radius: 10px;
 		padding: 10px;
@@ -427,6 +428,22 @@ To get to edit date or other cell contents and the return btn and save btn to ap
         background-color: #eee;
 		overflow: scroll;/* so the xtraField is visualized in changeColours window*/
 		}
+		
+#chooseColoursWin {
+	position: fixed; /*was absolute relative fixed didn't work */
+        top: 300px; /* 250 200px 100% was 190 then 100%*/
+        transform: translate(-50%,-50%);
+        width: 400px;
+       height: 650px;/*was 450px  350px */
+		border: 5px solid red;
+		border-radius: 10px;
+		padding: 10px;
+       /* border: none;/*was 10px solid red;*/
+        /*border-radius: 10px; */
+        background-color: #eee;
+		overflow: scroll;/* so the xtraField is visualized in changeColours window*/
+		}
+		
 	
 	.edBan {
 	background-color: lightgreen;
@@ -798,3 +815,10 @@ tbody {
 
 }
 
+.bkgrdImage {
+	background-image: url('eeyore.JPG');
+}
+
+.noBkgrdImage {
+	background-image: none;
+}
