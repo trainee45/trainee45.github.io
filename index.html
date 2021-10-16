@@ -2,8 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>DougieBaseVer34.html</title>
-    <link href="DougieBaseVer34.css" rel="stylesheet">
+    <title>DougieBaseVer35.html</title>
+    <link href="DougieBaseVer35.css" rel="stylesheet">
 	<link rel="manifest" href="trainsDBTableNotes.webmanifest">
 
 	
@@ -13,7 +13,7 @@
 
  <script src="jquery-3.6.0.min.js"></script>
 
-    <script src="DougieBaseVer34.js" defer></script>
+    <script src="DougieBaseVer35.js" defer></script>
 	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
 	<!-- <scrip src="jquery-3.6.0.slim.min.js"></script> -->
 <!-- 	<script src="jquery-3.6.0.slim.min.js" defer></script> -->
@@ -34,6 +34,10 @@ $(document).ready(function(){
 });
 </script>
 <style> 
+
+body {
+  background-image: url('eeyore.JPG');
+}
 #panel, #flip {
   padding: 5px;
   text-align: center;
@@ -56,7 +60,7 @@ color: black;
 	
 	
   </head>
-  <body>
+  <body id = "bodyImage">
 	  
 	
 	 <!-- START OF CONSOLE SIMULATOR CODE this part into the HTML section -->
@@ -74,7 +78,7 @@ color: black;
 	
 	  
     <header>
-      <h1>DougieBase Version 34.0</h1>
+      <h1>DougieBase Version 35.0</h1>
     </header>
 	<p></p>
 <div id = "scrolling">
@@ -297,7 +301,7 @@ color: black;
 		
 	<!-- notes  note-display -->	
       <section class="note-display">
-        <h2 id="dbTableName">Notes</h2>
+        <h2 id="dbTableName" class = "titleBanner">Notes</h2>
         <ul>
 
         </ul>
@@ -490,6 +494,7 @@ color: black;
 		<button id = "tableTime" name = "tableTime">TableDate <span id = "timeIndicator">?</span>time</button>
 		<button id = "useLinkLabel">Use Link Labels</button>
 		<button id = "scrollTable">Disable Scroll Table</button>
+		<button id = "bkgrdImage">Clear Background</button>
 		
 		<p id = "timeDateFlag" style ="text-align: center">Tap the TableDate ? Button to INCLUDE a timestamp or NOT.</p>
 		
@@ -540,13 +545,70 @@ color: black;
 		
 		<!--start change colours window-->
 		<div id="changeColoursWin" class="hidden">
-			<h3>Set Background and Font colours of Database</h3>
+			<h3>Randomly Set Background and Font colours of Database</h3>
 			<li id="changeColourListItem">
 				<h3 id="changeColourNoteTitle">Tap here to Change Colour Note Title</h3>
-			<p id="changeColourBody">Tap here to change Current Colour of the body of text for the note.<br> Tap outside the title and body text boxes to change background colour of the note frame.</p>
+			<!-- 	<p></p> -->
+	
+	
+			<p id="changeColourBody">Tap here to change Current Colour Background of the body of text for the RECORD'S FIRST DATA FIELD.<br> Tap outside the title and body text boxes to change background colour of the NOTES FRAME.</p>
 			</li>
 			
 		</div><!--end change colours window -->
+		
+		
+<div id="chooseColoursWin" class="hidden">
+		<h3>Use Colour Selector to Choose Background and Font colours of Database</h3>
+		 <p>Use the colour selector to pick desired colours for each DougieBase element</p>
+    
+	
+	
+
+	<div class = "titleBanner">
+	<p>Choose the colour for the Note frame:</p>
+    <input type="color" id="noteFrame" style = "text-align: left" name="noteFrame" value="#e66465">
+    <label for="noteFrame">Note Frame</label>
+	<!-- In js noteListItemColour = noteFrame.value -->
+	</div>
+
+
+
+	<div class = "titleBanner">
+	<p>Choose the colour for the Note's Record Title:</p>
+    <input type="color" id="noteTitle" style = "text-align: left" name="noteTitle"
+            value="#f6b73c">
+    <label for="noteTitle">Note Title</label>
+	<!-- In js noteTitleColour = noteTitleColour.value -->
+	</div>
+
+
+	<div class = "titleBanner">
+	<p>Choose the colour for Note's First Data Field:</p>
+    <input type="color" id="firstDataField" style = "text-align: left" name="firstDataField"
+            value="#f6b73c">
+    <label for="firstDataField">Notes First Data Field</label>
+	<!-- In js bodyColour= bodyColour.value -->
+	</div>
+
+
+	<div class = "titleBanner">
+	<p>Choose the colour for the Note's Second Data Field:</p>
+    <input type="color" id="secondDataField" style = "text-align: left" name="secondDataField"
+            value="#f6b73c">
+    <label for="secondDataField">Notes Second Data Field</label>
+	</div>
+	<!-- In js xtraFieldColour= xtraFieldColour.value -->
+	
+	<div class = "titleBanner">
+	<p>Choose the text colour for the Note's Font:</p>
+    <input type="color" id="notesFontColor" style = "text-align: left" name="notesFontColor"
+            value="black">
+			<label for="notesFontColor">Text Color of Notes FONT</label>
+	</div>
+	
+	<button id = "doneChooseColors">DONE</button>
+			
+</div>
 			
 		<div id="workDiv" class="hidden">	
 		</div>	<!--End Work Div section window-->
