@@ -1,4 +1,5 @@
-//DougieBaseVer34.js
+//DougieBaseVer35.js from 
+//clearBkgrdDougieBaseVer34.js clear background and fixed crashes that occur if user makes illogical moves Oct12 2021 use to update workingCopy and Safarii etc
 //Date:Oct5 2021 Removed Double tap to avoid magnification in Manage files view full screen search select filenames. iOS15 safari has no way to disable double tap for magnification. More cosmetics with dataBaseName titles
 //removed alert in view full note ?hangs up sometimes? Cosmetic fixes Oct 3 2021 titleBanner in About db
 //includesSubstringDougieBase Ver33.js in Textastic Sept 29 2021
@@ -149,7 +150,7 @@ let theLink = "";//used to hold the link in displayTable
 let linkLabel = false;//flag to allow using trailing text as link label instead of actual link .. see displayTableCHANGED TRUE JUNE8
 let scrollTable = true;//horizontal Table scroll is default
 //new code for managing databases and database names for loading Mar 23
-
+let bkgrdImage = true;//flag for clearing background image in preterences
 const dbNameInfo = document.createElement('p');//used in about db manage files
 dbNameInfo.setAttribute('class','titleBanner');
 
@@ -288,6 +289,29 @@ let bodyColour;
 let xtraFieldColour;
 let fontColour;
 let toggle = 0;
+
+let savedCurrentnoteListItemColour;
+let savedCurrentnoteTitleColour;
+let savedCurrentbodyColour;
+let savedCurrentxtraFieldColour;
+let savedCurrentfontColour;
+// let restoredCurrentnoteListItemColour;
+// let restoredCurrentnoteTitleColour;
+// let restoredCurrentbodyColour;
+// let restoredCurrentxtraFieldColour;
+
+const chooseColoursWin = document.querySelector('#chooseColoursWin');
+const noteFrameColor = document.querySelector('#noteFrame');
+const noteTitleColor = document.querySelector('#noteTitle');
+const firstDataFieldColor = document.querySelector('#firstDataField');
+const secondDataFieldColor = document.querySelector('#secondDataField');
+const notesFontColor = document.querySelector('#notesFontColor');
+
+const doneChooseColorsBtn = document.querySelector('#doneChooseColors');
+let restoreSavedBtn = document.createElement('button');//made global so disable works in getFileNames
+restoreSavedBtn.disabled = true;//gets enabled in change colors if you save current colors	
+
+
 let boggle = true;//used instead of toggle in viewCreationDate because it messed up fontColor (I had toggle changing from NUM to Boolean)
 let togglex = 0;
 let toggley = false;//only works everyothertime
@@ -635,7 +659,7 @@ let json ="";
 function getFileNames(dataBaseName) {
 	
 	
-	
+//restoreSavedBtn.disabled = true;//gets enabled in change colors if you save current colors	
 	
 	
 //flag that prevents dbList from repeating May 8. THIS WORKS!
@@ -2977,7 +3001,15 @@ settingsBtn.onclick = options;
 
 
 function options () {
+	console.log("Just entered function options after tapping preferences button. newDBGuidance flag = " + newDBGuidance);
+	//creating new db: At preferences, newDBflag = false newDBGuidance = undefined xtraField = 0 dbName = New database
 	
+	if(dbName === undefined && !newDBflag) {
+		alert('No database has been selected! Select or create a database to make preferences available.');
+	//prefWindow.setAttribute('class','hidden');
+		//getFileNames();
+		return;
+	} //end if dbName===undefined
 	
 	//Aug25 restore status quo of preferences and add note btns after new db creation done Aug25
 	
@@ -3003,6 +3035,8 @@ addNoteBtn.setAttribute('class','attentionBtn');
 	const addFieldBtn = document.querySelector('#newField');
 	const addFieldWin = document.querySelector('#newFieldWin');
 	const changeColoursWin = document.querySelector('#changeColoursWin');
+	const chooseColoursWin = document.querySelector('#chooseColoursWin');
+	
 	const displayDataBtn = document.querySelector('#displayData')
 	const showExtraFieldBtn = document.querySelector('#resetNewField');
 	const scrollBtns = document.querySelector('#scrollBtns');
@@ -3048,7 +3082,33 @@ addNoteBtn.setAttribute('class','attentionBtn');
 		
 	}//end function centerTitleBtn.onclick
 	
-//code for show link labels
+//code to clear/show background image Oct11
+const bkgrdImageBtn = document.querySelector('#bkgrdImage');
+const bodyImage = document.querySelector('#bodyImage')
+	bkgrdImageBtn.onclick = function (){
+		
+		if(bkgrdImage) {
+			bkgrdImageBtn.textContent = 'Show background image';
+			bkgrdImage = false;
+		bodyImage.setAttribute('class','noBkgrdImage');	bkgrdImageBtn.setAttribute('class','colorBtn');
+			//getFileNames();
+			
+		} else {
+			bkgrdImage = true;
+			bkgrdImageBtn.textContent = 'Clear Background Image';
+			bodyImage.setAttribute('class','bkgrdImage');
+			bkgrdImageBtn.setAttribute('class','attentionBtn');
+			//alert('removing buttons');
+			//ERROR: TypeError: Argument 1 ('child') to Node.removeChild must be an instance of Node	
+			//getFileNames();
+		}//end if else !centerTitle
+		
+	}//end function centerTitleBtn.onclick
+//code to clear/show background image
+	
+	
+	
+	//code for show link labels
 
 const showLinkLabelBtn = document.querySelector('#useLinkLabel');
 if(DTBtnTappedOnce ===0 && tableExists) {
@@ -3244,7 +3304,14 @@ addFieldBtn.setAttribute('class','attentionBtn');
 	//when creating newDB arriving in preferences after add note stage, make condition for displaying next newDBGuidance that newDBflag has been ccancelled (back at saveVariables), and that newDBGuidance is stii active(true)bThen in addField remove this guidanceP
 	console.log("In options: newDBGuidance = " + newDBGuidance + " newDBflag = " + newDBflag);
 	//In options: newDBGuidance = falsenewDBflag = false reset newDBGuidance after rerun and make true again to complete guidance until DONEbutton Aug 25
-	if (newDBGuidance === undefined && !newDBflag && xtraField === 0) {
+	
+	//add a condition indicating from createNewDab.i.e. dbName = "Create nwe database….????"dbName will = the new database name if coming from cretedb so making condition && dbName !== undefined will let the newDBGuidance statement be shown when creating a new db but not shown if going to preferences from a start of dougiebase or after a cancel of the getfilenames screen Oct 11 Also should disable preferences btn in crete ewDBBtn.onclick and reenable after cretenewDB btn name entry input clicked
+	
+	if (newDBGuidance === undefined && !newDBflag && xtraField === 0 && dbName !== undefined) {
+		console.log('At preferences, newDBflag = ' + newDBflag + ' newDBGuidance = ' + newDBGuidance + ' xtraField = '+ xtraField + ' dbName = ' + dbName);
+	//At preferences again..for Add Relabel notes second data field:
+	//At preferences, newDBflag = false newDBGuidance = undefined xtraField = 0 dbName = Donald Duck line 3285
+	//at this stage of create newDb xtraField will = 0
 		newDBGuideP.textContent = "When creating a new database, now tap 'ADD/RELABEL FIELD' button to initialize the Notes second data field.";
 		prefWindow.appendChild(newDBGuideP);
 		newDBGuidance = true;
@@ -3437,14 +3504,15 @@ addFieldBtn.setAttribute('class','attentionBtn');
 	
 	//start function changeColours()
 function changeColours () {
-	
+	dbNameInfo.textContent = dbName;
+	changeColoursWin.appendChild(dbNameInfo);
 	const changeColourListItem = document.querySelector('#changeColourListItem');
 	const changeColourNoteTitle = document.querySelector('#changeColourNoteTitle');
 	const changeColourBody = document.querySelector('#changeColourBody');
 	let xtraFieldPara = document.createElement('p');
 	prefWindow.setAttribute('class','hidden');
 		changeColoursWin.setAttribute('class','showing');
-
+		
 		//js code for change colours here
 		changeColourListItem.addEventListener('click', function() {
   var rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
@@ -3453,7 +3521,9 @@ function changeColours () {
   noteListItemColour = rndCol;
 });//end brace bracket for changeColourListItem.addEventListener
 		
-		changeColourNoteTitle.addEventListener('click', function() {
+
+
+changeColourNoteTitle.addEventListener('click', function() {
   var rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
   changeColourNoteTitle.style.backgroundColor = rndCol;
   //set global variable
@@ -3491,7 +3561,22 @@ let defaultBtn = document.createElement('button');
 let doneBtn = document.createElement('button');
       doneBtn.textContent = 'DONE';
       changeColoursWin.appendChild(doneBtn);
+	  
+let cancelChangeColorsBtn = document.createElement('button');
+      cancelChangeColorsBtn.textContent = 'CANCEL';
+      changeColoursWin.appendChild(cancelChangeColorsBtn);
+	  
+let chooseColorBtn = document.createElement('button');
+       chooseColorBtn.textContent = 'CHOOSE COLOUR';
+      changeColoursWin.appendChild(chooseColorBtn);
+	  
+let saveCurrentBtn = document.createElement('button');
+      saveCurrentBtn.textContent = 'SAVE CURRENT COLOURS';
+      changeColoursWin.appendChild(saveCurrentBtn);
 
+// let restoreSavedBtn = document.createElement('button');//made global so disable would work in getFileNames
+      restoreSavedBtn.textContent = 'RESTORE SAVED COLOURS';
+	 changeColoursWin.appendChild(restoreSavedBtn);
 	fontColourBtn.onclick = function () {
 		if (toggle === 0) {
 			toggle = 1;
@@ -3546,7 +3631,11 @@ fontColourBtn.textContent = 'Text - WHITE';
 	changeColoursWin.removeChild(doneBtn);
 	changeColoursWin.removeChild(defaultBtn);
   changeColoursWin.removeChild(fontColourBtn);
-  
+ changeColoursWin.removeChild(chooseColorBtn);
+changeColoursWin.removeChild(cancelChangeColorsBtn);
+changeColoursWin.removeChild(saveCurrentBtn);
+changeColoursWin.removeChild(restoreSavedBtn);
+
   if (xtraField === 1) {
 	  changeColourListItem.removeChild(xtraFieldPara);
   }//end if (xtraField ===1)
@@ -3562,11 +3651,16 @@ fontColourBtn.textContent = 'Text - WHITE';
 		  
 	  doneBtn.onclick = function () {
 		  saveBtn.setAttribute('class', 'colorBtn');
+		  doneBtn.setAttribute('class','normalBtn');
 		//code for done here
 		changeColoursWin.removeChild(doneBtn);
 	changeColoursWin.removeChild(defaultBtn);
   changeColoursWin.removeChild(fontColourBtn);
-  
+ changeColoursWin.removeChild(chooseColorBtn);
+ changeColoursWin.removeChild(saveCurrentBtn);
+changeColoursWin.removeChild(restoreSavedBtn);
+changeColoursWin.removeChild(cancelChangeColorsBtn);
+ 
   if (xtraField === 1) {
 	  changeColourListItem.removeChild(xtraFieldPara);
   }//end if (xtraField ===1)
@@ -3574,6 +3668,130 @@ fontColourBtn.textContent = 'Text - WHITE';
 	  prefWindow.setAttribute('class','showing');
 	  displayData();
   };//end doneBtn.onclick
+  
+ //CANCEL BUTTO
+ cancelChangeColorsBtn.onclick = function () {
+		  saveBtn.setAttribute('class', 'colorBtn');
+		//code for done here
+		changeColoursWin.removeChild(doneBtn);
+	changeColoursWin.removeChild(defaultBtn);
+  changeColoursWin.removeChild(fontColourBtn);
+ changeColoursWin.removeChild(chooseColorBtn);
+ changeColoursWin.removeChild(saveCurrentBtn);
+changeColoursWin.removeChild(restoreSavedBtn);
+changeColoursWin.removeChild(cancelChangeColorsBtn);
+ 
+  if (xtraField === 1) {
+	  changeColourListItem.removeChild(xtraFieldPara);
+  }//end if (xtraField ===1)
+  changeColoursWin.setAttribute('class','hidden');
+	  prefWindow.setAttribute('class','showing');
+	  displayData();
+  };//end cancelChangeColorsBtn.onclick
+  
+  
+  //choose colors
+  chooseColorBtn.onclick = function () {
+		  saveBtn.setAttribute('class', 'colorBtn');
+		//code for done here
+		changeColoursWin.removeChild(doneBtn);
+	changeColoursWin.removeChild(defaultBtn);
+  changeColoursWin.removeChild(fontColourBtn);
+ changeColoursWin.removeChild(chooseColorBtn);
+changeColoursWin.removeChild(cancelChangeColorsBtn); 
+
+  if (xtraField === 1) {
+	  changeColourListItem.removeChild(xtraFieldPara);
+  }//end if (xtraField ===1)
+  
+ dbNameInfo.textContent = dbName;
+ chooseColoursWin.appendChild(dbNameInfo); changeColoursWin.setAttribute('class','hidden');
+  chooseColoursWin.setAttribute('class','showing');
+  
+  //equate colors to selector choices
+//   const noteFrameColor = document.querySelector('#noteFrame');
+// const noteTitleColor = document.querySelector('#noteTitle');
+// const firstDataFieldColor = document.querySelector('#firstDataField');
+// const secondDataFieldColor = document.querySelector('#secondDataField');
+
+noteListItemColour = noteFrameColor.value;
+noteTitleColour = noteTitleColor.value;
+bodyColour = firstDataFieldColor.value;//notes first field
+xtraFieldColour = secondDataFieldColor.value;//notes second field
+fontColour = notesFontColor.value;
+
+  //equate colors to selector choices
+  doneChooseColorsBtn.onclick = function() {
+	  
+	  //this saves altered colors after choosing!
+	  noteListItemColour = noteFrameColor.value;
+noteTitleColour = noteTitleColor.value;
+bodyColour = firstDataFieldColor.value;//notes first field
+xtraFieldColour = secondDataFieldColor.value;//notes second field
+fontColour = notesFontColor.value;
+	  changeColoursWin.removeChild(saveCurrentBtn);
+	  changeColoursWin.removeChild(restoreSavedBtn);
+	  
+	  saveBtn.setAttribute('class', 'colorBtn');
+	  changeColoursWin.setAttribute('class','hidden');
+	  chooseColoursWin.setAttribute('class','hidden');
+	  prefWindow.setAttribute('class','showing');
+	  displayData();
+  };//end doneChooseColorsBtn.onclick
+  displayData();
+};//end chooseColorBtn.onclick
+  //choose colors
+  
+  
+ //code for SAVE CURRENT and RESTORE SAVED  colors
+ 
+ saveCurrentBtn.onclick = function (){
+	 restoreSavedBtn.disabled = false;
+	 restoreSavedBtn.setAttribute('class','colorBtn');
+		savedCurrentnoteListItemColour = noteListItemColour;
+	 savedCurrentnoteTitleColour = noteTitleColour;
+	 savedCurrentbodyColour = bodyColour;
+	 if(xtraField === 1) {
+	 savedCurrentxtraFieldColour = xtraFieldColour;
+	  }//end if xtraField = 1
+	  savedCurrentfontColour = fontColour;
+	 
+	 alert('The CURRENT background colours have been SAVED! Tap the RESTORE SAVED button if you want to revert back to these saved colours.');
+		//do I need if xtraField = 1??	saveCurrentBtn.setAttribute('class','colorBtn');
+			//displayData();
+			
+		}; //end saveCurrentBtn.onclick
+	
+	restoreSavedBtn.onclick = function (){
+	 noteListItemColour = savedCurrentnoteListItemColour;
+	 noteTitleColour = savedCurrentnoteTitleColour;
+	 bodyColour = savedCurrentbodyColour;
+	 if(xtraField === 1) {
+		xtraFieldColour = savedCurrentxtraFieldColour; 
+	 }//end if xtraField = 1
+	 fontColour = savedCurrentfontColour;
+	 
+	 //collect backgrd.styles 
+changeColourListItem.style.backgroundColor = savedCurrentnoteListItemColour;
+changeColourNoteTitle.style.backgroundColor = savedCurrentnoteTitleColour;
+changeColourBody.style.backgroundColor = savedCurrentbodyColour;
+if(xtraField === 1) {
+xtraFieldPara.style.backgroundColor = savedCurrentxtraFieldColour;
+	}//end if xtraField === 1
+changeColourListItem.style.color = savedCurrentfontColour;
+//collect backgrd.styles
+	 
+	 alert('The SAVED background colours have been RESTORED! Tap the DONE button if you want to revert back to these saved colours.');
+	 
+	doneBtn.setAttribute('class','colorBtn');
+	 
+		//do I need if xtraField = 1??	saveCurrentBtn.setAttribute('class','colorBtn');
+			//displayData();
+			
+		}; //end restoreSavedBtn.onclick	
+		
+  //code for SAVE CURRENT and RESTORE SAVED  colors
+		
   //need random function in the change colour section
   function random(number) {
         return Math.floor(Math.random()*number);
@@ -3823,6 +4041,18 @@ dateColorBtn.textContent = 'Toggle Date Colour';
 
 //add note section variables declared in menu section ..from main menu
 addNoteBtn.onclick = function () {
+	console.log('At addNoteBtn.onclick: dbName = ' + dbName + 'newDBflag = '+ newDBflag + 'newDBGuidance = ' + newDBGuidance);
+	//
+	//if user taps add note btn before a database has been selected!
+	//newDBGuidance shuold be true if going through create new db process
+	//At Add Note in createNew db process line 3864
+	//At addNoteBtn.onclick: dbName = undefinednewDBflag = falsenewDBGuidance = true
+	if(dbName === undefined && !newDBflag && !newDBGuidance) {
+		alert('No database has been selected! Select or create a database to make ADD NOTE available.');
+		
+		return;
+	} //end if dbName===undefined
+	
 	//fix loop hole of table screen getting messed up if user adds new note prior to first initialization of table
 	if(DTBtnTappedOnce ===0 & tableExists){
 		alert('The pre-existing table has to be initialized first before adding a new note! Tap the DISPLAY TABLE button.');
@@ -8725,7 +8955,7 @@ Note that you actually have to pass the exported data as a string, not as a JSON
 
   if('serviceWorker' in navigator) {
     navigator.serviceWorker
-             .register('/DougieBaseVer34sw.js')
+             .register('/DougieBaseVer35sw.js')
              .then(function() { console.log('Service Worker Registered'); });
 			alert('Service Worker Registered!'); navigator.storage.estimate().then(function(estimate) {
   document.getElementById("percent").value =
