@@ -1,5 +1,5 @@
 /*DougieBaseVer35.css added chooseColoursWin from..*/
-/*clearBkgrdDougieBaseVer34.css in WorkingCopy allow background image*/
+/*clearBkgrdDougieBaseVer34.css in WorkingCopy allow background image added .tdEdit class Oct16*/
 /* //Date:Oct5 2021 Removed Double tap to avoid magnification in Manage files view full screen search select filenames. iOS15 safari has no way to disable double tap for magnification. More cosmetics with dataBaseName titles added .titleBanner to CSS*/
 /*font color of button text is blue in iOS 15 why? Forced it to black large Oct2 2021 touch-action: manipulation; to prevent double tap zoom … DID NOT WORK added titleBanner for About db
 /*changed #newFieldWin for more height Aug 25 from TableNotesVer30.css from scrollTableNotesVer27.css*/
@@ -31,7 +31,7 @@ body {
 
 }
 
-button {
+button, .tdEdit {
 	color: black;/*iOS 15 changed font color of button text to blue why? So I force it to black in css..its blue in Edge too!*/
 	border: 2px solid black;
 	border-radius: .5em;
