@@ -1,5 +1,5 @@
 //DougieBaseVer35.js from 
-//clearBkgrdDougieBaseVer34.js clear background and fixed crashes that occur if user makes illogical moves Oct12 2021 use to update workingCopy and Safarii etc
+//changed addEventListener to copy instead of dblclick Oct16 clearBkgrdDougieBaseVer34.js clear background and fixed crashes that occur if user makes illogical moves Oct12 2021 use to update workingCopy and Safarii etc
 //Date:Oct5 2021 Removed Double tap to avoid magnification in Manage files view full screen search select filenames. iOS15 safari has no way to disable double tap for magnification. More cosmetics with dataBaseName titles
 //removed alert in view full note ?hangs up sometimes? Cosmetic fixes Oct 3 2021 titleBanner in About db
 //includesSubstringDougieBase Ver33.js in Textastic Sept 29 2021
@@ -6709,8 +6709,8 @@ if(!linkLabel) {
 // 	}//end if keepPreLinkInfo
 	//end check if link	
 			
-			//addEventListener to allow edit of td values
-	STrecordTd.addEventListener('dblclick', function () {
+			//addEventListener to allow edit of td values changed dblclick to copy
+	STrecordTd.addEventListener('copy', function () {
 		theLink = "";//clear reset the link
 	//	let dblTappedOnce = true;
 		const editTD = document.createElement('p');
