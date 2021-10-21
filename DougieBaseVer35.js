@@ -1,4 +1,4 @@
-//DougieBaseVer35.js from 
+//DougieBaseVer35.js from fixEditDougieBaseVer35.js from 
 //changed addEventListener to copy instead of dblclick Oct16 clearBkgrdDougieBaseVer34.js clear background and fixed crashes that occur if user makes illogical moves Oct12 2021 use to update workingCopy and Safarii etc
 //Date:Oct5 2021 Removed Double tap to avoid magnification in Manage files view full screen search select filenames. iOS15 safari has no way to disable double tap for magnification. More cosmetics with dataBaseName titles
 //removed alert in view full note ?hangs up sometimes? Cosmetic fixes Oct 3 2021 titleBanner in About db
@@ -273,6 +273,7 @@ let showScroll = true;//flag to show or hide scroll buttons via preferences sett
 let centerTitle = false;//flag set in preferences to center the record title in notes display
 let highlightDoneBtn = false;//flag used in addField function preferences
 let doneRelabelBtn = document.createElement('button');//made global see addField function ?should be const ?
+let trigger = 'copy'; //set the addEventListener in edit td cell of table. The other option is dblclick Oct 20 2021
 let dbName;//global variable for database name..currently notes_dbx replaced with dataBaseName
 let dataBaseName = "";//make global variable so can use in viewSettings
 let newDBflag = false; //signify from createNewDataBase
@@ -3001,7 +3002,9 @@ settingsBtn.onclick = options;
 
 
 function options () {
-	console.log("Just entered function options after tapping preferences button. newDBGuidance flag = " + newDBGuidance);
+	
+	
+	console.log("Just entered function options after tapping preferences button. newDBGuidance flag = " + newDBGuidance + " trigger = " + trigger);
 	//creating new db: At preferences, newDBflag = false newDBGuidance = undefined xtraField = 0 dbName = New database
 	
 	if(dbName === undefined && !newDBflag) {
@@ -3106,7 +3109,34 @@ const bodyImage = document.querySelector('#bodyImage')
 	}//end function centerTitleBtn.onclick
 //code to clear/show background image
 	
-	
+//code below to switch addEventListener event type in edit td of table	
+const editTDTriggerBtn = document.querySelector('#editTDTrigger');//this is the btn in preferences used to switch between copy and dblclick for edit table data cells. The trigger variable is declared at start of prgm
+if(DTBtnTappedOnce ===0) {
+	editTDTriggerBtn.disabled = true;
+}else {
+	editTDTriggerBtn.disabled = false;
+}//end else if DTBtnTappedOnce ===0 & tableExists to prevent messed up table
+
+const tdEditTriggerP = document.querySelector('#tdEditTrigger');
+	editTDTriggerBtn.onclick = function () {
+		editNote = true;//flag to refreshTable if notes editededitNote = false;//flag to refreshTable if notes edited also triggers table refresh if edit TD cell action is changed in preferences so ittakes effect imediately if changed in preferences. Otherwise you would have to wait for table refresh before new trigger is effective. 
+		if(trigger==='copy') {
+			trigger = 'dblclick';
+			editTDTriggerBtn.textContent = "Select-Copy";
+		timeDateFlagP.textContent = "Double Tap to EDIT the Table data cells.";
+	tdEditTriggerP.textContent = "Double Tap on the table's data cell to EDIT its contents.";	editTDTriggerBtn.setAttribute('class','colorBtn');
+		}//end if trigger === 'copy'
+		
+		else if(trigger === 'dblclick') {
+			trigger = 'copy';
+			editTDTriggerBtn.textContent = "Double Click";
+		timeDateFlagP.textContent = "Use Select-Copy action to EDIT the Table data cells.";
+	tdEditTriggerP.textContent = "To edit date or other cell contents select the contents, then tap 'COPY', Clear/Initialize the input element, then enter new text into the input element. (or 'paste' to enter original).";	editTDTriggerBtn.setAttribute('class','colorBtn');
+			
+		}//end if trigger==='dblclick'
+	};//end editTDTriggerBtn.onclick
+
+//code above to switch addEventListener event type in edit td of table	
 	
 	//code for show link labels
 
@@ -5137,7 +5167,7 @@ refreshTableName.textContent = dbTableName.value;
 	 
 	 tableNeedsUpdate = true;//flag so that if removing after returnHomeBtn tapped does not produce an error Dec 29
 	 }//end if tableTitle.length>originalNumberRecords
-	 refreshTableP.textContent = "You have added a new Record since last creation of Table, OR you have edited a note. To update tap UPDATE TABLE button.";
+	 refreshTableP.textContent = "You have added a new Record since last creation of Table, OR you have edited a note, OR you have changed the edit table Trigger action. To update tap UPDATE TABLE button.";
 	 refreshTableBtn.onclick = function () {
 		 
 		// originalNumberRecords = tableTitle.length;//reset originalNumberRecords to reflect updated table
@@ -6524,6 +6554,16 @@ refreshed = 0; */
 
 		//put text of the tableArray[][] in the data cell	
 	STrecordTd.textContent = tableArray[i][c];//tableTitle (global) array has to be constructed in displayData of indexedDBNotes	This is the info from displayData that was put into the tableArray n buildRecordRows when constructing the table
+	
+	//to allow table edit to avoid dblclick and to work in a blank td cell as will be the case if adding a dynamic field in edit table enter a text string to facilitate the copy paste iOS process to allow data entry. Oct 19 2021
+	
+	if(tableArray[i][c]=== undefined || tableArray[i][c]===0 || tableArray[i][c]=== " " || tableArray[i][c]=== null || tableArray[i][c]=== "") {
+		STrecordTd.textContent = "EDIT"
+	}//end if tableArray[i][c]===undefined
+	
+	//to allow table edit to avoid dblclick
+	
+	
 			console.log('In displayTable.  tableArray['+i+']['+c+'] = ' + tableArray[i][c]);
 			
 	//check if link
@@ -6709,8 +6749,10 @@ if(!linkLabel) {
 // 	}//end if keepPreLinkInfo
 	//end check if link	
 			
-			//addEventListener to allow edit of td values changed dblclick to copy
-	STrecordTd.addEventListener('copy', function () {
+			//addEventListener to allow edit of td values changed dblclick to copy trigger contains event type set in preferences
+			//trigger = 'copy';
+			console.log("trigger = " + trigger);
+	STrecordTd.addEventListener(trigger, function () {
 		theLink = "";//clear reset the link
 	//	let dblTappedOnce = true;
 		const editTD = document.createElement('p');
