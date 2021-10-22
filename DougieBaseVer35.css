@@ -1,4 +1,4 @@
-/*DougieBaseVer35.css added chooseColoursWin and put in #prefwin group from..*/
+/*DougieBaseVer35.css added chooseColoursWin and put in #prefwin group positioned filenames win  from..*/
 /*clearBkgrdDougieBaseVer34.css in WorkingCopy allow background image added .tdEdit class Oct16*/
 /* //Date:Oct5 2021 Removed Double tap to avoid magnification in Manage files view full screen search select filenames. iOS15 safari has no way to disable double tap for magnification. More cosmetics with dataBaseName titles added .titleBanner to CSS*/
 /*font color of button text is blue in iOS 15 why? Forced it to black large Oct2 2021 touch-action: manipulation; to prevent double tap zoom … DID NOT WORK added titleBanner for About db
@@ -396,7 +396,10 @@ To get to edit date or other cell contents and the return btn and save btn to ap
 }
 
 #fileNames {
-	top: 450px;/*was 350*/
+	top: 350px;/*450px was 350*/
+	/*top: 250px;  200px was 190 then 100%*/
+	   
+	margin-top: 100px;
 	height: 700px;/*was 500 px*/
 	overflow: scroll;
 }
