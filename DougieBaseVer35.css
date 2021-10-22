@@ -1,4 +1,4 @@
-/*DougieBaseVer35.css added chooseColoursWin from..*/
+/*DougieBaseVer35.css added chooseColoursWin and put in #prefwin group from..*/
 /*clearBkgrdDougieBaseVer34.css in WorkingCopy allow background image added .tdEdit class Oct16*/
 /* //Date:Oct5 2021 Removed Double tap to avoid magnification in Manage files view full screen search select filenames. iOS15 safari has no way to disable double tap for magnification. More cosmetics with dataBaseName titles added .titleBanner to CSS*/
 /*font color of button text is blue in iOS 15 why? Forced it to black large Oct2 2021 touch-action: manipulation; to prevent double tap zoom … DID NOT WORK added titleBanner for About db
@@ -64,9 +64,11 @@ header {
 #new-note {
 	position: fixed; /*absolute was relative */
        top: 250px; /* 200px was 190 then 100%*/
+	   
+	   margin-top: 100px;
         transform: translate(-50%,-50%);
         width: 400px;
-       height: 600px;/*change back to 400px if xtraField = 0 reset fixes repeat of  createNewDB! 350;310 was 300 increased so border seen if pref window on screen at same time date: Jan 29 2021 increased height so decoder title entry is not on bottom edge of window May24 2021*/
+       height: 500px;/*change back to 400px if xtraField = 0 reset fixes repeat of  createNewDB! 350;310 was 300 increased so border seen if pref window on screen at same time date: Jan 29 2021 increased height so decoder title entry is not on bottom edge of window May24 2021*/
 		border: 5px solid red;
 		border-radius: 10px;
 		padding: 20px;
@@ -429,22 +431,7 @@ To get to edit date or other cell contents and the return btn and save btn to ap
 		overflow: scroll;/* so the xtraField is visualized in changeColours window*/
 		}
 		
-/*#chooseColoursWin {
-	position: fixed; /*was absolute relative fixed didn't work */
-        top: 320px; /* 300 250 200px 100% was 190 then 100%*/
-        transform: translate(-50%,-50%);
-        width: 400px;
-       height: 700px;/*was650 450px  350px */
-		border: 5px solid red;
-		border-radius: 10px;
-		padding: 10px;
-       /* border: none;/*was 10px solid red;*/
-        /*border-radius: 10px; */
-        background-color: #eee;
-		overflow: scroll;/* so the xtraField is visualized in changeColours window*/
-		}*/
 		
-	
 	.edBan {
 	background-color: lightgreen;
 	color: black;	
