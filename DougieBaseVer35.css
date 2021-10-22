@@ -397,7 +397,7 @@ To get to edit date or other cell contents and the return btn and save btn to ap
 
 #fileNames {
 	top: 350px;
-	height: 550px;/*was 500 px*/
+	height: 650px;/*was 500 px*/
 	overflow: scroll;
 }
 
