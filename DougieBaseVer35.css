@@ -1,4 +1,4 @@
-/*DougieBaseVer35.css added #STheadRow td { in iOS15 lost sticky STHeadrow td changed top =45 from -20 chooseColoursWin and put in #prefwin group positioned filenames win  from..*/
+/*DougieBaseVer35.css added #STheadRow td { in iOS15 lost sticky STHeadrow td changed top 6% =45 from -20 chooseColoursWin and put in #prefwin group positioned filenames win  from..*/
 /*clearBkgrdDougieBaseVer34.css in WorkingCopy allow background image added .tdEdit class Oct16*/
 /* //Date:Oct5 2021 Removed Double tap to avoid magnification in Manage files view full screen search select filenames. iOS15 safari has no way to disable double tap for magnification. More cosmetics with dataBaseName titles added .titleBanner to CSS*/
 /*font color of button text is blue in iOS 15 why? Forced it to black large Oct2 2021 touch-action: manipulation; to prevent double tap zoom … DID NOT WORK added titleBanner for About db
@@ -754,7 +754,7 @@ tbody td {
 /*ADD THIS CSS TO ALLOW SCROLL OF TABLE ROWS UNDER TABLE HEADING June 29 2021*/
 #STheadRow td {
 	background-color:lightpink;/*green;*/
-	top: 45px;/*now 45 40 was -20 this setting -20 hides top edge of table rows when scrolling up10 AFTER UPDATE TO ioS15 head row in table did not stick at top border of tableWin but disappeared behind top border. Changing top from -20 to 40 made head row stick at top border of tableWin on my iPadPro BUT whatabout jan's iPadAir which continued to stick the head row properly at top = -20. Her iOS is 14.8!!!!!*/
+	top: 6%;/*now 45px 40 was -20 this setting -20 hides top edge of table rows when scrolling up10 AFTER UPDATE TO ioS15 head row in table did not stick at top border of tableWin but disappeared behind top border. Changing top from -20 to 40 made head row stick at top border of tableWin on my iPadPro BUT whatabout jan's iPadAir which continued to stick the head row properly at top = -20. Her iOS is 14.8!!!!!*/
 	position:sticky;/*this fixes head row at top of tablewin so records scroll underneath*/
 	/*margin:10;*/
 	margin:10;
