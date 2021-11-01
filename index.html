@@ -8,7 +8,7 @@
 	<link rel="manifest" href="trainsDBTableNotes.webmanifest">
 
 	
-<!-- 	Date: Oct 31 2021. Ver 35.3removed access to word documentation help manual fixEditDougieBaseVer35.html USE THIS VERSION AS OF Sept 29 2021 2021 This version has been installed on github pages ! Added links to documentation docx and pdf<script src="fileNamesTableNotesVer21.js" defer type="text/javascript"></script> Added p info statement to Create Table window -->
+<!-- 	Date: Oct 31 2021. Ver 35.3 made double tap default table edit trigger removed access to word documentation help manual fixEditDougieBaseVer35.html USE THIS VERSION AS OF Sept 29 2021 2021 This version has been installed on github pages ! Added links to documentation docx and pdf<script src="fileNamesTableNotesVer21.js" defer type="text/javascript"></script> Added p info statement to Create Table window -->
 
 <!-- Line below adds jQuery library from jQuery file in same directory as the .js file. It works without internet connection. The google CDN has to have the internet connection IMPORTANT CONSIDERATION WHEN USING MORE jQuery code!! At the moment as of May17 2021 the only thing using jQuery is the table menu and hide scroll btns in preferences-->
 
@@ -787,7 +787,11 @@ color: black;
 		</table>
 		
 	<!-- </div> --><!-- moved to edit date homeScreenBtn and Save btn in the table div -->
-	<p id = "tdEditTrigger" style="color: blue">To edit date or other cell contents select the contents, then tap 'COPY', then enter new text (after <span class ="tdEdit"> Clear/Initialize </span> .) into the input element. (or 'paste' to enter original).</p>
+	<!-- <p id = "tdEditTrigger" style="color: blue">To edit date or other cell contents select the contents, then tap 'COPY', then enter new text (after <span class ="tdEdit"> Clear/Initialize </span> .) into the input element. (or 'paste' to enter original).</p> -->
+	
+	<p id = "tdEditTrigger" style="color: blue">To edit date or other table  cell contents 'Double Tap' the cell to initiate edit mode. This is the default trigger choice. To change edit trigger to 'Select-Copy' go to Preferences.</p>
+	
+	
 	<button id="homeScreenBtn2">RETURN to Home Screen</button>
 	<button id ="saveTableBtn2">SAVE TABLE</button>
 	
