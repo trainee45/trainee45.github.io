@@ -1,5 +1,5 @@
 //DougieBaseVer35.js from fixEditDougieBaseVer35.js from 
-//changed addEventListener to copy instead of dblclick Oct16 clearBkgrdDougieBaseVer34.js clear background and fixed crashes that occur if user makes illogical moves Oct12 2021 use to update workingCopy and Safarii etc
+//changed addEventListener to copy instead of dblclick Oct16 made default double click Oct31 2021  clearBkgrdDougieBaseVer34.js clear background and fixed crashes that occur if user makes illogical moves Oct12 2021 use to update workingCopy and Safarii etc
 //Date:Oct5 2021 Removed Double tap to avoid magnification in Manage files view full screen search select filenames. iOS15 safari has no way to disable double tap for magnification. More cosmetics with dataBaseName titles
 //removed alert in view full note ?hangs up sometimes? Cosmetic fixes Oct 3 2021 titleBanner in About db
 //includesSubstringDougieBase Ver33.js in Textastic Sept 29 2021
@@ -273,7 +273,7 @@ let showScroll = true;//flag to show or hide scroll buttons via preferences sett
 let centerTitle = false;//flag set in preferences to center the record title in notes display
 let highlightDoneBtn = false;//flag used in addField function preferences
 let doneRelabelBtn = document.createElement('button');//made global see addField function ?should be const ?
-let trigger = 'copy'; //set the addEventListener in edit td cell of table. The other option is dblclick Oct 20 2021
+let trigger = 'dblclick'; //was 'copy' set the addEventListener in edit td cell of table. The other option is dblclick Oct 20 2021
 let dbName;//global variable for database name..currently notes_dbx replaced with dataBaseName
 let dataBaseName = "";//make global variable so can use in viewSettings
 let newDBflag = false; //signify from createNewDataBase
@@ -3129,9 +3129,9 @@ const tdEditTriggerP = document.querySelector('#tdEditTrigger');
 		
 		else if(trigger === 'dblclick') {
 			trigger = 'copy';
-			editTDTriggerBtn.textContent = "Double Click";
+			editTDTriggerBtn.textContent = "Double Tap/Click";
 		timeDateFlagP.textContent = "Use Select-Copy action to EDIT the Table data cells.";
-	tdEditTriggerP.textContent = "To edit date or other cell contents select the contents, then tap 'COPY', Clear/Initialize the input element, then enter new text into the input element. (or 'paste' to enter original).";	editTDTriggerBtn.setAttribute('class','colorBtn');
+	tdEditTriggerP.textContent = "To edit date or other cell contents 'SELECT' the contents, then tap 'COPY', Clear/Initialize the input element, then enter new text into the input element. (or 'paste' to enter original).";	editTDTriggerBtn.setAttribute('class','colorBtn');
 			
 		}//end if trigger==='dblclick'
 	};//end editTDTriggerBtn.onclick
