@@ -3087,7 +3087,8 @@ addNoteBtn.setAttribute('class','attentionBtn');
 	
 //code to clear/show background image Oct11
 const bkgrdImageBtn = document.querySelector('#bkgrdImage');
-const bodyImage = document.querySelector('#bodyImage')
+const bodyImage = document.querySelector('#bodyImage');
+
 	bkgrdImageBtn.onclick = function (){
 		
 		if(bkgrdImage) {
@@ -3106,7 +3107,33 @@ const bodyImage = document.querySelector('#bodyImage')
 			//getFileNames();
 		}//end if else !centerTitle
 		
-	}//end function centerTitleBtn.onclick
+	}//end function bckgrdimage.onclick
+	
+	bkgrdImageBtn.ondblclick = function (){
+		
+		if(bkgrdImage) {
+			bkgrdImageBtn.textContent = 'Show background image';
+			bkgrdImage = false;
+		//bodyImage.setAttribute('class','noBkgrdImage');
+		bodyImage.setAttribute('class','elmer');
+		bkgrdImageBtn.setAttribute('class','colorBtn');
+			//getFileNames();
+			
+		} else {
+			bkgrdImage = true;
+			bkgrdImageBtn.textContent = 'Clear Background Image';
+			
+			bodyImage.setAttribute('class','elmer');
+			//bodyImage.setAttribute('class','bkgrdImage');
+			bkgrdImageBtn.setAttribute('class','attentionBtn');
+			//alert('removing buttons');
+			//ERROR: TypeError: Argument 1 ('child') to Node.removeChild must be an instance of Node	
+			//getFileNames();
+		}//end if else bkgrdimage.ondblclick
+		
+	}//end function background image.ondblclick
+	
+	
 //code to clear/show background image
 	
 //code below to switch addEventListener event type in edit td of table	
