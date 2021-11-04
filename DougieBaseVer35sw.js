@@ -15,7 +15,8 @@ self.addEventListener('install', function(e) {
        '/DougieBaseVer35.css',////directory path to project folder/app name.css file
 	   '/trainsDBTableNotes.webmanifest',////directory path to project folder/app name.trainmanifest file
 	   '/jquery-3.6.0.min.js',////directory path to project folder/app name.jQuery file
-	    '/eeyore.JPG'//add this file to github repository
+	    '/eeyore.JPG',//add this file to github repository
+		'/fudd4.jpeg'
      ]);
    })
  );
