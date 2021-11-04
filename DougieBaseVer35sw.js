@@ -7,14 +7,14 @@ self.addEventListener('install', function(e) {
 //line below was —-caches.open('notes-os').then(function(cache) {..replaced notes-os with DougieBase-v1 via the variable cacheName Date:July 4 2021 the variable name does not have quotes ?correct????
   caches.open(cacheName).then(function(cache) {
      return cache.addAll([
-       '/'//https://github.com/trainee45/trainee45.github.io',//directory path to project folder
+       '/',//https://github.com/trainee45/trainee45.github.io',//directory path to project folder
        '/index.html',//directory path to project folder/app name.html file
 	   
 	    // 'https://github.com/trainee45/trainee45.github.io/TableNotesVer29.html',//directory path to project folder/app name.html file
        '/DougieBaseVer35.js',//directory path to project folder/app name.js file
-       '/DougieBaseVer35.css'////directory path to project folder/app name.css file
-	   '/trainsDBTableNotes.webmanifest'////directory path to project folder/app name.trainmanifest file
-	   '/jquery-3.6.0.min.js'////directory path to project folder/app name.jQuery file
+       '/DougieBaseVer35.css',////directory path to project folder/app name.css file
+	   '/trainsDBTableNotes.webmanifest',////directory path to project folder/app name.trainmanifest file
+	   '/jquery-3.6.0.min.js',////directory path to project folder/app name.jQuery file
 	    '/eeyore.JPG'//add this file to github repository
      ]);
    })
