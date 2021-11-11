@@ -1,4 +1,4 @@
-//DougieBaseVer35sw.js added eyeore bkgrd image file Oct12
+//DougieBaseVer35sw.js added eyeore bkgrd image file Nov10 2021
 //from … TableNotesVer30sw.js
 var cacheName = 'DougieBase-v1'
 self.addEventListener('install', function(e) {
