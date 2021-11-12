@@ -2,19 +2,19 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>DougieBaseVer35.html</title>
+    <title>DougieBaseVer36.html</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="DougieBaseVer35.css" rel="stylesheet">
+    <link href="DougieBaseVer36.css" rel="stylesheet">
 	<link rel="manifest" href="trainsDBTableNotes.webmanifest">
 
 	
-<!-- 	Date: Oct 31 2021. Ver 35.3 made double tap default table edit trigger removed access to word documentation help manual fixEditDougieBaseVer35.html USE THIS VERSION AS OF Sept 29 2021 2021 This version has been installed on github pages ! Added links to documentation docx and pdf<script src="fileNamesTableNotesVer21.js" defer type="text/javascript"></script> Added p info statement to Create Table window -->
+<!-- 	Date: Nov4 2021 added easter egg and save settings Oct 31 2021. Ver 35.3removed access to word documentation help manual fixEditDougieBaseVer35.html USE THIS VERSION AS OF Sept 29 2021 2021 This version has been installed on github pages ! Added links to documentation docx and pdf<script src="fileNamesTableNotesVer21.js" defer type="text/javascript"></script> Added p info statement to Create Table window -->
 
 <!-- Line below adds jQuery library from jQuery file in same directory as the .js file. It works without internet connection. The google CDN has to have the internet connection IMPORTANT CONSIDERATION WHEN USING MORE jQuery code!! At the moment as of May17 2021 the only thing using jQuery is the table menu and hide scroll btns in preferences-->
 
  <script src="jquery-3.6.0.min.js"></script>
 
-    <script src="DougieBaseVer35.js" defer></script>
+    <script src="DougieBaseVer36.js" defer></script>
 	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
 	<!-- <scrip src="jquery-3.6.0.slim.min.js"></script> -->
 <!-- 	<script src="jquery-3.6.0.slim.min.js" defer></script> -->
@@ -83,7 +83,7 @@ color: black;
 	
 	  
     <header>
-      <h1>DougieBase Version 35.6</h1>
+      <h1>DougieBase Version 36sp</h1>
     </header>
 	<p></p>
 <div id = "scrolling">
@@ -483,7 +483,7 @@ color: black;
 		 <!--the preferences window-->  
 	  <div id="prefWin" class="hidden">
 		  <h2 class="edBan">PREFERENCES</h2>
-		   <p></p>
+		   <p id ="prefLandscape"></p>
 		   <div id="clearPrefWindow" class="simulator">TAP HERE TO RETURN TO NOTES</div>
 		   <p class="ppref">The Preferences window allows you to alter some settings.You can change the name of the database, show or hide the  additional text data entry field in Notes, or change the background colours of the text windows, and alter other display options. If the Search Phrase is set to SPECIFIC, the record is returned only if one of its fields is the complete search phrase. CONTAINS means a record is returned if any of its fields just contains the search phrase either as a complete string or as a sub string. For example '3' will return any record containing '3' or '33' or year 2023 etc. So to return a record containing a number 3 only, set Search Phrase to SPECIFIC.</p>
 		   <p></p>
@@ -504,13 +504,15 @@ color: black;
 		<button id = "editTDTrigger" name = "editTDTrigger">EDIT Table Cell Trigger</button>
 		<p id = "timeDateFlag" style ="text-align: center">Tap the TableDate ? Button to INCLUDE a timestamp or NOT.</p>
 		
-		<!-- caseSensitive switch -->
+		
+		<!-- caseSensitive switch  -->
 		  <div id = "caseSwitch">
 			 
  			 <input type="range" id="caseSensitive" name="case"
          min="0" max="1" step = 1 value = "0">
   			<label for="case">SEARCH PHRASE: Case Sensitive?</label>
  		 <p><span id ="no">NO</span> .................. <span id ="yes">YES</span></p>
+		
 		 
 	<!-- return record if contains sub string -->
 		 
@@ -521,6 +523,8 @@ color: black;
 		 
 		 
 			</div> <!--end div caseSensitive-->
+			
+		 <button id ="saveSettings">SAVE Settings</button>
 			
 		 </div> <!--end of the preferences window--> 
 		 
@@ -644,19 +648,20 @@ color: black;
 <!--documentation code starts here -->
 		
 	<div id="documentationWin" class="hidden">
-	<!-- 	<p>The documentation help manual is available as a word document OR a PDF file. Tap on the links below to download the DougieBase Manual. Chapters 1 and 2.</p>
-		<p>Download Chapter 1 WORD doc</p><a href="https://github.com/trainee45/trainee45.github.io/blob/master/DougieBase%20Chapter%201.docx" download>Download DougieBase Manual Chapter 1</a>
+		
+		<h1 class = "titleBanner">DougieBase Documentation The HELP
+		Manual</h1>
+		<p>The documentation help manual is available as a PDF file. Tap on the links below to download the DougieBase Manual. Chapters 1 and 2.</p>
+		<p>The files are online and will open in a browser interface which allows you to download them to your device by using the browser's action sharesheet icon (tool bar: top right) from which you can download the .pdf files to whichever app you wish on your device.</p> 
+		<p>You do not need to download the files. The manual is online and you can read them online without having to save to your device. Tap the DONE button (Browser tool bar: top left) when you want to return to DougieBase. In the DougieBase Documentation window (this screen) tap the 'DONE' button (bottom left) to return to Notes - DougieBase Home Screen.
+		</p>
+	<!-- 	<p>Download Chapter 1 WORD doc</p><a href="https://github.com/trainee45/trainee45.github.io/blob/master/DougieBase%20Chapter%201.docx" download>Download DougieBase Manual Chapter 1</a>
 		<p></p>
 		<p>Dowload Chapter 2 WORD doc</p><a href="https://github.com/trainee45/trainee45.github.io/blob/master/DougieBase%20Chapter%202.docx" download>Download DougieBase Manual Chapter 2</a>
 		<p></p>
 		<p>When the github screen appears tap the '…' menu icon opposite the filename and choose Download</p>
 		<p></p> -->
-		
-			<h1 class = "titleBanner">DougieBase Documentation The HELP Manual</h1>
-		<p>The documentation help manual is available as a PDF file. Tap on the links below to download the DougieBase Manual. Chapters 1 and 2.</p>
-		<p>The files are online and will open in a browser interface which allows you to download them to your device by using the browser's action sharesheet icon (tool bar: top right) from which you can download the .pdf files to whichever app you wish on your device.</p> 
-		<p>You do not need to download the files. The manual is online and you can read them online without having to save to your device. Tap the DONE button (Browser tool bar: top left) when you want to return to DougieBase. In the DougieBase Documentation window (this screen) tap the 'DONE' button (bottom left) to return to Notes - DougieBase Home Screen.
-		</p>
+		<p></p>
 		<p class = "attentionBtn" style ="text-align: center">DougieBase Manual in PDF format.  RECOMMENDED READING!</p>
 		<p>Download Chapter 1 PDF file</p><a href="https://dougiebase.weebly.com/uploads/6/6/1/0/66103197/dougiebase_chapter_1_rev5.pdf" download>Download DougieBase Manual Chapter 1.pdf</a>
 		<p></p>
@@ -791,6 +796,7 @@ color: black;
 		</table>
 		
 	<!-- </div> --><!-- moved to edit date homeScreenBtn and Save btn in the table div -->
+	
 	<!-- <p id = "tdEditTrigger" style="color: blue">To edit date or other cell contents select the contents, then tap 'COPY', then enter new text (after <span class ="tdEdit"> Clear/Initialize </span> .) into the input element. (or 'paste' to enter original).</p> -->
 	
 	<p id = "tdEditTrigger" style="color: blue">To edit date or other table  cell contents 'Double Tap' the cell to initiate edit mode. This is the default trigger choice. To change edit trigger to 'Select-Copy' go to Preferences.</p>

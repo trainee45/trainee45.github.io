@@ -1,4 +1,4 @@
-//DougieBaseVer35.js from fixEditDougieBaseVer35.js from 
+//DougieBaseVer36.js from spDougieBaseVer36.js Date:Nov9 save preferences from Date:Nov4 added Easter egg and save settings preferencesDougieBaseVer36.js from fixEditDougieBaseVer35.js from 
 //changed addEventListener to copy instead of dblclick Oct16 made default double click Oct31 2021  clearBkgrdDougieBaseVer34.js clear background and fixed crashes that occur if user makes illogical moves Oct12 2021 use to update workingCopy and Safarii etc
 //Date:Oct5 2021 Removed Double tap to avoid magnification in Manage files view full screen search select filenames. iOS15 safari has no way to disable double tap for magnification. More cosmetics with dataBaseName titles
 //removed alert in view full note ?hangs up sometimes? Cosmetic fixes Oct 3 2021 titleBanner in About db
@@ -420,6 +420,11 @@ let deleteTableRecord = 0;
 
 let otherVariablesArray = [tableExists,originalNumberRecords,nextFieldName,numberOfFields,numberOfAdditionalFields,tableTitle,paraBody,displayXtraFieldData];
 let variable3 = showExtraField;
+//pref variables
+let prefVariablesArray = [viewDateWritten,dateShade,showExtraField,showScroll,centerTitle,tableDateTime,linkLabel,scrollTable,bkgrdImage,trigger,caseSensitive,includesSubstring];
+//pref variables
+
+
 let key;//can remove if myKey works
 let myKey = 1;
 let keyPath;
@@ -442,13 +447,24 @@ const resultList = document.querySelector("#result-list");	//declared as global 
 //dataVobj will compare to variable2Array, and dataV: will compare to variable2:
 
 //tableArray = [["CN7035", "Oct 20 2020 22:21","Y2Trk2","TSU-1100","5","128","255"],["CN3205", "Oct 20 2020 22:21","Y3Trk2","Econami PNP","15","128","255"],["CN6700","Oct 20 2020 22:21","Y3Trk8","TSU-1100","77","130","190"]];	
-	
+
+
+if(setup===3) {
 let	dataVobj = {
   tableArray: tableArray,
   fieldNamesArray: fieldNamesArray,
   otherVariables: otherVariablesArray,
+  prefVariables: prefVariablesArray,
+  variable3: variable3 };
+ } else { 
+let	dataVobj = {
+  tableArray: tableArray,
+  fieldNamesArray: fieldNamesArray,
+  otherVariables: otherVariablesArray,
+  prefVariables: prefVariablesArray,
   variable3: variable3
-};//end declaration of dataV object
+ };//end declaration of dataV object
+}//end if setup=3
 //THESE VARIABLES ABOVE FOR TABLE SECTION	
 	//THESE VARIABLES ABOVE FOR TABLE SECTION	
 	
@@ -1353,6 +1369,9 @@ editCurrentTable = 0;//so displayTable workS correctly when editing a table that
 deleteTableRecord = 0;
 //?have to reset individual variables in otherVariablesArray!!
 otherVariablesArray = [tableExists,originalNumberRecords,nextFieldName,numberOfFields,numberOfAdditionalFields,tableTitle,paraBody,displayXtraFieldData];
+if(setup===3) {
+prefVariablesArray = [viewDateWritten,dateShade,showExtraField,showScroll,centerTitle,tableDateTime,linkLabel,scrollTable,bkgrdImage,trigger,caseSensitive,includesSubstring];
+}//end if setup = 3
 variable3 = showExtraField;
 // let key;//can remove if myKey works
 // let myKey = 1;
@@ -1373,12 +1392,30 @@ fromNew = false;//flag to not show make changes Btn if New table being created
 
 //tableArray = [["CN7035", "Oct 20 2020 22:21","Y2Trk2","TSU-1100","5","128","255"],["CN3205", "Oct 20 2020 22:21","Y3Trk2","Econami PNP","15","128","255"],["CN6700","Oct 20 2020 22:21","Y3Trk8","TSU-1100","77","130","190"]];	
 //have to reset individual members	
-dataVobj = {
+if(setup===3) {
+let	dataVobj = {
   tableArray: tableArray,
   fieldNamesArray: fieldNamesArray,
   otherVariables: otherVariablesArray,
+  prefVariables: prefVariablesArray,
+  variable3: variable3 };
+ } else { 
+let	dataVobj = {
+  tableArray: tableArray,
+  fieldNamesArray: fieldNamesArray,
+  otherVariables: otherVariablesArray,
+  prefVariables: prefVariablesArray,
   variable3: variable3
-};//end declaration of dataV object
+ };//end declaration of dataV object
+}//end if setup=3
+
+//dataVobj = {
+ // tableArray: tableArray,
+ // fieldNamesArray: fieldNamesArray,
+  //otherVariables: otherVariablesArray,
+  //prefVariables: prefVariablesArray,
+ // variable3: variable3
+//};//end declaration of dataV object
 //THESE VARIABLES ABOVE FOR TABLE SECTION	
 //THESE VARIABLES ABOVE FOR TABLE SECT
 
@@ -1942,6 +1979,11 @@ idx = index(name), deleteIndex(name) */
 
 // Define the displayData() function
 function displayData() {
+	
+	//removed! if messes up trying to reset background image as per each database Nov11 this code (removed) does not allow the database to load in
+	
+	
+	
 	//alert('dateShade = ' + dateShade);
 	//alert('viewDateWritten =  ' + viewDateWritten);
 	//on last run Oct 5 2020 console.log says setup=0, but viewsettings says setup=1?
@@ -1975,8 +2017,11 @@ function displayData() {
     if(cursor) {
 		
 		console.log('There is a cursor so setup =1; depends on which dbx is found by Textastic when loading a fresh run of code.');
-		
+		if(setup===3) {
+			setup=3;
+		} else {
 		setup=1;//added this Oct 5 2020 might be wrong thing to do????!!!!!
+		}//end if setup ===3
 		//if so, we create a DOM fragment, populate it with the data from the record, 
       // Create a list item, h3, and p to put each data item inside when displaying it
       // structure the HTML fragment, and append it inside the list..insert it into the page (inside the <ul> element)
@@ -3007,6 +3052,30 @@ function options () {
 	console.log("Just entered function options after tapping preferences button. newDBGuidance flag = " + newDBGuidance + " trigger = " + trigger);
 	//creating new db: At preferences, newDBflag = false newDBGuidance = undefined xtraField = 0 dbName = New database
 	
+	//code to update pref variable values everytime you enter preferences
+	prefVariablesArray = [viewDateWritten,dateShade,showExtraField,showScroll,centerTitle,tableDateTime,linkLabel,scrollTable,bkgrdImage,trigger,caseSensitive,includesSubstring];
+	console.log('prefVariablesArray = ' + prefVariablesArray);
+	console.log('viewDateWritten =' + viewDateWritten);
+	
+	
+	//reset the variables from the saved prefVariablesArray
+	
+	viewDateWritten = prefVariablesArray[0];
+	dateShade = prefVariablesArray[1];
+	showExtraField = prefVariablesArray[2];
+	showScroll = prefVariablesArray[3];
+	centerTitle = prefVariablesArray[4];
+	tableDateTime = prefVariablesArray[5];
+	linkLabel = prefVariablesArray[6];
+	scrollTable = prefVariablesArray[7];
+	bkgrdImage = prefVariablesArray[8];
+	trigger = prefVariablesArray[9];
+	caseSensitive = prefVariablesArray[10];
+	includesSubstring = prefVariablesArray[11];
+	
+	
+	//code to update pref variable values everytime you enter preferences
+	
 	if(dbName === undefined && !newDBflag) {
 		alert('No database has been selected! Select or create a database to make preferences available.');
 	//prefWindow.setAttribute('class','hidden');
@@ -3028,11 +3097,12 @@ addNoteBtn.setAttribute('class','attentionBtn');
 
 
 	const renameBtn = document.querySelector('#renameDB');
-	const workDiv = document.querySelector('#workDiv');
+	//const workDiv = document.querySelector('#workDiv');
 	const reNameWin = document.querySelector('#reNameWin');
 	const dbTitle = document.querySelector('#dbTitle');
 	const newTitle = document.querySelector('#newTitle');
 	const prefWindow = document.querySelector('#prefWin');//'div id="prefWin"
+	const prefLandscapeP = document.querySelector('#prefLandscape');
 	const clearPrefWindow = document.querySelector('#clearPrefWindow');
 	const changeColoursBtn = document.querySelector('#background');
 	const addFieldBtn = document.querySelector('#newField');
@@ -3043,6 +3113,152 @@ addNoteBtn.setAttribute('class','attentionBtn');
 	const displayDataBtn = document.querySelector('#displayData')
 	const showExtraFieldBtn = document.querySelector('#resetNewField');
 	const scrollBtns = document.querySelector('#scrollBtns');
+	const centerTitleBtn = document.querySelector('#centerTitle');
+	const tableDateTimeBtn = document.querySelector('#tableTime');//moved to global variables
+	const timeIndicator = document.querySelector('#timeIndicator');
+	let timeIndicatorStr = "";
+	const showLinkLabelBtn = document.querySelector('#useLinkLabel');
+	const scrollTableBtn = document.querySelector('#scrollTable');
+	const bkgrdImageBtn = document.querySelector('#bkgrdImage');
+	const bodyImage = document.querySelector('#bodyImage');
+	const editTDTriggerBtn = document.querySelector('#editTDTrigger');//this is the btn in preferences used to switch between copy and dblclick for edit table data cells. The trigger variable is declared at start of prgm
+	const tdEditTriggerP = document.querySelector('#tdEditTrigger');
+	const caseSensitiveSwitch = document.querySelector('#caseSensitive');
+	const no = document.querySelector('#no');
+	const yes = document.querySelector('#yes');
+	const includesSubstringSwitch = document.querySelector('#includesSubstring');
+	const noSS = document.querySelector('#noSS');
+	const yesSS = document.querySelector('#yesSS');
+	//let searchCaseSensitive;	//make global
+	
+	
+	
+	//code to allow for prefs window to fit in Landscape mode
+	
+	let prefWindowHeight = prefWindow.clientHeight;
+	console.log('prefWindowHeight = ' + prefWindowHeight);
+	
+	if(prefWindowHeight == 620) {
+		prefLandscapeP.textContent = "SCROLL UP ⬆️ TO SEE BOTTOM OF PREFERENCES WINDOW ";
+	} else {
+		prefLandscapeP.textContent = "";
+		
+	}//end if prefWindowHeight ==620
+	
+if(setup === 3)	{
+//below setup prefs screen to reflect current values Date: Nov 9
+	if(viewDateWritten) {
+		creationDateBtn.textContent = 'Hide Creation Date';
+	} else {
+		creationDateBtn.textContent = 'Show Creation Date';
+	}//end of if viewDateWritten
+	
+	if(showExtraField === 1) {
+		showExtraFieldBtn.textContent = 'Hide ExtraField';
+		togglex = 0;//what is togglex see showExtraFieldBtn.onclick
+	} else {
+		showExtraFieldBtn.textContent = 'Show ExtraField';
+		togglex = 0;//only works if set to 0 and I am not sure what I am using this for in the first place. Maybe should just make showExtraField Boolean??
+	}//end showExtraField===1
+	
+	if(showScroll) {
+		scrollBtns.textContent = 'Hide scroll btns';
+	}else {
+		scrollBtns.textContent = 'Show scroll btns';
+	}//end if showScroll
+
+	if(centerTitle) {
+		centerTitleBtn.textContent = 'Title to Left';
+	}else {
+		centerTitleBtn.textContent = 'Center Record Title';
+	}//enf if centerTitle
+	
+	if(!tableDateTime) {
+		timeIndicatorStr = " PLUS ";
+		tableDateTimeBtn.textContent = "TableDate" + timeIndicatorStr + "time";
+		timeDateFlagP.textContent = "The edit DATE in table will NOT include the time.";
+	} else {
+		timeIndicatorStr = " WITHOUT ";
+			tableDateTimeBtn.textContent = 'TableDate' + timeIndicatorStr +'time';
+			timeDateFlagP.textContent = "The edit DATE in table will now  INCLUDE the time.";
+	}//end if else tableDateTime
+	
+	if(!linkLabel) {
+		showLinkLabelBtn.textContent = 'Show link itself';
+		timeDateFlagP.textContent = "Active descriptive text now replaces the table links";
+			} else {
+		showLinkLabelBtn.textContent = 'Use Link Labels';
+			
+		timeDateFlagP.textContent = "The table now shows the real link (url)";
+	}//end if else !linkLabel
+	
+	if(scrollTable) {
+		scrollTableBtn.textContent = 'Disable Scroll Table';
+		timeDateFlagP.textContent = "Horizontal Table scroll now enabled";
+	} else {
+		scrollTableBtn.textContent = 'Enable Scroll Table';
+		timeDateFlagP.textContent = "Horizontal Table Scroll is now disabled.";
+	}//end if else scrollTable
+
+//NOTE RE BACKGROUND IMAGES. SAVED SETTING IN PREFERENCES FOR EACH BACKGROUND IMAGE IS NOT REFLECTED UNTIL PREFERENCES IS ENTERED, AND THEN SETTING TAKES EFFECT. IF I MOVE THE CODE ELSEWHERE IT WON'T LET THE DATABASE LOAD IN. WHY ? Nov11 2021
+	
+	if(bkgrdImage) {
+		bkgrdImageBtn.textContent = 'Clear Background Image';
+		bodyImage.setAttribute('class','bkgrdImage');
+	} else {
+		bkgrdImageBtn.textContent = 'Show background image';
+		bodyImage.setAttribute('class','noBkgrdImage');
+	}//end if else bkgrdImage
+	
+	if(trigger === 'dblclick') {
+		editTDTriggerBtn.textContent = "Select-Copy";
+		timeDateFlagP.textContent = "Double Tap to EDIT the Table data cells.";
+	tdEditTriggerP.textContent = "Double Tap on the table's data cell to EDIT its contents.";	//editTDTriggerBtn.setAttribute('class','colorBtn');
+	} else {
+		editTDTriggerBtn.textContent = "Double Tap/Click";
+		timeDateFlagP.textContent = "Use Select-Copy action to EDIT the Table data cells.";
+		tdEditTriggerP.textContent = "To edit date or other cell contents 'SELECT' the contents, then tap 'COPY', Clear/Initialize the input element, then enter new text into the input element. (or 'paste' to enter original).";
+		}//end if else trigger === 'dblclick'
+		
+		if(caseSensitive) {
+			searchCaseSensitive = "1";
+			caseSensitiveSwitch.value = "1";
+		caseSensitive = true;
+		console.log('caseSensitive = ' + caseSensitive);
+		yes.setAttribute('class', 'colorBtn');
+		no.setAttribute('class', 'normalBtn');
+		} else {
+			searchCaseSensitive = "0";
+		caseSensitiveSwitch.value = "0";
+		caseSensitive = false;
+		console.log('caseSensitive = ' + caseSensitive);
+		yes.setAttribute('class', 'normalBtn');
+		no.setAttribute('class', 'colorBtn');
+		}//end if else caseSensitive
+		
+		if(includesSubstring) {
+			searchIncludesSubstring = "1";
+			includesSubstringSwitch.value = "1";
+			//includesSubstring = true;
+		console.log('includesSubstring = ' + includesSubstring);
+		yesSS.setAttribute('class', 'colorBtn');
+		noSS.setAttribute('class', 'normalBtn');
+		} else {
+			searchIncludesSubstring = "0";
+		includesSubstringSwitch.value = "0";
+		//includesSubstring = false;
+		console.log('includesSubstring = ' + includesSubstring);
+		yesSS.setAttribute('class', 'normalBtn');
+		noSS.setAttribute('class', 'colorBtn');
+			
+		}//end if else includesSubstring
+		
+		
+	
+//above setup prefs screen to reflect current values
+}//end if setup === 3
+
+
 	scrollBtns.onclick = function (){
 		
 		if(!showScroll) {
@@ -3065,7 +3281,7 @@ addNoteBtn.setAttribute('class','attentionBtn');
 		
 	}//end function scrollBtns.onclick
 	
-	const centerTitleBtn = document.querySelector('#centerTitle');
+	
 	centerTitleBtn.onclick = function (){
 		
 		if(!centerTitle) {
@@ -3086,9 +3302,8 @@ addNoteBtn.setAttribute('class','attentionBtn');
 	}//end function centerTitleBtn.onclick
 	
 //code to clear/show background image Oct11
-const bkgrdImageBtn = document.querySelector('#bkgrdImage');
-const bodyImage = document.querySelector('#bodyImage');
-
+//const bkgrdImageBtn = document.querySelector('#bkgrdImage');
+//const bodyImage = document.querySelector('#bodyImage')
 	bkgrdImageBtn.onclick = function (){
 		
 		if(bkgrdImage) {
@@ -3105,9 +3320,9 @@ const bodyImage = document.querySelector('#bodyImage');
 			//alert('removing buttons');
 			//ERROR: TypeError: Argument 1 ('child') to Node.removeChild must be an instance of Node	
 			//getFileNames();
-		}//end if else !centerTitle
+		}//end if else bkgrdImageBtn.onclick
 		
-	}//end function bckgrdimage.onclick
+	}//end function bkgrdImageBtn.onclick
 	
 	bkgrdImageBtn.ondblclick = function (){
 		
@@ -3133,18 +3348,17 @@ const bodyImage = document.querySelector('#bodyImage');
 		
 	}//end function background image.ondblclick
 	
-	
 //code to clear/show background image
 	
 //code below to switch addEventListener event type in edit td of table	
-const editTDTriggerBtn = document.querySelector('#editTDTrigger');//this is the btn in preferences used to switch between copy and dblclick for edit table data cells. The trigger variable is declared at start of prgm
+// const editTDTriggerBtn = document.querySelector('#editTDTrigger');//this is the btn in preferences used to switch between copy and dblclick for edit table data cells. The trigger variable is declared at start of prgm
 if(DTBtnTappedOnce ===0) {
 	editTDTriggerBtn.disabled = true;
 }else {
 	editTDTriggerBtn.disabled = false;
 }//end else if DTBtnTappedOnce ===0 & tableExists to prevent messed up table
 
-const tdEditTriggerP = document.querySelector('#tdEditTrigger');
+// const tdEditTriggerP = document.querySelector('#tdEditTrigger');
 	editTDTriggerBtn.onclick = function () {
 		editNote = true;//flag to refreshTable if notes editededitNote = false;//flag to refreshTable if notes edited also triggers table refresh if edit TD cell action is changed in preferences so ittakes effect imediately if changed in preferences. Otherwise you would have to wait for table refresh before new trigger is effective. 
 		if(trigger==='copy') {
@@ -3164,10 +3378,20 @@ const tdEditTriggerP = document.querySelector('#tdEditTrigger');
 	};//end editTDTriggerBtn.onclick
 
 //code above to switch addEventListener event type in edit td of table	
+
+//save Settings
+const saveSettingsBtn = document.querySelector('#saveSettings');
+saveSettingsBtn.onclick = function () {
+	setup = 3;
+	saveVariables();
+	saveSettingsBtn.setAttribute('class','colorBtn');
+	
+}//end function saveSettingsBtn.onclick
 	
 	//code for show link labels
 
-const showLinkLabelBtn = document.querySelector('#useLinkLabel');
+//const showLinkLabelBtn = document.querySelector('#useLinkLabel');
+
 if(DTBtnTappedOnce ===0 && tableExists) {
 	showLinkLabelBtn.disabled = true;
 }else {
@@ -3227,7 +3451,8 @@ STrows.appendChild(STheadRow);
 
 //code for horizontal Table scroll option
 
-const scrollTableBtn = document.querySelector('#scrollTable');
+//const scrollTableBtn = document.querySelector('#scrollTable');
+
 if(DTBtnTappedOnce ===0 && tableExists) {
 	scrollTableBtn.disabled = true;
 }else {
@@ -3300,12 +3525,12 @@ addFieldBtn.setAttribute('class','attentionBtn');
 		saveBtn.textContent ='SAVE';
 	}//end if saveBtn.textContent
 
-	const tableDateTimeBtn = document.querySelector('#tableTime');//moved to global variables
+	//const tableDateTimeBtn = document.querySelector('#tableTime');//moved to global variables
 	
 	tableDateTimeBtn.setAttribute('class', 'attentionBtn');
 	//const timeDateFlagP = document.querySelector('#timeDateFlag');//moved to global variables
-	const timeIndicator = document.querySelector('#timeIndicator');
-	let timeIndicatorStr = "";
+	//const timeIndicator = document.querySelector('#timeIndicator');
+	//let timeIndicatorStr = "";
 	
 	//TypeError: null is not an object (evaluating 'timeIndicator.setAttribute')
 	//timeIndicator.setAttribute('class','attentionBtn');
@@ -3379,9 +3604,10 @@ addFieldBtn.setAttribute('class','attentionBtn');
 	
 	//Left off here Jan 24
 	
-	const caseSensitiveSwitch = document.querySelector('#caseSensitive');
-	const no = document.querySelector('#no');
-	const yes = document.querySelector('#yes');
+	// const caseSensitiveSwitch = document.querySelector('#caseSensitive');
+	// const no = document.querySelector('#no');
+	// const yes = document.querySelector('#yes');
+	
 	//let searchCaseSensitive;	//make global
 	caseSensitiveSwitch.onchange = function(){
 		searchCaseSensitive = caseSensitiveSwitch.value;
@@ -3414,9 +3640,9 @@ addFieldBtn.setAttribute('class','attentionBtn');
 		
 		//SS = SubString
 	
-	const includesSubstringSwitch = document.querySelector('#includesSubstring');
-	const noSS = document.querySelector('#noSS');
-	const yesSS = document.querySelector('#yesSS');
+	// const includesSubstringSwitch = document.querySelector('#includesSubstring');
+	// const noSS = document.querySelector('#noSS');
+	// const yesSS = document.querySelector('#yesSS');
 	//let searchCaseSensitive;	//make global
 	includesSubstringSwitch.onchange = function(){
 		searchIncludesSubstring = includesSubstringSwitch.value;
@@ -3449,7 +3675,10 @@ addFieldBtn.setAttribute('class','attentionBtn');
 	clearPrefWindow.onclick = function () {
 		//Tap here to return to notes
 	/*prefWindow.removeChild(notifyP);*/
-   displayDataBtn.setAttribute('class', 'normalBtn');	prefWindow.setAttribute('class','hidden');}; //end clearPrefWindow.onclick
+   displayDataBtn.setAttribute('class', 'normalBtn');	prefWindow.setAttribute('class','hidden');
+   //update prefVariables values if any changes were made
+   prefVariablesArray = [viewDateWritten,dateShade,showExtraField,showScroll,centerTitle,tableDateTime,linkLabel,scrollTable,bkgrdImage,trigger,caseSensitive,includesSubstring];
+	}; //end clearPrefWindow.onclick
 	
 	//decorate buttons
 	if (xtraField === 0) {
@@ -4220,7 +4449,7 @@ aboutDBWindow.setAttribute('class','showing');
 	//view settings prior to setup causes blank page and error
 	//alert('at view settings button..setup = ' + setup);
 	if(setup===0) {viewSettingsBtn.disabled = true;
-	} else if (setup===1) {
+	} else if (setup===1 || setup===3) {
 		viewSettingsBtn.disabled === false;
 	}//end if setup
 //trying to prevent viewSettings btn getting disabled if user taps aboutDB without a database being loaded Aug 17
@@ -4327,18 +4556,33 @@ let transaction = db.transaction([objectStoreName], 'readwrite');
   // requestV.onsuccess = function(event) {
 	//   console.log('Now in onsuccess of saveTableVariables');
 	otherVariablesArray = [tableExists,originalNumberRecords,nextFieldName,numberOfFields,numberOfAdditionalFields,tableTitle,paraBody,displayXtraFieldData];
-	variable3 = showExtraField;
+	if(setup===3) {
+	prefVariablesArray = [viewDateWritten,dateShade,showExtraField,showScroll,centerTitle,tableDateTime,linkLabel,scrollTable,bkgrdImage,trigger,caseSensitive,includesSubstring];
+	}//end if setup===3
+		variable3 = showExtraField;
 	
 //	var dataV = event.target.result;
 //	ReferenceError: Can't find variable: variable3
 //use if setup===0 so these object members are initialized to "0" only if this is a new db never setup before. Otherwise these variables will always be reset to initial values rather than the values you want to keep stored.
 //if(setup===0) {//need to declare datav otherwise you get this error:TypeError: undefined is not an object (evaluating 'dataV.tableArray = tableArray')
+if(setup===3) {
 	dataVobj = {
   tableArray: tableArray,
   fieldNamesArray: fieldNamesArray,
   otherVariables: otherVariablesArray,
+  prefVariables: prefVariablesArray,
   variable3: variable3
  };//end declaration of dataV object
+} else {
+	dataVobj = {
+  tableArray: tableArray,
+  fieldNamesArray: fieldNamesArray,
+  otherVariables: otherVariablesArray,
+
+  variable3: variable3
+};//end declaration of dataV object
+	
+}//end if setup===3
 // }//end if setup===0
 //assign data to the dataV object members prior to saving
 //maybe need if gotName =1 make assignments below?
@@ -4346,6 +4590,9 @@ dataVobj.tableArray = tableArray;
 	dataVobj.fieldNamesArray = fieldNamesArray;
 	//save dbtable name
 	dataVobj.otherVariables = otherVariablesArray;
+	if(setup===3) {
+		dataVobj.prefVariables = prefVariablesArray;
+	}//end if setup===3
 	dataVobj.variable3 = variable3;
 	
 	console.log('Tablevariables edited! dataVobj.tableArray now = '+ dataVobj.tableArray);
@@ -4431,10 +4678,21 @@ data = {
 	
 	//line below was ..  data.variable2t = setup;
 	//to save setup variable as 1 you have to make variable2Array[0] = 1 prior to assigning new values to data.variable2
-	variable2Array[0] = 1;//setup variable
+//allow for setup =3
+if(setup === 3 && setup!==0) {
+	variable2Array[0] = 3;//setup variable
+} else if (setup === 1) {
+	variable2Array[0] = 1;
+}//end if setup ===3
+	
+	
 	data.variable2 = variable2Array;
 	data.dataV = dataVobj;
+	if(setup===3) {setup=3;
+	}else {
 	setup = 1; //moved to after data object assigned values if setup = 0 !!!!
+	}//end if setup =3
+	
 	console.log('dataBaseName_os variables edited! About to put (data) in next line of code. variables edited! Data.body (should be newFieldName) now = '+ data.body+ ' tableArray (data.dataV.tableArray) = ' + data.dataV.tableArray + ' variable3 (data.dataV.variable3) = ' + data.dataV.variable3);
 	//variables edited! Data.body now = undefined
 	
@@ -4848,6 +5106,9 @@ dataVobj = data.dataV;
 tableArray = dataVobj.tableArray;
  fieldNamesArray = dataVobj.fieldNamesArray;
  otherVariablesArray = dataVobj.otherVariables;
+if(setup===3) {
+	prefVariablesArray = dataVobj.prefVariables;
+	}//end if setup===3
  variable3 = dataVobj.variable3;
  //remove line below if doesn't work
  showExtraField = variable3;
@@ -4865,7 +5126,25 @@ tableArray = dataVobj.tableArray;
  displayXtraFieldData = otherVariablesArray[7];
  
  //END OF LOAD IN TABLE VARIABLES
+ 
+//load in prefVariables
 
+if(setup===3) {
+viewDateWritten = prefVariablesArray[0];
+dateShade = prefVariablesArray[1];
+showExtraField = prefVariablesArray[2];
+showScroll = prefVariablesArray[3];
+centerTitle = prefVariablesArray[4];
+tableDateTime = prefVariablesArray[5];
+linkLabel = prefVariablesArray[6];
+scrollTable = prefVariablesArray[7];
+bkgrdImage = prefVariablesArray[8];
+trigger = prefVariablesArray[9];
+caseSensitive = prefVariablesArray[10];
+includesSubstring = prefVariablesArray[11];
+}//end if setup ===3
+
+//end load in prefVariables
 
 //can't find variable load error caused by curly brackett below!?!????..therefore commented out because its extra and should not be here..its further down
 
@@ -5040,7 +5319,7 @@ function pickOldNew (data) {
 
 	if (setup === undefined|| null) {setup = 0;}//end if setup = undefined
 
-if (setup === 1) {
+if (setup === 1|| setup === 3) {
 dbTableName.value = data.variable1;
 
 //at this point the program stops because of undefined is not an object in evaluating data.variable1 and I tap SAVE ..then go to saveVariables
@@ -5078,6 +5357,9 @@ dataVobj = data.dataV;
 tableArray = dataVobj.tableArray;
  fieldNamesArray = dataVobj.fieldNamesArray;
  otherVariablesArray = dataVobj.otherVariables;
+ if(setup===3) {
+	  prefVariablesArray = dataVobj.prefVariables;
+  }//end if setup===3
  variable3 = dataVobj.variable3;
  //remove line below if doesn't work
  showExtraField = variable3;
@@ -5085,7 +5367,7 @@ tableArray = dataVobj.tableArray;
  tableExists = otherVariablesArray[0];
  originalNumberRecords = otherVariablesArray[1];
  
- console.log('In setup=1 of pickOldNew(),  originalNumberRecords = otherVariablesArray[1] = '+ otherVariablesArray[1] + ' newFieldName = ' + newFieldName + ' showExtraField (dataVobj.variable3) now = ' + dataVobj.variable3);
+ console.log('In setup=1 || 3 of pickOldNew(),  originalNumberRecords = otherVariablesArray[1] = '+ otherVariablesArray[1] + ' newFieldName = ' + newFieldName + ' showExtraField (dataVobj.variable3) now = ' + dataVobj.variable3);
  
  nextFieldName = otherVariablesArray[2];
  numberOfFields = otherVariablesArray[3];
@@ -5095,6 +5377,34 @@ tableArray = dataVobj.tableArray;
  displayXtraFieldData = otherVariablesArray[7];
  
  //END OF LOAD IN TABLE VARIABLES
+ 
+ //load in prefVariables
+ if(setup===3) {
+ viewDateWritten = prefVariablesArray[0];
+dateShade = prefVariablesArray[1];
+showExtraField = prefVariablesArray[2];
+showScroll = prefVariablesArray[3];
+centerTitle = prefVariablesArray[4];
+tableDateTime = prefVariablesArray[5];
+linkLabel = prefVariablesArray[6];
+scrollTable = prefVariablesArray[7];
+bkgrdImage = prefVariablesArray[8];
+trigger = prefVariablesArray[9];
+caseSensitive = prefVariablesArray[10];
+includesSubstring = prefVariablesArray[11];
+
+//reset background image for each database date Nov11
+// if(bkgrdImage) {
+// 		bkgrdImageBtn.textContent = 'Clear Background Image';
+// 		bodyImage.setAttribute('class','bkgrdImage');
+// 	} else {
+// 		bkgrdImageBtn.textContent = 'Show background image';
+// 		bodyImage.setAttribute('class','noBkgrdImage');
+// 	}//end if else bkgrdImage
+	
+}//end if setup===3
+
+ //end load in prefVariables
 
  console.log('data.variable1 = ' +data.variable1);
 dbTableName.value = data.variable1;
@@ -6778,8 +7088,18 @@ if(!linkLabel) {
 			
 			//addEventListener to allow edit of td values changed dblclick to copy trigger contains event type set in preferences
 			//trigger = 'copy';
+			//trigger = 'mouseover';
 			console.log("trigger = " + trigger);
 	STrecordTd.addEventListener(trigger, function () {
+		
+	//to hasten edit disable Use Link Label Oct 28 2021 not necessary must have been a glitch related to experimenting with spaces? So this code is disabled
+		// if(linkLabel) {
+		// 	alert("If editing table cells disabling 'Use Link Labels' in Preferences is recommended!");
+		// }//end if linkLabel
+		
+	//to hasten edit disable Use Link Label Oct 28 2021
+		
+		
 		theLink = "";//clear reset the link
 	//	let dblTappedOnce = true;
 		const editTD = document.createElement('p');
@@ -7983,7 +8303,7 @@ function sortTableArray (chosenSort,typeSort) {
 
 function topFunction() {
  document.body.scrollTop = 0; // For Safari
- document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+ document.documentElement.scrollTop = 0; //0 For Chrome, Firefox, IE and Opera
  }//end function topFunction
  
  //function initialize table if first run
@@ -9024,7 +9344,7 @@ Note that you actually have to pass the exported data as a string, not as a JSON
 
   if('serviceWorker' in navigator) {
     navigator.serviceWorker
-             .register('/DougieBaseVer35sw.js')
+             .register('/DougieBaseVer36sw.js')
              .then(function() { console.log('Service Worker Registered'); });
 			alert('Service Worker Registered!'); navigator.storage.estimate().then(function(estimate) {
   document.getElementById("percent").value =
@@ -9041,6 +9361,7 @@ Note that you actually have to pass the exported data as a string, not as a JSON
 	
 	//what about the manifest file? triggered by oninstall? A2HS?	 
 //If the service worker API is supported in the browser, it is registered against the site using the ServiceWorkerContainer.register() method. Its contents reside in the sw.js file, and can be executed after the registration is successful. It's the only piece of Service Worker code that sits inside the app.js file; everything else that is Service Worker-specific is written in the sw.js file itself.
+
 //END OF DISABLED SERVICE WORKER !!!
 
 

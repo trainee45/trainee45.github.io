@@ -1,4 +1,4 @@
-//DougieBaseVer35sw.js added eyeore bkgrd image file Nov10 2021 messing around!!!
+//DougieBaseVer36sw.js added eyeore bkgrd image file Oct12 fudd4 Nov 5
 //from … TableNotesVer30sw.js
 var cacheName = 'DougieBase-v1'
 self.addEventListener('install', function(e) {
@@ -11,8 +11,8 @@ self.addEventListener('install', function(e) {
        '/index.html',//directory path to project folder/app name.html file
 	   
 	    // 'https://github.com/trainee45/trainee45.github.io/TableNotesVer29.html',//directory path to project folder/app name.html file
-       '/DougieBaseVer35.js',//directory path to project folder/app name.js file
-       '/DougieBaseVer35.css',////directory path to project folder/app name.css file
+       '/DougieBaseVer36.js',//directory path to project folder/app name.js file
+       '/DougieBaseVer36.css',////directory path to project folder/app name.css file
 	   '/trainsDBTableNotes.webmanifest',////directory path to project folder/app name.trainmanifest file
 	   '/jquery-3.6.0.min.js',////directory path to project folder/app name.jQuery file
 	    '/eeyore.JPG',//add this file to github repository
