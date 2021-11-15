@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>DougieBaseVer36.html</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="DougieBaseVer36.css" rel="stylesheet">
+	<link rel="manifest" href="trainsDBTableNotes.webmanifest">
+
+	
+<!-- 	Date:Nov14 landscape table and search and preview edit Nov4 2021 added easter egg and save settings Oct 31 2021. Ver 35.3removed access to word documentation help manual fixEditDougieBaseVer35.html USE THIS VERSION AS OF Sept 29 2021 2021 This version has been installed on github pages ! Added links to documentation docx and pdf<script src="fileNamesTableNotesVer21.js" defer type="text/javascript"></script> Added p info statement to Create Table window -->
+
+<!-- Line below adds jQuery library from jQuery file in same directory as the .js file. It works without internet connection. The google CDN has to have the internet connection IMPORTANT CONSIDERATION WHEN USING MORE jQuery code!! At the moment as of May17 2021 the only thing using jQuery is the table menu and hide scroll btns in preferences-->
+
+ <script src="jquery-3.6.0.min.js"></script>
+
+    <script src="DougieBaseVer36.js" defer></script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+	<!-- <scrip src="jquery-3.6.0.slim.min.js"></script> -->
+<!-- 	<script src="jquery-3.6.0.slim.min.js" defer></script> -->
+<script> 
+$(document).ready(function(){
+  $("#flip").click(function(){
+    $("#panel").slideToggle("slow");
+  });
+  
+  $("#scrollBtns").click(function(){
+	 $(".bottomBtn").hide(); 
+  })
+  
+  $("#bottom").click(function(){
+    $("#tableWin").scrollTop(2080);
+});
+  
+});
+</script>
+<style> 
+
+body {
+  background-image: url('eeyore.JPG');
+}
+#panel, #flip {
+  padding: 5px;
+  text-align: center;
+  background-color: #e5eecc;
+  border: solid 1px #c3c3c3;
+}
+
+#panel {
+  padding: 10px;
+  display: none;
+}
+
+.print {
+	background-color:white;
+color: black;
+}
+
+.elmer {
+	background-image: url('fudd4.jpeg');
+}
+
+</style>
+	
+	
+	
+  </head>
+  <body id = "bodyImage">
+	  
+	
+	 <!-- START OF CONSOLE SIMULATOR CODE this part into the HTML section -->
+<!-- <div class="simula>
+  <h3>The iOS Console Simulator</h3>
+      <label for="jscode">Enter code:</label>
+      <input type="text" id="jscode" name="jscode" value="alert('Hello');">
+      <button id="btnSim">Submit code</button>
+       <p id="sim" class="funcLib"></p>
+    </div> -->
+
+	<!--END OF THE CONSOLE SIMULATOR HTML-->
+ 
+	<!--  <p>See Service Worker example at: Repositories/learning-area/javascript/apis/client-side-storage/cache-sw/video-store-offline/index.html">Service Worker example</p> -->
+	
+	  
+    <header>
+      <h1>DougieBase Version 36sp</h1>
+    </header>
+	<p></p>
+<div id = "scrolling">
+	 <!--  <button style = "position:fixed;" id = "scrollBtn";>Scroll ¥</button>
+	  <button id="myBtn" title="Go to top">Top</button> -->
+</div>
+	 <!--the menu banner remove id="menu" to return to original view-->  
+	<nav id="menu" class="simulator">
+		<h3>Menu</h3>
+		<!--<p></p>-->
+		<button id="new">NEW/CHANGE DB</button>
+		<button id="add">ADD Note</button>
+		<button id ="tableScreenBtn">TABLE</button>
+		<button id="settings">PREFERENCES</button>
+		<button id="aboutDB">ABOUT</button>
+		<button id="manage">MANAGE</button>
+		<button id="search">SEARCH</button>
+		<button id="loadDB">HELP</button>
+		<button id="saveDatabase">SAVE</button>
+	</nav>
+	
+
+    <main>
+		
+		<section id = "fileNames" class = "hidden">
+			  <h2 id="">Current Database File Names</h2>
+			  <p style="color: lightblue font-size: small">(Scroll up ⬆️ to see menu of options)</p>
+			  <div id="fileNamesList">
+				  <h3>Tap on the Database Name to Load</h3>
+				  <ol id = "dataBaseList">
+					  
+				  </ol>
+			  </div>
+			<p class = "simulator" id = "fileChosen"></p>
+			<p class = "simulator" >OR create a NEW DataBase or RESTORE a Backup</p>
+			<button id = "newDBBtn">Create New DataBase</button>
+			<button id = "firstManageBtn">Manage</#button>
+			<button id = "restoreDataBaseBtn">RESTORE from Backup</button>
+			<button id = "loadSampleDbBtn">LOAD Sample database</button>
+			<button id = "loadTutorialDbBtn">LOAD Tutorial Example database</button>
+			
+			<button id = "cancelFileNamesWin">CANCEL</button>
+		</section>
+		
+	 <p id = "openDB"></p>
+		  
+<section id = "createNewDBWin" class ="hidden">
+	<h2 id="">Create a NEW Database File </h2>
+	  <p></p>
+		  <label for="newDBTitle" class="edBan">Enter Name of New DataBase: </label>
+		  <input id="newDBTitle" type="text" name="newDBTitle" value="" class="edBan" placeholder = "Enter here !">
+		    <button id="submitName" class ="attentionBtn">Start Creating new DataBase</button>
+			<button id = "cancelNewDBBtn">CANCEL</button>
+			<p></p>
+	
+		</section>
+		
+		<!-- Manage files -->
+		<section id = "manageFilesWin" class ="hidden">
+	<h2 id="">Manage the Database Files </h2>
+	  <p></p>
+	    <div id="manageFileNamesList">
+				  <h3>Tap on the Database Name to SELECT</h3>
+				  <ol id = "manageDataBaseList">
+					  
+				  </ol>
+			  </div>
+			  
+		  <p class="edBan">Choose the file from list above. Tap to SELECT the DataBase: </p>
+		  <p></p>
+		   	<p id = "selectedDBinfo" class = "simulator"></p> 
+			<p></p>
+		  
+		  
+		   <button id="deleteFileBtn" class ="attentionBtn">DELETE DataBase</button>
+		    <button id="clearFileBtn" class ="normalBtn">Clear DataBase</button>
+			<button id="backupFileBtn" class ="attentionBtn">BACKUP DataBase</button>
+			
+			<button id = "cancelDeleteDataBaseBtn">CANCEL</button>
+			<p></p>
+			 <button id="backupRestoreFileBtn" class ="attentionBtn">Backup/Restore DataBase</button>
+			<p></p>
+	
+		</section>
+		
+	<!-- Backup Restore files -->
+		<section id = "backupFilesWin" class ="hidden">
+	<h2 id="">Backup and Restore Database Files </h2>
+	  <p></p>
+	    
+				  <h3>Choose BACKUP or RESTORE</h3>
+			
+				  
+		<!-- 	<p id = "selectedDBinfo" class = "simulator"></p>   -->
+		 
+		  <p></p>
+		  <p id = "selectedDBName" class = "simulator">Selected DataBase name will appear here!</p>
+		  <p></p>
+		  <label for="backupBtn">Tap BACKUP button to save a backup.</label>
+		  <button id= "backupBtn" name = "backupBtn" class = "attentionBtn">BACKUP</button>
+		  <p></p>
+		    <label for="restoreFileBtn" class="edBan"> Tap RESTORE DataBase to reclaim any lost Database from your external storage.. </label>
+		  <p></p>
+		    <!-- <button id="backupFileBtn" class ="attentionBtn">Backup DataBase</button> -->
+			   <button id="restoreFileBtn" class ="attentionBtn">Restore DataBase</button>
+			<button id = "cancelBackupDataBaseBtn">CANCEL</button>
+			<p></p>
+	
+		</section>
+		<!-- End Backup restore -->
+		
+		<!-- Backing up database window -->
+		
+	<section id = "backingUpDBWin" class ="hidden">
+	<h2 id="backingUpBanner">Backing up your database data to the Clipboard! </h2>
+	  <p></p>
+	   <button id="copyClipboardBtn">Click here first!</button>
+	   <button id ="doneCopy">DONE</button>
+
+	  <!-- onclick = " copyToClipboard(textarea.value) ? this.innerText='Copied!': #this.innerText='DONE! Copied to clipboard. :(' "  -->
+	   
+	   <!-- 	 <button onclick="copyToClipboard($(json) )? this.innerText='Copied!': this.innerText='Sorry :(' ">Click here</button>THIS WORKS BUT NEED TO USE BOTH FUNCTIONS!!!!!!! -->
+
+<p>
+  <textarea id = "textAreaClip" type ="text" placeholder="(Backing up database..." cols="60" rows="4" defer>json</textarea>
+</p>
+
+			<p></p>
+	
+		</section>
+		<!-- End backing up database window -->
+		
+<!-- Start copy sample database window  -->	
+<section id ="copySampleDb" class = "hidden">
+	<h2 id="" style = "text-align: center">Creating SAMPLE Database </h2>
+	<p>The backup text of a Sample Database is displayed in the text-area element below 👇 </p>
+	<p> <textarea id = "copySampleDbData" type ="text" cols="60" rows="10" defer>{"Sample DataBase Demo_os":[{"title":1,"created":" Nov 07 2020 22:03","body":"Decoder ","variable1":"Locomotive Roster ","variable2":[1,"rgb(0,84,174)","rgb(74,210,38)","rgb(16,46,96)","rgb(31,73,88)","white",1],"dataV":{"tableArray":[["2> CN3205"," Nov 07 2020 22:04","Yard3 Track 2","Econami PNP  ","5","128","255","75","45","140","\t http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/eco-pnp_in_atlas_kato_c424.pdf See my decoder installation article"],["3> CN4800"," Nov 07 2020 22:06","Yard3 Track12 ","Tsunami2 TSU-1100","15","128","255","75","45","140","See my decoder installation article! http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/soundtraxx_tsunami2_tsu-1100_decoder_installation_into_ho__p2k_gp9.pdf"],["4> CN4700"," Nov 08 2020 00:29","Yard2 Roundhouse Track 2","Tsunami2 TSU-1100"," 0"," 100"," 180","75","45","140","See my decoder installation article. http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/soundtraxx_tsu-1100_in_p2k_emdgp38-2.pdf"],["5> CN5502"," Jan 20 2021 22:29","Ogden Point Yard Track 4","NCE DW13SR"," 0","128 "," 180","75 "," 45"," 140","See my article at this link! http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/nce_p2ksr_decoder_installation_in_emdgp38-2.pdf The PDF file can be downloaded and saved to your device."],["6> CN7001","2021-03-26","Yard2 Track 7","NCE P2KSR"," 0"," 128"," 140"," 75"," 45","140 ","Installation article for CN7001 and CN7035. http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/install_an_nce_sw9-sr_decoder_into_a_p2k_sw1500_switcher.pdf"],["8> CN7035"," Jan 20 2021 22:43","Ogden Point Yard Track 7","NCE P2KSR"," 5"," 120"," 180"," 75"," 45"," 140","Please use My web site - http://eeyorepooh.weebly.com/"],["9> BCR632"," Mar 26 2021 22:05","Yard3 Track 7","QSI","3","128","192","75","45","140",""],["10> CP6700"," Jun 21 2021 22:46","Yard3 Track 8","Tsunami2 TSU-1100","0","128","145","75","45","140","EMD SW1500 switcher leased from CPRail. See my article at this link -  http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/p2k_walthers_sw1500_switcher_and_tsu-1100_decoder_installation.pdf The PDF file can be downloaded and saved to your device."],["11> CNW8507"," Jul 03 2021 02:03","Yard3 Track 4","Tsunami2-PNP","0","128","192","75","45","140","See my installation article! http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/ge_c40-8_tsunami2_2200_decoder_installation.pdf"],["12> BCH151"," Jul 04 2021 23:58","Yard2 Track 7","Tsunami2 TSU-PNP: This decoder is equivalent to a TSU-2200. http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/atlas_mp15_dc_switcher_tsunami2_2200_pnp.pdf. See my article on installing this decoder.: This text added after a colon in the post link text should not be seen in the table!","0","128","155","75","45","140","Please see my web site! http://eeyorepooh.weebly.com/"],["13> EandN102"," Jul 05 2021 12:24","Yard2 Roundhouse Track 10: The Esquimalt and Nanaimo Railway always ran their locomotives long hood forward. http://eeyorepooh.weebly.com/ See my web site!","Tsunami2 TSU-PNP: This decoder is equivalent to a TSU-2200. It has 6 functions.http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/e_and_n_tsu-pnp_decoder_installation.pdf See my installation article","3","128","185","75","45","140","See my decoder installation article! http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/e_and_n_tsu-pnp_decoder_installation.pdf"],["14> CN5931"," Jul 05 2021 17:53","Yard2 Roundhouse Track 3","Tsunami2 TSU-2200","0","128","192","75","150","140","Decoder installation article from my web site. http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/tsunami2_kato_sd40-2.pdf"],["15> CN5075"," Jul 05 2021 18:26","Yard2 Roundhouse Track 5. Used in consist behind lead locomotive CN5931.","Tsunami2 TSU-2200","0","135","190","60","45","140 F7","http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/gp40_cn5075.pdf Decoder installation article from my web site."]],"fieldNamesArray":["Road Number"," DATE ","Home Yard","Decoder ","CV2 Start ","CV6 Middle ","CV5 Max ","Acceleration ","Deceleration ","Braking Rate","Link-Article"],"otherVariables":[1,13,null,11,"7",["2> CN3205","3> CN4800","4> CN4700","5> CN5502","6> CN7001","8> CN7035","9> BCR632","10> CP6700","11> CNW8507","12> BCH151","13> EandN102","14> CN5931","15> CN5075"],["Yard3 Track 2","Yard3 Track12 ","Yard2 Roundhouse Track 2","Ogden Point Yard Track 4","Yard2 Track 7","Ogden Point Yard Track 7","Yard3 Track 7","Yard3 Track 8","Yard3 Track 4","Yard2 Track 7","Yard2 Roundhouse Track 10: The Esquimalt and Nanaimo Railway always ran their locomotives long hood forward. http://eeyorepooh.weebly.com/ See my web site!","Yard2 Roundhouse Track 3","Yard2 Roundhouse Track 5. Used in consist behind lead locomotive CN5931."],["Econami PNP  ","Tsunami2 TSU-1100","Tsunami2 TSU-1100","NCE DW13SR","NCE P2KSR","NCE P2KSR","QSI","Tsunami2 TSU-1100","Tsunami2-PNP","Tsunami2 TSU-PNP: This decoder is equivalent to a TSU-2200. http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/atlas_mp15_dc_switcher_tsunami2_2200_pnp.pdf. See my article on installing this decoder.: This text added after a colon in the post link text should not be seen in the table!","Tsunami2 TSU-PNP: This decoder is equivalent to a TSU-2200. It has 6 functions.http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/e_and_n_tsu-pnp_decoder_installation.pdf See my installation article","Tsunami2 TSU-2200","Tsunami2 TSU-2200"]],"variable3":1},"id":1},{"title":"CN3205","created":" Nov 07 2020 22:04","body":"Yard3 Track 2","xtraField":"Econami PNP  ","variable1":"Creating new Database. Tap SAVE to continue. Then rename Database in Preferences.","variable2":[1,null,null,null,null,null,0],"dataV":{"tableArray":[[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null]],"fieldNamesArray":[],"otherVariables":[0,null,null,null,null,[],[],[]],"variable3":0},"id":2},{"title":"CN4800","created":" Nov 07 2020 22:06","body":"Yard3 Track12 ","xtraField":"Tsunami2 TSU-1100: This decoder comes with an optional 250uF capacitor","variable1":"Locomotive Roster ","variable2":[1,"rgb(231,59,16)","rgb(74,210,38)","rgb(220,252,134)","rgb(204,159,59)",null,0],"dataV":{"tableArray":[[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null]],"fieldNamesArray":[],"otherVariables":[0,null,null,null,null,["CN3205"],["Yard3 Track 2"],["Econami PNP  "]],"variable3":1},"id":3},{"title":"CN4700","created":" Nov 08 2020 00:29","body":"Yard2 Roundhouse Track 2","xtraField":"Tsunami2 TSU-1100: This decoder comes with an optional 250uF capacitor ","variable1":"Locomotive Roster ","variable2":[1,"rgb(231,59,16)","rgb(74,210,38)","rgb(220,252,134)","rgb(204,159,59)",null,1],"dataV":{"tableArray":[["CN3205"," Nov 07 2020 22:04","Yard3 Track 2","Econami PNP  ","5","128","255"],["CN4800"," Nov 07 2020 22:06","Yard3 Track12 ","Decoder : \nTsunami2 TSU-1100","15","128","255"],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null]],"fieldNamesArray":["Locomotive "," DATE ","Location ","Decoder ","CV2 Start ","CV6 Mid ","CV5 Max "],"otherVariables":[1,2,null,7,"3",["CN3205","CN4800"],["Yard3 Track 2","Yard3 Track12 "],["Econami PNP  ","Decoder : \nTsunami2 TSU-1100"]],"variable3":1},"id":4},{"title":"CN5502","created":" Jan 20 2021 22:29","body":"Ogden Point Yard Track 4: EMD GP38-2 road switcher has very slow acceleration ","xtraField":"NCE DW13SR: THIS IS a mobile decoder.","variable1":"Locomotive Roster ","variable2":[1,"rgb(231,59,16)","rgb(74,210,38)","rgb(220,252,134)","rgb(204,159,59)",null,1],"dataV":{"tableArray":[["2>CN3205"," Nov 07 2020 22:04","Yard3 Track 2","Econami PNP  ","5","128","255","75","45","140"],["3>CN4800"," Nov 07 2020 22:06","Yard3 Track12 ","Tsunami2 TSU-1100","15","128","255","75","45","140"],["4>CN4700"," Nov 08 2020 00:29","Yard2 Roundhouse Track 2","Tsunami2 TSU-1100"," 0"," 100"," 180","75","45","140"],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[]],"fieldNamesArray":["Locomotive "," DATE ","Location ","Decoder ","CV2 Start ","CV6 Middle ","CV5 Max ","Acceleration ","Deceleration ","Braking Rate"],"otherVariables":[1,3,null,10,"6",["2>CN3205","3>CN4800","4>CN4700"],["Yard3 Track 2","Yard3 Track12 ","Yard2 Roundhouse Track 2"],["Econami PNP  ","Tsunami2 TSU-1100","Tsunami2 TSU-1100"]],"variable3":1},"id":5},{"title":"CN7001","created":"2021-03-26","body":"Yard2 Track 7: EMD SW1500 switcher","xtraField":"NCE P2KSR: The decoder is designed specifically for the SW1500 P2K switcher","variable1":"Locomotive Roster ","variable2":[1,"rgb(231,59,16)","rgb(74,210,38)","rgb(220,252,134)","rgb(204,159,59)",null,1],"dataV":{"tableArray":[["2>CN3205"," Nov 07 2020 22:04","Yard3 Track 2","Econami PNP  ","5","128","255","75","45","140"],["3>CN4800"," Nov 07 2020 22:06","Yard3 Track12 ","Tsunami2 TSU-1100","15","128","255","75","45","140"],["4>CN4700"," Nov 08 2020 00:29","Yard2 Roundhouse Track 2","Tsunami2 TSU-1100"," 0"," 100"," 180","75","45","140"],["5>CN5502"," Jan 20 2021 22:29","Ogden Point Yard Track 4","NCE DW13SR"," 0","128 "," 180","75 "," 45"," 140",0],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[],[]],"fieldNamesArray":["Locomotive "," DATE ","Location ","Decoder ","CV2 Start ","CV6 Middle ","CV5 Max ","Acceleration ","Deceleration ","Braking Rate"],"otherVariables":[1,4,null,10,"6",["2>CN3205","3>CN4800","4>CN4700","5>CN5502"],["Yard3 Track 2","Yard3 Track12 ","Yard2 Roundhouse Track 2","Ogden Point Yard Track 4"],["Econami PNP  ","Tsunami2 TSU-1100","Tsunami2 TSU-1100","NCE DW13SR"]],"variable3":1},"id":6},{"title":"CN7035","created":" Jan 20 2021 22:43","body":"Ogden Point Yard Track 7: EMD SW1500 switcher","xtraField":"NCE P2KSR: This mobile decoder is specially designed by NCE to fit the Proto2000 SW1500 switcher","variable1":"Locomotive Roster ","variable2":[1,"rgb(231,59,16)","rgb(74,210,38)","rgb(220,252,134)","rgb(204,159,59)",null,1],"dataV":{"tableArray":[["2>CN3205"," Nov 07 2020 22:04","Yard3 Track 2","Econami PNP  ","5","128","255","75","45","140"],["3>CN4800"," Nov 07 2020 22:06","Yard3 Track12 ","Tsunami2 TSU-1100","15","128","255","75","45","140"],["4>CN4700"," Nov 08 2020 00:29","Yard2 Roundhouse Track 2","Tsunami2 TSU-1100"," 0"," 100"," 180","75","45","140"],["5>CN5502"," Jan 20 2021 22:29","Ogden Point Yard Track 4","NCE DW13SR"," 0","128 "," 180","75 "," 45"," 140",0],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[null],[],[]],"fieldNamesArray":["Locomotive "," DATE ","Location ","Decoder ","CV2 Start ","CV6 Middle ","CV5 Max ","Acceleration ","Deceleration ","Braking Rate"],"otherVariables":[1,4,null,10,"6",["2>CN3205","3>CN4800","4>CN4700","5>CN5502","6>CN7001","7>Delete this"],["Yard3 Track 2","Yard3 Track12 ","Yard2 Roundhouse Track 2","Ogden Point Yard Track 4","Yard2 Track 7","Delete this note"],["Econami PNP  ","Tsunami2 TSU-1100","Tsunami2 TSU-1100","NCE DW13SR","NCE P2KSR","Delete"]],"variable3":1},"id":8},{"title":"BCR632","created":" Mar 26 2021 22:05","body":"Yard3 Track 7","xtraField":"QSI","variable1":"Locomotive Roster ","variable2":[1,"rgb(231,59,16)","rgb(74,210,38)","rgb(220,252,134)","rgb(204,159,59)",null,1],"dataV":{"tableArray":[["2>CN3205"," Nov 07 2020 22:04","Yard3 Track 2","Econami PNP  ","5","128","255","75","45","140"],["3>CN4800"," Nov 07 2020 22:06","Yard3 Track12 ","Tsunami2 TSU-1100","15","128","255","75","45","140"],["4>CN4700"," Nov 08 2020 00:29","Yard2 Roundhouse Track 2","Tsunami2 TSU-1100"," 0"," 100"," 180","75","45","140"],["5>CN5502"," Jan 20 2021 22:29","Ogden Point Yard Track 4","NCE DW13SR"," 0","128 "," 180","75 "," 45"," 140",0],["6>CN7001","2021-03-26","Yard2 Track 7","NCE P2KSR"," 0"," 128"," 140"," 75"," 45","140 ",0],["8>CN7035"," Jan 20 2021 22:43","Ogden Point Yard Track 7","NCE P2KSR"," 5"," 120"," 180"," 75"," 45"," 140",0]],"fieldNamesArray":["Locomotive "," DATE ","Location ","Decoder ","CV2 Start ","CV6 Middle ","CV5 Max ","Acceleration ","Deceleration ","Braking Rate"],"otherVariables":[1,6,null,10,"6",["2> CN3205","3> CN4800","4> CN4700","5> CN5502","6> CN7001","8> CN7035"],["Yard3 Track 2","Yard3 Track12 ","Yard2 Roundhouse Track 2","Ogden Point Yard Track 4","Yard2 Track 7","Ogden Point Yard Track 7"],["Econami PNP  ","Tsunami2 TSU-1100","Tsunami2 TSU-1100","NCE DW13SR","NCE P2KSR","NCE P2KSR"]],"variable3":1},"id":9},{"title":"CP6700","created":" Jun 21 2021 22:46","body":"Yard3 Track 8:Leased from CPRail","xtraField":"Tsunami2 TSU-1100: This decoder comes with an optional 220uF capacitor ","variable1":"Locomotive Roster ","variable2":[1,"rgb(231,59,16)","rgb(74,210,38)","rgb(220,252,134)","rgb(204,159,59)",null,1],"dataV":{"tableArray":[["2> CN3205"," Nov 07 2020 22:04","Yard3 Track 2","Econami PNP  ","5","128","255","75","45","140"],["3> CN4800"," Nov 07 2020 22:06","Yard3 Track12 ","Tsunami2 TSU-1100","15","128","255","75","45","140"],["4> CN4700"," Nov 08 2020 00:29","Yard2 Roundhouse Track 2","Tsunami2 TSU-1100"," 0"," 100"," 180","75","45","140"],["5> CN5502"," Jan 20 2021 22:29","Ogden Point Yard Track 4","NCE DW13SR"," 0","128 "," 180","75 "," 45"," 140",0],["6> CN7001","2021-03-26","Yard2 Track 7","NCE P2KSR"," 0"," 128"," 140"," 75"," 45","140 ",0],["8> CN7035"," Jan 20 2021 22:43","Ogden Point Yard Track 7","NCE P2KSR"," 5"," 120"," 180"," 75"," 45"," 140",0],["9> BCR632"," Mar 26 2021 22:05","Yard3 Track 7","QSI","3","128","192","75","45","140"]],"fieldNamesArray":["Locomotive "," DATE ","Location ","Decoder ","CV2 Start ","CV6 Middle ","CV5 Max ","Acceleration ","Deceleration ","Braking Rate"],"otherVariables":[1,7,null,10,"6",["2> CN3205","3> CN4800","4> CN4700","5> CN5502","6> CN7001","8> CN7035","9> BCR632"],["Yard3 Track 2","Yard3 Track12 ","Yard2 Roundhouse Track 2","Ogden Point Yard Track 4","Yard2 Track 7","Ogden Point Yard Track 7","Yard3 Track 7"],["Econami PNP  ","Tsunami2 TSU-1100","Tsunami2 TSU-1100","NCE DW13SR","NCE P2KSR","NCE P2KSR","QSI"]],"variable3":1},"id":10},{"title":"CNW8507","created":" Jul 03 2021 02:03","body":"Yard3 Track 4: This locomotive has travel restrictions. It has to enter Maxwell Lake and Ogden Point via straight track.","xtraField":"Tsunami2-PNP: THIS decoder has six functions ","variable1":"Locomotive Roster ","variable2":[1,"rgb(231,59,16)","rgb(74,210,38)","rgb(220,252,134)","rgb(204,159,59)",null,1],"dataV":{"tableArray":[["2> CN3205"," Nov 07 2020 22:04","Yard3 Track 2","Econami PNP  ","5","128","255","75","45","140"],["3> CN4800"," Nov 07 2020 22:06","Yard3 Track12 ","Tsunami2 TSU-1100","15","128","255","75","45","140"],["4> CN4700"," Nov 08 2020 00:29","Yard2 Roundhouse Track 2","Tsunami2 TSU-1100"," 0"," 100"," 180","75","45","140"],["5> CN5502"," Jan 20 2021 22:29","Ogden Point Yard Track 4","NCE DW13SR"," 0","128 "," 180","75 "," 45"," 140",0],["6> CN7001","2021-03-26","Yard2 Track 7","NCE P2KSR"," 0"," 128"," 140"," 75"," 45","140 ",0],["8> CN7035"," Jan 20 2021 22:43","Ogden Point Yard Track 7","NCE P2KSR"," 5"," 120"," 180"," 75"," 45"," 140",0],["9> BCR632"," Mar 26 2021 22:05","Yard3 Track 7","QSI","3","128","192","75","45","140"],["10> CP6700"," Jun 21 2021 22:46","Yard3 Track 8","Tsunami2 TSU-1100","0","128","145","75","45","140"]],"fieldNamesArray":["Locomotive "," DATE ","Location ","Decoder ","CV2 Start ","CV6 Middle ","CV5 Max ","Acceleration ","Deceleration ","Braking Rate"],"otherVariables":[1,8,null,10,"6",["2> CN3205","3> CN4800","4> CN4700","5> CN5502","6> CN7001","8> CN7035","9> BCR632","10> CP6700"],["Yard3 Track 2","Yard3 Track12 ","Yard2 Roundhouse Track 2","Ogden Point Yard Track 4","Yard2 Track 7","Ogden Point Yard Track 7","Yard3 Track 7","Yard3 Track 8"],["Econami PNP  ","Tsunami2 TSU-1100","Tsunami2 TSU-1100","NCE DW13SR","NCE P2KSR","NCE P2KSR","QSI","Tsunami2 TSU-1100"]],"variable3":1},"id":11},{"title":"BCH151","created":" Jul 04 2021 23:58","body":"Yard2 Track 7","xtraField":"Tsunami2 TSU-PNP: This decoder is equivalent to a TSU-2200. http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/atlas_mp15_dc_switcher_tsunami2_2200_pnp.pdf. See my article on installing this decoder.: This text added after a colon in the post link text should not be seen in the table!","variable1":"Locomotive Roster ","variable2":[1,"rgb(231,59,16)","rgb(74,210,38)","rgb(220,252,134)","rgb(204,159,59)",null,1],"dataV":{"tableArray":[["2> CN3205"," Nov 07 2020 22:04","Yard3 Track 2","Econami PNP  ","5","128","255","75","45","140","Please use My web site - http://eeyorepooh.weebly.com/"],["3> CN4800"," Nov 07 2020 22:06","Yard3 Track12 ","Tsunami2 TSU-1100","15","128","255","75","45","140"],["4> CN4700"," Nov 08 2020 00:29","Yard2 Roundhouse Track 2","Tsunami2 TSU-1100"," 0"," 100"," 180","75","45","140","Please use My web site - http://eeyorepooh.weebly.com/"],["5> CN5502"," Jan 20 2021 22:29","Ogden Point Yard Track 4","NCE DW13SR"," 0","128 "," 180","75 "," 45"," 140","See my article at this link -  http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/p2k_walthers_sw1500_switcher_and_tsu-1100_decoder_installation.pdf The PDF file can be downloaded and saved to your device."],["6> CN7001","2021-03-26","Yard2 Track 7","NCE P2KSR"," 0"," 128"," 140"," 75"," 45","140 ",0],["8> CN7035"," Jan 20 2021 22:43","Ogden Point Yard Track 7","NCE P2KSR"," 5"," 120"," 180"," 75"," 45"," 140","Please use My web site - http://eeyorepooh.weebly.com/"],["9> BCR632"," Mar 26 2021 22:05","Yard3 Track 7","QSI","3","128","192","75","45","140","EMD SW1500 switcher leased from CPRail. See my article at this link - http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/p2k_walthers_sw1500_switcher_and_tsu-1100_decoder_installation.pdf. The PDF file can be downloaded and saved to your device."],["10> CP6700"," Jun 21 2021 22:46","Yard3 Track 8","Tsunami2 TSU-1100","0","128","145","75","45","140"],["11> CNW8507"," Jul 03 2021 02:03","Yard3 Track 4","Tsunami2-PNP","0","128","192","75","45","140","EMD SW1500 switcher leased from CPRail. See my article at this link - http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/p2k_walthers_sw1500_switcher_and_tsu-1100_decoder_installation.pdf. The PDF file can be downloaded and saved to your device."]],"fieldNamesArray":["Locomotive "," DATE ","Home Yard","Decoder ","CV2 Start ","CV6 Middle ","CV5 Max ","Acceleration ","Deceleration ","Braking Rate","Link-URL"],"otherVariables":[1,9,null,11,"7",["2> CN3205","3> CN4800","4> CN4700","5> CN5502","6> CN7001","8> CN7035","9> BCR632","10> CP6700","11> CNW8507"],["Yard3 Track 2","Yard3 Track12 ","Yard2 Roundhouse Track 2","Ogden Point Yard Track 4","Yard2 Track 7","Ogden Point Yard Track 7","Yard3 Track 7","Yard3 Track 8","Yard3 Track 4"],["Econami PNP  ","Tsunami2 TSU-1100","Tsunami2 TSU-1100","NCE DW13SR","NCE P2KSR","NCE P2KSR","QSI","Tsunami2 TSU-1100","Tsunami2-PNP"]],"variable3":1},"id":12},{"title":"EandN102","created":" Jul 05 2021 12:24","body":"Yard2 Roundhouse Track 10: The Esquimalt and Nanaimo Railway always ran their locomotives long hood forward. http://eeyorepooh.weebly.com/ See my web site!","xtraField":"Tsunami2 TSU-PNP: This decoder is equivalent to a TSU-2200. It has 6 functions.http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/e_and_n_tsu-pnp_decoder_installation.pdf See my installation article","variable1":"Locomotive Roster ","variable2":[1,"rgb(0,84,174)","rgb(74,210,38)","rgb(16,46,96)","rgb(31,73,88)","white",1],"dataV":{"tableArray":[["2> CN3205"," Nov 07 2020 22:04","Yard3 Track 2","Econami PNP  ","5","128","255","75","45","140","Please use My web site - http://eeyorepooh.weebly.com/"],["3> CN4800"," Nov 07 2020 22:06","Yard3 Track12 ","Tsunami2 TSU-1100","15","128","255","75","45","140"],["4> CN4700"," Nov 08 2020 00:29","Yard2 Roundhouse Track 2","Tsunami2 TSU-1100"," 0"," 100"," 180","75","45","140","Please use My web site - http://eeyorepooh.weebly.com/"],["5> CN5502"," Jan 20 2021 22:29","Ogden Point Yard Track 4","NCE DW13SR"," 0","128 "," 180","75 "," 45"," 140","See my article at this link -  http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/p2k_walthers_sw1500_switcher_and_tsu-1100_decoder_installation.pdf The PDF file can be downloaded and saved to your device."],["6> CN7001","2021-03-26","Yard2 Track 7","NCE P2KSR"," 0"," 128"," 140"," 75"," 45","140 ",0],["8> CN7035"," Jan 20 2021 22:43","Ogden Point Yard Track 7","NCE P2KSR"," 5"," 120"," 180"," 75"," 45"," 140","Please use My web site - http://eeyorepooh.weebly.com/"],["9> BCR632"," Mar 26 2021 22:05","Yard3 Track 7","QSI","3","128","192","75","45","140","EMD SW1500 switcher leased from CPRail. See my article at this link - http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/p2k_walthers_sw1500_switcher_and_tsu-1100_decoder_installation.pdf. The PDF file can be downloaded and saved to your device."],["10> CP6700"," Jun 21 2021 22:46","Yard3 Track 8","Tsunami2 TSU-1100","0","128","145","75","45","140"],["11> CNW8507"," Jul 03 2021 02:03","Yard3 Track 4","Tsunami2-PNP","0","128","192","75","45","140","EMD SW1500 switcher leased from CPRail. See my article at this link - http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/p2k_walthers_sw1500_switcher_and_tsu-1100_decoder_installation.pdf. The PDF file can be downloaded and saved to your device."],["12> BCH151"," Jul 04 2021 23:58","Yard2 Track 7","Tsunami2 TSU-PNP: This decoder is equivalent to a TSU-2200. http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/atlas_mp15_dc_switcher_tsunami2_2200_pnp.pdf. See my article on installing this decoder.: This text added after a colon in the post link text should not be seen in the table!","0","128","155","75","45","140","Please see my web site! http://eeyorepooh.weebly.com/"]],"fieldNamesArray":["Road Number"," DATE ","Home Yard","Decoder ","CV2 Start ","CV6 Middle ","CV5 Max ","Acceleration ","Deceleration ","Braking Rate","Link-Article"],"otherVariables":[1,10,null,11,"7",["2> CN3205","3> CN4800","4> CN4700","5> CN5502","6> CN7001","8> CN7035","9> BCR632","10> CP6700","11> CNW8507","12> BCH151"],["Yard3 Track 2","Yard3 Track12 ","Yard2 Roundhouse Track 2","Ogden Point Yard Track 4","Yard2 Track 7","Ogden Point Yard Track 7","Yard3 Track 7","Yard3 Track 8","Yard3 Track 4","Yard2 Track 7"],["Econami PNP  ","Tsunami2 TSU-1100","Tsunami2 TSU-1100","NCE DW13SR","NCE P2KSR","NCE P2KSR","QSI","Tsunami2 TSU-1100","Tsunami2-PNP","Tsunami2 TSU-PNP: This decoder is equivalent to a TSU-2200. http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/atlas_mp15_dc_switcher_tsunami2_2200_pnp.pdf. See my article on installing this decoder.: This text added after a colon in the post link text should not be seen in the table!"]],"variable3":1},"id":13},{"title":"CN5931","created":" Jul 05 2021 17:53","body":"Yard2 Roundhouse Track 3: This locomotive is an SD40-2 KATO HO model. It leads a consist made up of CN5931 CN5075 abd CN4800. CN5075 is speed matched to CN 5931. CN4800 is set up as a rear loco in this consist.","xtraField":"Tsunami2 TSU-2200: Current decoder address is 4. This locomotive is an KATO HO  SD40-2","variable1":"Locomotive Roster ","variable2":[1,"rgb(0,84,174)","rgb(74,210,38)","rgb(16,46,96)","rgb(31,73,88)","white",1],"dataV":{"tableArray":[["2> CN3205"," Nov 07 2020 22:04","Yard3 Track 2","Econami PNP  ","5","128","255","75","45","140","\t http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/eco-pnp_in_atlas_kato_c424.pdf See my decoder installation article"],["3> CN4800"," Nov 07 2020 22:06","Yard3 Track12 ","Tsunami2 TSU-1100","15","128","255","75","45","140","See my decoder installation article! http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/soundtraxx_tsunami2_tsu-1100_decoder_installation_into_ho__p2k_gp9.pdf"],["4> CN4700"," Nov 08 2020 00:29","Yard2 Roundhouse Track 2","Tsunami2 TSU-1100"," 0"," 100"," 180","75","45","140","See my decoder installation article. http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/soundtraxx_tsu-1100_in_p2k_emdgp38-2.pdf"],["5> CN5502"," Jan 20 2021 22:29","Ogden Point Yard Track 4","NCE DW13SR"," 0","128 "," 180","75 "," 45"," 140","See my article at this link! http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/nce_p2ksr_decoder_installation_in_emdgp38-2.pdf The PDF file can be downloaded and saved to your device."],["6> CN7001","2021-03-26","Yard2 Track 7","NCE P2KSR"," 0"," 128"," 140"," 75"," 45","140 ","Installation article for CN7001 and CN7035. http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/install_an_nce_sw9-sr_decoder_into_a_p2k_sw1500_switcher.pdf"],["8> CN7035"," Jan 20 2021 22:43","Ogden Point Yard Track 7","NCE P2KSR"," 5"," 120"," 180"," 75"," 45"," 140","Please use My web site - http://eeyorepooh.weebly.com/"],["9> BCR632"," Mar 26 2021 22:05","Yard3 Track 7","QSI","3","128","192","75","45","140",""],["10> CP6700"," Jun 21 2021 22:46","Yard3 Track 8","Tsunami2 TSU-1100","0","128","145","75","45","140","EMD SW1500 switcher leased from CPRail. See my article at this link -  http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/p2k_walthers_sw1500_switcher_and_tsu-1100_decoder_installation.pdf The PDF file can be downloaded and saved to your device."],["11> CNW8507"," Jul 03 2021 02:03","Yard3 Track 4","Tsunami2-PNP","0","128","192","75","45","140","See my installation article! http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/ge_c40-8_tsunami2_2200_decoder_installation.pdf"],["12> BCH151"," Jul 04 2021 23:58","Yard2 Track 7","Tsunami2 TSU-PNP: This decoder is equivalent to a TSU-2200. http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/atlas_mp15_dc_switcher_tsunami2_2200_pnp.pdf. See my article on installing this decoder.: This text added after a colon in the post link text should not be seen in the table!","0","128","155","75","45","140","Please see my web site! http://eeyorepooh.weebly.com/"],["13> EandN102"," Jul 05 2021 12:24","Yard2 Roundhouse Track 10: The Esquimalt and Nanaimo Railway always ran their locomotives long hood forward. http://eeyorepooh.weebly.com/ See my web site!","Tsunami2 TSU-PNP: This decoder is equivalent to a TSU-2200. It has 6 functions.http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/e_and_n_tsu-pnp_decoder_installation.pdf See my installation article","3","128","185","75","45","140","See my decoder installation article! http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/e_and_n_tsu-pnp_decoder_installation.pdf"]],"fieldNamesArray":["Road Number"," DATE ","Home Yard","Decoder ","CV2 Start ","CV6 Middle ","CV5 Max ","Acceleration ","Deceleration ","Braking Rate","Link-Article"],"otherVariables":[1,11,null,11,"7",["2> CN3205","3> CN4800","4> CN4700","5> CN5502","6> CN7001","8> CN7035","9> BCR632","10> CP6700","11> CNW8507","12> BCH151","13> EandN102"],["Yard3 Track 2","Yard3 Track12 ","Yard2 Roundhouse Track 2","Ogden Point Yard Track 4","Yard2 Track 7","Ogden Point Yard Track 7","Yard3 Track 7","Yard3 Track 8","Yard3 Track 4","Yard2 Track 7","Yard2 Roundhouse Track 10: The Esquimalt and Nanaimo Railway always ran their locomotives long hood forward. http://eeyorepooh.weebly.com/ See my web site!"],["Econami PNP  ","Tsunami2 TSU-1100","Tsunami2 TSU-1100","NCE DW13SR","NCE P2KSR","NCE P2KSR","QSI","Tsunami2 TSU-1100","Tsunami2-PNP","Tsunami2 TSU-PNP: This decoder is equivalent to a TSU-2200. http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/atlas_mp15_dc_switcher_tsunami2_2200_pnp.pdf. See my article on installing this decoder.: This text added after a colon in the post link text should not be seen in the table!","Tsunami2 TSU-PNP: This decoder is equivalent to a TSU-2200. It has 6 functions.http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/e_and_n_tsu-pnp_decoder_installation.pdf See my installation article"]],"variable3":1},"id":14},{"title":"CN5075","created":" Jul 05 2021 18:26","body":"Yard2 Roundhouse Track 5. Used in consist behind lead locomotive CN5931.","xtraField":"Tsunami2 TSU-2200:Rotary beacon function 5.","variable1":"Locomotive Roster ","variable2":[1,"rgb(0,84,174)","rgb(74,210,38)","rgb(16,46,96)","rgb(31,73,88)","white",1],"dataV":{"tableArray":[["2> CN3205"," Nov 07 2020 22:04","Yard3 Track 2","Econami PNP  ","5","128","255","75","45","140","\t http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/eco-pnp_in_atlas_kato_c424.pdf See my decoder installation article"],["3> CN4800"," Nov 07 2020 22:06","Yard3 Track12 ","Tsunami2 TSU-1100","15","128","255","75","45","140","See my decoder installation article! http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/soundtraxx_tsunami2_tsu-1100_decoder_installation_into_ho__p2k_gp9.pdf"],["4> CN4700"," Nov 08 2020 00:29","Yard2 Roundhouse Track 2","Tsunami2 TSU-1100"," 0"," 100"," 180","75","45","140","See my decoder installation article. http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/soundtraxx_tsu-1100_in_p2k_emdgp38-2.pdf"],["5> CN5502"," Jan 20 2021 22:29","Ogden Point Yard Track 4","NCE DW13SR"," 0","128 "," 180","75 "," 45"," 140","See my article at this link! http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/nce_p2ksr_decoder_installation_in_emdgp38-2.pdf The PDF file can be downloaded and saved to your device."],["6> CN7001","2021-03-26","Yard2 Track 7","NCE P2KSR"," 0"," 128"," 140"," 75"," 45","140 ","Installation article for CN7001 and CN7035. http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/install_an_nce_sw9-sr_decoder_into_a_p2k_sw1500_switcher.pdf"],["8> CN7035"," Jan 20 2021 22:43","Ogden Point Yard Track 7","NCE P2KSR"," 5"," 120"," 180"," 75"," 45"," 140","Please use My web site - http://eeyorepooh.weebly.com/"],["9> BCR632"," Mar 26 2021 22:05","Yard3 Track 7","QSI","3","128","192","75","45","140",""],["10> CP6700"," Jun 21 2021 22:46","Yard3 Track 8","Tsunami2 TSU-1100","0","128","145","75","45","140","EMD SW1500 switcher leased from CPRail. See my article at this link -  http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/p2k_walthers_sw1500_switcher_and_tsu-1100_decoder_installation.pdf The PDF file can be downloaded and saved to your device."],["11> CNW8507"," Jul 03 2021 02:03","Yard3 Track 4","Tsunami2-PNP","0","128","192","75","45","140","See my installation article! http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/ge_c40-8_tsunami2_2200_decoder_installation.pdf"],["12> BCH151"," Jul 04 2021 23:58","Yard2 Track 7","Tsunami2 TSU-PNP: This decoder is equivalent to a TSU-2200. http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/atlas_mp15_dc_switcher_tsunami2_2200_pnp.pdf. See my article on installing this decoder.: This text added after a colon in the post link text should not be seen in the table!","0","128","155","75","45","140","Please see my web site! http://eeyorepooh.weebly.com/"],["13> EandN102"," Jul 05 2021 12:24","Yard2 Roundhouse Track 10: The Esquimalt and Nanaimo Railway always ran their locomotives long hood forward. http://eeyorepooh.weebly.com/ See my web site!","Tsunami2 TSU-PNP: This decoder is equivalent to a TSU-2200. It has 6 functions.http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/e_and_n_tsu-pnp_decoder_installation.pdf See my installation article","3","128","185","75","45","140","See my decoder installation article! http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/e_and_n_tsu-pnp_decoder_installation.pdf"],["14> CN5931"," Jul 05 2021 17:53","Yard2 Roundhouse Track 3","Tsunami2 TSU-2200: Current decoder address is 4. This locomotive is an KATO HO  SD40-2","0","128","192","75","150","140","Decoder installation article from my web site. http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/tsunami2_kato_sd40-2.pdf"]],"fieldNamesArray":["Road Number"," DATE ","Home Yard","Decoder ","CV2 Start ","CV6 Middle ","CV5 Max ","Acceleration ","Deceleration ","Braking Rate","Link-Article"],"otherVariables":[1,12,null,11,"7",["2> CN3205","3> CN4800","4> CN4700","5> CN5502","6> CN7001","8> CN7035","9> BCR632","10> CP6700","11> CNW8507","12> BCH151","13> EandN102","14> CN5931"],["Yard3 Track 2","Yard3 Track12 ","Yard2 Roundhouse Track 2","Ogden Point Yard Track 4","Yard2 Track 7","Ogden Point Yard Track 7","Yard3 Track 7","Yard3 Track 8","Yard3 Track 4","Yard2 Track 7","Yard2 Roundhouse Track 10: The Esquimalt and Nanaimo Railway always ran their locomotives long hood forward. http://eeyorepooh.weebly.com/ See my web site!","Yard2 Roundhouse Track 3"],["Econami PNP  ","Tsunami2 TSU-1100","Tsunami2 TSU-1100","NCE DW13SR","NCE P2KSR","NCE P2KSR","QSI","Tsunami2 TSU-1100","Tsunami2-PNP","Tsunami2 TSU-PNP: This decoder is equivalent to a TSU-2200. http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/atlas_mp15_dc_switcher_tsunami2_2200_pnp.pdf. See my article on installing this decoder.: This text added after a colon in the post link text should not be seen in the table!","Tsunami2 TSU-PNP: This decoder is equivalent to a TSU-2200. It has 6 functions.http://eeyorepooh.weebly.com/uploads/6/6/1/0/66103197/e_and_n_tsu-pnp_decoder_installation.pdf See my installation article","Tsunami2 TSU-2200"]],"variable3":1},"id":15}]}</textarea></p>
+	<p>The text data in the above ☝️ Text-Area element will be used to create a SAMPLE database when you tap CONTINUE! This takes you to the Restore Database screen to create the Sample database.</p>
+	
+	<p></p>
+	<p> Tap the CONTINUE button.</p>
+	<button id = "continueBtn">CONTINUE to create sample database</button>
+	
+</section>
+<!-- End copy sample database window  -->	
+
+<!-- Start tutorial sample database window  -->	
+<section id ="tutorialSampleDb" class = "hidden">
+	<h2 id="" style = "text-align: center">A Tutorial example of a SAMPLE Database </h2>
+	<p>The backup text of a Sample Database Tutorial graphic is displayed in the text-area element below 👇 </p>
+	<p> <textarea id = "tutorialSampleDbData" type ="text" cols="60" rows="10" defer>{"Tutorial Demonstration_os":[{"title":1,"created":" Aug 19 2021 21:19","body":"This Record's 2nd Data Entry field","variable1":"DataBase Name","variable2":[1,"rgb(169,139,167)",null,"rgb(60,251,96)","rgb(95,208,201)",null,1],"dataV":{"tableArray":[["2> 1st Record Title"," Aug 19 2021 21:37","Notes Section. First data entry field. ","Text entered in record's 2nd data entry field is visible in table if preceding a colon.","Value for this record","Value for this record","Value for this record"],["3> 2nd Record's Title"," Aug 19 2021 22:49","Record #2 first data entry in notes section of database.","Record #2. 2nd data entry field of record #2. ","Value for this record","Value for this record","Value for this record"],["4> 3rd Record’s Title"," Aug 19 2021 23:17","http://eeyorepooh.weebly.com/","A link entered in the notes section without any preceding or trailing text appears in the table as the actual link, ","Value for this record","Value for this record","Value for this record"],["5> 4th Record's Title"," Aug 19 2021 23:51","Pre-link text - http://eeyorepooh.weebly.com/ Post link text","Pre-link text will appear in the table. http://eeyorepooh.weebly.com/ Text trailing a link(URL) in the NOTES section will display in table as RED text :  This applies if the user has chosen 'Show actual link' as the table display option in Preferences. If the user has selected 'USE ALTERNATE LINK LABEL'  in Preferences, and post link text exists, the text trailing the link is used as the active alternate link label. If post link text is not present, the Pre-link text is used as the alternate link label.","Value for this record","Value for this record","Value for this record"],["6> 5th Record's Title"," Aug 20 2021 00:01","This is Pre-link text. No Post-link text exists. http://eeyorepooh.weebly.com/","If user selects 'use Alternate Link Label' in Preferences, the Pre-link text is used as the alternate link label when there is no post-link text. ","Value for this record","Value for this record","Value for this record"],["7> 6th Record's Title"," Aug 23 2021 00:49","If you edit data in the notes section's data entry fields, the change automatically is updated in the corresponding fixed field of the table, and vice versa.","If you edit a fixed field in the table the change is automatically reflected in the notes section.","Just Double-tap a data cell to edit or enter data!","You must tap Clear/Initialize first before entering new data","You can use Copy/Paste in DougieBase ",0],["8> 7th Record's Title"," Aug 23 2021 01:00","If you choose the 'Show Creation date'  option in Preferences, DougieBase automatically generates the date that the record is created","The date can be changed to any date you wish for each individual record in the Table section"," "," "," ",0],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[],[]],"fieldNamesArray":["1st Column Header"," DATE ","Notes 1st Data Entry Header","Notes 2nd Data Entry Header","1st Dynamic Field Header","2nd Dynamic Field Header","3rd Dynamic Field Header"],"otherVariables":[1,7,null,7,"3",["2> 1st Record Title","3> 2nd Record's Title","4> 3rd Record’s Title","5> 4th Record's Title","6> 5th Record's Title","7> 6th Record's Title","8> 7th Record's Title"],["Notes Section. First data entry field. ","Record #2 first data entry in notes section of database.","http://eeyorepooh.weebly.com/","Pre-link text - http://eeyorepooh.weebly.com/ Post link text","This is Pre-link text. No Post-link text exists. http://eeyorepooh.weebly.com/","If you edit data in the notes section's data entry fields, the change automatically is updated in the corresponding fixed field of the table, and vice versa.","If you choose the 'Show Creation date'  option in Preferences, DougieBase automatically generates the date that the record is created"],["Text entered in record's 2nd data entry field is visible in table if preceding a colon.","Record #2. 2nd data entry field of record #2. ","A link entered in the notes section without any preceding or trailing text appears in the table as the actual link, ","Pre-link text will appear in the table. http://eeyorepooh.weebly.com/ Text trailing a link(URL) in the NOTES section will display in table as RED text :  This applies if the user has chosen 'Show actual link' as the table display option in Preferences. If the user has selected 'USE ALTERNATE LINK LABEL'  in Preferences, and post link text exists, the text trailing the link is used as the active alternate link label. If post link text is not present, the Pre-link text is used as the alternate link label.","If user selects 'use Alternate Link Label' in Preferences, the Pre-link text is used as the alternate link label when there is no post-link text. ","If you edit a fixed field in the table the change is automatically reflected in the notes section.","The date can be changed to any date you wish for each individual record in the Table section"]],"variable3":1},"id":1},{"title":"1st Record Title","created":" Aug 19 2021 21:37","body":"Notes Section. First data entry field. : All the text entered in the notes section following a colon only appears in the notes section. Only the text preceding the colon will appear in the table. If there is more text than is visible in the window port, just tap the view port to scroll the remaining text. This applies to all text view ports in DougieBase.","xtraField":"Text entered in record's 2nd data entry field is visible in table if preceding a colon.: All text entered in a notes data entry field following a colon will not appear in the table. When DougieBase  generates a table (after user taps the TABLE button) data from the NOTES section of the database appears automatically in the first four 'FIXED' or static fields (columns) of  the table. You can create or ADD or DELETE more fields (columns) in the 'DYNAMIC' section of the table. The table's 'FIXED' fields can not be deleted or added to. Only the 'DYNAMIC' fields can be DELETED or ADDED. ALL FIELDS in the NOTES section and in the Table can be EDITED. ","variable1":"DataBase Name","variable2":[1,"rgb(169,139,167)",null,"rgb(60,251,96)","rgb(95,208,201)",null,0],"dataV":{"tableArray":[[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""]],"fieldNamesArray":[],"otherVariables":[0,5,null,"","",[],[],[]],"variable3":1},"id":2},{"title":"2nd Record's Title","created":" Aug 19 2021 22:49","body":"Record #2 first data entry in notes section of database.: If user enters a colon, text following the colon does not appear in the table. Only the text preceding the colon character will be displayed in the table. This allows the user to tailor the amount of text appearing when DougieBase generates a table. By entering a colon character in the notes text data entry, the user controls the amount of text (i.e. the size of the table's data cell) for this record's table generated from the notes data entered.","xtraField":"Record #2. 2nd data entry field of record #2. ","variable1":"DataBase Name","variable2":[1,"rgb(169,139,167)",null,"rgb(60,251,96)","rgb(95,208,201)",null,0],"dataV":{"tableArray":[[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""]],"fieldNamesArray":[],"otherVariables":[0,5,null,"","",["2> 1st Record Title"],["Notes Section. First data entry field. "],["Text entered in record's 2nd data entry field is visible in table if preceding colon."]],"variable3":1},"id":3},{"title":"3rd Record’s Title","created":" Aug 19 2021 23:17","body":"http://eeyorepooh.weebly.com/","xtraField":"A link entered in the notes section without any preceding or trailing text appears in the table as the actual link, :when user has selected the 'Show actual link' option in Preferences. If the user selects the 'USE ALTERNATE LINK LABEL' in Preferences, the link is represented by the text 'Tap HERE to OPEN link'. This is activated text that opens the link it represents when you click on it.","variable1":"DataBase Name","variable2":[1,"rgb(169,139,167)",null,"rgb(60,251,96)","rgb(95,208,201)",null,0],"dataV":{"tableArray":[[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""]],"fieldNamesArray":[],"otherVariables":[0,5,null,"","",["2> 1st Record Title","3> 2nd Record's Title"],["Notes Section. First data entry field. ","Record #2 first data entry in notes section of database."],["Text entered in record's 2nd data entry field is visible in table if preceding a colon.","Record #2. 2nd data entry field of record #2. "]],"variable3":1},"id":4},{"title":"4th Record's Title","created":" Aug 19 2021 23:51","body":"Pre-link text - http://eeyorepooh.weebly.com/ Post link text","xtraField":"Pre-link text will appear in the table. http://eeyorepooh.weebly.com/ Text trailing a link(URL) in the NOTES section will display in table as RED text :  This applies if the user has chosen 'Show actual link' as the table display option in Preferences. If the user has selected 'USE ALTERNATE LINK LABEL'  in Preferences, and post link text exists, the text trailing the link is used as the active alternate link label. If post link text is not present, the Pre-link text is used as the alternate link label.","variable1":"DataBase Name","variable2":[1,"rgb(169,139,167)",null,"rgb(60,251,96)","rgb(95,208,201)",null,0],"dataV":{"tableArray":[[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""]],"fieldNamesArray":[],"otherVariables":[0,5,null,"","",["2> 1st Record Title","3> 2nd Record's Title","4> 3rd Record’s Title"],["Notes Section. First data entry field. ","Record #2 first data entry in notes section of database.","http://eeyorepooh.weebly.com/"],["Text entered in record's 2nd data entry field is visible in table if preceding a colon.","Record #2. 2nd data entry field of record #2. ","A link entered in the notes section without any preceding or trailing text appears in the table as the actual link, "]],"variable3":1},"id":5},{"title":"5th Record's Title","created":" Aug 20 2021 00:01","body":"This is Pre-link text. No Post-link text exists. http://eeyorepooh.weebly.com/","xtraField":"If user selects 'use Alternate Link Label' in Preferences, the Pre-link text is used as the alternate link label when there is no post-link text. : Note this text following the colon character is only visible in NOTES, but is not displayed in the table.","variable1":"DataBase Name","variable2":[1,"rgb(169,139,167)",null,"rgb(60,251,96)","rgb(95,208,201)",null,0],"dataV":{"tableArray":[[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""]],"fieldNamesArray":[],"otherVariables":[0,5,null,"","",["2> 1st Record Title","3> 2nd Record's Title","4> 3rd Record’s Title","5> 4th Record's Title"],["Notes Section. First data entry field. ","Record #2 first data entry in notes section of database.","http://eeyorepooh.weebly.com/","Pre-link text - http://eeyorepooh.weebly.com/ Post link text"],["Text entered in record's 2nd data entry field is visible in table if preceding a colon.","Record #2. 2nd data entry field of record #2. ","A link entered in the notes section without any preceding or trailing text appears in the table as the actual link, ","Pre-link text will appear in the table. http://eeyorepooh.weebly.com/ Text trailing a link(URL) in the NOTES section will display in table as RED text : If the user has selected 'USE ALTERNATE LINK LABEL'  in Preferences, and post link text exists, the text trailing the link is used as the active alternate link label.If post link text is not present, the Pre-link text is used as the alternate link label."]],"variable3":1},"id":6},{"title":"6th Record's Title","created":" Aug 23 2021 00:49","body":"If you edit data in the notes section's data entry fields, the change automatically is updated in the corresponding fixed field of the table, and vice versa.","xtraField":"If you edit a fixed field in the table the change is automatically reflected in the notes section.: This includes editing the DATE field in the table. The date if changed will also change in the record in the notes section. Editing the DATE in the table gives you an option of including a time stamp with the date or NOT. See toggle option in Preferences.","variable1":"DataBase Name","variable2":[1,"rgb(169,139,167)",null,"rgb(60,251,96)","rgb(95,208,201)",null,1],"dataV":{"tableArray":[["2> 1st Record Title"," Aug 19 2021 21:37","Notes Section. First data entry field. ","Text entered in record's 2nd data entry field is visible in table if preceding a colon.","Value for this record","Value for this record","Value for this record"],["3> 2nd Record's Title"," Aug 19 2021 22:49","Record #2 first data entry in notes section of database.","Record #2. 2nd data entry field of record #2. ","Value for this record","Value for this record","Value for this record"],["4> 3rd Record’s Title"," Aug 19 2021 23:17","http://eeyorepooh.weebly.com/","A link entered in the notes section without any preceding or trailing text appears in the table as the actual link, ","Value for this record","Value for this record","Value for this record"],["5> 4th Record's Title"," Aug 19 2021 23:51","Pre-link text - http://eeyorepooh.weebly.com/ Post link text","Pre-link text will appear in the table. http://eeyorepooh.weebly.com/ Text trailing a link(URL) in the NOTES section will display in table as RED text : If the user has selected 'USE ALTERNATE LINK LABEL'  in Preferences, and post link text exists, the text trailing the link is used as the active alternate link label.If post link text is not present, the Pre-link text is used as the alternate link label.","Value for this record","Value for this record","Value for this record"],["6> 5th Record's Title"," Aug 20 2021 00:01","This is Pre-link text. No Post-link text exists. http://eeyorepooh.weebly.com/","If user selects 'use Alternate Link Label' in Preferences, the Pre-link text is used as the alternate link label. ","Value for this record","Value for this record","Value for this record"],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""]],"fieldNamesArray":["1st Column Header"," DATE ","Notes 1st Data Entry Header","Notes 2nd Data Entry Header","1st Dynamic Field Header","2nd Dynamic Field Header","3rd Dynamic Field Header"],"otherVariables":[1,5,null,7,"3",["2> 1st Record Title","3> 2nd Record's Title","4> 3rd Record’s Title","5> 4th Record's Title","6> 5th Record's Title"],["Notes Section. First data entry field. ","Record #2 first data entry in notes section of database.","http://eeyorepooh.weebly.com/","Pre-link text - http://eeyorepooh.weebly.com/ Post link text","This is Pre-link text. No Post-link text exists. http://eeyorepooh.weebly.com/"],["Text entered in record's 2nd data entry field is visible in table if preceding a colon.","Record #2. 2nd data entry field of record #2. ","A link entered in the notes section without any preceding or trailing text appears in the table as the actual link, ","Pre-link text will appear in the table. http://eeyorepooh.weebly.com/ Text trailing a link(URL) in the NOTES section will display in table as RED text :  This applies if the user has chosen 'Show actual link' as the table display option in Preferences. If the user has selected 'USE ALTERNATE LINK LABEL'  in Preferences, and post link text exists, the text trailing the link is used as the active alternate link label. If post link text is not present, the Pre-link text is used as the alternate link label.","If user selects 'use Alternate Link Label' in Preferences, the Pre-link text is used as the alternate link label when there is no post-link text. "]],"variable3":1},"id":7},{"title":"7th Record's Title","created":" Aug 23 2021 01:00","body":"If you choose the 'Show Creation date'  option in Preferences, DougieBase automatically generates the date that the record is created: and is shown at top left.","xtraField":"The date can be changed to any date you wish for each individual record in the Table section: When you edit the date in the Table, the change is automatically reflected in the notes section.","variable1":"DataBase Name","variable2":[1,"rgb(169,139,167)",null,"rgb(60,251,96)","rgb(95,208,201)",null,1],"dataV":{"tableArray":[["2> 1st Record Title"," Aug 19 2021 21:37","Notes Section. First data entry field. ","Text entered in record's 2nd data entry field is visible in table if preceding a colon.","Value for this record","Value for this record","Value for this record"],["3> 2nd Record's Title"," Aug 19 2021 22:49","Record #2 first data entry in notes section of database.","Record #2. 2nd data entry field of record #2. ","Value for this record","Value for this record","Value for this record"],["4> 3rd Record’s Title"," Aug 19 2021 23:17","http://eeyorepooh.weebly.com/","A link entered in the notes section without any preceding or trailing text appears in the table as the actual link, ","Value for this record","Value for this record","Value for this record"],["5> 4th Record's Title"," Aug 19 2021 23:51","Pre-link text - http://eeyorepooh.weebly.com/ Post link text","Pre-link text will appear in the table. http://eeyorepooh.weebly.com/ Text trailing a link(URL) in the NOTES section will display in table as RED text : If the user has selected 'USE ALTERNATE LINK LABEL'  in Preferences, and post link text exists, the text trailing the link is used as the active alternate link label.If post link text is not present, the Pre-link text is used as the alternate link label.","Value for this record","Value for this record","Value for this record"],["6> 5th Record's Title"," Aug 20 2021 00:01","This is Pre-link text. No Post-link text exists. http://eeyorepooh.weebly.com/","If user selects 'use Alternate Link Label' in Preferences, the Pre-link text is used as the alternate link label. ","Value for this record","Value for this record","Value for this record"],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""],[""]],"fieldNamesArray":["1st Column Header"," DATE ","Notes 1st Data Entry Header","Notes 2nd Data Entry Header","1st Dynamic Field Header","2nd Dynamic Field Header","3rd Dynamic Field Header"],"otherVariables":[1,5,null,7,"3",["2> 1st Record Title","3> 2nd Record's Title","4> 3rd Record’s Title","5> 4th Record's Title","6> 5th Record's Title","7> 6th Record's Title"],["Notes Section. First data entry field. ","Record #2 first data entry in notes section of database.","http://eeyorepooh.weebly.com/","Pre-link text - http://eeyorepooh.weebly.com/ Post link text","This is Pre-link text. No Post-link text exists. http://eeyorepooh.weebly.com/","If you edit data in the notes section's data entry fields, the change automatically is updated in the corresponding fixed field of the table, and vice versa."],["Text entered in record's 2nd data entry field is visible in table if preceding a colon.","Record #2. 2nd data entry field of record #2. ","A link entered in the notes section without any preceding or trailing text appears in the table as the actual link, ","Pre-link text will appear in the table. http://eeyorepooh.weebly.com/ Text trailing a link(URL) in the NOTES section will display in table as RED text :  This applies if the user has chosen 'Show actual link' as the table display option in Preferences. If the user has selected 'USE ALTERNATE LINK LABEL'  in Preferences, and post link text exists, the text trailing the link is used as the active alternate link label. If post link text is not present, the Pre-link text is used as the alternate link label.","If user selects 'use Alternate Link Label' in Preferences, the Pre-link text is used as the alternate link label when there is no post-link text. ","If you edit a fixed field in the table the change is automatically reflected in the notes section."]],"variable3":1},"id":8}]}</textarea></p>
+	<p>The text data in the above ☝️ Text-Area element will be used to create a tutorial graphic example of a SAMPLE database when you tap CONTINUE! This takes you to the Restore Database screen to create the tutorial graphic Sample database.</p>
+	
+	<p></p>
+	<p> Tap the CONTINUE button.</p>
+	<button id = "tutorialContinueBtn">CONTINUE to create tutorial example database</button>
+	
+</section>
+<!-- End tutorial sample database window  -->	
+	
+
+
+		<!-- Start restore database window -->	
+		
+<section id = "restoreDBWin" class ="hidden">
+	<h2 id="restoreDBWinTitle">Restore a database from its Backup via the Clipboard </h2>
+	  <p></p>
+	  <div id ="restoreDBInstructions" class = "simulator">
+		  <p>How to Restore a database from its backup</p>
+		  <p id = "restoreInstructionsP" class = "yellowonly"></p>
+		 </div>
+		 
+		 <p id = "restoreInfoP">Dougiebase will create a new shell to structure the restored data. Enter the previously saved backup data of the database to be restored into the text area window below using Copy/Paste from the clipboard or from your external storage source.</p>
+		 <p id = "restoreInfo1P">FIRST! Tap the blue text input area to initialize the Paste area. The Submit button will turn green telling you DougieBase is ready for PASTE. After Pasting, Tap the SUBMIT button and your database will be restored.</p>
+		 <p>Confirm the name of the database you are restoring in the confirmation window when it appears.</p>
+		 <p>Tap FINISHED when done!</p>
+	<!-- <div> code below causes display of notes to FAIL WHY?
+		<ul>
+			<li>Dougiebase will create a new shell to structure the restored data. Enter the saved data of the database to be restored into the text area window below using Copy/Paste from the clipboard or your storage source.</li>
+			<li>Tap the SUBMIT button and your database will be restored.</li>
+			<li>Enter the name of the database you are restoring in the prompt window when it appears.</li>
+			<li>Tap FINISHED when done!</li>
+		</ul> 
+	</div>  -->
+	<!-- 	 <input id = "restoreDBNameInput" type="text" name="restoreDBNameInput" value="" placeholder = "Enter DataBaseName">
+		 <p></p>
+		  <label for ="restoreDBNameBtn">Type a name for your restored database in the text input above.</label>
+		  <button id= "restoreDBNameBtn" name = "restoreDBNameBtn" class = "attentionBtn">Enter DataBaseName</button> -->
+		
+		<p id ="restoreInfo2P" class="colorBtn">Copy backup data text from your storage source to the clipboard, and then tap the blue text area once, SUBMIT btn turns green, then Paste the Backup data for the database you are restoring into the Text Area below: then tap SUBMIT</p> 
+		
+		
+		
+		
+		  
+	<!--    <button id="copyClipboardBtn">Click here</button>
+	   <button id ="doneCopy">DONE</button> -->
+
+	  <!-- onclick = " copyToClipboard(textarea.value) ? this.innerText='Copied!': #this.innerText='DONE! Copied to clipboard. :(' "  -->
+	   
+	   <!-- 	 <button onclick="copyToClipboard($(json) )? this.innerText='Copied!': this.innerText='Sorry :(' ">Click here</button>THIS WORKS BUT NEED TO USE BOTH FUNCTIONS!!!!!!! -->
+	   
+<!-- placeholder="FIRST TAP ONCE. SUBMIT btn turns green"    REMOVED AUG21 to see if text-area now responds to js-->
+<p id = "nowDo" class = "attentionBtn"></p>
+<p>
+  <textarea id = "restoreTextAreaClip" type ="text"  cols="60" rows="4" placeholder="FIRST TAP ONCE. SUBMIT btn turns green" defer></textarea>
+</p>
+
+			<p></p>
+			
+	  <label for="getJson">The backup data will be used to create the database when you tap the submit button..</label>
+	  <button id= "getJson" name = "getJson" class = "normalBtn">SUBMIT Backup data</button>
+	  
+	  <p></p>
+	   <button id="restoreFromClipboard">Click here to RESTORE your DataBase.</button>
+	
+		</section>
+		<!-- End restore database window -->
+		
+		
+	<!-- notes  note-display -->	
+      <section class="note-display">
+        <h2 id="dbTableName" class = "titleBanner">Notes</h2>
+        <ul>
+
+        </ul>
+      </section>
+      <section id="new-note" class="hidden">
+        <h2>Enter a new Record and note</h2>
+        <form>
+          <div>
+			  <!-- the record title or first field in the table -->
+            <label for="title">Record title</label>
+            <input id="title" type="text" required>
+          </div>
+		   <p id = "tableInstruction" class = "simulator">For the first and second data fields, everything entered before a colon (:) becomes the default TABLE entry for the static fields.</p>
+		   <div>
+            <button style="background-color: lightgreen; border-radius: 10px; border: 2px solid red; padding: 4px">Create new note</button>
+			<button id="cancelNewNote">Cancel</button>
+			<button id="addDate">ADD DATE</button>
+		</div>
+          <div>
+            <label for="body">Note text</label>
+			<!-- first primary data field ..i.e. Location field 3 in table -->
+            <input id="body" type="text" required>
+          </div>	 
+		
+	    <p id="instructionP"></p>
+		
+	    </form>
+		
+		
+      </section>
+	 <!--the edit window-->  
+	  <div id="editWin" class="hidden">
+		  <h2 class="edBan"></h2>
+		  <p id ="originalTxt" class="edWinScroll"></p>
+		  <p class="editInstruction"></p>
+		  <label for="changes">Type changes into the Input Window. To preserve any previous text entered, first use copy/paste to capture the original data.body text as viewed above. Once the cursor is in either input window, the original text above can't be copied using copy/paste. If previously edited, the original text of the most recent edit, appears as a default value in the Input Window. This will allow retrieval of this text if required. Tap the Clear Input Window buttons to clear!</label>
+		  <p></p>
+		  <label for="editTitle" class="edBan">Edit Title: </label>
+		  <input id="editTitle" type="text" name="editTitle" value="" class="edBan">
+		    <button id="clearTitle">Clear Title</button>
+			<p></p>
+		 
+		  <label for="changes" class="yellowonly">Edit record contents: </label>
+		  <input id="changes" type="text" name="changes" value="" class="yellowonly">
+		   <button id="clear">Clear Input Window </button>
+		  <p></p>
+		  
+		  <button id="submit">Save changes</button>
+		  <button id = "cancel">Cancel</button>
+		   <button id = "preview">Preview</button>
+		  
+	  </div><!--end edit window -->
+	  
+	  <!-- start editNerFieldWindow the secondary data field i.e. decoder field 4 in table-->
+	  
+	  <div id="editNewFieldWin" class="hidden">
+	 <h2 class="edNewFieldBan"></h2>
+		  <p id ="originalNewFieldTxt" class="edWinScroll"></p>
+		  <p class="editNewFieldInstruction"></p>
+		  <label for="changes">Type changes into the Input Window. To preserve any previous text entered, first use copy/paste to capture the original data.body text as viewed above. Once the cursor is in either input window, the original text above can't be copied using copy/paste. If previously edited, the original text of the most recent edit, appears as a default value in the Input Window. This will allow retrieval of this text if required. Tap the Clear Input Window buttons to clear!</label>
+		  <p></p>	  
+		 <label for="editNewFieldChanges" class="yellowonly">Edit record contents: </label>
+		  <input id="editNewFieldChanges" type="text" name="editNewFieldChanges" value="" class="yellowonly">
+		   <button id="clearEditNewField">Clear Input Window </button>
+		   <p></p>  
+		     <button id="commit">Commit changes</button> 
+			 <button id = "cancelCommit">Cancel Changes</button>
+			  <button id = "previewNewField">Preview Changes</button>
+			 
+		  
+	  </div>
+	  
+	    <!-- end editNerFieldWindow -->
+	  
+	  <!--the delete window-->
+	  <div id="deleteWin" class="hidden">
+		  
+		  <h2 class="deleteBan"></h2>
+		  <p id ="deleteTxt" class="edWinScroll"></p>
+		  <p class="deleteInstruction"></p>
+		 
+		  <p></p> 
+		   <button id="okDelete">OK DELETE</button>
+		   <button id = "cancelDelete">Cancel</button>
+	  </div>
+	  
+	  <!-- display full note -->
+	  <div id="displayFullNote" class="hidden">
+		  
+		  <h2 class="fullView"></h2>
+		    <p class="fullViewInstruction"></p> 
+		  <p id ="fullTxt" class="noScroll"></p>
+		
+		  
+		  <!-- height was 80px-->
+		 	 <div id="finishedReading" class="hidden" style="background-color: white; height:25px; width: 400px; padding: 10px; border: 2px solid red; border-radius: 10px; text-align: center; position: fixed; transform: translate(-50%,-50%)">
+			
+		 
+		 	 <!-- <p></p> -->
+		 	  <button id="okReturn"> Tap here to RETURN TO NOTES </button>
+			 
+			  <button id ="goToSearch"> Search Table </button>
+	  		 </div>
+		  </div>
+		  
+		  <!--THE SEARCH WINDOW -->
+		  
+		  <div id="searchWin" class="hidden">
+			  
+		  <h2 class="edBan">Show Record(s) containing Search Phrase</h2>
+		  <p id ="searchLandscape"></p>
+	 <div class ="edWinScroll">
+		 <p class = "highlight">Instructions for Table Search:     ⬆️ </p>
+		 <ul>
+			 <li>Enter the title of the record or the text to be searched for from any field in the text input window (spaces count) and tap the Find Record button.</li>
+			 <li>If found the title of the record containing the search phrase appears in the Found Record List.....(SCOLL UP for more ⬆️ ...)</li>
+			 <li>Tap the title in the Found Record List to view its notes in the Full View screen.</li>
+			 <li>Tap the Highlight Table Record button to stand out in table.</li>
+			 <li>If the Search Phrase is set to SPECIFIC, the record is returned only if one of its fields is the complete search phrase. CONTAINS means a record is returned if any of its fields just contains the search phrase either as a complete string or as a sub string. For example '3' will return any record containing '3' or '33' or year 2023 etc. So to return a record containing a number 3 only, set Search Phrase to SPECIFIC. These settings are changed in Preferences.</li>
+			 <li>Scroll table slightly to left to see successful hits 'tagged'.</li>
+		</ul>
+	<!-- 	  <p id ="searchField" class="edWinScroll"></p>
+		  <p class="searchInstruction"></p> -->
+	</div> 
+	
+		  <p>Enter text of search phrase into the search input element. Tap the record in the Found Record List to view its notes.</p>
+		  <label for="searchTitle" class="edBan">Search Phrase: </label>
+		 <input id = "inputSearchRecord" name = "searchTitle"
+		  type="search" class = "custom"
+		  placeholder="search..">
+		  <button id="searchForRecord">FIND Record</button>
+		  <p id = "caseIndicator" class = "simulator"></p>
+		<p id = "matchedRecord" class = "simulator">If record containing search phrase found it will appear below:</p>  
+		  
+		  <ul id="result-list">
+       <!--  <li>sample result</li>
+        <li>sample result</li> -->
+		<!--   <li id = "matchedRecord" >If record found it will appear below:</li> -->
+    </ul>
+		  
+		  
+		    <button id="clearSearchTitle">Clear Search Phrase</button>
+			<!-- <p></p> -->
+		 
+			
+		   <button id="clearFoundList">Clear Found Record List </button>
+		 <!--  <p></p> -->
+		  
+		  <button id="viewRecordTable">HIGHLIGHT Table Record</button>
+		  <button id = "cancelSearch">CANCEL</button>
+		  
+		  
+	  </div>
+	  <!--end div search window-->
+		  
+		  <!--END of THE SEARCH WINDOW -->
+		  
+		    <!-- the settings screen -->
+	  <div id="settingsScreen" class="hidden">
+		  
+		  <h2 class="viewSettings"></h2>
+		  <p id ="variables" class="edWinScroll"></p>
+		  <h3 id="theListHeading"></h3>
+		  <p id ="theList"></p>
+		  <ul id="cvValues">
+			  
+			  
+		  </ul>
+		  <!-- height was 80px-->
+		 	 <div id="finishedReadingSettings" class="hidden" style="background-color: white; height:25px; padding: 10px; border: 2px solid red; border-radius: 10px; text-align: center; position: transform: translate(-50%,-50%)">
+			<!--  <p class="fullViewInstruction"></p> -->
+		 
+		 	 <!-- <p></p> -->
+		 	  <button id="okSettingsViewed"> Tap here to RETURN TO NOTES </button>
+			  
+	  		 </div>
+		 </div>
+		  
+		 <!--the preferences window-->  
+	  <div id="prefWin" class="hidden">
+		  <h2 class="edBan">PREFERENCES</h2>
+		   <p id ="prefLandscape"></p>
+		   <div id="clearPrefWindow" class="simulator">TAP HERE TO RETURN TO NOTES</div>
+		   <p class="ppref">The Preferences window allows you to alter some settings.You can change the name of the database, show or hide the  additional text data entry field in Notes, or change the background colours of the text windows, and alter other display options. If the Search Phrase is set to SPECIFIC, the record is returned only if one of its fields is the complete search phrase. CONTAINS means a record is returned if any of its fields just contains the search phrase either as a complete string or as a sub string. For example '3' will return any record containing '3' or '33' or year 2023 etc. So to return a record containing a number 3 only, set Search Phrase to SPECIFIC.</p>
+		   <p></p>
+		   <button id="renameDB">Rename DataBase</button>
+		<button id="newField">Add/Relabel Field</button>
+		<button id="background">Change Background Colours</button>
+		<button id="creationDate">View Creation Date</button>
+		<button id="displayData">Reset/Display Data</button>
+		<button id="resetNewField">Show Extra Field</button>
+		<button id = "scrollBtns">Hide Scroll Btn</button>
+		<button id = "centerTitle">Center Record Title</button>
+		
+		<button id = "tableTime" name = "tableTime">TableDate <span id = "timeIndicator">?</span>time</button>
+		<button id = "useLinkLabel">Use Link Labels</button>
+		<button id = "scrollTable">Disable Scroll Table</button>
+		<button id = "bkgrdImage">Clear Background</button><p></p>
+		<label for="editTDTrigger">Choose action to edit table cell:</label>
+		<button id = "editTDTrigger" name = "editTDTrigger">EDIT Table Cell Trigger</button>
+		<p id = "timeDateFlag" style ="text-align: center">Tap the TableDate ? Button to INCLUDE a timestamp or NOT.</p>
+		
+		
+		<!-- caseSensitive switch  -->
+		  <div id = "caseSwitch">
+			 
+ 			 <input type="range" id="caseSensitive" name="case"
+         min="0" max="1" step = 1 value = "0">
+  			<label for="case">SEARCH PHRASE: Case Sensitive?</label>
+ 		 <p><span id ="no">NO</span> .................. <span id ="yes">YES</span></p>
+		
+		 
+	<!-- return record if contains sub string -->
+		 
+		  <input type="range" id="includesSubstring" name="includesSubstring"
+         min="0" max="1" step = 1 value = "0">
+  			<label for="includesSubstring">SPECIFIC or just CONTAINS ?</label>
+ <p><span id ="noSS">SPECIFIC</span> ..... <span id ="yesSS">CONTAINS</span></p>
+		 
+		 
+			</div> <!--end div caseSensitive-->
+			
+		 <button id ="saveSettings">SAVE Settings</button>
+			
+		 </div> <!--end of the preferences window--> 
+		 
+		<!--reName section window-->
+		
+		
+		<div id="reNameWin" class="hidden"><!--start rename window-->
+			<h3>The current title of this database is: <scan id="dbTitle"></scan></h3>
+			<label for="newTitle">Enter new title here: </label>
+			<input type="text" name="newTitle" id="newTitle" value="" required/>
+			
+			</div><!--end rename window -->
+			
+			<!--start newField window -->
+			<div id="newFieldWin" class="hidden">
+			<h3>Relabel or Enter Name/Label for the secondary NOTES data (fixed) field. This label is used for all records until Relabelled here in Preferences. Note: You must tap Reset Display Data to view and save the title change.</h3>
+			<label for="newFieldName">Enter Title for NOTES Second Data Field: </label>
+			<input type="text" name="newFieldName" id="newFieldName" value="" required/>
+			<p id="confirm"></p>
+			<!--
+			<label for="newFieldData">Enter new Field data here :  </label>
+			<input type="text" name="newFieldData" id="newFieldData" value="" required/>
+		-->
+			<p id="resetAddField"></p>
+			
+		</div><!--end newField window -->
+		<!-- addNote and Edit windows will have to accomodate adding the data to the new field if xtraNote The newFie,d button will have to be disabled after one use for now-->
+		
+		<!--start change colours window-->
+		<div id="changeColoursWin" class="hidden">
+			<h3>Randomly Set Background and Font colours of Database</h3>
+			<li id="changeColourListItem">
+				<h3 id="changeColourNoteTitle">Tap here to Change Colour Note Title</h3>
+			<!-- 	<p></p> -->
+	
+	
+			<p id="changeColourBody">Tap here to change Current Colour Background of the body of text for the RECORD'S FIRST DATA FIELD.<br> Tap outside the title and body text boxes to change background colour of the NOTES FRAME.</p>
+			</li>
+			
+		</div><!--end change colours window -->
+		
+		
+<div id="chooseColoursWin" class="hidden">
+		<h3>Use Colour Selector to Choose Background and Font colours of Database</h3>
+		 <p>Use the colour selector to pick desired colours for each DougieBase element</p>
+    
+	
+	
+
+	<div class = "titleBanner">
+	<p>Choose the colour for the Note frame:</p>
+    <input type="color" id="noteFrame" style = "text-align: left" name="noteFrame" value="#e66465">
+    <label for="noteFrame">Note Frame</label>
+	<!-- In js noteListItemColour = noteFrame.value -->
+	</div>
+
+
+
+	<div class = "titleBanner">
+	<p>Choose the colour for the Note's Record Title:</p>
+    <input type="color" id="noteTitle" style = "text-align: left" name="noteTitle"
+            value="#f6b73c">
+    <label for="noteTitle">Note Title</label>
+	<!-- In js noteTitleColour = noteTitleColour.value -->
+	</div>
+
+
+	<div class = "titleBanner">
+	<p>Choose the colour for Note's First Data Field:</p>
+    <input type="color" id="firstDataField" style = "text-align: left" name="firstDataField"
+            value="#f6b73c">
+    <label for="firstDataField">Notes First Data Field</label>
+	<!-- In js bodyColour= bodyColour.value -->
+	</div>
+
+
+	<div class = "titleBanner">
+	<p>Choose the colour for the Note's Second Data Field:</p>
+    <input type="color" id="secondDataField" style = "text-align: left" name="secondDataField"
+            value="#f6b73c">
+    <label for="secondDataField">Notes Second Data Field</label>
+	</div>
+	<!-- In js xtraFieldColour= xtraFieldColour.value -->
+	
+	<div class = "titleBanner">
+	<p>Choose the text colour for the Note's Font:</p>
+    <input type="color" id="notesFontColor" style = "text-align: left" name="notesFontColor"
+            value="black">
+			<label for="notesFontColor">Text Color of Notes FONT</label>
+	</div>
+	
+	<button id = "doneChooseColors">DONE</button>
+			
+</div>
+			
+		<div id="workDiv" class="hidden">	
+		</div>	<!--End Work Div section window-->
+		
+		 <!--the About database window -->  
+	  <div id="aboutDBWin" class="hidden">
+		  <h2 class="edBan">About this Database</h2>
+		   <p></p>
+		   <div id="clearAboutDBWindow" class="simulator">TAP HERE TO RETURN TO NOTES</div>
+		   <p class="ppref">The About Database Venue allows access to a HELP File and Documentation, and some current Settings. Obtain an estimate of how much memory is available in the database storage if your Browser accomodates this feature..<br>This is Version 33.1: Search references the first title field, and all other fields since verion33.1.<br>Last revision: Sept 22 2021</p>
+		   <p></p>
+		   <button id="getMemory">Estimate Memory</button>
+		<button id="documentation">Documentation.Manual</button>
+		<button id="viewSettings">View Settings</button>
+		</div> <!--end of the About Database window--> 
+		
+		<!-- calculate memory section-->
+	<div id="memoryWindow" class="hidden"> 
+	 <button id="memory">Memory</button>
+	 <label>
+  You’re currently using about <output id="percent">
+  </output>% of your available storage.
+</label>
+<p id="calcMemory"></p>
+</div> <!--end calculate memory section -->	 
+
+<!--documentation code starts here -->
+		
+	<div id="documentationWin" class="hidden">
+		
+		<h1 class = "titleBanner">DougieBase Documentation The HELP
+		Manual</h1>
+		<p>The documentation help manual is available as a PDF file. Tap on the links below to download the DougieBase Manual. Chapters 1 and 2.</p>
+		<p>The files are online and will open in a browser interface which allows you to download them to your device by using the browser's action sharesheet icon (tool bar: top right) from which you can download the .pdf files to whichever app you wish on your device.</p> 
+		<p>You do not need to download the files. The manual is online and you can read them online without having to save to your device. Tap the DONE button (Browser tool bar: top left) when you want to return to DougieBase. In the DougieBase Documentation window (this screen) tap the 'DONE' button (bottom left) to return to Notes - DougieBase Home Screen.
+		</p>
+	<!-- 	<p>Download Chapter 1 WORD doc</p><a href="https://github.com/trainee45/trainee45.github.io/blob/master/DougieBase%20Chapter%201.docx" download>Download DougieBase Manual Chapter 1</a>
+		<p></p>
+		<p>Dowload Chapter 2 WORD doc</p><a href="https://github.com/trainee45/trainee45.github.io/blob/master/DougieBase%20Chapter%202.docx" download>Download DougieBase Manual Chapter 2</a>
+		<p></p>
+		<p>When the github screen appears tap the '…' menu icon opposite the filename and choose Download</p>
+		<p></p> -->
+		<p></p>
+		<p class = "attentionBtn" style ="text-align: center">DougieBase Manual in PDF format.  RECOMMENDED READING!</p>
+		<p>Download Chapter 1 PDF file</p><a href="https://dougiebase.weebly.com/uploads/6/6/1/0/66103197/dougiebase_chapter_1_rev5.pdf" download>Download DougieBase Manual Chapter 1.pdf</a>
+		<p></p>
+		<p>Dowload Chapter 2 PDF file</p><a href="https://dougiebase.weebly.com/uploads/6/6/1/0/66103197/dougiebase_chapter_2rev5.pdf" download>Download DougieBase Manual Chapter 2.pdf</a>
+		<p></p>
+		
+		
+	</div> 
+	
+	  <!--the TABLE screen window-->
+	  <div id="tableScrn" class="hidden">
+		  
+		  <h2 class="tableBan">Create A Table or Display Current Table</h2>
+		    <div id="clearTableWindow" class="simulator">TAP HERE TO CREATE TABLE or to EDIT an existing one.</div>
+		  <p id ="tableInstructions" class="edWinScroll"></p>
+		  <p></p>
+		 
+		  <p></p> 
+		  <p class = "attentionBtn">Tap Disply Table button to show current table</p>
+		  <p></p>
+		   <button id ="returnToNotes">Return to HOME SCREEN</button>
+		   <button id = "displayTable">DISPLAY TABLE</button>
+	   </div>
+		  
+	 <!-- !!!  CODE BELOW IS ALL HTML FOR THE CREATETABLE SECTION !!!!! -->
+	 
+	 <section id="createTableWin" class="hidden"><!-- now showing make this hidden when adding to notes code -->
+	<h2 id="databaseTableName"></h2>
+	<p id="newOrEdit">Tap NEW to create a new Table or tap EDIT to alter an existing one.<br></p>
+	<p>Currently the table contains 4 fixed fields: Title of Record, Date Created, Primary Data, Secondary Data. Enter the number of additional fields required. After entering the titles for the first three fixed fields, press the SUBMIT button, and then enter the titles for the dynamic fields below.</p>
+	<label for="additionalFields">Current # of dynamic fields: </label>
+	<input id="additionalFields" type="number" name="additionalFields" class ="edBan"/><br>
+	<p><span style = "color: red">THE FIXED FIELDS:</span></p>
+	<label for="headNameFirstColumn">Enter First Column Heading/Title for record list: </label>
+	<input type="text" id="headNameFirstColumn" name="headNameFirstColumn" value="" />
+	<br>
+	<label for="nameDataField1">Enter 3rd Field Name :</label>
+	<input id="nameDataField1" type="text" name="nameDataField1"/>
+	<br>
+	<label for="nameDataField2">Enter 4th Field Name :</label>
+	<input id="nameDataField2" type="text" name="nameDataField2"/>
+	<br>
+	
+	<button id="submitBtn">Submit</button>
+	<p></p>
+	
+	<!-- the inputs for the additional required fields will be put here by js -->
+	
+	<div id="createTable">
+		<table id="forRows" class="funcLib">
+			<thead>
+				<tr>
+					<th id="thheader" style="text-align:center;"></th>
+				</tr> <!-- end table header -->
+				
+			</thead>	
+			<tr id="headRow"><!-- first row field titles -->
+				<td id="headName"></td><!-- first data cell column 1 will be listName-->
+				<td id="creationDate">Date</td><!-- second cell column 2 creation date-->
+			<!-- 	take out <p id="info"></p> -->
+				<td id="firstData"><p id="info"></p></td><!-- name of 3rd field -->
+				<td id="secondData"><p id="info2"></p></td><!-- name of fourth field -->
+				<!-- next columns added via js from for loop re number of additional fields required -->
+			</tr><!--  end first row .. field titles -->
+		</table>
+		
+</div> <!-- end create table div -->
+	
+</section>	<!-- end create tablewin -->
+
+<!-- start deleteField window -->
+<section id="deleteFieldWin" class = "hidden">
+		<h2 id="deleteFieldTableName"></h2>
+			<p>Choose the DYNAMIC field you wish to DELETE from the current list of fields. (Tap the choose field input element). The first four FIXED fields can not be deleted. (SCROLL to LEFT).</p>
+	<div id = "fieldHeaders"></div>
+	
+		<label for="myFields">Choose a field to delete from this list:</label>
+<input list="fieldList" id="myFields" name="myFields" />
+<button id = submitFieldSelection>SUBMIT</button>
+<datalist id = "fieldList">
+ <!--  <option value="tableTitle[0]"> -->
+  
+  
+  </datalist>
+<p id = chosenField class = 'simulator'></p>
+
+<button id = "backToEdit">Return to Edit Table</button>
+<button id = "cancelToNotes">CANCEL</button>
+</section>
+<!-- end deleteField window -->
+
+<!-- start of showTable -->
+<section id="tableWin" class="hidden" style="height: "><!--height was 700px removed height styling in html because it is controlled in css hidden -->
+	
+	<div id="STcreateTable"><!-- createTable -->
+		
+		<h2 id="showTableName"></h2>
+		<p></p>
+		<p id ="tableLandscape"></p>
+	<!-- test jQuery	 -->
+	<div id="flip">Click to show / hide TABLE MENU</div>
+	<div id="panel">Table Options:
+		<button id="homeScreenBtn">RETURN to Home Screen</button>
+	<button id="saveTableBtn">SAVE TABLE</button>
+	<button id="toSearchScr"> SEARCH TABLE </button>
+	<button id="toEditTableScr"> EDIT TABLE </button>
+	<button id="toSortScr"> SORT TABLE </button>
+	 <button id = "tableBackground">Change Background</button>
+	 <button id="bottom">vBottom</button>
+	</div>
+	<!-- test jQuery -->
+	
+	
+		<table id="STforRows" class = "funcLib"  style="background-color:black;">
+			
+			<thead>
+				<tr>
+					<th id="STthheader" style="text-align:center;"></th>
+				</tr>
+				
+			</thead>	
+			<tr id="STheadRow"><!-- first row -->
+				<td id="STheadName"></td><!-- first data cell column 1 will be listName-->
+				<td id="STcreationDate">Date</td><!-- second cell column 2 creation date-->
+			<!-- 	take out <p id="info"></p> -->
+				<td id="STfirstData"><p id="STinfo"></p></td><!-- name of 3rd field -->
+				<td id="STsecondData"><p id="STinfo2"></p></td><!-- name of fourth field -->
+				<!-- next columns added via js from for loop re number of additional fields required -->
+			</tr>
+			<tbody>
+		</tbody>
+		</table>
+		
+	<!-- </div> --><!-- moved to edit date homeScreenBtn and Save btn in the table div -->
+	
+	<!-- <p id = "tdEditTrigger" style="color: blue">To edit date or other cell contents select the contents, then tap 'COPY', then enter new text (after <span class ="tdEdit"> Clear/Initialize </span> .) into the input element. (or 'paste' to enter original).</p> -->
+	
+	<p id = "tdEditTrigger" style="color: blue">To edit date or other table  cell contents 'Double Tap' the cell to initiate edit mode. This is the default trigger choice. To change edit trigger to 'Select-Copy' go to Preferences.</p>
+	
+	
+	<button id="homeScreenBtn2">RETURN to Home Screen</button>
+	<button id ="saveTableBtn2">SAVE TABLE</button>
+	
+	</div><!-- moved to include edit date homeScreenBtn and Save btn in the table div -->
+	
+	
+	<!-- <button id="homeScreenBtn">Return to Home Screen</button>
+	<button id="saveTableBtn">SAVE TABLE</button>
+	<button id="toSearchScr"> SEARCH TABLE </button>
+	<button id="toEditTableScr"> EDIT TABLE </button>
+	<button id="toSortScr"> SORT TABLE </button> -->
+	
+</section>
+<!-- end of showTableWin -->
+
+<!-- start SORT window -->
+<!-- start SORT window MADE THIS A DIV LIKE SEARCH WINDOW BECAUSR NULL IS NOT AN OBJECT ERROR -->
+
+<div id="sortWin" class = "hidden">
+		<h2 id="sortType">SORT RECORDS</h2>
+			<p>Choose the type of SORT you wish to perform. Only the first TITLE field can be sorted. </p>
+			<p>The sort types are ALPHABETICAL, REVERSE ORDER, RESTORE TO ORIGINAL. After tapping the select input window, choose the sort type from the drop down list. </p>
+	<div id = "mySortTypes"></div>
+	<form>
+        <label for="chooseSortType">Select how you wish to sort</label>
+        <select id="chooseSortType">
+            <option value="Alphabetical Order">Alphabetical Order</option>
+            <option value="Reverse Order">Reverse Order</option>
+            <option value="Reset to Original Order">Reset to Original Order</option>
+            <option value="Testing Sort">Other</option>
+        </select>
+      <button id = submitSortTypeSelection>SUBMIT</button>  
+    </form>
+		
+	
+<!--   
+<form>
+        <label for="framework">Select a JS Framework</label>
+        <select id="framework">
+            <option value="1">Angular</option>
+            <option value="2">React</option>
+            <option value="3">Vue.js</option>
+            <option value="4">Ember.js</option>
+        </select>
+        <button id="btn">Get the Selected Index</button>
+    </form>
+    <script>
+        const btn = document.querySelector('#btn');
+        const sb = document.querySelector('#chooseSortType')
+        btn.onclick = (event) => {
+            event.preventDefault();
+            // show the selected index
+            alert(sb.selectedIndex);
+        };
+-->
+<p id = "chosenSort" class = 'simulator'></p>
+
+<button id = "backToTableFromSort">Return to Table</button>
+<button id = "cancelToNotesFromSort">CANCEL</button>
+</div>
+<!-- end SORT window -->
+
+
+	<!--  !!! CODE ABOVE IS HTML FOR CREATETABLE SECTION. ITS .JS IS IN THE .JS OF NOTES !!!!! -->
+	
+    </main>
+
+    <footer>
+      <p>Copyright DougieBase Inc.. A Progressive Web App. Written in JavaScript and jQuery</p>
+    </footer>
+  </body>
+  
+  <script>
+	  
+  // dbName = prompt("What's the name of the database to restore?")
+	// 	objectStoreName = dbName + '_os';
+//let json;
+//var textarea;
+//   const restoreTextArea = document.querySelector('#restoreTextAreaClip');
+//   const getJsonBtn =  document.querySelector('#getJson');
+//   getJsonBtn.onclick = function (){
+// 	let json = restoreTextArea.value;
+// 	//TEST jsonString
+	
+// 	  console.log('restoreTextArea.value = ' + restoreTextArea.value);
+	  
+	  
+//   }//end getJsonBtn.onclick
+
+
+// function restoreFromClipboard (json,restoredDBName) {
+// 	console.log('In function restoreFromClipboard. restoredDBName = ' + restoredDBName);
+// 	let restoredDB; //global variables
+// 	//let data = jsonString;
+// 	let ver = 1;
+// 	let request = window.indexedDB.open(restoredDBName, ver);
+// 	let def = "whoops!"
+	
+		
+		
+// request.onupgradeneeded = function(e) {
+// 	let restoredDB = e.target.result;
+	
+// 		let objectStore = restoredDB.createObjectStore(objectStoreName, { keyPath: 'id', autoIncrement:true });
+// objectStore.createIndex('title', 'title', { unique: false });
+  
+//   //addind date of note creation
+//   objectStore.createIndex('created', 'created', { unique: false });
+//   //end code for adding date created
+//   objectStore.createIndex('body', 'body', { unique: false });
+//   //CODE FOR xtraField basically substituting xtraField for body
+  
+// 	  objectStore.createIndex('xtraField', 'xtraField', { unique: false });
+//   objectStore.createIndex('variable1', 'variable1', { unique: false });
+//   objectStore.createIndex('variable2', 'variable2', { unique: false });
+//   objectStore.createIndex('dataV', 'dataV', { unique: false });	
+  
+//   console.log('In onupgradeneeded. This means db_name not found and a new database is being created. Database setup complete. Now returning to .onsuccess handler of open database event? upgraded variable about to be set to 1. ');
+//  let upgraded = 1;
+   
+// };//end request.onupgradeneeded
+
+// request.onsuccess = function importFromJson(e,restoredDB, json) {
+// 	console.log('In request.onsuccess function');
+// 	json = restoreTextArea.value;
+// 	//SyntaxError: Cannot declare a let variable twice: 'db'.
+// 	restoredDB = e.target.result;
+// //  return new Promise((resolve, reject,json) => {
+//     const transaction = restoredDB.transaction(
+//       db.objectStoreNames,
+//       'readwrite'
+//     )
+//     //transaction.addEventListener('error', reject)
+// console.log('json = ' + json);
+//     var importObject = JSON.parse(json)
+// 	console.log('After JSON.parse(json) importObject = ' + importObject);
+//     for (const storeName of restoredDB.objectStoreNames) {
+// 		console.log('storeName = ' + storeName);
+//       let count = 0
+//       for (const toAdd of importObject[storeName]) {
+//         const request = transaction.objectStore(storeName).add(toAdd)
+//         request.addEventListener('success', () => {
+//           count++
+//           if (count === importObject[storeName].length) {
+//             // Added all objects for this store
+//             delete importObject[storeName]
+//             if (Object.keys(importObject).length === 0) {
+//               // Added all object stores
+//               console.log('Added all objectStores');
+// 			  //ReferenceError: Can't find variable: resolveresolve()
+//             }
+//           }
+//         })
+//       }
+//     }
+//  // })//end promise
+// };//end request.onsuccess
+
+// 	request.onerror = function() {
+//   console.log('Database failed to open');
+// };//end request.onerror
+
+// }//END FUNCTION RESTORE FROM CLIPBOARD
+	 
+	 
+	  /*I HAVE REMOVED THE CONSOLE SIMULATOR IN VERSION 7 
+	  //console simulatorthis part into YOUR PROGRAM'S <script>
+     
+    //reference the elements in the HTML
+      const inputSim = document.querySelector('#jscode');
+      const btnSim = document.querySelector('#btnSim');
+      const paraSim = document.querySelector('#sim');
+
+      btnSim.onclick = function() {
+        const code = inputSim.value;
+        paraSim.textContent = eval(code);
+      }
+      
+  //end of Console Simulator code ..place this part in your PROGRAM'S code before '/script>
+  */ //all above is for the console simulator
+  
+   //memory button code to calculate memory capacity in database
+  //getMemory function is called from main js file line 640
+  function getMemory () {
+	  alert('in getMemory function');
+  const memoryBtn = document.querySelector('#memory');
+  const memoryWindow = document.querySelector('#memoryWindow');
+  const whatMemory = document.querySelector('p#amtMemory');
+  const calculation = document.querySelector('#calcMemory');
+  memoryWindow.setAttribute('class','showing');
+  
+  memoryBtn.onclick = amtMemory;
+  
+ /* function help () {document.getElementById("percent").value = 'You are not running in Safari so memory capacity calculation is not available.';}
+  */
+  
+  function amtMemory() {
+  	  if('storage' in navigator && 'estimate' in navigator.storage) {
+		 alert('about to calculate memory'); navigator.storage.estimate().then(function(estimate) {
+  document.getElementById("percent").value =
+      (estimate.usage / estimate.quota * 100).toFixed(2);
+  });//end storageManagerEstimate	
+  
+  
+  	  } else {
+		  document.getElementById("percent").value = '(You are not running in Safari with storage.estimate so memory capacity calculation is not available.)';
+		  calculation.textContent = "Memory left is not available because you are not running in Safari, or the browser does not yet possess a storageManager";
+  	  	
+  	  }//end if storage in navigator
+	  
+	  
+	 //done button to allow return to notes window .. just hide the memory window to go back to the aboutDBWindow
+	  let doneBtn = document.createElement('button');
+      doneBtn.textContent = 'DONE';
+      memoryWindow.appendChild(doneBtn);
+	  doneBtn.onclick = function () {
+		 
+		//get ready for next instance of viewing documentation
+		memoryWindow.removeChild(doneBtn);
+      	memoryWindow.setAttribute('class','hidden');
+		aboutDBWindow.setAttribute('class','showing');
+		 };//end doneBtn.onclick
+	 }//end amtMemory functionmemoryBtn.onclick 
+  }//end function getMemory called from line640 in js file
+ //added script for restore database
+ 
+
+//end added script for restore database 
+  
+</script>  
+  </html>
