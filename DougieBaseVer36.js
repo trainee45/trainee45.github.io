@@ -9395,80 +9395,10 @@ Note that you actually have to pass the exported data as a string, not as a JSON
     navigator.serviceWorker
              .register('/DougieBaseVer36sw.js')
              .then(function() { console.log('Service Worker Registered'); });
-		alert('Service Worker Registered!');
-	function listenForWaitingServiceWorker(reg, callback) {
-  function awaitStateChange() {
-    reg.installing.addEventListener('statechange', function() {
-      if (this.state === 'installed') callback(reg);
-    });
-  }
-  if (!reg) return;
-  if (reg.waiting) return callback(reg);
-  if (reg.installing) awaitStateChange();
-  reg.addEventListener('updatefound', awaitStateChange);
-}
-
-// reload once when the new Service Worker starts activating
-var refreshing;
-navigator.serviceWorker.addEventListener('controllerchange',
-  function() {
-    if (refreshing) return;
-    refreshing = true;
-    window.location.reload();
-  }
-);
-function promptUserToRefresh(reg) {
-  // this is just an example
-  // don't use window.confirm in real life; it's terrible
-  if (window.confirm("New version available! OK to refresh?")) {
-    reg.waiting.postMessage('skipWaiting');
-  }
-}
-listenForWaitingServiceWorker(reg, promptUserToRefresh);
-
-//Add the skipwaitingnevent
-
-self.addEventListener('message', event => {
-  if (!event.data) {
-    return;
-  }
-
-  if (event.data === 'SKIP_WAITING') {
-    self.skipWaiting();
-  }
-});
-
-//update register service worker
-
-if (navigator.serviceWorker.controller) {
-  // At this point, the old content will have been purged and
-  // the fresh content will have been added to the cache.
-  // It's the perfect time to display a "New content is
-  // available; please refresh." message in your web app.
-  console.log('New content is available; please refresh.');
-
-  const pushState = window.history.pushState;
-
-  window.history.pushState = function () {
-    // make sure that the user lands on the "next" page
-    pushState.apply(window.history, arguments);
-
-    // makes the new service worker active
-    installingWorker.postMessage('SKIP_WAITING');
-  };
-} else { 
-  .catch(error => {
-    console.error('Error during service worker registration:', error);
-  });
-
-navigator.serviceWorker.addEventListener('controllerchange', () => {
-  if (refreshing) {
-    return;
-  }
-
-  refreshing = true;
-  window.location.reload();
-});	
+			alert('Service Worker Registered!'); navigator.storage.estimate().then(function(estimate) {
+  document.getElementById("percent").value =
+      (estimate.usage / estimate.quota * 100).toFixed(2);
+  });//end storageManagerEstimate	
   
 		 }//end if service worker
 	//StorageManager.estimate()..https://developer.mozilla.org/en-US/docs/Web/API/StorageManager/estimate
