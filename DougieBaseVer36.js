@@ -9395,10 +9395,32 @@ Note that you actually have to pass the exported data as a string, not as a JSON
     navigator.serviceWorker
              .register('/DougieBaseVer36sw.js')
              .then(function() { console.log('Service Worker Registered'); });
-			alert('Service Worker Registered!'); navigator.storage.estimate().then(function(estimate) {
-  document.getElementById("percent").value =
-      (estimate.usage / estimate.quota * 100).toFixed(2);
-  });//end storageManagerEstimate	
+		alert('Service Worker Registered!');
+	  .then(function(registration) {
+ 		// Listen for updates:
+    registration.addEventListener('updatefound', () => {
+      newWorker = registration.installing;
+			// Listen for when the new worker is ready:
+      newWorker.addEventListener('statechange', () => {
+        switch (newWorker.state) {
+          case 'installed':
+            if (navigator.serviceWorker.controller) {
+ 							// Display button:
+              refreshButton.classList.remove('hidden');
+            }
+            break;
+        }
+      });
+    });
+  });
+}
+
+//When the worker is ready to be activated we can display the button and inform the user that a new version is available.	
+	
+	//	navigator.storage.estimate().then(function(estimate) {
+  // document.getElementById("percent").value =
+  //     (estimate.usage / estimate.quota * 100).toFixed(2);
+  // });//end storageManagerEstimate	
   
 		 }//end if service worker
 	//StorageManager.estimate()..https://developer.mozilla.org/en-US/docs/Web/API/StorageManager/estimate

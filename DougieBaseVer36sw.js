@@ -22,6 +22,15 @@ self.addEventListener('install', function(e) {
  );
 });
 
+
+//kill old service worker and use new
+self.addEventListener('message', function(event) {
+  if (event.data.action === 'skipWaiting') {
+    self.skipWaiting();
+  }
+});
+//kill old service worker and use new
+
 //fetch event at our disposal, which fires every time an HTTP request is fired off from our app. This is very useful, as it allows us to intercept requests and respond to them with custom responses.The response can be anything we want: the requested file, its cached copy, or a piece of JavaScript code that will do something specific we serve content from the cache instead of the network as long as the resource is actually in the cache. We do this whether the app is online or offline. If the file is not in the cache, the app adds it there first before then serving it:
 
 /*self.addEventListener('fetch', function(e) {
