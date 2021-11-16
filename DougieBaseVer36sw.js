@@ -24,10 +24,23 @@ self.addEventListener('install', function(e) {
 
 
 //kill old service worker and use new
-self.addEventListener('message', function(event) {
-  if (event.data.action === 'skipWaiting') {
-    self.skipWaiting();
-  }
+addEventListener('message', messageEvent => {
+  if (messageEvent.data === 'skipWaiting') return skipWaiting();
+});
+
+addEventListener('fetch', event => {
+  event.respondWith((async () => {
+    if (event.request.mode === "navigate" &&
+      event.request.method === "GET" &&
+      registration.waiting &&
+      (await clients.matchAll()).length < 2
+    ) {
+      registration.waiting.postMessage('skipWaiting');
+      return new Response("", {headers: {"Refresh": "0"}});
+    }
+    return await caches.match(event.request) ||
+      fetch(event.request);
+  })());
 });
 //kill old service worker and use new
 
