@@ -3148,6 +3148,7 @@ addNoteBtn.setAttribute('class','attentionBtn');
 	const bodyImage = document.querySelector('#bodyImage');
 	const editTDTriggerBtn = document.querySelector('#editTDTrigger');//this is the btn in preferences used to switch between copy and dblclick for edit table data cells. The trigger variable is declared at start of prgm
 	const tdEditTriggerP = document.querySelector('#tdEditTrigger');
+	const primeTableSP = document.querySelector('#primeTable');
 	const caseSensitiveSwitch = document.querySelector('#caseSensitive');
 	const no = document.querySelector('#no');
 	const yes = document.querySelector('#yes');
@@ -3174,8 +3175,12 @@ if(setup === 3)	{
 //below setup prefs screen to reflect current values Date: Nov 9
 	if(viewDateWritten) {
 		creationDateBtn.textContent = 'Hide Creation Date';
+		notifyP.textContent = "Creation dates will now be visible in " + dateShade;
+		prefWindow.appendChild(notifyP);
 	} else {
 		creationDateBtn.textContent = 'Show Creation Date';
+		notifyP.textContent = "Creation dates will now be hidden ";
+		prefWindow.appendChild(notifyP);
 	}//end of if viewDateWritten
 	
 	if(showExtraField === 1) {
@@ -3379,8 +3384,10 @@ if(setup === 3)	{
 // const editTDTriggerBtn = document.querySelector('#editTDTrigger');//this is the btn in preferences used to switch between copy and dblclick for edit table data cells. The trigger variable is declared at start of prgm
 if(DTBtnTappedOnce ===0) {
 	editTDTriggerBtn.disabled = true;
+	primeTableSP.textContent = " Initiate Table first!";
 }else {
 	editTDTriggerBtn.disabled = false;
+	primeTableSP.textContent = "";
 }//end else if DTBtnTappedOnce ===0 & tableExists to prevent messed up table
 
 // const tdEditTriggerP = document.querySelector('#tdEditTrigger');
