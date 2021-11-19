@@ -1,4 +1,4 @@
-//DougieBaseVer36 Nov14 from spDougieBaseVer36.js landscape table search and preview edid Date:Nov9 save preferences from Date:Nov4 added Easter egg and save settings preferencesDougieBaseVer36.js from fixEditDougieBaseVer35.js from 
+//DougieBaseVer36 Nov17 added tableScreenOptions to editTableTrigger to not mess up tableDisplay if going to another db Nov14 from spDougieBaseVer36.js landscape table search and preview edid Date:Nov9 save preferences from Date:Nov4 added Easter egg and save settings preferencesDougieBaseVer36.js from fixEditDougieBaseVer35.js from 
 //changed addEventListener to copy instead of dblclick Oct16 made default double click Oct31 2021  clearBkgrdDougieBaseVer34.js clear background and fixed crashes that occur if user makes illogical moves Oct12 2021 use to update workingCopy and Safarii etc
 //Date:Oct5 2021 Removed Double tap to avoid magnification in Manage files view full screen search select filenames. iOS15 safari has no way to disable double tap for magnification. More cosmetics with dataBaseName titles
 //removed alert in view full note ?hangs up sometimes? Cosmetic fixes Oct 3 2021 titleBanner in About db
@@ -3407,6 +3407,10 @@ if(DTBtnTappedOnce ===0) {
 	tdEditTriggerP.textContent = "To edit date or other cell contents 'SELECT' the contents, then tap 'COPY', Clear/Initialize the input element, then enter new text into the input element. (or 'paste' to enter original).";	editTDTriggerBtn.setAttribute('class','colorBtn');
 			
 		}//end if trigger==='dblclick'
+		
+		//go to display table to update table to prevent table being messed up if you change databases at this point Nov17 2021
+			tableScreenOptions();
+			
 	};//end editTDTriggerBtn.onclick
 
 //code above to switch addEventListener event type in edit td of table	
