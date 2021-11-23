@@ -2,13 +2,13 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>DougieBaseVer36.html</title>
+    <title>indexDougieBaseVer36.html</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="DougieBaseVer36.css" rel="stylesheet">
 	<link rel="manifest" href="trainsDBTableNotes.webmanifest">
 
 	
-<!-- 	Date:Nov14 landscape table and search and preview edit Nov4 2021 added easter egg and save settings Oct 31 2021. Ver 35.3removed access to word documentation help manual fixEditDougieBaseVer35.html USE THIS VERSION AS OF Sept 29 2021 2021 This version has been installed on github pages ! Added links to documentation docx and pdf<script src="fileNamesTableNotesVer21.js" defer type="text/javascript"></script> Added p info statement to Create Table window -->
+<!-- 	Date:Nov21 Nov14 landscape table and search and preview edit Nov4 2021 added easter egg and save settings Oct 31 2021. Ver 35.3removed access to word documentation help manual fixEditDougieBaseVer35.html USE THIS VERSION AS OF Sept 29 2021 2021 This version has been installed on github pages ! Added links to documentation docx and pdf<script src="fileNamesTableNotesVer21.js" defer type="text/javascript"></script> Added p info statement to Create Table window -->
 
 <!-- Line below adds jQuery library from jQuery file in same directory as the .js file. It works without internet connection. The google CDN has to have the internet connection IMPORTANT CONSIDERATION WHEN USING MORE jQuery code!! At the moment as of May17 2021 the only thing using jQuery is the table menu and hide scroll btns in preferences-->
 
@@ -83,7 +83,7 @@ color: black;
 	
 	  
     <header>
-      <h1>DougieBase Version 36sw5</h1>
+      <h1>DougieBase Version 36sw6</h1>
     </header>
 	<p></p>
 <div id = "scrolling">
@@ -350,13 +350,13 @@ color: black;
 			<p></p>
 		 
 		  <label for="changes" class="yellowonly">Edit record contents: </label>
-		  <input id="changes" type="text" name="changes" value="" class="yellowonly">
+		  <input id="changes" type="text" name="changes" value="" class="yellowonly" oninput = "displayEdits()">
 		   <button id="clear">Clear Input Window </button>
 		  <p></p>
 		  
 		  <button id="submit">Save changes</button>
 		  <button id = "cancel">Cancel</button>
-		   <button id = "preview">Preview</button>
+		   <button id = "preview">Reset</button>
 		  
 	  </div><!--end edit window -->
 	  
@@ -369,12 +369,12 @@ color: black;
 		  <label for="changes">Type changes into the Input Window. To preserve any previous text entered, first use copy/paste to capture the original data.body text as viewed above. Once the cursor is in either input window, the original text above can't be copied using copy/paste. If previously edited, the original text of the most recent edit, appears as a default value in the Input Window. This will allow retrieval of this text if required. Tap the Clear Input Window buttons to clear!</label>
 		  <p></p>	  
 		 <label for="editNewFieldChanges" class="yellowonly">Edit record contents: </label>
-		  <input id="editNewFieldChanges" type="text" name="editNewFieldChanges" value="" class="yellowonly">
+		  <input id="editNewFieldChanges" type="text" name="editNewFieldChanges" value="" class="yellowonly" oninput = "displayXfieldEdits()">
 		   <button id="clearEditNewField">Clear Input Window </button>
 		   <p></p>  
 		     <button id="commit">Commit changes</button> 
 			 <button id = "cancelCommit">Cancel Changes</button>
-			  <button id = "previewNewField">Preview Changes</button>
+			  <button id = "previewNewField">Reset</button>
 			 
 		  
 	  </div>
@@ -401,7 +401,7 @@ color: black;
 		  <p id ="fullTxt" class="noScroll"></p>
 		
 		  
-		  <!-- height was 80px finished reading was position fixed..changed to absolute so bottom border not trimmed off-->
+		  <!-- height was 80px. finished reading was position fixed..now is position absolute-->
 		 	 <div id="finishedReading" class="hidden" style="background-color: white; height:25px; width: 400px; padding: 10px; border: 2px solid red; border-radius: 10px; text-align: center; position: absolute; transform: translate(-50%,-50%)">
 			
 		 
@@ -505,8 +505,7 @@ color: black;
 		<button id = "useLinkLabel">Use Link Labels</button>
 		<button id = "scrollTable">Disable Scroll Table</button>
 		<button id = "bkgrdImage">Clear Background</button><p></p>
-		<!--<label for="editTDTrigger">Choose action to edit table cell:</label>-->
-		
+		<!-- <label for="editTDTrigger">Action to edit table cell:</label> -->
 		<p>Action to edit table cell: <button id = "editTDTrigger" name = "editTDTrigger">EDIT Table Cell Trigger</button> <span id ="primeTable">(Initiate table first)</span></p>
 		
 		<p id = "timeDateFlag" style ="text-align: center">Tap the TableDate ? Button to INCLUDE a timestamp or NOT.</p>
@@ -635,7 +634,16 @@ color: black;
 		  <h2 class="edBan">About this Database</h2>
 		   <p></p>
 		   <div id="clearAboutDBWindow" class="simulator">TAP HERE TO RETURN TO NOTES</div>
-		   <p class="ppref">The About Database Venue allows access to a HELP File and Documentation, and some current Settings. Obtain an estimate of how much memory is available in the database storage if your Browser accomodates this feature..<br>This is Version 33.1: Search references the first title field, and all other fields since verion33.1.<br>Last revision: Sept 22 2021</p>
+		   <p class="ppref">The About Database screen allows access to a HELP File and Documentation, as well as some current Settings. </p>
+		   <div class = "edWinScroll">
+			   <p class = "highlight">Revisions and version numbers.  Scroll up     ⬆️ </p>
+		    <ul>
+			   <li>Obtain an estimate of how much memory is available in the database storage if your Browser accomodates this feature.</li>
+			   <li>This is Version 36sw6, service worker 5</li> 
+			   <li>Search references the first title field, and all other fields since version 33.1.</li>
+			   <li>Last revision: Nov 22 2021</li>
+		   </ul>
+	   </div> 
 		   <p></p>
 		   <button id="getMemory">Estimate Memory</button>
 		<button id="documentation">Documentation.Manual</button>
@@ -660,7 +668,7 @@ color: black;
 		Manual</h1>
 		<p>The documentation help manual is available as a PDF file. Tap on the links below to download the DougieBase Manual. Chapters 1 and 2.</p>
 		<p>The files are online and will open in a browser interface which allows you to download them to your device by using the browser's action sharesheet icon (tool bar: top right) from which you can download the .pdf files to whichever app you wish on your device.</p> 
-		<p>You do not need to download the files. The manual is online and you can read them online without having to save to your device. Tap the DONE button (Browser tool bar: top left) when you want to return to DougieBase. In the DougieBase Documentation window (this screen) tap the 'DONE' button (bottom left) to return to Notes - DougieBase Home Screen.
+		<p>You do not need to download the files unless you want to keep them offline. The manual is online and you can read them online without having to save to your device. Tap the DONE button or Back Arrow (Browser tool bar: top left) when you want to return to DougieBase. In the DougieBase Documentation window (this screen) tap the 'DONE' button (bottom left) to return to Notes - DougieBase Home Screen.
 		</p>
 	<!-- 	<p>Download Chapter 1 WORD doc</p><a href="https://github.com/trainee45/trainee45.github.io/blob/master/DougieBase%20Chapter%201.docx" download>Download DougieBase Manual Chapter 1</a>
 		<p></p>
@@ -1033,10 +1041,23 @@ color: black;
 		 };//end doneBtn.onclick
 	 }//end amtMemory functionmemoryBtn.onclick 
   }//end function getMemory called from line640 in js file
- //added script for restore database
- 
+  
+  // Code below shows notes edits in real time
+  
+ function displayEdits () {
+	var x = document.getElementById("changes").value;
+	document.getElementById("originalTxt").innerHTML = x;
+}//end function displayEdits
 
-//end added script for restore database 
+function displayXfieldEdits () {
+	var x = document.getElementById("editNewFieldChanges").value;
+	document.getElementById("originalNewFieldTxt").innerHTML = x;
+}//end function displayEdits
+
+  // Code above shows notes edits in real time
+  
+ //added script for restore database
+ //end added script for restore database 
   
 </script>  
   </html>

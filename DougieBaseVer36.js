@@ -1,4 +1,4 @@
-//DougieBaseVer36 Nov17 added tableScreenOptions to editTableTrigger to not mess up tableDisplay if going to another db Nov14 from spDougieBaseVer36.js landscape table search and preview edid Date:Nov9 save preferences from Date:Nov4 added Easter egg and save settings preferencesDougieBaseVer36.js from fixEditDougieBaseVer35.js from 
+//DougieBaseVer36 Nov 22 edit notes displayed n real time Nov17 added tableScreenOptions to editTableTrigger to not mess up table display Nov14 from spDougieBaseVer36.js landscape table search and preview edid Date:Nov9 save preferences from Date:Nov4 added Easter egg and save settings preferencesDougieBaseVer36.js from fixEditDougieBaseVer35.js from 
 //changed addEventListener to copy instead of dblclick Oct16 made default double click Oct31 2021  clearBkgrdDougieBaseVer34.js clear background and fixed crashes that occur if user makes illogical moves Oct12 2021 use to update workingCopy and Safarii etc
 //Date:Oct5 2021 Removed Double tap to avoid magnification in Manage files view full screen search select filenames. iOS15 safari has no way to disable double tap for magnification. More cosmetics with dataBaseName titles
 //removed alert in view full note ?hangs up sometimes? Cosmetic fixes Oct 3 2021 titleBanner in About db
@@ -342,7 +342,7 @@ let doneOnce = 0;//in viewCreationDate to remove extra dateColorBtn
 let upgraded;//for first run of notes db guide on upgrade needed and save and get database name
 let renewed = 0;//variable in refreshTable()to create header row in displayTable when coming from refrehTable
 let editNote = false;//flag to force update table if notes edited
-let numberOfCVtoList=6;//view settings increase for more CVs to list
+let numberOfCVtoList=7;//view settings increase for more CVs to list
 //if further trouble, REMOVE THE LINE BELOW !! it causes 'attempting to assign to a readonly property error!!'.OR remove line below and replace instances of dbTableName.value or .textContent with simply dbTableName!!???..but then I don't know where dbTableName variable is declared? i forgot ;
 let tableExists = 0;//to enable or disable display table button .. TO TEMPORARILY DISABLE THE tableExist variable remove it from the variable2Array. changed tableExists variable to disabledTableExists in load and get dataBaseName so Add3TableNotesVer9.5 would run correctly. Change back when needed
 
@@ -1777,8 +1777,18 @@ loadBtn.onclick = function() {
 	
 tableScreenBtn.onclick = tableScreenOptions;
 searchBtn.onclick = searchRecords;
-newDBBtn.onclick = function () {console.log('new/changeDBBtn tapped.'); changeDB = true;
+newDBBtn.onclick = function () {
+	console.log('new/changeDBBtn tapped.'); changeDB = true;
 	dbListExists = true;
+	
+	//code below prevent table being messed up if you do an edit then change databases before updating the table
+	console.log('DTBtnTappedOnce = ' + DTBtnTappedOnce + 'editNote = ' + editNote + 'tableExists = ' + tableExists);
+	if(tableExists && editNote){
+		alert('Update the Table before leaving current database.')
+		tableScreenOptions();
+		editNote = false;
+	}
+	//code above prevent table being messed up if you do an edit then change databases before updating the table
 	getFileNames()};
 manageBtn.onclick = function () {
 	manageDbListExists = true;//flag to prevent manageDbList from repeating
@@ -2156,7 +2166,7 @@ if (viewDateWritten) {dateP.textContent = cursor.value.created;}	//end if viewDa
 	  
 	  const fullViewBtn = document.createElement('button');
       listItem.appendChild(fullViewBtn);
-      fullViewBtn.textContent = 'View Entire Note - Record#: '+ noteNumber;
+      fullViewBtn.textContent = 'View Entire Note - Record ID: '+ noteNumber;
 
       // Set an event handler so that when the button is clicked, the deleteItem()
       // function is run
@@ -2710,9 +2720,20 @@ let cvString1 = 'xtraField: = '+ xtraField;
 let cvString2 = 'Extra Field Label: = ' + newFieldName;
 let cvString3 = 'Database Table Name is: '+ dbTableName.value;
 let cvString4 = 'Database setup completed? = '+ setup;
-let cvString5 = 'A table has been created for this database? = '+ tableExists +'Enabled';
-let cvString6 = 'Internal database name is  = '+ dbName;
-let cvArray = [cvString1,cvString2,cvString3,cvString4,cvString5,cvString6];
+let cvString5 = '';
+if (DTBtnTappedOnce ===0) {
+	cvString5 = "The table is NOT currently INITIALIZED."; 
+} else if (DTBtnTappedOnce ===1) {
+	cvString5 = 'The Table is INITIALIZED.';
+}//end if DTBtnTappedOnce
+let cvString6 = 'Internal database Filename is  = '+ dbName;
+let cvString7 = "";
+if(setup === 3) {
+	cvString7 = "The Preferences Settings have been SAVED for this database.";
+} else if (setup === 1) {
+	cvString7 = "The Preference Settings have NOT been Saved for this database."
+}//end if setup = 3
+let cvArray = [cvString1,cvString2,cvString3,cvString4,cvString5,cvString6,cvString7];
 let cvItem = document.createElement('li');
 
 //above for new code to list variables
@@ -2730,8 +2751,8 @@ let cvItem = document.createElement('li');
  document.fullViewBanner.appendChild(pinkTitle);
  */
  finishedReadingSettings.setAttribute('class', 'showing');
-  variablesViewed.textContent = 'The  extraField is enabled if xtraField set to 1 and not enabled if set to 0. Value of xtraField variable = ' + xtraField +'. ' + 'The previous label of the Extra Field =  ' + data.body + '.   The current label is ' + newFieldName + '. This Database Table is named = ' + dbTableName.value + '.The database setup is completed if setup = 1 and not done if = 0. setup = ' + setup + 
-	'. A table has been created if = 1. To restore the previous Field Label tap LOAD. To keep current field label for subsequent reboots of database tap the SAVE button in main menu. The database was created/last modified on : ' + data.created + '.';
+  variablesViewed.textContent = 'The  extraField is enabled if the xtraField variable is set to 1 and not enabled if set to 0. Value of xtraField variable = ' + xtraField +'. ' + 'The previous label of the Extra Field =  ' + data.body + '.   The current label is ' + newFieldName + '. This Database Table is named = ' + dbTableName.value + '.The database setup is completed if setup = 1 and not done if = 0. If the setup variable is set to 3, this means that the preferences settings have been saved for this individual database. setup = ' + setup + 
+	'. A table has been created if = 1. The database was created/last modified on : ' + data.created + '.';
 	console.log('data.created = ' + data.created) ;
 //fullViewP.textContent = 'Tap the OK RETURN button after viewing this record.';
  //the variable list
@@ -3061,7 +3082,7 @@ if (xtraFieldBtnExists) {
 
  }//end function editItem
 
-
+ 
  
 
 document.getElementById("percent").value = '(Service Worker disabled in this testing version...Not running in Safari so not able to return )';
@@ -4498,7 +4519,7 @@ if(dataBaseName === "" || dataBaseName === null) {
 //CHANGE BACK TO viewSettings;	Apr10
 	viewSettingsBtn.onclick = viewSettings;
 	
-	numberNotes.textContent = 'Number of notes in Database = ' + counter;
+	numberNotes.textContent = 'Number of Records in Database ' + dbName + ' = ' + counter;
 	aboutDBWindow.appendChild(numberNotes);
 	
 	clearAboutDBWindow.onclick = function () {
@@ -8370,7 +8391,7 @@ function topFunction() {
 function initializeTable () {
 	
 	if(DTBtnTappedOnce ===0 & tableExists){
-		alert('The pre-existing table has to be initialized first before Searching, Adding, or Editing a note! Tap the DISPLAY TABLE button.');
+		alert('The pre-existing table has to be initialized first before Searching, Adding, or Editing a note! OR if changing databases. Tap the DISPLAY TABLE button.');
 		tableScreenOptions();
 	}//end if if(DTBtnTappedOnce ===0 & tableExists)
 }//end function initializeTable
