@@ -4001,7 +4001,7 @@ changeColoursWin.removeChild(restoreSavedBtn);
 		  
 	  doneBtn.onclick = function () {
 		  saveBtn.setAttribute('class', 'colorBtn');
-		  doneBtn.setAttribute('class','normalBtn');
+		  doneBtn.setAttribute('class','tdEdit');
 		//code for done here
 		changeColoursWin.removeChild(doneBtn);
 	changeColoursWin.removeChild(defaultBtn);
@@ -4130,7 +4130,7 @@ xtraFieldPara.style.backgroundColor = savedCurrentxtraFieldColour;
 	}//end if xtraField === 1
 changeColourListItem.style.color = savedCurrentfontColour;
 //collect backgrd.styles
-	 
+	 restoreSavedBtn.setAttribute('class','tdEdit');
 	 alert('The SAVED background colours have been RESTORED! Tap the DONE button if you want to revert back to these saved colours.');
 	 
 	doneBtn.setAttribute('class','colorBtn');
