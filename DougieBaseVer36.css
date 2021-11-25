@@ -877,7 +877,7 @@ tbody {
 }
 
 @media screen and (orientation: landscape) {
-   #editWin, #editNewFieldWin, #displayFullNote {
+   #editWin, #editNewFieldWin, #displayFullNote, #createTableWin, #deleteFieldWin {
     /*position: relative;*/
 	top: -10px;/*was 0px*/
     height: 70vh;/*was 75vh 100vh*/
