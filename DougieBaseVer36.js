@@ -1,4 +1,4 @@
-//DougieBaseVer36 Nov 22 edit notes displayed n real time Nov17 added tableScreenOptions to editTableTrigger to not mess up table display Nov14 from spDougieBaseVer36.js landscape table search and preview edid Date:Nov9 save preferences from Date:Nov4 added Easter egg and save settings preferencesDougieBaseVer36.js from fixEditDougieBaseVer35.js from 
+//DougieBaseVer36 Nov24 fixed create newDB bug!Nov 22 edit notes displayed n real time Nov17 added tableScreenOptions to editTableTrigger to not mess up table display Nov14 from spDougieBaseVer36.js landscape table search and preview edid Date:Nov9 save preferences from Date:Nov4 added Easter egg and save settings preferencesDougieBaseVer36.js from fixEditDougieBaseVer35.js from 
 //changed addEventListener to copy instead of dblclick Oct16 made default double click Oct31 2021  clearBkgrdDougieBaseVer34.js clear background and fixed crashes that occur if user makes illogical moves Oct12 2021 use to update workingCopy and Safarii etc
 //Date:Oct5 2021 Removed Double tap to avoid magnification in Manage files view full screen search select filenames. iOS15 safari has no way to disable double tap for magnification. More cosmetics with dataBaseName titles
 //removed alert in view full note ?hangs up sometimes? Cosmetic fixes Oct 3 2021 titleBanner in About db
@@ -2160,7 +2160,11 @@ if (viewDateWritten) {dateP.textContent = cursor.value.created;}	//end if viewDa
 //was let noteNumber..now declared up top because variable not found error in if !listItem & setup===0
      noteNumber = listItem.getAttribute('data-note-id'); // Set an event handler so that when the button is clicked, the deleteItem()
       // function is run
-      editBtn.onclick = editItem;
+  if(newDBGuidance) {
+	  editBtn.setAttribute('class','attentionBtn');
+  }//end if newDBGuidance
+
+	  editBtn.onclick = editItem;
 	  //set up Full Note View button
 	  
 	  
@@ -2310,7 +2314,7 @@ addNoteBtn.setAttribute('class','normalBtn');
   if (!newDBGuidance && !newDBflag && xtraField === 1 && counter > 1) {
 addNoteBtn.setAttribute('class','attentionBtn');
   addNoteBtn.disabled = false;
-  settingsBtn.setAttribute('class', 'normalBtn');//preferences
+  settingsBtn.setAttribute('class', 'tdEdit');//preferences
 }//end if (newDBGuidance === undefined && !newDBflag && xtraField === 0)
 //restore statusbquo after finishing creating new db
 
@@ -2796,6 +2800,9 @@ doneSettingsButton = document.querySelector('#okSettingsViewed');
 //you should combine the clear and the write into a single transaction
 
 function editItem(e) {
+	if (newDBGuidance) {
+		editBtn.setAttribute('class','tdEdit');
+	}//end if newDBGuidance reset edit btn after create new db css button, .tdEdit
 	console.log('In editItem. xtraFieldBtnExists (not yet) = ' + xtraFieldBtnExists);
 	//make edit window appear
 	editWindow.setAttribute('class','showing');
@@ -4409,7 +4416,7 @@ console.log('at addNoteBtn.onclick');
 //createNewDBGuide
 //for guidance creating newDB
 if(newDBGuidance) {
-newDBGuideP.textContent = "After entering first record's title and text for NOTES' first data segment, tap 'Create new note button'. When the list of database names appears, double-tap the new database name to reload it. Then return to Preferences and tap the 'Add/Relabel Field' button";
+newDBGuideP.textContent = "After entering first record's title and text for NOTES' first data segment, tap 'Create new note button'. When the list of database names appears, Tap the new database name to reload it. Then return to Preferences and tap the 'Add/Relabel Field' button";
 addNoteWindow.appendChild(newDBGuideP);
 //At addNoteBtn.onclick: newDBGuidance = true newDBflag = false xtraField = 0
 
@@ -4622,19 +4629,22 @@ let transaction = db.transaction([objectStoreName], 'readwrite');
 //	ReferenceError: Can't find variable: variable3
 //use if setup===0 so these object members are initialized to "0" only if this is a new db never setup before. Otherwise these variables will always be reset to initial values rather than the values you want to keep stored.
 //if(setup===0) {//need to declare datav otherwise you get this error:TypeError: undefined is not an object (evaluating 'dataV.tableArray = tableArray')
-if(setup===3) {
+
+//date nov23 make dataVObj contain prefVariables from the start even setup=0If setup-1 this meand prefVariable is empty because prefs have not been saved, but still need it setup for creating newdb..a save happens early in stage of creating newdb..so i added || setup = 0
+if(setup===3 || setup === 0) {
 	dataVobj = {
   tableArray: tableArray,
   fieldNamesArray: fieldNamesArray,
   otherVariables: otherVariablesArray,
   prefVariables: prefVariablesArray,
   variable3: variable3
- };//end declaration of dataV object
+ };//end declaration of dataV object if setup=1 as in an older previously created database that hasn't had prefs saved, then save dataVObj without preferences ariable OR SAVE WITH PREFSVARIABLE EMPTY AS DECLARED AT TOP OF PROGRAM?
 } else {
 	dataVobj = {
   tableArray: tableArray,
   fieldNamesArray: fieldNamesArray,
   otherVariables: otherVariablesArray,
+//add prefVariablesArray anyway even if empty? Date Nov 23????
 
   variable3: variable3
 };//end declaration of dataV object
@@ -4735,13 +4745,30 @@ data = {
 	
 	//line below was ..  data.variable2t = setup;
 	//to save setup variable as 1 you have to make variable2Array[0] = 1 prior to assigning new values to data.variable2
+	// //allow for setup =3 this code changed as below to make createNewDB work Nov23
+// if(setup === 3 && setup!==0) {
+// 	variable2Array[0] = 3;//setup variable
+// } else if (setup === 1) {
+// 	variable2Array[0] = 1;
+// }//end if setup ===3
+	
+	
+// 	data.variable2 = variable2Array;
+// 	data.dataV = dataVobj;
+// 	if(setup===3) {setup=3;
+// 	}else {
+// 	setup = 1; //moved to after data object assigned values if setup = 0 !!!!
+// 	}//end if setup =3
+	
+
 //allow for setup =3
-if(setup === 3 && setup!==0) {
+if(setup === 3) {
 	variable2Array[0] = 3;//setup variable
-} else if (setup === 1) {
+} else if (setup === 1 || setup === 0) {
 	variable2Array[0] = 1;
 }//end if setup ===3
 	
+//SETUP HAS TO = 1 or 3 for pickOldNew function to work if creating a new db Nov23	setup takes its value from variable2Array[0] in pickOldNew function
 	
 	data.variable2 = variable2Array;
 	data.dataV = dataVobj;
@@ -5329,10 +5356,11 @@ function getDataBaseName (key,dataBaseName,objectStoreName) {
   upgraded = 1;
   //code from setup =0
   redefineTableArray();
-  console.log('In upgradeneeded;will now go back to getDataBaseName() after creating the objectStore. dataVobj.tableArray = ' +dataVobj.tableArray);
+ // ReferenceError: Can't find variable: dataVobj so do I have to redefine dataV in upgrade needed for the new database?
+ // console.log('In upgradeneeded;will now go back to getDataBaseName() after creating the objectStore. dataVobj.tableArray = ' +dataVobj.tableArray);
   //need code here to move to TOP of view window so directions are visible
   if(!fromRestore) {
- dbTableName.value = 'Creating new Database. In PREFERENCES, RENAME database (again) and tap SAVE to initialize the database. Then ADD FIRST NOTE. When the file names list reappears Double-Tap on name of newly created database to start the new database.';
+ dbTableName.value = 'Creating new Database. In PREFERENCES, RENAME database (again) and tap SAVE to initialize the database. Then ADD FIRST NOTE. When the file names list reappears Tap on name of newly created database to start the new database.';
 
 //at this point the program stops because of undefined is not an object in evaluating data.variable1 and I tap SAVE ..then go to saveVariables
 //scroll to top so directions for creating new db are visible
@@ -5383,8 +5411,10 @@ document.getElementById("dbTableName").innerHTML = dbTableName.value;
 function pickOldNew (data) {
 	variable2Array = data.variable2;
 	setup = variable2Array[0];
+//IF CREATING NEWDB SETUP SHOULD = 1 at this point but it does not…SETUP = 0!!!	Nov23
+
 	console.log('Unpacking variable2Array .. variable2Array[0] = ' + variable2Array[0] + ' setup = '+setup);
-	
+	//setup should = 1 but it = 0 here when creating new db
 
 	if (setup === undefined|| null) {setup = 0;}//end if setup = undefined
 
@@ -5560,7 +5590,7 @@ refreshTableName.textContent = dbTableName.value;
  if(DTBtnTappedOnce ===0){
  copyOfTableArray = tableArray.slice(0,tableTitle.length);
  copyOfTableTitle = tableTitle.slice();	displayTableBtn.setAttribute('class','attentionBtn');
-}else {displayTableBtn.setAttribute('class','normalBtn');
+}else {displayTableBtn.setAttribute('class','tdEdit');
  }//end if DTBtnTappedOnce = 0
  
  if (tableExists & tableTitle.length>originalNumberRecords || editNote) {
@@ -5976,8 +6006,8 @@ newBtn.onclick = function() {
 		//disable ADD NOTE and activate TABLE
 	addNoteBtn.setAttribute('class','attentionBtn');
   addNoteBtn.disabled = false;
-  settingsBtn.setAttribute('class', 'normalBtn');//preferences	
-  tableScreenBtn.setAttribute('class','normalBtn');
+  settingsBtn.setAttribute('class', 'tdEdit');//preferences	
+  tableScreenBtn.setAttribute('class','tdEdit');
 }//end if newDBGuidance
 	//end code for guiding create newDB
 	
@@ -8779,7 +8809,7 @@ if (loadSampleDb || loadTutorialDb) {
 	
 	//added id to html p 1
 	restoreInfo1P.textContent = "First! Tap the RED text-area input element ONCE to initialize. The Submit button will turn green. Tap the SUBMIT button, tap RESTORE DATABASE button,  the CONFIRMATION window appears. ";
-	restoreInfo2P.textContent ="Summary to create the database SAMPLE: Tap the Text-Area input window. Tap the SUBMIT button, tap RESTORE DATABASE button, tap FINISHED, then double-tap the name of the SAMPLE database in the database list of file names in the Change DB window."
+	restoreInfo2P.textContent ="Summary to create the database SAMPLE: Tap the Text-Area input window. Tap the SUBMIT button, tap RESTORE DATABASE button, tap FINISHED, then tap the name of the SAMPLE database in the database list of file names in the Change DB window."
 	getJsonBtn.textContent = "SUBMIT Sample DB data";
 } else {
 	restoreDBWinTitle.textContent = "Restore a database from its Backup via the Clipboard";
