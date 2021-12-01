@@ -1,4 +1,4 @@
-//DougieBaseVer36 Nov24 fixed create newDB bug!Nov 22 edit notes displayed n real time Nov17 added tableScreenOptions to editTableTrigger to not mess up table display Nov14 from spDougieBaseVer36.js landscape table search and preview edid Date:Nov9 save preferences from Date:Nov4 added Easter egg and save settings preferencesDougieBaseVer36.js from fixEditDougieBaseVer35.js from 
+//DougieBaseVer36.js from createNewDBDougieBaseVer36 Nov30 Nov28 added addToDynamicFields.setAttribute('class','borderBlink') to border in editMoreFields function and addNoteBtn.setAttribute('class','borderBlink'); in saveBtn.onclick for createNewDB renameBtn.setAttribute('class','borderBlink'); in preferences displayDataBtn.setAttribute('class','borderBlink'); in function renameTitle Nov28 borderBlink css is in the html file  Nov 27 fine tuned flow of createNewDB Nov24 fixed create newDB bug! Nov 22 edit notes displayed n real time Nov17 added tableScreenOptions to editTableTrigger to not mess up table display Nov14 from spDougieBaseVer36.js landscape table search and preview edid Date:Nov9 save preferences from Date:Nov4 added Easter egg and save settings preferencesDougieBaseVer36.js from fixEditDougieBaseVer35.js from 
 //changed addEventListener to copy instead of dblclick Oct16 made default double click Oct31 2021  clearBkgrdDougieBaseVer34.js clear background and fixed crashes that occur if user makes illogical moves Oct12 2021 use to update workingCopy and Safarii etc
 //Date:Oct5 2021 Removed Double tap to avoid magnification in Manage files view full screen search select filenames. iOS15 safari has no way to disable double tap for magnification. More cosmetics with dataBaseName titles
 //removed alert in view full note ?hangs up sometimes? Cosmetic fixes Oct 3 2021 titleBanner in About db
@@ -135,6 +135,9 @@
 
 //All theories above dn't work. If lost, force onupgradeneeded by changing the db name to something else. I have changed notes_db to notes_dbx. use search and replace
 //alert('deleteDB');
+
+//var flashing;
+//var flashYellow = true;
 let testing = false; 
 let os = 2; 
 let noteNumber;
@@ -206,7 +209,8 @@ const cvValues = document.querySelector('#cvValues');//ul for settings screen
 const record = document.querySelector('section.note-display');
 const editWindow = document.querySelector('#editWin');
 //reference the xtraFied window for editing
-
+const displayDataBtn = document.querySelector('#displayData');//made global because used in createNewDB
+const addFieldBtn = document.querySelector('#newField');//made global because used in createNewDB
 //+reference the deleteWindow here
 const deleteWindow = document.querySelector('#deleteWin');
 //reference the search window
@@ -243,6 +247,7 @@ const newDBGuideP = document.createElement('p');//for guidance info during creat
 newDBGuideP.setAttribute('class','attentionBtn');
 	
 const xtraFieldBtn = document.createElement('button');//make this a global variable? See editItem
+const NotesEditBtn = document.createElement('button');//made global because referenced in multiple functions needs to be here so EDIT btn is attention mode in createNewDB Nov27 2021
 	
 const tableScreenBtn = document.querySelector('#tableScreenBtn');//HTML button in menu to go to tableScreen window
 const tableScreen = document.querySelector('#tableScrn');//reference the create a table window
@@ -708,6 +713,12 @@ promise.then(databases => {
 	  console.log('Database # ['+ dbNumber +'] is ' + databases[i].name);
 databaseNameLi[i] = document.createElement('li');
 	 databaseNameLi[i].textContent = databases[i].name;
+	 
+	 //code to blink border if newDBGuidance = true Nov29
+	 console.log('At getFilenamrpes - newDBGuidance = ' + newDBGuidance);
+	 if (newDBGuidance) {
+		 databaseNameLi[i].setAttribute('class','blinkBorder');
+	 }//end if newDBGuidance
 	 
 //changed dblclick to just click in addEventListener to avoid magnification Date: Oct5 2021	
 
@@ -1764,6 +1775,9 @@ form.onsubmit = addData;//from addNote window This is theCreateNewNote button in
 saveBtn.onclick = function () {
 	if(newDBflag) {
 		addNoteBtn.disabled = false;//for create new db, add note btn was disabled in onupgradeneeded
+		//addNoteBtn.setAttribute('class','attentionBtn');
+		
+		addNoteBtn.setAttribute('class','borderBlink');
 		saveBtn.setAttribute('class','normalBtn');
 		newDBflag = false;
 		}//end if newDBflag
@@ -2144,7 +2158,7 @@ if (viewDateWritten) {dateP.textContent = cursor.value.created;}	//end if viewDa
 	  //this occurs everytime display data is run. the id comes from the note creation createIndex 'id' when the write to the object store is creared. setting the attribute in displayData gets the id from cursor.value.id. So putting it as an attribute saves having to run a cursor everytime you want to edit or delete a specific note.
 
       // Create a button and place it inside each listItem
-	  //here you could add an edit button, and editBTN.onclick go to editItem function..(Doug D.)
+	  //here you could add an edit button, and NotesEditBTN.onclick go to editItem function..(Doug D.)
       const deleteBtn = document.createElement('button');
       listItem.appendChild(deleteBtn);
       deleteBtn.textContent = 'Delete';
@@ -2154,19 +2168,39 @@ if (viewDateWritten) {dateP.textContent = cursor.value.created;}	//end if viewDa
       deleteBtn.onclick = deleteItem;
 	  
 	  //set up Edit button
-	  const editBtn = document.createElement('button');
-      listItem.appendChild(editBtn);
-      editBtn.textContent = 'Edit';
+	 const NotesEditBtn = document.createElement('button');
+	  //make this a global variable because it is referenced in addField function ..WAIT,! This needs to be created for every note via cursor iteration so it needs to be here!!
+      listItem.appendChild(NotesEditBtn);
+      NotesEditBtn.textContent = 'Edit';
 //was let noteNumber..now declared up top because variable not found error in if !listItem & setup===0
      noteNumber = listItem.getAttribute('data-note-id'); // Set an event handler so that when the button is clicked, the deleteItem()
       // function is run
+	//NotesEditBtn.setAttribute('class','attentionBtn');//REMOVE  
   if(newDBGuidance) {
-	  editBtn.setAttribute('class','attentionBtn');
-  }//end if newDBGuidance
+	  NotesEditBtn.setAttribute('class','attentionBtn');
+	  //code to flash attentionBtn
+	  
+ // flashing = setInterval(flash, 1000);
 
-	  editBtn.onclick = editItem;
+// function flash () {
+// 	var flashYellow = true;
+//   if(flashYellow) {
+// 	  NotesEditBtn.setAttribute('class','yellowOnly');
+// 	  flashYellow = false;
+//   } else {
+// 	  NotesEditBtn.setAttribute('class','attentionBtn');
+//   }//end if flashYellow
+  
+// }//end function flash
+	  
+	  
+	    //code to flash attentionBtn
+  }//end if newDBGuidance
+  
+      NotesEditBtn.onclick = editItem;
 	  //set up Full Note View button
 	  
+	  //clearTimeout(flashing);
 	  
 	  const fullViewBtn = document.createElement('button');
       listItem.appendChild(fullViewBtn);
@@ -2304,7 +2338,7 @@ console.log("(In wanting to restore to status quo) (make pref btn green): newDBG
 if (newDBGuidance === undefined && !newDBflag && xtraField === 0 && counter === 0) {
 addNoteBtn.setAttribute('class','normalBtn');
   addNoteBtn.disabled = true;
-  settingsBtn.setAttribute('class', 'attentionBtn');//preferences
+  settingsBtn.setAttribute('class', 'borderBlinkGrn');//preferences was attentionBtn
   prefBtnGreen = true;
 }//end if (newDBGuidance === undefined && !newDBflag && xtraField === 0) {
 	//make prefbtn green so user is directed to prefs after creating first record of db
@@ -2800,10 +2834,14 @@ doneSettingsButton = document.querySelector('#okSettingsViewed');
 //you should combine the clear and the write into a single transaction
 
 function editItem(e) {
-	if (newDBGuidance) {
-		editBtn.setAttribute('class','tdEdit');
+		if (newDBGuidance) {
+		//clearInterval(flashing);	
+		NotesEditBtn.setAttribute('class','tdEdit');//this does not seem to work? in. ReateNewDB? Not sure why?
+		//turn off blinking border of displayDataBtn
+		displayDataBtn.setAttribute('class','borderBlink');
 	}//end if newDBGuidance reset edit btn after create new db css button, .tdEdit
 	console.log('In editItem. xtraFieldBtnExists (not yet) = ' + xtraFieldBtnExists);
+		NotesEditBtn.setAttribute('class','tdEdit');
 	//make edit window appear
 	editWindow.setAttribute('class','showing');
 	//trying to fix field header display going awry if edit notes before table initiated July 26 2021
@@ -2872,6 +2910,12 @@ if (xtraField === 1) {
       xtraFieldBtn.textContent = 'Edit field: ' + newFieldName;
 //fixing bug
 	xtraFieldBtnExists = true;
+	
+	//flash xtraFieldBtn if createNewDB
+	if (newDBGuidance) {
+		xtraFieldBtn.setAttribute('class','borderBlink');
+	}//end if newDBGuidance
+	
 	console.log('In editItem. Start, if xtraField=1.. xtraFieldBtnExists (true) = ' + xtraFieldBtnExists);
       
       xtraFieldBtn.onclick = editFieldWindow;
@@ -2917,6 +2961,8 @@ editNewFieldInput.value = data.xtraField;
 
 commitButton = document.querySelector('#commit');
 
+
+
 clearEditNewFieldBtn = document.querySelector('#clearEditNewField');
 
 cancelCommitBtn = document.querySelector('#cancelCommit');
@@ -2931,6 +2977,14 @@ cancelCommitBtn = document.querySelector('#cancelCommit');
  //REMOVE ABOVE IF MESSED UP NOV14
  
   commitButton.onclick = function () {
+	  
+	  if (newDBGuidance) {
+		//clearInterval(flashing);	
+		NotesEditBtn.setAttribute('class','tdEdit');//this does not seem to work? in. ReateNewDB? Not sure why?
+		saveBtn.setAttribute('class','borderBlink');
+		enterButton.setAttribute('class','borderBlink');
+	}//end if newDBGuidance reset edit btn after create new db css button, .tdEdit
+	
 	  console.log('commitButton pressed. editNewFieldInput.value = ' + editNewFieldInput.value);
 	  
 	 data.xtraField = editNewFieldInput.value;
@@ -2945,6 +2999,11 @@ if (xtraFieldBtnExists) {
 console.log('In commitBtn.onclick. Just past  If xtraFieldBtnExists. Removed xtraFieldBtn. xtraFieldBtnExists = ' + xtraFieldBtnExists);
 //data.xtraField = Tsunami2 TSU-1100: This is the SECOND EDIT! Did it work?now back in testEdit version. This is the first edit!This edit works so I did something wrong in fixing accumulating xtraFieldButton! edit field decoder!
 enterButton.setAttribute('class','attentionBtn');
+//flash border of save btn if createNewDB
+if (newDBGuidance) {
+	enterButton.setAttribute('class','borderBlink');
+}//end flash border save btn
+
 editNewFieldWindow.setAttribute('class','hidden');
   };//end commitBtn.onclick
  //LEFT OFF HERE JULY 25 2020 
@@ -3158,12 +3217,13 @@ addNoteBtn.setAttribute('class','attentionBtn');
 	const prefLandscapeP = document.querySelector('#prefLandscape');
 	const clearPrefWindow = document.querySelector('#clearPrefWindow');
 	const changeColoursBtn = document.querySelector('#background');
-	const addFieldBtn = document.querySelector('#newField');
+	//const addFieldBtn = document.querySelector('#newField');//moved to global
 	const addFieldWin = document.querySelector('#newFieldWin');
 	const changeColoursWin = document.querySelector('#changeColoursWin');
 	const chooseColoursWin = document.querySelector('#chooseColoursWin');
 	
-	const displayDataBtn = document.querySelector('#displayData')
+	//const displayDataBtn = document.querySelector('#displayData');
+	//const displayDataBtn = document.querySelector('#displayData'); made global because used in createNewDB to stop border blink in reset sisplay btn after EDIT
 	const showExtraFieldBtn = document.querySelector('#resetNewField');
 	const scrollBtns = document.querySelector('#scrollBtns');
 	const centerTitleBtn = document.querySelector('#centerTitle');
@@ -3585,6 +3645,9 @@ if (showExtraField ===1) {
 
 
 addFieldBtn.setAttribute('class','attentionBtn');
+if(newDBGuidance) {//was if(newDBflag..changed to if(newDBGuidance))
+	addFieldBtn.setAttribute('class','borderBlink');
+}//end if newDBflag
 	if(saveBtn.textContent === 'SAVED') {
 		saveBtn.textContent ='SAVE';
 	}//end if saveBtn.textContent
@@ -3639,7 +3702,9 @@ addFieldBtn.setAttribute('class','attentionBtn');
 
 	prefWindow.setAttribute('class','showing');
 	if(newDBflag) {
-		renameBtn.setAttribute('class','attentionBtn');//if creating newDB do this first
+		renameBtn.setAttribute('class','borderBlink');//if creating newDB do this first
+		//renameBtn.setAttribute('class','attentionBtn');//if creating newDB do this first
+		
 		addFieldBtn.setAttribute('class','normalBtn');
 		addFieldBtn.disabled = true;
 		//for guidance creating newDB
@@ -3658,6 +3723,7 @@ addFieldBtn.setAttribute('class','attentionBtn');
 	//At preferences again..for Add Relabel notes second data field:
 	//At preferences, newDBflag = false newDBGuidance = undefined xtraField = 0 dbName = Donald Duck line 3285
 	//at this stage of create newDb xtraField will = 0
+	addFieldBtn.setAttribute('class','borderBlink');
 		newDBGuideP.textContent = "When creating a new database, now tap 'ADD/RELABEL FIELD' button to initialize the Notes second data field.";
 		prefWindow.appendChild(newDBGuideP);
 		newDBGuidance = true;
@@ -3748,12 +3814,15 @@ addFieldBtn.setAttribute('class','attentionBtn');
 	if (xtraField === 0) {
 		
 		showExtraFieldBtn.disabled = true;
+		//For createNewDB
+//	addFieldBtn.setAttribute('class','borderBlink');
 	addFieldBtn.setAttribute('class','attentionBtn');
 	}//end if xtraField =0
 	else if (xtraField === 1) {
 		//why did I disable showExtraField Btn here? Is this a mistake? Date: Aug 6 2020 CHANGED TO false on May24 2021!,!
 	showExtraFieldBtn.disabled = false;	showExtraFieldBtn.setAttribute('class','colorBtn');
 	addFieldBtn.setAttribute('class','colorBtn');
+	displayDataBtn.setAttribute('class','tdEdit');
 	addFieldBtn.textContent = 'Relabel Field';
 		
 }//end if xtraField =1
@@ -3777,7 +3846,7 @@ addFieldBtn.setAttribute('class','attentionBtn');
 	}//end function handleDate */
 	
 	displayDataBtn.onclick = function () {
-		prefWindow.setAttribute('class','hidden');
+		prefWindow.setAttribute('class','hidden');	
 		displayData();
 	};//end displayDataBtn.onclick
 	
@@ -3811,13 +3880,33 @@ addFieldBtn.setAttribute('class','attentionBtn');
 	function renameTitle () {
 		if(newDBflag) {
 			renameBtn.setAttribute('class','normalBtn');
-		} //end if newDBflag
+		//} //end if newDBflag
+		displayDataBtn.setAttribute('class','borderBlink');
 		saveBtn.setAttribute('class', 'colorBtn');
-	settingsBtn.setAttribute('class', 'normalBtn');	addNoteBtn.setAttribute('class','attentionBtn');
+	settingsBtn.setAttribute('class', 'normalBtn');	addNoteBtn.setAttribute('class','normalBtn');
+	} //end if newDBflag
 	if(!newDBflag){
 		addNoteBtn.disabled = false;//for create new db, add note btn was disabled in onupgradeneeded
+		addNoteBtn.setAttribute('class','attentionBtn');
 	}//end if !newDBflag..to make sure save is done before add new note in create newDB May23
-	displayDataBtn.setAttribute('class','colorBtn');	prefWindow.setAttribute('class','hidden');
+	
+	//Nov27 2021 retain old code just in case
+	// if(newDBflag) {
+	// 		renameBtn.setAttribute('class','normalBtn');
+	// 	} //end if newDBflag
+	// 	saveBtn.setAttribute('class', 'colorBtn');
+	// settingsBtn.setAttribute('class', 'normalBtn');	addNoteBtn.setAttribute('class','attentionBtn');
+	// if(!newDBflag){
+	// 	addNoteBtn.disabled = false;//for create new db, add note btn was disabled in onupgradeneeded
+	// }//end if !newDBflag..to make sure save is done before add new note in create newDB May23
+	// //retain old code just in case
+	
+	displayDataBtn.setAttribute('class','borderBlink');
+	
+	// displayDataBtn.setAttribute('class','colorBtn');
+	
+
+	prefWindow.setAttribute('class','hidden');
 	 reNameWin.setAttribute('class','showing');
 	 //dbTableName.value set to 'Notes' at top of code
 	dbTitle.textContent = dbTableName.value;
@@ -4002,6 +4091,7 @@ changeColoursWin.removeChild(restoreSavedBtn);
 	  doneBtn.onclick = function () {
 		  saveBtn.setAttribute('class', 'colorBtn');
 		  doneBtn.setAttribute('class','tdEdit');
+		  
 		//code for done here
 		changeColoursWin.removeChild(doneBtn);
 	changeColoursWin.removeChild(defaultBtn);
@@ -4130,7 +4220,7 @@ xtraFieldPara.style.backgroundColor = savedCurrentxtraFieldColour;
 	}//end if xtraField === 1
 changeColourListItem.style.color = savedCurrentfontColour;
 //collect backgrd.styles
-	 restoreSavedBtn.setAttribute('class','tdEdit');
+	restoreSavedBtn.setAttribute('class','tdEdit');
 	 alert('The SAVED background colours have been RESTORED! Tap the DONE button if you want to revert back to these saved colours.');
 	 
 	doneBtn.setAttribute('class','colorBtn');
@@ -4162,6 +4252,10 @@ let cancelAddFieldBtn = document.createElement('button');
 		const enterNewFieldName = document.querySelector('#newFieldName');
 		const confirmNewFieldName = document.querySelector('#confirm');
 		displayDataBtn.setAttribute('class','colorBtn');
+		
+		if(newDBGuidance) {
+			displayDataBtn.setAttribute('class','borderBlink');
+		}//end if(newDBGuidance)
 	//color save btn yellow so user knows to save xtraField variable now = 1	prefWindow.setAttribute('class','hidden');
 	saveBtn.setAttribute('class', 'colorBtn');
 	console.log("In addField function: newDBGuidance = " + newDBGuidance + "newDBflag = " + newDBflag);
@@ -4214,6 +4308,10 @@ addNoteBtn.setAttribute('class','attentionBtn');
       doneRelabelBtn.textContent = 'DONE';
 	   // if (highlightDoneBtn) {
 		 doneRelabelBtn.setAttribute('class','attentionBtn');
+		 
+		 //resetdisplayDataBtn back to normal Nov28
+		 //nope not here!
+		//displayDataBtn.setAttribute('class','colorBtn'); 
 	//	 highlightDoneBtn = false;
 	// }//end if highlightDoneBtn
       addFieldWin.appendChild(doneRelabelBtn);
@@ -4240,12 +4338,17 @@ addNoteBtn.setAttribute('class','attentionBtn');
 		//alert("Remember to  create the table for the new database BEFORE ADDING ANY NEW RECORDS!");
 		
 		//disable ADD NOTE and activate TABLE
-	addNoteBtn.setAttribute('class','attentionBtn');
+	addNoteBtn.setAttribute('class','normalBtn');
   addNoteBtn.disabled = true;
   settingsBtn.setAttribute('class', 'normalBtn');//preferences	
   tableScreenBtn.setAttribute('class','attentionBtn');
-  
-		
+  if(newDBGuidance) {
+	  alert('After tapping Reset Display in Preferences, tap EDIT in the NOTES window to enter data in the second data field of Notes, then AFTER doing this, tap SAVE in the Main menu!');
+  NotesEditBtn.setAttribute('class','tdEdit');
+}//end if(newDBGuidance)
+
+  //ReferenceError: Can't find variable: NotesEditBtn so make global
+	//ReferenceError: Can't find variable: NotesEditBtn	
 		
 	}//end if newDBGuidance && !newDBflag	 
 	 addFieldWin.setAttribute('class','hidden');//change back to hidden!!!
@@ -4416,10 +4519,12 @@ console.log('at addNoteBtn.onclick');
 //createNewDBGuide
 //for guidance creating newDB
 if(newDBGuidance) {
-newDBGuideP.textContent = "After entering first record's title and text for NOTES' first data segment, tap 'Create new note button'. When the list of database names appears, Tap the new database name to reload it. Then return to Preferences and tap the 'Add/Relabel Field' button";
+newDBGuideP.textContent = "After entering first record's title and text for NOTES' first data segment, tap 'Create new note button'. When the list of database names appears, tap the new database name to reload it. Then return to Preferences and tap the 'Add/Relabel Field' button";
 addNoteWindow.appendChild(newDBGuideP);
+settingsBtn.setAttribute('class','borderBlinkGrn');//was attentionBtn
+addFieldBtn.setAttribute('class','borderBlink');
 //At addNoteBtn.onclick: newDBGuidance = true newDBflag = false xtraField = 0
-
+addNoteBtn.setAttribute('class','normalBtn');
 }//end if newDBGuidance
 
 //trying to fix secondary field input from showing in sitation where repeating a CreateNewDB
@@ -4487,6 +4592,7 @@ addNoteWindow.appendChild(inputXtraFieldData);
 newDBGuideP.textContent = "";
 addNoteWindow.removeChild(newDBGuideP);
 newDBGuidance = false;
+settingsBtn.setAttribute('class','normalBtn');
 }//end if newDBGuidance flag
 //end for guidance creating newDB
 	addNoteWindow.setAttribute('class','hidden');
@@ -4595,6 +4701,7 @@ function saveVariables () {
 	console.log('In saveVariables .. ')
 	saveBtn.setAttribute('class', 'normalBtn');
 	saveBtn.textContent = 'SAVED';
+	
 	
 	alert('Saving Variables. Tap CLOSE to continue.');
 	//newItem might not have to be here??
@@ -4745,6 +4852,7 @@ data = {
 	
 	//line below was ..  data.variable2t = setup;
 	//to save setup variable as 1 you have to make variable2Array[0] = 1 prior to assigning new values to data.variable2
+
 	// //allow for setup =3 this code changed as below to make createNewDB work Nov23
 // if(setup === 3 && setup!==0) {
 // 	variable2Array[0] = 3;//setup variable
@@ -4760,8 +4868,8 @@ data = {
 // 	setup = 1; //moved to after data object assigned values if setup = 0 !!!!
 // 	}//end if setup =3
 	
-
-//allow for setup =3
+	
+	//allow for setup =3
 if(setup === 3) {
 	variable2Array[0] = 3;//setup variable
 } else if (setup === 1 || setup === 0) {
@@ -4769,13 +4877,16 @@ if(setup === 3) {
 }//end if setup ===3
 	
 //SETUP HAS TO = 1 or 3 for pickOldNew function to work if creating a new db Nov23	setup takes its value from variable2Array[0] in pickOldNew function
-	
+
 	data.variable2 = variable2Array;
 	data.dataV = dataVobj;
 	if(setup===3) {setup=3;
 	}else {
 	setup = 1; //moved to after data object assigned values if setup = 0 !!!!
-	}//end if setup =3
+}//end if setup =3
+
+
+
 	
 	console.log('dataBaseName_os variables edited! About to put (data) in next line of code. variables edited! Data.body (should be newFieldName) now = '+ data.body+ ' tableArray (data.dataV.tableArray) = ' + data.dataV.tableArray + ' variable3 (data.dataV.variable3) = ' + data.dataV.variable3);
 	//variables edited! Data.body now = undefined
@@ -5357,7 +5468,7 @@ function getDataBaseName (key,dataBaseName,objectStoreName) {
   //code from setup =0
   redefineTableArray();
  // ReferenceError: Can't find variable: dataVobj so do I have to redefine dataV in upgrade needed for the new database?
- // console.log('In upgradeneeded;will now go back to getDataBaseName() after creating the objectStore. dataVobj.tableArray = ' +dataVobj.tableArray);
+  //console.log('In upgradeneeded;will now go back to getDataBaseName() after creating the objectStore. dataVobj.tableArray = ' +dataVobj.tableArray);
   //need code here to move to TOP of view window so directions are visible
   if(!fromRestore) {
  dbTableName.value = 'Creating new Database. In PREFERENCES, RENAME database (again) and tap SAVE to initialize the database. Then ADD FIRST NOTE. When the file names list reappears Tap on name of newly created database to start the new database.';
@@ -5376,7 +5487,7 @@ document.getElementById("dbTableName").innerHTML = dbTableName.value;
   
   addNoteBtn.setAttribute('class','normalBtn');
   addNoteBtn.disabled = true;
-  settingsBtn.setAttribute('class', 'attentionBtn');//preferences
+  settingsBtn.setAttribute('class', 'borderBlinkGrn');//preferences was attentionBtn
   
    //code from setup =0
   //HAVE TO ADD : dataBaseName,objectStoreName
@@ -5412,10 +5523,10 @@ function pickOldNew (data) {
 	variable2Array = data.variable2;
 	setup = variable2Array[0];
 //IF CREATING NEWDB SETUP SHOULD = 1 at this point but it does not…SETUP = 0!!!	Nov23
-
+	
 	console.log('Unpacking variable2Array .. variable2Array[0] = ' + variable2Array[0] + ' setup = '+setup);
 	//setup should = 1 but it = 0 here when creating new db
-
+	
 	if (setup === undefined|| null) {setup = 0;}//end if setup = undefined
 
 if (setup === 1|| setup === 3) {
@@ -5590,7 +5701,7 @@ refreshTableName.textContent = dbTableName.value;
  if(DTBtnTappedOnce ===0){
  copyOfTableArray = tableArray.slice(0,tableTitle.length);
  copyOfTableTitle = tableTitle.slice();	displayTableBtn.setAttribute('class','attentionBtn');
-}else {displayTableBtn.setAttribute('class','tdEdit');
+}else {displayTableBtn.setAttribute('class','normalBtn');
  }//end if DTBtnTappedOnce = 0
  
  if (tableExists & tableTitle.length>originalNumberRecords || editNote) {
@@ -5949,7 +6060,7 @@ newOrEdit.setAttribute('class', 'simulator');
 //newBtn goes to makeTable function with edit=0
 const newBtn = document.createElement('button');
 newBtn.setAttribute('class', 'attentionBtn');
-const editBtn = document.createElement('button');//are there 2 references for the edit Btn??Jan26
+const editBtn = document.createElement('button');//are there 2 references for the edit Btn??Jan26 Date: Nov26 2021 Yes therebwere two editBtns..seemed to work but future references to editBtn may be confused? Should the declaration be back up at table screen options because editBtn along with new btn? Are referenced back there? ? Still seems to work though
 newBtn.textContent = 'NEW';
 
 	
@@ -6008,7 +6119,9 @@ newBtn.onclick = function() {
   addNoteBtn.disabled = false;
   settingsBtn.setAttribute('class', 'tdEdit');//preferences	
   tableScreenBtn.setAttribute('class','tdEdit');
-}//end if newDBGuidance
+  NotesEditBtn.setAttribute('class','tdEdit');
+  
+  }//end if newDBGuidance
 	//end code for guiding create newDB
 	
 	
@@ -6211,7 +6324,7 @@ const nextFieldHeadingInput = document.createElement('input');//the headings for
 const submitButton = document.createElement('button');//small green filled red dot
 createTable.appendChild(nextFieldHeadingInput);
 createTable.appendChild(submitButton);
-submitButton.setAttribute('class','attentionBtn ');
+submitButton.setAttribute('class','borderBlinkGrn');//was attentionBtn
 if(edit === 1) {
 		
 		nextFieldHeadingInput.value = fieldNamesArray[k] ;
@@ -7830,9 +7943,22 @@ function editMoreFields () {
 	 addToDynamicFields.appendChild(moreFieldsInput);
 	 addToDynamicFields.appendChild(fieldsBtn);
 	 createTableWindow.appendChild(addToDynamicFields);
+	 addToDynamicFields.setAttribute('class','borderBlink')
+	//  //flash border add to fields
+	// var flashingOn = setInterval(flashOn,1000);
+	// var flashingOff = setInterval(flashOff,2000);	
+	// function flashOn () {
+	// 	addToDynamicFields.setAttribute('class','flashBorder')
+	// }//end function flashOn
+	
+	// function flashOff () {
+	// 	addToDynamicFields.setAttribute('class','hideFlashBorder')
+	// }//end function flashOff
+	//   //flash border add to fields
 	 
 	 fieldsBtn.onclick =  function() {
-		 
+		 // clearTimeout(flashingOn);
+		 // clearTimeout(flashingOff);
 		 // if(moreFieldsInput.value = "") {
 			//  moreFieldsInput.value = "0";
 			//  alert("No new dynamic fields will be added. (Same as entering 0");
@@ -8809,7 +8935,7 @@ if (loadSampleDb || loadTutorialDb) {
 	
 	//added id to html p 1
 	restoreInfo1P.textContent = "First! Tap the RED text-area input element ONCE to initialize. The Submit button will turn green. Tap the SUBMIT button, tap RESTORE DATABASE button,  the CONFIRMATION window appears. ";
-	restoreInfo2P.textContent ="Summary to create the database SAMPLE: Tap the Text-Area input window. Tap the SUBMIT button, tap RESTORE DATABASE button, tap FINISHED, then tap the name of the SAMPLE database in the database list of file names in the Change DB window."
+	restoreInfo2P.textContent ="Summary to create the database SAMPLE: Tap the Text-Area input window. Tap the SUBMIT button, tap RESTORE DATABASE button, tap FINISHED, then double-tap the name of the SAMPLE database in the database list of file names in the Change DB window."
 	getJsonBtn.textContent = "SUBMIT Sample DB data";
 } else {
 	restoreDBWinTitle.textContent = "Restore a database from its Backup via the Clipboard";
@@ -9295,6 +9421,21 @@ function filterColon (linkInfo) {
 	return linkInfo;
 	
 }//end function filterColon
+
+//beginning function flash
+// function flash () {
+	
+//   if(flashYellow) {
+// 	  NotesEditBtn.setAttribute('class','colorBtn');
+// 	  flashYellow = false;
+//   } else {
+// 	  NotesEditBtn.setAttribute('class','attentionBtn');
+//   }//end if flashYellow
+  
+// }//end function flash
+// //ENDfunction flash
+
+
 //end of trim after colon
 
 // //function clickedSaveTableBtns

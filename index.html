@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>indexDougieBaseVer36.html</title>
+    <title>DougieBaseVer36.html</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="DougieBaseVer36.css" rel="stylesheet">
 	<link rel="manifest" href="trainsDBTableNotes.webmanifest">
@@ -60,6 +60,71 @@ color: black;
 	background-image: url('fudd4.jpeg');
 }
 
+
+
+@-webkit-keyframes borderBlink {    
+    from, to {    
+        border-color: transparent    
+    }    
+    50% {    
+        border-color: red   
+    }    
+}    
+@keyframes borderBlink {    
+    from, to {    
+        border-color: transparent    
+    }    
+    50% {    
+        border-color: red  
+    }    
+}
+
+.borderBlink{    
+  
+	border:solid red 3px;
+	border-radius: 5px;
+	padding:5px;
+    border-color: transparent/*if you wish no border to show initially */  
+	
+	  -webkit-animation: borderBlink 1s step-end infinite;    
+	  animation: borderBlink 1s step-end infinite;   
+}
+
+/*borderBlink green back-ground*/
+@-webkit-keyframes borderBlinkGrn {    
+    from, to {    
+        border-color: transparent    
+    }    
+    50% {    
+        border-color: red   
+    }    
+}    
+@keyframes borderBlinkGrn {    
+    from, to {    
+        border-color: transparent    
+    }    
+    50% {    
+        border-color: red  
+    }    
+}
+
+.borderBlinkGrn {    
+  
+	border:solid red 3px;
+	background-color: lightgreen;
+	border-radius: 5px;
+	padding:5px;
+    border-color: transparent/*if you wish no border to show initially */  
+	
+	  -webkit-animation: borderBlink 1s step-end infinite;    
+	  animation: borderBlink 1s step-end infinite;   
+  }
+ /*  .borderBlink:hover {    
+        -webkit-animation: borderBlink 1s step-end infinite;    
+        animation: borderBlink 1s step-end infinite;    
+    }
+	*/
+
 </style>
 	
 	
@@ -83,7 +148,7 @@ color: black;
 	
 	  
     <header>
-      <h1>DougieBase Version 36sw7</h1>
+      <h1>DougieBase Version 36sw8</h1>
     </header>
 	<p></p>
 <div id = "scrolling">
@@ -635,15 +700,15 @@ color: black;
 		   <p></p>
 		   <div id="clearAboutDBWindow" class="simulator">TAP HERE TO RETURN TO NOTES</div>
 		   <p class="ppref">The About Database screen allows access to a HELP File and Documentation, as well as some current Settings. </p>
-		   <div class = "edWinScroll">
-			   <p class = "highlight">Revisions and version numbers.  Scroll up     ⬆️ </p>
-		    <ul>
+		    <div class = "edWinScroll">
+				<p class = "highlight">Revisions and version numbers.  Scroll up     ⬆️ </p>
+		   <ul>
 			   <li>Obtain an estimate of how much memory is available in the database storage if your Browser accomodates this feature.</li>
-			   <li>This is Version 36sw7, service worker 7</li> 
+			   <li>This is Version 36, service worker 5</li> 
 			   <li>Search references the first title field, and all other fields since version 33.1.</li>
-			   <li>Last revision: Nov 24 2021</li>
+			   <li>Last revision: Nov 22 2021</li>
 		   </ul>
-	   </div> 
+	   </div>
 		   <p></p>
 		   <button id="getMemory">Estimate Memory</button>
 		<button id="documentation">Documentation.Manual</button>
@@ -705,7 +770,7 @@ color: black;
 	 
 	 <section id="createTableWin" class="hidden"><!-- now showing make this hidden when adding to notes code -->
 	<h2 id="databaseTableName"></h2>
-	<p id="newOrEdit">Tap NEW to create a new Table or tap EDIT to alter an existing one.<br></p>
+	<p id="newOrEdit">Tap NEW to create a new Table or tap EDIT to alter an existing one.⬇️<br></p>
 	<p>Currently the table contains 4 fixed fields: Title of Record, Date Created, Primary Data, Secondary Data. Enter the number of additional fields required. After entering the titles for the first three fixed fields, press the SUBMIT button, and then enter the titles for the dynamic fields below.</p>
 	<label for="additionalFields">Current # of dynamic fields: </label>
 	<input id="additionalFields" type="number" name="additionalFields" class ="edBan"/><br>
