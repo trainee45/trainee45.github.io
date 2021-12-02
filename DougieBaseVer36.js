@@ -1,4 +1,4 @@
-//DougieBaseVer36.js from createNewDBDougieBaseVer36 Nov30 Nov28 added addToDynamicFields.setAttribute('class','borderBlink') to border in editMoreFields function and addNoteBtn.setAttribute('class','borderBlink'); in saveBtn.onclick for createNewDB renameBtn.setAttribute('class','borderBlink'); in preferences displayDataBtn.setAttribute('class','borderBlink'); in function renameTitle Nov28 borderBlink css is in the html file  Nov 27 fine tuned flow of createNewDB Nov24 fixed create newDB bug! Nov 22 edit notes displayed n real time Nov17 added tableScreenOptions to editTableTrigger to not mess up table display Nov14 from spDougieBaseVer36.js landscape table search and preview edid Date:Nov9 save preferences from Date:Nov4 added Easter egg and save settings preferencesDougieBaseVer36.js from fixEditDougieBaseVer35.js from 
+//DougieBaseVer36.js Dec1 from flashFileNameDougieBaseVer36.js from createNewDBDougieBaseVer36 Nov30 Nov28 added addToDynamicFields.setAttribute('class','borderBlink') to border in editMoreFields function and addNoteBtn.setAttribute('class','borderBlink'); in saveBtn.onclick for createNewDB renameBtn.setAttribute('class','borderBlink'); in preferences displayDataBtn.setAttribute('class','borderBlink'); in function renameTitle Nov28 borderBlink css is in the html file  Nov 27 fine tuned flow of createNewDB Nov24 fixed create newDB bug! Nov 22 edit notes displayed n real time Nov17 added tableScreenOptions to editTableTrigger to not mess up table display Nov14 from spDougieBaseVer36.js landscape table search and preview edid Date:Nov9 save preferences from Date:Nov4 added Easter egg and save settings preferencesDougieBaseVer36.js from fixEditDougieBaseVer35.js from 
 //changed addEventListener to copy instead of dblclick Oct16 made default double click Oct31 2021  clearBkgrdDougieBaseVer34.js clear background and fixed crashes that occur if user makes illogical moves Oct12 2021 use to update workingCopy and Safarii etc
 //Date:Oct5 2021 Removed Double tap to avoid magnification in Manage files view full screen search select filenames. iOS15 safari has no way to disable double tap for magnification. More cosmetics with dataBaseName titles
 //removed alert in view full note ?hangs up sometimes? Cosmetic fixes Oct 3 2021 titleBanner in About db
@@ -1828,6 +1828,7 @@ if(newDBGuidance) {
 	addNoteWindow.removeChild(newDBGuideP);
 newDBGuideP.textContent = "For creating a new database, now tap ADD RELABEL FIELD', then EDIT your first record to add data to the second NOTES data field of this record. Return to Preferences and tap 'Show Extra field'";
 prefWindow.appendChild(newDBGuideP);
+settingsBtn.setAttribute('class','borderBlinkGrn');//was attentionBtnREPLACE IF NOT WORKING
 }//end if newDBflag
 //end for guidance creating newDB
 
@@ -2893,7 +2894,7 @@ record.appendChild(editInput); */
 const editNewFieldBanner = document.querySelector('h2.edNewFieldBan');
 const originalNewFieldTextP = document.querySelector('#originalNewFieldTxt')
 const editNewFieldInputP = document.querySelector('p.editNewFieldInstruction');
-previewNewFieldBtn = document.querySelector('#previewNewField');
+const previewNewFieldBtn = document.querySelector('#previewNewField');
  
 
 // Set an event handler so that when the button is clicked, the editXtraField() is run
@@ -2914,6 +2915,8 @@ if (xtraField === 1) {
 	//flash xtraFieldBtn if createNewDB
 	if (newDBGuidance) {
 		xtraFieldBtn.setAttribute('class','borderBlink');
+	} else {
+		xtraFieldBtn.setAttribute('class','tdEdit');
 	}//end if newDBGuidance
 	
 	console.log('In editItem. Start, if xtraField=1.. xtraFieldBtnExists (true) = ' + xtraFieldBtnExists);
@@ -2968,6 +2971,15 @@ clearEditNewFieldBtn = document.querySelector('#clearEditNewField');
 cancelCommitBtn = document.querySelector('#cancelCommit');
  // enterButton.addEventListener('click', makeChanges); Use button.onclick because the eventListener registers all clicks and causes makeChanges to re-iterate twice or more?
  
+ //cancel disabled if if (newDBGuidance) {
+	 
+	 if (newDBGuidance) {
+		 cancelCommitBtn.disabled = true;
+		 cancelCommitBtn.textContent = "Cancel disabled"
+	} else {
+		cancelCommitBtn.disabled = false;
+		cancelCommitBtn.textContent = "Cancel";
+	}//end if (newDBGuidance) {cancel disabled
  
  //Show edits in top window as you go
   //Show edits in top window as you go
@@ -3031,12 +3043,23 @@ clearEditNewFieldBtn.onclick = function () {
 
 //alert('I am at editInput submit');
 //a variables called submitBtn previously
-enterButton = document.querySelector('#submit');
+const enterButton = document.querySelector('#submit');
+
 
 clearBtn = document.querySelector('#clear');
 clearTitleBtn = document.querySelector('#clearTitle');
 cancelBtn = document.querySelector('#cancel');
  // enterButton.addEventListener('click', makeChanges); Use button.onclick because the eventListener registers all clicks and causes makeChanges to re-iterate twice or more?
+ 
+ //cancel disabled if if (newDBGuidance) {
+	 
+	 if (newDBGuidance) {
+		 cancelBtn.disabled = true;
+		 cancelBtn.textContent = "Cancel disabled"
+	} else {
+		cancelBtn.disabled = false;
+		cancelBtn.textContent = "Cancel";
+	}//end if (newDBGuidance) {cancel disabled
  
  previewBtn = document.querySelector('#preview');
  
@@ -3140,6 +3163,10 @@ if (xtraFieldBtnExists) {
 	xtraFieldBtnExists = false;
 	//ReferenceError: Can't find variable: xtraFieldBtn line 1671
 	console.log('In if xtraFieldBtnExists. Cancel Btn.  Removed xtraFieldBtn. xtraFieldBtnExists = ' + xtraFieldBtnExists);
+//flash xtraFieldBtn if createNewDB
+	if (newDBGuidance) {
+		xtraFieldBtn.setAttribute('class','tdEdit');
+	}//end if newDBGuidance	
 }//end if xtraFieldBtn
 //end fix xtraFieldBtn bug
 	//editWindow.removeChild(xtraFieldBtn);//Jan11
@@ -4521,7 +4548,7 @@ console.log('at addNoteBtn.onclick');
 if(newDBGuidance) {
 newDBGuideP.textContent = "After entering first record's title and text for NOTES' first data segment, tap 'Create new note button'. When the list of database names appears, tap the new database name to reload it. Then return to Preferences and tap the 'Add/Relabel Field' button";
 addNoteWindow.appendChild(newDBGuideP);
-settingsBtn.setAttribute('class','borderBlinkGrn');//was attentionBtn
+// settingsBtn.setAttribute('class','borderBlinkGrn');//was attentionBtn
 addFieldBtn.setAttribute('class','borderBlink');
 //At addNoteBtn.onclick: newDBGuidance = true newDBflag = false xtraField = 0
 addNoteBtn.setAttribute('class','normalBtn');
