@@ -1,4 +1,4 @@
-//DougieBaseVer36.js Dec5 from messWith Dec2 DougieBaseVer36.js Dec1 from flashFileNameDougieBaseVer36.js from createNewDBDougieBaseVer36 Nov30 Nov28 added addToDynamicFields.setAttribute('class','borderBlink') to border in editMoreFields function and addNoteBtn.setAttribute('class','borderBlink'); in saveBtn.onclick for createNewDB renameBtn.setAttribute('class','borderBlink'); in preferences displayDataBtn.setAttribute('class','borderBlink'); in function renameTitle Nov28 borderBlink css is in the html file  Nov 27 fine tuned flow of createNewDB Nov24 fixed create newDB bug! Nov 22 edit notes displayed n real time Nov17 added tableScreenOptions to editTableTrigger to not mess up table display Nov14 from spDougieBaseVer36.js landscape table search and preview edid Date:Nov9 save preferences from Date:Nov4 added Easter egg and save settings preferencesDougieBaseVer36.js from fixEditDougieBaseVer35.js from 
+//DougieBaseVer36.js Dec5 sw11 from messWith Dec2 DougieBaseVer36.js Dec1 from flashFileNameDougieBaseVer36.js from createNewDBDougieBaseVer36 Nov30 Nov28 added addToDynamicFields.setAttribute('class','borderBlink') to border in editMoreFields function and addNoteBtn.setAttribute('class','borderBlink'); in saveBtn.onclick for createNewDB renameBtn.setAttribute('class','borderBlink'); in preferences displayDataBtn.setAttribute('class','borderBlink'); in function renameTitle Nov28 borderBlink css is in the html file  Nov 27 fine tuned flow of createNewDB Nov24 fixed create newDB bug! Nov 22 edit notes displayed n real time Nov17 added tableScreenOptions to editTableTrigger to not mess up table display Nov14 from spDougieBaseVer36.js landscape table search and preview edid Date:Nov9 save preferences from Date:Nov4 added Easter egg and save settings preferencesDougieBaseVer36.js from fixEditDougieBaseVer35.js from 
 //changed addEventListener to copy instead of dblclick Oct16 made default double click Oct31 2021  clearBkgrdDougieBaseVer34.js clear background and fixed crashes that occur if user makes illogical moves Oct12 2021 use to update workingCopy and Safarii etc
 //Date:Oct5 2021 Removed Double tap to avoid magnification in Manage files view full screen search select filenames. iOS15 safari has no way to disable double tap for magnification. More cosmetics with dataBaseName titles
 //removed alert in view full note ?hangs up sometimes? Cosmetic fixes Oct 3 2021 titleBanner in About db
@@ -3755,8 +3755,12 @@ if(newDBGuidance) {//was if(newDBflag..changed to if(newDBGuidance))
 //SyntaxError: Unexpected identifier 'addFieldBtn'
 
 		newDBGuideP.textContent = "When creating a new database, now tap 'ADD/RELABEL FIELD' button to initialize the Notes second data field.";
+		newDBGuideP.setAttribute('class','borderBlinkGrn');
 		prefWindow.appendChild(newDBGuideP);
 		newDBGuidance = true;
+		
+		//addFieldBtn.setAttribute('class','borderBlinkGrn');//did not work
+		
 	}//end if newDBGuidance && !newDBflag
 	
 	//put search case sensitive stuff here???
@@ -4284,7 +4288,8 @@ let cancelAddFieldBtn = document.createElement('button');
 		
 		if(newDBGuidance) {
 			displayDataBtn.setAttribute('class','borderBlink');
-		}//end if(newDBGuidance)
+			newDBGuideP.setAttribute('class','attentionBtn');
+			}//end if(newDBGuidance)
 	//color save btn yellow so user knows to save xtraField variable now = 1	prefWindow.setAttribute('class','hidden');
 	saveBtn.setAttribute('class', 'colorBtn');
 	console.log("In addField function: newDBGuidance = " + newDBGuidance + "newDBflag = " + newDBflag);
