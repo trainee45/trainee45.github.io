@@ -1,4 +1,4 @@
-//DougieBaseVer36.js Dec1 from flashFileNameDougieBaseVer36.js from createNewDBDougieBaseVer36 Nov30 Nov28 added addToDynamicFields.setAttribute('class','borderBlink') to border in editMoreFields function and addNoteBtn.setAttribute('class','borderBlink'); in saveBtn.onclick for createNewDB renameBtn.setAttribute('class','borderBlink'); in preferences displayDataBtn.setAttribute('class','borderBlink'); in function renameTitle Nov28 borderBlink css is in the html file  Nov 27 fine tuned flow of createNewDB Nov24 fixed create newDB bug! Nov 22 edit notes displayed n real time Nov17 added tableScreenOptions to editTableTrigger to not mess up table display Nov14 from spDougieBaseVer36.js landscape table search and preview edid Date:Nov9 save preferences from Date:Nov4 added Easter egg and save settings preferencesDougieBaseVer36.js from fixEditDougieBaseVer35.js from 
+//DougieBaseVer36.js Dec5 from messWith Dec2 DougieBaseVer36.js Dec1 from flashFileNameDougieBaseVer36.js from createNewDBDougieBaseVer36 Nov30 Nov28 added addToDynamicFields.setAttribute('class','borderBlink') to border in editMoreFields function and addNoteBtn.setAttribute('class','borderBlink'); in saveBtn.onclick for createNewDB renameBtn.setAttribute('class','borderBlink'); in preferences displayDataBtn.setAttribute('class','borderBlink'); in function renameTitle Nov28 borderBlink css is in the html file  Nov 27 fine tuned flow of createNewDB Nov24 fixed create newDB bug! Nov 22 edit notes displayed n real time Nov17 added tableScreenOptions to editTableTrigger to not mess up table display Nov14 from spDougieBaseVer36.js landscape table search and preview edid Date:Nov9 save preferences from Date:Nov4 added Easter egg and save settings preferencesDougieBaseVer36.js from fixEditDougieBaseVer35.js from 
 //changed addEventListener to copy instead of dblclick Oct16 made default double click Oct31 2021  clearBkgrdDougieBaseVer34.js clear background and fixed crashes that occur if user makes illogical moves Oct12 2021 use to update workingCopy and Safarii etc
 //Date:Oct5 2021 Removed Double tap to avoid magnification in Manage files view full screen search select filenames. iOS15 safari has no way to disable double tap for magnification. More cosmetics with dataBaseName titles
 //removed alert in view full note ?hangs up sometimes? Cosmetic fixes Oct 3 2021 titleBanner in About db
@@ -138,6 +138,7 @@
 
 //var flashing;
 //var flashYellow = true;
+let tableScreenBtnGrn = false;//flag used to let the table btn flash when createNewDB
 let testing = false; 
 let os = 2; 
 let noteNumber;
@@ -3750,12 +3751,13 @@ if(newDBGuidance) {//was if(newDBflag..changed to if(newDBGuidance))
 	//At preferences again..for Add Relabel notes second data field:
 	//At preferences, newDBflag = false newDBGuidance = undefined xtraField = 0 dbName = Donald Duck line 3285
 	//at this stage of create newDb xtraField will = 0
-	addFieldBtn.setAttribute('class','borderBlink');
+//addFieldBtn.textContent = "Now TAP HERE!"	addFieldBtn.setAttribute('class','borderBlink');
+//SyntaxError: Unexpected identifier 'addFieldBtn'
+
 		newDBGuideP.textContent = "When creating a new database, now tap 'ADD/RELABEL FIELD' button to initialize the Notes second data field.";
 		prefWindow.appendChild(newDBGuideP);
 		newDBGuidance = true;
 	}//end if newDBGuidance && !newDBflag
-	
 	
 	//put search case sensitive stuff here???
 	
@@ -4369,6 +4371,7 @@ addNoteBtn.setAttribute('class','attentionBtn');
   addNoteBtn.disabled = true;
   settingsBtn.setAttribute('class', 'normalBtn');//preferences	
   tableScreenBtn.setAttribute('class','attentionBtn');
+  	tableScreenBtnGrn = true;//flag used in saveVariables
   if(newDBGuidance) {
 	  alert('After tapping Reset Display in Preferences, tap EDIT in the NOTES window to enter data in the second data field of Notes, then AFTER doing this, tap SAVE in the Main menu!');
   NotesEditBtn.setAttribute('class','tdEdit');
@@ -4728,7 +4731,10 @@ function saveVariables () {
 	console.log('In saveVariables .. ')
 	saveBtn.setAttribute('class', 'normalBtn');
 	saveBtn.textContent = 'SAVED';
-	
+	if(tableScreenBtnGrn) {
+		tableScreenBtn.setAttribute('class','borderBlink');
+		tableScreenBtnGrn = false;
+	}//end if tableScreenBtnGrn
 	
 	alert('Saving Variables. Tap CLOSE to continue.');
 	//newItem might not have to be here??
@@ -5795,7 +5801,7 @@ if(tableExists & !tableNeedsUpdate) {
 	//remove code below if messes needs to be here so neworedit element can process it before seReen is shown
 	if(!tableExists) {
 	newBtn.disabled = false;
-	newBtn.setAttribute('class', 'attentionBtn');
+	newBtn.setAttribute('class', 'borderBlinkGrn');
 	
 	} else {
 		newBtn.disabled = true;
@@ -6086,7 +6092,7 @@ const newOrEdit = document.querySelector('#newOrEdit');
 newOrEdit.setAttribute('class', 'simulator');
 //newBtn goes to makeTable function with edit=0
 const newBtn = document.createElement('button');
-newBtn.setAttribute('class', 'attentionBtn');
+newBtn.setAttribute('class', 'borderBlinkGrn');//was attentionBtn.changed Dec3 2021
 const editBtn = document.createElement('button');//are there 2 references for the edit Btn??Jan26 Date: Nov26 2021 Yes therebwere two editBtns..seemed to work but future references to editBtn may be confused? Should the declaration be back up at table screen options because editBtn along with new btn? Are referenced back there? ? Still seems to work though
 newBtn.textContent = 'NEW';
 
@@ -8957,16 +8963,16 @@ if (loadSampleDb || loadTutorialDb) {
 	//change heading title of window for SAMPLE
 	restoreDBWinTitle.textContent = "….LOADING A SAMPLE DATABASE DEMONSTRATION";
 	
-	restoreInstructionsP.textContent = "Tap the Text-Area input window to CONTINUE! Then tap 'SUBMIT Sample DB data' to Load the sample database. Tap RESTORE your database. Tap FINISHED. DoubleTap on restored file name in database list to view file.";
+	restoreInstructionsP.textContent = "Tap the Text-Area input window to CONTINUE! Then tap 'SUBMIT Sample DB data' to Load the sample database. Tap RESTORE your database. Tap FINISHED. Tap on restored file name in database list to view file.";
 	restoreInfoP.textContent = "After tapping on the Text-Area element, the Submit button turns green indicating DougieBase is ready to continue creating the SAMPLE database.";
 	
 	//added id to html p 1
-	restoreInfo1P.textContent = "First! Tap the RED text-area input element ONCE to initialize. The Submit button will turn green. Tap the SUBMIT button, tap RESTORE DATABASE button,  the CONFIRMATION window appears. ";
-	restoreInfo2P.textContent ="Summary to create the database SAMPLE: Tap the Text-Area input window. Tap the SUBMIT button, tap RESTORE DATABASE button, tap FINISHED, then double-tap the name of the SAMPLE database in the database list of file names in the Change DB window."
+	restoreInfo1P.textContent = "First! Tap the RED text-area input element ONCE to initialize. The Submit button will turn green. Tap the SUBMIT button, tap RESTORE DATABASE button, the CONFIRMATION window appears. ";
+	restoreInfo2P.textContent ="Summary to create the database SAMPLE: Tap the Text-Area input window. Tap the SUBMIT button, tap RESTORE DATABASE button, tap FINISHED, then tap the name of the SAMPLE database in the database list of file names in the Change DB window."
 	getJsonBtn.textContent = "SUBMIT Sample DB data";
 } else {
 	restoreDBWinTitle.textContent = "Restore a database from its Backup via the Clipboard";
-	restoreInstructionsP.textContent = "Paste Backup data into the text area element. Tap 'Submit Backup data'. Tap RESTORE your database. Tap FINISHED. DoubleTap on restored file name in database list in the Current File Names window to view file.";
+	restoreInstructionsP.textContent = "Paste Backup data into the text area element. Tap 'Submit Backup data'. Tap RESTORE your database. Tap FINISHED. Tap on restored file name in database list in the Current File Names window to view file.";
 	restoreInfo1P.textContent = "FIRST! Tap the blue text input area to initialize the Paste area. The Submit button will turn green telling you DougieBase is ready for PASTE. After Pasting, Tap the SUBMIT button and your database will be restored.";
 	restoreInfoP.textContent = "Dougiebase will create a new shell to structure the restored data. Enter the previously saved backup data of the database to be restored into the text area window below using Copy/Paste from the clipboard or from your external storage source."
 	restoreInfo2P.textContent = "Copy backup data text from your storage source to the clipboard, and then Paste the Backup data for the database you are restoring, into the Text Area below:"
