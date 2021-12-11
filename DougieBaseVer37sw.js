@@ -1,4 +1,4 @@
-/*DougieBaseVer36sw.js from Copy of DougieBaseVer36sw.js from Copy of tryThisSw.js Nov16
+/*DougieBaseVer37sw.js Dec10 from mobileFriendlyDougieBaseVer37sw.js from Copy of tryThisSw.js Nov16
  Copyright 2016 Google Inc. All Rights Reserved.
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
 // Names of the two caches used in this version of the service worker.
 // Change to v2, etc. when you update any of the local resources, which will
 // in turn trigger the install event again.
-const PRECACHE = 'precache-v11';
+const PRECACHE = 'precache-v12';
 const RUNTIME = 'runtime';
 
 // A list of local resources we always want to be cached.
@@ -28,8 +28,9 @@ const PRECACHE_URLS = [
        '/index.html',//directory path to project folder/app name.html file
 	   
 	    // 'https://github.com/trainee45/trainee45.github.io/TableNotesVer29.html',//directory path to project folder/app name.html file
-       '/DougieBaseVer36.js',//directory path to project folder/app name.js file
-       '/DougieBaseVer36.css',////directory path to project folder/app name.css file
+       '/DougieBaseVer37.js',//directory path to project folder/app name.js file
+       '/DougieBaseVer37.css',////directory path to project folder/app name.css file
+	   '/smallDeviceDougieBaseVer37.css',//tested in Inspect Dec10 2021
 	   '/trainsDBTableNotes.webmanifest',////directory path to project folder/app name.trainmanifest file
 	   '/jquery-3.6.0.min.js',////directory path to project folder/app name.jQuery file
 	    '/eeyore.JPG',//add this file to github repository
@@ -84,3 +85,24 @@ self.addEventListener('fetch', event => {
     );
   }
 });
+
+//Updates
+
+//There is still one point to cover: how do you upgrade a Service Worker when a new version of the app containing new assets is available? The version number in the cache name is key to this:
+
+/*var cacheName = 'js13kPWA-v1';
+When this updates to v2, we can then add all of our files (including our new files) to a new cache:
+
+contentToCache.push('/pwa-examples/js13kpwa/icons/icon-32.png');
+
+// ...
+
+self.addEventListener('install', (e) => {
+  e.waitUntil(
+    caches.open('js13kPWA-v2').then((cache) => {
+      return cache.addAll(contentToCache);
+    })
+  );
+}); */
+
+//A new service worker is installed in the background, and the previous one (v1) works correctly up until there are no pages using it — the new Service Worker is then activated and takes over management of the page from the old one.

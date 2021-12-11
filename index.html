@@ -2,9 +2,14 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>DougieBaseVer36.html</title>
+    <title>index.html from mobileFriendlyDougieBaseVer37.html</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="DougieBaseVer36.css" rel="stylesheet">
+   <!-- <link rel="stylesheet" type="text/css" href="DougieBaseVer37.css">-->
+	<link rel="stylesheet" type="text/css" media="screen and (min-width: 480px)" href="DougieBaseVer37.css" />
+	
+	<link rel="stylesheet" type="text/css" media="screen and (max-width: 480px)" href="smallDeviceDougieBaseVer37.css" />
+	
+	
 	<link rel="manifest" href="trainsDBTableNotes.webmanifest">
 
 	
@@ -14,7 +19,7 @@
 
  <script src="jquery-3.6.0.min.js"></script>
 
-    <script src="DougieBaseVer36.js" defer></script>
+    <script src="DougieBaseVer37.js" defer></script>
 	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
 	<!-- <scrip src="jquery-3.6.0.slim.min.js"></script> -->
 <!-- 	<script src="jquery-3.6.0.slim.min.js" defer></script> -->
@@ -148,7 +153,7 @@ color: black;
 	
 	  
     <header>
-      <h1>DougieBase Version 36sw11</h1>
+      <h1>DougieBase Version 37sw12</h1>
     </header>
 	<p></p>
 <div id = "scrolling">
@@ -611,7 +616,7 @@ color: black;
 			
 			<!--start newField window -->
 			<div id="newFieldWin" class="hidden">
-			<h3>Relabel or Enter Name/Label for the secondary NOTES data (fixed) field. This label is used for all records until Relabelled here in Preferences. Note: You must tap Reset Display Data to view and save the title change.</h3>
+			<h3>Relabel or Enter Name/Label for the record's secondary NOTES data (fixed) field. This label is used for all records until Relabelled here in Preferences. Note: You must tap Reset Display Data to view and save the title change.</h3>
 			<label for="newFieldName">Enter Title for NOTES Second Data Field: </label>
 			<input type="text" name="newFieldName" id="newFieldName" value="" required/>
 			<p id="confirm"></p>
@@ -632,7 +637,7 @@ color: black;
 			<!-- 	<p></p> -->
 	
 	
-			<p id="changeColourBody">Tap here to change Current Colour Background of the body of text for the RECORD'S FIRST DATA FIELD.<br> Tap outside the title and body text boxes to change background colour of the NOTES FRAME.</p>
+			<p id="changeColourBody">Tap here to change Current Colour Background of the body of text for the RECORD'S FIRST DATA FIELD.<br> Tap outside the title and body text boxes to change background colour of the record's NOTES FRAME.</p>
 			</li>
 			
 		</div><!--end change colours window -->
@@ -704,9 +709,9 @@ color: black;
 				<p class = "highlight">Revisions and version numbers.  Scroll up     ⬆️ </p>
 		   <ul>
 			   <li>Obtain an estimate of how much memory is available in the database storage if your Browser accomodates this feature.</li>
-			   <li>This is Version 36, service worker 10</li> 
+			   <li>This is Version 37, service worker 12</li> 
 			   <li>Search references the first title field, and all other fields since version 33.1.</li>
-			   <li>Last revision: Dec 5 2021</li>
+			   <li>Last revision: Dec 10 2021</li>
 		   </ul>
 	   </div>
 		   <p></p>
@@ -719,8 +724,8 @@ color: black;
 	<div id="memoryWindow" class="hidden"> 
 	 <button id="memory">Memory</button>
 	 <label>
-  You’re currently using about <output id="percent">
-  </output>% of your available storage.
+  You are currently using about <output id="percent">
+  </output>% of your available storage. To EXIT tap MEMORY, tap DONE.
 </label>
 <p id="calcMemory"></p>
 </div> <!--end calculate memory section -->	 
@@ -1066,7 +1071,7 @@ color: black;
    //memory button code to calculate memory capacity in database
   //getMemory function is called from main js file line 640
   function getMemory () {
-	  alert('in getMemory function');
+	  //alert('in getMemory function');
   const memoryBtn = document.querySelector('#memory');
   const memoryWindow = document.querySelector('#memoryWindow');
   const whatMemory = document.querySelector('p#amtMemory');
@@ -1079,6 +1084,10 @@ color: black;
   */
   
   function amtMemory() {
+	 if('storage' in navigator) {
+		 alert('navigator.storage.estimate returns true!')
+	 }else{alert('navigator.storage.estimate = no storage in navigator' )}
+	 
   	  if('storage' in navigator && 'estimate' in navigator.storage) {
 		 alert('about to calculate memory'); navigator.storage.estimate().then(function(estimate) {
   document.getElementById("percent").value =
@@ -1087,8 +1096,8 @@ color: black;
   
   
   	  } else {
-		  document.getElementById("percent").value = '(You are not running in Safari with storage.estimate so memory capacity calculation is not available.)';
-		  calculation.textContent = "Memory left is not available because you are not running in Safari, or the browser does not yet possess a storageManager";
+		  document.getElementById("percent").value = '(The browser currently is not supporting storage.estimate so memory capacity calculation is not available.)';
+		  calculation.textContent = "Memory left function is not available, or the browser does not yet possess a storage Manager? To EXIT Tap the DONE BTN.";
   	  	
   	  }//end if storage in navigator
 	  
@@ -1101,7 +1110,10 @@ color: black;
 		 
 		//get ready for next instance of viewing documentation
 		memoryWindow.removeChild(doneBtn);
-      	memoryWindow.setAttribute('class','hidden');
+		calculation.textContent ="";
+	
+      
+	  document.getElementById("percent").value = ''; memoryWindow.setAttribute('class','hidden');
 		aboutDBWindow.setAttribute('class','showing');
 		 };//end doneBtn.onclick
 	 }//end amtMemory functionmemoryBtn.onclick 
