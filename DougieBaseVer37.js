@@ -3921,6 +3921,7 @@ if(newDBGuidance) {//was if(newDBflag..changed to if(newDBGuidance))
 	if(!newDBflag){
 		addNoteBtn.disabled = false;//for create new db, add note btn was disabled in onupgradeneeded
 		addNoteBtn.setAttribute('class','attentionBtn');
+		
 	}//end if !newDBflag..to make sure save is done before add new note in create newDB May23
 	
 	//Nov27 2021 retain old code just in case
@@ -3967,6 +3968,12 @@ if(newDBGuidance) {//was if(newDBflag..changed to if(newDBGuidance))
 	  doneBtn.onclick = function () {
 		 document.getElementById("dbTableName").innerHTML = dbTableName.value;
 		//get ready for next instance of rename dbTablName
+		
+		//added Dec14 to clear input field of renameDB
+		newTitle.value ="";
+			//added Dec14
+			saveBtn.setAttribute('class', 'borderBlink');
+		
 		reNameWin.removeChild(newTitlePara);
         reNameWin.removeChild(doneBtn);	reNameWin.setAttribute('class','hidden');
 	  prefWindow.setAttribute('class','showing');
