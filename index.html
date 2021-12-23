@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>index.html from mobileFriendlyDougieBaseVer37.html</title>
+    <title>DougieBaseVer37.html</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
    <!-- <link rel="stylesheet" type="text/css" href="DougieBaseVer37.css">-->
 	<link rel="stylesheet" type="text/css" media="screen and (min-width: 480px)" href="DougieBaseVer37.css" />
@@ -153,7 +153,7 @@ color: black;
 	
 	  
     <header>
-      <h1>DougieBase Version 37sw13</h1>
+      <h1>DougieBase Version 37sw14</h1>
     </header>
 	<p></p>
 <div id = "scrolling">
@@ -255,7 +255,8 @@ color: black;
 		  <label for="backupBtn">Tap BACKUP button to save a backup.</label>
 		  <button id= "backupBtn" name = "backupBtn" class = "attentionBtn">BACKUP</button>
 		  <p></p>
-		    <label for="restoreFileBtn" class="edBan"> Tap RESTORE DataBase to reclaim any lost Database from your external storage.. </label>
+		  <p class = "edBan">Tap RESTORE DataBase to reclaim any lost<br> Database from your external storage.. </p>
+		    <label for="restoreFileBtn" class="edWinScroll" id = "restoreFileBtnLabel">Restore database named:<span id = "fileToRestore"></span>. </label>
 		  <p></p>
 		    <!-- <button id="backupFileBtn" class ="attentionBtn">Backup DataBase</button> -->
 			   <button id="restoreFileBtn" class ="attentionBtn">Restore DataBase</button>
@@ -414,8 +415,8 @@ color: black;
 		  <p class="editInstruction"></p>
 		  <label for="changes">Type changes into the Input Window. To preserve any previous text entered, first use copy/paste to capture the original data.body text as viewed above. Once the cursor is in either input window, the original text above can't be copied using copy/paste. If previously edited, the original text of the most recent edit, appears as a default value in the Input Window. This will allow retrieval of this text if required. Tap the Clear Input Window buttons to clear!</label>
 		  <p></p>
-		  <label for="editTitle" class="edBan">Edit Title: </label>
-		  <input id="editTitle" type="text" name="editTitle" value="" class="edBan">
+		  <label for="editTitle" class="yellowonly">Edit Title: </label><!--was edBan -->
+		  <input id="editTitle" type="text" name="editTitle" value="" class="yellowonly">
 		    <button id="clearTitle">Clear Title</button>
 			<p></p>
 		 
@@ -489,7 +490,7 @@ color: black;
 		  <h2 class="edBan">Show Record(s) containing Search Phrase</h2>
 		  <p id ="searchLandscape"></p>
 	 <div class ="edWinScroll">
-		 <p class = "highlight">Instructions for Table Search:     ⬆️ </p>
+		 <p class = "highlight" style="color: black">Instructions for Table Search:     ⬆️ </p>
 		 <ul>
 			 <li>Enter the title of the record or the text to be searched for from any field in the text input window (spaces count) and tap the Find Record button.</li>
 			 <li>If found the title of the record containing the search phrase appears in the Found Record List.....(SCOLL UP for more ⬆️ ...)</li>
@@ -537,7 +538,7 @@ color: black;
 		    <!-- the settings screen -->
 	  <div id="settingsScreen" class="hidden">
 		  
-		  <h2 class="viewSettings"></h2>
+		  <h2 class="viewSettings" id = "settingsScreenHeader"></h2>
 		  <p id ="variables" class="edWinScroll"></p>
 		  <h3 id="theListHeading"></h3>
 		  <p id ="theList"></p>
@@ -574,7 +575,9 @@ color: black;
 		<button id = "tableTime" name = "tableTime">TableDate <span id = "timeIndicator">?</span>time</button>
 		<button id = "useLinkLabel">Use Link Labels</button>
 		<button id = "scrollTable">Disable Scroll Table</button>
-		<button id = "bkgrdImage">Clear Background</button><p></p>
+		<p><button id = "bkgrdImage">Clear Background</button><span id ="viewDark">(For Dark Mode clear Background Image)</span></p>
+		
+		<p></p>
 		<!-- <label for="editTDTrigger">Action to edit table cell:</label> -->
 		<p>Action to edit table cell: <button id = "editTDTrigger" name = "editTDTrigger">EDIT Table Cell Trigger</button> <span id ="primeTable">(Initiate table first)</span></p>
 		
@@ -704,14 +707,14 @@ color: black;
 		  <h2 class="edBan">About this Database</h2>
 		   <p></p>
 		   <div id="clearAboutDBWindow" class="simulator">TAP HERE TO RETURN TO NOTES</div>
-		   <p class="ppref">The About Database screen allows access to a HELP File and Documentation, as well as some current Settings. </p>
+		   <p class="ppref" id = "aboutDBInfoP">The About Database screen allows access to a HELP File and Documentation, as well as some current Settings. </p>
 		    <div class = "edWinScroll">
-				<p class = "highlight">Revisions and version numbers.  Scroll up     ⬆️ </p>
+				<p class = "highlight" id = "versionInfoP">Revisions and version numbers.  Scroll up     ⬆️ </p>
 		   <ul>
 			   <li>Obtain an estimate of how much memory is available in the database storage if your Browser accomodates this feature.</li>
-			   <li>This is Version 37, service worker 13</li> 
+			   <li>This is Version 37, service worker 14</li> 
 			   <li>Search references the first title field, and all other fields since version 33.1.</li>
-			   <li>Last revision: Dec 14 2021</li>
+			   <li>Last revision: Dec 23 2021</li>
 		   </ul>
 	   </div>
 		   <p></p>
@@ -734,7 +737,7 @@ color: black;
 		
 	<div id="documentationWin" class="hidden">
 		
-		<h1 class = "titleBanner">DougieBase Documentation The HELP
+		<h1 class = "titleBanner" id = "documentationHeading">DougieBase Documentation The HELP
 		Manual</h1>
 		<p>The documentation help manual is available as a PDF file. Tap on the links below to download the DougieBase Manual. Chapters 1 and 2.</p>
 		<p>The files are online and will open in a browser interface which allows you to download them to your device by using the browser's action sharesheet icon (tool bar: top right) from which you can download the .pdf files to whichever app you wish on your device.</p> 
@@ -747,7 +750,7 @@ color: black;
 		<p>When the github screen appears tap the '…' menu icon opposite the filename and choose Download</p>
 		<p></p> -->
 		<p></p>
-		<p class = "attentionBtn" style ="text-align: center">DougieBase Manual in PDF format.  RECOMMENDED READING!</p>
+		<p class = "attentionBtn" style ="text-align: center; color: black">DougieBase Manual in PDF format.  RECOMMENDED READING!</p>
 		<p>Download Chapter 1 PDF file</p><a href="https://dougiebase.weebly.com/uploads/6/6/1/0/66103197/dougiebase_chapter_1_rev5.pdf" download>Download DougieBase Manual Chapter 1.pdf</a>
 		<p></p>
 		<p>Dowload Chapter 2 PDF file</p><a href="https://dougiebase.weebly.com/uploads/6/6/1/0/66103197/dougiebase_chapter_2rev5.pdf" download>Download DougieBase Manual Chapter 2.pdf</a>
@@ -855,6 +858,7 @@ color: black;
 	<button id="toEditTableScr"> EDIT TABLE </button>
 	<button id="toSortScr"> SORT TABLE </button>
 	 <button id = "tableBackground">Change Background</button>
+	 <button id = "email">EMAIL</button>
 	 <button id="bottom">vBottom</button>
 	</div>
 	<!-- test jQuery -->
@@ -961,95 +965,7 @@ color: black;
   
   <script>
 	  
-  // dbName = prompt("What's the name of the database to restore?")
-	// 	objectStoreName = dbName + '_os';
-//let json;
-//var textarea;
-//   const restoreTextArea = document.querySelector('#restoreTextAreaClip');
-//   const getJsonBtn =  document.querySelector('#getJson');
-//   getJsonBtn.onclick = function (){
-// 	let json = restoreTextArea.value;
-// 	//TEST jsonString
-	
-// 	  console.log('restoreTextArea.value = ' + restoreTextArea.value);
 	  
-	  
-//   }//end getJsonBtn.onclick
-
-
-// function restoreFromClipboard (json,restoredDBName) {
-// 	console.log('In function restoreFromClipboard. restoredDBName = ' + restoredDBName);
-// 	let restoredDB; //global variables
-// 	//let data = jsonString;
-// 	let ver = 1;
-// 	let request = window.indexedDB.open(restoredDBName, ver);
-// 	let def = "whoops!"
-	
-		
-		
-// request.onupgradeneeded = function(e) {
-// 	let restoredDB = e.target.result;
-	
-// 		let objectStore = restoredDB.createObjectStore(objectStoreName, { keyPath: 'id', autoIncrement:true });
-// objectStore.createIndex('title', 'title', { unique: false });
-  
-//   //addind date of note creation
-//   objectStore.createIndex('created', 'created', { unique: false });
-//   //end code for adding date created
-//   objectStore.createIndex('body', 'body', { unique: false });
-//   //CODE FOR xtraField basically substituting xtraField for body
-  
-// 	  objectStore.createIndex('xtraField', 'xtraField', { unique: false });
-//   objectStore.createIndex('variable1', 'variable1', { unique: false });
-//   objectStore.createIndex('variable2', 'variable2', { unique: false });
-//   objectStore.createIndex('dataV', 'dataV', { unique: false });	
-  
-//   console.log('In onupgradeneeded. This means db_name not found and a new database is being created. Database setup complete. Now returning to .onsuccess handler of open database event? upgraded variable about to be set to 1. ');
-//  let upgraded = 1;
-   
-// };//end request.onupgradeneeded
-
-// request.onsuccess = function importFromJson(e,restoredDB, json) {
-// 	console.log('In request.onsuccess function');
-// 	json = restoreTextArea.value;
-// 	//SyntaxError: Cannot declare a let variable twice: 'db'.
-// 	restoredDB = e.target.result;
-// //  return new Promise((resolve, reject,json) => {
-//     const transaction = restoredDB.transaction(
-//       db.objectStoreNames,
-//       'readwrite'
-//     )
-//     //transaction.addEventListener('error', reject)
-// console.log('json = ' + json);
-//     var importObject = JSON.parse(json)
-// 	console.log('After JSON.parse(json) importObject = ' + importObject);
-//     for (const storeName of restoredDB.objectStoreNames) {
-// 		console.log('storeName = ' + storeName);
-//       let count = 0
-//       for (const toAdd of importObject[storeName]) {
-//         const request = transaction.objectStore(storeName).add(toAdd)
-//         request.addEventListener('success', () => {
-//           count++
-//           if (count === importObject[storeName].length) {
-//             // Added all objects for this store
-//             delete importObject[storeName]
-//             if (Object.keys(importObject).length === 0) {
-//               // Added all object stores
-//               console.log('Added all objectStores');
-// 			  //ReferenceError: Can't find variable: resolveresolve()
-//             }
-//           }
-//         })
-//       }
-//     }
-//  // })//end promise
-// };//end request.onsuccess
-
-// 	request.onerror = function() {
-//   console.log('Database failed to open');
-// };//end request.onerror
-
-// }//END FUNCTION RESTORE FROM CLIPBOARD
 	 
 	 
 	  /*I HAVE REMOVED THE CONSOLE SIMULATOR IN VERSION 7 
@@ -1070,56 +986,68 @@ color: black;
   
    //memory button code to calculate memory capacity in database
   //getMemory function is called from main js file line 640
-  function getMemory () {
-	  //alert('in getMemory function');
-  const memoryBtn = document.querySelector('#memory');
-  const memoryWindow = document.querySelector('#memoryWindow');
-  const whatMemory = document.querySelector('p#amtMemory');
-  const calculation = document.querySelector('#calcMemory');
-  memoryWindow.setAttribute('class','showing');
+//   function getMemory () {
+// 	  //alert('in getMemory function');
+//   // const memoryBtn = document.querySelector('#memory');
+//   // const memoryWindow = document.querySelector('#memoryWindow');
+//   // const whatMemory = document.querySelector('p#amtMemory');
+//   // const calculation = document.querySelector('#calcMemory');
+//   memoryWindow.setAttribute('class','showing');
+//   //Check if screenDark mode
+// checkScreenMode();
+// if(screenDark) {
+// 	aboutDBWindow.style.backgroundColor = "black";
+// 	aboutDBWindow.style.color = "white";
+// 	aboutDBInfoP.style.color = "black";
+// 	versionInfoP.style.color = "black";
+// 	memoryWindow.style.color = "black";
+// } else {
+// 	aboutDBWindow.style.backgroundColor = "#eee";
+// 	aboutDBWindow.style.color = "black";
+// }//end if else screenDark
   
-  memoryBtn.onclick = amtMemory;
+//   memoryBtn.onclick = amtMemory;
   
- /* function help () {document.getElementById("percent").value = 'You are not running in Safari so memory capacity calculation is not available.';}
-  */
+//  /* function help () {document.getElementById("percent").value = 'You are not running in Safari so memory capacity calculation is not available.';}
+//   */
   
-  function amtMemory() {
-	 if('storage' in navigator) {
-		 alert('navigator.storage.estimate returns true!')
-	 }else{alert('navigator.storage.estimate = no storage in navigator' )}
+//   function amtMemory() {
+// 	 if('storage' in navigator) {
+// 		 alert('navigator.storage.estimate returns true!')
+// 	 }else{alert('navigator.storage.estimate = no storage in navigator' )}
 	 
-  	  if('storage' in navigator && 'estimate' in navigator.storage) {
-		 alert('about to calculate memory'); navigator.storage.estimate().then(function(estimate) {
-  document.getElementById("percent").value =
-      (estimate.usage / estimate.quota * 100).toFixed(2);
-  });//end storageManagerEstimate	
+//   	  if('storage' in navigator && 'estimate' in navigator.storage) {
+// 		 alert('about to calculate memory'); navigator.storage.estimate().then(function(estimate) {
+//   document.getElementById("percent").value =
+//       (estimate.usage / estimate.quota * 100).toFixed(2);
+//   });//end storageManagerEstimate	
   
   
-  	  } else {
-		  document.getElementById("percent").value = '(The browser currently is not supporting storage.estimate so memory capacity calculation is not available.)';
-		  calculation.textContent = "Memory left function is not available, or the browser does not yet possess a storage Manager? To EXIT Tap the DONE BTN.";
+//   	  } else {
+// 		  document.getElementById("percent").value = '(The browser currently is not supporting storage.estimate so memory capacity calculation is not available.)';
+// 		  calculation.textContent = "Memory left function is not available, or the browser does not yet possess a storage Manager? To EXIT Tap the DONE BTN.";
   	  	
-  	  }//end if storage in navigator
+//   	  }//end if storage in navigator
 	  
 	  
-	 //done button to allow return to notes window .. just hide the memory window to go back to the aboutDBWindow
-	  let doneBtn = document.createElement('button');
-      doneBtn.textContent = 'DONE';
-      memoryWindow.appendChild(doneBtn);
-	  doneBtn.onclick = function () {
+// 	 //done button to allow return to notes window .. just hide the memory window to go back to the aboutDBWindow
+// 	  let doneMemoryBtn = document.createElement('button');
+//       doneMemoryBtn.textContent = 'DONE';
+//       memoryWindow.appendChild(doneMemoryBtn);
+// 	  doneMemoryBtn.onclick = function () {
 		 
-		//get ready for next instance of viewing documentation
-		memoryWindow.removeChild(doneBtn);
-		calculation.textContent ="";
+// 		//get ready for next instance of viewing documentation
+// 		memoryWindow.removeChild(doneMemoryBtn);
+// 		calculation.textContent ="";
 	
       
-	  document.getElementById("percent").value = ''; memoryWindow.setAttribute('class','hidden');
-		aboutDBWindow.setAttribute('class','showing');
-		 };//end doneBtn.onclick
-	 }//end amtMemory functionmemoryBtn.onclick 
-  }//end function getMemory called from line640 in js file
+// 	  document.getElementById("percent").value = ''; memoryWindow.setAttribute('class','hidden');
+// 		aboutDBWindow.setAttribute('class','showing');
+// 		 };//end doneBtn.onclick
+// 	 }//end amtMemory functionmemoryBtn.onclick 
+//   }//end function getMemory called from line640 in js file
   
-  // Code below shows notes edits in real time
+//   // Code below shows notes edits in real time
   
  function displayEdits () {
 	var x = document.getElementById("changes").value;

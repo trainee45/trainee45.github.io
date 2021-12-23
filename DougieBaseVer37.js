@@ -1,4 +1,4 @@
-//DougieBaseVer37.js from Dec10 2021 mobileFriendlyDougieBaseVer37.js from DougieBaseVer36.js Dec5 sw11 from messWith Dec2 DougieBaseVer36.js Dec1 from flashFileNameDougieBaseVer36.js from createNewDBDougieBaseVer36 Nov30 Nov28 added addToDynamicFields.setAttribute('class','borderBlink') to border in editMoreFields function and addNoteBtn.setAttribute('class','borderBlink'); in saveBtn.onclick for createNewDB renameBtn.setAttribute('class','borderBlink'); in preferences displayDataBtn.setAttribute('class','borderBlink'); in function renameTitle Nov28 borderBlink css is in the html file  Nov 27 fine tuned flow of createNewDB Nov24 fixed create newDB bug! Nov 22 edit notes displayed n real time Nov17 added tableScreenOptions to editTableTrigger to not mess up table display Nov14 from spDougieBaseVer36.js landscape table search and preview edid Date:Nov9 save preferences from Date:Nov4 added Easter egg and save settings preferencesDougieBaseVer36.js from fixEditDougieBaseVer35.js from 
+//DougieBaseVer37.js experimentalDougieBaseVer37.js Dec22 moved getMemory function from html file to .js file from Dec10 2021 mobileFriendlyDougieBaseVer37.js from DougieBaseVer36.js Dec5 sw11 from messWith Dec2 DougieBaseVer36.js Dec1 from flashFileNameDougieBaseVer36.js from createNewDBDougieBaseVer36 Nov30 Nov28 added addToDynamicFields.setAttribute('class','borderBlink') to border in editMoreFields function and addNoteBtn.setAttribute('class','borderBlink'); in saveBtn.onclick for createNewDB renameBtn.setAttribute('class','borderBlink'); in preferences displayDataBtn.setAttribute('class','borderBlink'); in function renameTitle Nov28 borderBlink css is in the html file  Nov 27 fine tuned flow of createNewDB Nov24 fixed create newDB bug! Nov 22 edit notes displayed n real time Nov17 added tableScreenOptions to editTableTrigger to not mess up table display Nov14 from spDougieBaseVer36.js landscape table search and preview edid Date:Nov9 save preferences from Date:Nov4 added Easter egg and save settings preferencesDougieBaseVer36.js from fixEditDougieBaseVer35.js from 
 //changed addEventListener to copy instead of dblclick Oct16 made default double click Oct31 2021  clearBkgrdDougieBaseVer34.js clear background and fixed crashes that occur if user makes illogical moves Oct12 2021 use to update workingCopy and Safarii etc
 //Date:Oct5 2021 Removed Double tap to avoid magnification in Manage files view full screen search select filenames. iOS15 safari has no way to disable double tap for magnification. More cosmetics with dataBaseName titles
 //removed alert in view full note ?hangs up sometimes? Cosmetic fixes Oct 3 2021 titleBanner in About db
@@ -138,6 +138,7 @@
 
 //var flashing;
 //var flashYellow = true;
+let selectedContact = "";//used in table email
 let tableScreenBtnGrn = false;//flag used to let the table btn flash when createNewDB
 let testing = false; 
 let os = 2; 
@@ -160,7 +161,7 @@ dbNameInfo.setAttribute('class','titleBanner');
 
 
 const fileNamesWindow = document.querySelector('#fileNames');
-const dataBaseList = document.querySelector('#dataBaseList');
+//const dataBaseList = document.querySelector('#dataBaseList');//declared twice kept one below at 654?Dec20
 const createNewDBWindow = document.querySelector('#createNewDBWin');//referenced this earlier because it is used onwindow open
 const manageFilesWindow = document.querySelector('#manageFilesWin');
 const deleteFileButton = document.querySelector('#deleteFileBtn');
@@ -181,15 +182,15 @@ const loadTutorialDbBtn = document.querySelector('#loadTutorialDbBtn');
 //create sample db declarations
 const copySampleDbWin = document.querySelector('#copySampleDb');
 const copySampleDbData = document.querySelector('#copySampleDbData');
-const continuBtn = document.querySelector('#continueBtn');
+const continueBtn = document.querySelector('#continueBtn');
 
-
+//const declaration above was spelled continu instead of continue but program did not notice. WHY.? Corrected to continue Dec20
 //start tutorial example of Sample database# declaration  references
 
 const tutorialSampleDbWin = document.querySelector('#tutorialSampleDb');
 const tutorialSampleDbData = document.querySelector('#tutorialSampleDbData');
-const tutorialContinuBtn = document.querySelector('#tutorialContinueBtn');
-
+const tutorialContinueBtn = document.querySelector('#tutorialContinueBtn');
+//const declaration above was spelled continu instead of continue but program did not notice. WHY.? Corrected to continue Dec20
 
 //end tutorial example of Sample database references
 
@@ -253,6 +254,8 @@ const NotesEditBtn = document.createElement('button');//made global because refe
 const tableScreenBtn = document.querySelector('#tableScreenBtn');//HTML button in menu to go to tableScreen window
 const tableScreen = document.querySelector('#tableScrn');//reference the create a table window
 const showTable = document.querySelector('#tableWin');//div HTML section id="tableWin" should this be referenced earlier because clearTableWin useS it at line 3003
+
+
 const tableLandscapeP = document.querySelector('#tableLandscape');
 
 const sortWindow = document.querySelector('#sortWin');//declared as global see sort function
@@ -282,6 +285,9 @@ let centerTitle = false;//flag set in preferences to center the record title in 
 let highlightDoneBtn = false;//flag used in addField function preferences
 let doneRelabelBtn = document.createElement('button');//made global see addField function ?should be const ?
 let trigger = 'dblclick'; //was 'copy' set the addEventListener in edit td cell of table. The other option is dblclick Oct 20 2021
+
+const tdEditTriggerP = document.querySelector('#tdEditTrigger');//made global because it is used in tableScreenOptions as well as function options (preferences Dec20 2021)
+
 let dbName;//global variable for database name..currently notes_dbx replaced with dataBaseName
 let dataBaseName = "";//make global variable so can use in viewSettings
 let newDBflag = false; //signify from createNewDataBase
@@ -308,7 +314,7 @@ let savedCurrentfontColour;
 // let restoredCurrentnoteTitleColour;
 // let restoredCurrentbodyColour;
 // let restoredCurrentxtraFieldColour;
-
+const enterButton = document.querySelector('#submit');//make scope wider ..variable not found..in editItem
 const chooseColoursWin = document.querySelector('#chooseColoursWin');
 const noteFrameColor = document.querySelector('#noteFrame');
 const noteTitleColor = document.querySelector('#noteTitle');
@@ -536,6 +542,16 @@ if (window.indexedDB) {
     console.log("Your browser supports a stable version of IndexedDB. Should work.");
 }
 
+//how to test if user using dark mode
+var usingDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+console.log("At start 543 first reference User is using dark mode: " + usingDarkMode);
+//Detect an Apple Browser 
+const appleBrowser = /Mac|iPod|iPhone|iPad/.test(navigator.platform);
+let browserTest = (appleBrowser) ? "Yes":"No";//ternary operator
+console.log("User is using an apple browser: " +browserTest + " " + appleBrowser);
+
+let screenDark = false; //use as variable instead of usingDarkMode..which must be some special case? Because it won't maintain a setting? Const to var did not fix! Dec20 THIS WAS screenBlack screenDark still worked in code!
+ 
 // Create an instance of a db object for us to store the open database in. A variable called db will be used to store an object representing our database. We will use this in a few places, so we've declared it globally here to make things easier.
 let db; //global variables
 let deletingDb;//global variable in delete db code section May10
@@ -675,7 +691,27 @@ const restoreTextArea = document.querySelector('#restoreTextAreaClip');//HTML te
 const readyNotice = document.createElement('p');//in restoreDataBase announce job done
 let fromRestore = false;//flag to indicate from restore to logically navigate the createNewDB code
 let json ="";
-// const finishedRestoreBtn = document.createElement('button');
+
+//dark mode selected Dec18
+checkScreenMode();
+if(usingDarkMode) {
+	showTable.style.backgroundColor = "black";
+	showTable.style.color = "white";
+	$("#flip").css({"background-color": "lightgrey", "color":"black", "border-color": "red"});//these don't work
+	
+	//bodyImage.setAttribute('class','showDark');
+	//bodyImage.style.color = "white";
+	
+}//end if usingDarkMode
+if (!usingDarkMode) {
+	showTable.style.backgroundColor = "#eee";
+	showTable.style.color = "black";
+	$("#flip").css({"background-color": "lightgrey", "color":"black", "border-color": "black"});//these don't work
+	
+	//bodyImage.setAttribute('class','showLite');
+	//bodyImage.style.backgroundColor = "white";
+	//bodyImage.style.color = "black";
+}//end if !usingDarkMode
 
 
 
@@ -683,11 +719,9 @@ let json ="";
 
 function getFileNames(dataBaseName) {
 	
+	//restoreSavedBtn.disabled = true;//gets enabled in change colors if you save current colors	
 	
-//restoreSavedBtn.disabled = true;//gets enabled in change colors if you save current colors	
-	
-	
-//flag that prevents dbList from repeating May 8. THIS WORKS!
+	//flag that prevents dbList from repeating May 8. THIS WORKS!
 console.log('At getFileNames. dbListExists = ' + dbListExists);
 	if(dbListExists || loadSampleDb || loadTutorialDb) {
 		while (dataBaseList.firstChild) {
@@ -702,6 +736,18 @@ loadTutorialDb = false;
 	console.log('In getFileNames. Here from a re-run OR menu button..New/ChangeDB');
 	getFileNamesSwitch = false;
 fileNamesWindow.setAttribute('class','showing');	
+//Check if screenDark mode
+checkScreenMode();
+if(screenDark) {
+	fileNamesWindow.style.backgroundColor = "black";
+	fileNamesWindow.style.color = "white";
+	//fileNamesList.style.color = "white";//does not work
+} else {
+	fileNamesWindow.style.backgroundColor = "#eee";
+	fileNamesWindow.style.color = "black";
+	//dataBaseList.style.color = "black";
+}//end if else screenDark
+
 const promise = indexedDB.databases()
 //A promise that resolves either to an error or a list of dictionaries, each with two elements, name and version.
 promise.then(databases => {
@@ -835,6 +881,16 @@ console.log('loadSampleDbBtn Button clicked. FileNamesWin hidden.');
 	loadSampleDb = true;
 	copySampleDbWin.setAttribute('class',
 	'showing');
+	
+	//Check if screenDark mode
+checkScreenMode();
+if(screenDark) {
+	copySampleDbWin.style.backgroundColor = "black";
+	copySampleDbWin.style.color = "white";
+} else {
+	copySampleDbWin.style.backgroundColor = "#eee";
+	copySampleDbWin.style.color = "black";
+}//end if else screenDark
 	continueBtn.setAttribute('class','attentionBtn');
 	
 	//copySampleDbData.value should now be sample database
@@ -860,6 +916,17 @@ console.log('loadTutorialDbBtn Button clicked. FileNamesWin hidden.');
 	loadTutorialDb = true;
 	tutorialSampleDbWin.setAttribute('class',
 	'showing');
+	
+	//Check if screenDark mode
+checkScreenMode();
+if(screenDark) {
+	tutorialSampleDbWin.style.backgroundColor = "black";
+	tutorialSampleDbWin.style.color = "white";
+} else {
+	tutorialSampleDbWin.style.backgroundColor = "#eee";
+	tutorialSampleDbWin.style.color = "black";
+}//end if else screenDark
+	
 	tutorialContinueBtn.setAttribute('class','attentionBtn');
 	
 	//copySampleDbData.value should now be sample database
@@ -896,6 +963,18 @@ function createNewDB () {
 //}//end if !fromRestore
 getFileNamesSwitch = false;//so getFileNames does not run again after creating new DB
 createNewDBWindow.setAttribute('class','showing');
+
+//Check if screenDark mode
+checkScreenMode();
+if(screenDark) {
+	createNewDBWindow.style.backgroundColor = "black";
+	createNewDBWindow.style.color = "white";
+	newDBGuideP.style.color = "black";//only needs this once already black in light mode!
+} else {
+	createNewDBWindow.style.backgroundColor = "#eee";
+	createNewDBWindow.style.color = "black";
+}//end if else screenDark
+
 console.log("In start createNewDB: newDBGuidance = " + newDBGuidance + "newDBflag = " + newDBflag + " xtraField = " + xtraField);
 //for guidance creating newDB
 newDBGuideP.textContent = "Type the name of your database into the text entry element and then tap 'Start creating new database'. The Preferences button in the main menu will now be high-lighted green indicating you must now OPEN PREFERENCES..";
@@ -943,7 +1022,21 @@ createNewDBWindow.removeChild(newDBGuideP);
 //code for managing file names of databases
 //function manageDataBases
 function manageDataBases () {
+const restoreFileBtnLabel = document.querySelector('#restoreFileBtnLabel');
+const fileToRestore = document.querySelector('#fileToRestore');
+	
 console.log('In manageDataBases function.');	manageFilesWindow.setAttribute('class','showing');
+
+//Check if screenDark mode
+checkScreenMode();
+if(screenDark) {
+	manageFilesWindow.style.backgroundColor = "black";
+	manageFilesWindow.style.color = "white";
+	} else {
+	manageFilesWindow.style.backgroundColor = "#eee";
+	manageFilesWindow.style.color = "black";
+}//end if else screenDark
+
 if(manageDbListExists) {
 	while (manageDataBaseList.firstChild) {
 	manageDataBaseList.removeChild(manageDataBaseList.firstChild);
@@ -1188,6 +1281,19 @@ while (manageDataBaseList.firstChild) {
 }//end while
 manageFilesWindow.setAttribute('class','hidden');
 	backupFilesWin.setAttribute('class','showing');
+//Check if screenDark mode
+checkScreenMode();
+if(screenDark) {
+	backupFilesWin.style.backgroundColor = "black";
+	backupFilesWin.style.color = "white";
+	restoreFileBtnLabel.style.color = "black";
+	
+} else {
+	backupFilesWin.style.backgroundColor = "#eee";
+	backupFilesWin.style.color = "black";
+}//end if else screenDark	
+	
+fileToRestore.textContent = dataBaseName;
 // promise = indexedDB.databases()
 // //A promise that resolves either to an error or a list of dictionaries, each with two elements, name and version.
 // promise.then(databases => {
@@ -1774,6 +1880,16 @@ alert('Installing DougieBase.. Install version = ' + ver);
 
 form.onsubmit = addData;//from addNote window This is theCreateNewNote button in the Add new note window. The reference is to the input submit in the form element of the add new note window in HTML
 saveBtn.onclick = function () {
+	
+	//error code to prevent saving null data if user has not selected a db Dec21 2021
+	if(dbName === undefined && !newDBflag) {
+		alert('No database has been selected! Select or create a database to make SAVE available.');
+	//prefWindow.setAttribute('class','hidden');
+		//getFileNames();
+		return;
+	} //end if dbName===undefined
+	
+	
 	if(newDBflag) {
 		addNoteBtn.disabled = false;//for create new db, add note btn was disabled in onupgradeneeded
 		//addNoteBtn.setAttribute('class','attentionBtn');
@@ -2367,6 +2483,13 @@ console.log('At end of displayData: tableTitle = ' + tableTitle + '. tableTitle.
 // Define the deleteItem() function
 function deleteItem(e) {
 	console.log('At function deleteItem');
+	
+	//fix loop hole of table screen getting messed up if user adds new note prior to first initialization of table
+	if(DTBtnTappedOnce ===0 & tableExists){
+		alert('The pre-existing table has to be initialized first before deleting a note! Tap the DISPLAY TABLE button.');
+		tableScreenOptions();
+	}//end if if(DTBtnTappedOnce ===0 & tableExists)
+	
 //	deleteRecord = 1; //flag used in refreshTable()
 //make delete window appear	!!!!
 deleteWindow.setAttribute('class','showing');
@@ -2400,6 +2523,17 @@ const deleteInputP = document.querySelector('p.deleteInstruction');
 const deleteTableBanner = document.createElement('p');
 const deleteTableRecordBtn =  document.createElement('button');
 const deleteNotice = document.createElement('p');
+
+//Check if screenDark mode
+checkScreenMode();
+if(screenDark) {
+	deleteWindow.style.backgroundColor = "black";
+	deleteWindow.style.color = "white";
+	textToBeDeletedP.style.color = "black";
+} else {
+	deleteWindow.style.backgroundColor = "#eee";
+	deleteWindow.style.color = "black";
+}//end if else screenDark
 
 
  deleteBanner.textContent = 'Delete the Existing Record with Title:' + '  ' + data.title;
@@ -2436,6 +2570,7 @@ if (tableExists) {
 	
 	
  deleteButton.onclick = function () {
+	 editNote=true;//flag insures that you update table before leaving for another database Dec21
 	 deleteTableBanner.textContent = 'Now delete the record from the Table!';
 	 deleteButton.setAttribute('class','normalBtn');
 	 
@@ -2656,6 +2791,17 @@ console.log('Will display item # ' + data.id + ' ' + data.body);
 const textToBeCompletelyViewed = document.querySelector('#fullTxt');
 const finishedReading = document.querySelector('#finishedReading');
 const fullViewP = document.querySelector('p.fullViewInstruction'); //removed this because button off screen if note title >3 lines
+
+//Check if screenDark mode
+checkScreenMode();
+if(screenDark) {
+	displayFullNote.style.backgroundColor = "black";
+	displayFullNote.style.color = "white";
+	textToBeCompletelyViewed.style.color = "black";//txt gets changed to white in dark mode whih does not show on yellow background of full view text
+} else {
+	displayFullNote.style.backgroundColor = "#eee";
+	displayFullNote.style.color = "black";
+}//end if else screenDark
 textToBeCompletelyViewed.textContent = data.body;
 
 //textToBeCompletelyViewed.addEventListener('click', function () { doesn't work after a repeat view so had to use an .onclick event!
@@ -2693,9 +2839,26 @@ goToSearchBtn = document.querySelector('#goToSearch');
 	};//end doneReadingButton.onclick
 	
 goToSearchBtn.onclick = function() {
+	if(DTBtnTappedOnce ===0 & tableExists){initializeTable();}
+	
+	//fix loop hole of table screen getting messed up if user adds new note prior to first initialization of table
+	// if(DTBtnTappedOnce ===0 & tableExists){
+	// 	alert('The pre-existing table has to be initialized first before searching a record! Tap the DISPLAY TABLE button.');
+	// 	tableScreenOptions();
+	// }//end if if(DTBtnTappedOnce ===0 & tableExists)
+	
 //in aid of preventing repeat registering of addEventListener in searchRecords() REMOVE IF MESSES UP,!!Jan22 2021
 
 searchWindow.setAttribute('class','showing');
+//Check if screenDark mode..don't need this here because already happens in searchRecords()
+// checkScreenMode();
+// if(screenDark) {
+// 	searchWindow.style.backgroundColor = "black";
+// 	searchWindow.style.color = "white";
+// } else {
+// 	searchWindow.style.backgroundColor = "#eee";
+// 	searchWindow.style.color = "black";
+// }//end if else screenDark
 	//pre-load search record input field with current full view record
 	// searchTitleInput.value = "";
 	console.log('data.title = ' + data.title);
@@ -2746,6 +2909,7 @@ request.onsuccess = function(event) {
 	console.log('Will display settings screen item # ' + data.id + ' ' + data.body);
  
  const viewSettingsBanner = document.querySelector('h2.viewSettings');
+ const settingsScreenHeader = document.querySelector('#settingsScreenHeader');
  // const dbNameInfo = document.createElement('p'); made global
  
 const variablesViewed = document.querySelector('#variables');
@@ -2754,6 +2918,26 @@ const theListHeading = document.querySelector('#theListHeading');
 const theList = document.querySelector('#theList');
 
 const finishedReadingSettings = document.querySelector('#finishedReadingSettings');
+
+//Check if screenDark mode
+checkScreenMode();
+if(screenDark) {
+	settingsScreen.style.backgroundColor = "black";
+	settingsScreen.style.color = "white";
+	
+	variablesViewed.style.color = "black";
+	//settingsScreenHeader.style.color = "white";
+	viewSettingsBanner.style.color = "white";
+	//viewSettingsBanner and settingsScreenHeader are the same!!!!Dec22
+	dbNameInfo.style.color = "black";
+} else {
+	settingsScreen.style.backgroundColor = "#eee";
+	settingsScreen.style.color = "black";
+	viewSettingsBanner.style.color = "black";
+	dbNameInfo.style.color = "black";
+}//end if else screenDark
+
+
 //references below for new code to list variables
 
 let cvString1 = 'xtraField: = '+ xtraField;
@@ -2846,6 +3030,7 @@ function editItem(e) {
 		NotesEditBtn.setAttribute('class','tdEdit');
 	//make edit window appear
 	editWindow.setAttribute('class','showing');
+	
 	//trying to fix field header display going awry if edit notes before table initiated July 26 2021
 	if(DTBtnTappedOnce ===0 & tableExists){initializeTable();}
 	//trying to fix field header display going awry if edit notes before table initiated	
@@ -2885,6 +3070,7 @@ console.log('cleared note display'); */
 const editBanner = document.querySelector('h2.edBan');
 const originalBodyTextP = document.querySelector('#originalTxt')
 const editInputP = document.querySelector('p.editInstruction');
+//const enterButton = document.querySelector('#submit');//make scope wider ..variable not found
 /*record.appendChild(editBanner);
 record.appendChild(originalBodyTextP);
 record.appendChild(editInputP);
@@ -2896,7 +3082,17 @@ const editNewFieldBanner = document.querySelector('h2.edNewFieldBan');
 const originalNewFieldTextP = document.querySelector('#originalNewFieldTxt')
 const editNewFieldInputP = document.querySelector('p.editNewFieldInstruction');
 const previewNewFieldBtn = document.querySelector('#previewNewField');
- 
+ //Check if screenDark mode
+checkScreenMode();
+if(screenDark) {
+	editWindow.style.backgroundColor = "black";
+	editWindow.style.color = "white";
+	originalBodyTextP.style.color = "black";//not needed for light mode
+} else {
+	editWindow.style.backgroundColor = "#eee";
+	editWindow.style.color = "black";
+}//end if else screenDark
+
 
 // Set an event handler so that when the button is clicked, the editXtraField() is run
 // only set this up if xtraField === 1;
@@ -2954,6 +3150,17 @@ if (xtraFieldBtnExists) {
 
 //editWindow.removeChild(xtraFieldBtn);
 editNewFieldWindow.setAttribute('class','showing');
+//Check if screenDark mode
+checkScreenMode();
+if(screenDark) {
+	editNewFieldWindow.style.backgroundColor = "black";
+	editNewFieldWindow.style.color = "white";
+	originalNewFieldTextP.style.color = "black";//not needed for light mode
+} else {
+	editNewFieldWindow.style.backgroundColor = "#eee";
+	editNewFieldWindow.style.color = "black";
+}//end if else screenDark
+
 	
 	editNewFieldBanner.textContent = 'Edit the Current Data of the ' + newFieldName + ' Field.';
 originalNewFieldTextP.textContent = data.xtraField;
@@ -2964,8 +3171,8 @@ editNewFieldInputP.textContent = 'Type changes into the Input Window below.';
 editNewFieldInput.value = data.xtraField;	
 
 commitButton = document.querySelector('#commit');
-
-
+// commitButton.setAttribute('class','borderBlink');
+editNewFieldInput.onfocus = function () {commitButton.setAttribute('class','borderBlink');}//end editNewFieldInput.onchange
 
 clearEditNewFieldBtn = document.querySelector('#clearEditNewField');
 
@@ -2990,7 +3197,7 @@ cancelCommitBtn = document.querySelector('#cancelCommit');
  //REMOVE ABOVE IF MESSED UP NOV14
  
   commitButton.onclick = function () {
-	  
+	 commitButton.setAttribute('class','tdEdit'); 
 	  if (newDBGuidance) {
 		//clearInterval(flashing);	
 		NotesEditBtn.setAttribute('class','tdEdit');//this does not seem to work? in. ReateNewDB? Not sure why?
@@ -3022,6 +3229,7 @@ editNewFieldWindow.setAttribute('class','hidden');
  //LEFT OFF HERE JULY 25 2020 
   cancelCommitBtn.onclick = cancelEditNewField;
   function cancelEditNewField () {
+	  commitButton.setAttribute('class','tdEdit'); 
 //editWindow.removeChild(xtraFieldBtn);//Jan 11 
 //fix xtraFieldBtn bug
 if (xtraFieldBtnExists) {
@@ -3044,7 +3252,7 @@ clearEditNewFieldBtn.onclick = function () {
 
 //alert('I am at editInput submit');
 //a variables called submitBtn previously
-const enterButton = document.querySelector('#submit');
+//const enterButton = document.querySelector('#submit');//make scope wider ..variable not found
 
 
 clearBtn = document.querySelector('#clear');
@@ -3071,7 +3279,7 @@ cancelBtn = document.querySelector('#cancel');
 }//end function previewBtn.onclick
  //REMOVE ABOVE IF MESSED UP NOV14
  
- 
+ editInput.onfocus = function () {enterButton.setAttribute('class','borderBlinkGrn');}//end editNewFieldInput.onchange
  
   enterButton.onclick = makeChanges;
   cancelBtn.onclick = cancel;
@@ -3156,7 +3364,7 @@ if (xtraFieldBtnExists) {
 //alert('got to redisplay the screen);')
 //displayData();
 function cancel () {
-	editWindow.setAttribute('class','hidden');
+enterButton.setAttribute('class','tdEdit');	editWindow.setAttribute('class','hidden');
 	//fix xtraFieldBtn bug
 	console.log('In Cancel. At start of if xtraFieldBtnExists. Removed xtraFieldBtn. xtraFieldBtnExists = ' + xtraFieldBtnExists);
 if (xtraFieldBtnExists) {
@@ -3262,9 +3470,18 @@ addNoteBtn.setAttribute('class','attentionBtn');
 	const scrollTableBtn = document.querySelector('#scrollTable');
 	const bkgrdImageBtn = document.querySelector('#bkgrdImage');
 	const bodyImage = document.querySelector('#bodyImage');
-	const editTDTriggerBtn = document.querySelector('#editTDTrigger');//this is the btn in preferences used to switch between copy and dblclick for edit table data cells. The trigger variable is declared at start of prgm
-	const tdEditTriggerP = document.querySelector('#tdEditTrigger');
+	const editTDTriggerBtn = document.querySelector('#editTDTrigger');//this is the btn in preferences used to switch between copy and dblclick for edit table data cells. The trigger variable is declared at start of prgm AND THE tdEditTriggerP var is also made global because it is used in tableScreenOptions..not just in the function options
+	// const tdEditTriggerP = document.querySelector('#tdEditTrigger');//made global
+	//set font color for dark mode Dec20
+	if(screenDark) {
+		tdEditTriggerP.style.color = "orange";
+	} else {
+		tdEditTriggerP.style.color = "blue";
+	}//end if screenDark
+	//set font color for dark mode
+	
 	const primeTableSP = document.querySelector('#primeTable');
+	const viewDark = document.querySelector('#viewDark');
 	const caseSensitiveSwitch = document.querySelector('#caseSensitive');
 	const no = document.querySelector('#no');
 	const yes = document.querySelector('#yes');
@@ -3455,7 +3672,14 @@ if(setup === 3)	{
 		if(bkgrdImage) {
 			bkgrdImageBtn.textContent = 'Show background image';
 			bkgrdImage = false;
-		bodyImage.setAttribute('class','noBkgrdImage');	bkgrdImageBtn.setAttribute('class','colorBtn');
+		bodyImage.setAttribute('class','noBkgrdImage');
+		//check status of dark mode
+		checkScreenMode();
+		//alert("At preferences-clear backImage..usingDarkMode = " + usingDarkMode + " screenDark = "+ screenDark);
+		console.log("usingDarkMode = " + usingDarkMode + " screenDark = " + screenDark);
+		// const usingDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+		// if (usingDarkMode) {bodyImage.style.backgroundColor= "black";}
+		// if (!usingDarkMode) {bodyImage.style.backgroundColor= "white";}
 			//getFileNames();
 			
 		} else {
@@ -3463,6 +3687,10 @@ if(setup === 3)	{
 			bkgrdImageBtn.textContent = 'Clear Background Image';
 			bodyImage.setAttribute('class','bkgrdImage');
 			bkgrdImageBtn.setAttribute('class','attentionBtn');
+			//check status of screen mode
+			checkScreenMode();//?in effective because srcmbackground image probably ditates background?
+			//alert("At preferences-SHOW backImage..usingDarkMode = " + usingDarkMode + " screenDark = "+ screenDark);
+			console.log("At show backImage usingDarkMode = " + usingDarkMode + " screenDark = "+ screenDark);
 			//alert('removing buttons');
 			//ERROR: TypeError: Argument 1 ('child') to Node.removeChild must be an instance of Node	
 			//getFileNames();
@@ -3921,7 +4149,6 @@ if(newDBGuidance) {//was if(newDBflag..changed to if(newDBGuidance))
 	if(!newDBflag){
 		addNoteBtn.disabled = false;//for create new db, add note btn was disabled in onupgradeneeded
 		addNoteBtn.setAttribute('class','attentionBtn');
-		
 	}//end if !newDBflag..to make sure save is done before add new note in create newDB May23
 	
 	//Nov27 2021 retain old code just in case
@@ -3942,6 +4169,16 @@ if(newDBGuidance) {//was if(newDBflag..changed to if(newDBGuidance))
 
 	prefWindow.setAttribute('class','hidden');
 	 reNameWin.setAttribute('class','showing');
+	//Check if screenDark mode
+checkScreenMode();
+if(screenDark) {
+	reNameWin.style.backgroundColor = "black";
+	reNameWin.style.color = "white";
+} else {
+	reNameWin.style.backgroundColor = "#eee";
+	reNameWin.style.color = "black";
+}//end if else screenDark 
+	 
 	 //dbTableName.value set to 'Notes' at top of code
 	dbTitle.textContent = dbTableName.value;
 	
@@ -3973,7 +4210,7 @@ if(newDBGuidance) {//was if(newDBflag..changed to if(newDBGuidance))
 		newTitle.value ="";
 			//added Dec14
 			saveBtn.setAttribute('class', 'borderBlink');
-		
+			
 		reNameWin.removeChild(newTitlePara);
         reNameWin.removeChild(doneBtn);	reNameWin.setAttribute('class','hidden');
 	  prefWindow.setAttribute('class','showing');
@@ -3991,6 +4228,17 @@ function changeColours () {
 	let xtraFieldPara = document.createElement('p');
 	prefWindow.setAttribute('class','hidden');
 		changeColoursWin.setAttribute('class','showing');
+		
+		//Check if screenDark mode
+checkScreenMode();
+if(screenDark) {
+	changeColoursWin.style.backgroundColor = "black";
+	changeColoursWin.style.color = "white";
+	dbNameInfo.style.color = "black";
+} else {
+	changeColoursWin.style.backgroundColor = "#eee";
+	changeColoursWin.style.color = "black";
+}//end if else screenDark
 		
 		//js code for change colours here
 		changeColourListItem.addEventListener('click', function() {
@@ -4323,6 +4571,18 @@ addNoteBtn.setAttribute('class','attentionBtn');
 	}//end if newDBGuidance && !newDBflag
 	
 		addFieldWin.setAttribute('class','showing');
+	//Check if screenDark mode
+checkScreenMode();
+if(screenDark) {
+	addFieldWin.style.backgroundColor = "black";
+	addFieldWin.style.color = "white";
+	newDBGuideP.style.color = "black";
+} else {
+	addFieldWin.style.backgroundColor = "#eee";
+	addFieldWin.style.color = "black";
+	newDBGuideP.style.color = "black";
+}//end if else screenDark
+	
 		//js code for addField here
 		
 	//	const enterNewFieldName = document.querySelector('#newFieldName');
@@ -4590,6 +4850,16 @@ if (newDBGuidance && xtraField === 0 && instructionPxtraFieldData.textContent !=
 
 //createNewDBGuide
 addNoteWindow.setAttribute('class','showing');
+//Check if screenDark mode
+checkScreenMode();
+if(screenDark) {
+	addNoteWindow.style.backgroundColor = "black";
+	addNoteWindow.style.color = "white";
+} else {
+	addNoteWindow.style.backgroundColor = "#eee";
+	addNoteWindow.style.color = "black";
+}//end if else screenDark
+
  //add date button here?
  addDateBtn = document.querySelector('#addDate');
 	addDateBtn.onclick = function (e) {
@@ -4648,15 +4918,40 @@ aboutDBBtn.onclick = choices;
 function choices () {
 	aboutDBBtn.disabled = true;
 	const getMemoryBtn = document.querySelector('#getMemory');
+	//const memoryWindow = document.querySelector('#memoryWindow');
 	const getDocumentationBtn = document.querySelector('#documentation');
 	const viewSettingsBtn = document.querySelector('#viewSettings');
-
+	const aboutDBInfoP = document.querySelector('#aboutDBInfoP');
+	const versionInfoP = document.querySelector('#versionInfoP');
+	
 	const clearAboutDBWindow = document.querySelector('#clearAboutDBWindow');
 	const numberNotes = document.createElement('p');
+	const memoryBtn = document.querySelector('#memory');
+  const memoryWindow = document.querySelector('#memoryWindow');
+  const whatMemory = document.querySelector('p#amtMemory');
+  const calculation = document.querySelector('#calcMemory');
+	
+	
 //disable aboutDatabase button so that it can't be clicked again while showing the about database window
 
 aboutDBWindow.setAttribute('class','showing');
+
+//Check if screenDark mode
+checkScreenMode();
+if(screenDark) {
+	aboutDBWindow.style.backgroundColor = "black";
+	aboutDBWindow.style.color = "white";
+	aboutDBInfoP.style.color = "black";
+	versionInfoP.style.color = "black";
+	memoryWindow.style.color = "black";
+} else {
+	aboutDBWindow.style.backgroundColor = "#eee";
+	aboutDBWindow.style.color = "black";
+}//end if else screenDark
+
+
 	getMemoryBtn.onclick = getMemory;//this function is in script section of main html file
+	
 	getDocumentationBtn.onclick = documentation;
 	//view settings prior to setup causes blank page and error
 	//alert('at view settings button..setup = ' + setup);
@@ -4683,10 +4978,85 @@ if(dataBaseName === "" || dataBaseName === null) {
 	//trying to prevent viewSettings btn getting disabled if user taps aboutDB without a database being loaded Aug 17
 	viewSettingsBtn.disabled = false;
 	aboutDBWindow.setAttribute('class','hidden');}; //end clearAboutDBWindow.onclick
-	}//end function choices
+	// }//end function choices MOVED FROM JUST BEFORE GETMEMORY FUNCTION SO GET MEMORY FUNCTION SEES DECLARED VARIABLES
+	
+	function getMemory () {
+	  //alert('in getMemory function');
+  // const memoryBtn = document.querySelector('#memory');
+  // const memoryWindow = document.querySelector('#memoryWindow');
+  // const whatMemory = document.querySelector('p#amtMemory');
+  // const calculation = document.querySelector('#calcMemory');
+  memoryWindow.setAttribute('class','showing');
+  //Check if screenDark mode
+checkScreenMode();
+if(screenDark) {
+	memoryWindow.style.backgroundColor = "black";
+	memoryWindow.style.color = "white";
+	
+} else {
+	memoryWindow.style.backgroundColor = "#eee";
+	memoryWindow.style.color = "black";
+}//end if else screenDark
+  
+  memoryBtn.onclick = amtMemory;
+  
+ /* function help () {document.getElementById("percent").value = 'You are not running in Safari so memory capacity calculation is not available.';}
+  */
+  
+  function amtMemory() {
+	 if('storage' in navigator) {
+		 alert('navigator.storage.estimate returns true!')
+	 }else{alert('navigator.storage.estimate = no storage in navigator' )}
+	 
+  	  if('storage' in navigator && 'estimate' in navigator.storage) {
+		 alert('about to calculate memory'); navigator.storage.estimate().then(function(estimate) {
+  document.getElementById("percent").value =
+      (estimate.usage / estimate.quota * 100).toFixed(2);
+  });//end storageManagerEstimate	
+  
+  
+  	  } else {
+		  document.getElementById("percent").value = '(The browser currently is not supporting storage.estimate so memory capacity calculation is not available.)';
+		  calculation.textContent = "Memory left function is not available, or the browser does not yet possess a storage Manager? To EXIT Tap the DONE BTN.";
+  	  	
+  	  }//end if storage in navigator
+	  
+	  
+	 //done button to allow return to notes window .. just hide the memory window to go back to the aboutDBWindow
+	  let doneMemoryBtn = document.createElement('button');
+      doneMemoryBtn.textContent = 'DONE';
+      memoryWindow.appendChild(doneMemoryBtn);
+	  doneMemoryBtn.onclick = function () {
+		 
+		//get ready for next instance of viewing documentation
+		memoryWindow.removeChild(doneMemoryBtn);
+		calculation.textContent ="";
+	
+      
+	  document.getElementById("percent").value = ''; memoryWindow.setAttribute('class','hidden');
+		aboutDBWindow.setAttribute('class','showing');
+		 };//end doneBtn.onclick
+	 }//end amtMemory functionmemoryBtn.onclick 
+ }//end function getMemory called from line640 in js file
+ 
+ }//end function choices MOVED FROM JUST BEFORE GETMEMORY FUNCTION SO GET MEMORY FUNCTION SEES DECLARED VARIABLES Dec22
 
 function documentation () {
-	const documentationWindow = document.querySelector('#documentationWin');	documentationWindow.setAttribute('class','showing');
+	const documentationWindow = document.querySelector('#documentationWin');
+	const documentationHeading = document.querySelector('#documentationHeading');	documentationWindow.setAttribute('class','showing');
+	
+	//Check if screenDark mode
+checkScreenMode();
+if(screenDark) {
+	documentationWindow.style.backgroundColor = "black";
+	documentationWindow.style.color = "white";
+	documentationHeading.style.color = "black";
+} else {
+	documentationWindow.style.backgroundColor = "#eee";
+	documentationWindow.style.color = "black";
+}//end if else screenDark
+
+
 	let doneBtn = document.createElement('button');
       doneBtn.textContent = 'DONE';
       documentationWin.appendChild(doneBtn);
@@ -4988,6 +5358,14 @@ if (!deleteTableRecord) {
 //search records code section
 
 function searchRecords () {
+	//error code to prevent search if no db selected Dec21
+	if(dbName === undefined && !newDBflag) {
+		alert('No database has been selected! Select or create a database to make SEARCH available.');
+	//prefWindow.setAttribute('class','hidden');
+		//getFileNames();
+		return;
+	} //end if dbName===undefined
+	
 	//includesSubstring = false;//not implemented!
 //should I add a count to find record clicks to force clearing of resultList after so many elements appear to not allow btns to disappear off screen? Jan 22
 let matchTDCell = "";
@@ -5015,6 +5393,16 @@ if (tableExists & tableTitle.length>originalNumberRecords || editNote) {
 	}//end if prefWindowHeight ==620
 
 searchWindow.setAttribute('class','showing');
+//Check if screenDark mode
+checkScreenMode();
+if(screenDark) {
+	searchWindow.style.backgroundColor = "black";
+	searchWindow.style.color = "white";
+} else {
+	searchWindow.style.backgroundColor = "#eee";
+	searchWindow.style.color = "black";
+}//end if else screenDark
+
 	const cancelSearchBtn = document.querySelector("#cancelSearch");
 	cancelSearchBtn.onclick = function (){
 		searchWindow.setAttribute('class','hidden');
@@ -5710,6 +6098,37 @@ console.log('After SaveVariables in the setup=0 section of thepickOldNew functio
 // const flipMenu = document.querySelector('#flip');//reference for table menu bar to allow it to turn yellow May17
 
 function tableScreenOptions () {
+	
+	//prevent error if user taps TABLE BTN and no db is selected which can happen if user CANCELS fileNamesList Dec21
+	if(dbName === undefined && !newDBflag) {
+		alert('No database has been selected! Select or create a database to make TABLE available.');
+	//prefWindow.setAttribute('class','hidden');
+		//getFileNames();
+		return;
+	} //end if dbName===undefined
+	
+	
+	//check screen mode
+	checkScreenMode();//have to so that table responds after a table refesh without having to go through preferences to update the screenDark variable! Dec20
+//alert("At tableScreenOptions - usingDarkMode = " + usingDarkMode + " screenDark = "+ screenDark);
+if(screenDark) {
+	showTable.style.backgroundColor = "black";
+	showTable.style.color = "white";
+	$("#flip").css({"background-color": "lightgrey", "color":"black", "border-color": "red"});//these don't work
+	tdEditTriggerP.style.color = "orange";
+	//set font color for dark mode Dec20
+		
+	//bodyImage.setAttribute('class','showDark');
+	//bodyImage.style.color = "white";
+	
+} else {
+	showTable.style.backgroundColor = "#eee";
+	showTable.style.color = "black";
+	$("#flip").css({"background-color": "lightgrey", "color":"black", "border-color": "black"});//these don't work
+	tdEditTriggerP.style.color = "blue";
+	}//end check screen mode
+	
+	
 	editCurrentTable = 0;
 	console.log('At tableScreenOptions...tableExists = ' + tableExists + '. edit =  ' + edit);
 //clearTableWindow precedes  createTableWindow!! Create table window has the new and edit btns at top
@@ -5804,6 +6223,15 @@ if(tableExists & !tableNeedsUpdate) {
 	console.log('At clearTableWindow.onclick. Bringing up createTableWindow...tableExists = ' + tableExists + '. edit =  ' + edit + 'displayedTable = ' + displayedTable);
 	tableScreen.setAttribute('class','hidden');
 	createTableWindow.setAttribute('class', 'showing');	
+	//Check if screenDark mode
+checkScreenMode();
+if(screenDark) {
+	createTableWindow.style.backgroundColor = "black";
+	createTableWindow.style.color = "white";
+} else {
+	createTableWindow.style.backgroundColor = "#eee";
+	createTableWindow.style.color = "black";
+}//end if else screenDark
 	
 	//update h2 dbTableName dbTableName.value; in HTML if db has been switched
 	document.getElementById("dbTableName").innerHTML = dbTableName.value;
@@ -5871,6 +6299,10 @@ showTable.setAttribute('class','hidden');
 //displayedTable = 1;//see above NOT TESTED NOV 6 2020
 console.log('At start displayTableBtn.onclick. This means a table exists..rerun or not.: displayedTable = ' + displayedTable + '. tableConstructed = ' + tableConstructed + '. renewed (added record) = ' + renewed + '. refreshed (data cell edit) = ' + refreshed + '. edit = ' + edit + '. DTBtnTappedOnce = ' + DTBtnTappedOnce + '.');
 //if changeDB
+
+//check screen mode
+
+
 if(changeDB) {
 	//clearTableRows;
 	//addFieldHeaders();
@@ -6248,6 +6680,19 @@ deleteFieldBtn.onclick = function() {
 	console.log('deleteFieldBtn has been clicked');
 
 	deleteFieldWindow.setAttribute('class', 'showing');
+	
+	//Check if screenDark mode
+checkScreenMode();
+if(screenDark) {
+	deleteFieldWindow.style.backgroundColor = "black";
+	deleteFieldWindow.style.color = "white";
+	dbNameInfo.style.color = "black";
+} else {
+	deleteFieldWindow.style.backgroundColor = "#eee";
+	deleteFieldWindow.style.color = "black";
+	//dbNameInfo.style.color = "black";
+}//end if else screenDark
+
 	deleteFieldTableName.textContent = "DELETE a field\/column from the table in: " + dbTableName.value;
 	
 		dbNameInfo.textContent = dbTableName.value;
@@ -6285,6 +6730,16 @@ function makeTable () {
 
 	//show create table window
 	createTableWindow.setAttribute('class', 'showing');	
+	
+	//Check if screenDark mode
+checkScreenMode();
+if(screenDark) {
+	createTableWindow.style.backgroundColor = "black";
+	createTableWindow.style.color = "white";
+} else {
+	createTableWindow.style.backgroundColor = "#eee";
+	createTableWindow.style.color = "black";
+}//end if else screenDark
 	//window.onload = function() {
 		//error 'the object can not be found here if comimg from edit make changes'
 	// 	if (edit === 0) {
@@ -6715,6 +7170,28 @@ function displayTable () {
 	
 	//REMOVE below IF MESSES UP
 	
+	//dark mode selected Dec18
+// //checkScreenMode();
+// alert("usingDarkMode = " + usingDarkMode);
+// if(usingDarkMode) {
+// 	showTable.style.backgroundColor = "black";
+// 	showTable.style.color = "white";
+// 	$("#flip").css({"background-color": "lightgrey", "color":"black", "border-color": "red"});//these don't work
+	
+// 	//bodyImage.setAttribute('class','showDark');
+// 	//bodyImage.style.color = "white";
+	
+// } else {
+// 	showTable.style.backgroundColor = "#eee";
+// 	showTable.style.color = "black";
+// 	$("#flip").css({"background-color": "lightgrey", "color":"black", "border-color": "black"});//these don't work
+	
+	
+	//bodyImage.setAttribute('class','showLite');
+	//bodyImage.style.backgroundColor = "white";
+	//bodyImage.style.color = "black";
+//}//end if usingDarkMode THIS WAS THE CULPRIT IN LAST ERROR FORGOT TO REMOVE THE LAST CURLY BRACKET ,!!!?,Dec19
+	
 	// let TableBackgroundColor ;
 		const tableBackgroundBtn = document.querySelector('#tableBackground');
 	
@@ -7058,6 +7535,8 @@ if (fromSearchRecord) {
 	if(hits.length>1) {
 		for (j=0;j<hits.length; ++j) {
 			if(i===hits[j]) {
+				
+	//hits[j] will have been given a value of i from iterating through the record titles in the search function so that if i iterating through the display records function = the i value given to hits[], that means the recods matched so highlight it
 				STrecordItem.setAttribute('class','highlightgreen');
 			//hitsArray[k] = tableArray[i]
 			}//if i=hits[j]
@@ -7500,7 +7979,7 @@ if(!linkLabel) {
 		//keeping track of Save Btn Date: Feb 26 2021
 		console.log('refreshBtn just clicked. Now on way to displayTable')
 		saveTableBtn.setAttribute('class','colorBtn');
-		saveTableBtn2.setAttribute('class','colorBtn');
+		saveTableBtn2.setAttribute('class','colorBtn');//was colorBtn
 		flipMenu.setAttribute('class','colorBtn');
 		$("#flip").css({"background-color": "yellow", "border-color": "red"});
 		
@@ -7778,12 +8257,22 @@ console.log('copyOfTableTitle = ' + copyOfTableTitle);
 			sortTable();
 		}//end toSortScrBtn.onclick
 		
+		//to SORT TABLE CODE	
+	const emailBtn = document.querySelector('#email');
+	
+		emailBtn.onclick = function () {
+			
+			//return menu bar in table back to original if post search
+			//flipMenu.textContent = "Click - Tap to show / hide TABLE MENU";
+			
+			console.log('emailBtn clicked');
+		//fromViewSort = false;//turn off sort flag
+			showTable.setAttribute('class', 'hidden');
+			getEmail(selectedContact);
+			alert("returned from getEmail function: selectedContact = " + selectedContact);
+		}//end emailBtn.onclick
 		
-		//end to Sort table code	
-	//the if else for save warning were added here Mar13..remove if messes up!!
-	// 	}//end if else confirm alert
-				
-	// }//end if !originalOrder
+		
 
 	
 }//end function displayTable .. showTable
@@ -7866,9 +8355,9 @@ refreshed = 0;//see Nov 5 note above..not sure what that refers to..maybe in edi
 //code below should run only if (!fromViewSort) Mar 10
 if(!fromViewSort) {
 
-saveTableBtn.setAttribute('class','colorBtn');
+saveTableBtn.setAttribute('class','borderBlinkGrn');//was colorBtn
 saveTableBtn.textContent = 'SAVE !'
-saveTableBtn2.setAttribute('class','colorBtn');
+saveTableBtn2.setAttribute('class','borderBlinkGrn');
 saveTableBtn2.textContent = 'SAVE !'
 flipMenu.setAttribute('class','colorBtn');
 $("#flip").css({"background-color": "yellow", "border-color": "red"});
@@ -7919,7 +8408,7 @@ STrows.appendChild(STtableHeader);
 STrows.appendChild(STheadRow);
 	
 }//end function addFieldHeaders
-
+//ReferenceError: Can't find variable: STtableHeader
 //function to remove fieldHeaders
 //error:NotFoundError: The object can not be found here.
 //NotFoundError: The object can not be found here.Jan30
@@ -8383,7 +8872,17 @@ var requestUpdate = objectStore.put(data);
 //const sortOption = document.createElement('option');
 console.log('In sort table function');
 	sortWindow.setAttribute('class','showing');
-//these variables are references at top as global variables
+	//Check if screenDark mode
+checkScreenMode();
+if(screenDark) {
+	sortWindow.style.backgroundColor = "black";
+	sortWindow.style.color = "white";
+} else {
+	sortWindow.style.backgroundColor = "#eee";
+	sortWindow.style.color = "black";
+}//end if else screenDark
+	
+//these variables are referenced at top as global variables
 //const selectedSortInput = document.querySelector('#sortType');
 // const sortTypeDataList = document.querySelector('#sortTypeList');
 const chosenSortInfo = document.querySelector('#chosenSort');
@@ -8624,6 +9123,17 @@ function backupDataBase(dataBaseName) {
 	//alert('in function backup database: ' + dataBaseName);
 	let string = "";
 	backingUpDBWin.setAttribute('class','showing');
+	//Check if screenDark mode
+checkScreenMode();
+if(screenDark) {
+	backingUpDBWin.style.backgroundColor = "black";
+	backingUpDBWin.style.color = "white";
+	dbNameInfo.style.color = "black";
+} else {
+	backingUpDBWin.style.backgroundColor = "#eee";
+	backingUpDBWin.style.color = "black";
+	//dbNameInfo.style.color = "black";
+}//end if else screenDark
 	
 	dbNameInfo.textContent = dataBaseName;
 	backingUpBanner.appendChild(dbNameInfo);
@@ -8939,6 +9449,7 @@ function restoreDataBase(restoredDBName) {
 	if(loadSampleDb || loadTutorialDb) {
 		alert("Remember to Tap the Text-Area box ONCE only to CONTINUE. This initiates loading of database sample.");
 		//change html text to reflect SAMPLE
+		nowDo.style.color = "black";
 		nowDo.textContent = "TAP TextArea element box TO INITIATE LOADING OF DATABASE SAMPLE. \nTHEN TAP SUBMIT.";
 		restoreTextArea.textContent = "TAP HERE TO INITIATE LOADING OF DATABASE SAMPLE. \nTHEN TAP SUBMIT.";
 		//restoreTextArea.textContent = "TAP HERE TO LOAD DATABASE SAMPLE!";
@@ -8971,6 +9482,21 @@ function restoreDataBase(restoredDBName) {
 	//alert('restoreDataBase(dataBaseName ). ' + dataBaseName);
 		const restoreFromClipboardBtn = document.querySelector('#restoreFromClipboard');
 fromRestore = true;	restoreDBWindow.setAttribute('class','showing');
+
+//Check if screenDark mode
+checkScreenMode();
+if(screenDark) {
+	restoreDBWindow.style.backgroundColor = "black";
+	restoreDBWindow.style.color = "white";
+	restoreInfo2P.style.color = "black";
+	restoreInfoP.style.color = "white";
+	restoreInfo1P.style.color="white";
+	nowDo.style.color = "black";
+} else {
+	restoreDBWindow.style.backgroundColor = "#eee";
+	restoreDBWindow.style.color = "black";
+}//end if else screenDark
+
 if (loadSampleDb || loadTutorialDb) {
 	//change heading title of window for SAMPLE
 	restoreDBWinTitle.textContent = "….LOADING A SAMPLE DATABASE DEMONSTRATION";
@@ -9466,6 +9992,92 @@ function filterColon (linkInfo) {
 	return linkInfo;
 	
 }//end function filterColon
+
+//begin function checkScreenMode
+function checkScreenMode() {
+var usingDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+//alert("At checkScreenMode function..usingDarkMode = " + usingDarkMode);
+console.log("At checkScreenMode function - usingDarkMode = " + usingDarkMode);
+		if (usingDarkMode) {bodyImage.style.backgroundColor= "black";
+		viewDark.textContent = "Reset/Dark Mode clear Background Image";}//end if usingDarkMode
+		screenDark = true;
+		if (!usingDarkMode) {bodyImage.style.backgroundColor= "white";
+		viewDark.textContent = "Reset/Dark-Light Mode";
+		screenDark = false;
+	}//end if !usingDarkMode
+}//end function checkScreenMode
+
+//beginning email code Dec15 2021
+async function getEmail (selectedContact) {
+	const supported = ('contacts' in navigator && 'ContactsManager' in window);
+	if (supported) {
+		alert("ContactsAPI is supported!");
+		
+	const props = ['name','email'];
+const opts = {multiple: true};
+
+//async function getContacts() {
+	try {
+       var contacts = await navigator.contacts.select(props, opts);
+	 // alert("contacts = " + contacts);
+	   selectedContact = contacts.email;
+	  //selectedContacts = contacts.value; 
+   stringify(selectedContact);
+	  return contacts;
+	  
+     // handleResults(contacts);
+  } catch (ex) {
+	  alert("error = " + ex);
+      // Handle any errors here.
+  }
+//}	
+		
+	function stringify (selectedContact) {
+    alert("stringified " + Object.prototype.toString.call(selectedContact));
+	selectedContact = Object.prototype.toString.call(contacts.name);	
+	 }//end function stringify
+// 		const props = ['name', 'email'];
+// const opts = {multiple: false};
+// async function getContacts() {
+// try {
+	
+// //  const contacts = async () => {
+// // 	 await navigator.contacts.select(props, opts);
+// // 	alert("contacts = " + contacts.email);
+// // }//end curly of async function
+
+
+// 	const contacts = await navigator.contacts.select('name','email' );
+//   alert("contacts = " + contacts.email);
+  
+  
+  
+//   //contacts = [object Promise]
+//   //contacts = [object HTMLButtonElement]
+//   //handleResults(contacts);
+// } catch (ex) {
+// 	alert("error = " +ex);
+//   // Handle any errors here.
+// }
+
+// }//end async function get contacts
+// alert("contacts = " + contacts);
+// // var selectedContact = 
+// // navigator.contacts.select(
+// //     ['name', 'email'], {multiple: false}
+// //   ).then( contacts => console.log(contacts) )
+// //  // .catch( error => console.log(error) )
+  
+// //   alert('email selected is ' + contacts);
+
+alert("contacts = " + contacts)
+
+
+} else {
+	alert("If you are using Safari 14.5 set Advanced/Experimental/ContactsAPI to enabled in Safari settings. Otherwise Your browser does not support ContactsAPI yet!");
+}//if else supported
+}//end function getEmail
+//end email code
 
 //beginning function flash
 // function flash () {

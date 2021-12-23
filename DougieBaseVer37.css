@@ -1,4 +1,4 @@
-/*DougieBaseVer37.css from DougieBaseVer36.css Dec5 from Copy of DougieBaseVer36 Nov14 from spDougieBaseVer36.css landscape table search and preview edit Date:Nov9 save preferences added chooseColoursWin from. tdEdit Oct 16.*/
+/*DougieBaseVer37.css experimentalDougieBaseVer37.css Dec22 from DougieBaseVer36.css Dec5 from Copy of DougieBaseVer36 Nov14 from spDougieBaseVer36.css landscape table search and preview edit Date:Nov9 save preferences added chooseColoursWin from. tdEdit Oct 16.*/
 /*clearBkgrdDougieBaseVer34.css in WorkingCopy allow background image*/
 /* //Date:Oct5 2021 Removed Double tap to avoid magnification in Manage files view full screen search select filenames. iOS15 safari has no way to disable double tap for magnification. More cosmetics with dataBaseName titles added .titleBanner to CSS*/
 /*font color of button text is blue in iOS 15 why? Forced it to black large Oct2 2021 touch-action: manipulation; to prevent double tap zoom … DID NOT WORK added titleBanner for About db
@@ -33,7 +33,7 @@ body {
 
 button, .tdEdit {
 	color: black;/*iOS 15 changed font color of button text to blue why? So I force it to black in css..its blue in Edge too!*/
-	border: 2px solid black;
+	border: 2px solid red;/*was black changed to red for dark mode Dec20 2021*/
 	border-radius: .5em;
 	font-size: 120%/*smaller;*//*medium is default*/
 	/*Recently added to buttons Oct3*/
@@ -87,6 +87,20 @@ ul {
 
 div {
   margin-bottom: 10px;
+}
+
+.showDark {
+	 background-color: black;
+	//color: white;
+	/*background-color: white;
+	color: black;*/
+}
+
+.showLite {
+	 /*background-color: black;
+	color: white;*/
+	background-color: white;
+	//color: black;
 }
 
 .highlight {
@@ -462,7 +476,9 @@ To get to edit date or other cell contents and the return btn and save btn to ap
 	.edBan {
 	background-color: lightgreen;
 	color: black;	
-		
+	border: 2px solid red;	
+	border-radius: 10px;/*for dark mod*/
+	padding: 5px;	/*for dark mode changed to 5px*/
 	}
 	
 	
@@ -897,3 +913,4 @@ tbody {
 	color: black;
   }
 }
+
