@@ -1,4 +1,4 @@
-//DougieBaseVer37.js experimentalDougieBaseVer37.js Dec22 moved getMemory function from html file to .js file from Dec10 2021 mobileFriendlyDougieBaseVer37.js from DougieBaseVer36.js Dec5 sw11 from messWith Dec2 DougieBaseVer36.js Dec1 from flashFileNameDougieBaseVer36.js from createNewDBDougieBaseVer36 Nov30 Nov28 added addToDynamicFields.setAttribute('class','borderBlink') to border in editMoreFields function and addNoteBtn.setAttribute('class','borderBlink'); in saveBtn.onclick for createNewDB renameBtn.setAttribute('class','borderBlink'); in preferences displayDataBtn.setAttribute('class','borderBlink'); in function renameTitle Nov28 borderBlink css is in the html file  Nov 27 fine tuned flow of createNewDB Nov24 fixed create newDB bug! Nov 22 edit notes displayed n real time Nov17 added tableScreenOptions to editTableTrigger to not mess up table display Nov14 from spDougieBaseVer36.js landscape table search and preview edid Date:Nov9 save preferences from Date:Nov4 added Easter egg and save settings preferencesDougieBaseVer36.js from fixEditDougieBaseVer35.js from 
+//DougieBaseVer37.js Dec25 experimentalDougieBaseVer37.js Dec24 Added whatsNew window  Working on retrieving contact info. See functions at bottom. ADD style="color:black" IN HTML  Dec22 moved getMemory function from html file to .js file from Dec10 2021 mobileFriendlyDougieBaseVer37.js from DougieBaseVer36.js Dec5 sw11 from messWith Dec2 DougieBaseVer36.js Dec1 from flashFileNameDougieBaseVer36.js from createNewDBDougieBaseVer36 Nov30 Nov28 added addToDynamicFields.setAttribute('class','borderBlink') to border in editMoreFields function and addNoteBtn.setAttribute('class','borderBlink'); in saveBtn.onclick for createNewDB renameBtn.setAttribute('class','borderBlink'); in preferences displayDataBtn.setAttribute('class','borderBlink'); in function renameTitle Nov28 borderBlink css is in the html file  Nov 27 fine tuned flow of createNewDB Nov24 fixed create newDB bug! Nov 22 edit notes displayed n real time Nov17 added tableScreenOptions to editTableTrigger to not mess up table display Nov14 from spDougieBaseVer36.js landscape table search and preview edid Date:Nov9 save preferences from Date:Nov4 added Easter egg and save settings preferencesDougieBaseVer36.js from fixEditDougieBaseVer35.js from 
 //changed addEventListener to copy instead of dblclick Oct16 made default double click Oct31 2021  clearBkgrdDougieBaseVer34.js clear background and fixed crashes that occur if user makes illogical moves Oct12 2021 use to update workingCopy and Safarii etc
 //Date:Oct5 2021 Removed Double tap to avoid magnification in Manage files view full screen search select filenames. iOS15 safari has no way to disable double tap for magnification. More cosmetics with dataBaseName titles
 //removed alert in view full note ?hangs up sometimes? Cosmetic fixes Oct 3 2021 titleBanner in About db
@@ -138,7 +138,7 @@
 
 //var flashing;
 //var flashYellow = true;
-let selectedContact = "";//used in table email
+let selectedContact = [];//used in table email
 let tableScreenBtnGrn = false;//flag used to let the table btn flash when createNewDB
 let testing = false; 
 let os = 2; 
@@ -491,6 +491,14 @@ dbTableName.value = "Notes";
 
 const settingsBtn = document.querySelector('#settings');
 	const aboutDBWindow = document.querySelector('#aboutDBWin');//see line 631 for aboutDBWindow code
+const whatsNewWindow = document.querySelector('#whatsNewWin');
+  const newUpdatesBtn = document.querySelector('#newUpdates');
+	const closeUpdateWindow = document.querySelector('#closeUpdateWindow');
+	const whatsNewInfoP = document.querySelector('#whatsNewInfoP');
+	const newVersionInfoP = document.querySelector('#newVersionInfoP');
+	const viewSettingsBtn = document.querySelector('#viewSettings');
+	const numberNotes = document.createElement('p');//made global see whatsNew function
+	
 const prefWindow = document.querySelector('#prefWin');
 //see 535 lines for continuation of preferences code
 const timeDateFlagP = document.querySelector('#timeDateFlag');//this made global so both timeDate and linkLabel can use it in preferences June9
@@ -4920,17 +4928,20 @@ function choices () {
 	const getMemoryBtn = document.querySelector('#getMemory');
 	//const memoryWindow = document.querySelector('#memoryWindow');
 	const getDocumentationBtn = document.querySelector('#documentation');
-	const viewSettingsBtn = document.querySelector('#viewSettings');
+	// const viewSettingsBtn = document.querySelector('#viewSettings');//made global because it is referenced outside this scope
 	const aboutDBInfoP = document.querySelector('#aboutDBInfoP');
 	const versionInfoP = document.querySelector('#versionInfoP');
 	
 	const clearAboutDBWindow = document.querySelector('#clearAboutDBWindow');
-	const numberNotes = document.createElement('p');
+	// const numberNotes = document.createElement('p');//made global because referenced outside this scope Dec24
 	const memoryBtn = document.querySelector('#memory');
   const memoryWindow = document.querySelector('#memoryWindow');
   const whatMemory = document.querySelector('p#amtMemory');
   const calculation = document.querySelector('#calcMemory');
-	
+  // const whatsNewWindow = document.querySelector('#whatsNewWin');
+  // const newUpdatesBtn = document.querySelector('#newUpdates');
+	// const closeUpdateWindow = document.querySelector('#closeUpdateWindow');
+	// const whatsNewInfoP = document.querySelector('#whatsNewInfoP');
 	
 //disable aboutDatabase button so that it can't be clicked again while showing the about database window
 
@@ -4951,6 +4962,8 @@ if(screenDark) {
 
 
 	getMemoryBtn.onclick = getMemory;//this function is in script section of main html file
+	
+	newUpdatesBtn.onclick = whatsNew;
 	
 	getDocumentationBtn.onclick = documentation;
 	//view settings prior to setup causes blank page and error
@@ -4979,6 +4992,9 @@ if(dataBaseName === "" || dataBaseName === null) {
 	viewSettingsBtn.disabled = false;
 	aboutDBWindow.setAttribute('class','hidden');}; //end clearAboutDBWindow.onclick
 	// }//end function choices MOVED FROM JUST BEFORE GETMEMORY FUNCTION SO GET MEMORY FUNCTION SEES DECLARED VARIABLES
+	closeUpdateWindow.onclick = function () {
+		whatsNewWindow.setAttribute('class','hidden');
+	};//end closeUpdateWindow.onclick function
 	
 	function getMemory () {
 	  //alert('in getMemory function');
@@ -5040,6 +5056,26 @@ if(screenDark) {
  }//end function getMemory called from line640 in js file
  
  }//end function choices MOVED FROM JUST BEFORE GETMEMORY FUNCTION SO GET MEMORY FUNCTION SEES DECLARED VARIABLES Dec22
+ 
+ function whatsNew () {
+	 checkScreenMode();
+if(screenDark) {
+	whatsNewWindow.style.backgroundColor = "black";
+	whatsNewWindow.style.color = "white";
+	whatsNewInfoP.style.color = "black";
+	newVersionInfoP.style.color = "black";
+} else {
+	whatsNewWindow.style.backgroundColor = "#eee";
+	whatsNewWindow.style.color = "black";
+}//end if else screenDark
+	 aboutDBWindow.setAttribute('class','hidden');
+	 aboutDBBtn.disabled = false;
+	//trying to prevent viewSettings btn getting disabled if user taps aboutDB without a database being loaded Aug 17
+	viewSettingsBtn.disabled = false;
+	aboutDBWindow.removeChild(numberNotes);
+
+	 whatsNewWindow.setAttribute('class','showing');
+ }//end function whatsNew
 
 function documentation () {
 	const documentationWindow = document.querySelector('#documentationWin');
@@ -6098,7 +6134,7 @@ console.log('After SaveVariables in the setup=0 section of thepickOldNew functio
 // const flipMenu = document.querySelector('#flip');//reference for table menu bar to allow it to turn yellow May17
 
 function tableScreenOptions () {
-	
+
 	//prevent error if user taps TABLE BTN and no db is selected which can happen if user CANCELS fileNamesList Dec21
 	if(dbName === undefined && !newDBflag) {
 		alert('No database has been selected! Select or create a database to make TABLE available.');
@@ -6178,6 +6214,7 @@ refreshTableName.textContent = dbTableName.value;
 	 
 	 tableNeedsUpdate = true;//flag so that if removing after returnHomeBtn tapped does not produce an error Dec 29
 	 }//end if tableTitle.length>originalNumberRecords
+	
 	 refreshTableP.textContent = "You have added a new Record since last creation of Table, OR you have edited a note, OR you have changed the edit table Trigger action. To update tap UPDATE TABLE button.";
 	 refreshTableBtn.onclick = function () {
 		 
@@ -8260,16 +8297,18 @@ console.log('copyOfTableTitle = ' + copyOfTableTitle);
 		//to SORT TABLE CODE	
 	const emailBtn = document.querySelector('#email');
 	
-		emailBtn.onclick = function () {
+		emailBtn.onclick = async function () {
 			
 			//return menu bar in table back to original if post search
 			//flipMenu.textContent = "Click - Tap to show / hide TABLE MENU";
 			
 			console.log('emailBtn clicked');
 		//fromViewSort = false;//turn off sort flag
-			showTable.setAttribute('class', 'hidden');
-			getEmail(selectedContact);
-			alert("returned from getEmail function: selectedContact = " + selectedContact);
+			//showTable.setAttribute('class', 'hidden');
+			//getEmail(selectedContact);
+		await allContactInfo(selectedContact);
+			alert("Use COPY/PASTE to insert desired information into record or table data cell: \n selectedContact = " + selectedContact);
+			//selectedContact.length = 0;//this statement not necessary to clear as the API must clear it on rerun? Will start here to put contacy choices into a DougieBase table
 		}//end emailBtn.onclick
 		
 		
@@ -10036,6 +10075,9 @@ const opts = {multiple: true};
     alert("stringified " + Object.prototype.toString.call(selectedContact));
 	selectedContact = Object.prototype.toString.call(contacts.name);	
 	 }//end function stringify
+	 
+	 
+	 
 // 		const props = ['name', 'email'];
 // const opts = {multiple: false};
 // async function getContacts() {
@@ -10078,7 +10120,83 @@ alert("contacts = " + contacts)
 }//if else supported
 }//end function getEmail
 //end email code
+async function getContacts (selectedContact) {
+	if ("contacts" in navigator && "select" in navigator.contacts) {
+ try {
+   const contacts = await navigator
+    .contacts
+    .select(
+     ['name', 'tel'],
+     {multiple: true}
+    );
+  alert("Number of contacts selected = " + contacts.length);
+  for (i=0;i<contacts.length;i++) {
+	 selectedContact[i] = contacts[i].name + " " + contacts[i].tel ;
+  }//end for loop
+  
+  alert("Use COPY/PASTE to insert data into table cell. You have selected these contacts: " + contacts[0].name + " " + contacts[0].tel + "\n" + contacts[1].name + " " + contacts[1].tel + selectedContact);
+ // selectedContact[][] = contacts;
+  return selectedContact;
+ } catch {
+   console.log("Unexpected error happened in Contact Picker API");
+ }
+} else {
+ alert("Your browser doesn't support Contact Picker API");
+}
+}//end function getContacts
 
+async function allContactInfo (selectedContact) {
+	if ("contacts" in navigator && 
+    "select" in navigator.contacts && 
+    "getProperties" in navigator.contacts) {
+ try {
+   const availableProperties = await navigator.contacts.getProperties();
+     
+     if (availableProperties.includes("address")) {
+       const contactProperties = ['name', 'tel','email','address'];
+   
+       const contacts = await navigator
+        .contacts
+        .select(
+         contactProperties,
+         {multiple: true}
+        );
+		//put contact info in selectedContact array
+	alert("Number of contacts selected = " + contacts.length);	
+	for (i=0;i<contacts.length;i++) {
+	 selectedContact[i] = contacts[i].name + " " + contacts[i].tel + " " + contacts[i].address;
+ }//end for loop
+		//end of put contact info in selectedContact array
+  //console.log changed to alert 
+       alert("Your first contact: " + contacts[0].name + " " + contacts[0].tel + " " + contacts[0].address);
+	   return selectedContact;
+     } else {
+       alert("Contact Picker API on your device doesn't support the (street) address property");
+	   const contactProperties = ['name','email', 'tel'];
+   
+       const contacts = await navigator
+        .contacts
+        .select(
+         contactProperties,
+         {multiple: true}
+        );
+		//put contact info in selectedContact array
+	alert("Number of contacts selected = " + contacts.length);	
+	for (i=0;i<contacts.length;i++) {
+	 selectedContact[i] = "\n" + contacts[i].name + " " + contacts[i].email + " " + contacts[i].tel;
+ }//end for loop
+		//end of put contact info in selectedContact array
+  //console.log changed to alert 
+       alert("Your first contact: " + contacts[0].name + " " + contacts[0].email + " " + contacts[0].tel);
+	   return selectedContact;
+     }//end if else includes address
+ } catch (ex) {
+   console.log("Unexpected error happened in Contact Picker API");
+ }
+} else {
+ alert("Your browser doesn't support Contact Picker API");
+}
+}
 //beginning function flash
 // function flash () {
 	
@@ -10251,7 +10369,7 @@ Note that you actually have to pass the exported data as a string, not as a JSON
 //DISABLED ENABLED SERVICE WORKER
 
 
-  if('serviceWorker' in navigator) {
+if('serviceWorker' in navigator) {
     navigator.serviceWorker
              .register('/DougieBaseVer37sw.js')
              .then(function() { console.log('Service Worker Registered'); });
@@ -10264,7 +10382,7 @@ Note that you actually have to pass the exported data as a string, not as a JSON
 	console.log('No Service worker installed!');
 	document.getElementById("percent").value = '(No Service Worker installed! )';
 }//end if else service worker
-	
+
 	//what about the manifest file? triggered by oninstall? A2HS?	 
 //If the service worker API is supported in the browser, it is registered against the site using the ServiceWorkerContainer.register() method. Its contents reside in the sw.js file, and can be executed after the registration is successful. It's the only piece of Service Worker code that sits inside the app.js file; everything else that is Service Worker-specific is written in the sw.js file itself.
 

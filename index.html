@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>DougieBaseVer37.html</title>
+    <title>index.html from experimentalDougieBaseVer37.html</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
    <!-- <link rel="stylesheet" type="text/css" href="DougieBaseVer37.css">-->
 	<link rel="stylesheet" type="text/css" media="screen and (min-width: 480px)" href="DougieBaseVer37.css" />
@@ -153,7 +153,7 @@ color: black;
 	
 	  
     <header>
-      <h1>DougieBase Version 37sw14</h1>
+      <h1>DougieBase Version 37sw15</h1>
     </header>
 	<p></p>
 <div id = "scrolling">
@@ -712,16 +712,17 @@ color: black;
 				<p class = "highlight" id = "versionInfoP">Revisions and version numbers.  Scroll up     ⬆️ </p>
 		   <ul>
 			   <li>Obtain an estimate of how much memory is available in the database storage if your Browser accomodates this feature.</li>
-			   <li>This is Version 37, service worker 14</li> 
+			   <li>This is Version 37, service worker 15</li> 
 			   <li>Search references the first title field, and all other fields since version 33.1.</li>
-			   <li>Last revision: Dec 23 2021</li>
+			   <li>Last revision: Dec 25 2021</li>
 		   </ul>
 	   </div>
 		   <p></p>
 		   <button id="getMemory">Estimate Memory</button>
 		<button id="documentation">Documentation.Manual</button>
 		<button id="viewSettings">View Settings</button>
-		</div> <!--end of the About Database window--> 
+		<button id = "newUpdates">New Updates</button>
+		</div> <!--end of the About Database window-->	
 		
 		<!-- calculate memory section-->
 	<div id="memoryWindow" class="hidden"> 
@@ -851,14 +852,14 @@ color: black;
 		<p id ="tableLandscape"></p>
 	<!-- test jQuery	 -->
 	<div id="flip">Click to show / hide TABLE MENU</div>
-	<div id="panel">Table Options:
+	<div id="panel" style="color:black">Table Options:
 		<button id="homeScreenBtn">RETURN to Home Screen</button>
 	<button id="saveTableBtn">SAVE TABLE</button>
 	<button id="toSearchScr"> SEARCH TABLE </button>
 	<button id="toEditTableScr"> EDIT TABLE </button>
 	<button id="toSortScr"> SORT TABLE </button>
 	 <button id = "tableBackground">Change Background</button>
-	 <button id = "email">EMAIL</button>
+	 <button id = "email">CONTACTS</button>
 	 <button id="bottom">vBottom</button>
 	</div>
 	<!-- test jQuery -->
@@ -955,6 +956,29 @@ color: black;
 
 
 	<!--  !!! CODE ABOVE IS HTML FOR CREATETABLE SECTION. ITS .JS IS IN THE .JS OF NOTES !!!!! -->
+	
+	<section>
+			 <!--the WHAT'S NEW window HAD TO PUT IN NEW SECTION BECAUSE IT WOULD NOT allow table scrn window to appear when it was a div after aboutDBWin why??? Dec24-->  
+	  <div id="whatsNewWin" class="hidden">
+		  <h2 class="edBan">What's new in DougieBase?</h2>
+		   <p></p>
+		   <div id="closeUpdateWindow" class="simulator">TAP HERE TO RETURN TO NOTES</div>
+		   <p class="ppref" id = "whatsNewInfoP">New or added features or other update information will occasionally be recorded here as DougieBase undergoes revisions.</p>
+		    <div class = "edWinScroll" style="height: 300px">
+				<p class = "highlight" id = "newVersionInfoP">Revisions and version numbers.  Scroll up     ⬆️ </p>
+		   <ul>
+			   <li>Last revision: Dec 25 2021</li>
+			   <li>This is Version 37, service worker 15</li> 
+			   <li>Improved workflow when creating a new database, including online prompts and flashing 'Do this next indicators'</li>
+			   
+			   <li>Now compatible with 'Dark Mode'</li>
+			   <li>More responsive web design for smart phones</li>
+			   <li>Added CONTACTS button to Table menu to allow access to information in the device's contacts</li>
+			   
+		   </ul>
+	   </div>
+	   <!--end of the WHAT'S NEW window--> 
+	</section>
 	
     </main>
 
