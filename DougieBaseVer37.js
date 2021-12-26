@@ -8307,8 +8307,8 @@ console.log('copyOfTableTitle = ' + copyOfTableTitle);
 			//showTable.setAttribute('class', 'hidden');
 			//getEmail(selectedContact);
 		await allContactInfo(selectedContact);
-			alert("Use COPY/PASTE to insert desired information into record or table data cell: \n selectedContact = " + selectedContact);
-			//selectedContact.length = 0;//this statement not necessary to clear as the API must clear it on rerun? Will start here to put contacy choices into a DougieBase table
+			alert("Use COPY/PASTE to insert desired information into record or table data cell: \n selected Contacts = " + selectedContact);
+			selectedContact.length = 0;//this statement IS necessary to clear as the API must clear it on rerun? Will start here to put contacy choices into a DougieBase table
 		}//end emailBtn.onclick
 		
 		
