@@ -10116,7 +10116,7 @@ alert("contacts = " + contacts)
 
 
 } else {
-	alert("If you are using Safari 14.5 set Advanced/Experimental/ContactsAPI to enabled in Safari settings. Otherwise Your browser does not support ContactsAPI yet!");
+	alert("If you are using Safari >14.5 set Advanced/Experimental/ContactsAPI to enabled in Safari settings. Otherwise Your browser does not support ContactsAPI yet!");
 }//if else supported
 }//end function getEmail
 //end email code
@@ -10194,7 +10194,7 @@ async function allContactInfo (selectedContact) {
    console.log("Unexpected error happened in Contact Picker API");
  }
 } else {
- alert("Your browser doesn't support Contact Picker API");
+ alert("Your browser doesn't support Contact Picker API. If you are using Safari >14.5 set Advanced/Experimental/ContactsAPI to enabled in Safari settings. Otherwise Your browser does not support ContactsAPI yet!");
 }
 }
 //beginning function flash
