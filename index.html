@@ -2,12 +2,12 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>index.html from experimentalDougieBaseVer37.html</title>
+    <title>DougieBaseVer40.html</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
    <!-- <link rel="stylesheet" type="text/css" href="DougieBaseVer37.css">-->
-	<link rel="stylesheet" type="text/css" media="screen and (min-width: 480px)" href="DougieBaseVer37.css" />
+	<link rel="stylesheet" type="text/css" media="screen and (min-width: 480px)" href="DougieBaseVer40.css" />
 	
-	<link rel="stylesheet" type="text/css" media="screen and (max-width: 480px)" href="smallDeviceDougieBaseVer37.css" />
+	<link rel="stylesheet" type="text/css" media="screen and (max-width: 480px)" href="smallDeviceDougieBaseVer40.css" />
 	
 	
 	<link rel="manifest" href="trainsDBTableNotes.webmanifest">
@@ -15,11 +15,14 @@
 	
 <!-- 	Date:Nov21 Nov14 landscape table and search and preview edit Nov4 2021 added easter egg and save settings Oct 31 2021. Ver 35.3removed access to word documentation help manual fixEditDougieBaseVer35.html USE THIS VERSION AS OF Sept 29 2021 2021 This version has been installed on github pages ! Added links to documentation docx and pdf<script src="fileNamesTableNotesVer21.js" defer type="text/javascript"></script> Added p info statement to Create Table window -->
 
-<!-- Line below adds jQuery library from jQuery file in same directory as the .js file. It works without internet connection. The google CDN has to have the internet connection IMPORTANT CONSIDERATION WHEN USING MORE jQuery code!! At the moment as of May17 2021 the only thing using jQuery is the table menu and hide scroll btns in preferences-->
+ 
 
  <script src="jquery-3.6.0.min.js"></script>
 
-    <script src="DougieBaseVer37.js" defer></script>
+    <script src="DougieBaseVer40.js" defer></script>
+   <!--  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.9/dist/sweetalert2.all.min.js"></script>
+    <script src="sweetalert2.all.min.js"></script> -->
+    
 	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
 	<!-- <scrip src="jquery-3.6.0.slim.min.js"></script> -->
 <!-- 	<script src="jquery-3.6.0.slim.min.js" defer></script> -->
@@ -38,6 +41,8 @@ $(document).ready(function(){
 });
   
 });
+
+
 </script>
 <style> 
 
@@ -153,7 +158,7 @@ color: black;
 	
 	  
     <header>
-      <h1>DougieBase Version 37sw15</h1>
+      <h1>DougieBase Version 40sw16</h1>
     </header>
 	<p></p>
 <div id = "scrolling">
@@ -173,6 +178,7 @@ color: black;
 		<button id="search">SEARCH</button>
 		<button id="loadDB">HELP</button>
 		<button id="saveDatabase">SAVE</button>
+		<button id="addContacts">Add CONTACTS/RECORDS</button>
 	</nav>
 	
 
@@ -230,7 +236,7 @@ color: black;
 		  
 		   <button id="deleteFileBtn" class ="attentionBtn">DELETE DataBase</button>
 		    <button id="clearFileBtn" class ="normalBtn">Clear DataBase</button>
-			<button id="backupFileBtn" class ="attentionBtn">BACKUP DataBase</button>
+			<button id="backupFileBtn" class ="attentionBtn">BACKUP-EXPORT DataBase</button>
 			
 			<button id = "cancelDeleteDataBaseBtn">CANCEL</button>
 			<p></p>
@@ -256,10 +262,10 @@ color: black;
 		  <button id= "backupBtn" name = "backupBtn" class = "attentionBtn">BACKUP</button>
 		  <p></p>
 		  <p class = "edBan">Tap RESTORE DataBase to reclaim any lost<br> Database from your external storage.. </p>
-		    <label for="restoreFileBtn" class="edWinScroll" id = "restoreFileBtnLabel">Restore database named:<span id = "fileToRestore"></span>. </label>
+		   <!--  <label for="restoreFileBtn" class="edBan" id = "restoreFileBtnLabel">Tap Restore a Database to retrieve any database in your external storage saved files. </label> -->
 		  <p></p>
 		    <!-- <button id="backupFileBtn" class ="attentionBtn">Backup DataBase</button> -->
-			   <button id="restoreFileBtn" class ="attentionBtn">Restore DataBase</button>
+			   <button id="restoreFileBtn" class ="attentionBtn">Restore a DataBase</button>
 			<button id = "cancelBackupDataBaseBtn">CANCEL</button>
 			<p></p>
 	
@@ -273,17 +279,25 @@ color: black;
 	  <p></p>
 	   <button id="copyClipboardBtn">Click here first!</button>
 	   <button id ="doneCopy">DONE</button>
+	   <button id = "shareBtn">SHARE database</button>
 
 	  <!-- onclick = " copyToClipboard(textarea.value) ? this.innerText='Copied!': #this.innerText='DONE! Copied to clipboard. :(' "  -->
 	   
 	   <!-- 	 <button onclick="copyToClipboard($(json) )? this.innerText='Copied!': this.innerText='Sorry :(' ">Click here</button>THIS WORKS BUT NEED TO USE BOTH FUNCTIONS!!!!!!! -->
 
 <p>
-  <textarea id = "textAreaClip" type ="text" placeholder="(Backing up database..." cols="60" rows="4" defer>json</textarea>
+  <textarea id = "textAreaClip" style ="display:" type ="text" placeholder="(Backing up database..." cols="60" rows="4" defer>json</textarea>
 </p>
 
 			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			
+	<!-- <button id = "shareBtn">SHARE database</button> -->
+	<p id = "resultPara"></p>
 	
+	<button id = "finishedShare">Return to Home Screen</button>
 		</section>
 		<!-- End backing up database window -->
 		
@@ -360,7 +374,7 @@ color: black;
 <!-- placeholder="FIRST TAP ONCE. SUBMIT btn turns green"    REMOVED AUG21 to see if text-area now responds to js-->
 <p id = "nowDo" class = "attentionBtn"></p>
 <p>
-  <textarea id = "restoreTextAreaClip" type ="text"  cols="60" rows="4" placeholder="FIRST TAP ONCE. SUBMIT btn turns green" defer></textarea>
+  <textarea id = "restoreTextAreaClip" type ="text"  cols="60" rows="4" contenteditable = "true" placeholder="FIRST TAP ONCE. SUBMIT btn turns green" defer></textarea>
 </p>
 
 			<p></p>
@@ -506,7 +520,7 @@ color: black;
 		  <p>Enter text of search phrase into the search input element. Tap the record in the Found Record List to view its notes.</p>
 		  <label for="searchTitle" class="edBan">Search Phrase: </label>
 		 <input id = "inputSearchRecord" name = "searchTitle"
-		  type="search" class = "custom"
+		  type="search" enterkeyhint= "SEARCH" class = "custom"
 		  placeholder="search..">
 		  <button id="searchForRecord">FIND Record</button>
 		  <p id = "caseIndicator" class = "simulator"></p>
@@ -574,6 +588,7 @@ color: black;
 		
 		<button id = "tableTime" name = "tableTime">TableDate <span id = "timeIndicator">?</span>time</button>
 		<button id = "useLinkLabel">Use Link Labels</button>
+		<!-- <button id = "printOption">Enable Print</button> -->
 		<button id = "scrollTable">Disable Scroll Table</button>
 		<p><button id = "bkgrdImage">Clear Background</button><span id ="viewDark">(For Dark Mode clear Background Image)</span></p>
 		
@@ -707,15 +722,26 @@ color: black;
 		  <h2 class="edBan">About this Database</h2>
 		   <p></p>
 		   <div id="clearAboutDBWindow" class="simulator">TAP HERE TO RETURN TO NOTES</div>
-		   <p class="ppref" id = "aboutDBInfoP">The About Database screen allows access to a HELP File and Documentation, as well as some current Settings. </p>
+		   <p class="ppref" id = "aboutDBInfoP">The About Database screen allows access to a HELP File and Documentation, as well as some current Settings. A short summary of the creation and use of TABLES is also included here…see below 👇 </p>
 		    <div class = "edWinScroll">
 				<p class = "highlight" id = "versionInfoP">Revisions and version numbers.  Scroll up     ⬆️ </p>
 		   <ul>
 			   <li>Obtain an estimate of how much memory is available in the database storage if your Browser accomodates this feature.</li>
-			   <li>This is Version 37, service worker 15</li> 
+			   <li>This is Version 40, service worker 16</li> 
 			   <li>Search references the first title field, and all other fields since version 33.1.</li>
-			   <li>Last revision: Dec 25 2021</li>
-		   </ul>
+			   <li>Last revision: May 27 2022. For information about latest changes tap the New Updates button.</li>
+			   <li><span style = "text-decoration: underline">A note about Tables:</span><br> There are 3 classes of tables in DougieBase. <br>1. The MAIN table is derived from each DougieBase database and is automatically generated when a new database is created. This is the table shown when you tap the DISPLAY TABLE btn on the Table Options information screen. A MAIN table can be edited, records and dynamic fields added or deleted, searched and sorted.<br>2.  The second class of table is one created from found records in a SEARCH of a MAIN database table. Data can be searched and sorted, but new records can not be added or deleted. If you need to ADD a record you have to revert back to the MAIN database table, from which it originated, and ADD/ or DELETE records to/from the MAIN table, and then repeat the SEARCH to recreate the changed table with the now added record.<br>3. The third class of table references CONTACTS only, .. Contacts that you want to be associated with the database. CONTACTS tables can be created in 3 ways:<br> A. By tapping the CONTACTS button in the menu of a MAIN database table - this method allows access to the CONTACTS app on your device. <br>B. By tapping the CREATE TABLE button on the Table Information window that shows after tapping the TABLE button on the home screen main menu bar. The CREATE TABLE option has the same facility as the CONTACTS button in the Table window menu.<br>C. By tapping the ADD CONTACTS/RECORDS  button on the main database HOME screen menu. - This allows manual entry of Contacts data from a form sheet. There is no access to the ContactsPickerAPI (Contacts) on your device. <br> CONTACTS tables generate 4 FIXED Fields - Name, DATE, Telephone, Email, and 1 DYNAMIC field .. Address … depending on your browser's capability to access the Address field from the ContactPicker API. The 3 types of Contacts tables allow editing of data in the table data cells, adding and deleting (Contacts) records,..(by tapping the + and - icons in the Table menu), and adding and deleting fields, by tapping the EDIT button in the Table menu. Editing of Field Names in the CONTACTS tables, by tapping the EDIT button in the Table menu, allows creation of CUSTOMIZED tables, thus facilitating their use for other purposes than just Contacts.</li>
+	 <li><span style = "text-decoration: underline">CUSTOM TABLES:</span> Custom tables can be created in two ways:<br> 1.By using a CONTACTS table as a template, relabeling the FIELD names using the EDIT button, will create customized tables. The EDIT button allows renaming of FIELD headings, and ADDING or DELETING of fields, facilitating the creation of CUSTOM tables for any purpose.<br>2. The ADD CONTACTS/RECORDS button in the Main menu allows labelling of the table field names on the fly, as you create the table and enter record data into the fields from a FORM input screen.</li>
+	    <li><span style = "text-decoration: underline"> Field Labels:</span><br> The Field Labels button on the Table screen menu allows editing of the Contacts or new Table fields. CANCEL in this window resets fields to default values for a Contacts table. See documentation.</li>
+	    <li><span style = "text-decoration: underline"> CONTACTS btn vrs Field Labels:</span><br>To create contacts tables:
+First tap of CONTACTS btn creates a simple CONTACTS table using your device's ContactsAPI.<br>
+A first tap of Field Labels Btn will create a CONTACTS table using your device's ContactsAPI but also adding an ADDRESS field.<br>
+If you want a simple CONTACTS table with just 4 fields ..name,date,telephone,email..but want to edit the field labels..first tap CONTACTS to set up the 4 fields, and use CANCEL at the table naming stage..then return to the Field Labels btn, and use the EDIT CURRENT FIELDS option to get a simple CONTACTS table that you have been able to change the field names in.<br>
+The CANCEL btn: This will reset contactsField names which will allow switching back and forth between 4 fields ending in EMAIL, OR 5 fields ending in ADDRESS. Depending on whether CONTACTS or FIELD LABELS is tapped first you get 4 or 5 fields. If you get 4 but you want 5 with ADDRESS just tap CANCEL in the Action Prompt window and/or in the ENTER NEW TABLE NAME window, and repeat the process following the prompts.<br>
+Any table created using the ADD CONTACTS/RECORDS btn from the Main Menu will have a Fifth field initially labelled ADDRESS unless you edit the field names as per options provided.
+	    </li>
+			   
+	   </ul>
 	   </div>
 		   <p></p>
 		   <button id="getMemory">Estimate Memory</button>
@@ -764,15 +790,28 @@ color: black;
 	  <div id="tableScrn" class="hidden">
 		  
 		  <h2 class="tableBan">Create A Table or Display Current Table</h2>
-		    <div id="clearTableWindow" class="simulator">TAP HERE TO CREATE TABLE or to EDIT an existing one.</div>
+		    <div id="clearTableWindow" class="simulator">TAP TO CREATE MAIN TABLE or to <span id = "clearTableWindowEditBtn"> EDIT </span> an existing one.</div>
 		  <p id ="tableInstructions" class="edWinScroll"></p>
 		  <p></p>
 		 
 		  <p></p> 
-		  <p class = "attentionBtn">Tap Disply Table button to show current table</p>
+		  <p class = "attentionBtn">Tap Disply Table button to show current main table</p>
 		  <p></p>
 		   <button id ="returnToNotes">Return to HOME SCREEN</button>
 		   <button id = "displayTable">DISPLAY TABLE</button>
+		    <button id = "nameNewTable">CREATE TABLE</button>
+		   
+		  
+		   <div id="tableNamesList">
+				  <h3>If this database has new tables they are listed here. Tap on the Tables's Name to Load</h3>
+				  <ol id = "newTableList">
+					  
+				  </ol>
+				  
+				  <p class = "simulator" id = "tableChosen"></p>
+			  </div>
+		   
+			  
 	   </div>
 		  
 	 <!-- !!!  CODE BELOW IS ALL HTML FOR THE CREATETABLE SECTION !!!!! -->
@@ -817,7 +856,7 @@ color: black;
 			</tr><!--  end first row .. field titles -->
 		</table>
 		
-</div> <!-- end create table div -->
+</div> <!-- end create table %div -->
 	
 </section>	<!-- end create tablewin -->
 
@@ -848,7 +887,9 @@ color: black;
 	<div id="STcreateTable"><!-- createTable -->
 		
 		<h2 id="showTableName"></h2>
+		
 		<p></p>
+	
 		<p id ="tableLandscape"></p>
 	<!-- test jQuery	 -->
 	<div id="flip">Click to show / hide TABLE MENU</div>
@@ -860,7 +901,12 @@ color: black;
 	<button id="toSortScr"> SORT TABLE </button>
 	 <button id = "tableBackground">Change Background</button>
 	 <button id = "email">CONTACTS</button>
+	 <button id = "newTableFields">FIELD LABELS</button>
+	 <button id = "plusContactsBtn" style = "display:none"> + </button>
+	  <button id = "deleteRecordNewTableBtn" style = "display:none"> - </button>
+	 <!--  <button id = "print" style = "display:none">PRINT</button>  -->
 	 <button id="bottom">vBottom</button>
+	 <div id="contactTableDiv"></div>
 	</div>
 	<!-- test jQuery -->
 	
@@ -963,22 +1009,142 @@ color: black;
 		  <h2 class="edBan">What's new in DougieBase?</h2>
 		   <p></p>
 		   <div id="closeUpdateWindow" class="simulator">TAP HERE TO RETURN TO NOTES</div>
-		   <p class="ppref" id = "whatsNewInfoP">New or added features or other update information will occasionally be recorded here as DougieBase undergoes revisions.</p>
+		   <p class="ppref" id = "whatsNewInfoP">New or added features or other update information will occasionally be recorded here as DougieBase under goes revisions.</p>
 		    <div class = "edWinScroll" style="height: 300px">
 				<p class = "highlight" id = "newVersionInfoP">Revisions and version numbers.  Scroll up     ⬆️ </p>
 		   <ul>
-			   <li>Last revision: Dec 25 2021</li>
-			   <li>This is Version 37, service worker 15</li> 
-			   <li>Improved workflow when creating a new database, including online prompts and flashing 'Do this next indicators'</li>
+			   <li>Last revision: May 27 2022</li>
+			   <li>This is Version 40, service worker 16</li> 
+			   <li>Improved workflow of creating a new database, including online prompts and flashing 'Do this next indicators'</li>
 			   
-			   <li>Now compatible with 'Dark Mode'</li>
-			   <li>More responsive web design for smart phones</li>
-			   <li>Added CONTACTS button to Table menu to allow access to information in the device's contacts</li>
+			   <li>Now compatible with 'Dark Mode'.</li>
+			   <li>More responsive design for smart phones</li>
+			   <li>Added CONTACTS button to Table menu to allow access to information from the device's contacts. A table of these contacts can be created.</li>
+			   <li>Create new tables of Contacts from your device or manually enter new contacts. A '+' button on the new table screen allows manual entry of new contacts or new record data to a pre-existing table. A '-' button allows deleting a record from a new table.</li>
+			   <li>A new table can be created listing just the found records (hits) from a successful search.</li>
+			   <li>Custom tables, with unique field names can be created for any purpose, using the ADD CONTACTS/RECORDS option from the main menu. See more notes on use of tables in the About DougieBase section and in the documentation.</li>
+			   <li>Access to all SHARE Options from the iOS SHARE SHEET: From the Backup Database window, the backup data can be inserted into an email, and sent anywhere using the device's share sheet. This can be useful to send a database to anyone using the Dougiebase app.</li>
 			   
 		   </ul>
 	   </div>
 	   <!--end of the WHAT'S NEW window--> 
 	</section>
+	
+	  <!--newTable Name window--> 
+	<section>
+			<div id="newTableNameWin" class="hidden"><!--start newTableName window-->
+			<h3>Creating the new table for database : <scan id="newTableTitle"></scan></h3>
+			<label for="newName">Enter new table name here: </label>
+			<input type="text" name="newName" id="newName" value="" placeholder="New table name" required/>
+			<button id = "newTableNameSubmitBtn">ENTER New Table Name</button>
+			<p id = "showNewTableName" class = "simulator" style = "font-weight:bold"></p>
+			<button id = "newTableNameCancelBtn">CANCEL</button>
+		</div><!--end newTableName window -->
+	</section>
+	
+	<!-- manualContactsWin -->
+	  <section id="manualContactsWin" class="hidden">
+	 
+        <h2>Manually enter contacts or records</h2>
+        <h3>TABLE NAME: <span id ="tableName" class ="pprefs"></span></h3>
+		<p>Enter contacts or records data to the table's fields below:</p>
+        <form id = "contacts">
+          <div>
+			  <!-- Contacts Name, Telephone, Email address, street address -->
+            <label id = "firstField" for="contactsName">Name of Contact: </label>
+            <input id="contactsName" type="text" required>
+          </div>
+		   <div>
+			  <!-- Contacts Name, Telephone, Email address, street address -->
+            <label id = "thirdField" for="telephone">Telephone number: </label>
+            <input id="telephone" type="phone number" required>
+		</div>
+		 <div>
+			  <!-- Contacts Name, Telephone, Email address, street address -->
+            <label id = "fourthField" for="contactsEmail">Email Address: </label>
+            <input id="contactsEmail" type="email" required>
+		</div>
+		 <div>
+			  <!-- Contacts Name, Telephone, Email address, street address -->
+            <label id = "fifthField" for="contactsAddress">Address: </label>
+            <input id="contactsAddress" type="text">
+		</div>
+		   <p id = "manualContactsInstruction" class = "simulator">Enter data into input fields. Leave blank if unknown. Tap SUBMIT button below for each contact entry.</p>
+		   <div>
+            <button id = "enterContactBtn" style="background-color: lightgreen; border-radius: 10px; border: 2px solid red; padding: 4px">SUBMIT new entry</button>
+			<button id="clearContactEntry">RESUBMIT entry</button>
+			<button id="cancelAll">CANCEL</button>
+			<button id="finishedContactsEntry">DONE</button>
+		</div>
+		
+		
+	    <p id="statusContactEntry"></p>
+		
+	    </form>
+		
+		
+	</section>
+	<!-- end of manualContactsWin -->
+	
+	<!-- Edit newTableFieldNames win -->
+	<section id="editNewTableFieldNamesWin" class="hidden">
+	 <h2>Edit the Field Names of the new table</h2>
+		<p>Re-label the field names of the new table:</p>
+	<!--  <form id = "newTableFieldNames"> -->
+          <div>
+			  <!-- Contacts Name, Telephone, Email address, street address -->
+            <label id = "firstFieldNT" for="firstFieldNameNT">First Field Name: </label>
+            <input id="firstFieldNameNT" type="text" name ="firstFieldNameNT" value = "" required placeholder = "Contacts Name">
+           <!--  <button id ="one">ENTER</button> -->
+          </div>
+		   <div>
+			  <!-- Contacts Name, Telephone, Email address, street address -->
+            <label for="secondFieldNameNT">Second Field Name: </label>
+            <input id="secondFieldNameNT" name = "secondFieldNameNT" type="text" placeholder = "DATE" required>
+            <!--  <button id ="two">ENTER</button> -->
+		</div>
+		 <div>
+			  <!-- Contacts Name, Telephone, Email address, street address -->
+            <label for="thirdFieldNameNT">Third Field Name: </label>
+            <input id="thirdFieldNameNT" name = "thirdFieldNameNT" type="text" placeholder = "Telephone" required>
+            <!--  <button id ="three">ENTER</button> -->
+		</div>
+		 <div>
+			  <!-- Contacts Name, Telephone, Email address, street address -->
+            <label for="fourthFieldNameNT">Fourth Field Name: </label>
+            <input id="fourthFieldNameNT" name = "fourthFieldNameNT" type="text" placeholder = "EMAIL">
+             <!-- <button id ="four">ENTER</button> -->
+           </div>
+		 <div>
+              <label id = "fieldFiveNameLabel" for="fithFieldNameNT">Fifth Field Name: </label>
+            <input id="fithFieldNameNT" name = "fithFieldNameNT" type="text" placeholder = "ADDRESS">
+            <!--  <button id ="five">ENTER</button> -->
+		</div>
+		 <p id = "editNewFieldNamesInstruction" class = "simulator">Enter name of each field into the input elements. Tap SUBMIT button below when finished with entries.</p>
+       <div>
+            <button id = "enterNewFieldNameBtn" style="background-color: lightgreen; border-radius: 10px; border: 2px solid red; padding: 4px">SUBMIT Field Name labels</button>
+       <button id="clearFieldNameEntry">RESUBMIT entry</button>
+       <button id="cancelAllFieldNames">CANCEL</button>
+			<button id="finishedFieldNamesEntry">DONE</button>
+			<p></p>
+			<p id = "statusFieldNamesEntry"></p>
+       </div>
+       
+ <!--   </form>  -->
+	</section>
+	<!-- end of Edit newTableFieldNames win -->
+	<div id = "promptBox" class = "hidden">
+	<h2>❔ACTION TO PERFORM❔ </h2>
+	<p id = "tableNameTxt"></p>
+	<!-- <p id = "actionText">Tap on the desired button</p> -->
+	<button id = actionLoad>LOAD TABLE</button>
+	<p></p>
+	<button id ="actionRename">RENAME</button>
+	<p></p>
+	<button id ="actionDelete">DELETE</button>
+	<p></p>
+	<button id = actionCancel>CANCEL</button>
+	</div>
 	
     </main>
 

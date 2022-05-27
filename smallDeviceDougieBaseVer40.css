@@ -1,4 +1,4 @@
-/*DougieBaseVer37.css Dec25 experimentalDougieBaseVer37.css Dec22 from DougieBaseVer36.css Dec5 from Copy of DougieBaseVer36 Nov14 from spDougieBaseVer36.css landscape table search and preview edit Date:Nov9 save preferences added chooseColoursWin from. tdEdit Oct 16.*/
+/*smallDeviceDougieBaseVer40.css from experimentalsmallDeviceDougieBaseVer37 added #manualContactsWin Jan6 2022Dec22 mobileFriendlyDougieBaseVer37.css from DougieBaseVer36.css from Copy of DougieBaseVer36 Nov14 from spDougieBaseVer36.css landscape table search and preview edit Date:Nov9 save preferences added chooseColoursWin from. tdEdit Oct 16.*/
 /*clearBkgrdDougieBaseVer34.css in WorkingCopy allow background image*/
 /* //Date:Oct5 2021 Removed Double tap to avoid magnification in Manage files view full screen search select filenames. iOS15 safari has no way to disable double tap for magnification. More cosmetics with dataBaseName titles added .titleBanner to CSS*/
 /*font color of button text is blue in iOS 15 why? Forced it to black large Oct2 2021 touch-action: manipulation; to prevent double tap zoom … DID NOT WORK added titleBanner for About db
@@ -15,14 +15,35 @@ fileNamesTableNotesVer21.css from fileNamesTableNotesVer21 from notesOSfileNames
 /*retestTableNotesVer17.css 
 Date: Dec 21 2020 WORKING ON CSS FOR #createTableWin position: absolute sticky;/*was absolute sticky added to make table appear in view if long record list Nov 30 2020. works.. in createTableWin changed back to absolute without the sticky! Dec2 uses settings above for position: fixed top 0. This keeps section in viewport but iT did not scroll properly. So changed height to 700 ox which forces scroll...overflow does not happen unless data height exceeds height of div, so lessen div height to make it scroll? absolute sticky locks save table create table out of view so changed back to absolute*/
 /*position: absolute;*//* added sticky so window appears in view. fixed did not work !REPLACE IF POSITION CODE BELOW MESSES UP!!!!*/
+
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+  
+  /* CSS */
+  
+
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+/*@media (min-width: 320px) and (max-width: 480px) {*/
+  
+  /* CSS */
+  
+
 html {
   font-family: sans-serif;
+  scroll-behavior: smooth;/*added Mar5 2022 good or bad?*/
  /* padding: 5px;/*added from tables .css*/
 }
 
 body {
   margin: 0 auto;
-  max-width: 800px;
+  max-width: 100vw;/* 100% 800px;*/
   
     /*background-color: black;
 	color: white;*/
@@ -39,11 +60,36 @@ button, .tdEdit {
 	/*Recently added to buttons Oct3*/
 	font-weight: bold;
 	text-align: center;
-	background-color: rgb(240, 248, 255); /*AliceBlue*/
+	background-color: rgb(240, 248, 255);
+	 /*AliceBlue*/
 }
 
+/*code added from DougieBaseVerCSS*/
+.button {
+ box-sizing: border-box;
+ height: 50px;
+ width: 100%;
+}
+.grey-btn {
+ background: #EEE;
+ border: 1px solid #DDD;
+ box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px;
+ color: #555;
+}
+/*HTML:
+<button class=”button grey-btn”>
+ Click me!
+ </button>*/
+ 
+ /*from medium js tutorial Mar17 2022*/
+ button:hover{
+    background: lightblue;/*was crimson*/
+    box-shadow: 0 0 28px 10px lightblue;/*was crimson*/
+}
+/*code added from DougieBaseVerCSS*/
+
 header, footer {
-  background-color: darkblue;/*was green*/
+  background-color: darkgreen;/*was dark lue green*/
   color: white;
   line-height: 75px;/*was 100px*/
   padding: 0 20px;
@@ -61,12 +107,15 @@ header {
   background: #ddd;
 }
 /*. new note governs colours of the add note screen ? Need to increase height so creating a new db twice in a row gets everything on screen..? Maybe would be fixed by xtraField = 0 reset?*/
-#new-note {
+
+
+#old-note {
 	position: fixed; /*absolute was relative */
        top: 250px; /* 200px was 190 then 100%*/
 	   margin-top: 100px;
-        transform: translate(-50%,-50%);
-        width: 400px;
+        transform: translate(-65%,-65%);/*was -50%,-50%*/
+		max-width: 50%;
+        /*width: 400px;*/
        height: 500px;/*was 600 pxchange back to 400px if xtraField = 0 reset fixes repeat of  createNewDB! 350;310 was 300 increased so border seen if pref window on screen at same time date: Jan 29 2021 increased height so decoder title entry is not on bottom edge of window May24 2021*/
 		border: 5px solid red;
 		border-radius: 10px;
@@ -76,6 +125,7 @@ header {
         background-color: #eee;
 	
 	}
+	
 
 h1 {
   margin: 0;
@@ -102,6 +152,7 @@ div {
 	background-color: white;
 	//color: black;
 }
+
 
 .highlight {
 		background-color: yellow;
@@ -156,14 +207,14 @@ td,.funcLib {
 /*added from createTables.css*/
 thead th {
 	/*margin: 0 auto;*/
-	width: margin 0 auto;
+	max-width: margin 0 auto;
 	text-align: center;
 	background-color: lightpink;
 	border: 2px solid red;
 }
 
 td {
-	width: auto;
+	max-width: auto;/*was width: auto;*/
 	/*height: 30px;/*added height June7 2021 was all automatic before and that worked, so remove height if messes up! */
 	/*overflow: scroll;*/
 	scroll-snap-align:start;/*for horizontal scroll?*/
@@ -172,9 +223,9 @@ td {
 /*ADDED THIS JUNE 10 2021 see display table if !label*/
 .td_size {   
   background-color:;	
-  width:200px; 
+  max-width: 25%; /*waswidth:200px;*/
   height:30px;/*was 50px*/
-  max-width:200px;
+  max-width:25%;/*was 200px*/
   min-width:200px; 
   max-height:30px; /*was 50px*/
   min-height:30px;/*was 50px*/
@@ -213,12 +264,13 @@ background-color: lightpink;
 font-size: small;
 }
 
+/*hidden = left:-68% down below ?conflict?*/
  .hidden {
-        left: -50%;
+        left: -65%;/*was -50%*/
       }
 
  .showing {
-        left: 50%;
+        left: 65%;/*change made after Inspect Dec8*/
 	}
 	
 #menu {
@@ -232,8 +284,8 @@ font-size: small;
 	position: fixed;
 	bottom: 50px;/*was 70px set to 50 to allow edit delete buttons of bottom note to be visualized*/
 	margin: 0 auto;
-	width: 95%;
-	max-width: 800px;
+	max-width: 95%;
+	/*max-width: 800px;*/
 /*	max-width: 800px;/* was 96%;*/
 	/*width: 480 px 100%;
 	height: 75px; */
@@ -263,8 +315,9 @@ li p {
 #gobackeditWin {
         position: relative; /*was absolute */
         top: 50%; /* was 190 then 100 %*/
-        transform: translate(-50%,-50%);
-        width: 480px;
+        transform: translate(-65%,-65%);
+		max-width: 55%; /*480px*/
+       /* width: 480px;*/
         height: 400px;
        /* border: none;/*was 10px solid red;*/
         /*border-radius: 10px; */
@@ -273,37 +326,56 @@ li p {
 	} 
 	
 	/*added prefWin here June14 to fix positioning in Safari portrait mode made top = 40px in prefWin group. This seems to work ok June21 REMOVE #newFieldWin AUG27*/
-#prefWin, #deleteWin, #displayFullNote, #editWin, #editNewFieldWin, #documentationWin, #tableWin, #tableScrn, #createTableWin, #searchWin, #deleteFieldWin, #sortWin, #newFieldWin, #chooseColoursWin {
-        position: fixed; /*was absolute, "relative fixed positions relative tp viewport*/
-       top: 40px; width: 480px; margin: 0 auto;   /*top 0 locates at very top corner viewport. top 20 allows position below banner top: 100%; was 190 then 100%*/
-	   margin-top: 430px; /*460 works with portrait but off bottom in landscape..so try */
-        transform: translate(-50%,-50%);
-       /* width: 480px; */
-       height: 800px; /*1350was 1400px*/
-	   overflow: scroll;/*still need scroll if note is too large to fit on screen*/
-		border: 5px solid red;
-		border-radius: 10px;
-		padding: 10px;
-       /* border: none;/*was 10px solid red;*/
-        /*border-radius: 10px; */
-        background-color: #eee;
-        /*background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.1)); */
-		
-			/*disable double tap zoom OCT 2 2021 DID NOT WORK RUINED FUNCTIONALITY*/
-			/*touch-action: manipulation;*/
-			
-	}
+#prefWin, #deleteWin, #displayFullNote, #editWin, #editNewFieldWin, #documentationWin, #tableWin, #tableScrn, #createTableWin, #searchWin, #deleteFieldWin, #sortWin, #newFieldWin, #chooseColoursWin, #manualContactsWin,#editNewTableFieldNamesWin {  
+position: fixed;  
+top: 100px;/*40px;  */
+width: 90vw;/*480px*/;  
+margin: 430px auto 0px;  
+margin-top: 430px;  
+transform: translate(-65%, -65%);  
+height: 80vh;/*800px*/;  
+overflow: scroll;  
+border-width: 5px;  
+border-style: solid;  
+border-color: blue;  
+border-image: ;  
+border-radius: 10px;  
+padding: 10px;  
+background-color: rgb(238, 238, 238);  
+} 
+
+.hidden {  
+left: -68%;  
+} 
+
+ #tableWin {
+	 height: 700px;
+	 position: absolute sticky;/*was absolute sticky added to make table appear in view if long record list Nov 30 2020. works!*/
+	 bottom: 50px;
+	 overflow: scroll;
+	overflow-y: scroll;
+	overflow-x: scroll;
+}
+
+ #tableWin {  height: 700px;  
+bottom: 50px;  
+overflow-y: scroll;  
+overflow-x: scroll;  
+} 
+	
+
+
 	
 	#prefWin {
-		top: 40px;
+		/*top: 40px;*/
 		height: 820px; /*1350was 1400px added height for save settings btn*/
 		
 	}
 	/*tableWin width added May23 2021*/
-	#tableWin {
+	/*#tableWin {
 		width: 90%;
-		/*height:1100px;/*added June21*/
-	}
+		
+	}*/
 	
 	/*allow for prefWindow in landscape mode
 	Resize the browser window. When the height of this document is 800 pixels or less, the background-color is "yellow", otherwise it is "lightgreen".
@@ -369,24 +441,18 @@ To get to edit date or other cell contents and the return btn and save btn to ap
  }
  /*TableWin does not exist???*/
  /*I changed TableWin to tableWin !!!! */
-  #tableWin {
-	 height: 700px;
-	 position: absolute sticky;/*was absolute sticky added to make table appear in view if long record list Nov 30 2020. works!*/
-	 bottom: 50px;
-	 overflow: scroll;
-	overflow-y: scroll;
-	overflow-x: scroll;
-}
+ 
 	/*added above from createTable.css*/
 	
 	
 /*prefWin was here moved to sort search group June 14 trying to fix prefWin position in Safari portrait copySampleDb Aug 14 Put #newFieldWin in the prefWin category Aug27*/
-#reNameWin, #aboutDBWin, #whatsNewWin, #memoryWindow, #fileNames, #createNewDBWin, #manageFilesWin, #backupFilesWin, #backingUpDBWin, #restoreDBWin, #copySampleDb, #tutorialSampleDb {
+#reNameWin, #aboutDBWin, #whatsNewWin, #memoryWindow, #fileNames, #createNewDBWin, #manageFilesWin, #backupFilesWin, #backingUpDBWin, #restoreDBWin, #copySampleDb, #tutorialSampleDb, #new-note, #newTableNameWin, #promptBox {
 	position: fixed; /*was absolute relative fixed didn't work */
-        top: 250px; /* 200px 100% was 190 then 100%*/
-        transform: translate(-50%,-50%);
-        width: 400px;
-       height: 300px;
+        top: 350px; /* was 250px 200px 100% was 190 then 100%*/
+        transform: translate(-65%,-65%);/*was -50,-50*/
+       width: 80vw;/*change made after Inspect Dec8*/
+	  /* max-width: 90%;*/
+       height: 450px;/*was 300px*/
 		border: 5px solid red;
 		border-radius: 10px;
 		padding: 10px;
@@ -396,6 +462,15 @@ To get to edit date or other cell contents and the return btn and save btn to ap
 		/*disable double tap zoom OCT 2 2021 DID NOT WORK*/
 	/*touch-action: manipulation;*/
 	}
+	
+/*from DougieBase VerCSS*/	
+#promptBox, #newTableNameWin {
+top: 400px;/*was 300px*/
+height: 475px;/*was 300 px*/
+text-align: center;
+overflow: scroll;	
+}
+/*from DougieBase VerCSS*/	
 	
 /*#prefWin {
 	/*top: 80vh;*/
@@ -416,11 +491,11 @@ To get to edit date or other cell contents and the return btn and save btn to ap
 
 #fileNames {
 
-	top: 350px;/*450px was 350*/
+	top: 450px;/*450px was 350*/
 	/*top: 250px;  200px was 190 then 100%*/
 	   
 	margin-top: 100px;
-	height: 700px;/*was 500 px*/
+	height: 650px;/*was 500 px*/
 
 	overflow: scroll;
 }
@@ -437,17 +512,20 @@ To get to edit date or other cell contents and the return btn and save btn to ap
 }
 	
 #aboutDBWin, #whatsNewWin {
-	top: 375px;
+	top: 450px; margin: 0;/*increased top so as to see top edge of window*/
 	height: 600px;/*was 360px 350 340 in ver4A? */
+	border-color: blue;
 	overflow: scroll;
 }
 	
 #changeColoursWin {
 	position: fixed; /*was absolute relative fixed didn't work */
-        top: 310px; /* 300 250 200px 100% was 190 then 100%*/
-        transform: translate(-50%,-50%);
-        width: 400px;
-       height: 565px;/*was 550 450px was 350px */
+      top: 450px; /* 300 250 200px 100% was 190 then 100%*/
+	/*	margin-top: 430px;/*same as settings win*/
+        transform: translate(-65%,-65%);
+       /* width: 400px;*/
+	   width: 80vw;
+       height: 600px;/*was 550 450px was 350px */
 		border: 5px solid red;
 		border-radius: 10px;
 		padding: 10px;
@@ -457,28 +535,14 @@ To get to edit date or other cell contents and the return btn and save btn to ap
 		overflow: scroll;/* so the xtraField is visualized in changeColours window*/
 		}
 		
-#xxxchooseColoursWin {
-	position: fixed; /*was absolute relative fixed didn't work */
-        top: 300px; /* 250 200px 100% was 190 then 100%*/
-        transform: translate(-50%,-50%);
-        width: 400px;
-       height: 650px;/*was 450px  350px */
-		border: 5px solid red;
-		border-radius: 10px;
-		padding: 10px;
-       /* border: none;/*was 10px solid red;*/
-        /*border-radius: 10px; */
-        background-color: #eee;
-		overflow: scroll;/* so the xtraField is visualized in changeColours window*/
-		}
 		
 	
 	.edBan {
 	background-color: lightgreen;
-	color: black;	
-	border: 2px solid red;	
+	color: black;
 	border-radius: 10px;/*for dark mod*/
-	padding: 5px;	/*for dark mode changed to 5px*/
+	padding: 5px;	/*for dark mode*/	
+		
 	}
 	
 	
@@ -565,7 +629,8 @@ overflow-x: scroll;
 #changes, #editNewFieldChanges {
 	
 	height: 100px;
-	width: 300px;;
+	max-width: 45%;/*300px*/
+	/*width: 300px;;*/
 	font-size: large;
 	overflow: scroll;
 }
@@ -610,10 +675,11 @@ overflow-x: scroll;
 #settingsScreen {
 	position: fixed;
 	bottom: 20px;/* was 70px*/
-	width: 96%;; /*was absolute, relative */
-       top: 0; width: 480px; margin: 0 auto;   /*top 0 locates at very top corner viewport. top 20 allows position below banner top: 100%; was 190 then 100%*/
+	width: 80vw;/*change made after Inspect Dec8*/
+	/*max-width: 96%;; /*was width 90%removed max-width:55% below  absolute, relative */
+       top: 0; margin: 0 auto;   /*top 0 locates at very top corner viewport. top 20 allows position below banner top: 100%; was 190 then 100%*/
 	   margin-top: 430px; /*460 works with portrait but off bottom in landscape..so try */
-        transform: translate(-50%,-50%);
+        transform: translate(-65%,-65%);
        /* width: 480px; */
        height: 600px; /*550 1350was 1400px*/
 	   overflow: scroll;/*still need scroll if note is too large to fit on screen*/
@@ -828,7 +894,7 @@ tbody td {
 /*position: sticky;/*NOT  neceesary statement to have STHeader appear*/
 	position: relative;
 	border: 3px solid black;
-	width: auto;
+	width: auto;/*should this be max-width auto*/
 	overflow-y: scroll;
 	overflow-x: scroll;
 }
@@ -841,13 +907,7 @@ tbody td {
 
 }*/
 
-tbody {
 
-  z-index: 10;
-
-  position: relative;
-
-}
 
 .bkgrdImage {
 	background-image: url('eeyore.JPG');
@@ -913,4 +973,3 @@ tbody {
 	color: black;
   }
 }
-

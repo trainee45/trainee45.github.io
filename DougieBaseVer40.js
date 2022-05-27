@@ -1,4 +1,6 @@
-//DougieBaseVer37.js Dec25 experimentalDougieBaseVer37.js Dec24 Added whatsNew window  Working on retrieving contact info. See functions at bottom. ADD style="color:black" IN HTML  Dec22 moved getMemory function from html file to .js file from Dec10 2021 mobileFriendlyDougieBaseVer37.js from DougieBaseVer36.js Dec5 sw11 from messWith Dec2 DougieBaseVer36.js Dec1 from flashFileNameDougieBaseVer36.js from createNewDBDougieBaseVer36 Nov30 Nov28 added addToDynamicFields.setAttribute('class','borderBlink') to border in editMoreFields function and addNoteBtn.setAttribute('class','borderBlink'); in saveBtn.onclick for createNewDB renameBtn.setAttribute('class','borderBlink'); in preferences displayDataBtn.setAttribute('class','borderBlink'); in function renameTitle Nov28 borderBlink css is in the html file  Nov 27 fine tuned flow of createNewDB Nov24 fixed create newDB bug! Nov 22 edit notes displayed n real time Nov17 added tableScreenOptions to editTableTrigger to not mess up table display Nov14 from spDougieBaseVer36.js landscape table search and preview edid Date:Nov9 save preferences from Date:Nov4 added Easter egg and save settings preferencesDougieBaseVer36.js from fixEditDougieBaseVer35.js from 
+//DougieBaseVer40.js May 27 2022 noAlertsplusContactshitsTablefixADDCONTACTSDougieBaseVer40 May18 plusContactshitsTablefixADDCONTACTSDougieBaseVer40.js May17 May15 May 13 May9 hitsTablefixADDCONTACTSDougieBaseVer40.js May5  from fixADDCONTACTSDougieBaseVer40.js May1  testCancelsweetAlertnoAlertsmoreBlock+DougieBaseVer40.jsApri25 2022
+//NOTE ALERTS REMOVED HAVE A x after alert SO USE FIND REPLACE SEARCH TO RESTORE THEM!! i.e. //alertx("message data…") can be restored by search and replace for //alertx and replace with alert
+//moreBlock+DougieBaseVer40.js April17 April15 fallBackApril15moreBlock+DougieBaseVer40.js Copy of moreBlock+DougieBaseVer40.js fallBackApril14moreBlock+DougieBaseVer40.js moreBlock+DougieBaseVer40.js April10 for testing and when works back to block… from block+DougieBaseVer40.js DougieBaseVer40.js from shareDeleteRecordNewTableDougieBaseVer37.js WILL THIS FILE AUTOMATICALLY SYNC WITH ICLOUD.YES!deleteRecordNewTableDougieBaseVer37.js NOTE ALERTS REMOVED HAVE A > AFTER THE " SO USE FIND REPLACE SEARCH TO RESTORE THEM!! i.e. //alert("> message data…") can be restored by search and replace for //alert("> …) .. MUST PUT A SPACE AFTER THE> CHARACTER! fromNewTablehitsTableDougieBaseVer37.js pushContactsFormtableIndexaddContactsDougieBaseVer37 ADD CONTACTS number of dynamicfields = 1 now createnewDB resets newTableSpecificVariables and savedTablesArray to 0 savedTablesArray.length increases by 1 as each table is created fixed manal contact entry fields fixed + contacts deletingTableField variable added Marc19  contactsFormtableIndexaddContactsDougieBaseVer37.js manual contacts now works Mar13 tableIndexaddContactsDougieBaseVer37.js from deleteNTtableIndexaddContactsDougieBaseVer37.js Mar11 from delete last and first and middle tables works!  tableIndexaddContactsDougieBaseVer37.js Mar9 2022 deleteItemtableIndexaddContactsDougieBaseVer37.js from tableIndexaddContactsDougieBaseVer37 WORKS Mar8 FOR CRETION NEWBB BEFORE ANY DB LOADED MAR6 from createNewaddContactsDougieBaseVer37 from addContactsDougieBaseVer37 from Copy of addContactsDougieBaseVer37 based on date: Feb22 2022 worksKeepTestPlayWithNewTableContactsDougieBaseVer37 Feb 17 2022 Feb 13 2022 from testPlayWithNewTableContactsDougieBaseVer37 Feb10 from playWithSTRowsEditTDNewTableContactsDougieBaseVer37.js FEB6 FEB4 2022 from workingOnEditTDNewTableContactsDougieBaseVer37.js currentJan19ContactsDougieBaseVer37.js now adding newTable variables ..Jan11 go to fallBackJan11 if meeses up workingOnContactsDougieBaseVer37.js Jan2 THIS VERSION WORKS WITH SAFARI CONTACT PICKER!  contacts table working with search sort Dec24 Added whatsNew window  Working on retrieving contact info. See functions at bottom. ADD style="color:black" IN HTML  Dec22 moved getMemory function from html file to .js file from Dec10 2021 mobileFriendlyDougieBaseVer37.js from DougieBaseVer36.js Dec5 sw11 from messWith Dec2 DougieBaseVer36.js Dec1 from flashFileNameDougieBaseVer36.js from createNewDBDougieBaseVer36 Nov30 Nov28 added addToDynamicFields.setAttribute('class','borderBlink') to border in editMoreFields function and addNoteBtn.setAttribute('class','borderBlink'); in saveBtn.onclick for createNewDB renameBtn.setAttribute('class','borderBlink'); in preferences displayDataBtn.setAttribute('class','borderBlink'); in function renameTitle Nov28 borderBlink css is in the html file  Nov 27 fine tuned flow of createNewDB Nov24 fixed create newDB bug! Nov 22 edit notes displayed n real time Nov17 added tableScreenOptions to editTableTrigger to not mess up table display Nov14 from spDougieBaseVer36.js landscape table search and preview edid Date:Nov9 save preferences from Date:Nov4 added Easter egg and save settings preferencesDougieBaseVer36.js from fixEditDougieBaseVer35.js from 
 //changed addEventListener to copy instead of dblclick Oct16 made default double click Oct31 2021  clearBkgrdDougieBaseVer34.js clear background and fixed crashes that occur if user makes illogical moves Oct12 2021 use to update workingCopy and Safarii etc
 //Date:Oct5 2021 Removed Double tap to avoid magnification in Manage files view full screen search select filenames. iOS15 safari has no way to disable double tap for magnification. More cosmetics with dataBaseName titles
 //removed alert in view full note ?hangs up sometimes? Cosmetic fixes Oct 3 2021 titleBanner in About db
@@ -66,7 +68,7 @@
 //Feb 28 color coded the save changes Btn in edit decoder field to make a save after editing the second field
 //fixed accumulating editFieldDecoder Btn. But note did I create a save glitch. After commit in editing xtraField you must tap save changes Btn in data.body section to save the changes in the decoder field! This works the first time but if you go back and edit decoder field again it does not work! So reverted back. editFieldDecoder Btn still might accumulate?
 //Date:Feb 27 2021 added editTableBtn to table sereen
-//Feb26 troubleshooting...made this change in .HTML:To edit date or dynamic cell contents double tap the cell...buildRecordsP.textContent = ' Enter titles of '+ numberOfAdditionalFields + ' dynamic..in HTML-createTableWin
+//Feb26 troubleshooting...made this change in .HTML:To edit date or dynamic cell contents double tap the cell...buildRecordsP.textContent = ' Enter titles of '+ numberOfDynamicFields + ' dynamic..in HTML-createTableWin
 //keeping track of SAVE Btn class Done!
 //WORKING ON EDITdate in table and preserving in notes Feb13.Fixed So far works Feb 14 2021
 //TableNotesVer19.js
@@ -78,7 +80,7 @@
 //REMOVE ABOVE IF MESSED UP FEB 12
 //FIXED: showExtraField Btn label in preferences now is correct for initial load.
 //DatemessWithTableNotesVer18.js DATE: FEB 9 2021 fixed edit table DATE-TIME
-//fixed edit table being messed up after a call to deleteField because numberOfAdditionalFields is saved in OtherVariablesArray. For this reason future testing requires use of dB dated Feb 5 or later as otherwise the numberOdAdditionalFields variable will not have been adjusted properly after a deleteFImelda!!
+//fixed edit table being messed up after a call to deleteField because numberOfDynamicFields is saved in OtherVariablesArray. For this reason future testing requires use of dB dated Feb 5 or later as otherwise the numberOdAdditionalFields variable will not have been adjusted properly after a deleteFImelda!!
 //fixingDeleteFieldmessWithTableNotesVer18.js
 //messWithTableNotesVer18.js Feb 2 2021Jan30 2021 This version has deleteField!
 //working on deleteField ALL CHANGES HERE MUST BE ADDED TO TableNotesVer18.js
@@ -138,7 +140,111 @@
 
 //var flashing;
 //var flashYellow = true;
+
+//these variables are experimental..belong to make contacts table code Dec29
+//let namestr = "";
+//will save a flag that indicates if new table derived from a searchmain db in aid of preventing + - icons appearing in such a table..aadding a record herevwould crash!
+let mainDBArray = [];//for error check savedOriginal
+let fromEditFieldLabels = false;//to force a simple contacts list with just 4 fields
+let fromAddContacts = false;//flag to tell editNewTableFieldNames to flash and return to ADD CONTACTS
+let addContactsBtnTapped = false;//to add ADDRESS field if using ADD CONTACTS
+const finishedShareBtn = document.querySelector('#finishedShare');
+let hitsTable = false;//flag to relabel CONTACTS btn to create a searched hits table set in highlightTable function
+let makeHitsTable = false;//flag indicates a press of the make hits table btn
+let deletingTableField = false;//field headers get messed up after a delete field
+
+let renameNewTableFlag = false;//used in renameNewTable function
+let fromNewTable = false;//flag for preventing fields layout mess up
+let resetFields = false;//flag fields layout mess up see editItem()
+let fromAddingMoreContacts = false;//forcing a resetFields when displayTableBtn is tapped
+const tableNameText = document.querySelector('#tableName');
+// const printBtn = document.querySelector("#print");
+
+//variable references for promptBox date April25 2022
+const promptBox = document.querySelector('#promptBox');
+const tableNameTxt = document.querySelector('#tableNameTxt');
+const actionLoadBtn = document.querySelector('#actionLoad');
+const actionRenameBtn = document.querySelector('#actionRename');
+const actionDeleteBtn = document.querySelector('#actionDelete');
+const actionCancelBtn = document.querySelector('#actionCancel');
+//variable references for promptBox
+
+const manualContactsForm = document.querySelector('#contacts');
+const emailBtn = document.querySelector('#email');//made global because referenced by tableScreenOptions Mar7
+const newTableFieldsBtn = document.querySelector('#newTableFields');
+const displayTableBtn = document.querySelector('#displayTable');
+ const renameNewTableBtn = document.createElement('button');//made global..see emailBtn	
+//flag to correct messed up fieldHeaders from a newTable edit
+ const returnToNotesBtn = document.querySelector('#returnToNotes');//made global because referenced in renameNewTable function
+
+//flag to correct messed up fieldHeaders from a newTable edit
+
+const clearTableWindowEditBtn = document.querySelector('#clearTableWindowEditBtn');//made global from tableScreenOptions because of null is not an object error
+let numberOfPlusContacts = 3;//code input for  a user selected number
+let plusContacts = false;//flag indicating we are adding contacts to a pre-existing table
+let mainDBedit = false;//flag that indicates the main db was edited..editBtn.onclick	
+let doThis = false;//works with mainDBedit
+let adjustFields = false;
+let cleared = false;//used for clearHeadRow function
+let test=false;//flag for contactsPicker API see emailBtn.onclick
+//let contacts=[];
+let contactsTable=[];//contactsTable array and contactsArray are different things.contactsTable is used in the allContactInfo(selectedContact);function but not used outside this in the mainline code because I could not figure out how to pass itoutside this function. contactsArray holds the contacts table data created in the emailBtn.onclick (CONTACTS) function. I will remove this code and variable references to save memory AND REPLACE WITH contactsArray
+for (var i = 0; i < 50; i++) {
+
+contactsTable[i] = new Array(4);
+
+}//number of fields means all fields
+
+
+let contactsArray = [];//made 2D in emailBtn.onclick as per selectedContact.length
+//for (var i = 0; i < 50; i++) {
+
+//contactsArray[i] = new Array(4);
+
+//}//number of fields is 4 name,date,email
+
+let newTableContactsTitleLength;//made global for use in sort when sorting a contacts table
+let makeContactsTable = false;//flag to create table from seleted contacts
+let loadFromTableOptions = false;//flag indicating source of tableArray data is from loading a newTable from the tableOptionsScrn//**
+let newTableEdit = false;//flag to tell displayTable to create added field names in a newTableEdit
+let blockEdit = false;//flag to prevent dblClick edit of td cell if just finished editing layout of table via editBtn.onclick..because otherwise tableArray will no longer be in newTable mode and savedTablesArray will get messed up
+let deleteFromTableOptions = false;//flafpg indicating deleted newTable see tableScreenOptions
+let convertingOldFile = false;//flag to fudge a correction in tableScreenOptions to prevent a refresh request. tableTitle.length came out as 4 when there were only 2 records in the testingPreferences db file. This may be related to the fact that testingPreferences file had 2 deleted records? And cursor iterated up to 4 when there are only 2??????
+let savedOriginal = false;//flag to prevent repeated contactsTables from overwriting the original. See emailBtn.onclick
+let saveOriginaltableTitleLength;
+let saveNumberOfOriginalFields;
+let saveNumberOfAdditionalFields;
+let contactsFieldNames= [];
+let tableIndex = -1;//-1 so newTableNames array starts out at 0 see emailBtn.onclick Jan9 2022
+let loadTableIndex = 0;//tableScreenOptions .. load in a table
+let tableID = 0;//so saveVariables is saving data to the correct array element in newTablesSpecificArray
+let saveTableTitle = [];
+let saveTableArray =[];
+let saveCopyOfTableArray = [];//**
+let saveCopyOfTableTitle = [];//**
+let saveFieldNamesArray=[];
+let saveDbName = "";
+let newTableNames =[];//keep track of newly created tables Jan1
+let tableNamed = "";
+let deleteTableIndex = 0;
+const liMatchedRecord = document.querySelector('#matchedRecord');//made global used in outside function clearFoundRecordListFunc seachRecords see Contacts code
+//contacts table variables are listed above
+let findRecord="";//record title found used in search made global
+
+//let selectedContact = [];//used in table email
+let contactsCounter = 10;//analogous to recordCounte..to create seletedContt array on the fly. Referenced in allContactInfo function as per contacts.length
 let selectedContact = [];//used in table email
+//	var selectedContact = new Array(contactsCounter);//Allows 50 contacts to be imported
+
+//for (var i = 0; i < recordCounter; i++) {
+	
+//for (var i = 0; i < contactsCounter; i++) {
+
+//selectedContact[i] = new Array(3);//contactsTable has 4 fields
+
+//}//number of fields means 4 in case of seletedContacts array this will be 4 if browser can get address and will only use 3 if browser does not get address
+
+let saveheadNameTextContent = "";//not sure what this regerences? Caused error ReferenceError: Can't find variable: saveheadNameTextContent Date: Jan 23 when running getNewTableName function
 let tableScreenBtnGrn = false;//flag used to let the table btn flash when createNewDB
 let testing = false; 
 let os = 2; 
@@ -156,6 +262,10 @@ let linkLabel = false;//flag to allow using trailing text as link label instead 
 let scrollTable = true;//horizontal Table scroll is default
 //new code for managing databases and database names for loading Mar 23
 let bkgrdImage = true;//flag for clearing background image in preterences
+const toEditTableScrBtn = document.querySelector('#toEditTableScr');
+const plusContactsBtn = document.querySelector('#plusContactsBtn');//hidden until new table mode see displayTable
+const deleteRecordNewTableBtn = document.querySelector('#deleteRecordNewTableBtn');//hidden until new table mode see displayTable
+let deleteRecordNewTable = false;//set flag for record deletion new table to run delete code in display table
 const dbNameInfo = document.createElement('p');//used in about db manage files
 dbNameInfo.setAttribute('class','titleBanner');
 
@@ -245,6 +355,7 @@ const dateColorBtn = document.createElement('button');//see function viewCreatio
 //references for new, tables, manage, search
 const newDBBtn = document.querySelector('#new');//HTML button in menu
 	newDBBtn.disabled = false;
+const addContactsBtn = document.querySelector('#addContacts');
 const newDBGuideP = document.createElement('p');//for guidance info during create newDB
 newDBGuideP.setAttribute('class','attentionBtn');
 	
@@ -253,12 +364,24 @@ const NotesEditBtn = document.createElement('button');//made global because refe
 	
 const tableScreenBtn = document.querySelector('#tableScreenBtn');//HTML button in menu to go to tableScreen window
 const tableScreen = document.querySelector('#tableScrn');//reference the create a table window
+const tableChosenP = document.querySelector('#tableChosen');
 const showTable = document.querySelector('#tableWin');//div HTML section id="tableWin" should this be referenced earlier because clearTableWin useS it at line 3003
+
+//newTableName window references below
+const newTableNameWin = document.querySelector('#newTableNameWin');
+const newTableTitle = document.querySelector('#newTableTitle');
+
+const newTableNameInput = document.querySelector('#newName');
+const newTableNameSubmitBtn = document.querySelector('#newTableNameSubmitBtn');
+let newTableName = "";
+const showNewTableNameP = document.querySelector('#showNewTableName');
+//newTableName window references above
 
 
 const tableLandscapeP = document.querySelector('#tableLandscape');
 
 const sortWindow = document.querySelector('#sortWin');//declared as global see sort function
+const viewSortBtn = document.createElement('button');//scope includes the sort function
 //const selectedSortInput = document.querySelector('#sortType');
 //const sortTypeDataList = document.querySelector('#sortTypeList');
 const chosenSortInfo = document.querySelector('#chosenSort');
@@ -370,17 +493,17 @@ let
 	//let newFieldName;//title of 2nd field
 	let nextFieldName;//title of subsequent fields as determined by input in a for loop
 	let numberOfFields;//the counter to use in the for loop
-	let numberOfAdditionalFields;//number of new required fields
+	let numberOfDynamicFields;//number of new required fields
 	let moreFields = 0;//add more dynamic fields in edit table
 // 	let tableTitle;
 // let paraBody;
 // let displayXtraFieldData;
 // 	//ReferenceError: Cannot access uninitialized variable.
-// let otherVariablesArray = [tableExists,showExtraField,nextFieldName,numberOfFields,numberOfAdditionalFields,tableTitle,paraBody,displayXtraFieldData];
+// let otherVariablesArray = [tableExists,showExtraField,nextFieldName,numberOfFields,numberOfDynamicFields,tableTitle,paraBody,displayXtraFieldData];
 // let variable3 = "more variables here";
 //TABLE SECTION VARIABLES
 //let recordCounter = 50;//MUST BE SET TO 50 or more..OTHERWISE TABLE ARRAY IS NOT CREATED. To try and reduce space in tableArray will try messing with the redefineTableArray function? April 30 2021
-let recordCounter = 1;//TO REDUCE NUMBER OF NULLS IN DB DATA .. SEPT12 2021 .. to declare tableArray with a fixed number of records. Hoping to correct error in buildRecordRows re tableArray[][] undefined is not an object??
+let recordCounter = 1;//TO REDUCE NUMBER OF NULLS IN DB DATA .. SEPT12 2021 .. to declare tableArray with a fixed number of records. Hoping to correct error in buildRecordRows re tableArray[][] undefined is not an object?? ALSO NOTE i iteration variable for savedTablesArray is set to 10, as is newTableSpecificVariables counter. Should this be changed to a variable numberOfTables ? See redefine savedTablesArray function Date: Feb5 2022
 let tableTitle = [];
 let copyOfTableTitle = [];
 let copyOfTableArray = [];
@@ -409,15 +532,36 @@ for (var i = 0; i < recordCounter; i++) {
 tableArray[i] = new Array(numberOfFields);
 
 }//number of fields means all fields
+//assume 10 tables?
+//var savedTablesArray = new Array(10);
+let savedTablesArray = [];
+//for (var i = 0; i < recordCounter; i++) {
 
+for (var i = 0; i < 10; i++) {
+
+savedTablesArray[i] = new Array(4);
+
+}//number of fields means all fields for savedTablesArray there are 4 fields maybe should change back to numberOfFields????
+
+//Create a new array for searched hits
+//SearchedHitsTableArray :
+
+var searchedHitsTableArray = new Array(recordCounter);
+for (var i = 0; i < recordCounter; i++) {
+searchedHitsTableArray[i] = new Array(numberOfFields);
+}//number of fields means all fields
+
+let isVariablePassed = "Yes";
 //create fieldNamesArray
 let fieldNamesArray = [];
 	//ReferenceError: Cannot access uninitialized variable.
+let newTableFieldsArray = [];
 let fieldOption = [];	
 let fieldDeleted = false;//flag to make displayTable show the field header with the field removed Feb 2 2021
 let buildingTableArrays = 0;//this variable enables displayData to construct the tableTitle and paraBody and displayXtraFieldData arrays ? May not need???
 let dateTable = [];//date array used in creating table. Note how this array is declared variable array name = []
 let originalNumberRecords;//used to give option of refreshTable
+let saveOriginalNumberRecords;//for reset after contactsTable
 
 //variables used in refreshTable	
 let	originalNumberOfFields = numberOfFields;
@@ -431,13 +575,42 @@ let changeDB = false;//flag for making sure table headers display right when cha
 let DTBtnTappedOnce = 0;//flag to disable or enable edit and deleteField buttons also used in displayTable
 let editCurrentTable = 0;//so displayTable workS correctly when editing a table that pre-exists
 let deleteTableRecord = 0;
+let numberOfNewTableAddedFields = 0;//for edit new tables..stored in otherVariablesArray
 
-let otherVariablesArray = [tableExists,originalNumberRecords,nextFieldName,numberOfFields,numberOfAdditionalFields,tableTitle,paraBody,displayXtraFieldData];
+let otherVariablesArray = [tableExists,originalNumberRecords,nextFieldName,numberOfFields,numberOfDynamicFields,tableTitle,paraBody,displayXtraFieldData];
 let variable3 = showExtraField;
 //pref variables
 let prefVariablesArray = [viewDateWritten,dateShade,showExtraField,showScroll,centerTitle,tableDateTime,linkLabel,scrollTable,bkgrdImage,trigger,caseSensitive,includesSubstring];
 //pref variables
+//let savedTablesArray = [];allows 5 new tables?
+//let savedTablesArray = [
+//["name","date","tel","email"],[],[],[],[]
+//];
+//let savedTablesArray = [];//decalared globally to store saved table arrays.. this is an array of arrays
+/*
+//***********************
+// set array length var arrayLength = 3;
+let arrayLength = 4;
+var savedTablesArray = [];
+ var savedTablesArray = new Array(arrayLength); 
+ for (var i = 0; i < savedTablesArray.length; i++) { savedTablesArray[i] = new Array(arrayLength); }
+savedTablesArray[0]=["name","DATE","tel","email"];
+//***********************
+*/
+//alert("savedTablesArray[0] = " + savedTablesArray[0]);
+//var savedTablesArray = new Array(recordCounter);
+//savedTablesArray[0] = ["name","DATE","tel","email"];
+//savedTablesArray[1] = ["name2","DATE","tel2","email2"];
+//for (var i = 0; i < recordCounter; i++) {
+	//alert("savedTablesArray[0] = " +savedTablesArray[0]);
+	//alert("savedTablesArray = " +savedTablesArray);
+//for (var i = 0; i < recordCounter; i++) {
+//var variablePassed = "YES";//this is just for testing savedTablesArray being global and available in saveNewTable function. REMOVE LATER
+//savedTablesArray[i] = new Array(numberOfFields);
 
+//}//number of fields means all fields
+let newTableVariablesArray = [];//stores variablescontrolling the newtable list for a database
+let newTableSpecificVariables = [];//newTableSpecificVariables[] have variables that apply to each particular newTable connected with the main db.This will contain newTableFieldsArray for each specific newTable, and the numberOfNewTableAddedFields for each newTable, ? Should it also contain the tableIndex?
 
 let key;//can remove if myKey works
 let myKey = 1;
@@ -469,15 +642,20 @@ let	dataVobj = {
   fieldNamesArray: fieldNamesArray,
   otherVariables: otherVariablesArray,
   prefVariables: prefVariablesArray,
-  variable3: variable3 };
+  variable3: variable3,
+  savedTables: savedTablesArray,
+  newTableVariables: newTableVariablesArray,
+  tableSpecific: newTableSpecificVariables};
  } else { 
 let	dataVobj = {
   tableArray: tableArray,
   fieldNamesArray: fieldNamesArray,
   otherVariables: otherVariablesArray,
   prefVariables: prefVariablesArray,
-  variable3: variable3
- };//end declaration of dataV object
+  variable3: variable3,
+  savedTables: savedTablesArray,
+  newTableVariables: newTableVariablesArray,
+  tableSpecific: newTableSpecificVariables};//end declaration of dataV object
 }//end if setup=3
 //THESE VARIABLES ABOVE FOR TABLE SECTION	
 	//THESE VARIABLES ABOVE FOR TABLE SECTION	
@@ -512,7 +690,18 @@ const aboutDBBtn = document.querySelector('#aboutDB');
 //load and save
 
 const loadBtn = document.querySelector('#loadDB');
-const saveBtn = document.querySelector('#saveDatabase');//see line 631 for aboutDBWindow code
+const saveBtn = document.querySelector('#saveDatabase');
+
+//disable SAVE if in a newTable ? Is this good or bad? Will you need this save btn to edit newTables??Date: Jan30 2022
+if(makeContactsTable || loadFromTableOptions) {
+	saveBtn.style.backgroundColor = "lightgrey";
+	saveBtn.disabled = true;	
+	} else {
+	saveBtn.style.backgroundColor = "rgb(240, 248, 255)";
+	saveBtn.disabled = false;
+}//end if makeContactsTable || loadFromTableOptions
+
+//-xxxx-xxx
 //loadBtn.disabled = false;
 //saveBtn.disabled = true;//change back to false if messed up
 addNoteBtn.setAttribute('class','attentionBtn');
@@ -533,6 +722,54 @@ const mybutton = document.createElement("button");
 mybutton.textContent = 'Top';
 mybutton.setAttribute('class','myBtn')
 
+//references for manualContacts entry code
+let manualContacts = [];//array to hold manually entered contacts
+let manualContactsEntered = false;
+const manualContactsWindow = document.querySelector('#manualContactsWin');
+const editNewTableFieldNamesWindow = document.querySelector('#editNewTableFieldNamesWin');
+const contactsNameInput = document.querySelector('#contactsName');
+const firstFieldLabel = document.querySelector('#firstField');
+const thirdFieldLabel = document.querySelector('#thirdField');
+const fourthFieldLabel = document.querySelector('#fourthField');
+const fifthFieldLabel = document.querySelector('#fifthField');
+//name of fifth field manual contacts data entry
+const fieldFiveNameLabel = document.querySelector('#fieldFiveNameLabel');//statement instruction identifier of fifth field name in editNewTableFieldNamesWin-the other fields labels are not referenced because they are always shown
+const firstFieldNameNTInput = document.querySelector('#firstFieldNameNT');
+// const oneBtn = document.querySelector('#one');
+// const twoBtn = document.querySelector('#two');
+// const threeBtn = document.querySelector('#three');
+// const fourBtn = document.querySelector('#four');
+// const fiveBtn = document.querySelector('#five');
+
+const telephoneInput = document.querySelector('#telephone');
+const secondFieldNameNTInput = document.querySelector('#secondFieldNameNT');
+const contactsEmailInput = document.querySelector('#contactsEmail');
+const thirdFieldNameNTInput = document.querySelector('#thirdFieldNameNT');
+const contactsAddressInput = document.querySelector('#contactsAddress');
+const fourthFieldNameNTInput = document.querySelector('#fourthFieldNameNT');
+const fithFieldNameNTInput = document.querySelector('#fithFieldNameNT');
+const manualContactsInstructionP = document.querySelector('#manualContactsInstruction');
+const editNewFieldNamesInstructionP = document.querySelector('#editNewFieldNamesInstruction');
+const enterContactBtn = document.querySelector('#enterContactBtn');
+const enterNewFieldNameBtn = document.querySelector('#enterNewFieldNameBtn');
+const clearContactEntryBtn = document.querySelector('#clearContactEntry');
+const clearFieldNameEntryBtn = document.querySelector('#clearFieldNameEntry');
+const cancelAllBtn = document.querySelector('#cancelAll');
+const cancelAllFieldNamesBtn = document.querySelector('#cancelAllFieldNames');
+const statusContactEntryP = document.querySelector('#statusContactEntry');
+const statusFieldNamesEntryP = document.querySelector('#statusFieldNamesEntry');
+const finishedContactsEntryBtn = document.querySelector('#finishedContactsEntry');
+const finishedFieldNamesEntryBtn = document.querySelector('#finishedFieldNamesEntry');
+//NCJan10..below. If messed up go back to fallBackJan10
+const tableNameLi = []; 
+const newTableList = document.querySelector('#newTableList');//<ol> to contain li in html
+let tableListExists = false;//flag to keep table list repeating
+let tableName = "";//made global variable ..maybe don't need this got error assigning to read only variable and corrected by changing to tableNamed ?? which is not even declared here??
+//savedTablesArray = [];//decalared globally to store saved table arrays.. this is an array of arrays
+// let newTableVariablesArray = [];
+//ReferenceError: Can't find variable: tableNameLi
+//references above for manualContacts entry code
+//NCJan10.above.If messed up go back to fallBackJan10
 //variables for TABLE SECTION
 //let tableExists = 0;//to enable or disable display table button. this variable is declared ahead of otherVariable array to be recognized in otherVariables so can remove it here?
 
@@ -567,6 +804,7 @@ let objectStoreName = "";
 //let dataBaseName = ""; already declared above
 let data;//I added this during testing? may not need ?
 let tableNeedsUpdate = false;//flag to prevent error if returnToNotes Btn is tapped in create table window
+let tableLimit = false;//flag to assess if room for more tables see checkTableLimit function
 //let dataV;//see above
 //let dbName;//global variable for database name..currently notes_dbx
 
@@ -574,10 +812,37 @@ let tableNeedsUpdate = false;//flag to prevent error if returnToNotes Btn is tap
 //write all of our subsequent code inside this window.onload event handler function, called when the window's load event fires, to make sure we don't try to use IndexedDB functionality before the app has completely finished loading
 
 
+//if(!newDBGuidance) {
+
+	
 
 window.onload = function() {
-	editWindow.setAttribute('class','hidden');
-  deleteWindow.setAttribute('class','hidden');
+// let isDenied = false;
+// let isConfirmed = false;
+// let isDismissed = false;
+// Swal.fire({
+//   title: 'Tap LOAD to view table OTHERWISE Tap RENAME or DELETE' ,
+//  // text: 'Do you want to continue',
+//   icon: 'question',
+//   confirmButtonText: 'LOAD TABLE',
+//   showConfirmButton: true,
+//   showDenyButton: true,
+//   showCancelButton: true,
+//   cancelButtonText: 'DELETE',
+//   denyButtonText: 'RENAME'
+  
+// });
+// if(isConfirmed) {
+// alert("LOADING TABLE");
+// } else if (isDenied) {
+// alert("RENAMING TABLE");
+// } else if (isDismissed) {
+// alert("DELETING TABLE")	
+// }//END IF ELSE CONFIRM DENY RENAME
+// Swal.fire("Are you sure you want to do this?", {
+//   buttons: ["Oh noez!", "Aww yiss!"],
+// });	editWindow.setAttribute('class','hidden');
+ promptBox.setAttribute('class','hidden'); deleteWindow.setAttribute('class','hidden');
 displayFullNote.setAttribute('class','hidden');
 prefWindow.setAttribute('class','hidden');
 tableScreen.setAttribute('class','hidden');
@@ -726,7 +991,7 @@ if (!usingDarkMode) {
 //variables and references for FileNames^
 
 function getFileNames(dataBaseName) {
-	
+	//alert("savedTablesArray[0] = " + savedTablesArray[0]);
 	//restoreSavedBtn.disabled = true;//gets enabled in change colors if you save current colors	
 	
 	//flag that prevents dbList from repeating May 8. THIS WORKS!
@@ -769,8 +1034,8 @@ promise.then(databases => {
 databaseNameLi[i] = document.createElement('li');
 	 databaseNameLi[i].textContent = databases[i].name;
 	 
-	 //code to blink border if newDBGuidance = true Nov29
-	 console.log('At getFilenamrpes - newDBGuidance = ' + newDBGuidance);
+	 //code to blink border if newDBGuidance = true Nov29 does not work?
+	 console.log('At getFilenames - newDBGuidance = ' + newDBGuidance);
 	 if (newDBGuidance) {
 		 databaseNameLi[i].setAttribute('class','blinkBorder');
 	 }//end if newDBGuidance
@@ -804,6 +1069,13 @@ databaseNameLi[i].addEventListener('click', function () {
 			 resetVariables();
 			 //trying to make dataBaseName variable global!
 			 dbName = dataBaseName;
+			 //clear previous settings from newTable selections
+			newTableVariablesArray.length = 0; 
+			newTableSpecificVariables.length = 0;
+			tableIndex = -1;
+			newTableEdit = false;
+			newTableNames.length = 0;
+			tableListExists = false;
 			loadTheDataBase(dataBaseName);
 			console.log('Sending dataBaseName ' + dataBaseName + ' to loadTheDataBase function');
 			} else {
@@ -845,9 +1117,46 @@ databaseNameLi[i].addEventListener('click', function () {
 
 //newDataBaseButton is generated by HTML code
 newDBButton.onclick = function() {
+//set up newTable variables preceding a virgin db creation to prevent run error
+/*
+let skip = false;
+if(skip) {
+console.log("At create new db and dbListExists is false so about to i itiate new table variables ");
+	//tableIndex = 0;
+//newTableVariablesArray[0] = tableIndex;
+
+newTableVariablesArray = [-1,,false];
+
+//newTableNames = 
+//newTableVariablesArray[1] = newTableNames;
+//tableListExists = false;
+//newTableVariablesArray[2] = tableListExists;
+
+dataVobj.newTableVariables = newTableVariablesArray;
+
+savedTablesArray = [,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,];
+
+savedTablesArray[0] = [,,,];
+dataVobj.savedTables = savedTablesArray;
+
+//tableIndex = 0;
+//newTableSpecificVariables[0] [0] = tableIndex;
+
+//newTableFieldsArray = 
+//newTableSpecificVariables[0][1] = newTableFieldsArray;
+//numberOfNewTableAddedFields = 0;
+//newTableSpecificVariables[0][2] = numberOfNewTableAddedFields;
+
+newTableSpecificVariables = [-1,,0],[-1,,0],[-1,,0],[-1,,0],[-1,,0],[-1,,0],[-1,,0],[-1,,0],[-1,,0],[-1,,0];
+
+dataVobj.tableSpecific = newTableSpecificVariables;
+}//end if!dbListExits
+*/
+
 	console.log(' Tapped newDBButton. Going to createNewDB function.');
 	for (let i = 0; i< numberOfDatabases; i++) { 
-				dataBaseList.removeChild(databaseNameLi[i]);
+		//does this even run ? numberOfDatabases is never incremented????	
+			dataBaseList.removeChild(databaseNameLi[i]);
 			}//end for loop
 			fileNamesWindow.setAttribute('class','hidden');
 	//go to createNewDB function
@@ -884,6 +1193,7 @@ restoreDataBaseBtn.onclick = function() {
 //start loadSampleDbBtn.onclick
 loadSampleDbBtn.onclick = function () {
 console.log('loadSampleDbBtn Button clicked. FileNamesWin hidden.');
+//alertx("loadSampleDbBtn..savedTablesArray[0] = " + savedTablesArray[0]);
 	fileNamesWindow.setAttribute('class','hidden');	
 	//set loadSampleDb flag to true
 	loadSampleDb = true;
@@ -1030,10 +1340,11 @@ createNewDBWindow.removeChild(newDBGuideP);
 //code for managing file names of databases
 //function manageDataBases
 function manageDataBases () {
-const restoreFileBtnLabel = document.querySelector('#restoreFileBtnLabel');
-const fileToRestore = document.querySelector('#fileToRestore');
+//const restoreFileBtnLabel = document.querySelector('#restoreFileBtnLabel');
+//const fileToRestore = document.querySelector('#fileToRestore');
 	
 console.log('In manageDataBases function.');	manageFilesWindow.setAttribute('class','showing');
+//fileToRestore.style.overflow = "scroll";
 
 //Check if screenDark mode
 checkScreenMode();
@@ -1294,14 +1605,14 @@ checkScreenMode();
 if(screenDark) {
 	backupFilesWin.style.backgroundColor = "black";
 	backupFilesWin.style.color = "white";
-	restoreFileBtnLabel.style.color = "black";
+	//restoreFileBtnLabel.style.color = "black";
 	
 } else {
 	backupFilesWin.style.backgroundColor = "#eee";
 	backupFilesWin.style.color = "black";
 }//end if else screenDark	
 	
-fileToRestore.textContent = dataBaseName;
+//fileToRestore.textContent = "—>  " + dataBaseName;
 // promise = indexedDB.databases()
 // //A promise that resolves either to an error or a list of dictionaries, each with two elements, name and version.
 // promise.then(databases => {
@@ -1389,6 +1700,8 @@ console.log('RestoreFile Button clicked. backupFilesWin hidden.');	backupFilesWi
 
 cancelbackupDataBaseButton.onclick = function() {
 console.log('Cancel BackupDataBaseButton clicked. backupFilesWin hidden.');
+
+
 // for (let i = 0; i< databases.length; i++) { 
 // 				backupDataBaseList.removeChild(databaseNameLi[i]);
 // 			}//end for loop
@@ -1419,11 +1732,25 @@ backupFilesWin.setAttribute('class','hidden');
 
 //function to resetVariables prior to creating a new db
 function resetVariables () {
+	//clear list of newTables if they exist. Do this before we lose all the variable settings. Done in resetVariables because also needed with createNewDB
+//to keep tableList from repeating
+//ReferenceError: Cannot access uninitialized variable.
+if(tableListExists) {
+		while (newTableList.firstChild) {
+	newTableList.removeChild(newTableList.firstChild);
+};//end while
+tableChosenP.textContent = "";
+}//end if(tableListExists)
+
+
+	
 setup = 0;
 xtraField = 0;//Mar26 remove?
 tableExists = 0;
 tableArray = tableArray.splice(0, tableArray.length);
 tableTitle = tableTitle.splice(0,tableTitle.length);
+//COULD THIS BE WHAT IS MESSING UP MY SAVEDTABLESARRAY SETTINGS????
+//savedTablesArray = savedTablesArray.splice(0, savedTablesArray.length);
 fieldNamesArray = fieldNamesArray.splice(0,fieldNamesArray.length);
 //dbTableName = "";
 newFieldCounter = 0;
@@ -1435,13 +1762,13 @@ ver = 1; //changed version variable from 1 to 2 to trigger onupgradeneeded event
 variable2Array = [setup,noteListItemColour, noteTitleColour, bodyColour, xtraFieldColour, fontColour, tableExists];
 //let nextFieldName;//title of subsequent fields as determined by input in a for loop
 	numberOfFields = "";//the counter to use in the for loop
-	numberOfAdditionalFields = "";//number of new required fields
+	numberOfDynamicFields = "";//number of new required fields
 	moreFields = 0;//add more dynamic fields in edit table
 // 	let tableTitle;
 // let paraBody;
 // let displayXtraFieldData;
 // 	//ReferenceError: Cannot access uninitialized variable.
-// let otherVariablesArray = [tableExists,showExtraField,nextFieldName,numberOfFields,numberOfAdditionalFields,tableTitle,paraBody,displayXtraFieldData];
+// let otherVariablesArray = [tableExists,showExtraField,nextFieldName,numberOfFields,numberOfDynamicFields,tableTitle,paraBody,displayXtraFieldData];
 // let variable3 = "more variables here";
 //TABLE SECTION VARIABLES
 //recordCounter = 50;//to declare tableArray with a fixed number of records. Hoping to correct error in buildRecordRows re tableArray[][] undefined is not an object??
@@ -1473,6 +1800,18 @@ tableArray[i] = new Array(numberOfFields);
 
 }//number of fields means all fields
 
+//COULD THIS BE WHAT IS MESSING UP MY SAVEDTABLESARRAY SETTINGS????
+	//create the 2D array tableArray
+/*	 savedTablesArray = new Array(10);
+
+//for (var i = 0; i < recordCounter; i++) {
+	
+for (var i = 0; i < 10; i++) {
+
+savedTablesArray[i] = new Array(4);
+
+}//number of fields means all fields
+*/
 //create fieldNamesArray
 fieldNamesArray = [];
 	//ReferenceError: Cannot access uninitialized variable.
@@ -1480,8 +1819,8 @@ fieldOption = [];
 fieldDeleted = false;//flag to make displayTable show the field header with the field removed Feb 2 2021
 buildingTableArrays = 0;//this variable enables displayData to construct the tableTitle and paraBody and displayXtraFieldData arrays ? May not need???
 dateTable = [];//date array used in creating table. Note how this array is declared variable array name = []
-originalNumberRecords;//used to give option of refreshTable
-
+//originalNumberRecords;//used to give option of refreshTable
+originalNumberRecords = 0;//was blank? So unchanged DATE: JAN20 watch this if it crashes elsewhere??!!?,!!?,
 //variables used in refreshTable	
 originalNumberOfFields = numberOfFields;
 	addedNumberOfRecords = tableTitle.length-originalNumberRecords;
@@ -1496,7 +1835,7 @@ DTBtnTappedOnce = 0;//flag to disable or enable edit and deleteField buttons als
 editCurrentTable = 0;//so displayTable workS correctly when editing a table that pre-exists
 deleteTableRecord = 0;
 //?have to reset individual variables in otherVariablesArray!!
-otherVariablesArray = [tableExists,originalNumberRecords,nextFieldName,numberOfFields,numberOfAdditionalFields,tableTitle,paraBody,displayXtraFieldData];
+otherVariablesArray = [tableExists,originalNumberRecords,nextFieldName,numberOfFields,numberOfDynamicFields,tableTitle,paraBody,displayXtraFieldData];
 if(setup===3) {
 prefVariablesArray = [viewDateWritten,dateShade,showExtraField,showScroll,centerTitle,tableDateTime,linkLabel,scrollTable,bkgrdImage,trigger,caseSensitive,includesSubstring];
 }//end if setup = 3
@@ -1526,15 +1865,22 @@ let	dataVobj = {
   fieldNamesArray: fieldNamesArray,
   otherVariables: otherVariablesArray,
   prefVariables: prefVariablesArray,
-  variable3: variable3 };
+  variable3: variable3,
+  savedTables: savedTablesArray,
+  newTableVariables: newTableVariablesArray,
+  tableSpecific: newTableSpecificVariables};
+  
  } else { 
 let	dataVobj = {
   tableArray: tableArray,
   fieldNamesArray: fieldNamesArray,
   otherVariables: otherVariablesArray,
   prefVariables: prefVariablesArray,
-  variable3: variable3
- };//end declaration of dataV object
+  variable3: variable3,
+  savedTables: savedTablesArray,
+  newTableVariables: newTableVariablesArray,
+  tableSpecific: newTableSpecificVariables
+};//end declaration of dataV object
 }//end if setup=3
 
 //dataVobj = {
@@ -1546,8 +1892,9 @@ let	dataVobj = {
 //};//end declaration of dataV object
 //THESE VARIABLES ABOVE FOR TABLE SECTION	
 //THESE VARIABLES ABOVE FOR TABLE SECT
-
-
+newTableNames.length =0;
+savedOriginal = false;
+fromEditFieldLabels = false;
 }//end resetVariables function
 
 
@@ -1702,6 +2049,7 @@ if (upgraded === 1) {
 }//end if upgraded = 1
 
 function loadTheDataBase (dataBaseName) {
+	//alert("At loadTheDatabase…savedTablesArray[0] = " + savedTablesArray[0]);
 	console.log('In loadTheDataBase function.');
 flipMenu.textContent = "Tap - Click to show / hide TABLE MENU";//clear flipMenu so search phrase from previous database does not show 
 	const loadingDataBase= document.querySelector('#openDB');
@@ -1739,7 +2087,8 @@ getDataBaseName(1,dataBaseName,objectStoreName).then(function(result) {
 	var data = event.target.result;
 	console.log('Back In loadTheDataBase after returning from getDataBaseName,hopefully at request.onsuccess getting database variables data if setup is 1 or if data undefined because dataBaseName_os was not found setup will then be 0. If data is undefined pickOldNew function will not work. Next call is to pickOldNew(). Data = ' + data + '. Setup = ' + setup);
 	console.log('If creating new db, onupgradeneeded set variable to 1...upgraded = ' + upgraded + '. newDBflag = ' + newDBflag);
-	
+	//alert("Back from getDatabaseName….savedTablesArray[0] = " + savedTablesArray[0]);
+	//OK HERE!
 	//updatedbTableName for h2 HTML Apr 11
 	if(changeDB) {
 		dbTableName.value = data.variable1;
@@ -1887,8 +2236,35 @@ alert('Installing DougieBase.. Install version = ' + ver);
 //if (setup === 1) {getDataBaseName();}
 
 form.onsubmit = addData;//from addNote window This is theCreateNewNote button in the Add new note window. The reference is to the input submit in the form element of the add new note window in HTML
+
+
+
 saveBtn.onclick = function () {
 	
+	
+	
+	
+	
+//disable SAVE if in a newTable ? Is this good or bad? Will you need this save btn to edit newTables??Date: Jan30 2022
+if(makeContactsTable || loadFromTableOptions) {
+	alert("The SAVE button is DISABLED because you can not Save a database when a new table is currently active. Return to the Table screen and clear the new table or contacts table.  loadFromTableOptions = " + loadFromTableOptions);
+	saveBtn.style.backgroundColor = "lightgrey";
+	saveBtn.disabled = true;
+saveTableBtn.disabled = true;
+saveTableBtn.textContent = "SAVE";
+saveTableBtn2.disabled = true;
+saveTableBtn2.textContent = "SAVE";	
+	return //you don't want to go on to saveVariables!
+	} else { //code below never runs?
+	saveBtn.style.backgroundColor = "rgb(240, 248, 255)";
+	saveBtn.disabled = false;
+	saveTableBtn.disabled = false;
+saveTableBtn.textContent = "SAVE";
+saveTableBtn2.disabled = false;
+saveTableBtn2.textContent = "SAVE";	
+}//end if makeContactsTable || loadFromTableOptions
+
+//-xxxx-xxx
 	//error code to prevent saving null data if user has not selected a db Dec21 2021
 	if(dbName === undefined && !newDBflag) {
 		alert('No database has been selected! Select or create a database to make SAVE available.');
@@ -1896,12 +2272,13 @@ saveBtn.onclick = function () {
 		//getFileNames();
 		return;
 	} //end if dbName===undefined
-	
+	//return false;
 	
 	if(newDBflag) {
 		addNoteBtn.disabled = false;//for create new db, add note btn was disabled in onupgradeneeded
 		//addNoteBtn.setAttribute('class','attentionBtn');
-		
+	//if displayTableBtn is flashing at time of Edit there is confusion! Added May25
+		//displayTableBtn.setAttribute('class','tdEdit');
 		addNoteBtn.setAttribute('class','borderBlink');
 		saveBtn.setAttribute('class','normalBtn');
 		newDBflag = false;
@@ -1914,25 +2291,157 @@ loadBtn.onclick = function() {
 	fromHELP = true;
 	}//end function loadBtn.onclick
 	
-tableScreenBtn.onclick = tableScreenOptions;
+tableScreenBtn.onclick = function () {
+//alert("> TableScreenBtn tapped renameNewTableFlag = " + renameNewTableFlag);
+if(renameNewTableFlag) {
+tableScreenBtn.setAttribute('class','tdEdit');
+displayTableBtn.setAttribute('class','borderBlinkGrn');
+//return;//to prevent trip to resetContacts ? NOT REQUIRED. WILL STOP PRGM.????
+}//end if(renameNewTableFlag)
+
+	if(convertingOldFile) {tableScreenBtn.setAttribute('class','editTD');
+	tableScreenBtn.textContent = "TABLE";
+		}//end if convertingOldFile
+		
+	tableScreenOptions();
+}//end tableScreenBtn.onclick
+
 searchBtn.onclick = searchRecords;
+
 newDBBtn.onclick = function () {
-	console.log('new/changeDBBtn tapped.'); changeDB = true;
+savedOriginal = false;//reset for loading in a new db
+fromEditFieldLabels = false;
+tableLimit = false;//reset this flag if leaving a database so the new db gets to start afresh re number of tables relative to limit date:April27
+DTBtnTappedOnce = 0;//to prevent fields header being messed up if switching db and doing an edititem Mar5 2022
+contactsFieldNames.length = 0;//clear the new table field names to reset for a new database
+	if(convertingOldFile) {
+		newDBBtn.setAttribute('class','tdEdit');
+		newDBBtn.textContent = "NEW/CHANGE DB";
+		convertingOldFile = false;
+	}//end ifif(convertingOldFile) 
+	//should this also include  loadFromTableOptions?
+	if(makeContactsTable || loadFromTableOptions) {
+				resetFromContacts();
+			}//end if makeContactsTable
+	console.log('new/changeDBBtn tapped.');
+	changeDB = true;//Important need this
 	dbListExists = true;
 	
 	//code below prevent table being messed up if you do an edit then change databases before updating the table
 	console.log('DTBtnTappedOnce = ' + DTBtnTappedOnce + 'editNote = ' + editNote + 'tableExists = ' + tableExists);
-	if(tableExists && editNote){
+	//add another condition if (updateNeeded)
+	if(tableExists && editNote || tableNeedsUpdate){
 		alert('Update the Table before leaving current database.')
 		tableScreenOptions();
 		editNote = false;
 	}
 	//code above prevent table being messed up if you do an edit then change databases before updating the table
-	getFileNames()};
+	getFileNames()};//this function call starts DougieBase off with current filenames as opening screen!
 manageBtn.onclick = function () {
 	manageDbListExists = true;//flag to prevent manageDbList from repeating
 	manageDataBases();
 	}//end manageBtn.onclick
+	
+//manualContactsSubmit
+addContactsBtn.onclick = async function (createContacts) {
+//to add ADDRESS field if coming from addContacts/Records
+addContactsBtnTapped = true;//to add ADDRESS field if using ADD CONTACTS
+	if(dbName === undefined && !newDBflag && !newDBGuidance) {
+		alert('⚠️ No database has been selected! Select or create a database to make ADD CONTACTS/RECORDS available.');
+		
+		return;
+	} //end if dbName===undefined
+
+if(DTBtnTappedOnce ===0 & tableExists && !makeContactsTable && !loadFromTableOptions){initializeTable();return}
+
+emailBtn.setAttribute('class','tdEdit');//stops flashing CONTACTS btn if Field Labels btn used prior to ADD CONTACTS 
+addContactsBtn.setAttribute('class','tdEdit');
+checkTableLimit();
+if (tableLimit) {
+tableLimit = false;
+showTable.setAttribute('class','hidden');
+return;	
+}
+//let defaultFieldNames = [];
+let defaultFieldNames = "CONTACT NAME,DATE,TELEPHONE,EMAIL,ADDRESS";
+if(contactsFieldNames.length !== 0) {
+	defaultFieldNames = "";
+	//defaultFieldNames.length = 0;
+}
+
+//code for promptBox 3 btns .. EDIT FIELD NAMES, USE CURRENT FIELD NAMES, CANCEL
+promptBox.setAttribute('class','showing');
+//	tableScreen.setAttribute('class','hidden');
+// tableNameTxt.setAttribute('style', 'white-space: pre;');//enable line breaks add \r\n in text everywhere You want for line-break (new line)
+//tableNameTxt.setAttribute('class','ppref');
+tableNameTxt.setAttribute('style', 'white-space: pre-wrap; background-color: black; color: white; border: 2px solid red; border-radius:3px; padding:5px');//enable line breaks add \r\n in text everywhere You want for line-break (new line)
+
+//alertx("defaultFieldNames = " +defaultFieldNames + " contactsFieldNames = " +contactsFieldNames);
+console.log("defaultFieldNames = " +defaultFieldNames + " contactsFieldNames = " +contactsFieldNames);
+
+tableNameTxt.textContent = `ADD CONTACTS/RECORDS allows manual entry of records. The ContactPicker API is not available here. The current field headings are: ` +`\r\n` +defaultFieldNames + contactsFieldNames +` \r\n ` + `
+    EDIT FIELD NAMES will allow re-naming field labels (Tap Field Headings on table screen) \r\n
+     USE CURRENT FIELD NAMES will create a new Table with the current headings above. \r\n
+      CANCEL returns to table screen.`;
+      
+actionLoadBtn.textContent = "EDIT FIELD NAMES";
+actionRenameBtn.textContent = "USE CURRENT FIELD NAMES";
+actionCancelBtn.textContent = "CANCEL";
+actionDeleteBtn.style.display = "none";
+actionRenameBtn.style.display = "unset";//this btn might get devisualized in Field Labels
+
+
+
+
+//prompt to give choice to edit field names
+//confirm choice window
+		 // if (window.confirm("The current field headings are: " + defaultFieldNames + contactsFieldNames +" \n" + "  OK will allow editing of field labels (Tap Field Headings on table screen) \n CANCEL will create a new Table with the current headings above.")) {
+		 //showTable.setAttribute('class', 'showing');
+		 //await editNewTableFieldNames();
+		 
+//Allow for scenario of ADD CONTACTS new table if preceding screen was a resultant table from a searched main db table make Fields Labels btn show or tell user to go back to Display Main db table…in aid of having the fields label btn on the screen!
+
+//if(tableArray[0][0].includes(">")) {the Field Labels btn
+
+//edit field names uses actionLoadBtn btn
+actionLoadBtn.onclick = function () {
+newTableFieldsBtn.style.display = "unset";
+//}//end if(tableArray[0][0].includes(">")) {
+promptBox.setAttribute('class','hidden');
+
+newTableFieldsBtn.setAttribute('class','borderBlink');
+actionRenameBtn.setAttribute('class','borderBlink');//so this btn is flashing when you come back to it from the Field Labels scrn
+	showTable.setAttribute('class','showing');	
+actionLoadBtn.setAttribute('class','borderBlink');//so EDIT FIELD NAMES btn is flashing when you go to the Field Labels screen	
+//actionLoadBtn.style.display = "none";//so only use current appears when returning to this screen via ADD CONTACTS/RECORDS during the EDIT FIELD NAMES process of ADD CONTACTS Date:May1..doesn't work because this screen revisited before final ADD CONTACTS!
+	fromAddContacts = true;//flag to tell editNewTableFieldNames to flash and return to ADD CONTACTS
+	//actionLoadBtn.style.display = "none";
+		 }//end actionLoadbtn.onclick
+		 
+//use current uses actionRenameBtn btn
+actionRenameBtn.onclick = function () {	
+actionLoadBtn.style.display = "unset";//$in case disvisualized in EDIT FIELD NAMES process
+ actionRenameBtn.setAttribute('class','tdEdit');
+promptBox.setAttribute('class','hidden');
+contactsArray.length = 0;//preventing addContacts from tagging on to previous table ? Mar14
+manualContacts.length = 0;
+newTableFieldsArray.length = 0;
+
+	 manuallyCreateContacts();
+	}//end function actionDeleteBtn.onclick
+//CANCEL action
+actionCancelBtn.onclick = function () {
+fromAddContacts = false;//flag to tell editNewTableFieldNames to flash and return to ADD CONTACTS
+actionRenameBtn.setAttribute('class','tdEdit');//in case flashing from a cancelled edit field names
+actionLoadBtn.setAttribute('class','tdEdit');//so EDIT FIELD NAMES btn is not flashing when you go back to the Action Prompt screen	
+actionLoadBtn.style.display = "unset";//$in case disvisualized in EDIT FIELD NAMES process
+promptBox.setAttribute('class','hidden');
+showTable.setAttribute('class','showing')
+	
+}//end function actionCancelBtn.onclick	
+	
+}//end addContactsBtn.onclick = function
+	
 //now what happens when no notes and we go to add note btn returning to addData function??
 console.log('dataBaseName = ' + dataBaseName);
 // Define the addData() function
@@ -1940,7 +2449,32 @@ console.log('dataBaseName = ' + dataBaseName);
 
 // Define the addData() function
 function addData(e) {
+//IN AID OF PREVENTING A REFESH RELOAD OF CODE WHEN CREATING A NEW DB!! May27 2022
+if (newDBGuidance && xtraField === 0) {
+
+//alertx("newDBGuidance = " +newDBGuidance + " newDBflag = " + newDBflag + " should now go to getfilenames");
+
+		getFileNamesSwitch = false;
+		
+		// will this fix wild crash reset? May 26 2022 
+		//stopped here
+		//fileNamesWindow.setAttribute('class','showing');
+		getFileNames();
+		// will this fix wild crash reset? May 26 2022 
+		
+		//return;
+	}//end if newDBflag
+	
+//IN AID OF PREVENTING A REFESH RELOAD OF CODE WHEN CREATING A NEW DB!! May27 2022. ^^^^^^
+	
 	console.log('At addData');
+editNote = true; //flag added to prevent switching to another db if a record added to current one without having initialized the table	
+//trying to fix fields getting messed up in displayTable if viewing main db table after viewing a new table Mar7
+if(fromNewTable) {
+resetFields = true;//flag used at reconstuction of displayTable
+fromNewTable = false;
+}//end if fromNewTable
+
 //maybe setup = 1 should be here. Otherwise you can add a new note to a new db but not be able to see its variables
 //!!!!!!!REMOVE setup=1 if not working!!!!!!
 //setup = 1;
@@ -1970,7 +2504,7 @@ addNoteWindow.setAttribute('class','hidden');
    
 //  if (setup === 0) {
 // 	 //construuct dataV object
-// 	otherVariablesArray = [tableExists,showExtraField,nextFieldName,numberOfFields,numberOfAdditionalFields,tableTitle,paraBody,displayXtraFieldData];
+// 	otherVariablesArray = [tableExists,showExtraField,nextFieldName,numberOfFields,numberOfDynamicFields,tableTitle,paraBody,displayXtraFieldData];
 // 	otherVariablesArray[1] = showExtraField; 
 	 
 // 		dataV = {
@@ -2025,7 +2559,8 @@ todayString = todayS.slice(3, 21);
 	     newItem = { title: titleInput.value,
 		  created: todayString, body: bodyInput.value, xtraField: xtraFieldData, variable1: dbTableName.value, variable2: variable2Array, dataV: dataVobj};
 		  //changed variable2: setup to variable2Array
-		  
+	//	ReferenceError: Can't find variable: dataVobj // lineb2314
+		
 		  //dataVobj will compare to variable2Array, and dataV: will compare to variable2:
 		//  alert('newItem title reads: ' + newItem.title);
 
@@ -2114,6 +2649,12 @@ idx = index(name), deleteIndex(name) */
 	//to avoid going back to fileNames function after add note in createNewDB Apr8
 	if (newDBflag) {
 		getFileNamesSwitch = false;
+		
+		// // will this fix wild crash reset? May 26 2022 
+		// //stopped here
+		// getFileNames();
+		// // will this fix wild crash reset? May 26 2022 
+		
 	}//end if newDBflaf
 	//to avoid going back to fileNames function after add note in createNewDB
 	
@@ -2131,6 +2672,7 @@ idx = index(name), deleteIndex(name) */
 
 // Define the displayData() function
 function displayData() {
+	console.log("In dispalyData..called by pickOldNew..…after retrieving dataVobj…….tableIndex = " + tableIndex + " tableListExists = " + tableListExists + " newTableNames = " + newTableNames);
 	
 	//removed! if messes up trying to reset background image as per each database Nov11 this code (removed) does not allow the database to load in
 	
@@ -2486,15 +3028,24 @@ console.log('At end of displayData: tableTitle = ' + tableTitle + '. tableTitle.
 			console.log('after displayData, paraBody = '+ paraBody);
 			console.log('after displayData, displayXtraFieldData = '+ displayXtraFieldData);
   //note originalNumberRecords is NOT set here.
+  console.log("At end of display data. Is savedTablesArray intact ? savedTablesArray = " + savedTablesArray);
 }//end displayData function
+//At end of display data. Is savedTablesArray intact ? savedTablesArray = Doug Dyer,
+//Contact Name , Feb 06 2022 00:20, ,username@shaw.ca,(250) 658-5645,addyer@telus.net,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 
 // Define the deleteItem() function
 function deleteItem(e) {
 	console.log('At function deleteItem');
 	
+//trying to fix fields getting messed up in displayTable if viewing main db table after viewing a new table Mar7
+if(fromNewTable) {
+resetFields = true;//flag used at reconstuction of displayTable
+fromNewTable = false;
+}//end if fromNewTable
+	
 	//fix loop hole of table screen getting messed up if user adds new note prior to first initialization of table
 	if(DTBtnTappedOnce ===0 & tableExists){
-		alert('The pre-existing table has to be initialized first before deleting a note! Tap the DISPLAY TABLE button.');
+		alert('The pre-existing main table has to be initialized first before deleting a note! Tap the DISPLAY TABLE button.');
 		tableScreenOptions();
 	}//end if if(DTBtnTappedOnce ===0 & tableExists)
 	
@@ -2578,7 +3129,8 @@ if (tableExists) {
 	
 	
  deleteButton.onclick = function () {
-	 editNote=true;//flag insures that you update table before leaving for another database Dec21
+	// editNote=true;//flag insures that you update table before leaving for another database Dec21//this causes a table refresh after deleting record which messes up reappearance of displayData() so I removed this line Mar8 2022
+	
 	 deleteTableBanner.textContent = 'Now delete the record from the Table!';
 	 deleteButton.setAttribute('class','normalBtn');
 	 
@@ -2751,6 +3303,8 @@ deleteWindow.setAttribute('class','hidden');
 };//end of request.onsuccess
   //create a request to delete the object store identified with noteId.
 //deleteWindow.setAttribute('class','hidden');
+//displayData();//MAR8 REMOVE IF MESSED UP
+//editNote = false;//this flag causes a refresh update table if true and not needed here after a delete record..it messes uo reappearance of displayData!
 deleteRecord = 0; //flag used in refreshTable() SHOULD THIS BE MOVED ABOVE TO COPYOFTABLEARRAY. CODE DOESN'T GET HERE
 // copyOfTableArray = tableArray.slice(0,tableTitle.length);
 // copyOfTableTitle = tableTitle.slice();
@@ -3028,6 +3582,12 @@ doneSettingsButton = document.querySelector('#okSettingsViewed');
 //you should combine the clear and the write into a single transaction
 
 function editItem(e) {
+//trying to fix fields getting messed up in displayTable if viewing main db table after viewing a new table Mar7
+if(fromNewTable) {
+resetFields = true;//flag used at reconstuction of displayTable
+fromNewTable = false;
+}//end if fromNewTable
+
 		if (newDBGuidance) {
 		//clearInterval(flashing);	
 		NotesEditBtn.setAttribute('class','tdEdit');//this does not seem to work? in. ReateNewDB? Not sure why?
@@ -3404,7 +3964,6 @@ settingsBtn.onclick = options;
 
 function options () {
 	
-	
 	console.log("Just entered function options after tapping preferences button. newDBGuidance flag = " + newDBGuidance + " trigger = " + trigger);
 	//creating new db: At preferences, newDBflag = false newDBGuidance = undefined xtraField = 0 dbName = New database
 	
@@ -3451,6 +4010,8 @@ addNoteBtn.setAttribute('class','attentionBtn');
 
 
 
+//const printOptionBtn = document.querySelector('#printOption');
+//let enablePrint = false;
 
 	const renameBtn = document.querySelector('#renameDB');
 	//const workDiv = document.querySelector('#workDiv');
@@ -3537,6 +4098,14 @@ if(setup === 3)	{
 	}else {
 		scrollBtns.textContent = 'Show scroll btns';
 	}//end if showScroll
+	
+	// if(enablePrint) {
+	// 	printOptionBtn.textContent = "Disable Print";
+	// 	printBtn.style.display = "unset";
+	// 	} else {
+	// 	printOptionBtn.textContent = "Enable Print";
+	// 	printBtn.style.display = "none";
+	// }//end if(enablePrint) {
 
 	if(centerTitle) {
 		centerTitleBtn.textContent = 'Title to Left';
@@ -3553,12 +4122,13 @@ if(setup === 3)	{
 			tableDateTimeBtn.textContent = 'TableDate' + timeIndicatorStr +'time';
 			timeDateFlagP.textContent = "The edit DATE in table will now  INCLUDE the time.";
 	}//end if else tableDateTime
+
 	
 	if(!linkLabel) {
-		showLinkLabelBtn.textContent = 'Show link itself';
+		showLinkLabelBtn.textContent = 'Use Link Labels';//switched textContent was Show link itself
 		timeDateFlagP.textContent = "Active descriptive text now replaces the table links";
 			} else {
-		showLinkLabelBtn.textContent = 'Use Link Labels';
+		showLinkLabelBtn.textContent = 'Show link itself';
 			
 		timeDateFlagP.textContent = "The table now shows the real link (url)";
 	}//end if else !linkLabel
@@ -3651,6 +4221,25 @@ if(setup === 3)	{
 		}//end if else showScroll
 		
 	}//end function scrollBtns.onclick
+	
+	// printOptionBtn.onclick = function () {
+	// if(enablePrint) {
+	// printBtn.style.display = "unset";	
+	// enablePrint = false;
+	// printOptionBtn.textContent = "Disable Print";
+	// //resetFields = true;
+	// //clearTableRows();
+	// //displayTable();
+	// } else {
+	// 	printBtn.style.display = "none";
+	// 	enablePrint = true;
+	// 	printOptionBtn.textContent = "Enable Print";
+	// 	//resetFields = true;
+	// 	//clearTableRows();
+		
+	// 	//displayTable();
+	// }//end if else 	if(enablePrint) {
+	// }//end function printOptionBtn.onclick
 	
 	
 	centerTitleBtn.onclick = function (){
@@ -3769,6 +4358,17 @@ if(DTBtnTappedOnce ===0) {
 
 //save Settings
 const saveSettingsBtn = document.querySelector('#saveSettings');
+
+if(makeContactsTable || loadFromTableOptions) {
+	saveSettingsBtn.style.backgroundColor = "lightgrey";
+	saveSettingsBtn.disabled = true;	
+	} else {
+	saveSettingsBtn.style.backgroundColor = "rgb(240, 248, 255)";
+	saveSettingsBtn.disabled = false;
+}//end if makeContactsTable || loadFromTableOptions
+
+//-xxxx-xxx
+
 saveSettingsBtn.onclick = function () {
 	setup = 3;
 	saveVariables();
@@ -3789,8 +4389,9 @@ if(DTBtnTappedOnce ===0 && tableExists) {
 	//to safe gard going to table prior to initializing
 //if(DTBtnTappedOnce ===0 & tableExists){initializeTable();}	
 
+
 		if(!linkLabel) {
-			showLinkLabelBtn.textContent = 'Show link itself';
+			showLinkLabelBtn.textContent = 'Show link itself';//was Show link itself.. Use Link Labels
 			linkLabel = true;
 			
 	//borrowed timeDateFlagP.textContent = from the table Date section to give information re link labels June 9
@@ -4192,6 +4793,7 @@ if(screenDark) {
 	
 	// dbTitle.textContent = 'Notes';
 	 let newTitlePara = document.createElement('p');
+	// newTitlePara.textContent = "⚠️ After entering new title, follow the flashing button prompts to register the new table title!"
 	 //get new title
 	 newTitle.addEventListener('input', function () {dbTitle.textContent = newTitle.value;
 		 //dbTableName variable declared as global on line 16? removed this line 16 because it caused error: 'attempting to assign to a readonly property? then code worked. so where is this variable declared?'maybe getElementByID takes care of it??
@@ -4818,7 +5420,7 @@ addNoteBtn.onclick = function () {
 	
 	//fix loop hole of table screen getting messed up if user adds new note prior to first initialization of table
 	if(DTBtnTappedOnce ===0 & tableExists){
-		alert('The pre-existing table has to be initialized first before adding a new note! Tap the DISPLAY TABLE button.');
+		alert('The pre-existing main table has to be initialized first before adding a new note! Tap the DISPLAY TABLE button.');
 		tableScreenOptions();
 	}//end if if(DTBtnTappedOnce ===0 & tableExists)
 //saveBtn.disabled = false;//change back to false remove if messed up
@@ -5126,6 +5728,9 @@ function addDate () {
 //second try saveVariables
 
 function saveVariables () {
+	//alert("Beginning function saveVariables ….tableID = "+ tableID + ".  Because of resetFromContacts function,  makeContactsTable = " + makeContactsTable + " … loadFromTableOptions = " + loadFromTableOptions +  ".  loadTableIndex = " + loadTableIndex + ".  newTableSpecificVariables[loadTableIndex][1] = " + newTableSpecificVariables[loadTableIndex][1] + "  newTableSpecificVariables[tableID][1] = " + newTableSpecificVariables[tableID][1] + ".   newTableSpecificVariables[loadTableIndex][2] = " + newTableSpecificVariables[loadTableIndex][2] + ".  savedTablesArray[loadTableIndex] = " + savedTablesArray[loadTableIndex]);
+	
+//	alert("in saveVariables");
 	
 	//create newDB guidance
 	// if (newDBflag) {
@@ -5151,10 +5756,18 @@ function saveVariables () {
 	saveBtn.textContent = 'SAVED';
 	if(tableScreenBtnGrn) {
 		tableScreenBtn.setAttribute('class','borderBlink');
+		//remove if messed up Mar6
+		clearTableWindowEditBtn.setAttribute('class','borderBlink');
+		
+/*	if(newDBGuidance) {
+		displayTableBtn.setAttribute('class','tdEdit');//added May25
+	}//end if newDBGuidance
+	*/
+	
 		tableScreenBtnGrn = false;
 	}//end if tableScreenBtnGrn
 	
-	alert('Saving Variables. Tap CLOSE to continue.');
+	alert('Saving Variables. Tap OK/CLOSE to continue.');
 	//newItem might not have to be here??
 	newItem = { title: xtraField,
 		created: todayString, body: newFieldName };
@@ -5177,12 +5790,52 @@ let transaction = db.transaction([objectStoreName], 'readwrite');
   // requestV = objectStoreV.get(1);
   // requestV.onsuccess = function(event) {
 	//   console.log('Now in onsuccess of saveTableVariables');
-	otherVariablesArray = [tableExists,originalNumberRecords,nextFieldName,numberOfFields,numberOfAdditionalFields,tableTitle,paraBody,displayXtraFieldData];
+	otherVariablesArray = [tableExists,originalNumberRecords,nextFieldName,numberOfFields,numberOfDynamicFields,tableTitle,paraBody,displayXtraFieldData];
 	if(setup===3) {
 	prefVariablesArray = [viewDateWritten,dateShade,showExtraField,showScroll,centerTitle,tableDateTime,linkLabel,scrollTable,bkgrdImage,trigger,caseSensitive,includesSubstring];
 	}//end if setup===3
 		variable3 = showExtraField;
+		
+		//update tableVariablesArray only want to run once for initializing newly created db at first save setup=0 changes to 1 after transaction saved newDBGuidance changes toundefined after code re-run and you have to tap newly created db to continue..after add/relabel field newDBGuidance is back to true (newDBflag = false )..in second SAVE setup is now =1 ..but maybe should skip the initialization of the newtable variables a second time ????? Feb23..because newDBGuidance is true again. Maybeok to initialize twice??..a third save..after table is created 
+if(newDBflag || newDBGuidance) {
+//alertx("In saveVariables initializing newTable variables..setup =  " + setup);
+//these lines altered comented out  Mar 21 v
+//if(tableExists) {
+	savedTablesArray.length = 0;
+	newTableSpecificVariables.length = 0;
+//}//end if(tableExists)
+//savedTablesArray = [,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,];
+
+//	newTableSpecificVariables = [-1,[],0],[-1,[],0],[-1,[],0],[-1,[],0],[-1,[],0],[-1,[],0],[-1,[],0],[-1,[],0],[-1,[],0],[-1,[],0];
 	
+//SHOULD I PUT [] in the assigned array above for the fieldNames array	date Feb23 AND SHOULD I PUT []around newTableSpecificVariables!! Because only 1 iteration of the 10 appears in the console notes
+
+//ANOTHER OPTION: USE THE TWO RESET FUNCTIONS: redefinenewTableSpecificVariables(); and redefineSavedTablesArray();
+
+redefinenewTableSpecificVariables();
+//function above retains data from previous db
+	newTableVariablesArray = [-1,[],false];
+	
+	//newTableVariablesArray = [-1,"CONTACTS",false];
+	
+} else {//end if newDBflag || newDBGuidance
+
+newTableVariablesArray[0] = tableIndex;
+newTableVariablesArray[1] = newTableNames; 
+newTableVariablesArray[2] = tableListExists;
+//changed loadTableIndex to tableID Feb28 2022
+
+if(!deleteFromTableOptions) {
+newTableSpecificVariables[tableID][0] = newTableEdit;//not using this variable as of Feb13
+newTableSpecificVariables[tableID][1] = newTableFieldsArray.slice();
+newTableSpecificVariables[tableID][2] = numberOfNewTableAddedFields;
+	}//end if!deleteFromTableOptions = true;//flag indicates deletion of new table
+
+}//end if else  newDBflag || newDBGuidance	
+
+//alertx("saveVariables after [1] equated to newTableFieldsArray …… loadFromTableOptions = " + loadFromTableOptions + ".  makeContactsTable = " + makeContactsTable + ".  loadTableIndex = " + loadTableIndex + " tableID = " + tableID + ".  newTableSpecificVariables = " + newTableSpecificVariables + ".  savedTablesArray = " + savedTablesArray + ".  newTableVariablesArray[1] = " + newTableVariablesArray[1]+ ".  savedTablesArray.length = " + savedTablesArray.length + ". newTableSpecificVariables.length = " + newTableSpecificVariables.length);
+
+console.log("saveVariables after [1] equated to newTableFieldsArray …… loadFromTableOptions = " + loadFromTableOptions + ".  makeContactsTable = " + makeContactsTable + ".  loadTableIndex = " + loadTableIndex + " tableID = " + tableID + ".  newTableSpecificVariables = " + newTableSpecificVariables + ".  savedTablesArray = " + savedTablesArray + ".  newTableVariablesArray[1] = " + newTableVariablesArray[1]+ ".  savedTablesArray.length = " + savedTablesArray.length + ". newTableSpecificVariables.length = " + newTableSpecificVariables.length);
 //	var dataV = event.target.result;
 //	ReferenceError: Can't find variable: variable3
 //use if setup===0 so these object members are initialized to "0" only if this is a new db never setup before. Otherwise these variables will always be reset to initial values rather than the values you want to keep stored.
@@ -5195,7 +5848,10 @@ if(setup===3 || setup === 0) {
   fieldNamesArray: fieldNamesArray,
   otherVariables: otherVariablesArray,
   prefVariables: prefVariablesArray,
-  variable3: variable3
+  variable3: variable3,
+  savedTables: savedTablesArray,
+  newTableVariables: newTableVariablesArray,
+  tableSpecific: newTableSpecificVariables
  };//end declaration of dataV object if setup=1 as in an older previously created database that hasn't had prefs saved, then save dataVObj without preferences ariable OR SAVE WITH PREFSVARIABLE EMPTY AS DECLARED AT TOP OF PROGRAM?
 } else {
 	dataVobj = {
@@ -5204,7 +5860,10 @@ if(setup===3 || setup === 0) {
   otherVariables: otherVariablesArray,
 //add prefVariablesArray anyway even if empty? Date Nov 23????
 
-  variable3: variable3
+  variable3: variable3,
+  savedTables: savedTablesArray,
+  newTableVariables: newTableVariablesArray,
+  tableSpecific: newTableSpecificVariables
 };//end declaration of dataV object
 	
 }//end if setup===3
@@ -5219,11 +5878,20 @@ dataVobj.tableArray = tableArray;
 		dataVobj.prefVariables = prefVariablesArray;
 	}//end if setup===3
 	dataVobj.variable3 = variable3;
-	
-	console.log('Tablevariables edited! dataVobj.tableArray now = '+ dataVobj.tableArray);
+	//alert("at dataVobj.savedTables = savedTablesArray which is : " + savedTablesArray);
+	dataVobj.savedTables = savedTablesArray;
+	dataVobj.newTableVariables = newTableVariablesArray;
+	dataVobj.tableSpecific = newTableSpecificVariables;
+	console.log('Tablevariables edited! dataVobj.tableArray now = '+ dataVobj.tableArray + "dataVobj.newTableVariables = " + newTableVariablesArray);
+	console.log("in saveVariables: newTableSpecificVariables =  " + newTableSpecificVariables);
+//Tablevariables edited! dataVobj.tableArray now = dataVobj.newTableVariables = -1,,false
+//in saveVariables: newTableSpecificVariables =  -1,,0–should this be 10 of theses?
+//	in saveVariables: newTableSpecificVariables =  false,CONTACT NAME,DATE,TELEPHONE,EMAIL,0,false,CONTACT NAME,DATE,TELEPHONE,EMAIL,0,-1,CONTACT NAME,DATE,TELEPHONE,EMAIL,0,-1,,0,-1,,0,-1,,0,-1,,0,-1,,0,-1,,0,-1,,0
+
+	//alert("In saveVariables…newTableVariablesArray = " +newTableVariablesArray);
 	//TransactionInactiveError: Failed to store record in an IDBObjectStore: The transaction is inactive or finished.
 	//so I will repeat setting up transaction again here
-	
+	//return false;
 	
 	//ReferenceError: Can't find variable: requestUpdateV
 	//I THINK THIS SHOULD READ 'var requestUpdateV = objectStoreV.put (dataV);' !!!!!!!	might this be the cause of the added admin records?before was objectStore not objectStoreV
@@ -5316,7 +5984,7 @@ data = {
 // 	data.dataV = dataVobj;
 // 	if(setup===3) {setup=3;
 // 	}else {
-// 	setup = 1; //moved to after data object assigned values if setup = 0 !!!!
+// 	setup = 1; //moved to after ? object assigned values if setup = 0 !!!!
 // 	}//end if setup =3
 	
 	
@@ -5335,13 +6003,18 @@ if(setup === 3) {
 	}else {
 	setup = 1; //moved to after data object assigned values if setup = 0 !!!!
 }//end if setup =3
+//alert("About to save! .. savedTablesArray after deletion is now " + savedTablesArray);
+//alert("About to save dataVobj.savedTables which is : " + dataVobj.savedTables);
 
-
-
-	
+// REMEMBER AT THIS POINT MAKEcontactsTable and loadFromTableOptions are both false because of resetFromContacts call prior to a save!	
 	console.log('dataBaseName_os variables edited! About to put (data) in next line of code. variables edited! Data.body (should be newFieldName) now = '+ data.body+ ' tableArray (data.dataV.tableArray) = ' + data.dataV.tableArray + ' variable3 (data.dataV.variable3) = ' + data.dataV.variable3);
 	//variables edited! Data.body now = undefined
+//TypeError: undefined is not an object (evaluating 'newTableSpecificVariables[loadTableIndex][1]')
+	//alert("saveVariables just before put(data) after [1] equated to newTableFieldsArray …… loadFromTableOptions = " + loadFromTableOptions + ".  makeContactsTable = " + makeContactsTable + ".  loadTableIndex = " + loadTableIndex + " tableID = " + tableID + ".  newTableSpecificVariables[loadTableIndex][1] = " + newTableSpecificVariables[loadTableIndex][1] + ".  savedTablesArray[loadTableIndex] = " + savedTablesArray[loadTableIndex] + ".  newTableVariablesArray[1] = " + newTableVariablesArray[1]);
 	
+
+//	alert("saveVariables immediately prior to put(data) … … loadFromTableOptions = " + loadFromTableOptions +  ".  loadTableIndex = " + loadTableIndex + ".  newTableSpecificVariables[loadTableIndex][1] = " + newTableSpecificVariables[loadTableIndex][1] + ".  savedTablesArray[loadTableIndex] = " + savedTablesArray[loadTableIndex] + ".  savedTablesArray = " + savedTablesArray);
+	//return false;
 	//adding put statement because before an admin note was added to display after tap of save btn
 	//request = objectStore.get(1);
 	  var requestUpdate = objectStore.put(data);
@@ -5410,9 +6083,9 @@ let gotIt = 0;//counter to keep track of number of hits in search if more than o
 // let hits[];//hits array used in display - highlight table has to be global
 let x = 0;//hits index counter
 
-if(DTBtnTappedOnce ===0 & tableExists){initializeTable();}
+if(DTBtnTappedOnce ===0 & tableExists && !makeContactsTable && !loadFromTableOptions){initializeTable();}
 if (tableExists & tableTitle.length>originalNumberRecords || editNote) {
-	alert('Update and SAVE the table first prior to Search.');
+	alert('⚠️ Update and SAVE the table first prior to Search.');
 	tableScreenOptions();
 }//end if upDateNeeded
 
@@ -5441,7 +6114,9 @@ if(screenDark) {
 
 	const cancelSearchBtn = document.querySelector("#cancelSearch");
 	cancelSearchBtn.onclick = function (){
-		searchWindow.setAttribute('class','hidden');
+	clearFoundRecordListFunc();	searchWindow.setAttribute('class','hidden');
+	//resetFromContacts();
+	//should this also go to RESET FROM CONTACTS FUNCTION?
 		//THIS CODE WILL CLEAR HIGHLIGHT IF CANCEL NOT TRIED YET,!!!!!Feb 7 2021 maybe should be separate button on table screen?
 	// 	refreshed = 1;
 	// 	renewed = 1;
@@ -5484,12 +6159,12 @@ if(screenDark) {
 	//this code added June9
 	
 //probable need resultList to be a global variable?
-//let resultList = document.querySelector("#result-list");	
+//let resultList ;= document.querySelector("#result-list");	
 
 //clear found records list
 	const clearRecordListBtn = document.querySelector('#clearFoundList');
 		
-	const liMatchedRecord = document.querySelector('#matchedRecord');
+	//const liMatchedRecord = document.querySelector('#matchedRecord');//made global used in outside function clearFoundRecordListFunc
 	const matchedRecord = document.createElement('li');
 	const addP = document.createElement('p');
 	//let caseSensitive = false;	//make global
@@ -5506,9 +6181,8 @@ if(screenDark) {
 
 //LEFT OFF HERE JAN22 now need to make caseSensitive Btn!!	
 console.log('caseSensitive = ' + caseSensitive);
-	searchForRecordBtn.onclick = function () {
-		highLightTableBtn.setAttribute('class','attentionBtn');
-		//remove if screw up..trying to prevent repeaT alerts after addEventListener registers more than once on target element. addP does help but not alwaysthe trick because a new element is created each time? Will keep for aesthetics. I think what happens is if you just clear the input and then enter another record for search, the record title is put in the same li element as before and a second addEventListener is added to this element. BUT if after entering the record title as input AND THEN go to table to see highlight OR go to view full record, the next record title that is searched for is put in a new addP and no extra addEventListener is registered. I think because searchRecord() is called afresh when coming from table or viewFullNote. n So how to avoid clearing the input without going to table or viewFullWindow??Suggest disable clearInput Btn after a tap and Renable after tapping all the other btns
+	searchForRecordBtn.onclick = function () {	highLightTableBtn.setAttribute('class','attentionBtn');
+		//remove if screw up..trying to prevent repeaT alerts after addEventListener registers more than once on target element. addP does help but not alwaysthe trick because a new element is created each time? Will keep for aesthetics. I think what happens is if you just clear the input and then enter another record for search, the record title is put in the same li element as before and a second addEventListener is added to this element. BUT if after entering the record title as input AND THEN go to table to see highlight OR go to view full record, the next record title that is searched for is put in a new addP and no extra addEventListener is registered. I think because searchRecord() is called afresh when coming from table or viewFullNote. n So how to avoid clearing the input without going to table or viewFullWindow??Suggest disable clearInput Btn after a tap and Renable after tapping all the other" btns
 		
 		resultList.appendChild(addP);
 		//remove above if screw up Jan 22 2021
@@ -5538,11 +6212,22 @@ console.log('caseSensitive = ' + caseSensitive);
    // console.log('searchedRecordTitle[1] = ' + searchedRecordTitle[1]);
    // alert('stop here');
    //trim tableTitle of recordId so search entry at input will match
+   //FOR CONTACTS TABLE tableTitle.length is sent to searchRecord..tableTitle array is not
    for(let i = 0; i < tableTitle.length; ++i) {
 	 //strip off noteId so search will match query Use +1 because otherwise the < is included. If you add a space this should be 2?
 	 //The string method slice() takes two arguments: the start index where you will start copying characters and the end index where the copying ends. The second argument character index is not included, which means when you copy a string's characters from index 1 to index 5, it will only copy from index 1 to index 4. Remember the string index starts at 0
-	 
+	//FOR CONTACTS TABLE USE  tableArray[i][0] instead of tableTitle[i]Jan2 because there will be no > character
+	//add || loadFromTableOptions ? It worked without loadFromTableOptions? BUT IF HITS>Table on a new table derived from a search of main db then tableArray[i][0] WILL CONTAIN A > so lets strip it out! MAY3 2022
+	if(makeContactsTable || loadFromTableOptions) {
+	
+		if(tableArray[i][0].includes('>')) {searchedRecordTitle[i] = tableArray[i][0].slice(tableArray[i][0].indexOf('>')+2);}else{searchedRecordTitle[i]=tableArray[i][0];}
+	
+		//searchedRecordTitle[i]=tableArray[i][0];
+		
+	} else {//end if else makeContactsTable
 	   searchedRecordTitle[i] = tableTitle[i].slice(tableTitle[i].indexOf('>')+2);
+   }//end if else makeContactsTable
+   
 	   if (!caseSensitive) {
 		   searchedRecordTitle[i] = searchedRecordTitle[i].toLowerCase(); 
 	   }//end if !caseSensitive
@@ -5586,7 +6271,7 @@ for(i = 0; i < tableTitle.length; ++i) {
 		//matchTDCell = query;
 		//trim() removes all white space from start and end of string
 		
-//currently defaults to includesSubstring = true No code written to switch flag in preferences	
+//currently defaults to includesSubstring = true No code written to switch flag in preferences trim will strip beginning and end spaces
 if(includesSubstring) {
 		if(matchTDCell.trim() === query.trim() || matchTDCell.includes(query)) {
 			matchedRecordIndex = i;
@@ -5623,7 +6308,8 @@ if(!includesSubstring) {
 
 
 console.log("matchedRecordIndex = " +matchedRecordIndex);
-
+if(makeContactsTable || loadFromTableOptions) {liMatchedRecord.textContent = "There are no notes for Contacts or new Tables from searched records.";
+}else{liMatchedRecord.textContent = "If record containing search phrase found it will appear below:"}//end if makeContactsTable
 
 if(matchedRecordIndex === -1) {
 	liMatchedRecord.textContent = searchTitleInput.value + " .. Record not found";
@@ -5637,11 +6323,20 @@ if(gotIt > 1) {
 	gotIt = 0;
 }//end if gotIt > 1
 //keep track of multiple hits
+//left off here Jan2 2022
+//because I did not create tableTitle fot contacts use tableArray[matchedRecordIndex[0][]
+if (makeContactsTable || loadFromTableOptions) {
+	findRecord = tableArray[matchedRecordIndex][0];
+} else {
 
-	   let findRecord = tableTitle[matchedRecordIndex];
+	 findRecord = tableTitle[matchedRecordIndex];
+  }//end if makeContactsTable else
+  
 	  console.log("findRecord = " + findRecord);
-		matchedRecord.textContent = tableTitle[matchedRecordIndex];
+		matchedRecord.textContent = findRecord;
 		
+
+
 		//trying to prevent repeat alerts from repeat registering of addEventListener which happens if not found event occurs as first search
 		//remove if (matchedRecordIndex !== -1) if screw up This prevents matchedRecord from appearing empty as record not found msg appears in matchedRecordLi
 	if (matchedRecordIndex !== -1) {
@@ -5656,6 +6351,8 @@ if(gotIt > 1) {
 		//ReferenceError: Can't find variable: $algo
 		//experiment change resultList to matchedRecord
 	//changed dblclick to click Oct5
+	//ONLY DO ADDEVENTLISTENER IF NOT A CONTACTS TABLE
+	if(!makeContactsTable && !loadFromTableOptions) {
 	matchedRecord.addEventListener('click', function (e) {
 			//remove if messes up tdying to prevent repeat registration of addEventListener
 			resultList.appendChild(addP);
@@ -5690,7 +6387,7 @@ if(gotIt > 1) {
    //true did not do anything
 	   //remove if screws up!
 	searchRecords();//REMOVE IF MESSED UP JAN24 fixes repeat registration of addEventListener! If re-entering query into input without any action on previous item in recordList   
-	
+  }//END if(!makeContactsTablej..so addEventListener is not added to a found contact which does not have a 'note'
 }////end searchForRecoedBtn.onclick function
 
 clearRecordListBtn.onclick = function() {
@@ -5718,6 +6415,12 @@ liMatchedRecord.textContent = "If record found it will appear below: Tap record 
 
 function highlightTable () {
 		fromSearchRecord = true;
+	hitsTable = true//flag to relabel CONTACTS btn to create a searched hits table
+//show CONTACTS btn to allow making a new table from a new table
+if(loadFromTableOptions) {
+emailBtn.style.display = "unset";
+newTableFieldsBtn.style.display = "unset";
+	}//end if loadFromTableOptions
 	
 		refreshed = 1;//to keep field titles from repeating use refresh=1 (same for if edit = 1)
 		
@@ -5730,6 +6433,9 @@ function highlightTable () {
 //put search phrase in top menu bar
 flipMenu.textContent = " ✅ Search phrase: " + query;
 $("#flip").css({"border-color": "red"});
+
+//alertx("Highlight just tapped: about to go to displayTable..searchedHitsTableArray = " + searchedHitsTableArray + "number of Hits = " + hits);
+console.log("Highlight just tapped: about to go to displayTable..searchedHitsTableArray = " + searchedHitsTableArray + "number of Hits = " + hits);
 
 		displayTable();
 		renewed = 0;
@@ -5786,6 +6492,9 @@ if(setup===3) {
 	prefVariablesArray = dataVobj.prefVariables;
 	}//end if setup===3
  variable3 = dataVobj.variable3;
+ savedTablesArray = dataVobj.savedTables;
+ newTableVariablesArray = dataVobj.newTableVariables;
+ newTableSpecificVariables = dataVobj.tableSpecific;
  //remove line below if doesn't work
  showExtraField = variable3;
  
@@ -5796,7 +6505,7 @@ if(setup===3) {
  
  nextFieldName = otherVariablesArray[2];
  numberOfFields = otherVariablesArray[3];
- numberOfAdditionalFields = otherVariablesArray[4];
+ numberOfDynamicFields = otherVariablesArray[4];
  tableTitle = otherVariablesArray[5];
  paraBody = otherVariablesArray[6];
  displayXtraFieldData = otherVariablesArray[7];
@@ -5820,6 +6529,13 @@ caseSensitive = prefVariablesArray[10];
 includesSubstring = prefVariablesArray[11];
 }//end if setup ===3
 
+tableIndex= newTableVariablesArray[0];
+tableListExists = newTableVariablesArray[2];
+newTableNames = newTableVariablesArray[1];
+
+newTableEdit = newTableSpecificVariables[loadTableIndex][0];
+newTableFieldsArray = newTableSpecificVariables[loadTableIndex][1];
+numberOfNewTableAddedFields = newTableSpecificVariables[loadTableIndex][2];
 //end load in prefVariables
 
 //can't find variable load error caused by curly brackett below!?!????..therefore commented out because its extra and should not be here..its further down
@@ -5837,7 +6553,7 @@ includesSubstring = prefVariablesArray[11];
 // 	  console.log('Now in onsuccess of getTableVariables in LOAD function');
 // 	  //still have to create tableTitle, paraBody, and displayExtraFieldData arrays
 // 	  //may not need to declare otherVariablesArray here because I did at start???!!!!
-// 	otherVariablesArray = [tableExists,showExtraField,nextFieldName,numberOfFields,numberOfAdditionalFields,tableTitle,paraBody,displayXtraFieldData];
+// 	otherVariablesArray = [tableExists,showExtraField,nextFieldName,numberOfFields,numberOfDynamicFields,tableTitle,paraBody,displayXtraFieldData];
 // 	variable3 = "more variables here";
 	
 // 	var dataV = event.target.result;
@@ -5855,7 +6571,7 @@ includesSubstring = prefVariablesArray[11];
 //  variable3 = dataV.variable3;
 //  //assign data to the dataV object members prior to saving
 //   //assign values to individual variables in from the otherVariablesArray
-//  // otherVariablesArray = [tableExists,newFieldName,nextFieldName,numberOfFields,numberOfAdditionalFields,tableTitle,paraBody,displayXtraFieldData,];
+//  // otherVariablesArray = [tableExists,newFieldName,nextFieldName,numberOfFields,numberOfDynamicFields,tableTitle,paraBody,displayXtraFieldData,];
  
  
 //  tableExists = otherVariablesArray[0];
@@ -5865,7 +6581,7 @@ includesSubstring = prefVariablesArray[11];
  
 //  nextFieldName = otherVariablesArray[2];
 //  numberOfFields = otherVariablesArray[3];
-//  numberOfAdditionalFields = otherVariablesArray[4];
+//  numberOfDynamicFields = otherVariablesArray[4];
 //  tableTitle = otherVariablesArray[5];
 //  paraBody = otherVariablesArray[6];
 //  displayXtraFieldData = otherVariablesArray[7];
@@ -5888,7 +6604,8 @@ displayData();
 //getDataBaseNamefunctionfunction
 function getDataBaseName (key,dataBaseName,objectStoreName) {  
 	console.log('Arrived at getDataBaseName...setup = ' +setup);
-	
+	//alert("getDataBaseName….savedTablesArray[0] = " + savedTablesArray[0]);
+	//OK HERE!
 	return new Promise (function(resolve) {
         indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB || window.shimIndexedDB;
 		
@@ -5937,6 +6654,7 @@ function getDataBaseName (key,dataBaseName,objectStoreName) {
   //code from setup =0
   redefineTableArray();
  // ReferenceError: Can't find variable: dataVobj so do I have to redefine dataV in upgrade needed for the new database?
+ //DO I ALSO NEED redefineSavedTablesArray??
   //console.log('In upgradeneeded;will now go back to getDataBaseName() after creating the objectStore. dataVobj.tableArray = ' +dataVobj.tableArray);
   //need code here to move to TOP of view window so directions are visible
   if(!fromRestore) {
@@ -6005,7 +6723,7 @@ dbTableName.value = data.variable1;
 
 document.getElementById("dbTableName").innerHTML = dbTableName.value;
 
-//alert('now leaving notes code..just after dbTableName.value set to data.variable1.  data.variable1 = ' + data.variable1 +' dbTableName.value = ' + dbTableName.value);
+//alertx('now leaving notes code..just after dbTableName.value set to data.variable1.  data.variable1 = ' + data.variable1 +' dbTableName.value = ' + dbTableName.value);
 //getsecond field name
 //console.log('In pickOldNew()...setup is = 1.get(1) data.body = '+ data.body + 'newFieldName = ' + newFieldName);
 //In pickOldNew()...get(1) after assignment to data.body = ChipnewFieldName = Chip
@@ -6033,28 +6751,52 @@ tableExists = variable2Array[6];// hange to tableExists when needed
 dataVobj = data.dataV;
 //TypeError: undefined is not an object (evaluating 'dataVobj.tableArray')
  console.log('After dataVobj = data.dataV ..  dataVobj.tableArray = ' +dataVobj.tableArray);
+ 
+/* if(dataVobj.hasOwnProperty('otherVariables')) {
+	 alert("yes otherVariables exists!");
+ } else {
+	 alert("otherVariables not here!");
+ }//end if dataVobj
+ */
+ 
 tableArray = dataVobj.tableArray;
+console.log("tableArray = " + tableArray);
+//alertx("tableArray = " + tableArray);
+
+//mainDBArray = dataVobj.tableArray;//for error check savedOriginal
+mainDBArray = tableArray.slice();//for error check savedOriginal
+console.log("mainDBArray = " +mainDBArray);
+//alertx("mainDBArray = " +mainDBArray);
+
  fieldNamesArray = dataVobj.fieldNamesArray;
  otherVariablesArray = dataVobj.otherVariables;
  if(setup===3) {
 	  prefVariablesArray = dataVobj.prefVariables;
   }//end if setup===3
  variable3 = dataVobj.variable3;
+ console.log("just retrieved variable3")
+ 
+ 
  //remove line below if doesn't work
  showExtraField = variable3;
  
  tableExists = otherVariablesArray[0];
  originalNumberRecords = otherVariablesArray[1];
- 
+// alert("originalNumberRecords = " + originalNumberRecords + " tableTitle.length = " + tableTitle.length);
  console.log('In setup=1 || 3 of pickOldNew(),  originalNumberRecords = otherVariablesArray[1] = '+ otherVariablesArray[1] + ' newFieldName = ' + newFieldName + ' showExtraField (dataVobj.variable3) now = ' + dataVobj.variable3);
  
  nextFieldName = otherVariablesArray[2];
  numberOfFields = otherVariablesArray[3];
- numberOfAdditionalFields = otherVariablesArray[4];
+ numberOfDynamicFields = otherVariablesArray[4];
  tableTitle = otherVariablesArray[5];
  paraBody = otherVariablesArray[6];
  displayXtraFieldData = otherVariablesArray[7];
  
+ //unload newTableVariablesArray
+/* tableIndex= newTableVariablesArray[0];
+tableListExists = newTableVariablesArray[2];
+newTableNames = newTableVariablesArray[1];
+ */
  //END OF LOAD IN TABLE VARIABLES
  
  //load in prefVariables
@@ -6072,6 +6814,8 @@ trigger = prefVariablesArray[9];
 caseSensitive = prefVariablesArray[10];
 includesSubstring = prefVariablesArray[11];
 
+
+
 //reset background image for each database date Nov11
 // if(bkgrdImage) {
 // 		bkgrdImageBtn.textContent = 'Clear Background Image';
@@ -6083,6 +6827,76 @@ includesSubstring = prefVariablesArray[11];
 	
 }//end if setup===3
 
+if(newDBflag) {
+	redefinenewTableSpecificVariables();
+	redefineSavedTablesArray();
+	
+}//end if(newDBflag)
+
+if(dataVobj.hasOwnProperty('tableSpecific')) {
+//alertx("> dataVobj.tableSpecific is intact!");
+	newTableSpecificVariables = dataVobj.tableSpecific;
+tableIndex = newTableSpecificVariables[loadTableIndex][0];
+//newTableFieldsArray will be assigned the newTableFieldsArray values for whatever table is represented by loadTableIndex at the time of the load…which will usually be loadTableIndex = 0. So prior to every save need to make sure newTableFieldsArray reflects the proper values for the correct newTable as referenced by loadTableIndex.
+
+newTableFieldsArray = newTableSpecificVariables[loadTableIndex][1];
+//alertx("dataVobj.tableSpecific =  " + dataVobj.tableSpecific + ".  newTableFieldsArray for new table #[" + loadTableIndex +"] = " +  newTableFieldsArray);
+numberOfNewTableAddedFields = newTableSpecificVariables[loadTableIndex][2];
+
+} else {
+	//alertx("dataVobj.tableSpecific is not here! Going to redefinenewTableSpecificVariables();");
+	
+	redefinenewTableSpecificVariables();
+	console.log("back from redefineSavedTablesArray…did I make it?");
+	 console.log("In PickOldNew…after retrieving dataVobj…and no dataV.savedTable…or newTableSpecificVariables .savedTablesArray[0] = " + savedTablesArray[0] + " newTableSpecificVariables[0] = " + newTableSpecificVariables[0]);
+	// In PickOldNew…after retrieving dataVobj…and no dataV.savedTable….savedTablesArray[0] = ,,,
+	 alert("⚠️ This file is an out-dated file format! DougieBase will convert old file type to new! When the data screen appears tap CONVERT (TABLE) to complete the conversion.");
+	 
+	 convertingOldFile = true;//flag to fudge a correction in tableScreenOptions to prevent a refresh request. tableTitle.length came out as 4 when there were only 2 records in the testingPreferences db file. This may be related to the fact that testingPreferences file had 2 deleted records? And cursor iterated up to 4 when there are only 2??????
+	 saveVariables();
+	 console.log("Returned from saveVariables after converting old file type.");
+	 tableScreenBtn.setAttribute('class','borderBlink');
+	 tableScreenBtn.textContent = "CONVERT";
+	
+}//end if(dataVobj.hasOwnProperty('tableSpecific'))
+
+ if(dataVobj.hasOwnProperty('savedTables')) {
+	//alert("yes savedTables exists!");
+	 savedTablesArray = dataVobj.savedTables;
+	 newTableVariablesArray = dataVobj.newTableVariables;
+	 tableIndex= newTableVariablesArray[0];
+tableListExists = newTableVariablesArray[2];
+newTableNames = newTableVariablesArray[1];
+
+/*
+newTableSpecificVariables = dataVobj.tableSpecific;
+tableIndex = newTableSpecificVariables[loadTableIndex][0];
+newTableFieldsArray = newTableSpecificVariables[loadTableIndex][1];
+numberOfNewTableAddedFields = newTableSpecificVariables[loadTableIndex][2];
+*/
+
+ } else {
+	 console.log("savedTables or newTableSpecificVariables not here going to redefineSavedTablesArray");
+	// alert("savedTables not here!");
+	 redefineSavedTablesArray();
+	// tableIndex = -1;;
+		//	newTableNames.length = 0;
+		//	tableListExists = false;
+	 console.log("back from redefineSavedTablesArray…did I make it?");
+	 console.log("In PickOldNew…after retrieving dataVobj…and no dataV.savedTable…or newTableSpecificVariables .savedTablesArray[0] = " + savedTablesArray[0] + " newTableSpecificVariables[0] = " + newTableSpecificVariables[0]);
+	// In PickOldNew…after retrieving dataVobj…and no dataV.savedTable….savedTablesArray[0] = ,,,
+	 alert("Converting old file type to new! When the data screen appears tap CONVERT (TABLE) to complete the conversion.");
+	 convertingOldFile = true;//flag to fudge a correction in tableScreenOptions to prevent a refresh request. tableTitle.length came out as 4 when there were only 2 records in the testingPreferences db file. This may be related to the fact that testingPreferences file had 2 deleted records? And cursor iterated up to 4 when there are only 2??????
+	 saveVariables();
+	 console.log("Returned from saveVariables after converting old file type.");
+	 tableScreenBtn.setAttribute('class','borderBlink');
+	 tableScreenBtn.textContent = "CONVERT";
+ }//end if else dataVobj has ownproperty savedTables
+ 
+ 
+ // savedTablesArray = dataVobj.savedTables;
+ 
+ //AT TIME OF TESTING AND CREATING savedTablesArray, there is no dataVobj.savedTables! So this must be where we go astray!
  //end load in prefVariables
 
  console.log('data.variable1 = ' +data.variable1);
@@ -6093,6 +6907,18 @@ while (list.firstChild) {
   list.removeChild(list.firstChild);
 }
 //remove above if it messes up!
+console.log("In PickOldNew…after retrieving dataVobj…….savedTablesArray = " + savedTablesArray);
+//In PickOldNew…after retrieving dataVobj…….savedTablesArray = name,DATE,tel,email,name2,DATE,tel2,email2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+console.log("In PickOldNew…after retrieving dataVobj…….savedTablesArray[0] = " + savedTablesArray[0]);
+//In PickOldNew…after retrieving dataVobj…….savedTablesArray[0] = name,DATE,tel,email
+console.log("In PickOldNew…after retrieving dataVobj…….newTableVariablesArray = " + newTableVariablesArray);
+console.log("In PickOldNew…after retrieving dataVobj…….newTableSpecificVariables = " + newTableSpecificVariables);
+//In PickOldNew…after retrieving dataVobj…….newTableSpecificVariables = -1,,0
+//In PickOldNew…after retrieving dataVobj…….newTableVariablesArray = 0,Contacts0,false
+
+console.log("In PickOldNew…after retrieving dataVobj…….tableIndex = " + tableIndex + " tableListExists = " + tableListExists + " newTableNames = " + newTableNames);
+//In PickOldNew…after retrieving dataVobj…….tableIndex = -1 tableListExists = false newTableNames = 
+
 displayData();
 
 }//end if setup=1 wrapper to set all variables of a pre-existing database
@@ -6134,22 +6960,31 @@ console.log('After SaveVariables in the setup=0 section of thepickOldNew functio
 // const flipMenu = document.querySelector('#flip');//reference for table menu bar to allow it to turn yellow May17
 
 function tableScreenOptions () {
-
 	//prevent error if user taps TABLE BTN and no db is selected which can happen if user CANCELS fileNamesList Dec21
 	if(dbName === undefined && !newDBflag) {
 		alert('No database has been selected! Select or create a database to make TABLE available.');
 	//prefWindow.setAttribute('class','hidden');
 		//getFileNames();
-		return;
+		return;//DOES THIS STOP THE PRGM???
 	} //end if dbName===undefined
 	
-	
+//to keep tableList from repeating
+//ReferenceError: Cannot access uninitialized variable.
+if(tableListExists) {
+		while (newTableList.firstChild) {
+	newTableList.removeChild(newTableList.firstChild);
+};//end while
+}//end if(tableListExists)
+
+//to prevent tableList from repeating
 	//check screen mode
 	checkScreenMode();//have to so that table responds after a table refesh without having to go through preferences to update the screenDark variable! Dec20
 //alert("At tableScreenOptions - usingDarkMode = " + usingDarkMode + " screenDark = "+ screenDark);
 if(screenDark) {
 	showTable.style.backgroundColor = "black";
 	showTable.style.color = "white";
+	promptBox.style.backgroundColor = "black";
+	promptBox.style.color = "white";
 	$("#flip").css({"background-color": "lightgrey", "color":"black", "border-color": "red"});//these don't work
 	tdEditTriggerP.style.color = "orange";
 	//set font color for dark mode Dec20
@@ -6160,23 +6995,158 @@ if(screenDark) {
 } else {
 	showTable.style.backgroundColor = "#eee";
 	showTable.style.color = "black";
+	promptBox.style.backgroundColor = "#eee";
+	promptBox.style.color = "black";
 	$("#flip").css({"background-color": "lightgrey", "color":"black", "border-color": "black"});//these don't work
 	tdEditTriggerP.style.color = "blue";
 	}//end check screen mode
 	
 	
-	editCurrentTable = 0;
+editCurrentTable = 0;//why here after displayTablebtn what is it?
 	console.log('At tableScreenOptions...tableExists = ' + tableExists + '. edit =  ' + edit);
 //clearTableWindow precedes  createTableWindow!! Create table window has the new and edit btns at top
 	const clearTableWindow = document.querySelector('#clearTableWindow'); 
- const displayTableBtn = document.querySelector('#displayTable');
- const returnToNotesBtn = document.querySelector('#returnToNotes');
+	//const clearTableWindowEditBtn = document.querySelector('#clearTableWindowEditBtn');MADE GLOBAL AT TOP PRGM
+// const emailBtn = document.querySelector('#email');//made global because referenced by tableScreenOptions Mar7
+	
+//  const displayTableBtn = document.querySelector('#displayTable');
+//  const renameNewTableBtn = document.createElement('button');//made global..see emailBtn	
+// //flag to correct messed up fieldHeaders from a newTable edit
+//  const returnToNotesBtn = document.querySelector('#returnToNotes');
+ const nameNewTableBtn = document.querySelector('#nameNewTable');
  const refreshTableP = document.createElement('p');//infoP to give option of refresh table
- refreshTableP.setAttribute('class','simulator');
+const newTableNameCancelBtn = document.querySelector('#newTableNameCancelBtn'); refreshTableP.setAttribute('class','simulator');
  const refreshTableBtn = document.createElement('button');
  refreshTableBtn.textContent = "Update Table";
  refreshTableBtn.setAttribute('class','attentionBtn');
  //from newBtn.onclick..originalNumberRecords = undefined tableTitle.length = 3
+ 
+ const homeScreenBtn = document.querySelector('#homeScreenBtn');
+ const homeScreenBtn2 = document.querySelector('#homeScreenBtn');
+ 
+ //NC Jan9
+ //CODE FOR DISPLAYING NEW TABLES
+ const tableNamesList = document.querySelector('#tableNamesList');//div html
+ // const newTableList = document.querySelector('#newTableList');//<ol> to contain li in html
+ //newTableNames is an array containing the names of the new tables created when a new table is created..emailBtn.onclick or in searchTable?
+ tableChosenP.textContent = ' Tap the table name to select for loading OR deleting or to rename the table.';
+//alert("> tableIndex = " + tableIndex + ". newDBflag " +newDBflag + ". newDBGuidance = " + newDBGuidance + ". newTableNames[0] = " + newTableNames[0]);
+ //if(newDBflag || newDBGuidance || tableIndex === -1) {newTableNames.length = 0;}//end if(newDBflag || newDBGuidance) to prevent error TypeError: undefined is not an object (evaluating 'newTableNames.length')in creating new db from virgin run of create new db
+ 
+ if(newTableNames[0] === "C") {
+   newTableNames.length = 0;
+ 	}//end if(newDBflag 
+ 	
+/*if(tableIndex === -1) {
+ newTableNames.length = 0;
+ 	}//end if(newDBflag 
+ */
+ 
+ for (let i = 0; i< newTableNames.length; i++) {
+	  
+	  let tableNumber = i + 1;//just for display
+	  console.log('newTableNames = ' + newTableNames);//array of tableNames ;newTableNames = Contacts0,Contacts1
+	  console.log('newTableNames.length = '+ newTableNames.length);
+	  console.log('newTableNames # ['+ tableNumber +'] is ' + newTableNames[i]);
+	  //newTableNames # [1] is Contacts0
+tableNameLi[i] = document.createElement('li');//to contain a newTableNames
+tableNameLi[i].textContent = newTableNames[i]+ "." + tableNumber;//maybe should just be newTableNames[i]?
+// tableChosenP.textContent = ' Tap the table name to select for load OR double tap HERE to delete.';
+//now have to add the li element to 
+
+tableNameLi[i].addEventListener('click', function () {
+		//put name of database in global variable dataBaseName
+		//let tableName = "";//made global variable
+		//alert("click event..to load");
+		tableNamed = newTableNames[i] + "." + tableNumber;
+		loadTableIndex = i;//used in setupNewTable function
+		tableID = loadTableIndex;
+		//TypeError: Attempted to assign to readonly property.tableName changed to tableNamed..not even declared a global variable and that worked. SO tableName must be used elsewhere????
+		deleteTableIndex = i;
+	//code to clear head row so table is not messed up when switching between db	 
+	
+	
+		// tableChosenP.textContent = ' Table Selected: '+ newTableNames[i] + '. DOUBLE-TAPPING here will delete.';
+		 tableChosenP.textContent = ' Table Selected: '+ tableNamed;
+		 console.log('tableName = ' + newTableNames[i]);
+	 //confirm choice window
+	 
+//code for promptBox
+promptBox.setAttribute('class','showing');
+tableNameLi[i].removeEventListener;	tableScreen.setAttribute('class','hidden');
+tableNameTxt.textContent = "SELECTED: " + tableNamed;
+actionLoadBtn.textContent = "LOAD : " + tableNamed;
+actionRenameBtn.textContent = "RENAME : " + tableNamed;
+actionDeleteBtn.textContent = "DELETE : " + tableNamed;
+actionRenameBtn.style.display = "unset";
+actionDeleteBtn.style.display = "unset";//in case any of these were none from addContacts or Field Labels
+actionLoadBtn.onclick = function () {
+// tableNameLi[i].removeEventListener;	tableScreen.setAttribute('class','hidden');
+promptBox.setAttribute('class','hidden');	
+	loadFromTableOptions = true;//flag indicates source of tableArray data
+	fromNewTable = true;//flag used in displayTable to keep fields being messed up if edit notes after viewing a new table
+	if(!savedOriginal) {
+		saveOriginal();
+	}//works end of if(!savedOriginal)
+	console.log("Back from saveOriginal function");	
+	homeScreenBtn.textContent = "Clear New Table Data";
+	homeScreenBtn2.textContent = "Clear New Table Data";
+	emailBtn.style.display = "none";
+	newTableFieldsBtn.style.display = "none";
+	
+		setupNewTable(tableNamed);	
+		
+	dbName = dataBaseName;
+			console.log('Table to load is ' + tableNamed); 
+	
+}//END FUNCTION actionLoadBtn.onclick
+
+actionRenameBtn.onclick = function () { 
+promptBox.setAttribute('class','hidden');	
+
+displayTableBtn.setAttribute('class','attentionBtn');//because if main db table not initiated this btn will be flashing.table will get initialized in process of rename	
+
+renameNewTable();
+
+}//END FUNCTION actionRenameBtn.onclick
+
+actionDeleteBtn.onclick = function () {
+deleteNewTable();
+promptBox.setAttribute('class','hidden');	
+}//END FUNCTION actionDeleteBtn.onclick
+
+actionCancelBtn.onclick = function () {
+promptBox.setAttribute('class','hidden');	
+tableScreenOptions();
+}//END FUNCTION actionCancelBtn.onclick
+
+
+});//end addEventListener
+			
+newTableList.appendChild(tableNameLi[i]);
+
+
+}//end for loop for (let i = 0; i< newTableNames.length; i++) {
+	
+			
+//delete new table
+// tableChosenP.addEventListener('dblclick', deleteNewTable);//if you put brackets after function name it messes up!
+// //delete new table
+// //rename newTable
+// renameNewTableBtn.onclick = renameNewTable;				
+			//fix this	
+
+	// newTableList.appendChild(tableNameLi[i]);
+	//  console.log('Table to load is ' + tableName);
+ 
+	
+	tableListExists = true;//flag to prevent list repeating. A one time switch
+	//fix this
+//}//end for loop for (let i = 0; i< newTableNames.length; i++) {
+ 
+  //CODE FOR DISPLAYING NEW TABLES
+ 
+ 
  //to refresh table name
  const refreshTableName = document.querySelector('#dbTableName');
  	//update h2 dbTableName dbTableName.value; in HTML if db has been switched
@@ -6190,6 +7160,8 @@ refreshTableName.textContent = dbTableName.value;
  if(!tableExists) {
 	 originalNumberRecords = tableTitle.length;
  }//end if tableExists
+ //note that if in newTable mode tableTitle.length will reflect number of records in the newTable which will differ from number of records in main db mode!!IF THIS CAUSES ISSUE MAYBE ADD CONDITIONAL || loadFromTableOptions… if(!tableExists || loadFromTableOptions) {
+ 
  console.log('originalNumberRecords = '+ originalNumberRecords + ' otherVariablesArray[1] = ' + otherVariablesArray[1] + ' tableTitle.length = ' + tableTitle.length);
  console.log('editNote = ' + editNote + '  tableExists = ' + tableExists)
  console.log('at tableScreenOptions.  tableTitle = '+ tableTitle);
@@ -6200,11 +7172,38 @@ refreshTableName.textContent = dbTableName.value;
  
  if(DTBtnTappedOnce ===0){
  copyOfTableArray = tableArray.slice(0,tableTitle.length);
- copyOfTableTitle = tableTitle.slice();	displayTableBtn.setAttribute('class','attentionBtn');
-}else {displayTableBtn.setAttribute('class','normalBtn');
- }//end if DTBtnTappedOnce = 0
+ copyOfTableTitle = tableTitle.slice();	//displayTableBtn.setAttribute('class','attentionBtn');
+//changed to borderBlink to remind user to initiate main db table! Added !newDBGuidance may25
+if(!convertingOldFile && !newDBGuidance) {
+ displayTableBtn.setAttribute('class','borderBlinkGrn');
+ }//end if(!convertingOldFile)
  
- if (tableExists & tableTitle.length>originalNumberRecords || editNote) {
+ nameNewTableBtn.disabled = true;//so name-createnew table is not initiated as this will mess up table display
+} else {
+
+  if(!renameNewTableFlag) {displayTableBtn.setAttribute('class','normalBtn');}//end if !renameNewTableFlag
+ }//end else if DTBtnTappedOnce = 0
+ 
+if(convertingOldFile) {
+	tableChosenP.textContent = 'THE OLD FILE FORMAT OF THIS DATABASE HAS BEEN CONVERTED. NOW RETURN TO FILENAMES SCREEN AND RELOAD IT. Tap CONVERT (Return to HOME SCREEN)';
+	
+displayTableBtn.disabled = true;
+returnToNotesBtn.setAttribute('class','borderBlink');
+	returnToNotesBtn.textContent = "CONVERT";
+	
+}//end if convertingOldFile
+
+//alert("At need refresh? originalNumberRecords = " + originalNumberRecords + ". tableTitle.length = " + tableTitle.length + ". editNote = " + editNote + ". loadFromTableOptions = " + loadFromTableOptions + ". editCurrentTable = " + editCurrentTable + ". edit = " + edit);
+//editCurrentTable = 0 on entering tableScreenOptions so don't use it in this condition
+if(loadFromTableOptions) {//&& editCurrentTable === 1
+	originalNumberRecords = savedTablesArray[loadTableIndex].length;
+	
+}//end if
+
+//alert("At need refresh? AFTER ORIGINALNUMBERRECORDS ADJUSTED!  originalNumberRecords = " + originalNumberRecords + ". tableTitle.length = " + tableTitle.length + ". editNote = " + editNote + ". loadFromTableOptions = " + loadFromTableOptions + ". editCurrentTable = " + editCurrentTable);
+
+
+ if (!convertingOldFile & tableExists & tableTitle.length>originalNumberRecords || editNote) {
 	 tableScreen.appendChild(refreshTableP);
 	 displayTableBtn.disabled = true;//Nov 22 so a tap of displayTableBtn doesn't cause a false display and also preverts a repeat display of the refresh notification. Also have to disable the create table option bar Feb 12 .. but doesn't do it!!
 	 clearTableWindow.disabled = true;
@@ -6227,9 +7226,9 @@ refreshTableName.textContent = dbTableName.value;
 		 displayTableBtn.textContent = "DISPLAY TABLE";
 		 displayTableBtn.disabled = false;
 		 clearTableWindow.disabled = false;//Feb 12
-		 clearTableWindow.textContent = "TAP HERE TO CREATE TABLE or to EDIT an existing one."
+		 clearTableWindow.textContent = "TAP HERE TO CREATE MAINTABLE or to EDIT an existing one."
 		 refreshTable();
-	 }//end refreshTableBtn.o click
+	 }//end refreshTableBtn.onclick
 
 tableScreen.setAttribute('class','showing');//referenced at top of code reference the create a table window has options for create new or edit, instructions for table creation, display table btn and refresh table if needed
 
@@ -6259,6 +7258,7 @@ if(tableExists & !tableNeedsUpdate) {
 	/*prefWindow.removeChild(notifyP);*/
 	console.log('At clearTableWindow.onclick. Bringing up createTableWindow...tableExists = ' + tableExists + '. edit =  ' + edit + 'displayedTable = ' + displayedTable);
 	tableScreen.setAttribute('class','hidden');
+	clearTableWindowEditBtn.setAttribute('class','tdEdit');
 	createTableWindow.setAttribute('class', 'showing');	
 	//Check if screenDark mode
 checkScreenMode();
@@ -6313,8 +7313,9 @@ while (rows.firstChild) {
 	
 	
 		}
-editBtn.setAttribute('class', 'attentionBtn');
-deleteFieldBtn.setAttribute('class','attentionBtn');
+//editBtn.setAttribute('class', 'attentionBtn');
+editBtn.setAttribute('class', 'borderBlinkGrn');
+deleteFieldBtn.setAttribute('class','borderBlinkGrn');
 showTable.setAttribute('class','hidden');
 	}//end if !tableExists..else moved line showTable hidden above close bracket of !tableExists for the 'edit screen to work look better Jan30'
 //REMOVE IF IT BLOWS IT JAN 18
@@ -6326,6 +7327,49 @@ showTable.setAttribute('class','hidden');
 	}; //end clearTableWindow.onclick
 	
   displayTableBtn.onclick = function () {
+  
+  if(!savedOriginal) {saveOriginal();}//May12 2022
+  
+  
+ //trying to prevent error where displayTableBtn still shows new table May5 2022
+// loadFromTableOptions = false; NOPE DOES NOT WORK! Messes up at refreshTable Update table!!! This bug not important..just tap displayTablebtn again and you get main db table..and before displayTablebtn returns you to the new table screen where you were before
+
+if(loadFromTableOptions & DTBtnTappedOnce === 0) {
+displayTableBtn.setAttribute('class','tdEdit');
+displayTableBtn.textContent = "DISPLAY TABLE";
+}//end if (loadFromTableOptions & DTBtnTappedOnce === 0) this resets displayTableBtn which in this case was set to flashing when user attempts an EDIT of a new table prior to initializing the main db table May6 2022
+ 
+  if(fromAddingMoreContacts) {
+	resetFields = true;
+	 fromAddingMoreContacts = false; 	  
+  }//end if fromAddingMoreContacts = true;//forcing a resetFields when displayTableBtn is tapped
+  
+  //reset field headers if after a delete new table tecord
+if(deleteRecordNewTable) {
+resetFields = true;
+deleteRecordNewTable = false;
+	
+}//end if deleteRecordNewTable
+  
+   if(renameNewTableFlag) {
+displayTableBtn.setAttribute('class','tdEdit');
+
+saveTableBtn.setAttribute('class','borderBlinkGrn');
+saveTableBtn2.setAttribute('class','borderBlinkGrn');
+//renameNewTableFlag = false;
+
+}//end if(renameNewTableFlag)
+//alert below produced error if loadTableIndex from another viewing of a database was applied to a db with no new tables …undefined is not an object error
+/*  alert("displayTableBtn.onclick … loadFromTableOptions = " + loadFromTableOptions +  ".  loadTableIndex = " + loadTableIndex + ".  newTableSpecificVariables[loadTableIndex][1] = " + newTableSpecificVariables[loadTableIndex][1]);
+ */ 
+ 
+  emailBtn.style.display = "unset";
+  newTableFieldsBtn.style.display = "unset";
+  
+	  mainDBedit = false;//where do I make this false?
+	//  removeHeadRow();//STHeadrow was messed up after an edit of new table so added this 
+	//  addFieldHeaders();
+	  nameNewTableBtn.disabled = false;
 	//added Dec 7 ,remove if messes up if tableTitle.length>originalNumberFields	tableScreen.removeChild(refreshTableP);
 	//if new record not added then refreshTableBtn will not be seen here.
 //NotFoundError: The object can not be found here.
@@ -6335,10 +7379,18 @@ showTable.setAttribute('class','hidden');
 	//make displayedTable variable =1 here so that the prexisting table(..the displatTableBtn IS enabled) so the tanble will show without alterations or added fields
 //displayedTable = 1;//see above NOT TESTED NOV 6 2020
 console.log('At start displayTableBtn.onclick. This means a table exists..rerun or not.: displayedTable = ' + displayedTable + '. tableConstructed = ' + tableConstructed + '. renewed (added record) = ' + renewed + '. refreshed (data cell edit) = ' + refreshed + '. edit = ' + edit + '. DTBtnTappedOnce = ' + DTBtnTappedOnce + '.');
-//if changeDB
-
+//if changeDB NOTE THAT IF RETURNING FROM A SAVE EDIT OF NEWTABLE AFTER RESETFROMCONTACTS LOADFROMTABLEOPTIONS WILL BE FALSE SO THAT THE removeHeadRow function won't run this time around which will mess up the displayTable btn response to opening up the main db. THEREFORE LETS JUST RUN CHANGEDB EVERYTIME?
+//removeHeadRow();//VERY IMPORTANT LINE..MAKES IT WORK!!!Date: Feb12 2022..new function
 //check screen mode
-
+if(loadFromTableOptions) {
+	alert("why is loadFromTableOptions true when I press displayTable? Which implies main db? Should loadFromTableOptions be made false at first of tableScreenOptions? It is made false in resetFromContacts! This happens if EDIT of a new table is cancelled by a return to home screen or displayTableBtn is pressed after EDIT BTN IN TABLE MENU IS PRESSED.or after a rename table?")
+	setUpFieldHeaders();//changeDB is false coming back from setUpNewDB
+	resetFields = true;//added May6 2022 because fields got messed up after a rename of table??
+	//deleteFirstRow();
+	changeDB = true;
+}//end if loadFromTableOptions
+//trimHeadRow();
+//alert("In tableScreenOptions displayTableBtn.onclick : changeDB is set to true here if loadFromTableOptions is true! But loadFromTableOptions should not be true here in the first place! changeDB is false returning from setUpNewTable if loading a new table,  changeDB = " + changeDB + " loadFromTableOptions = " + loadFromTableOptions + "  editCurrentTable = " + editCurrentTable);
 
 if(changeDB) {
 	//clearTableRows;
@@ -6349,7 +7401,12 @@ if(changeDB) {
 	refreshed = 0;
 	renewed = 0;
 	changeDB = false;
-	clearHeadRow();//to reset STHeadRow for change to other db
+	//clearHeadRow();//to reset STHeadRow for change to other db
+		//trimHeadRow();
+	removeHeadRow();//VERY IMPORTANT LINE..MAKES IT WORK!!!Date: Feb12 2022..new function
+	//clearHeadRow();//to reset STHeadRow for change to other db
+	//removeFieldHeaders();
+	
 console.log('in changeDB. Removed dynamic fields! ' + STheadRow);
 STheadRow.appendChild(STheadName);
 STheadRow.appendChild(secondFieldName);
@@ -6427,9 +7484,19 @@ STrows.appendChild(STheadRow);
 	
 	
 	tableInstructions = document.querySelector('#tableInstructions');
-	tableInstructions.textContent = "INSTRUCTIONS FOR CREATING THE TABLE: \n Tap on the directions bar above to start creating a new table (NEW button will be active), or tap the EDIT button if it is activated, to make changes to a pre-existing table. The next screen is where you can add fields, delete fields, or change the text of the field labels. From this screen you can DISPLAY the current table, or return to the HOME screen. Note: If displaying the table you just created for the first time, the DISPLAY TABLE button will be highlighted in Green, indicating you must tap it prior to doing any editing, in order for the database to initialize the table. This only occurs once for the initial set up of the table.\n On the EDIT screen, the first 3 fields are FIXED fields which can not be deleted. There are 4 fixed fields (including the DATE field) that are automatically created from the Notes section when you make your first table. Their labels' headings text can be edited (the body text of the fixed fields can be edited in the Notes section), but these fields can not be deleted, nor can additional fixed fields be created. The other fields are DYNAMIC fields which you create when making your table on the Create/Edit window. At the initial table creation (after tapping the NEW button), the Green number input field is where you enter the number of dynamic fields you want to start off with. After the initial table creation, the NEW button is disabled, and returning to this window for subsequent table edits shows only the EDIT button and the DELETE FIELDS button to be active. When subsequently editing a table, the first step is to go to the number input window that appears at the bottom of the edit screen asking you to enter the number of additional fields you want to add. Enter 0 here if you do not want any more additional dynamic fields. The Green enter button indicates this is the required next button to tap. Then the Submit button above will change to Green, allowing the database to accept any text edits you made to the FIXED field labels above, and will also reveal text inputs to edit or label any additional DYNAMIC fields you added.";
+	tableInstructions.textContent = "INSTRUCTIONS FOR CREATING THE TABLE: \n Tap on the directions bar above to start creating a new table (NEW button will be active), or tap the EDIT button if it is activated, to make changes to a pre-existing table. The next screen is where you can add fields, delete fields, or change the text of the field labels. From this screen you can DISPLAY the current table, or return to the HOME screen. Note: If displaying the table you just created for the first time, the DISPLAY TABLE button will be highlighted in Green, indicating you must tap it prior to doing any editing, in order for the database to initialize the table. This only occurs once for the initial set up of the table.\n On the EDIT screen, the first 3 fields are FIXED fields which can not be deleted. There are 4 fixed fields (including the DATE field) that are automatically created from the Notes section when you make your first table. Their labels' headings text can be edited (the body text of the fixed fields can be edited in the Notes section), but these fields can not be deleted, nor can additional fixed fields be created. The other fields are DYNAMIC fields which you create when making your table on the Create/Edit window. At the initial table creation (after tapping the NEW button), the Green number input field is where you enter the number of dynamic fields you want to start off with. After the initial table creation, the NEW button is disabled, and returning to this window for subsequent table edits shows only the EDIT button and the DELETE FIELDS button to be active. When subsequently editing a table, the first step is to go to the number input window that appears at the bottom of the edit screen asking you to enter the number of additional fields you want to add. Enter 0 here if you do not want any more additional dynamic fields. The Green enter button indicates this is the required next button to tap. Then the Submit button above will change to Green, allowing the database to accept any text edits you made to the FIXED field labels above, and will also reveal text inputs to edit or label any additional DYNAMIC fields you added.\n USING NEW TABLES: \n DougieBase can create new tables using data from SEARCHED records OR from CONTACTS. If there are new tables for any particular database they are listed below. Tapping on the table name allows 'LOADING' or 'DELETING' the table. Tap the CONTACTS button in the table window to access your contacts on your device. (This requires the browser to have support for the javascript ContactsPickerAPI. In Safari iOS > 14.5 enable this in Safari settings/Experimental.) To customize a label for a new table use the CREATE TABLE button. This option is enabled AFTER the main database table has been initialized, by tapping the 'GREEN' DISPLAY TABLE button. ";
 
 	returnToNotesBtn.onclick = function () {
+		if(convertingOldFile) {
+			returnToNotesBtn.setAttribute('class','tdEdit');
+			returnToNotesBtn.textContent = "Return to HOME SCREEN";
+			tableChosenP.textContent = "";
+			displayTableBtn.disabled = false;
+			newDBBtn.setAttribute('class','borderBlink');
+			newDBBtn.textContent = "CONVERT";
+			//convertingOldFile = false;
+			
+		}//end if convertingOldFile
 		//added these lines Dec 6 !!!!
 	//ADDED DEC 29...if there is no refreshTableP you can't remove what was never there!		
 	if (tableNeedsUpdate) {
@@ -6437,9 +7504,97 @@ STrows.appendChild(STheadRow);
 		 tableScreen.removeChild(refreshTableBtn);
 		 displayTableBtn.disabled = false;
 		}//end if (tableNeedsUpdate) ..ADDED DEC29
-		 tableScreen.setAttribute('class','hidden');
+//	ReferenceError: Can't find variable: clearTableWindowEditBtn
+//TypeError: null is not an object (evaluating 'clearTableWindowEditBtn.setAttribute')	
+
+//set Table btn to flash indicating in process of renaming table
+if(renameNewTableFlag) {
+tableScreenBtn.setAttribute('class','borderBlinkGrn');
+displayTableBtn.setAttribute('class','borderBlinkGrn');
+returnToNotesBtn.setAttribute('class','tdEdit');
+
+}//end if(renameNewTableFlag)
+	//loadFromTableOptions = false;//to prevent new table loading instead of main table on tap of displayTableBtn May14 2022 NOPE! DOES NOT WORK CAUSES A REFRESH TABLE SCENARIO!!!!!!
+	clearTableWindowEditBtn.setAttribute('class','tdEdit');
+	clearTableWindow.setAttribute('class','attentionBtn');
+		tableScreen.setAttribute('class','hidden');
 	}//end returnToNotesBtn.onclick
 	
+//name new table below
+//NOTE THE await FUNCTION HAS TO BE CALLED WITHIN AN async Function!!?,?,!Date: Jan26 2022
+nameNewTableBtn.onclick = async function () {
+
+checkTableLimit();
+if (tableLimit) {
+tableLimit = false;
+showTable.setAttribute('class','hidden');
+return;	
+}
+
+		if (tableExists & DTBtnTappedOnce === 0) {
+		alert('You need to initialize the table first by tapping DISPLAY TABLE at least once!');	//tableScreen.setAttribute('class','hidden');
+			createTableWindow.setAttribute('class', 'hidden');	
+			//displayTable();
+			//newTableNameWin.setAttribute('class', 'showing');
+		} else {//end if DTBtnTappedOnce === 0 March 20
+		//Tap here to create table or edit an existing one .. see HTML
+	/*prefWindow.removeChild(notifyP);*/
+manualContactsEntered = false;//otherwise ADDRESS field is added in setUpNewTable which conflicts with number of added fields and messes up! 
+	tableScreen.setAttribute('class','hidden');
+	newTableNameWin.setAttribute('class', 'showing');	
+	//alert("tapped NAME/CREATE TABLE BTN:  dataBaseName should display? " + dbName);
+	//newTableTitle.style.color = "white";
+	newTableTitle.textContent = dbName;
+	//newTableTitle.textContent = dataBaseName;
+	//dbName at this point has been set to newTableTitle in setupNewTable function
+}//end if DTBtnTappedOnce === 0 
+	//Check if screenDark mode
+checkScreenMode();
+if(screenDark) {
+	newTableNameWin.style.backgroundColor = "black";
+	newTableNameWin.style.color = "white";
+	showNewTableNameP.style.color = "white";
+} else {
+	newTableNameWin.style.backgroundColor = "#eee";
+	newTableNameWin.style.color = "black";
+	showNewTableNameP.style.color = "black";
+}//end if else screenDark
+	getNewTableName();
+//}//end if DTBtnTappedOnce === 0 
+
+//ADDED THIS CODE FOR SMOOTHER OPERATION .???.REMOVE?????Date: Jan24
+makeContactsTable= true;
+
+await allContactInfo(selectedContact);
+//SyntaxError: Unexpected identifier 'allContactInfo' when await preceded function call
+
+for(i=0;i<selectedContact.length;i++) {
+contactsArray[i] = cutName(selectedContact[i]);
+console.log(Array.isArray(contactsArray[i]));
+//alert(arr);
+}//end for i
+
+today = new Date();
+ todayS = today.toString();
+ todayString = todayS.slice(3, 21);
+ //alert('todayString = ' + todayString);
+
+for(i=0;i<selectedContact.length;i++) {
+contactsArray[i].splice(1, 0,todayString);
+}//end for i
+homeScreenBtn.textContent = "Clear CONTACTS Table";
+homeScreenBtn2.textContent = "Clear CONTACTS Table";
+//clearFoundRecordListFunc(); //use line below instead?
+flipMenu.textContent = " ✅ New Table Name: " + newTableNames[tableIndex] + ". " + newTableName;
+saveTableBtn.setAttribute('class','borderBlink');
+saveTableBtn2.setAttribute('class','borderBlink');
+setupNewTable();
+//ADDED THIS CODE ABOVE FOR SMOOTHER OPERATION .???.REMOVE?????Date: Jan24
+
+};//end newTableNameWinBtn.onclick
+
+//name new table above
+
 }//end tableScreenOptions function
 
 
@@ -6516,7 +7671,7 @@ STrows.appendChild(STheadRow);
 /*	let newFieldName;//title of 2nd field
 	let nextFieldName;//title of subsequent fields as determined by input in a for loop
 	let numberOfFields;//the counter to use in the for loop
-	let numberOfAdditionalFields;//number of new required fields
+	let numberOfDynamicFields;//number of new required fields
 	let fieldContent;//the text of the td cell in the table row as determined in the for loop. */
 
 //!!!!HERE I HAVE DECLARED dbTableName twice..first time in notes set up. might this be the problem??'dbTableName = undefined'
@@ -6574,7 +7729,7 @@ newOrEdit.setAttribute('class', 'simulator');
 //newBtn goes to makeTable function with edit=0
 const newBtn = document.createElement('button');
 newBtn.setAttribute('class', 'borderBlinkGrn');//was attentionBtn.changed Dec3 2021
-const editBtn = document.createElement('button');//are there 2 references for the edit Btn??Jan26 Date: Nov26 2021 Yes therebwere two editBtns..seemed to work but future references to editBtn may be confused? Should the declaration be back up at table screen options because editBtn along with new btn? Are referenced back there? ? Still seems to work though
+const editBtn = document.createElement('button');//are there 2 references for the edit Btn??Jan26 Date: Nov26 2021 Yes therebwere two editBtns..seemed to work but future references to editBtn may be confused? Should the declaration be back up at table screen options because editBtn along with new btn? Are referenced back there? ? Still seems to work though date:Feb15 2022..is this 'hoisting'?
 newBtn.textContent = 'NEW';
 
 	
@@ -6666,6 +7821,18 @@ newBtn.onclick = function() {
 	makeTable();
 }//end function newBtn.onclick
 editBtn.onclick = function () {
+	deleteFieldBtn.setAttribute('class','attentionBtn');
+	if(!loadFromTableOptions) {
+		mainDBedit = true
+		doThis = true;//will be set to false in displayTable
+		}//end !loadFromTableOptions	
+	//-
+	changeDB = true;//flag to tell load newtable to go into start from scratch mode !!!????
+	//-
+	if(loadFromTableOptions) {
+		newTableEdit = true;//flag to tell displayTable to create new 'edited field names in a new table' ?not used anymore?
+		blockEdit = true;//flag to prevent savedTablesArray getting messed up prevent dblClick edit of td cell if just finished editing layout of table via editBtn.onclick..because otherwise tableArray will no longer be in newTable mode and savedTablesArray will get messed up
+	}//end if loadFromTableOptions
 //code to clean up create new table screen to prepare for edit table
 	if(fromNew) {
 		fromNew = false;
@@ -6685,20 +7852,29 @@ editBtn.onclick = function () {
 	
 	tableHeader.textContent = dbTableName.value;//to refresh thheader in HTML
 	editBtn.setAttribute('class', 'normalBtn');
+clearTableWindow.setAttribute('class','simulator');
 	//edit = 0;//get to make changes and edit = 1
 	additionalFields.disabled = true;//disable dynamic field input here.
-	
+	//!?
 	edit = 1;
+	//!?
 	editCurrentTable = 1;//so displayTable workS correctly when editing a table that pre-exists
+	//? Delete has set variable fromDeleteField = true;
 	//clearTableWindow no difference if here or not?!
 	// while (rows.firstChild) {
 	// rows.removeChild(rows.firstChild);
 	//  }//end while
 	//Nov13 to restore STHeadRow to original prior to tacking on fields
 	originalNumberOfFields = fieldNamesArray.length;
-	console.log('At editBtn.onclick. numberOfAdditionalFields = ' + numberOfAdditionalFields);
 	
-	editMoreFields();
+	//alertx("In editBtn.onclick —- fieldNamesArray = " + fieldNamesArray + ".  Before edit, numberOfDynamicFields =  " + numberOfDynamicFields);
+	
+	console.log("In editBtn.onclick —- fieldNamesArray = " + fieldNamesArray + ".  Before edit, numberOfDynamicFields =  " + numberOfDynamicFields);
+	
+	console.log('At editBtn.onclick. numberOfDynamicFields = ' + numberOfDynamicFields);
+	
+	editMoreFields();//input for number of additional fields requested
+	
 	//clear STShow screen
 	// while (STrows.firstChild) {
 	// 	STrows.removeChild(STrows.firstChild);
@@ -6715,8 +7891,8 @@ editBtn.onclick = function () {
 
 deleteFieldBtn.onclick = function() {
 	console.log('deleteFieldBtn has been clicked');
-
-	deleteFieldWindow.setAttribute('class', 'showing');
+deleteFieldBtn.setAttribute('class','attentionBtn');
+clearTableWindow.setAttribute('class','simulator');	deleteFieldWindow.setAttribute('class', 'showing');
 	
 	//Check if screenDark mode
 checkScreenMode();
@@ -6740,6 +7916,7 @@ if(screenDark) {
 
 goHomeBtn.onclick = function () {
 		console.log('goHomeBtn clicked');	createTableWindow.setAttribute('class', 'hidden');
+	clearTableWindow.setAttribute('class','simulator');
 		//REMOVE IF SCREWED UP Jan 18
 		if(edit ===1) {
 		//remove how many more fields to you wish to edit...Dynamic fields input.....Do I have to remove the input and enter Btn as well? Or will they go with addToDynamicFields
@@ -6750,14 +7927,17 @@ goHomeBtn.onclick = function () {
 	
 	removeEditMoreFieldsElements();
 		}//end if edit = 1
+		
+//added this line May5 2022 to avoid displayTableBtn showing new table screen and not cancelling loadFromTableOptions
+//resetFromContacts(); NOPE DOES NOT WORK,!! Messes up displayTable from main db table
 		}//end gohomeScreenBtn.onclick
 
-//start function makeTable
+//start function makeTable called by editBtn.onclick
 function makeTable () {
 	console.log('At start makeTable()...tableExists = ' + tableExists + '. edit =  ' + edit);
 	fromMakeTable = 1;//to keep warning to create a table first if displayTable btn tapped after a table has been created
 	if(edit === 1) {
-		additionalFields.value = numberOfAdditionalFields;
+		additionalFields.value = numberOfDynamicFields;
 		headNameFirstColumn.value = fieldNamesArray[0] ;
 		thirdFieldNameInput.value = fieldNamesArray[2] ;
 		fourthFieldNameInput.value = fieldNamesArray[3] ;
@@ -6800,13 +7980,13 @@ if(screenDark) {
 	numberOfFields = Number(additionalFields.value) + 4;
 	//alert('numberOfFields = ' + numberOfFields);
 	// if(edit) {
-	// 	additionalFields.value = numberOfAdditionalFields;
+	// 	additionalFields.value = numberOfDynamicFields;
 	// }//end if edit
 	//numberOfFields is the total number of fields which includes the initial static 4 plus all other fields added to the initial 4...fieldNamesArray.length
 	//originalNumberOfFields = fieldNamesArray.length before any edit!
-	//numberOfAdditionalFields = THE NUMBER OF FIELDS BEYOND THE INITIAL STATIC 4. This number can keep increasing as you add more fields, so is a dynamic number. This currently is the number entered into the green input line 'number of additional fields. '
-	numberOfAdditionalFields = additionalFields.value;
-	//alert('numberOfAdditionalFields = ' + numberOfAdditionalFields);
+	//numberOfDynamicFields = THE NUMBER OF FIELDS BEYOND THE INITIAL STATIC 4. This number can keep increasing as you add more fields, so is a dynamic number. This currently is the number entered into the green input line 'number of additional fields. '
+	numberOfDynamicFields = additionalFields.value;
+	//alert('numberOfDynamicFields = ' + numberOfDynamicFields);
 	// if(edit) {
 	// 	headNameFirstColumn.value = fieldNamesArray[0] ;
 	// }//end if edit
@@ -6854,7 +8034,7 @@ if(edit === 1) {
 }//end if else if edit construct
 	createTable.appendChild(addFieldsDirectionP);
 	//create the inputs for  added fields required
-	for (let j = 1; j <= numberOfAdditionalFields; j++) {
+	for (let j = 1; j <= numberOfDynamicFields; j++) {
 	//alert('i = ' + i);
 	let k = 3+j;//for fieldNamesArray
 const nextFieldHeadingInput = document.createElement('input');//the headings for the added fielDs..I.e. the fieldNames Array
@@ -6894,14 +8074,14 @@ if(edit === 1) {
 createTable.appendChild(buildRecordsP);
 buildRecordsP.setAttribute('class', 'simulator');
 //buildRecordsP.disabled = false;
-buildRecordsP.textContent = ' Enter titles of '+ numberOfAdditionalFields + ' dynamic fields (By tapping the green buttons). When satisfied with entries tap here to continue!';
+buildRecordsP.textContent = ' Enter titles of '+ numberOfDynamicFields + ' dynamic fields (By tapping the green buttons). When satisfied with entries tap here to continue!';
 	
 	}//end submitBtn.onclick needs to be here instead of higher up
 
 //create tableArray variable 2D array
 // now create the vertical rows for records
 //the number of row iterations will be = counter
-//var additionalFieldsArray = Create2DArray(counter,numberOfAdditionalFields);
+//var additionalFieldsArray = Create2DArray(counter,numberOfDynamicFields);
 
 buildRecordsP.onclick = function () {
 	console.log('At buildRecordsP.onclick');
@@ -6993,6 +8173,12 @@ showOrEdit.appendChild(showBtn);
 //showOrEdit.appendChild(changesBtn);
 //showBtn from createTable goes to displayTable function
 showBtn.onclick = function () {
+
+//alertx("ShowBtn.onclick..tableID = "+ tableID + ".  loadFromTableOptions = " + loadFromTableOptions + ".  makeContactsTable = " + makeContactsTable + ".  loadTableIndex = " + loadTableIndex + ".  newTableSpecificVariables[tableID][1] = " + newTableSpecificVariables[tableID][1] + ".  savedTablesArray[loadTableIndex] = " + savedTablesArray[loadTableIndex] + ".  savedTablesArray[tableID] = " +  savedTablesArray[tableID]);
+
+console.log("ShowBtn.onclick..tableID = "+ tableID + ".  loadFromTableOptions = " + loadFromTableOptions + ".  makeContactsTable = " + makeContactsTable + ".  loadTableIndex = " + loadTableIndex + ".  newTableSpecificVariables[tableID][1] = " + newTableSpecificVariables[tableID][1] + ".  savedTablesArray[loadTableIndex] = " + savedTablesArray[loadTableIndex] + ".  savedTablesArray[tableID] = " +  savedTablesArray[tableID]);
+
+
 	//code to disable goToHomeScreen btn so table is not messed up if user taps returnToHome screen after having entered a number into the add dynamic fields input..forces finish of this process
 	goHomeBtn.disabled = false;
 	console.log('At showBtn.onclick..DISPLAY TABLE');
@@ -7002,6 +8188,7 @@ showBtn.onclick = function () {
 	//Nov 12
 	if (editCurrentTable === 1){
 		//removeFieldHeaders();//removed this line because'object not found here' error...this was after I added the add more dynamic fields code Nov 26. Now works. Not sure what the issue is?
+		//delete field has used a removeFieldHeaders();function at this point then remove STRows
 	while (STrows.firstChild) {
     STrows.removeChild(STrows.firstChild);
 	}//end while	
@@ -7022,13 +8209,118 @@ showBtn.onclick = function () {
 	//!!!!!!!!REMOVE CODE ABOVE IF SCREW UP!
 	//Nov 13
 	//displayTable();
+//DON'T SAVE TABLEARRAY IF IN NEWTABLE MODE!
+if(!loadFromTableOptions) {
 	dataVobj.tableArray = tableArray;
 		console.log('At saving current table values! and going to saveVariables. dataVobj.tableArray = ' + dataVobj.tableArray);
+		saveVariables();
+	//deleteField has this line here:
+	//changeDBtable();//to keep field names from getting messed up Date: Feb13
+	changeDB = true;//this puts field headers in place after an edit of main db then going to new table
+		displayTable();
+	}//end if(!loadFromTableOptions) 
+		
+if (loadFromTableOptions) {
 	
+		
+		
+		newTableFieldsArray = fieldNamesArray.slice();
+		newTableSpecificVariables[loadTableIndex][1] = newTableFieldsArray.slice();
+		
+		numberOfNewTableAddedFields = numberOfDynamicFields;
+		//numberOfNewTableAddedFields = newTableVariablesArray[4];
+		savedTablesArray[loadTableIndex]=tableArray.slice();
+		
+		//alertx("Display Table btn has been tapped! (showBtn.onclick)..Edited newtable: tableArray = " + tableArray + ".  savedTablesArray[loadTableIndex] = " +savedTablesArray[loadTableIndex] + ".  newTableFieldsArray = " + newTableFieldsArray + ".  numberOfNewTableAddedFields = " + numberOfNewTableAddedFields + ".  newTableSpecificVariables[loadTableIndex][1] = " + newTableSpecificVariables[loadTableIndex][1]);
+		
+		console.log("Display Table btn has been tapped! (showBtn.onclick)..Edited newtable: tableArray = " + tableArray + ".  savedTablesArray[loadTableIndex] = " +savedTablesArray[loadTableIndex] + ".  newTableFieldsArray = " + newTableFieldsArray + ".  numberOfNewTableAddedFields = " + numberOfNewTableAddedFields + ".  newTableSpecificVariables[loadTableIndex][1] = " + newTableSpecificVariables[loadTableIndex][1]);
+		
+		//deleteField does not have this line here but puts it above in if(!loadFromTableOptions
+		
+		//- ?
+		changeDBtable();//to keep field names from getting messed up Date: Feb13
+		changeDB = true;//this puts field headers in place after an edit of main db then going to new table
+/*		Table is cleared above
+		REMOVE HEAD ROW THEN RECONSTRUCT HEAD ROW..BUT NOT ADDED TO STROWS…CHANGEdb set to false
+		
+	*/	
+		
+		/***********************/
+		//edit = 1;
+		//ADD A FLAG AND ADD THE FIXED FIELDS JUST BEFORE ADDING THE DYNAMIC FIELDS
+	//***************************//
+		//flag to correct messed up fieldHeaders from a newTable edit
+		
+	adjustFields = true;	
+		
+	//*****************************
+		//setUpFieldHeaders();
+		//changeDB = true;//added Feb14 trying to msake field headers behave
+		
+		//***************************//
+		displayTable();
+		
+		//alertx("In showTable edit routine: After call to displayTable: loadFromTableOptions = " + loadFromTableOptions + ". loadTableIndex = " + loadTableIndex + ".   newTableSpecificVariables[loadTableIndex][1] =  " +newTableSpecificVariables[loadTableIndex][1]);
+		
+		//alertx("loadFromTableOptions = " + loadFromTableOptions +  ".  loadTableIndex = " + loadTableIndex + ".  newTableSpecificVariables[loadTableIndex][1] = " + newTableSpecificVariables[loadTableIndex][1]);
+		
+		console.log("In showTable edit routine: After call to displayTable: loadFromTableOptions = " + loadFromTableOptions + ". loadTableIndex = " + loadTableIndex + ".   newTableSpecificVariables[loadTableIndex][1] =  " +newTableSpecificVariables[loadTableIndex][1]);
+		
+		console.log("loadFromTableOptions = " + loadFromTableOptions +  ".  loadTableIndex = " + loadTableIndex + ".  newTableSpecificVariables[loadTableIndex][1] = " + newTableSpecificVariables[loadTableIndex][1]);
+		
+		
+//return false;		
+		//clearTableRows();
+/*	WHICH VERSION?	
+if(loadFromTableOptions) {
+	savedTablesArray[loadTableIndex]=tableArray.slice();
+	newTableFieldsArray = fieldNamesArray.slice();
+	numberOfNewTableAddedFields = numberOfDynamicFields;
+	
+	alert("deleteFields completed: tableArray = " + tableArray + ". loadTableIndex = " + loadTableIndex + ". savedTablesArray: savedTablesArray[loadTableIndex] = " + savedTablesArray[loadTableIndex] + "newTableFieldsArray = " + newTableFieldsArray);
+	changeDBtable();//to keep field names from getting messed up Date: Feb13
+}//end if loadTableFromOptions
+
+*/		
+//at this point tableArray = Tablevariables edited! dataVobj.tableArray now = Doug Dyer,2022-02-02,(250) 658-5645,addyer@telus.net  trainee45.dd@gmail.com ,Janet Dyer,2022-02-02,(250) 658-5645,jandyer@telus.net,Sandra Ramezani,2022-02-02, (604) 505-6650,slramezani@gmail.comdataVobj.newTableVariables = 4,Fantastic,Working well,Engine Hostlers,From ContactsBtn,From NameCreateNew Table,true,CONTACT NAME, DATE ,TELEPHONE,EMAIL,ADDRESS,
+
+//NOTE newTableVariablesArray[4] = numberOfNewTableAddedFields; NUMBER OF NEWTABLEADDED FIELDS IS NOT LISTED
+	resetFromContacts();
+		
+	//REMOVE ATRIMHEADROW???	
+		//trimHeadRow();
+	//tableArray will now be back in main db mode!!	
+		
+	//alertx("Preparing to save after edit: Need to know that tableArray has been set back to main db data before save! tableArray = " + tableArray + "SO DON'T EDIT A TD CELL BY DBLCLICK IF YOU HAVE JUST EDITED THE TABLE LAYOUT BECAUSE AT THIS POINT tableArray is in main db mode and if you are still in newTable mode you will mess things up");	
+	
+	console.log("Preparing to save after edit: Need to know that tableArray has been set back to main db data before save! tableArray = " + tableArray + "SO DON'T EDIT A TD CELL BY DBLCLICK IF YOU HAVE JUST EDITED THE TABLE LAYOUT BECAUSE AT THIS POINT tableArray is in main db mode and if you are still in newTable mode you will mess things up");	
+	
+	
+	//removeDynamicFields();
+	//removeFieldHeaders();
+	
+	//return false;
+		saveVariables();
+		
+		//removeHeadRow();//VERY IMPORTANT LINE..MAKES IT WORK!!!Date: Feb12 2022..new function
+		
+/*		
+	need to adjust savedTablesArray numberOfFields (numberOfFields = savedTablesArray[indexTable].length) 	
+	don't saveVariables until all table edits are made so goto displayTable first then return here to saveVariables and return to mainDB table as you do when creating a contactsTable. In displatTable numberOfFields will have to be set to savedTablesArray[indexTable].length if in loadFromTableOptions mode. Then after display and returning to saveVariables will need to return to originakNumberOfFields and tableTitle.length etc.
+	*/
+homeScreenBtn.setAttribute('class','borderBlink');
+homeScreenBtn2.setAttribute('class','borderBlink');
+}//end if loadFromTableOptions
+	
+/*
+if(!loadFromTableOptions) {
 	saveVariables();
 	displayTable();
 	//createTableWindow.setAttribute('class', 'hidden');
+	}//end if(!loadFromTableOptions)
+	*/
 }//end showBtn.onclick?displayTable?
+
 changesBtn.onclick = function () {
 	createTable.removeChild(showOrEdit);
 	createTable.removeChild(buildRecordsP);
@@ -7088,7 +8380,13 @@ function buildRecordRows () {
 	}//end if !edit
 		if (c === 0) {
 			//recordTd.textContent = tableTitle[i].slice(indexOf('>'));//USE IF YOU DON'T WANT cursor.value.id from displayData to show
-			recordTd.textContent = tableTitle[i];//tableTitle (global) array has to be constructed in displayData of indexedDBNotes
+			//so tableArray that has now been converted to contacts data if loadFromTableOptions=true, is not contaminated by tableTitle (which was not converted to newTable data), we set recordTd.textContent = tableArray[i][0]
+			if(loadFromTableOptions) {
+				recordTd.textContent = tableArray[i][0];
+			} else {
+				recordTd.textContent = tableTitle[i];
+			}//end if(loadFromTableOptions) else  {
+			//tableTitle (global) array has to be constructed in displayData of indexedDBNotes
 			// alert('tableArray 0,0 = '+ tableArray[[0],[0]] + 'tableTitle 0 (CN6035) =' +tableTitle[0] + 'tableTitle[' +i+'] ='+ tableTitle[i]);
 		//this is where tableArray 0,0 gets over ridden..after i changes from 0 to 1 ..looks like array is overwritten!	
 		//TypeError: undefined is not an object (evaluating 'tableArray[i][c] = tableTitle[i]')
@@ -7104,28 +8402,55 @@ function buildRecordRows () {
 			//tableArray[i][c] = " ";
 		}//end if i > originalNumberRecords 
 		//TypeError: undefined is not an object (evaluating 'tableArray[i][c] = tableTitle[i]')
+		//if(loadFromTableOptions) {
+			if(!loadFromTableOptions) {
 			tableArray[i][c] = tableTitle[i];
+		}//end if(!loadFromTableOptions) {
 			//is tableArray[3][0] undefined because tableArray not declared to use more than 3 rows?suggest declaring tableArray to have 100 rows right at the start!
 			//LEFT OFF HERE Oct30
 			
 			console.log('In buildRecordRows..tableTitle[i] = ' + tableTitle[i]+ '  tableArray[i][c] = ' + tableArray[i][c]);
-		
+			
+//In buildRecordRows..tableTitle[i] = 4> Additional Note  tableArray[i][c] = 4> Additional Note
 
 		//TypeError: undefined is not an object (evaluating 'tableArray[i][c] = tableTitle[i]')	
 			// if (tableArray[[0],[0]]!='CN6035') {alert('stop screw up here!');}
 			// alert('tableArray[' +i + '],[' +c +'] ' + tableArray[[i],[c]] + 'and tableArray0,0 also = ' + tableArray[[0],[0]]);
 		} else if (c === 1) {//recordTd.textContent = dateP;
+			if(!loadFromTableOptions) {
 			recordTd.textContent = dateTable[i];
 			tableArray[i][c] = dateTable[i];
+			} else if (loadFromTableOptions) {recordTd.textContent = todayString;
+			tableArray[i][c] = todayString;}//end else if loadFromTableOptions
 			// alert('tableArray[' +i + '],[' +c +'] ' + tableArray[[i],[c]]);
+
+
+
+
 		}//end if c=1 first td (title) dateP has to come from a date array variable in notes
 		
-		else if (c === 2) {recordTd.textContent = paraBody[i];
-			tableArray[i][c] = paraBody[i];
+		else if (c === 2)
+		{
+			if(loadFromTableOptions) {
+				recordTd.textContent = tableArray[i][c];
+			} else {
+				recordTd.textContent = paraBody[i];
+				tableArray[i][c] = paraBody[i];
+			}//end if(loadFromTableOptions) 
+				
+	
 			// tableArray[[i],[c]] = paraBody[i];
 			// alert('tableArray[' +i + '],[' +c +'] ' + tableArray[[i],[c]]);
-		} else if (c === 3) {recordTd.textContent = displayXtraFieldData[i]; 
-			tableArray[i][c] = displayXtraFieldData[i];
+		} else if (c === 3) 
+		{
+			if(loadFromTableOptions) {
+				recordTd.textContent = tableArray[i][c];
+			} else {
+				recordTd.textContent = displayXtraFieldData[i];
+				tableArray[i][c] = displayXtraFieldData[i];
+			}//end if(loadFromTableOptions) 
+			
+			
 			// tableArray[[i],[c]] = displayXtraFieldData[i];
 			// alert('tableArray[' +i + '],[' +c +'] ' + tableArray[[i],[c]]);}
 		//for all the additional fields
@@ -7186,12 +8511,33 @@ function buildRecordRows () {
 	}//end for i counter all record rows
 	tableConstructed = 1;
 console.log('At end of buildRecordRows()...tableConstructed set to 1 in buildRecordRows. (tableExists variable is set to 1 way back in newBtn.onclick when first creating the table.');
+
+//!!!!?!!!?,L!!ONLY SAVE TO SAVEDTABLESARRAY IF YOU ARE EDITING A NEWTABLE IN LOADFROMTABLEOPTIONS!!!?,!?,?
+//changed tableIndex to loadTableIndex Feb6
+if(loadFromTableOptions) {
+		savedTablesArray[loadTableIndex] = tableArray.slice();//tableArray in newTable configuration
+	}//end loadFromTableOptions
+	
+		//newTableFieldsArray is saved in newTableSpecificVariables[loadTableIndex][1] = newTableFieldsArray; newTableSpecificVariables[loadTableIndex][2] = numberOfNewTableAddedFields; newTableNamesArray see saveTableBtn.onclick
+		
+//alertx("At end of build record rows from a table edit. tableArray = " +tableArray + ".  savedTablesArray = " + savedTablesArray);
+console.log("At end of build record rows from a table edit. tableArray = " +tableArray + ".  savedTablesArray = " + savedTablesArray);
+
+
+
 }//end buildRecordRows.function
 //buildRecordRows creates and assigns values to the tableArray..for added fields only after the submit Button (submitTDinput Btn.onclick) is tapped. This means for added records after the first table creation, the tableArray for the added 'i' will not be defined unless manually assigned or you go through the buildRecordRows process again?
 
 //above code is buildRecordRows function
 //show the table previously created using the tableArray variable
 function displayTable () {
+//flag to only allow transit through mainDBedit code once	
+if(makeContactsTable) {
+		flipMenu.textContent = " ✅ New Table Name: " + newTableNames[tableIndex] + ". " + newTableName;
+	}//end if makeContactsTable
+
+	//alert("Start function displayTable (I removed parameter..…savedTablesArray = " + savedTablesArray);
+	//REMOVING PARAMETER KEEPS savedTablesArray INTACT!
 	
 	//code to allow for table window to fit in Landscape mode
 	
@@ -7249,7 +8595,7 @@ function displayTable () {
 			}//end if else darkMode;
 			
 			//resetTable
-			refreshed = 1;//so added field name headings are not generated twice
+			refreshed = 1;//so added field name headings are not generated twice when displayTable runs again from lineb 7952
 			editCurrentTable = 0; //Nov 22 so added field name headings are not generated twice
 			while (STrows.firstChild) {
     STrows.removeChild(STrows.firstChild);
@@ -7260,7 +8606,7 @@ STtableHeader.setAttribute('class','attentionBtn');
 STrows.appendChild(STtableHeader);
 STrows.appendChild(STheadRow);
 		displayTable();
-		refreshed = 0;
+		refreshed = 0;//reset variable to where it started
 	}//end tableBackgroundBtnBtn.onclick
 	
 	//doubleClick
@@ -7381,6 +8727,8 @@ if(renewed ===1) {
 // }//end while
 		//showTableRows.removeChild(showTableHeadRow);
 	//NotFoundError: The object can not be found here.
+	//added Feb16 2022
+	trimHeadRow ();//to keep headvrow from being messed up
 	// }//end if editCurrentTable = 1
 //reproduce the table using the+ fieldNamesArray and tableArray
 	//ST = showTable need to make this different than createTable window HTML
@@ -7404,7 +8752,8 @@ if(renewed ===1) {
 		//clearHeadRow();
 			//STrows.appendChild(STtableHeader);
 			//STrows.appendChild(STheadRow);
-			
+		//alert("At displayTable - editCurrentTable is set to 1 in setUpNewTable when loading a new table .. AND also set to 1 in editBtn.onclick ..  editCurrentTable = 1 so clearing rows adding fields and removing dynamic fields..STHeadRow has its text content set but is not yet containing dynamic fields or has it been added to STRows");	
+		
 			clearTableRows();
 			addFieldHeaders();
 			removeDynamicFields();
@@ -7436,9 +8785,10 @@ if(renewed ===1) {
 	//removeFieldHeaders();
 	//removeDynamicFields();
 	//}//end if fieldDeleted
-		console.log('At displayTable..about to recreate field headers if !refreshed and !displayedTable: REFRESHED =  ' + refreshed + ' DISPLAYEDTABLE = ' + displayedTable);
+		console.log('At displayTable..about to recreate field headers if editCurrentTable = 1 or !refreshed and !displayedTable: REFRESHED =  ' + refreshed + ' DISPLAYEDTABLE = ' + displayedTable);
 		//remove !fromDeleteField if messes up Jan30
 	//	Left off here Jan30
+	//editCurrentTable is set to 1 in setUpNewTable but is set to 0 in tableScreenOptions..i.e. so the main db load does not recreate dynamic fields
 	if (!refreshed & !displayedTable & !fromDeleteField || editCurrentTable === 1 || fieldDeleted) {
 		console.log('In displayTable.. and RECREATING FIELD HEADERS! virgin run! OR editCurrentTable = 1: refreshed currently set to 0 and displayedTable is 0, so displaying table from scratch, rebuilding field headers, via a k loop, appending the extra fields to the pre-existing field header row! ');
 		console.log('tableConstructed variable is set to 1 immediately on entering displayTable(). tableConstructed = ' + tableConstructed + ' displayedTable variable = ' + displayedTable + '. editCurrentTable = ' + editCurrentTable + ' reconstructing STHeadRow..I.e. adding the extra fields, but not yet adding the row to the table! .?? Is Table Header and Head Row already here from the HTML...If comming from displayTableBtn.onclick after a rerun, STRows was cleared by that code and STHeader again ADDED to STRows in the displayTableBtn.onclick code, so now only additional dynamic fields are being tagged on. If in displayTable from renewed, the header row has to be reconstructed because all was erased in refreshTable prior to comming here! This will happen if renewed (updated added records) . Otherwise displayTable is only going to rebuild the record rows to display, and tag on the extra fields to the header row if a virgin run...or a rerun, ..displayedTable = 0 and refreshed = 0. DisplayedTable will be set to 1 in the if!refreshed & !displayedTable function, indicating code has run through displayTable() starting from scratch. Note if comming from a rerun..i.e. a table exists and displayTableBtn.onclick display table button was pressed, tableConstructed variable will = 0, code advances to else part, so that the tap of the displayTableBtn.onclick button will clear the STShow table screen, cause a run of code through displayTable which now recreates the STHeader, which was previously ADDED to STRows by the aforementioned code.? If the screen is not cleared is not the STHeader there already from HTML? so it does not need the append STHeader? However if coming from displayTableBtn.onclick after a rerun the STHeader has already been added to STRows or if refreshed is set to 1, the code does ADD the STHeader to STRows in the refreshedBtn.onclick section, because STRows was all cleared prior to comming to displayTable() from refreshTable(). A rerun so far works well after first tap of displayTableBtn.onclick.');
@@ -7464,7 +8814,7 @@ console.log('Removing all fields ' + STheadRow);
 // while (STheadRow.fithChild) {
 //    STheadRow.removeChild(STheadRow.fithChild);
 // }//end while
-clearHeadRow();
+//clearHeadRow();//did not do anything ? Date:Feb12 2022
 console.log('Removed dynamic fields! ' + STheadRow);
 STheadRow.appendChild(STheadName);
 STheadRow.appendChild(secondFieldName);
@@ -7482,12 +8832,26 @@ fromDeleteField = false;// turn off this flag so that addFields is not called ag
 		trimHeadRow();
 	}//end if !fieldDeleted
 		//removeFieldHeaders();
+
+//NEED TO MAKE THIS CODE RUN IF NEWTABLE WAS EDITED so in editBtn.onclick if loadFromTableOptions then make newTableEdit true!	 
+//trimHeadRow();
+//newTableEdit = true;//SHOULD I PUT THIS VARIABLE IN STORAGE??
+
+//alert("About to create field headers!If newTableEdit is true, headers are messed up! Made false it works for a non-edited newTable. newTableEdit = " + newTableEdit);
+
+//if(newTableEdit) {trimHeadRow()}//start from scratch
+//if(!makeContactsTable && !loadFromTableOptions || newTableEdit) {	
+	//removeFieldHeaders();
+	//|| newTableEdit.   alert("in for k loop and should not be! If makeContactsTable = true .." + makeContactsTable + "  or if loadFromTableOptions = true …" + loadFromTableOptions);
+	
 	for (let k = 4; k < numberOfFields; k++) {
 	const STnextFieldHeading = document.createElement('td');
 	STnextFieldHeading.textContent = fieldNamesArray[k];	
 	STheadRow.appendChild(STnextFieldHeading);
 
 		}//end for loop
+	//}//end if !makeContactsTable && !loadFromTableOptions) || newTableEdit	
+		
 		displayedTable = 1; ////MAY NEED IF DTBtnTappedOnce = 1 then displayedTable = 1??? at line 2493?
 		
 		//if (edit !== 1) {
@@ -7500,8 +8864,14 @@ fromDeleteField = false;// turn off this flag so that addFields is not called ag
 		}//end ifFieldDeleted
 		
 		//for other cases other than deleted field
-		if(!fieldDeleted) {
-		addFieldHeaders();
+		//if comming from makeContactsTable we don't want extra fields added so put this condition into if !fieldDeleted Dec31 2021 did not wok
+		//adding || loadFromTableOptions did add the field headers to the edited new table if new table was the first edit .. and ..after an edit from db main
+		//alert("> AFTER DYNAMIC FIELDS CREATED! displayedTable will = 1 being set to 1 here. displayedTable = " +displayedTable + " refreshed = " + refreshed + " loadFromTableOptions = " + loadFromTableOptions + " makeContactsTable = " + makeContactsTable + " fieldDeleted = " + fieldDeleted + " edit = " + edit + " changeDB =  " + changeDB + " editCurrentTable = " + editCurrentTable);
+		
+		if(!fieldDeleted && !makeContactsTable || loadFromTableOptions) {
+			
+		//	alert("adding field headers!");
+		addFieldHeaders();//this will add fields again if loadFromTableOptions because makeContactsTable will then be false..how about adding !newTableEdit
 		}//end if !fieldDeleted
 		//reset field deleted flag to restore code flow to a normal flow without having had a call to fielDelete
 		fieldDeleted=false;
@@ -7513,6 +8883,11 @@ fromDeleteField = false;// turn off this flag so that addFields is not called ag
 	
 	//tag on added field if there is an edit request
 	if (editCurrentTable === 1) {
+		
+		//REMOVE OR NOT DATE: FEB16 2022
+		STrows.appendChild(STheadRow);
+		
+		//alert("adding field headers! Because editCurrentTable = 1 ");
 		//tagOnAddedField from edit request
 		// let tagOnAddedFields = fieldNamesArray.length - originalNumberOfFields;
 		// for (let k=originalNumberOfFields;k< fieldNamesArray.length ; k++) {
@@ -7523,6 +8898,22 @@ fromDeleteField = false;// turn off this flag so that addFields is not called ag
 		// removeDynamicFields();
 		//addFieldHeaders();
 	}//end if editCurrentTable = 1
+	
+	//in aid of restoring head row to newTable post load after an edit to main db..missing head row
+	//NOPE DID NOT WORK!!
+/*	if(loadFromTableOptions && mainDBedit && doThis) {
+		doThis = false;
+		alert("At mainDBedit!");
+		clearTableRows();
+		addFieldHeaders();
+		trimHeadRow();
+		//STrows.appendChild(STheadRow);
+		changeDB = false;//so homeBtn click will not remove STHeadRow see homeBtn.onclick if changeDB removeHeadRow
+		//mainDBedit = false;to still allow homeBtn to not erase headrow if mainDBedit
+		displayTable();//THIS LINE REPEATED ALL THE RECORDS TWICE,!!
+	}
+	*/
+	
 	
 	if (renewed){
 		console.log('At displayTable (if renewed || editCurrentVariable = 1) The STHeader will be added because refresh() or showBtn.onclick via editBtn? cleared the STShow table before comming to displayTable(): refreshed = ' + refreshed + ' renewed = ' + renewed +'. displayedTable variable = ' + displayedTable + ' If renewed is 1 then refreshed will also be 1 because it is set to 1 in refreshTable() in aid of preventing a repeat tag on of extra field headings if there is a rerun.. renewed =1 so I came here from refreshTable, and going to rebuild table header and field rows..' );	
@@ -7539,12 +8930,58 @@ if (fromDeleteField) {
 	fromDeleteField = false;
 	addFieldHeaders();
 }//end if fromDeleteField
+//code below WORKS,! Dec31
+
+//MAYBE SHOULD JUST REMOVE THIS PART?
+//if include below load new table after a main db edit retains its field labels. Now examine trim headRow
+//alert("resetFields = " + resetFields);
+if(makeContactsTable || loadFromTableOptions || resetFields || deletingTableField) { 
+//alert("at from newTable!");//&& !newTableEdit
+//	alert("At end of displayTable in new table mode..adjusting field labels");HAD ONE INSTANCE OF NEEDING THIS CODE TO RUN AND IT DIDN'T BECAUSE resetFromContacts had made makeContactsTable and loadFromTableOptions both false..trying to replicate….
+
+	resetFields = false;//flag used in displayTable to keep fields being messed up if edit notes after viewing a new table
+	
+	clearHeadRow();
+console.log('Removed dynamic fields! ' + STheadRow);
+
+//TRY THIS,! Date: Feb17 2022
+//addFieldHeaders();
+//TRY THIS,! Date: Feb17 2022
+
+
+//
+STheadRow.appendChild(STheadName);
+STheadRow.appendChild(secondFieldName);
+STheadRow.appendChild(STfirstDataNameTd);
+STheadRow.appendChild(STsecondDataNameTd);
+//field labels of static fields now restored!
+for (let k = 4; k < numberOfFields; k++) {
+	const STnextFieldHeading = document.createElement('td');
+	STnextFieldHeading.textContent = fieldNamesArray[k];	
+	STheadRow.appendChild(STnextFieldHeading);
+
+}//end for loop
+
+//if(!loadFromTableOptions) {
+//	trimHeadRow();//this won't run here anyway ..should be able to REMOVE 
+//	}//end if !loadFromTableOptions
+	//trimHeadRow();//trimHeadRow removed the dynamic fields in the new table after loading from a new table edit..so try if !loadFromTableOptions?
+//	*/
+	
+}//end if makeContactsTable || loadFromTableOptions this did not work!
+//
+
 
 //END OF DEALING WITH FIELD TITLE.HEADER CREATION
+
+//return false;
+//newTableEdit = false;//done with this flag now that edited newTable will be saved ? Need to move this line to savevariables???? Date: Febe
 
 //START OF CREATING THE RECORD ROWS
 
 console.log('Now just creating records!');
+//alert("At now just creating records. tableTitle.length = " + tableTitle.length);
+//alert here says tableTitle.length = 1 when it should be 3 !! Start here tomorrow to troubleshoot. Jan19 NOTE I DID NOT SAVE THE FILE I WAS TRYING TO LOAD IN ??Does this matter??!!
 	//iterate through all records
 	//tableTitle.length can also be counter
 	for(let i = 0; i< tableTitle.length; i++) {
@@ -7568,12 +9005,30 @@ console.log('Now just creating records!');
 		//highlight record row if target of search Jan8 THIS CHANGED THE FONT SIZE,!! and underlined IF A REFRESHTABLE OCCURRED AS IN A CELL EDIT! So maybe create the show record button to Reid’s play the table?
 //highlight hits
 if (fromSearchRecord) {
-	
-	if(hits.length>1) {
+	//if(hits.length>1) { changed May3
+	if(hits.length>=1) {
 		for (j=0;j<hits.length; ++j) {
 			if(i===hits[j]) {
+			
+//THIS CODE CREATES SEARCHED HITS TABLE ARRAY !!!BUT ONLY IF hits.length>1 so should a single entry be made for a case of only 1 hit maybe change if hits.length>=
+	searchedHitsTableArray[j] = tableArray[i];		
+//SHOULD I REMOVE DUPLICATES HERE?..not until end of loop. See below line 		
+			
+	console.log("searchedHitsTableArray[" + j + "] = " + searchedHitsTableArray[j]);		
+			
+	//searchedHitsTableArray[0] = 
+//Fireside Grill , May 03 2022 21:24,(250) 658-5645 ,Gourmet ,West Saanich Rd		
+			
+			
 				
 	//hits[j] will have been given a value of i from iterating through the record titles in the search function so that if i iterating through the display records function = the i value given to hits[], that means the recods matched so highlight it
+	
+//CODE TO CREATE NEWTABLE FROM SEARCH HITS WILL GO HERE!!!!
+//searchedTableArray[hits[j]] = tableArray[i];
+//after iteration complete savedTableArray[tableIndex] = searchedTableArray.splice();
+
+//CODE TO CREATE NEWTABLE FROM SEARCH HITS WILL GO HERE!!!!
+
 				STrecordItem.setAttribute('class','highlightgreen');
 			//hitsArray[k] = tableArray[i]
 			}//if i=hits[j]
@@ -7583,7 +9038,8 @@ document.querySelector('#STforRows').children[i].scrollIntoView(true);
 	
 	} else if(i=== matchedRecordIndex & fromSearchRecord) {
 			fromSearchRecord = false;
-		STrecordItem.setAttribute('class','highlightgreen');
+	searchedHitsTableArray[0] = tableArray[i];//added May4 	
+	STrecordItem.setAttribute('class','highlightgreen');
 	//scroll to searched item added July 8. Test to make sure this doesn't slow down program!!!
 	document.querySelector('#STforRows').children[matchedRecordIndex].scrollIntoView(true);	
 	fromSearchRecord = false;
@@ -7593,7 +9049,7 @@ document.querySelector('#STforRows').children[i].scrollIntoView(true);
 }//end ifhfromSearchRecord
 	
 	
-	
+//alert("In displayTable, recreating record rows: fromSearch is true..searchedHitsTableArray = " + searchedHitsTableArray);
 	
 	
 	
@@ -7675,6 +9131,8 @@ refreshed = 0; */
 
 
 		//put text of the tableArray[][] in the data cell	
+	//	TypeError: undefined is not an object (evaluating 'tableArray[i][c]')Feb23 after create new db!
+		
 	STrecordTd.textContent = tableArray[i][c];//tableTitle (global) array has to be constructed in displayData of indexedDBNotes	This is the info from displayData that was put into the tableArray n buildRecordRows when constructing the table
 	
 	//to allow table edit to avoid dblclick and to work in a blank td cell as will be the case if adding a dynamic field in edit table enter a text string to facilitate the copy paste iOS process to allow data entry. Oct 19 2021
@@ -7876,7 +9334,46 @@ if(!linkLabel) {
 			//trigger = 'mouseover';
 			console.log("trigger = " + trigger);
 	STrecordTd.addEventListener(trigger, function () {
+	
+	if(blockEdit) {
+		alert("Before editing this data cell, Tap Return to Home Screen first to initialize the table layout you just edited or created!");
+		//blockEdit = false;
+		return false;
+	}
 		
+if(deleteRecordNewTable) {
+
+//chance to backout v
+if (window.confirm("Delete record :  " + tableArray[i] + "? : \n" + " \n CANCEL will Return to Table")) {
+
+} else {
+	deleteRecordNewTable = false;
+	return;
+}//end prompt else
+//chance to backout ^
+
+let deletedRecordNewTable = tableArray.splice(i,1);
+tableTitle.length = tableTitle.length-1;
+//deleteRecordNewTable = false;
+deleteRecordNewTableBtn.style.display = "none";
+saveTableBtn.setAttribute('class','borderBlink');
+saveTableBtn2.setAttribute('class','borderBlink');
+homeScreenBtn.disabled = true;//to help force Save..now reset after flashing SAVE
+			 homeScreenBtn2.disabled = true;
+
+alert("You have deleted the record: " + deletedRecordNewTable);
+resetFields = true;
+blockEdit = true;//to stop a double click from deleting a record again
+displayTable();
+
+savedTablesArray[loadTableIndex]=tableArray.slice();
+	
+	//alertx("After deleting new table record - Back from displayTable — TDCell edit completed and refreshBtn just tapped: tableArray = " + tableArray + ". loadTableIndex = " + loadTableIndex + ". savedTablesArray should be newTable mode! savedTablesArray[loadTableIndex] = " + savedTablesArray[loadTableIndex] + ". newTableSpecificVariables[loadTableIndex][1] = " + newTableSpecificVariables[loadTableIndex][1]);
+	
+	console.log("After deleting new table record - Back from displayTable — TDCell edit completed and refreshBtn just tapped: tableArray = " + tableArray + ". loadTableIndex = " + loadTableIndex + ". savedTablesArray should be newTable mode! savedTablesArray[loadTableIndex] = " + savedTablesArray[loadTableIndex] + ". newTableSpecificVariables[loadTableIndex][1] = " + newTableSpecificVariables[loadTableIndex][1]);
+	
+return;	
+}//end if deleteRecordNewTableBtn
 	//to hasten edit disable Use Link Label Oct 28 2021 not necessary must have been a glitch related to experimenting with spaces? So this code is disabled
 		// if(linkLabel) {
 		// 	alert("If editing table cells disabling 'Use Link Labels' in Preferences is recommended!");
@@ -7950,7 +9447,12 @@ if(!linkLabel) {
 			dateSelect.value = dateSelect.value.slice(0,16);
 		}//end if tableDateTime
 		tableArray[i][c] = dateSelect.value;
-		editedTDchange = dateSelect.value;	
+		
+//don't run code below if newTables because there are no notes for newTables
+		
+if (!makeContactsTable && !loadFromTableOptions) {
+	
+	editedTDchange = dateSelect.value;	
 		//put code to edit date in notes here
 		//Feb 13
 		//Get record id from tableTitle[i][0]
@@ -7958,8 +9460,10 @@ if(!linkLabel) {
 		
 		//pass recordId and the edited date(editedTDchange) to the editNoteDate function as parameters
 		editNotesRecord(recordId,editedTDchange,c);
-		
-		
+	}//end if (!makeContactsTable && !loadFromTableOptions) 
+	
+//don't run code above if newTables because there are no notes for newTables	
+
 		//put code to edit date in notes above  here
 		
 		}//end if c===1 -field STrecordTd.textContent = DATE
@@ -7978,10 +9482,44 @@ if(!linkLabel) {
 		tableArray[i][c] = editTDInput.value;
 		console.log('c is > 3 so tableArray[][] is set to editTDInput.value');
 		console.log('tableArray[i][c] = ' + tableArray[i][c]);
+		
 	}//end if c  3
 	//new edited entry of dynamic fields now entered in tableArray
+	//if newTable save values to savedTablesArray
+	if (loadFromTableOptions || makeContactsTable) {
+		
+homeScreenBtn.textContent = "RETURN to Home Screen";
+homeScreenBtn2.textContent = "RETURN to Home Screen";
+
+		if(c === 1) {
+			tableArray[i][c] = dateSelect.value;
+			//savedTablesArray[tableIndex][c] = dateSelect.value;
+		} else {
+		tableArray[i][c] = editTDInput.value;
+		
+// if(deleteRecordNewTable) {
+// let deletedRecordNewTable = tableArray.slice(i,1);
+// deleteRecordNewTable = false;
+// deleteRecordNewTable tn.style.display = "none";
+// alert("You have deleted the record: " + deletedRecordNewTable);
 	
+// }//end if deleteRecordNewTableBtn
+
+
+	//THIS IS WRONG …[c] has to be the whole tableArray value …so make savedTablesArray[loadTableIndex] = tableArray.slice() at refresh table btn after all edits?
+		//savedTablesArray[tableIndex][c] = editTDInput.value;
+		}//end if c===1
+		
+		//alertx("tableIndex = " + tableIndex + " loadTableIndex = " + loadTableIndex + " tableID = " + tableID + " tableArray[i][c] = " + tableArray[i][c] + " savedTablesArray[tableIndex] = " + savedTablesArray[tableIndex] + ". Is tableArray still in newTable mode?" + ".  savedTablesArray[tableID] = " + savedTablesArray[tableID] + " newTableFieldsArray = " + newTableFieldsArray);
+		
+		console.log("tableIndex = " + tableIndex + " loadTableIndex = " + loadTableIndex + " tableID = " + tableID + " tableArray[i][c] = " + tableArray[i][c] + " savedTablesArray[tableIndex] = " + savedTablesArray[tableIndex] + ". Is tableArray still in newTable mode?" + ".  savedTablesArray[tableID] = " + savedTablesArray[tableID] + " newTableFieldsArray = " + newTableFieldsArray);
+		
+		}//end if (loadFromTableOptions || makeContactsTable) 
 	//to save the edits in the fixed fields to Notes. Remember the other fields are dynamic fields in table only and do not have to be saved to notes
+	
+//IF NEWTABLE CODE RUNNING SKIP ALL BELOW BECAUSE NEWTABLES DON'T HAVE NOTES
+if (!makeContactsTable && !loadFromTableOptions) {
+	
 	if (c===0 | c===2 | c===3) {
 	recordId = getRecordId(i);
 	console.log('In editTDBtn.onclick. recordId as returned from getRecordId function = ' + recordId);
@@ -7998,6 +9536,9 @@ if(!linkLabel) {
 //send edit info back to ediNotes section	
 	editedTDchange = editTDInput.value;	editNotesRecord(recordId,editedTDchange,c);
 	}//end if c=0|c=2|c=3
+	
+}//end if (!makeContactsTable && !loadFromTableOptions) 	
+//IF NEWTABLE CODE RUNNING SKIP ALL ABOVE BECAUSE NEW TABLES DON'T HAVE NOTES 
 			
 		if (c !== 1) {
 		STrecordTd.removeChild(editTDInput);
@@ -8032,8 +9573,9 @@ if(!linkLabel) {
 		//changed firstChild to secondChild
 		while (STrows.firstChild) {
     STrows.removeChild(STrows.firstChild);
-	}//end while
 	
+	}//end while
+	changeDB = true;//put in here because field headers got messed up after an edit Date:Feb13
 // 	//code to regenerate field headings prior to rebuilding Table
 // 	STheadName.textContent = fieldNamesArray[0];//listName header first column
 // 	STfirstDataNameTd.textContent = fieldNamesArray[2];
@@ -8059,7 +9601,27 @@ STrows.appendChild(STtableHeader);
 	//would clearing editTDInput.value help fix the disappearing postLinkInfo issue
 	//editTDInput.value = "";
 	
+	//before display table and refreshbtn tapped tableArray is in newTable mode
+	//alertx("Back from displayTable — TDCell edit completed and refreshBtn just tapped: tableArray = " + tableArray + ". loadTableIndex = " + loadTableIndex + ". savedTablesArray should be newTable mode! savedTablesArray[loadTableIndex] = " + savedTablesArray[loadTableIndex] + ". newTableSpecificVariables[loadTableIndex][1] = " + newTableSpecificVariables[loadTableIndex][1] + ".  newTableFieldsArray[tableID] = " + newTableFieldsArray[tableID]);
+	
+	console.log("Back from displayTable — TDCell edit completed and refreshBtn just tapped: tableArray = " + tableArray + ". loadTableIndex = " + loadTableIndex + ". savedTablesArray should be newTable mode! savedTablesArray[loadTableIndex] = " + savedTablesArray[loadTableIndex] + ". newTableSpecificVariables[loadTableIndex][1] = " + newTableSpecificVariables[loadTableIndex][1] + ".  newTableFieldsArray[tableID] = " + newTableFieldsArray[tableID]);
+	
+	
 			displayTable();
+			
+if(loadFromTableOptions) {
+//is this line correct? Yes it is
+//ADDED THIS LINE MAR5 to fix issue of losing ADRESS FIELD IF DOING A TABLEEDIT! Don't understand why it is needed here??? Because?  newTableFieldsArray variable is set to last new table preceding this one and has to be reset for current new table?!!!?,
+
+newTableFieldsArray = newTableSpecificVariables[tableID][1];
+	savedTablesArray[loadTableIndex]=tableArray.slice();
+	
+	//alertx("Back from displayTable — TDCell edit completed and refreshBtn just tapped: tableArray = " + tableArray + ". loadTableIndex = " + loadTableIndex + ". savedTablesArray should be newTable mode! savedTablesArray[loadTableIndex] = " + savedTablesArray[loadTableIndex] + ". newTableSpecificVariables[loadTableIndex][1] = " + newTableSpecificVariables[loadTableIndex][1]);
+	
+	console.log("Back from displayTable — TDCell edit completed and refreshBtn just tapped: tableArray = " + tableArray + ". loadTableIndex = " + loadTableIndex + ". savedTablesArray should be newTable mode! savedTablesArray[loadTableIndex] = " + savedTablesArray[loadTableIndex] + ". newTableSpecificVariables[loadTableIndex][1] = " + newTableSpecificVariables[loadTableIndex][1]);
+	
+//	works but did not work after immediate edit after adding of new field!!!
+}//end if loadTableFromOptions
 			
 			//!!!!!!!!!!!!MAYBE NEED refreshed = 0; statement here to fix field header problem?
 			//Dec 28 so far without a rerun everything works?!
@@ -8075,9 +9637,68 @@ STrows.appendChild(STtableHeader);
 			
 		}//end for i = to show all records
 		
+//alertx("In displayTable, recreating record rows: fromSearch is true..before removing duplicates..searchedHitsTableArray = " + searchedHitsTableArray);	
+
+//REMOVE DUPLICATES IN SEARCHEDHITSTABLEARRAY TO ACCOUNT FOR QUERY APPEARING MORE THAN ONCE IN A RECORD..did not use fromSearcheRecords as condition because it is now false..see line v8840
+
+if (searchedHitsTableArray.length > 0) {
+
+ searchedHitsTableArray = [...new Set(searchedHitsTableArray)];
+ //alertx("after removing duplicates searchedHitsTableArray = " + searchedHitsTableArray);
+}//end if (fromSearchRecord) {
+	
 		//should this code be near tableScreen section so you can return to home screen direct from displayTable??
-		const homeScreenBtn = document.querySelector('#homeScreenBtn');
+		//const homeScreenBtn = document.querySelector('#homeScreenBtn');
 		homeScreenBtn.onclick = function () {
+emailBtn.setAttribute('class','tdEdit');//if cancel CONTACTS or ignore flashing CONTACTS AND GO TO HOME SCRN CONTACTS BTN WILL STAY FLASHING!
+		//alertx("searchedHitsTableArray = " + searchedHitsTableArray);
+	//alertx("homeScreeBtn.onclick..loadFromTableOptions = " + loadFromTableOptions +  ".  loadTableIndex = " + loadTableIndex + ".  newTableSpecificVariables[loadTableIndex][1] = " + newTableSpecificVariables[loadTableIndex][1] + ".  savedTablesArray[loadTableIndex] = " + savedTablesArray[loadTableIndex]);
+	
+if(hitsTable) {
+emailBtn.textContent = "CONTACTS";
+hitsTable = false;
+makeHitsTable = false;
+resetFields = true;//field headers got messed up after making a new table from a new table
+}//end if hitsTable
+
+
+//to cover case where user chooses to delete a new table then changes his mind and hitting the return to home screen btn
+if(deleteFromTableOptions) {	tableScreen.removeChild(renameNewTableBtn);
+	}//end if(deleteFromTableOptions) 
+		homeScreenBtn.setAttribute('class','tdEdit');
+	
+homeScreenBtn2.setAttribute('class','tdEdit');
+blockEdit = false;//so td edit will work again
+		
+		//	alert("changeDB = "+ changeDB + " mainDBedit =  " + mainDBedit);
+			
+			if(changeDB && !mainDBedit) {
+			removeHeadRow();//VERY IMPORTANT LINE..MAKES IT WORK!!!Date: Feb12 2022..new function This line placed here Feb13 to prevent field headers from disappearing if displayTableBtn tapped twice in a row
+		//	proved that this line is responsible for the STHeadRow disappearing when loading a newTable after a main db edit, but the header that appears has 5 dynamic fields of the previous main db!
+		}//end if changeDB
+			//clearTableRows();//prevent added dynamic fields from persisting if going to a new table after main db
+homeScreenBtn.textContent = "RETURN to Home Screen";
+homeScreenBtn2.textContent = "RETURN to Home Screen";
+flipMenu.textContent = "Tap - Click to show / hide TABLE MENU";
+
+	//if makeContactsTable AND new table not saved we need to delete this new table from the listing	
+	//after resetFromContacts makeContactsTable will be false so next segment of code will not run!
+	if(makeContactsTable) {
+		homeScreenBtn.setAttribute('class','normalBtn');	
+		homeScreenBtn2.setAttribute('class','normalBtn');	
+	}//end if makeContactsTable
+	
+		if(makeContactsTable || loadFromTableOptions) {
+				//NCJan10..If messed up go back to fallBackJan10
+				//clearHeadRow();	
+		//trimHeadRow();
+	//	clearTableRows();
+		//removeDynamicFields();
+		changeDB = true;//IMPORTANT KEEP setupNewTable makes this false so it needs to be made true here for field headers to be set up properly after showing a newTable but the 2nd homebtn #2 did not need it so not sure????
+				
+		resetFromContacts();
+			}//end if makeContactsTable
+	
 			fromViewSort = false;//turn off sort flag
 			console.log('homeScreenBtn clicked');
 			
@@ -8092,8 +9713,48 @@ STrows.appendChild(STtableHeader);
 		// LEFT OFF HERE DEC 24 2020 have to figure out refreshed = 0 and refreshed = 1 so field headers are generated or not	deleteWindow.setAttribute('class','hidden');
 		}//end homeScreenBtn.onclick
 		
-		const homeScreenBtn2 = document.querySelector('#homeScreenBtn2');
+		//const homeScreenBtn2 = document.querySelector('#homeScreenBtn2');
 		homeScreenBtn2.onclick = function () {
+emailBtn.setAttribute('class','tdEdit');//if cancel CONTACTS or ignore flashing CONTACTS AND GO TO HOME SCRN CONTACTS BTN WILL STAY FLASHING!
+		
+if(hitsTable) {
+emailBtn.textContent = "CONTACTS";
+hitsTable = false;
+makeHitsTable = false;
+}//end if hitsTable
+
+//to cover case where user chooses to delete a new table then changes his mind and hitting the return to home screen btn
+if(deleteFromTableOptions) {	tableScreen.removeChild(renameNewTableBtn);
+	}//end if(deleteFromTableOptions) 
+		
+		homeScreenBtn.setAttribute('class','tdEdit');
+homeScreenBtn2.setAttribute('class','tdEdit');
+blockEdit = false;//so td edit will work again
+
+			if(changeDB && !mainDBedit) {
+			removeHeadRow();//VERY IMPORTANT LINE..MAKES IT WORK!!!Date: Feb12 2022..new function This line placed here Feb13 to prevent field headers from disappearing if displayTableBtn tapped twice in a row
+			}//end if changeDB
+			
+homeScreenBtn.textContent = "RETURN to Home Screen";
+				homeScreenBtn2.textContent = "RETURN to Home Screen";
+				flipMenu.textContent = "Tap - Click to show / hide TABLE MENU";
+				
+	if(makeContactsTable) {
+		homeScreenBtn.setAttribute('class','normalBtn');	
+		homeScreenBtn2.setAttribute('class','normalBtn');	
+	}//end if makeContactsTable
+	
+	if(makeContactsTable || loadFromTableOptions) {
+				//NCJan10..If messed up go back to fallBackJan10
+					//clearHeadRow();	
+		//trimHeadRow();
+	//	clearTableRows();
+		//removeDynamicFields();
+		changeDB = true;//IMPORTANT KEEP setupNewTable makes this false so it needs to be made true here for field headers to be set up properly after showing a newTable but the 2nd homebtn #2 did not need it so not sure????
+				
+	resetFromContacts();
+			}//end if makeContactsTable
+			
 			fromViewSort = false;//turn off sort flag
 			console.log('homeScreenBtn2 clicked');
 	//keeping track of save Btn Date: Feb 26 2021
@@ -8122,30 +9783,183 @@ STrows.appendChild(STtableHeader);
 	//saveTableBtn.setAttribute('class','colorBtn');
 		saveTableBtn.textContent = 'SAVE';
 		saveTableBtn2.textContent = 'SAVE';
+		
 		//flipMenu.setAttribute('class','colorBtn');//does not work! ? Because its a jQuery element??
 		//$("#flip").css({"background-color": "yellow", "border": "red"});
 	//$$LEFT OFF HERE,!!!	
 	saveTableBtn.onclick = function () { 
+	//tableIndex = 7;testing fixing screw ups
+	resetFields = true;//if you hit SAVE twice fields can get messed up
+	homeScreenBtn.disabled = false;//to help force Save..now reset after flashing SAVE
+			 homeScreenBtn2.disabled = false;
+newTableFieldsBtn.disabled = false;//to prevent an inadvertant tap of Field Labels btn at this stage creating crashing..reset
+	
+	 if(renameNewTableFlag) {
+displayTableBtn.setAttribute('class','tdEdit');
+saveTableBtn.setAttribute('class','tdEdit');
+saveTableBtn2.setAttribute('class','tdEdit');
+
+renameNewTableFlag = false;
+
+}//end if(renameNewTableFlag)
+	
+	//alertx("saveTableBtn.onclick (table screen) .. loadFromTableOptions = " + loadFromTableOptions +  ".  loadTableIndex = " + loadTableIndex + ".  newTableSpecificVariables[loadTableIndex][1] = " + newTableSpecificVariables[loadTableIndex][1] + ".  savedTablesArray[loadTableIndex] = " + savedTablesArray[loadTableIndex]);
+	
+	console.log("saveTableBtn.onclick (table screen) .. loadFromTableOptions = " + loadFromTableOptions +  ".  loadTableIndex = " + loadTableIndex + ".  newTableSpecificVariables[loadTableIndex][1] = " + newTableSpecificVariables[loadTableIndex][1] + ".  savedTablesArray[loadTableIndex] = " + savedTablesArray[loadTableIndex]);
+		console.log("NOTE savedTableArray NOT created until saveBtn.onclick if makeContactsTable = true! So at point of saveBtn.onclick prior to first save savedTablesArray is empty!Just tapped saveTableBtn.onclick… savedTablesArray[0] = " + savedTablesArray[0]);
+//NOTE savedTableArray NOT created until saveBtn.onclick if makeContactsTable = true! So at point of saveBtn.onclick prior to first save savedTablesArray is empty!
+// ERROR HERE		
+// Just tapped saveTableBtn.onclick… savedTablesArray[0] = Doug Dyer,
+// Contact Name , Feb 06 2022 00:20, ,username@shaw.ca,(250) 658-5645,addyer@telus.net BETWEEN EDIT (REFRESH BTN AND BACK TO SAVE SOMETHING HAPPENS??)also check originalNumberRecords set to that of new table (contacts table) …4 see line 12119 4 is main db should be 3 line 12116 tableArray = Doug Dyer,
+// Contact Name , Feb 06 2022 00:20, ,username@shaw.ca,(250) 658-5645,addyer@telus.net fieldNamesArray = CONTACT NAME,DATE,TELEPHONE,EMAILtableIndex = 0 tableTitle.length = 4 should be 3?
+//ERROR HERE!!!!	savedTablesArray is wrong before going to saveVariables!!	
+		console.log('Save Table btn tapped: makeContactsTable = ' + makeContactsTable + ' loadFromTableOptions = ' + loadFromTableOptions);
+		//alert(" I removed parameter! saveTableBtn.onclick..savedTablesArray[0] = " + savedTablesArray[0]);
+		//alert("newTableName =  " + newTableName);
+		//Date:Jan25Remove if messes up
+		if(makeContactsTable || loadFromTableOptions) {
+		flipMenu.textContent = " ✅ New Table Name: " + newTableNames[tableIndex] + ". " + newTableName;
+		}//end if makeContactsTable ||vloadFromTableOptions
+		//flipMenu.textContent = " ✅ New Table Name: " + newTableName;//have to repeat this for second run to get it to work.not sure why?????Date: Jan2
+		let abortSave = false;
+		//before dtavObject.tableArray is assingned new values of an edited table make check that saveTableBtn is not being pushed from a contacts table and if it is go to saveNewTable function first to restore original tableArray values and copyTableArray values, and setup the savedTables array values etc.
 		
 		//return menu bar in table back to original if post search
+		//flipMenu.textContent = "Click - Tap to show / hide TABLE MENU";
+		
+		if(!makeContactsTable && !loadFromTableOptions) {
 		flipMenu.textContent = "Click - Tap to show / hide TABLE MENU";
+		}//end if !makeContactsTable
 		
 		
+	
+	
+	//NCJan10..If messed up go back to fallBackJan10
+	// prompt to give choice for saving a contacts table or return to table
+ //confirm choice window
+ if(makeContactsTable || loadFromTableOptions) {
+	 //NCJan10..If messed up go back to fallBackJan10
+	 //when makeContactsTable and loadFromTableOptions are true tableArray is in newTable mode so have to restore to main db mode prior to any save!ResetFromContacts does this AND also sets savedOriginal to false
+		 if (window.confirm("SAVE Contacts - New Table ? : \n" + "  CANCEL will Return to Table")) {
+			 if(!makeHitsTable && loadFromTableOptions) {
+				 makeContactsTable = false;
+				 //HAVE TO SAVE THE ORIGINAL IF DOING A SAVE DIRECT FROM LOADFROMTABLEOPTIONS!!!?//you do want to save a newTable if an edit has been made!,
+
+	//return homeBtn to normal
+	homeScreenBtn.disabled = false;
+homeScreenBtn2.disabled = false;
+	homeScreenBtn.textContent = "RETURN to Home Screen";
+	homeScreenBtn2.textContent = "RETURN to Home Screen";
+	
+			resetFromContacts();
+	}//end if loadFromTableOptions
+			 if(makeContactsTable) {loadFromTableOptions = false;
+			 saveNewTable();
+	}//end if makeContactsTable saveNewTable takes you to resetFromContacts it also creates savedTablesArray[tableIndex]? If abort save should tableIndex be brought back to tableIndex-1 ?
+			
+			
+			homeScreenBtn.textContent = "Clear CONTACTS Table";
+			 homeScreenBtn2.textContent = "Clear CONTACTS Table";
+//MUST DISABLE SEARCH SORT EDIT AFTER THE SAVE BECAUSE tableArray has beebpn reset to db values prior to saveVariables…otherwise db values are erased by contacts!! Date: Jan30 the search sort with tableArray set to db values will mess up a sort of contacts or new table.	
+	toSortScrBtn.style.backgroundColor = "lightgrey";
+	toSortScrBtn.disabled = true;
+	toEditTableScrBtn.style.backgroundColor = "lightgrey";
+	toEditTableScrBtn.disabled = true;
+	toSearchScreenBtn.style.backgroundColor = "lightgrey";
+	toSearchScreenBtn.disabled = true;
+//homeScreenBtn was disabled in eMailBtn.onclick in choice prompt after getNewTableName	
+homeScreenBtn.disabled = false;
+homeScreenBtn2.disabled = false;
+	homeScreenBtn.setAttribute('class','borderBlink');
+	homeScreenBtn2.setAttribute('class','borderBlink');
+	
+	blockEdit = true;//flag to prevent savedTablesArray getting messed up prevent dblClick edit of td cell if just finished editing layout of table via editBtn.onclick..because otherwise tableArray will no longer be in newTable mode and savedTablesArray will get messed up DOES NOT SEEM TO WORK AFTER A SAVE POST DELETE FIELD.
+	
+/*	} else {
+	toSortScrBtn.style.backgroundColor = "rgb(240, 248, 255)";
+	toSortScrBtn.disabled = false;
+	toEditTableScrBtn.style.backgroundColor = "rgb(240, 248, 255)";;
+	toEditTableScrBtn.disabled = false;
+	toSearchScreenBtn.style.backgroundColor = "rgb(240, 248, 255)";
+	toSearchScreenBtn.disabled = false;
+*/	
+		 
+			
+			 
+			// saveNewTable();
+			// return//.?temporary to prevent saving variables until code written for it Jan12022
+			} else {
+				saveTableBtn.textContent = "SAVE";
+			// saveTableBtn2.disabled = true;
+			saveTableBtn2.textContent = "SAVE";
+			saveTableBtn.setAttribute('class', 'normalBtn');
+			saveTableBtn2.setAttribute('class', 'normalBtn');
+			
+//homeScreenBtn was disabled in eMailBtn.onclick in choice prompt after getNewTableName	
+homeScreenBtn.disabled = false;
+homeScreenBtn2.disabled = false;
+homeScreenBtn.setAttribute('class','borderBlink');
+homeScreenBtn2.setAttribute('class','borderBlink');
+
+if(loadFromTableOptions || makeContactsTable) {
+	emailBtn.style.display = "none";
+	newTableFieldsBtn.style.display = "none";
+}//end if loadFromTableOptions || makeContactsTable
+
+//saveNewTable takes you to resetFromContacts it also creates savedTablesArray[tableIndex]? If abort save should tableIndex be brought back to tableIndex-1 ? Date:April13 2022..not tested and what about newTableSpecificVariables?
+if(makeContactsTable) {
+tableIndex = tableIndex-1;
+//code from CANCEL getnew TableName to reset savedTablesArray and newTableVariables array after not saving and cancelling it out
+
+let cancelledSavedTablesArray = savedTablesArray.pop();
+	newTableNames.pop();
+let cancelledNewTableSpecificVariables = newTableSpecificVariables.pop();
+//now have to restore savedTablesArray.length as in a delete
+//now restore array length
+//[-1,[],0]
+cancelledNewTableSpecificVariables.length = 0;
+newTableSpecificVariables.push(cancelledNewTableSpecificVariables);
+cancelledSavedTablesArray.length = 0;
+savedTablesArray.push(cancelledSavedTablesArray);
+
+console.log("savedTablesArray.length = " + savedTablesArray.length);
+//alertx("savedTablesArray.length = " + savedTablesArray.length);
+
+	}//end if makeContactsTable
+
+			//resetFromContacts();
+				//makeContactsTable=false;
+				selectedContact.length = 0;//this statement IS necessary to clear as the API must clear it on rerun? 
+				abortSave = true;
+				
+	resetFromContacts();//will this fix CANCEL SAVE errors and issues..not tested as of April25 2022
+				
+//if makeContactsTable AND new table not saved we need to delete this new table from the listing	
+
+				//displayTable();
+				//return//.?temporary to prevent saving variables until code written for it Jan12022
+		}//end if window.confirm else
+		//end prompt
+	}//end if makeContactsTable makeContactsTable || loadFromTableOptionsto ask to save contactsTable. ?should this go in saveVariables function?
+	
+	
+		console.log("Back from saveNewTable, OR just continuing in saveTableBtn.onclick")
 		//function clickedSaveTableBtns
-			let abortSave = false;
+			// let abortSave = false;declared at top of function saveTableBtn.onclick
 			if(!originalOrder) {
 				
 			let warning = document.createElement('p');
 		showTable.appendChild(warning);	warning.setAttribute('class','simulator');
 				warning.textContent = 'THE ORIGINAL RECORD LIST ORDER HAS BEEN CHANGED!';
-				if(!window.confirm('The original record list order will be lost. Tap CANCEL to abort. Reset to original order in Sort.')) {
+				if(!window.confirm('⚠️ The original record list order might be lost. Tap CANCEL to abort. Reset to original order in Sort.')) {
 				showTable.removeChild(warning);	showTable.setAttribute('class', 'hidden');
 					sortTable();
 					abortSave = true;
 					} else {
 						showTable.removeChild(warning);
 						originalOrder = true;
-						abortSave = false;
+						if(!makeContactsTable){
+						abortSave = false;}//end if !makeContactsTable
 						//carryOnSave();
 				}//end if else confirm alert
 				
@@ -8153,17 +9967,21 @@ STrows.appendChild(STtableHeader);
 			if (!abortSave) {carryOnSave();}
 			
 		function carryOnSave ()	{
-			saveTableBtn.setAttribute('class', 'normalBtn');
+		//alert("In carryOnSave.. tableListExists = " + tableListExists);
+	
+		saveTableBtn.setAttribute('class', 'normalBtn');
 			saveTableBtn.textContent = 'SAVED';
 				saveTableBtn2.setAttribute('class', 'normalBtn');
 				saveTableBtn2.textContent = 'SAVED';
 			//should copyOfTableArray be set here???Mar16
 		//reset copyOfTableArray fixes reset!Mar15 alpha sort might not change tableArray, only HTML so alpha sort won't lose the original order but reverse sort does so this will protect against losing original order if reverse sort and save is pressed
+		//tableArray at this point should be original database because resetFromContacts.. (restoreOriginal) was called by saveNewTable in prep for saveVariables..so now copyOfTableArray will also be original db so restoreSort will be using the wrong copyOfTableArray..i.e. originalDb instead of contacts.. so make copyOfTableArray = tableArray(contacts) in Sort itself! ?won't tableArray also be originaldb now instead of contacts because of saveVariables after contacts table is constructed…because saveNew calls restoreFromContacts to equate tableArray to original db prior to saveVariables!!! At this point after save makeContactsTable should still be true!
 copyOfTableArray = tableArray.slice(0,tableTitle.length);
 copyOfTableTitle = tableTitle.slice();
 console.log('copyOfTableArray = ' + copyOfTableArray);
-console.log('copyOfTableTitle = ' + copyOfTableTitle);
 
+console.log('copyOfTableTitle = ' + copyOfTableTitle);
+//copyOfTableTitle = 2> TSX500,3> Standard and Poors,4> Additional Note
 // update copy to reflect new originalMar 15 not tested!			
 			//save all necessary arrays to notes_os
 	for(let i = 0;i<tableTitle.length;i++) {
@@ -8174,28 +9992,186 @@ console.log('copyOfTableTitle = ' + copyOfTableTitle);
 			
 			
 		}//end for i =
+		//reset datav.object to save potential edits
+		
+newTableVariablesArray[0] = tableIndex;
+newTableVariablesArray[1] = newTableNames;
+newTableVariablesArray[2] = tableListExists;
+
+//should loadTablIndex be tableID because you can come here from either makeContactsTable or loadTableIndex at any time? Mar2 
+
+newTableSpecificVariables[tableID][0] = newTableEdit;
+newTableSpecificVariables[tableID][1] = newTableFieldsArray.slice();
+
+//newTableFieldsArray is wrong at this point..after a tdEdit it = the [0][1] instead of the tableID[1]
+newTableSpecificVariables[tableID][2] = numberOfNewTableAddedFields;
+
+//alertx("About to save! newTableFieldsArray = " + newTableFieldsArray + ". tableID = " + tableID + "tableIndex = " + tableIndex + ". newTableSpecificVariables[tableID][1] = " + newTableSpecificVariables[tableID][1]);
+
+console.log("About to save! newTableFieldsArray = " + newTableFieldsArray + ". tableID = " + tableID + "tableIndex = " + tableIndex + ". newTableSpecificVariables[tableID][1] = " + newTableSpecificVariables[tableID][1]);
+
+// newTableSpecificVariables[loadTableIndex][0] = newTableEdit;
+// newTableSpecificVariables[loadTableIndex][1] = newTableFieldsArray;
+// newTableSpecificVariables[loadTableIndex][2] = numberOfNewTableAddedFields;
+
+
 		dataVobj.tableArray = tableArray;
-		console.log('At saving current table values! and going to saveVariables. dataVobj.tableArray = ' + dataVobj.tableArray);
+		dataVobj.newTableVariables = newTableVariablesArray;
+		dataVobj.tableSpecific = newTableSpecificVariables;
+		
+		console.log('At saving current table values! and going to saveVariables. dataVobj.tableArray = ' + dataVobj.tableArray + "  \n dataVobj.savedTables = " + dataVobj.savedTables + "dataVobj.newTableVariables = " + newTableVariablesArray + "newTableSpecificVariables[tableIndex] = " + newTableSpecificVariables[tableIndex]);
+//	If loadFromTableOptions tableArray will be contacts so SAVE WILL DESTROY DB	
+		//At saving current table values! and going to saveVariables. dataVobj.tableArray = 2> CN3205, Dec 21 2021 01:38,Yard3 Track 2,Tsunami2 TSU-1100 ,4,128 dataVobj.savedTables = name,DATE,tel,email,name2,DATE,tel2,email2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+//alert("going to saveVariables");
+
+		//return false;
 		saveVariables();
-		//so that data appears after returning to Home Screen followiNg a displayTable function after having deleted a table record!!! Otherwise you have to reset tData in preferences.Date:Dec19g OR MAYBE IF DELETEDrecord Don't erase table rowas back in displayTable
+		//so that data appears after returning to Home Screen followiNg a displayTable function after having deleted a table record!!! Otherwise you have to 'reset tData in preferences.Date:Dec19g OR MAYBE IF DELETEDrecord Don't erase table rowas back in displayTable
 		//prefWindow.setAttribute('class','showing');//instead of displayData whiCh repeats record list twice!
+		
+		//HAVE TO MAKE SURE SORT AND SEARCH ARE DISABLES IF THERE IS ASAVE IN LOADFROMTABLEOPTIONS
 		options();//this seems to do the job!!
 		//displayData();//might have to REMOVE if still repeating record list after a delete table record???THERE IS SOME ISSUE WITH CONCURRENT RUNNING OF TWO ITERATIONS OF DISPLAY DATA!!!!
 	//the if else for save warning were added here Mar13..remove if messes up!!
 		}//end function carryOnSave
 		
-	}//end saveTableBtn.onclick
+}//end saveTableBtn.onclick
 	//saveTableBtn2.onclick = clickedSaveTable();
 	
 	//for saveTableBtn2
 	
 	saveTableBtn2.onclick = function () { 
-		
+homeScreenBtn.disabled = false;//to help force Save..now reset after flashing SAVE
+			 homeScreenBtn2.disabled = false;
+newTableFieldsBtn.disabled = false;//to prevent an inadvertant tap of Field Labels btn at this stage creating crashing..reset
+	
+	 if(renameNewTableFlag) {
+displayTableBtn.setAttribute('class','tdEdit');
+saveTableBtn.setAttribute('class','tdEdit');
+saveTableBtn2.setAttribute('class','tdEdit');
+
+renameNewTableFlag = false;
+
+}//end if(renameNewTableFlag)
+
+			if(makeContactsTable || loadFromTableOptions) {
+		flipMenu.textContent = " ✅ New Table Name: " + newTableNames[tableIndex] + ". " + newTableName;
+	}//end if makeContactsTable
+	//flipMenu.textContent = " ✅ New Table Name: " + newTableName;//have to repeat this for second run to get it to work.not sure why?????Date: Jan2
+		let abortSave = false;
 		//return menu bar in table back to original if post search
+		//flipMenu.textContent = "Click - Tap to show / hide TABLE MENU";
+		
+		if(!makeContactsTable && !loadFromTableOptions) {
 		flipMenu.textContent = "Click - Tap to show / hide TABLE MENU";
+	}//end if !makeContactsTable
 		
 		//function clickedSaveTableBtns
-			let abortSave = false;
+		
+		
+		//NCJan10..If messed up go back to fallBackJan10
+	// prompt to give choice for saving a contacts table or return to table
+ //confirm choice window
+ if(makeContactsTable || loadFromTableOptions) {
+	 //NCJan10..If messed up go back to fallBackJan10
+		 if (window.confirm("SAVE Contacts Table ? : \n" + "  CANCEL will Return to Table")) {
+		 if(!makeHitsTable && loadFromTableOptions) {
+				 makeContactsTable = false;
+//return homeBtn to normal
+//homeScreenBtn was disabled in eMailBtn.onclick in choice prompt after getNewTableName	
+homeScreenBtn.disabled = false;
+homeScreenBtn2.disabled = false;
+homeScreenBtn.textContent = "RETURN to Home Screen";
+homeScreenBtn2.textContent = "RETURN to Home Screen";
+
+			resetFromContacts;}//end if loadFromTableOptions
+			 if(makeContactsTable) {loadFromTableOptions = false;saveNewTable();}//end if makeContactsTable
+			
+			
+			homeScreenBtn.textContent = "Clear CONTACTS Table";
+			 homeScreenBtn2.textContent = "Clear CONTACTS Table";
+		
+	toSortScrBtn.style.backgroundColor = "lightgrey";
+	toSortScrBtn.disabled = true;
+	toEditTableScrBtn.style.backgroundColor = "lightgrey";
+	toEditTableScrBtn.disabled = true;
+	toSearchScreenBtn.style.backgroundColor = "lightgrey";
+	toSearchScreenBtn.disabled = true;
+	
+//homeScreenBtn was disabled in eMailBtn.onclick in choice prompt after getNewTableName	
+homeScreenBtn.disabled = false;
+homeScreenBtn2.disabled = false;	homeScreenBtn.setAttribute('class','borderBlink');
+	homeScreenBtn2.setAttribute('class','borderBlink');
+	
+	blockEdit = true;//flag to prevent savedTablesArray getting messed up prevent dblClick edit of td cell if just finished editing layout of table via editBtn.onclick..because otherwise tableArray will no longer be in newTable mode and savedTablesArray will get messed up
+	
+/*	} else {
+	toSortScrBtn.style.backgroundColor = "rgb(240, 248, 255)";
+	toSortScrBtn.disabled = false;
+	toEditTableScrBtn.style.backgroundColor = "rgb(240, 248, 255)";;
+	toEditTableScrBtn.disabled = false;
+	toSearchScreenBtn.style.backgroundColor = "rgb(240, 248, 255)";
+	toSearchScreenBtn.disabled = false;
+	*/	
+
+			// return//.?temporary to prevent saving variables until code written for it Jan12022
+			} else {
+				saveTableBtn.setAttribute('class', 'normalBtn');
+				saveTableBtn.textContent = "SAVE";
+			// saveTableBtn2.disabled = true;
+			saveTableBtn2.textContent = "SAVE";
+			saveTableBtn2.setAttribute('class', 'normalBtn');
+//homeScreenBtn was disabled in eMailBtn.onclick in choice prompt after getNewTableName	
+homeScreenBtn.disabled = false;
+homeScreenBtn2.disabled = false;
+homeScreenBtn.setAttribute('class','borderBlink');
+homeScreenBtn2.setAttribute('class','borderBlink');
+
+			
+if(loadFromTableOptions || makeContactsTable) {
+	emailBtn.style.display = "none";
+	newTableFieldsBtn.style.display = "none";
+}//end if loadFromTableOptions || makeContactsTable
+
+//saveNewTable takes you to resetFromContacts it also creates savedTablesArray[tableIndex]? If abort save should tableIndex be brought back to tableIndex-1 ? Date:April13 2022..not tested and what about newTableSpecificVariables?
+if(makeContactsTable) {
+tableIndex = tableIndex-1;
+//code from CANCEL getnew TableName to reset savedTablesArray and newTableVariables array after not saving and cancelling it out
+
+let cancelledSavedTablesArray = savedTablesArray.pop();
+	newTableNames.pop();
+let cancelledNewTableSpecificVariables = newTableSpecificVariables.pop();
+//now have to restore savedTablesArray.length as in a delete
+//now restore array length
+//[-1,[],0]
+cancelledNewTableSpecificVariables.length = 0;
+newTableSpecificVariables.push(cancelledNewTableSpecificVariables);
+cancelledSavedTablesArray.length = 0;
+savedTablesArray.push(cancelledSavedTablesArray);
+
+alert("savedTablesArray.length = " + savedTablesArray.length);
+
+	}//end if makeContactsTable
+
+
+			//resetFromContacts();
+				//makeContactsTable=false;
+				selectedContact.length = 0;//this statement IS necessary to clear as the API must clear it on rerun? 
+				abortSave = true;
+				
+	resetFromContacts();//will this fix CANCEL SAVE errors and issues..not tested as of April25 2022
+				
+//if makeContactsTable AND new table not saved we need to delete this new table from the listing	
+				
+				
+				//displayTable();
+				//return//.?temporary to prevent saving variables until code written for it Jan12022
+		}//end if window.confirm else
+		//end prompt
+	}//end if makeContactsTable to ask to save contactsTable. ?should this go in saveVariables function?
+	console.log("Back from saveNewTable, or just continuing in saveTableBtn.onclick");
+	
+			//let abortSave = false;
 			if(!originalOrder) {
 				
 			let warning = document.createElement('p');
@@ -8208,7 +10184,7 @@ console.log('copyOfTableTitle = ' + copyOfTableTitle);
 					} else {
 						showTable.removeChild(warning);
 						originalOrder = true;
-						abortSave = false;
+		if(!makeContactsTable) {abortSave = false;}//end if !makeContactsTable
 						//carryOnSave();
 				}//end if else confirm alert
 				
@@ -8220,6 +10196,7 @@ console.log('copyOfTableTitle = ' + copyOfTableTitle);
 			saveTableBtn.textContent = 'SAVED';
 				saveTableBtn2.setAttribute('class', 'normalBtn');
 				saveTableBtn2.textContent = 'SAVED';
+//NCJan10..If messed up go back to fallBackJan10 above
 			//should copyOfTableArray be set here???Mar16
 		//reset copyOfTableArray fixes reset!Mar15 alpha sort might not change tableArray, only HTML so alpha sort won't lose the original order but reverse sort does so this will protect against losing original order if reverse sort and save is pressed
 copyOfTableArray = tableArray.slice(0,tableTitle.length);
@@ -8237,7 +10214,20 @@ console.log('copyOfTableTitle = ' + copyOfTableTitle);
 			
 			
 		}//end for i =
+		
+newTableVariablesArray[0] = tableIndex;
+newTableVariablesArray[1] = newTableNames;
+newTableVariablesArray[2] = tableListExists;
+
+newTableSpecificVariables[loadTableIndex][0] = newTableEdit;
+newTableSpecificVariables[loadTableIndex][1] = newTableFieldsArray.slice();
+newTableSpecificVariables[loadTableIndex][2] = numberOfNewTableAddedFields;
+
+
 		dataVobj.tableArray = tableArray;
+		dataVobj.newTableVariables = newTableVariablesArray;
+		dataVobj.tableSpecific = newTableSpecificVariables;
+		
 		console.log('At saving current table values! and going to saveVariables. dataVobj.tableArray = ' + dataVobj.tableArray);
 		saveVariables();
 		//so that data appears after returning to Home Screen followiNg a displayTable function after having deleted a table record!!! Otherwise you have to reset tData in preferences.Date:Dec19g OR MAYBE IF DELETEDrecord Don't erase table rowas back in displayTable
@@ -8250,7 +10240,7 @@ console.log('copyOfTableTitle = ' + copyOfTableTitle);
 	}//end saveTableBtn(2).onclick
 		
 		
-	console.log('At END displayTable(). This means a table now exists..rerun or not.: displayedTable = ' + displayedTable + '. tableConstructed = ' + tableConstructed + '. renewed (added record) = ' + renewed + '. refreshed (data cell edit) = ' + refreshed + '. edit = ' + edit + '. DTBtnTappedOnce = ' + DTBtnTappedOnce + '. editCurrentTable = ' + editCurrentTable + '. editCurrentTable variable is set 0 every time tableScreenOptions is run.The refreshed variable is controlled by the REFRESH Btn in the edit phase of the showTable data cell, and is also set to 1 in refreshTable function. refreshed is set to 0 in showBtn.onclick (DISPLAY TABLE) Btn, and also from a rerun..initialized to 0. The renewed variable is controlled by the refreshTable function.' + '. originalNumberOfFields = ' + originalNumberOfFields + '. numberOfFields = ' + numberOfFields + '. numberOfAdditionalFields = ' + numberOfAdditionalFields + '. originalNumberRecords = ' + originalNumberRecords + '. addedNumberOfRecords = ' + addedNumberOfRecords + '. See refreshTable and editBtn.onclick');
+	console.log('At END displayTable(). This means a table now exists..rerun or not.: displayedTable = ' + displayedTable + '. tableConstructed = ' + tableConstructed + '. renewed (added record) = ' + renewed + '. refreshed (data cell edit) = ' + refreshed + '. edit = ' + edit + '. DTBtnTappedOnce = ' + DTBtnTappedOnce + '. editCurrentTable = ' + editCurrentTable + '. editCurrentTable variable is set 0 every time tableScreenOptions is run.The refreshed variable is controlled by the REFRESH Btn in the edit phase of the showTable data cell, and is also set to 1 in refreshTable function. refreshed is set to 0 in showBtn.onclick (DISPLAY TABLE) Btn, and also from a rerun..initialized to 0. The renewed variable is controlled by the refreshTable function.' + '. originalNumberOfFields = ' + originalNumberOfFields + '. numberOfFields = ' + numberOfFields + '. numberOfDynamicFields = ' + numberOfDynamicFields + '. originalNumberRecords = ' + originalNumberRecords + '. addedNumberOfRecords = ' + addedNumberOfRecords + '. See refreshTable and editBtn.onclick');
 	//moved goToSearchBtn.onclick here to see if this fixes program in limbo issue after first table appearance and then tapping goToSearchBtn???FIXED BY ADDING CALL TO SEARCH FUNCTION,!!
 	//return to search table window
 			const toSearchScreenBtn = document.querySelector('#toSearchScr');
@@ -8264,12 +10254,27 @@ console.log('copyOfTableTitle = ' + copyOfTableTitle);
 			//searchWindow.setAttribute('class','showing');
 		}//end toSearchScreenBtn.onclick
 	//to edit table from table screen
+	//MAKE GLOBAL BECAUSE USED IN TABLESCREENOPTIONS! Date: Feb9 2022
 	
-	const toEditTableScrBtn = document.querySelector('#toEditTableScr');
+	//const toEditTableScrBtn = document.querySelector('#toEditTableScr');
 		toEditTableScrBtn.onclick = function () {
-			
+		if (loadFromTableOptions & DTBtnTappedOnce === 0) {
+		alert('Before editing this table you need to initialize the main database table first by tapping DISPLAY TABLE at least once!');	//tableScreen.setAttribute('class','hidden');
+			//createTableWindow.setAttribute('class', 'hidden');	
+			showTable.setAttribute('class', 'hidden');
+			displayTableBtn.setAttribute('class','borderBlinkGrn');
+			displayTableBtn.textContent = "INITIALIZE TABLE";
+			tableScreenOptions();
+			return;
+			}//end if (loadFromTableOptions & DTBtnTappedOnce === 0)
+				
 		//return menu bar in table back to original if post search
+		if(!makeContactsTable) {
 		flipMenu.textContent = "Click - Tap to show / hide TABLE MENU";
+	}//end if !makeContactsTable
+	//clearTableWindow is the infoP bar across top of Create A Table or Display Current Table screen. clearTableWindowEditBtn is the word EDIT in this bar
+clearTableWindow.setAttribute('class','borderBlinkGrn');	
+	clearTableWindowEditBtn.setAttribute('class','borderBlink');
 			
 			fromViewSort = false;//turn off sort flag
 			console.log('toEditTableScrBtn clicked');
@@ -8283,6 +10288,27 @@ console.log('copyOfTableTitle = ' + copyOfTableTitle);
 	//to SORT TABLE CODE	
 	const toSortScrBtn = document.querySelector('#toSortScr');
 	
+//DISABLE SORT SEARCH AND EDIT IF CREATING A CONTACTS TABLE SO RESTORE SORT ETC IS NOT MESSED UP. SORT AND SEARCH WILL ONLY BE ALLOWED IN A NEW TABLE IF IT IS LOADED FROM THE NEW TABLE LIST! But no SAVE can be allowed if either makeContactsTable OR loadFromTableOptions is true because that would corrupt the db tableArray!
+if(makeContactsTable) {
+	toSortScrBtn.style.backgroundColor = "lightgrey";
+	toSortScrBtn.disabled = true;
+	toEditTableScrBtn.style.backgroundColor = "lightgrey";
+	toEditTableScrBtn.disabled = true;
+	toSearchScreenBtn.style.backgroundColor = "lightgrey";
+	toSearchScreenBtn.disabled = true;
+	
+} else {
+	toSortScrBtn.style.backgroundColor = "rgb(240, 248, 255)";
+	toSortScrBtn.disabled = false;
+	toEditTableScrBtn.style.backgroundColor = "rgb(240, 248, 255)";;
+	toEditTableScrBtn.disabled = false;
+	toSearchScreenBtn.style.backgroundColor = "rgb(240, 248, 255)";
+	toSearchScreenBtn.disabled = false;
+	
+}//end if makeContactsTable
+
+//-xxxx-xxx
+	
 		toSortScrBtn.onclick = function () {
 			
 			//return menu bar in table back to original if post search
@@ -8294,28 +10320,554 @@ console.log('copyOfTableTitle = ' + copyOfTableTitle);
 			sortTable();
 		}//end toSortScrBtn.onclick
 		
-		//to SORT TABLE CODE	
-	const emailBtn = document.querySelector('#email');
+		//get contacts	
+	// const emailBtn = document.querySelector('#email');//made global
+	const contactTableDiv = document.querySelector('#contactTableDiv');
+	const contactTableP = document.createElement('p');
 	
-		emailBtn.onclick = async function () {
+	//relabel newTableFields..Field Labels btn
+	newTableFieldsBtn.onclick = async function () {
+fromEditFieldLabels = true;	newTableFieldsBtn.setAttribute('class','tdEdit');
+	checkTableLimit();
+if (tableLimit) {
+tableLimit = false;
+showTable.setAttribute('class','hidden');
+fromAddContacts = false;//flag to tell editNewTableFieldNames to flash and return to ADD CONTACTS added here May7
+return;	
+}
+	
+	//alertx("Field Labels btn just clicked! contactsFieldNames = " +contactsFieldNames);
+	console.log("Field Labels btn just clicked! contactsFieldNames = " +contactsFieldNames);
+	
+	
+	//let defaultFieldNames = [];
+	defaultFieldNames = "CONTACT NAME,DATE,TELEPHONE,EMAIL,ADDRESS";
+if(contactsFieldNames.length !== 0) {
+	defaultFieldNames = "";
+	//defaultFieldNames.length = 0;
+}
+
+//code for promptBox 3 btns .. EDIT FIELD NAMES, USE CURRENT FIELD NAMES, CANCEL
+promptBox.setAttribute('class','showing');
+//	tableScreen.setAttribute('class','hidden');
+// tableNameTxt.setAttribute('style', 'white-space: pre;');//enable line breaks add \r\n in text everywhere You want for line-break (new line)
+//tableNameTxt.setAttribute('class','ppref');
+tableNameTxt.setAttribute('style', 'white-space: pre-wrap; background-color: black; color: white; border: 2px solid red; padding:5px');//enable line breaks add \r\n in text everywhere You want for line-break (new line)
+if(fromAddContacts) {
+tableNameTxt.textContent = `ADD CONTACTS/RECORDS allows manual entry of records. The ContactPicker API is not available here.`+`\r\n`+` The current field headings are: ` +`\r\n` +defaultFieldNames + contactsFieldNames +` \r\n ` + `
+    EDIT FIELD NAMES will allow re-naming field labels \r\n
+     \r\n
+      CANCEL returns to main table.`;
+  } else {  
+   tableNameTxt.textContent = `Edit Field Labels allows changing the titles of current field headings. CONTACTS will then create a table with these field headings using the device's ContactPickerAPI. The current field headings are: ` +`\r\n` +defaultFieldNames + contactsFieldNames +` \r\n ` + `
+    EDIT FIELD NAMES will allow re-naming field headings \r\n USE CURRENT FIELD NAMES creates the table using field headings above.
+     \n
+      CANCEL returns to table - alternate 4/5 fields.`;  
+  }//end if else (fromAddContacts)
+      
+actionLoadBtn.textContent = "EDIT FIELD NAMES";
+actionRenameBtn.textContent = "USE CURRENT FIELD NAMES";
+actionCancelBtn.textContent = "CANCEL";
+actionDeleteBtn.style.display = "none";
+
+if(fromAddContacts) {
+	actionRenameBtn.style.display = "none";
+} else {	
+actionRenameBtn.style.display = "unset";
+}//end if(fromAddContacts)
+
+actionLoadBtn.onclick = async function () {
+await editNewTableFieldNames();
+if(fromAddContacts) {
+	actionLoadBtn.style.display = "none";//so only use current appears when returning to this screen via ADD CONTACTS/RECORDS during the EDIT FIELD NAMES process of ADD CONTACTS Date:May1..doesn't work because this screen revisited before final ADD CONTACTS!
+	actionLoadBtn.setAttribute('class','tdEdit');//normalize this btn to ready for its next appeance
+}//end if fromAddContacts
+promptBox.setAttribute('class','hidden');
+}//end actionLoadBtn.onclick
+
+actionRenameBtn.onclick = function() {
+//KEEP THIS ALERT!
+alert("The new table Field Names are set to: " + defaultFieldNames + contactsFieldNames);
+	emailBtn.setAttribute('class','borderBlink');
+	promptBox.setAttribute('class','hidden');
+	}//end function actionRenameBtn.onclick
+	
+actionCancelBtn.onclick = function() {
+promptBox.setAttribute('class','hidden');
+fromAddContacts = false;//in case we CANCEL here during an addContacts/Records process	
+fromEditFieldLabels = false;
+
+actionRenameBtn.setAttribute('class','tdEdit');//in case flashing from a cancelled edit field names
+actionLoadBtn.setAttribute('class','tdEdit');//so EDIT FIELD NAMES btn is not flashing when you go back to the Action Prompt screen	
+contactsFieldNames.length = 0;//May14 .This will reset contactsFields which will allow switching back and forth between 4 fields ending in email OR 5 fields ending in ADDRESS. Depending on whether CONTACTS or FIELD LABELS is tapped first you get 4 or 5 fields. If you get 4 but you want 5 with ADDRESS just tap CANCEL in the ENTER NEW TABLE NAME window, and do again
+}//end function actionCancelBtn.onclick
+
+
+//prompt to give choice to edit field names
+//confirm choice window
+//if(fromAddContacts) don't allow CANCEL choice ..this will mess up!
+	// 	 if (window.confirm("The current field headings are: " + defaultFieldNames + contactsFieldNames +" \n" + "  OK will allow EDITing of field labels \n CANCEL will create a new Table with the current headings above.")) {
+	// 	 //showTable.setAttribute('class', 'showing');
+	// 	 await editNewTableFieldNames();
+	// 	 } else {
+	
+	
+	// alert("The new table Field Names are set to: " + defaultFieldNames + contactsFieldNames);
+	// emailBtn.setAttribute('class','borderBlink');
+	
+	// 	}//end choice prompt
+//After pre-set field names, field labels >CANCEL does not work		
+//go direct to creating table
+/*homeScreenBtn.textContent = "Clear CONTACTS Table";
+			homeScreenBtn2.textContent = "Clear CONTACTS Table";
+			clearFoundRecordListFunc();
+			test = true;
+await	
+	 allContactInfo(selectedContact);
+*/		
+	}//end newTableFieldsBtn.onclick
+	
+	//CONTACTS BTn
+	if(hitsTable) {emailBtn.textContent = "HITS>TABLE";}
+	
+emailBtn.onclick = async function () {
+if(!fromEditFieldLabels) {contactsFieldNames.length = 0; fromEditFieldLabels=false}//to force a simple contacts list
+//fromEditFieldLabels = false;
+console.log("CONTACTS BTN CLICKED");	
+
+//alertx("tableIndex = " + tableIndex);
+console.log("tableIndex = " + tableIndex);
+
+checkTableLimit();
+if (tableLimit) {
+tableLimit = false;
+loadFromTableOptions = false;//added May3 because this messes up screen display later?
+showTable.setAttribute('class','hidden');
+return;	
+}
+
+emailBtn.setAttribute('class','tdEdit');
+//CODE TO CREATE A NEW TABLE USING SEARCHED HITS vv
+if(hitsTable) {
+
+//alertx("Hits>Table just tapped: makeHitsTable is true..searchedHitsTableArray = " + searchedHitsTableArray);
+console.log("Hits>Table just tapped: makeHitsTable is true..searchedHitsTableArray = " + searchedHitsTableArray);
+
+//code to CANCEL new table creation v
+ //confirm choice window
+		 if (window.confirm("Create New Table ? : \n" + query + " \n CANCEL will Return to Table")) {
+
+	makeContactsTable= true;
+	makeHitsTable = true;
+checkScreenMode();
+if(screenDark) {
+	newTableNameWin.style.backgroundColor = "black";
+	newTableNameWin.style.color = "white";
+	showNewTableNameP.style.color = "white";
+} else {
+	newTableNameWin.style.backgroundColor = "#eee";
+	newTableNameWin.style.color = "black";
+	showNewTableNameP.style.color = "black";
+}//end if else screenDark
+
+newTableNameWin.setAttribute('class', 'showing');
+newTableTitle.textContent = dbName;
+
+//code to CANCEL new table creation v
+
+//code to CANCEL new table creation ^
+
+			getNewTableName();
+		
+	//-xxxxxxxxxxx	
+			saveTableBtn.setAttribute('class','borderBlink');
+			 saveTableBtn2.setAttribute('class','borderBlink');
+homeScreenBtn.disabled = true;
+homeScreenBtn2.disabled = true;
+			// saveTableBtn.disabled = true;
+setupNewTable();
+//SHOULD IT BE MANDATORY TO SAVE HERE TO AVOID ERROR IN FUTURE RE NEWTABLESPECIFICVARIABLES FIELDS NOT BEING SAVED ????
+return;
+
+		} else {
+
+makeContactsTable=false;
+makeHitsTable = false;
+emailBtn.textContent = "CONTACTS";
+emailBtn.style.display = "none";
+newTableFieldsBtn.style.display = "none";
+hitsTable = false;
+makeHitsTable = false;
+
+				contactsArray.length = 0;
+				selectedContact.length = 0;//this statement IS necessary to clear as the API must clear it on rerun? 
+	searchedHitsTableArray.length = 0;
+		
+	homeScreenBtn.textContent = "RETURN to Home Screen";
+			homeScreenBtn2.textContent = "RETURN to Home Screen";	
+			return;		
+		}//end if window.confirm else
+//end prompt	 
+
+}//end if(makeHitsTable)	
+		
+//CODE TO CREATE A NEW TABLE USING SEARCHED HITS ^^
+
+		
+//choice option for crreating contacts
+// var selected = 0;
+// $("#dialog").dialog({
+//   title: "Prompt",
+//   buttons: {
+//     "First": function() {
+//       selected = 1;
+//     },
+//     "Second": function() {
+//       selected = 2;
+//     },
+//     "Third": function() {
+//       selected = 3;
+//     },
+//     "Fourth": function() {
+//       selected = 4;
+//     }
+//     // ..............
+//   }
+// });
+//choice option for crreating contacts
+			//newTableNameWin.setAttribute('class','showing');
 			
+		//await getNewTableName(newTableName);
+			
+			homeScreenBtn.textContent = "Clear CONTACTS Table";
+			homeScreenBtn2.textContent = "Clear CONTACTS Table";
+			clearFoundRecordListFunc(); //use line below instead?
+			//if(contactsTable) {contactsTable.length = 0;
+			//}//end if contactsTable
+			//savedOriginal = false;//flag that prevents repeatedContactsTables from overwriting original. Set back to false here (to allow for changing databases, but not returned to false in CONTACTSbtn in display table which allows for repeated contacts tables but not overwriting original table)
+
+		
+			test = true;
 			//return menu bar in table back to original if post search
 			//flipMenu.textContent = "Click - Tap to show / hide TABLE MENU";
 			
 			console.log('emailBtn clicked');
+			
+//for a contacts table using contactPickerAPI  we want only the 4 fields vv
+//manualContactsEntered = false;
+//contactsFieldNames.length = 4;	
+//for a contacts table using contactPickerAPI  we want only the 4 fields ^^
+
 		//fromViewSort = false;//turn off sort flag
 			//showTable.setAttribute('class', 'hidden');
 			//getEmail(selectedContact);
-		await allContactInfo(selectedContact);
-			alert("Use COPY/PASTE to insert desired information into record or table data cell: \n selected Contacts = " + selectedContact);
-			selectedContact.length = 0;//this statement IS necessary to clear as the API must clear it on rerun? Will start here to put contacy choices into a DougieBase table
-		}//end emailBtn.onclick
-		
-		
-
+			//alert("about to go to allContactInfo function: test = " + test);
+//	if(test){
+await	
+	 allContactInfo(selectedContact);//contactsTable
+		//allContactInfo(contactsTable);//contactsTable
 	
-}//end function displayTable .. showTable
+	//alert("back from allContactInfo . test should be true.. =  " + test + " contacts: (selectedContact) = " + selectedContact);
+		//selectedContact = ["Steve Ansell", "ansell.s@gmail.com"],["
+//Gordon Armstrong","gtarmstrong@shaw.ca"],[
+//"Andrea", "ajull@telus.net"];
+ if(!test) {
+	alert("Creating Contacts manually. ContactPickerAPI is not available test =  " + test);
+	 manuallyCreateContacts(selectedContact);
+	//create a selectedContact array
+	
+/*	
+//REMOVE REFERENCES BELOW..after finished coding THEY ARE ALL GLOBAL	
+//references for manualContacts entry code
+const manualContactsWindow = document.querySelector('#manualContactsWin');
+const contactsNameInput = document.querySelector('#contactsName');
+const telephoneInput = document.querySelector('#telephone');
+const contactsEmailInput = document.querySelector('#contactsEmail');
+const contactsAddressInput = document.querySelector('#contactsAddress');
+const manualContactsInstructionP = document.querySelector('#manualContactsInstruction');
+const enterContactBtn = document.querySelector('#enterContactBtn');
+const cancelContactEntryBtn = document.querySelector('#cancelContactEntry');
+const cancelAllBtn = document.querySelector('#cancelAll');
+const statusContactEntryP = document.querySelector('#statusContactEntry');
+const finishedContactsEntryBtn = document.querySelector('#finishedContactsEntry');
+
+//references above for manualContacts entry code
+//REMOVE REFERENCES ABOVE..THEY ARE ALL GLOBAL
+*/
+
+
+}//end if !test
+
+if(test) {
+//RETURNING FROM allContactInfo()
+			//alert("Use COPY/PASTE to insert desired information into record or table data cell: \n selected Contacts: " + selectedContact);
+//CREATING contactsArray from selectedContact
+	
+
+	//var contactsArray = [];//declared global		
+for(i=0;i<selectedContact.length;i++) {
+contactsArray[i] = cutName(selectedContact[i]);
+console.log(Array.isArray(contactsArray[i]));
+//alert(arr);
+}//end for i
+
+
+//use this for the copy paste notice
+alert("Use COPY/PASTE to insert desired information into record or table data cell: \n selected Contacts: \n" + contactsArray);
+//need to update todayString!!
+ today = new Date();
+ todayS = today.toString();
+ todayString = todayS.slice(3, 21);
+ //alert('todayString = ' + todayString);
+
+for(i=0;i<selectedContact.length;i++) {
+contactsArray[i].splice(1, 0,todayString);
+}//end for i
+
+
+}//end if test
+
+// prompt to give choice for making a contacts table
+ //confirm choice window
+		 if (window.confirm("Create Contacts Table ? : \n" + "  CANCEL will Return to Table")) {
+			 makeContactsTable= true;
+//await editNewTableFieldNames();
+	//-xxxxxxxxxxx	
+	
+//resetting newTableSpecificVariables to correct undefined error April12
+
+//redefinenewTableSpecificVariables ();	
+//alert("Back from redefine tableSpecificVariables") ;
+			//Check if screenDark mode
+checkScreenMode();
+if(screenDark) {
+	newTableNameWin.style.backgroundColor = "black";
+	newTableNameWin.style.color = "white";
+	showNewTableNameP.style.color = "white";
+} else {
+	newTableNameWin.style.backgroundColor = "#eee";
+	newTableNameWin.style.color = "black";
+	showNewTableNameP.style.color = "black";
+}//end if else screenDark
+
+newTableNameWin.setAttribute('class', 'showing');
+newTableTitle.textContent = dbName;
+
+			getNewTableName();
+		
+	//-xxxxxxxxxxx	
+			saveTableBtn.setAttribute('class','borderBlink');
+			 saveTableBtn2.setAttribute('class','borderBlink');
+//to help force a SAVE of newly created table. If not saved there might be a mess? Date: April28
+	homeScreenBtn.disabled = true;
+	homeScreenBtn2.disabled = true;		 
+
+
+			// saveTableBtn.disabled = true;
+			//  saveTableBtn.textContent = "Save CONTACTS";
+			// // saveTableBtn2.disabled = true;
+			//  saveTableBtn2.textContent = "Save CONTACTS";
+			//getNewTableName();
+			
+//code moved from below
+//alertx("contactsFieldNames = " + contactsFieldNames);
+console.log("contactsFieldNames = " + contactsFieldNames);
+
+setupNewTable();
+alert("tableIndex = " + tableIndex);
+//works to here
+//NOTE savedTableArray NOT created until saveBtn.onclick if makeContactsTable = true! So at point of saveBtn.onclick prior to first save savedTablesArray is empty!
+
+return false;//to stop run away? Reloading of DougieBase after making new table?or is the error causing this ? Feb24
+			} else {
+				makeContactsTable=false;
+				contactsArray.length = 0;
+				selectedContact.length = 0;//this statement IS necessary to clear as the API must clear it on rerun? 
+	homeScreenBtn.textContent = "RETURN to Home Screen";
+			homeScreenBtn2.textContent = "RETURN to Home Screen";			
+		}//end if window.confirm else
+//end prompt
+
+//if(!test) 
+
+
+/*	
+ //THIS CODE BELOW CREATES contactsTable array
+contactsTable = new Array(seletedContact.length);
+
+
+//for (var i = 0; i < recordCounter; i++) {
+	
+for (var i = 0; i < selectedContact.length; i++) {
+
+contactsTable[i] = new Array(4);
+
+}//number of fields means all fields
+
+//if(makeContactsTable) {
+	alert("in makeContacts table. selectedContact.length = " + selectedContact.length);
+
+for(i=0;i<selectedContact.length;i++) {
+  for (c=0;c<4;c++) {
+     if (c==0) {
+	
+		 console.log("contactsTable[i][0] = " + contactsTable[i][0]);
+      contactsTable[i][0] = arr[i][0];
+	  
+	  alert("contactsTable["+i+"][0] = " + contactsTable[i][0]);
+	  //contactsTable[i][0] = Steve Ansell
+           }//end if c=0
+      if(c==1) {
+         contactsTable[i][1] = todayString;//date funtion wrong!
+		console.log("contactsTable[i][1] = " + contactsTable[i][1]); 
+          }//end if c=1
+       if (c==2) {
+           contactsTable[i][2] = arr[i][2];
+          }//end c=2
+        if (c==3) {
+           contactsTable[i][3] = arr[i][1];
+          }//end c=3
+    }//end for c=0 loop   
+  }//end for i =0 loop
+//}//end if makeContactsTable
+//}//END if (!test)
+//CODE ABOVE CREATES contactsTable array
+ alert("contactsTable[1][3] email = " + contactsTable[1][3]);
+ 
+//arr[i][0]=name arr[i][1]=email arr[i][2]=tel
+	
+// //THIS CODE BELOW CREATES contactsTable array
+// var contactsTable = new Array(selectedContact.length);
+
+// //for (var i = 0; i < recordCounter; i++) {
+	
+// for (var i = 0; i < selectedContact.length; i++) {
+
+// contactsTable[i] = new Array(4);
+
+// }//number of fields means all fields
+
+// if(makeContactsTable) {
+// 	alert("in makeContacts table. selectedContact.length = " + selectedContact.length);
+
+// for(i=0;i<selectedContact.length;i++) {
+//   for (c=0;c<4;c++) {
+//      if (c==0) {
+// 		 console.log("selectedContact[i].name = " + selectedContact[i].name);
+// 		 console.log("contactsTable[i][0] = " + contactsTable[i][0]);
+//       contactsTable[i][0] = selectedContact[i].name;
+// 	  alert("selectedContact[i].name = " + selectedContact[i].name);
+// 	  alert("contactsTable[i][0] = " + contactsTable[i][0]);
+// 	  //contactsTable[i][0] = Steve Ansell
+//            }//end if c=0
+//       if(c==1) {
+//          contactsTable[i][1] = todayString;//date funtion wrong!
+// 		console.log("contactsTable[i][1] = " + contactsTable[i][1]); 
+//           }//end if c=1
+//        if (c==2) {
+//            contactsTable[i][2] = selectedContact[i].tel;
+//           }//end c=2
+//         if (c==3) {
+//            contactsTable[i][3] = selectedContact[i].email;
+//           }//end c=3
+//     }//end for c=0 loop   
+//   }//end for i =0 loop
+// }//end if makeContactsTable
+// //}//END if (!test)
+// //CODE ABOVE CREATES contactsTable array (contactsTable)
+*/
+
+//REMOVED THIS CODE FROM HERE AND PUT IN Ok prompt above
+
+// alert("contactsFieldNames = " + contactsFieldNames);
+// setupNewTable();
+// //works to here
+// //NOTE savedTableArray NOT created until saveBtn.onclick if makeContactsTable = true! So at point of saveBtn.onclick prior to first save savedTablesArray is empty!
+
+// return false;//to stop run away? Reloading of DougieBase after making new table?or is the error causing this ? Feb24
+
+//REMOVED THIS CODE FROM HERE AND PUT IN Ok prompt above Date: April 28 2022
+}//end emailBtn.onclick
+	//END EMAILBTN.ONCLICK..END OF CREATING AND DISPLAYING CONTACTS	
+	
+//ADD CONTACTS TO PRE-EXISTING CONTACTS TABLE DATE: FEB 19 2022
+//will create a conditional flag that indicates if new table derived from a searchmain db in aid of preventing + - icons appearing in such a table..aadding a record herevwould crash! Use the > in tableArray[0][0] to indicate from a maindb search table
+/*
+//experimental print table
+printBtn.onclick = function () {
+alert("This is an experimental option. It will not work on all browsers. Select the tables page range, then tap PRINT in your browsers printerAPI. This results in a PDF of the screen that accepts the choice options of the share sheet.");
+// document.querySelectorAll("table").forEach(elem => 
+//  elem.onclick = () => print_this(elem))	
+  
+document.querySelectorAll("table").forEach(elem => elem.addEventListener('click',print_this(elem))
+  )
+  
+}//end function printBtn.onclick
+//experimental print table
+*/
+
+if(loadFromTableOptions) {
+ 
+ if(tableArray[0][0].includes(">")) {
+plusContactsBtn.style.display = "none";//or use visibility:hidden
+deleteRecordNewTableBtn.style.display = "none";
+} else {
+plusContactsBtn.style.display = "unset";//or use visibility:hidden
+deleteRecordNewTableBtn.style.display = "unset";
+	}//end if else (!tableArray[0][0].includes(">"))
+	
+	plusContactsBtn.onclick = function () {
+	contactsArray.length = 0;
+	manualContacts.length = 0;//clear from a previous use
+	//moved from addingMoreContactsvv
+	plusContacts = true;
+	fromAddingMoreContacts = true;//forcing a resetFields when displayTableBtn is tapped
+resetFields = true;
+
+console.log("newTableFieldsArray = " + newTableFieldsArray);
+//alertx("newTableFieldsArray = " + newTableFieldsArray);
+
+contactsFieldNames = newTableFieldsArray.slice();
+//moved from addingMoreContacts^^
+	//addingMoreContacts();after more testing remove theaddingMoreContacts function for speeding up code
+	manuallyCreateContacts();
+	};//end plusContactsBtn.onclick
+	//ADD CONTACTS TO PRE-EXISTING CONTACTS TABLE DATE: FEB 19 2022
+	//delete a record from a new table
+//or use visibility:hidden
+deleteRecordNewTableBtn.onclick = function () {
+	deleteRecordNewTable = true;//set flag for record deletion to run delete code in display table
+	//blockEdit = true;//to stop a double click from deleting a record again
+	alert("Double-tap on the record you wish to delete!");
+	};//end deleteRecordNewTableBtn.onclick
+
+	} else {
+	deleteRecordNewTable = false;	deleteRecordNewTableBtn.style.display = "none";
+	plusContactsBtn.style.display = "none";//or use visibility:hidden
+	
+}//end if else loadFromTableOptions ..add contacts	
+	
+//alert below is outside displayTable code and won't run??	Dec31	
+//alert("At end of displayTable: tableArray = " + tableArray);	
+
+}//end function displayTable ..!!!! showTable
+
 //when incorporating into IndexedDBNotes will have to have a mechanism to save the table and field arrays
+
+// // prompt to give choice for saving a contacts table or return to table
+//  //confirm choice window
+//  if(makeContactsTable) {
+// 		 if (window.confirm("SAVE Contacts Table ? : \n" + "  CANCEL will Return to Table")) {
+// 			 makeContactsTable= true;
+// 			 saveContactsTable();
+// 			} else {
+// 				makeContactsTable=false;
+// 				selectedContact.length = 0;//this statement IS necessary to clear as the API must clear it on rerun? 
+				
+// 		}//end if window.confirm else
+// 		//end prompt
+// 	}//end if makeContactsTable to ask to save contactsTable. ?should this go in saveVariables function?
+		
 function refreshTable () {
 	console.log('Entered refreshTable. fromViewSort = ' + fromViewSort);
 	//Left off here Oct 28
@@ -8451,6 +11003,13 @@ STrows.appendChild(STheadRow);
 //function to remove fieldHeaders
 //error:NotFoundError: The object can not be found here.
 //NotFoundError: The object can not be found here.Jan30
+
+function removeHeadRow () {
+	while (STheadRow.firstChild) {
+		STheadRow.removeChild(STheadRow.firstChild);
+	}//end while
+}//end function removeHeadRow
+
 function removeFieldHeaders () {
 	console.log('Removing Field Headers (STHeadRow)');	//STtableHeader.setAttribute('class','attentionBtn');
 //STrows.removeChild(STtableHeader);
@@ -8473,6 +11032,15 @@ function trimHeadRow () {
    STheadRow.removeChild(STheadRow.fourthChild);
 	}//end while
 }//end function trimHeadRow
+
+function resetFieldDisplay () {
+	clearTableRows();
+			
+			addFieldHeaders();
+			trimHeadRow();
+			
+	}//end function resetFieldDisplay
+	
 
 function clearHeadRow () {
 console.log('clearing head row');	document.getElementById("STheadRow").innerHTML = "";
@@ -8506,7 +11074,7 @@ function myDeleteFunction() {
 }
 //LEFT OFF HERE NOV 26
 function editMoreFields () {
-	
+//called by editBtn.onclick	
     //  const addToDynamicFields = document.createElement('p');//referenced with createTable elements above
 	  addToDynamicFields.textContent = 'How many more fields do you wish to ADD to current number of Dynamic Fields?';
 	//  const moreFieldsInput = document.createElement('input');
@@ -8540,11 +11108,17 @@ function editMoreFields () {
 		 moreFields = moreFieldsInput.value;
 		let addFields = Number(moreFields); 
 		  console.log('addFields = ' + addFields);
-		dynamicFieldTotal = Number(numberOfAdditionalFields) + Number(addFields);
+		dynamicFieldTotal = Number(numberOfDynamicFields) + Number(addFields);
 console.log('dynamicFieldTotal = ' + dynamicFieldTotal);	
-	 numberOfAdditionalFields = Number(numberOfAdditionalFields) + Number(moreFields);
-	 console.log('At editMoreFields. numberOfAdditionalFields = '+ numberOfAdditionalFields);
-	additionalFields.value = numberOfAdditionalFields;  
+	 numberOfDynamicFields = Number(numberOfDynamicFields) + Number(moreFields);
+	// At editMoreFields. numberOfDynamicFields = NaN
+	 console.log('At editMoreFields. numberOfDynamicFields = '+ numberOfDynamicFields);
+	additionalFields.value = numberOfDynamicFields;  
+	
+	//alertx("In editMoreFields after adding more fields post edit: — numberOfDynamicFields = " + numberOfDynamicFields);
+	
+	console.log("In editMoreFields after adding more fields post edit: — numberOfDynamicFields = " + numberOfDynamicFields);
+	
 submitBtn.setAttribute('class','attentionBtn');
 submitBtn.disabled = false;
 
@@ -8689,6 +11263,7 @@ linked = false;
 //code to delete fields in table
 //see references above at 
 function deleteTableField() {
+deletingTableField = true;//don't know where to make this false so I just left it true!!!! Mar18 2022 seems to work!flag to fire code in displayTable to reset field headers
 	myFields.onclick = function(){submitFieldSelectionBtn.setAttribute('class', 'attentionBtn');}
 	fromDeleteField = true;//flag to ensure field headings displayed correctly
 	console.log('Now in deleteTableField function. fromDeleteField now = ' + fromDeleteField);
@@ -8735,6 +11310,8 @@ for(let j=4;j<numberOfFields;j++) {
 			//put resetDataList after call to editTableArray to preserve value of myFields.value
 			resetDataList();
 			//keep track of SAVE Btn Feb 26. Note here it might be better to reactivate the saveVariables statement down below..while TESTING...
+			
+			blockEdit = true;//flag to prevent savedTablesArray getting messed up prevent dblClick edit of td cell if just finished editing layout of table via editBtn.onclick..because otherwise tableArray will no longer be in newTable mode and savedTablesArray will get messed up DOES NOT SEEM TO WORK AFTER A SAVE POST DELETE FIELD.Mar1 2022
 			saveTableBtn.setAttribute('class', 'colorBtn');
 			saveTableBtn.textContent = 'SAVE !';
 			saveTableBtn2.setAttribute('class', 'colorBtn');
@@ -8792,7 +11369,7 @@ console.log('copy of original tableArray = ' + copyOfTableArray);
 //now recreate table
 deleteFieldWindow.setAttribute('class', 'hidden');
 numberOfFields = fieldNamesArray.length;
-numberOfAdditionalFields = numberOfAdditionalFields - 1;
+numberOfDynamicFields = numberOfDynamicFields - 1;
 while (STrows.firstChild) {
     STrows.removeChild(STrows.firstChild);
 	}//end while	
@@ -8801,8 +11378,9 @@ displayedTable = 0;
 refreshed = 0;
 
 STtableHeader.textContent = dbTableName.value;
-
+if(!loadFromTableOptions) {
 dataVobj.tableArray = tableArray;
+	}//end if(!loadFromTableOptions)
 		console.log('At saving current table values! and going to saveVariables. dataVobj.tableArray = ' + dataVobj.tableArray);
 	//WHILE TESTING DISABLED SAVEVARIABLES
 //	saveVariables();//may not need because displayedTable also leads to saveVariables Feb 2 ?
@@ -8815,9 +11393,22 @@ fieldDeleted = true;
 //while (STrows.firstChild) {
  //   STrows.removeChild(STrows.firstChild);
 //	}//end while	
-	
+changeDBtable();//to keep field names from getting messed up Date: Feb13
 displayTable();
-
+//preserve changes for newTable prior to save
+if(loadFromTableOptions) {
+	savedTablesArray[loadTableIndex]=tableArray.slice();
+	newTableFieldsArray = fieldNamesArray.slice();
+	numberOfNewTableAddedFields = numberOfDynamicFields;
+	
+newTableSpecificVariables[loadTableIndex][1] = newTableFieldsArray.slice();
+newTableSpecificVariables[loadTableIndex][2] = numberOfDynamicFields;
+	
+	alert("deleteFields completed: tableArray = " + tableArray + ". loadTableIndex = " + loadTableIndex + ". savedTablesArray: savedTablesArray[loadTableIndex] = " + savedTablesArray[loadTableIndex] + "newTableFieldsArray = " + newTableFieldsArray + ".  newTableSpecificVariables[loadTableIndex][1] = " + newTableSpecificVariables[loadTableIndex][1]);
+	
+	//should I update newTableSpecificVariables here??
+	
+}//end if loadTableFromOptions
 
 
 }//end function editTableArray
@@ -8872,6 +11463,7 @@ let transaction = db.transaction([objectStoreName], 'readwrite');
 let objectStore = transaction.objectStore(objectStoreName);
 
 let request = objectStore.get(noteId);
+//Date:Jan29 DataError: Failed to execute 'get' on 'IDBObjectStore': The parameter is not a valid key.
 //var request = objectStore.get();noteId = 3 and this was deleted in this dB. Have to parse tableArray[i][c] to get the date
 request.onerror = function(event) {
   // Handle errors!
@@ -8907,6 +11499,11 @@ var requestUpdate = objectStore.put(data);
  
  //SORT TABLE FUNCTION - START
  function sortTable () {
+ // const viewSortBtn = document.createElement('button');//scope includes the sort function
+ sortWindow.appendChild(viewSortBtn);
+	viewSortBtn.setAttribute('class','attentionBtn');
+	viewSortBtn.textContent = 'VIEW the SORTED TABLE';
+	viewSortBtn.style.display = "none";
 //const variable references are modelled after delete field code .. go to just ABOVE NewBtn.onclick all placed at top as global variables
 //const sortOption = document.createElement('option');
 console.log('In sort table function');
@@ -8926,10 +11523,17 @@ if(screenDark) {
 // const sortTypeDataList = document.querySelector('#sortTypeList');
 const chosenSortInfo = document.querySelector('#chosenSort');
 const submitSortTypeSelectionBtn =  document.querySelector('#submitSortTypeSelection');
-	const cancelToNotesFromSortBtn = document.querySelector("#cancelToNotesFromSort");
+	//const cancelToNotesFromSortBtn = document.querySelector("#cancelToNotesFromSort");//referenced twice one global!!
 
 	cancelToNotesFromSortBtn.onclick = function (){
-		sortWindow.setAttribute('class','hidden');
+	viewSortBtn.style.display = "none";
+	//sortWindow.removeChild(viewSortBtn);
+//if running a new table savedOriginal will have run and therefore reset fromContacts will get real values in tablArray, but if newTable code has not run then resetFromContacts gets undefined values so don't run resetFromContacts if just running DB main table
+	if(makeContactsTable || loadFromTableOptions) {
+		resetFromContacts();//so refresh code in tableOptionsScrn does not activate when switching tables
+		resetFields = true;//to keep field headers from messing up after a cancel in sort of a new table added Mar28
+	}//end if makeContactsTable || loadFromTableOptions
+	sortWindow.setAttribute('class','hidden');
 		}//end canceLToNotesFromSortBtn.onclick
 			
 	const backToTableFromSortBtn = document.querySelector("#backToTableFromSort");
@@ -8947,6 +11551,7 @@ const submitSortTypeSelectionBtn =  document.querySelector('#submitSortTypeSelec
 		console.log('selectedSortType = ' + sb.value);
 		
 		if (window.confirm("Sort type chosen is : " +  sb.value +  "\n \n CANCEL will UNDO")) {
+		viewSortBtn.style.display = "unset";
 	//LEFT OFF HERE MAR 9		
 			let chosenSort = sb.selectedIndex;
 			let typeSort = sb.value;
@@ -8958,7 +11563,7 @@ const submitSortTypeSelectionBtn =  document.querySelector('#submitSortTypeSelec
 
 			} else {
 				//return to edit screen
-				sortWindow.setAttribute('class', 'hidden');
+			viewSortBtn.style.display = "none";	sortWindow.setAttribute('class', 'hidden');
 					resetSortDataList();	showTable.setAttribute('class', 'showing');	
 			}//end if window.confirm else ...
 		};//end submitSortTypeSelectionBtn.onclick
@@ -8973,8 +11578,11 @@ function sortTableArray (chosenSort,typeSort) {
 		chosenSortInfo.textContent = 'You have selected : ' + typeSort + ' as the SORT type!';
 		console.log('tableArray before slice =    ' + tableArray);
 		//trim off ,,,,,,
+		//tableTitle.length should be ok for sort of contacts because tableTitle.length was set to selectedContact.length in the makeContactTable section Jan1
 		tableArray = tableArray.slice(0,tableTitle.length);
 		console.log('tableArray after slice =    ' + tableArray);
+		
+		//DATE: JAN28 2022 tableArray AFTER SAVE OF CONTACTS BTN IS NOW ORIGINAL DB EVEN THOUGH AT THIS POINT THE CONTACTS ARE SHOWING ON THE SCREEN! But the point is on returning to original sort order the data in tableArray will be original db NOT contacts!!!! THE ALPHABETICAL SORT WORKS AT THIS STAGE BECAUSE IT USES THE DOM AND STROWS FOR SWITCHING INTO ALPHA ORDER! (table = document.getElementById("STforRows");) Wow complicated eh! Now lets see if makeContactsTable variable got messed up in setupContactsTable function 
 		if(chosenSort === 0) {
 			originalOrder = false;//flag used to prevent accidental loss of original table order by a save after a sort
 			sortTableW3();
@@ -9005,6 +11613,7 @@ function sortTableArray (chosenSort,typeSort) {
 		if (chosenSort === 1) {
 			originalOrder = false;//flag used to prevent accidental loss of original table order by a save after a sort
 			tableArray = tableArray.reverse();
+			//tableTitle was not created for contacts. ? Do I need it?
 			tableTitle = tableTitle.reverse();
 			console.log('tableArray reversed = ' + tableArray);
 		}//end if chosenSort = 1
@@ -9013,6 +11622,7 @@ function sortTableArray (chosenSort,typeSort) {
 			originalOrder = true;//flag used to prevent accidental loss of original table order by a save after a sort
 			console.log('copyOfTableArray = ' + copyOfTableArray);
 	tableArray = copyOfTableArray.slice();
+	//HERE TABLE Title will be original so a new tableTitle.length will not reflect the contacts list but do I need this? PROBABLY DO BECAUSE DISPLAY TABLE USES TABLEtitle array?
 	tableTitle = copyOfTableTitle.slice();
 	console.log('tableArray returned to original  =  ' + tableArray);
 		}//end if chosenSort = 
@@ -9032,10 +11642,10 @@ function sortTableArray (chosenSort,typeSort) {
 	
 		
 	
-	const viewSortBtn = document.createElement('button');
-	sortWindow.appendChild(viewSortBtn);
-	viewSortBtn.setAttribute('class','attentionBtn');
-	viewSortBtn.textContent = 'VIEW the SORTED TABLE';
+	// const viewSortBtn = document.createElement('button');//made global to function sort
+	// sortWindow.appendChild(viewSortBtn);
+	// viewSortBtn.setAttribute('class','attentionBtn');
+	// viewSortBtn.textContent = 'VIEW the SORTED TABLE';
 	viewSortBtn.onclick = function () {
 		sortWindow.removeChild(viewSortBtn);
 		sortWindow.setAttribute('class', 'hidden');
@@ -9045,7 +11655,14 @@ function sortTableArray (chosenSort,typeSort) {
 		//should this be refreshTable?
 		//displayTable();
 		if(!sortW3) {
+			alert("Restoring sort: makeContactsTable = " + makeContactsTable + ".  loadFromTableOptions = " + loadFromTableOptions);
+			if(makeContactsTable || loadFromTableOptions) {tableTitle.length=newTableContactsTitleLength}//end if makeContactsTable
+		//	makeContactsTable is true and loadFromTableOptions is FALSE when coming back from alpha sort!AFTER USING CONTACTS BTN 
+		//loadFromTableOptions is TRUE after alpha sort when comijng from loadFromTableOptions and the rstore WORKS!
+//NOTETHAT IN SAVE copyOfTableArray is made = tableArray so this might mess up?
 		refreshTable();
+		//set tableTitle.length to reflect contacts if in a contacts table
+		
 		}//end if !sortW3
 	sortW3 = false;	
 	}//end of viewSortBtn.onclick
@@ -9130,7 +11747,7 @@ function topFunction() {
 function initializeTable () {
 	
 	if(DTBtnTappedOnce ===0 & tableExists){
-		alert('The pre-existing table has to be initialized first before Searching, Adding, or Editing a note! OR if changing databases. Tap the DISPLAY TABLE button.');
+		alert('The pre-existing main table has to be initialized first before Searching, Adding, or Editing a note! OR if changing databases. Tap the DISPLAY TABLE button.');
 		tableScreenOptions();
 	}//end if if(DTBtnTappedOnce ===0 & tableExists)
 }//end function initializeTable
@@ -9155,8 +11772,9 @@ function sleepUntil(f, timeoutMs) {
 
 //function backup database
 function backupDataBase(dataBaseName) {
+	finishedShareBtn.style.display = "none";//otherwise being able to tap this btn now highlights the textarea
 	
-	
+	textarea.style.display = "unset";
 	
 	//THE FOLLOWING CODE PUTS THE SELECTED DATABASE TO BACKUP INTO THE VARIABLE json AS A JAVASCRIPT OBJECT NOTATION. 
 	//alert('in function backup database: ' + dataBaseName);
@@ -9177,10 +11795,15 @@ if(screenDark) {
 	dbNameInfo.textContent = dataBaseName;
 	backingUpBanner.appendChild(dbNameInfo);
 	
-	
+	const shareBtn = document.querySelector('#shareBtn');
+	shareBtn.disabled = true;
+	shareBtn.style.display = "none";
+	const doneCopyBtn = document.querySelector('#doneCopy');
+	doneCopyBtn.style.display = "none";
 	const copyClipboardBtn = document.querySelector('#copyClipboardBtn');
 	copyClipboardBtn.setAttribute('class','attentionBtn');
-	const doneCopyBtn = document.querySelector('#doneCopy');
+	
+	// const doneCopyBtn = document.querySelector('#doneCopy');
 	
 	//enable disable DONE btn in backup window
 	//doneCopyBtn.disabled = true;
@@ -9191,6 +11814,7 @@ if(screenDark) {
 	
 	
 	copyClipboardBtn.onclick = function () {
+	doneCopyBtn.style.display = "unset";
 	copyToClipboard(string);	copyClipboardBtn.setAttribute('class','normalBtn');
 	// doneCopyBtn.disabled = false;	doneCopyBtn.setAttribute('class','attentionBtn');
 	//doneCopyBtn.disabled = false;
@@ -9464,27 +12088,101 @@ console.log('in copyToClipboard function. textarea.value = '+ textarea.value)
 //   }
 //   return true;
 alert("Copying to Clipboard. On the next Backup screen, first tap the green highlighted button 'Click here first'. Then Tap DONE to return to Notes!");
+//textarea.disabled = true;//so return to notes btn will work without highlighting selecting textarea Apr1
+
 doneCopyBtn.onclick = function () {
 			//enable disable DONE btn in backup window
 		//	doneCopyBtn.disabled = true;
 			//enable disable DONE btn in backup window
-			doneCopyBtn.setAttribute('class','normalBtn');
+	shareBtn.disabled = false;
+	shareBtn.style.display = "unset";		doneCopyBtn.setAttribute('class','normalBtn');
 			textarea.setAttribute('class','normalBtn');
+			//textarea.setAttribute('class','hidden');
+	//so return to notes and backup info p can be visualized..otherwise they are covered by textarea		
+	textarea.style.display = "none";
+	finishedShareBtn.style.display = "unset";//otherwise being able to tap this btn now highlights the textarea	
 		//backingUpDBWin.removeChild(copyInstructionP);
 		//copyInstructionP,textContent = "";
 		//backingUpDBWin.removeChild(finishedCopyBtn);
 		
+ //confirm choice window
+	if (window.confirm("SHARE this database " + dataBaseName + " using the Share Sheet options" + " \n"  +  " ..tap OK \n\n" + "  CANCEL  will RETURN TO HOME SCREEN!")) {		
+//CODE FOR SHARE SHEET
+let variableText = "\n\nThe database data shown above needs to be copied and pasted into the text area window of the restore database section of DougieBase. You can install DougieBase by tapping on the link below. vv\n\n";
+
+// const shareBtn = document.querySelector('#shareBtn');
+
+shareBtn.textContent = "SHARE database: " + dataBaseName;
+//shareBtn.style.display = "unset";
+
+//backingUpDBWin.setAttribute('class','showing');
+//backingUpDBWin.appendChild(shareBtn);
+
+const resultPara = document.querySelector('#resultPara');
+//resultPara.style.display = "unset";
+//const finishedShareBtn = document.querySelector('#finishedShare');
+
+//backingUpDBWin.appendChild(resultPara);
+
+const shareData = {
+    title: 'DougieBase database',
+    text: 'Copy and then Paste the '+ dataBaseName + ' database data  below into the textArea in the restore database section of DougiBase : \n\n\n' + string + variableText,
+    url: 'http://eeyorepooh.weebly.com/'
+  }//shareData
+  
+  // Share must be triggered by "user activation"
+  shareBtn.addEventListener('click', async () => {
+    try {
+      await navigator.share(shareData)
+      resultPara.textContent = 'Database: ' + dataBaseName + ' shared successfully'
+    } catch(err) {
+      resultPara.textContent = 'Error: ' + err
+    }
+ 
+//shareBtn.style.display = "none";
+//resultPara.style.display = "none";
+
+//backingUpDBWin.removeChild(shareBtn);
+//backingUpDBWin.removeChild(resultPara);
+  });//end shareBtn.addEventListener
+  
+  
+
+//CODE FOR SHARE SHEET ^
+
+} else {
+
+		
 		backingUpDBWin.setAttribute('class','hidden');
 		backupFilesWin.setAttribute('class','hidden');
+		resultPara.textContent = "";
+		
+		}//end prompt choice of using sharesheet
+		
+
 		alert('The database named..' + dataBaseName + ' has been copied to the clipboard! You can now PASTE it into your external BACKUP storage file.');
+	
 			
-	}//end function finishedCopyBtn.onclick
+	}//end function finishedCopyBtn.onclick DONE BTN
 	// }//END FUNCTION copyToClipboard?
+// 	finishedShareBtn.onclick = function () {
+// //	 shareBtn.style.display = "none";
+// //resultPara.style.display = "none";
+// backingUpDBWin.setAttribute('class','hidden');
+// backupFilesWin.setAttribute('class','hidden');
+//  } //end function finishedShareBtn.onclick
+finishedShareBtn.onclick = function () {
+resultPara.textContent = "";
+//	 shareBtn.style.display = "none";
+//resultPara.style.display = "none";
+backingUpDBWin.setAttribute('class','hidden');
+backupFilesWin.setAttribute('class','hidden');
+ } //end function finishedShareBtn.onclick
 }//end function backup database	
 
 //start function restoreDataBase(dataBaseName)
 function restoreDataBase(restoredDBName) {
-	restoreTextArea.setAttribute('style', 'border: 5px solid red; text-align: center');
+//textarea.style.display = "unset";	restoreTextArea.setAttribute('style', 'border: 5px solid red; text-align: center');
 	if(loadSampleDb || loadTutorialDb) {
 		alert("Remember to Tap the Text-Area box ONCE only to CONTINUE. This initiates loading of database sample.");
 		//change html text to reflect SAMPLE
@@ -10116,7 +12814,7 @@ alert("contacts = " + contacts)
 
 
 } else {
-	alert("If you are using Safari >14.5 set Advanced/Experimental/ContactsAPI to enabled in Safari settings. Otherwise Your browser does not support ContactsAPI yet!");
+	alert("If you are using Safari 14.5 set Advanced/Experimental/ContactsAPI to enabled in Safari settings. Otherwise Your browser does not support ContactsAPI yet!");
 }//if else supported
 }//end function getEmail
 //end email code
@@ -10146,12 +12844,14 @@ async function getContacts (selectedContact) {
 }//end function getContacts
 
 async function allContactInfo (selectedContact) {
+	//(contactsTable) {
 	if ("contacts" in navigator && 
     "select" in navigator.contacts && 
     "getProperties" in navigator.contacts) {
  try {
    const availableProperties = await navigator.contacts.getProperties();
-     
+     alert('⚠️ Available properties = ' + availableProperties);
+	 //Available properties = email,name,tel
      if (availableProperties.includes("address")) {
        const contactProperties = ['name', 'tel','email','address'];
    
@@ -10163,15 +12863,28 @@ async function allContactInfo (selectedContact) {
         );
 		//put contact info in selectedContact array
 	alert("Number of contacts selected = " + contacts.length);	
+	
 	for (i=0;i<contacts.length;i++) {
-	 selectedContact[i] = contacts[i].name + " " + contacts[i].tel + " " + contacts[i].address;
- }//end for loop
+		selectedContact[i] = contacts[i].name + " " + contacts[i].tel + " " + contacts[i].address;
+	// for(c=0;c<4;c++) {
+	// 	if(c===0){
+	//  selectedContact[i][0] = contacts[i].name;}//end if =0
+	//  if(c===1){selectedContact[i][1] = contacts[i].tel;}//end if c=1
+	//  if(c===2){selectedContact[i][2] = contacts[i].email;}//end if c=2
+	//   if(c===3){selectedContact[i][3] = contacts[i].address;}//end if c=3 
+  // }//end for c = loop	
+  
+ }//end for i loop
 		//end of put contact info in selectedContact array
   //console.log changed to alert 
-       alert("Your first contact: " + contacts[0].name + " " + contacts[0].tel + " " + contacts[0].address);
+ /*      alert("Your first contact: " + contacts[0].name + " " + contacts[0].tel + " " + contacts[0].address);
+	   */
+	   
+	   test=true;
+	  // selectedContact = contacts.slice();
 	   return selectedContact;
      } else {
-       alert("Contact Picker API on your device doesn't support the (street) address property");
+       alert("⚠️ Contact Picker API on your device doesn't support the (street) address property");
 	   const contactProperties = ['name','email', 'tel'];
    
        const contacts = await navigator
@@ -10182,179 +12895,1943 @@ async function allContactInfo (selectedContact) {
         );
 		//put contact info in selectedContact array
 	alert("Number of contacts selected = " + contacts.length);	
+
 	for (i=0;i<contacts.length;i++) {
-	 selectedContact[i] = "\n" + contacts[i].name + " " + contacts[i].email + " " + contacts[i].tel;
- }//end for loop
-		//end of put contact info in selectedContact array
-  //console.log changed to alert 
+		/*if(contacts[i].tel===""||contacts[i].tel===" "||contacts[i].tel===null||contacts[i].tel===undefined) {contacts[i].tel="EDIT"}*/
+	 selectedContact[i] = "\n" + contacts[i].name + " " + "_"+contacts[i].tel + " " + "_"+contacts[i].email;
+ }//end for i loop
+ //end of put contact info in selectedContact array
+ //NOTE: "_"+ added to front of each component except first one, so selectedContact array is ready for fine tuning in emailBtn?onclick. "_"+ is used as the separator!
+ 
+ /*
+ //THIS CODE BELOW CREATES contactsTable array
+var contactsTable = new Array(contacts.length);
+
+
+//for (var i = 0; i < recordCounter; i++) {
+	
+for (var i = 0; i < selectedContact.length; i++) {
+
+contactsTable[i] = new Array(4);
+
+}//number of fields means all fields
+
+//if(makeContactsTable) {
+	alert("in makeContacts table. selectedContact.length = " + selectedContact.length);
+
+for(i=0;i<contacts.length;i++) {
+  for (c=0;c<4;c++) {
+     if (c==0) {
+		 console.log("selectedContact[i].name = " + selectedContact[i].name);
+		 console.log("contactsTable[i][0] = " + contactsTable[i][0]);
+      contactsTable[i][0] = contacts[i].name;
+	  
+	  alert("contactsTable["+i+"][0] = " + contactsTable[i][0]);
+	  //contactsTable[i][0] = Steve Ansell
+           }//end if c=0
+      if(c==1) {
+         contactsTable[i][1] = todayString;//date funtion wrong!
+		console.log("contactsTable[i][1] = " + contactsTable[i][1]); 
+          }//end if c=1
+       if (c==2) {
+           contactsTable[i][2] = contacts[i].tel;
+          }//end c=2
+        if (c==3) {
+           contactsTable[i][3] = contacts[i].email;
+          }//end c=3
+    }//end for c=0 loop   
+  }//end for i =0 loop
+//}//end if makeContactsTable
+//}//END if (!test)
+//CODE ABOVE CREATES contactsTable array
+ */
+ 
+ 
+ /*
+ //  //console.log changed to alert 
        alert("Your first contact: " + contacts[0].name + " " + contacts[0].email + " " + contacts[0].tel);
-	   return selectedContact;
+	 */  
+	
+	   test=true;
+	  // selectedContact = contacts.slice();
+	   
+/*  
+//THIS CODE BELOW CREATES contactsTable array
+var contactsTable = new Array(contacts.length);
+
+//for (var i = 0; i < recordCounter; i++) {
+	
+for (var i = 0; i < contacts.length; i++) {
+
+contactsTable[i] = new Array(4);
+
+}//end for loop 
+
+if(makeContactsTable) {
+	alert("in makeContacts table. contacts.length = " + contacts.length);
+
+for(i=0;i<contacts.length;i++) {
+  for (c=0;c<4;c++) {
+     if (c==0) {
+		 console.log("contacts[i].name = " + contacts[i].name);
+		// console.log("contactsTable[i][0] = " + contactsTable[i][0]);
+      contactsTable[i][0] = contacts[i].name;
+	  alert("contacts[i].name = " + contacts[i].name);
+	  alert("contactsTable[i][0] = " + contactsTable[i][0]);
+	  //contactsTable[i][0] = Steve Ansell
+           }//end if c=0
+      if(c==1) {
+         contactsTable[i][1] = todayString;//date funtion wrong!
+		console.log("contactsTable[i][1] = " + contactsTable[i][1]); 
+          }//end if c=1
+       if (c==2) {
+           contactsTable[i][2] = contacts[i].tel;
+          }//end c=2
+        if (c==3) {
+           contactsTable[i][3] = contacts[i].email;
+          }//end c=3
+    }//end for c=0 loop   
+  }//end for i =0 loop
+}//end if makeContactsTable
+
+//CODE ABOVE CREATES contactsTable array (contactsTable)
+*/
+//make sure selectedContact array is clean
+//selectedContact = selectedContact.slice(0,contacts.length);
+//alert('In allContactInfo function and returning to emailBtn.onclick ..selectedContact before return =    ' + selectedContact);
+	//selectedContact = contacts.slice();
+	//alert("About to return selectedContact = " + selectedContact);
+	//alert("contactsTable array as created in allContactInfo function = " + contactsTable);
+	
+	
+/*	async function getData() {
+  myArray = await myFunction();
+  console.log(myArray);
+  return myArray; */
+  
+
+return selectedContact;
+//return contactsTable;
+	  // return selectedContact;//contactsTable;
      }//end if else includes address
  } catch (ex) {
-   console.log("Unexpected error happened in Contact Picker API");
+	// alert("selectedContact[0][0] = " + selectedContact[0][0]);
+   alert("Unexpected error happened in Contact Picker API");
+   test=false;
  }
 } else {
- alert("Your browser doesn't support Contact Picker API. If you are using Safari >14.5 set Advanced/Experimental/ContactsAPI to enabled in Safari settings. Otherwise Your browser does not support ContactsAPI yet!");
-}
-}
-//beginning function flash
-// function flash () {
+ alert("⚠️ Your browser doesn't support Contact Picker API. If you are using Safari >iOS 14.5 set Advanced/Experimental/ContactsAPI to enabled in Safari settings. Otherwise your browser does not yet support ContactsPickerAPI! DougieBase is creating a sample of contacts for demonstration!");
+ 	test=true;
 	
-//   if(flashYellow) {
-// 	  NotesEditBtn.setAttribute('class','colorBtn');
-// 	  flashYellow = false;
-//   } else {
-// 	  NotesEditBtn.setAttribute('class','attentionBtn');
-//   }//end if flashYellow
-  
-// }//end function flash
-// //ENDfunction flash
+	//manuallyCreateContacts();//function crahes browser
+	let objectContact = [{
+	name: "Name of first contact",
+	email: "username@gmail.com",
+	tel: "Enter phone number"
+	},
+	{
+		name:"Contact Name",
+		email: "username@shaw.ca",
+		tel: ""
+	},
+	{
+		name:"Contact3 Name",
+		email: "username3@telus.net",
+		tel: ""
+	}];
+	for (i=0;i<objectContact.length;i++) {
+		/*if(contacts[i].tel===""||contacts[i].tel===" "||contacts[i].tel===null||contacts[i].tel===undefined) {contacts[i].tel="EDIT"}*/
+	 selectedContact[i] = "\n" + objectContact[i].name + " " + "_"+objectContact[i].tel + " " + "_"+objectContact[i].email;
+ }//end for i loop
+	//alert("About to return selectedContact = " + selectedContact);
+	return selectedContact;
+}//end else
+}//end allContactInfo function
+
+//reset table variables after making contacts table restores all main db variable values so that save does not mess up main db after having been in newTable mode
+//called from homescrnBtn.onclick and saveBtn and newDBBtn.onclick if makeContactsTable OR loadFromTableOptions..?good enough?
+function resetFromContacts () {
+	//savedOriginal = false;//flag that prevents repeatedContactsTables from overwriting original. Set back to false here (to allow for changing databases, but not returned to false in CONTACTSbtn in display table which allows for repeated contacts tables but not overwriting original table)
+	tableTitle = saveTableTitle.slice();
+	//tableArray.length=0;//reset tableArray data clear of contacts before restoring original
+	tableArray.length = 0;//empty the array before resetting it ..in edit table may have got messed up?
+
+console.log("mainDBArray = " + mainDBArray);
+console.log("mainDBArray[0][0] = " + mainDBArray[0][0]);
+console.log("saveTableArray = " + saveTableArray);
+console.log("saveTableArray[0][0] = " + saveTableArray[0][0] );
+
+//alertx("mainDBArray = " + mainDBArray);
+//alertx("mainDBArray[0][0] = " + mainDBArray[0][0]);
+//alertx("saveTableArray = " + saveTableArray);
+//alertx("saveTableArray[0][0] = " + saveTableArray[0][0] );
 
 
-//end of trim after colon
+	if(mainDBArray[0][0]!==saveTableArray[0][0]) {
+	alert("ERROR! MainDBArray contaminated!!mainDBArray = " +mainDBArray + " saveTableArray = " + saveTableArray);
+	}//end if(mainDBArray!=saveTableArray)
+tableArray = saveTableArray.slice();
+copyOfTableArray = saveCopyOfTableArray.slice(); 
+//alert("copyOfTableArray SHOULD BE OIGINAL..NOT CONTACTS! = " + copyOfTableArray);
+copyOfTableTitle= saveCopyOfTableTitle.slice();
+fieldNamesArray = saveFieldNamesArray.slice();
+dbName = saveDbName;
+//numberOfDynamicFields=saveNumberOfAdditionalFields;
+//numberOfFields=saveNumberOfOriginalFields;
+numberOfFields = fieldNamesArray.length;
+numberOfDynamicFields = saveNumberOfAdditionalFields;
 
-// //function clickedSaveTableBtns
-// function clickedSaveTable () {
-// 			let abortSave = false;
-// 			if(!originalOrder) {
-				
-// 			let warning = document.createElement('p');
-// 		showTable.appendChild(warning);	warning.setAttribute('class','simulator');
-// 				warning.textContent = 'THE ORIGINAL RECORD LIST ORDER HAS BEEN CHANGED!';
-// 				if(!window.confirm('The original record list order will be lost. Tap CANCEL to abort. Reset to original order in Sort.')) {
-// 				showTable.removeChild(warning);	showTable.setAttribute('class', 'hidden');
-// 					sortTable();
-// 					abortSave = true;
-// 					} else {
-// 						showTable.removeChild(warning);
-// 						originalOrder = true;
-// 						abortSave = false;
-// 						//carryOnSave();
-// 				}//end if else confirm alert
-				
-// 			}//end if !originalOrder
-// 			if (!abortSave) {carryOnSave();}
-			
-// 		function carryOnSave ()	{
-// 			saveTableBtn.setAttribute('class', 'normalBtn');
-// 			saveTableBtn.textContent = 'SAVED';
-// 				saveTableBtn2.setAttribute('class', 'normalBtn');
-// 				saveTableBtn2.textContent = 'SAVED';
-// 			//should copyOfTableArray be set here???Mar16
-// 		//reset copyOfTableArray fixes reset!Mar15 alpha sort might not change tableArray, only HTML so alpha sort won't lose the original order but reverse sort does so this will protect against losing original order if reverse sort and save is pressed
-// copyOfTableArray = tableArray.slice(0,tableTitle.length);
-// copyOfTableTitle = tableTitle.slice();
-// console.log('copyOfTableArray = ' + copyOfTableArray);
-// console.log('copyOfTableTitle = ' + copyOfTableTitle);
+headName.textContent=saveheadNameTextContent;
+//alertx("saveOriginaltableTitleLength = " + saveOriginaltableTitleLength + " otherVariablesArray[1] = " + otherVariablesArray[1]);
 
-// // update copy to reflect new originalMar 15 not tested!			
-// 			//save all necessary arrays to notes_os
-// 	for(let i = 0;i<tableTitle.length;i++) {
-// 			for(let j=0;j<numberOfFields;j++) {
-// 				console.log('tableArray[' +i + '][' + j +'] = ' + tableArray[i][j]);
-				
-// 			}//end for j =
-			
-			
-// 		}//end for i =
-// 		dataVobj.tableArray = tableArray;
-// 		console.log('At saving current table values! and going to saveVariables. dataVobj.tableArray = ' + dataVobj.tableArray);
-// 		saveVariables();
-// 		//so that data appears after returning to Home Screen followiNg a displayTable function after having deleted a table record!!! Otherwise you have to reset tData in preferences.Date:Dec19g OR MAYBE IF DELETEDrecord Don't erase table rowas back in displayTable
-// 		//prefWindow.setAttribute('class','showing');//instead of displayData whiCh repeats record list twice!
-// 		options();//this seems to do the job!!
-// 		//displayData();//might have to REMOVE if still repeating record list after a delete table record???THERE IS SOME ISSUE WITH CONCURRENT RUNNING OF TWO ITERATIONS OF DISPLAY DATA!!!!
-// 	//the if else for save warning were added here Mar13..remove if messes up!!
-// 		}//end function carryOnSave
+console.log("saveOriginaltableTitleLength = " + saveOriginaltableTitleLength + " otherVariablesArray[1] = " + otherVariablesArray[1]);
+
+tableTitle.length = otherVariablesArray[1];
+
+//tableTitle.length=saveOriginaltableTitleLength;//might not need this line because tableTitle is copied and tableTitle.length is calculated
+originalNumberRecords = saveOriginalNumberRecords;//restoring back from contacts ..in aid of avoiding refresh request
+editCurrentTable = 0;
+displayedTable = 0;
+tableConstructed = 0;
+makeContactsTable = false;
+loadFromTableOptions = false;
+saveTableBtn.disabled = false;
+saveTableBtn.textContent = "SAVE";
+saveTableBtn2.disabled = false;
+saveTableBtn2.textContent = "SAVE";
+//main menu SAVE btn
+saveBtn.style.backgroundColor = "rgb(240, 248, 255)";
+saveBtn.disabled = false;
+homeScreenBtn.textContent = "RETURN to Home Screen";
+homeScreenBtn2.textContent = "RETURN to Home Screen";
+returnToNotesBtn.setAttribute('class','tdEdit');//added Mar28//to keep homescreen btn on tableScreenOptions from flashing after a rename table session April 17 2022
+
+flipMenu.textContent = "Click - Tap to show / hide TABLE MENU";
 		
-// 	}//end clickedSaveTable
+//alert("in resetFromContacts. tableTitle.length = " + tableTitle.length);
+//IF KEEPING DATA MAY NOT WANT NEXT LINES???Date Jan9
+//NCJan10..If messed up go back to fallBackJan10
+selectedContact.length = 0;//clear selectedContact array and contactsTable array
+contactsTable.length = 0;//SHOULD THIS BE contactsArray. Did not change now because what if user wants to go back to contactsTable???
+//contactsArray.length = 0;
 
-//original function isolateLink
-// function isolateLink(textContainingLink) {
-// 	console.log('in isolateLink function');
-// 	let startLink = textContainingLink.indexOf('http');
-// console.log('startLink = ' + startLink);
-// //correct startLink
-// 	//LEFT OFF HERE MAY31
-// 	preLinkInfo = textContainingLink.slice(0,startLink);
-// 	console.log('preLinkInfo = ' + preLinkInfo);
-// 	let endLink = 0;
-// 	let occurences = 0;
-// let position = textContainingLink.indexOf('/');
+console.log("in resetFromContacts: tableArray is now back to original db = " + tableArray + " numberOfFields:should be 12! = " + numberOfFields + "  numberOfDynamicFields(8) = "+numberOfDynamicFields + "  numberOfDynamicFields = saveNumberOfAdditionalFields;(savedNumberOfAdditionalFields = " + saveNumberOfAdditionalFields + ". tableID = " + tableID + ". tableIndex = " + tableIndex + ". loadTableIndex = " + loadTableIndex);
 
-// while (position !== -1) {
-//   occurences++
-//   position = textContainingLink.indexOf('/', position + 1);
-//   if (position >1) {endLink = position}//end if position>1
-// }//end while position !== -1
+//alertx("in resetFromContacts: tableArray is now back to original db = " + tableArray + " numberOfFields:should be 12! = " + numberOfFields + "  numberOfDynamicFields(8) = "+numberOfDynamicFields + "  numberOfDynamicFields = saveNumberOfAdditionalFields;(savedNumberOfAdditionalFields = " + saveNumberOfAdditionalFields + ". tableID = " + tableID + ". tableIndex = " + tableIndex + ". loadTableIndex = " + loadTableIndex);
 
-// console.log('count of occurences = ' + occurences);  
-// console.log('position = ' + position);
-// console.log('endLink = ' + endLink);
-// //position will =-1 because of while condition
-// // The method slice() takes two arguments: the start index where you will start copying and the end index where the copying ends. The second argument is not included, which means when you copy an array from index 1 to index 5, it will only copy from index 1 to index 4.
+//ADDED THIS CODE MAY5 2022 to avoid a highlight persisting from a previous search
 
-// let link = textContainingLink.slice(startLink,endLink+1);
-// console.log('link = ' + link);
-// return link;
-// }//end function isolateLink()
+searchedHitsTableArray.length = 0;
+fromSearchRecord = false;
+manualContactsEntered = false;
+addContactsBtnTapped = false;
+fromEditFieldLabels = false;
+console.log("in resetFromContacts: tableArray is now back to original db = " + tableArray + " numberOfFields:should be 12! = " + numberOfFields + "  numberOfDynamicFields(8) = "+numberOfDynamicFields + "  numberOfDynamicFields = saveNumberOfAdditionalFields;(savedNumberOfAdditionalFields = " + saveNumberOfAdditionalFields + ". tableID = " + tableID + ". tableIndex = " + tableIndex + ". loadTableIndex = " + loadTableIndex);
 
-// //function check fileFormat
-// function checkFormat (json) {
-// 	var verify = json.slice(0,2);
-// 	var verifyEnd = json.slice(-2);
+newTableEdit = false;//done with this flag now that edited newTable will be saved ? Need to move this line to savevariables???? Date: Febe
+	}//end resetFromContacts function THIS IS DIFFERENT THAN CONTACTSARRAY..PROBABLY DON'T NEED SEE ALLCONTACTSINFO FUNCTION
 	
-// 	console.log('verify = ' + verify);
-// 	console.log('verifyEnd = ' + verifyEnd);
-// 	if(verify !== "{\"" || verifyEnd !== "}]}") {
+//function saveNewTable called by saveTableBtn.onclick with loadFromTableOptions false and makeContactsTable true saving a newTable after its creation
+function saveNewTable () {
+	console.log("In saveNewTable");
+	//NCJan10..If messed up go back to fallBackJan10 below
+	
+// //code to correct TypeError: undefined is not an object (evaluating 'newTableSpecificVariables[tableIndex][0] = tableIndex').     Current table index = 10 Name of current table = Is this table > 10
+// //Reset array vv
+// //tableIndex starts at 0 and savedTablesArray indexes will be 0-9 when .length is 10
+// if(tableIndex > savedTablesArray.length-1) {
+// savedTablesArray.length = savedTablesArray.length + 10;
+// newTableSpecificVariables.length = newTableSpecificVariables.length + 10;
+	
+// }//end if(tableIndex > savedTablesArray.length) 
+// //Reset array ^^
+
+
+	saveTableBtn.textContent = "SAVE";
+			// saveTableBtn2.disabled = true;
+			saveTableBtn2.textContent = "SAVE";
+	//alert("Working on Saving new tables…	Not yet implemented .. is tableArray seen here? .. " + tableArray);
+	//return
+	//console.log("variablePassed = " + variablePassed);
+	//let savedTablesArray = [];
+	//redefineSavedTablesArray(savedTablesArray);
+	//NCJan10..If messed up go back to fallBackJan10
+	
+	console.log("Current table index = " + tableIndex + " Name of current table = "+ newTableNames[tableIndex]);
+	let savedTableArrayName =  newTableNames[tableIndex];
+
+	console.log("In saveNewTable…. contactsArray = " + contactsArray);//is blank!
+	//alert("savedTablesArray[0] = " + savedTablesArray[0]);
+
+	//Assign current contactsArray to name of table
+	//create savedTablesArray and ..just push current contactsArray to the index position of tableIndex
+	//savedTableArrayName=contactsArray;
+	//savedTablesArray =  [];//decalared globally
+	
+/*	//************************************* */
+/*
+savedTablesArray[tableIndex+1] = savedTablesArray[tableIndex+1].push(contactsArray);
+//savedTablesArray.push(contactsArray);
+//TypeError: undefined is not an object (evaluating 'savedTablesArray.push')
+
+/* ************************************* */
+/*
+//add items to first array index
+for (i=0;i<contactsArray.length;i++) {
+	
+	for (c= 0;c<4;c++) {
+savedTablesArray[tableIndex] = contactsArray[i][c];
+//TypeError: undefined is not an object (evaluating 'savedTablesArray[tableIndex] = contactsArray.slice()')
+	}//end for c =0
+//TypeError: undefined is not an object (evaluating 'savedTablesArray[tableIndex]')	
+}//end for i = 0
+*/
+/********************************** */
+/*
+var savedTablesArray= [];//does this erase savedTablesArray[0]????
+//TRY 2 THINGS..REMOVE LINE var savedTablesArray= []; . #2 use a return statement to send savedTablesArray back to saveBtn.onclick
+
+//assume 10 tables?
+
+var savedTablesArray = new Array(10);
+
+//for (var i = 0; i < recordCounter; i++) {
+	
+for (var i = 0; i < 10; i++) {
+
+savedTablesArray[i] = new Array(4);
+
+}//number of fields means all fields for savedTablesArray there are 4 fields maybe should change back to numberOfFields????
+*/
+
+
+
+// savedTablesArray[tableIndex] = Array.prototype.push.apply(savedTablesArray, contactsArray);
+// savedTablesArray[tableIndex] = Array.prototype.push.apply(contactsArray)
+//console.log("savedTablesArray[0] at this point in saveNewTable function should be name DATE tel email IF passed from global! savedTablesArray[0] = " + savedTablesArray[0]);
+//TypeError: undefined is not an object (evaluating 'savedTablesArray[0]')
+console.log("savedTablesArray = " + Array.isArray(savedTablesArray));
+//false after removing var savedTablesArray above…so the savedTablesArray is not being made global? Lets declare it all in this function
+//NEXT TRY CONCAT
+
+if(makeHitsTable) {
+
+	savedTablesArray[tableIndex] = searchedHitsTableArray.slice();
+//should searchedHitsTableArray.length = 0 be here??May3
+searchedHitsTableArray.length = 0;
+} else {
+	savedTablesArray[tableIndex] = contactsArray.slice();
+}//end if else makeHitsTable
+
+//TRY CONCAT nope did not work!
+//children = arr1.concat(arr2);
+//savedTablesArray[tableIndex] = savedTablesArray[tableIndex].concat(contactsArray);
+//alert("After stocking savedTablesArray: " + savedTablesArray); // printed out in first
+//TypeError: undefined is not an object (evaluating 'Array.prototype.push.apply(savedTablesArray, contactsArray)')
+
+/********************************** */
+console.log("savedTablesArray =  " + savedTablesArray);//should only be 1 array element in this array at this point
+/*
+AFTER SECOND RUN !!!WHY DID I LOSE savedTablesArray[0] ?
+savedTablesArray =  ,
+Name of first contact , Jan 14 2022 01:46,Enter phone number ,username@gmail.com,
+Contact Name , Jan 14 2022 01:46, ,username@shaw.ca,
+Contact3 Name , Jan 14 2022 01:46, ,username3@telus.net
+*/
+//savedTablesArray =  
+/*Name of first contact , Jan 11 2022 01:34,Enter phone number ,username@gmail.com,
+Contact Name , Jan 11 2022 01:34, ,username@shaw.ca,
+Contact3 Name , Jan 11 2022 01:34, ,username3@telus.net. */
+
+/*savedTablesArray[0] = 
+Name of first contact , Jan 11 2022 01:34,Enter phone number ,username@gmail.com,
+Contact Name , Jan 11 2022 01:34, ,username@shaw.ca,
+Contact3 Name , Jan 11 2022 01:34, ,username3@telus.net*/
+
+console.log("savedTablesArray[0] = " + savedTablesArray[0]);
+//savedTablesArray[0] = 
+/*
+Name of first contact , Jan 14 2022 01:46,Enter phone number ,username@gmail.com,
+Contact Name , Jan 14 2022 01:46, ,username@shaw.ca,
+Contact3 Name , Jan 14 2022 01:46, ,username3@telus.net 
+
+AFTER SECOND RUN …
+savedTablesArray[0] = undefined*/
+console.log("savedTablesArray[1] = " + savedTablesArray[1]);
+// savedTablesArray[1] = name2,DATE,tel2,email2
+
+/*AFTER FIRST RUN savedTablesArray[1] = 
+savedTablesArray[1] = name2,DATE,tel2,email2
+savedTablesArray[0] = 
+Name of first contact , Jan 16 2022 01:19,Enter phone number ,username@gmail.com,
+Contact Name , Jan 16 2022 01:19, ,username@shaw.ca,
+Contact3 Name , Jan 16 2022 01:19, ,username3@telus.net*/
+//to retrieve get savedTablesArray[tableIndex], assign name from newTableNames array and set tableArray to it in the setup(tableNamed) function 
+	//newTableVariablesArray declared globally above
+	tableListExists = true;
+	newTableVariablesArray = [tableIndex,newTableNames,tableListExists];
+	console.log("newTableVariablesArray = " + newTableVariablesArray);
+//	TypeError: undefined is not an object (evaluating 'newTableSpecificVariables[tableIndex][0] = tableIndex')
+	newTableSpecificVariables[tableIndex][0] = tableIndex;
+//TypeError: undefined is not an object (evaluating 'newTableSpecificVariables[tableIndex][0] = tableIndex')…because tableIndex is -1	tableIndex is a load table variable and doesn't get set until loading in a table…so NOT the variable to use on setting up create newTable!!
+//ALSO GET SAME ERROR IF TABLE INDEX > newTableSpecificVariables.length as the array is only defined for 10..same with savedTablesArray..so try new code to increase array if tableIndex > savedTablesArray??? See setupNewTable or saveNewTable ?? for this code
+
+//if newTable being created no extra fields at this point! Unless ADDED CONTACTS from menu .. so lets just leave out !!! Mar 21 2022 !!!!
+//numberOfNewTableAddedFields = 0;
+newTableSpecificVariables[tableIndex][2] = numberOfNewTableAddedFields;
+	newTableSpecificVariables[tableIndex][1] = newTableFieldsArray;
+	
+	
+	//newTableVariablesArray = 0,Contacts0,true
+	//newTableVariablesArray = 0,Contacts0,false
+	//newTableVariablesArray = 0,Contacts0,false
+	//after second run ..newTableVariablesArray = 1,Contacts0,Contacts1,false
+	//three new variables to be saved to objectStore similar to preferences variable..savedTablesArray,newTableVariablesArray. (tableIndex, newTableNames and tableListExists) variables are used in tableScreenOptions on startup
+	//alert("About to save " + savedTableArrayName + " savedTablesArray " + savedTablesArray +" ! stop here");
+	
+	//ReferenceError: Can't find variable: savedTableArrayName
+	//any additional prep before saveVariables function is called goes here..below
+	//NEED TO RESTORE ORIGINAL DB VALUES OF TABLEARRAY BEFORE GOING TO SAVEVARIABLES!!
+	resetFromContacts();
+	//now tableArray etc restored, contactsArray cleared. HAVE TO RESET makeTable flag because it was set to false in resetFromContacts which is also used by returnToNotes btn.
+	makeContactsTable = true;//when to make false again? Might be that leaving false in resetFromContacts is correct? Check!!!!
+	console.log("In saveNewTable, on the way back to saveBtn.onclick then saveVariables… to …after retrieving dataVobj…….tableIndex = " + tableIndex + " tableListExists = " + tableListExists + " newTableNames = " + newTableNames);
+	console.log('In saveNewTable function: makeContactsTable should now be true .It was set to false in restoreFromContacts in preparation for savingVariables, and just now reset to true…. = '+makeContactsTable); 
+
+	//alert("In saveNewTable.. tableListExists = " + tableListExists);
+	//return savedTablesArray;
+	//any additional prep before saveVariables function is called goes here..above
+	//variables to be added to objectStore:
+	//savedTablesArray
+	//newTableVariablesArray
+}//end function saveNewTable
+//NCJan10..If messed up go back to fallBackJan10..above
+
+function clearFoundRecordListFunc () {
+		//code below clears any pre-existing records in foundRecordList of search to prevent glitch that happens if a pre-existing foundRecord is tapped on after searched Contacts
+			
+			foundRecordsList = false;//flag to clear a prexisting foundRecordsList so that a fresh loaded db does not use an old foundRecordList June 18 2021
+	while (resultList.firstChild) {
+    resultList.removeChild(resultList.firstChild);
+}//end while
+console.log('Clearing the record list after clearRecordListBtn.onclick..foundRecordsList = ' + foundRecordsList);
+
+liMatchedRecord.textContent = "If record found it will appear below: Tap record title to view its notes";
+//these lines added Jan3
+selectedContact.length = 0;//clear selectedContact array and contactsTable array
+contactsTable.length = 0;
+//SHOULD THIS BE contactsArray.length = 0;
+
+//code ABOVE clears any pre-existing records in foundRecordList of search to prevent glitch that happens if a pre-existing foundRecord is tapped on after searched Contacts
+}//end clearFoundRecordListFunc
+
+//cutname function is used in emailBtn.onclick
+function cutName(namestr) {
+  var newArray = namestr.split('_');
+  return newArray;
+}//end function cutname
+
+
+//this function does not work.causes an endless loop that crashes the browser
+//called from addContactsBtn.onclick
+//manualContacts and contactsArray set to 0 from addContactsBtn.onclick
+//also called from PlusContacts
+async function manuallyCreateContacts
+() {
+/*alert("In manually createContacts: contactsFieldNames[5] =  " + contactsFieldNames[5]);
+*/
+
+//allow for only 4 fields
+if(newTableFieldsArray.length === 4 || contactsFieldNames.length === 4) {
+fifthFieldLabel.style.display = "none";
+contactsAddress.style.display = "none";
+} else if(newTableFieldsArray.length > 4 || contactsFieldNames.length > 4) {
+fifthFieldLabel.style.display = "unset";
+contactsAddress.style.display = "unset";
+}//end if(newTableFieldsArray.length === 4)
+
+//code to change text of field labels prompt
+//added conditional plusContacts
+if(contactsFieldNames.length !== 0 || plusContacts) {
+firstFieldLabel.textContent = contactsFieldNames[0];
+thirdFieldLabel.textContent = contactsFieldNames[2];
+fourthFieldLabel.textContent = contactsFieldNames[3];
+//alert("newTableSpecificVariables[tableIndex][1].length = " +newTableSpecificVariables[tableIndex][1].length);
+
+//May 12 REMOVED LINE: || newTableSpecificVariables[tableIndex][1].length > 4) because if you startba virgin table as an addContacts, tableIndex = -1 and this stops program execution!!
+
+	if(newTableFieldsArray.length > 4 || contactsFieldNames.length > 4){
+fifthFieldLabel.textContent = contactsFieldNames[4];}//end if(contactsFieldNames.length > 4) 
+} else {
+firstFieldLabel.textContent = "Name of Contact: ";
+thirdFieldLabel.textContent = "Telephone number: ";
+fourthFieldLabel.textContent = "Email Address: ";
+fifthFieldLabel.textContent = "Address: ";
+}//end if else (contactsFieldNames.length !== 0)
+//code to change text of field labels prompt
+/*if(addFromContacts) {
+tableNameText.textContent = "";
+} else {*/
+if(plusContacts) {
+tableNameText.textContent = newTableNames[loadTableIndex];//added May9 not tested
+} else {
+	tableNameText.textContent = "";
+}//end if(fromPlusContacts)
+
+/*if(newTableFieldNames.length > 5) {
+alert("For the remaining" + contactsFieldNames.length-5 + "dynamic fields, enter data directly into the table data cells from the table chart.");	
+}//end if(contactsFieldNames.length > 5)
+*/
+manualContactsEntered = true;
+console.log("at manuallyCreateContacts function");
+showTable.setAttribute('class','hidden');
+manualContactsWindow.setAttribute('class', 'showing');
+
+	//Check if screenDark mode
+checkScreenMode();
+if(screenDark) {
+	manualContactsWindow.style.backgroundColor = "black";
+	manualContactsWindow.style.color = "white";
+	//showNewTableNameP.style.color = "white";
+} else {
+	manualContactsWindow.style.backgroundColor = "#eee";
+	manualContactsWindow.style.color = "black";
+	//showNewTableNameP.style.color = "black";
+}//end if else screenDark#
+
+ getManualContacts(contactsArray);
+
+
+console.log("Back from getManualContacts. ");
+//alertx("Back from getManualContacts. ");
+ 
+	
+ // }//end function enterContactBtn.onclick
+ 
+ 
+ clearContactEntryBtn.onclick = function() {
+contactsNameInput.value = "";
+	telephoneInput.value = "";
+	contactsEmailInput.value = "";
+	contactsAddress.value ="";
+	statusContactEntryP.textContent = "";	 
+	 
+ }//end clearContactEntryBtn.onclick
+ 
+ 
+//NC Date:Jan9
+cancelAllBtn.onclick = function () {
+//alert("CANCEL BTN TAPPED");
+manualContactsEntered = false;
+	//selectedContact.length = 0;
+	//TypeError: undefined is not an object (evaluating 'selectedContact.length = 0')
+	contactsNameInput.value = "";
+	telephoneInput.value = "";
+	contactsEmailInput.value = "";
+	contactsAddress.value ="";
+	statusContactEntryP.textContent = "";
+//trying to prevent keyboard pop up on cancel..does not work!!
+	contactsNameInput.value = "\n";
+	manualContactsForm.blur();
+	contactsNameInput.blur();
+	document.activeElement.blur();//remove focus from inputs so keyboard does not pop up on cancel .. does not work
+statusContactEntryP.setAttribute('class','normalBtn');//stop flashing but bckgrnd reset to black below
+statusContactEntryP.style.backgroundColor = "black";
+manualContactsWindow.setAttribute('class', 'hidden');
+//more reset variables in aid of stability?   Vv
+loadFromTableOptions = false;
+resetFields = true;//trying to correct messed up field headers if addContacts/Records CANCELLED May12 2022
+resetFromContacts();
+//more reset variables in aid of stability?   ^^
+//showTable.setAttribute('class', 'showing');//commented out so that an empty table screen can not be shown which would eventually lock up prgm
+ //added Mar27….check manual contacts still cancels ok..added to cancel addingMoreContactsManually	
+	}//end cancelAllBtn.onclick
+//NC
+	
+ }//end function manuallyCreateContacts
+ 
+ //saveOriginal function retains the main database variable values to restore after viewing newTables
+ function saveOriginal () {
+	console.log("In saveOriginal function");
+	savedOriginal = true;
+saveTableTitle= tableTitle.slice();
+saveTableArray = tableArray.slice();
+saveOriginaltableTitleLength = tableTitle.length;
+saveCopyOfTableArray = copyOfTableArray.slice();
+saveCopyOfTableTitle= copyOfTableTitle.slice();//this is the original tableTitle. Have not created a new tableTitle aray for contacts. Do I need to? Copy of arrays used in sort to restore original order
+
+//Troubleshoot
+saveFieldNamesArray = fieldNamesArray.slice();
+saveNumberOfOriginalFields= numberOfFields;//otherVariablesArray[3]
+saveNumberOfAdditionalFields=numberOfDynamicFields;//otherVariablesArray[4]
+saveOriginalNumberRecords = originalNumberRecords;//otherVariablesArray[1] ////this was equated to contacts originalNumberRecods to prevent refresh request in tableScreenOptions
+
+//Troubleshoot
+saveDbName = dbName;
+}//end function saveOriginal if !savedOriginal
+
+//function to redefine savedTablesArray if a database does not yet have it ..backwards compatable!
+
+function redefineSavedTablesArray () {
+	console.log("In redefineSavedTablesArray functio…did I make it?");
+	let savedTablesArray = [];
+//for (var i = 0; i < recordCounter; i++) {
+
+for (var i = 0; i < 10; i++) {
+
+savedTablesArray[i] = new Array(4);
+
+}//number of fields means all fields for savedTablesArray there are 4 fields maybe should change back to numberOfFields????
+
+savedTablesArray[0] = ["name","DATE","tel","email"];
+savedTablesArray[1] = ["name2","DATE","tel2","email2"];
+
+for (var i = 0; i < 10; i++) {
+//these lines added Mar 21 v
+newTableFieldsArray.length = 0;
+numberOfNewTableAddedFields = 0;
+tableIndex = -1;
+//these lines added Mar 21 ^
+newTableSpecificVariables[i] = [tableIndex, newTableFieldsArray, numberOfNewTableAddedFields];
+
+}//number of fields means all fields for savedTablesArray there are 4 fields maybe should change back to numberOfFields????
+
+	
+
+	return savedTablesArray;
+//return savedTablesArray,newTableSpecificVariables;
+}//end function redefineSavedTablesArray
+//test i = 20 was 10
+function redefinenewTableSpecificVariables () {
+	for (var i = 0; i < 10; i++) {
+	
+//these lines added Mar 21 v (its a new database!)
+newTableFieldsArray.length = 0;
+numberOfNewTableAddedFields = 0;
+tableIndex = -1;
+//these lines added Mar 21 ^
+
+newTableSpecificVariables[i] = [tableIndex, newTableFieldsArray, numberOfNewTableAddedFields];
+
+	}//end for i loop
+//alertx("newTableSpecificVariables =  " + newTableSpecificVariables);
+console.log("newTableSpecificVariables =  " + newTableSpecificVariables);
+
+	return newTableSpecificVariables;
+}//end function redefinenewTableSpecificVariables()
+
+//create setupNewTable(tableNamed) function called from create contacts..emaiBtn.onclick NOTE savedTableArray NOT created until saveBtn.onclick if makeContactsTable = true! So at point of saveBtn.onclick prior to first save savedTavpbkesArray is empty!
+//APRIL 7 removed async..
+ function setupNewTable() {
+ 
+ //code to correct TypeError: undefined is not an object (evaluating 'newTableSpecificVariables[tableIndex][0] = tableIndex').     Current table index = 10 Name of current table = Is this table > 10
+//Reset array vv
+//tableIndex starts at 0 and savedTablesArray indexes will be 0-9 when .length is 10
+// if(tableIndex > savedTablesArray.length-1) {
+// savedTablesArray.length = savedTablesArray.length + 10;
+// newTableSpecificVariables.length = newTableSpecificVariables.length + 10;
+	
+// }//end if(tableIndex > savedTablesArray.length) 
+//Reset array ^^
+
+
+if(makeContactsTable && contactsFieldNames.length === 0) { 
+contactsFieldNames[0]="CONTACT NAME";
+contactsFieldNames[1]="DATE";
+contactsFieldNames[2]="TELEPHONE";
+contactsFieldNames[3]="EMAIL";
+
+//alertx("in setUpNewTable contactsFieldNames0 and fromEditFieldLabels = " +fromEditFieldLabels);
+console.log("in setUpNewTable contactsFieldNames0 and fromEditFieldLabels = " +fromEditFieldLabels);
+
+
+if(manualContactsEntered || addContactsBtnTapped || fromEditFieldLabels) {
+contactsFieldNames[4]="ADDRESS";
+// //not tested Mar26 to prevent extra field being added if preceding new table had an extra field
+contactsFieldNames.length = 5;	
+addContactsBtnTapped = false;//May5 2022
+}//end if manualContactsEntered
+
+//alertx("The new table Field Names (contactsFieldNames) are set to: " + contactsFieldNames);
+console.log("The new table Field Names (contactsFieldNames) are set to: " + contactsFieldNames);
+
+}//end if(makeContactsTable && contactsFieldNames[0]= "" ||)
+
+
+//TypeError: undefined is not an object (evaluating 'newTableFieldsArray.slice')
+
+// if(newTableSpecificVariables[tableIndex][1] === undefined) {
+// 	newTableFieldsArray = contactsFieldNames.slice();
+// } else {
+// contactsFieldNames = newTableSpecificVariables[tableIndex][1].slice();
+// }//end if(newTableSpecificVariables[tableIndex][1] === undefined) 
+
+
+// if(newTableFieldsArray === undefined) {
+// 	newTableFieldsArray = contactsFieldNames.slice();
+// } else {
+// contactsFieldNames = newTableFieldsArray.slice();
+// }//end if(newTableFieldsArray === undefined) 
+
+// if(newTableSpecificVariables[tableIndex][2] === undefined) {
+// 	numberOfNewTableAddedFields = 0;
+// } else {
+//  numberOfNewTableAddedFields = newTableSpecificVariables[tableIndex][2];
+// }//end if(newTableSpecificVariables[tableIndex][2] === undefined)
+
+//numberOfNewTableAddedFields = newTableVariablesArray[4];
+
+//save the original tableArray and fieldNamesArray IF savedOriginal = false!. This is so original is not changed to past instances of contactsTables;
+//make a function out of saving original tableArray values..but test immediately to be sure we can transfer array  values from a function!
+//alertx("savedOriginal = " + savedOriginal);
+if(!savedOriginal) {saveOriginal();}//works
+console.log("Back from/ or past  saveOriginal function");
+
+//saveNumberOfAdditionalFields=numberOfDynamicFields;//don't need if in savedOriginal?
+
+//alert("In function setupNewTable.. The saved original tableArray = " + saveTableArray);//the original database..not the new table!
+//alert("savedTablesArray[0] = " + savedTablesArray[0]);
+//MAKE CODE BELOW INTO THE 
+if(makeContactsTable || loadFromTableOptions) {
+	//for pupose of displaying contacts in table set tableArray used in displayTable to the contacts values, then after done with creating contactsTable restore to saved values so we get the original database table back
+	
+
+	if (makeContactsTable) {
+//NOTE TABLE INDEX STARTS AT -1 creating array of new tables. Saved in newTableVariables array[0]
+tableIndex = tableIndex +1;//add to title of table starts at -1
+
+tableID = tableIndex;//for purpose of identifying correct newTableSpecificVaiable to save fieldNamesArray to
+//*#####################this code did not work!
+//alertx("In setUpNewTable function - contactsFieldNames " + contactsFieldNames);
+//CODE TO EDIT FIELD NAMES OF NEW TABLE v
+//when coming from addContacts tableArray at this point is still main db so this code won't run..not what we want
+//if(!tableArray[0][0].includes(">")) {
+//exclude searched table from main db
+
+//await editNewTableFieldNames(contactsFieldNames);
+
+/*
+
+
+ //confirm choice window
+		 if (window.confirm("Do you want to re-label field names for this new Table ? : \n" + "  CANCEL will retain default field names for a CONTACTS table.")) {
+	
+ editNewTableFieldNames(contactsFieldNames);
+//!!!!!!!!!?,!L
+// alert("at editNewTableFieldNames");
+
+// //Check if screenDark mode
+// checkScreenMode();
+// if(screenDark) {
+// alert("screen dark");	editNewTableFieldNamesWindow.style.backgroundColor = "black";
+// 	editNewTableFieldNamesWindow.style.color = "white";
+// 	showNewTableNameP.style.color = "white";
+// } else {
+// 	editNewTableFieldNamesWindow.style.backgroundColor = "#eee";
+// 	editNewTableFieldNamesWindow.style.color = "black";
+// 	showNewTableNameP.style.color = "black";
+// }//end if else screenDark
+// alert("should now show editNewTableFieldNames");
+// console.log("should now show editNewTableFieldNames");
+// showTable.setAttribute('class','hidden');
+// newTableNameWin.setAttribute('class', 'hidden');//added Apr7
+// editNewTableFieldNamesWindow.setAttribute('class', 'showing');	
+
+// enterNewFieldNameBtn.setAttribute('class','borderBlinkGrn');
+
+// alert("editNewTableFieldNamesWindow should open");
+// clearFieldNameEntryBtn.onclick = function() {
+// firstFieldNameNTInput.value = "";
+// 	secondFieldNameNTInput.value = "";
+// 	thirdFieldNameNTInput.value = "";
+// 	fourthFieldNameNTInput.value ="";
+// 	statusFieldNamesEntryP.textContent = "";	 
+	 
+//  }//end clearFieldNameEntryBtn.onclick
+
+// cancelAllFieldNamesBtn.onclick = function () {
+// //alert("CANCEL BTN TAPPED");
+// enterNewFieldNameBtn.setAttribute('class','attentionBtn');
+// manualContactsEntered = false;
+// 	//selectedContact.length = 0;
+// 	//TypeError: undefined is not an object (evaluating 'selectedContact.length = 0')
+// 	firstFieldNameNTInput.value = "";
+// 	secondFieldNameNTInput.value = "";
+// 	thirdFieldNameNTInput.value = "";
+// 	fourthFieldNameNTInput.value ="";
+// 	statusFieldNamesEntryP.textContent = "";	 
+
+// statusContactEntryP.setAttribute('class','normalBtn');
+// manualContactsWindow.setAttribute('class', 'hidden');
+// //showTable.setAttribute('class', 'showing');
+//  //added Mar27….check manual contacts still cancels ok..added to cancel addingMoreContactsManually	
+// 	}//end cancelAllFieldNamesBtn
+
+// finishedFieldNamesEntryBtn.disabled = true;
+//  enterNewFieldNameBtn.onclick = function() {
+//  finishedFieldNamesEntryBtn.disabled = false;
+//  /*
+// i++
+// 	selectedContact[i] = "\n" + contactsNameInput.value + " " + "_"+telephoneInput.value + " " + "_"+contactsEmailInput.value + " " +
+// 		"_"+contactsAddress.value;
+	
+// 	statusContactEntryP.textContent = selectedContact[i] +  " has been submitted. Tap DONE after all contacts entered.After tapping DONE,  Tap HERE to register edited entries.";
+// */
+
+
+
+// contactsFieldNames[0]=firstFieldNameNTInput.value;
+// contactsFieldNames[1]="DATE";
+// contactsFieldNames[2]=secondFieldNameNTInput.value;
+// contactsFieldNames[3]=thirdFieldNameNTInput.value;
+
+// if(manualContactsEntered) {
+// contactsFieldNames[4]=fourthFieldNameNTInput.value;
+// //not tested Mar26 to prevent extra field being added if preceding new table had an extra field
+// contactsFieldNames.length = 5;	
+// }//end if manualContactsEntered 
+
+// statusFieldNamesEntryP.textContent =  contactsFieldNames +  " The above Field Names have been entered! Tap DONE after all contacts entered.After tapping DONE,  Tap HERE to register edited entries.";
+// //return contactsFieldNames;
+// }//end enterNewFieldNameBtn.onclick
+
+//!!!!!!?,!!??,!!
+	
+/*	
+		 } else {
+	//if(makeContactsTable) {
+contactsFieldNames[0]="CONTACT NAME";
+contactsFieldNames[1]="DATE";
+contactsFieldNames[2]="TELEPHONE";
+contactsFieldNames[3]="EMAIL";
+
+if(manualContactsEntered) {
+contactsFieldNames[4]="ADDRESS";
+//not tested Mar26 to prevent extra field being added if preceding new table had an extra field
+contactsFieldNames.length = 5;	
+}//end if manualContactsEntered 
+		 }//end choice window
+*/		 
+//}//end if(!tableArray[0][0].includes(">")) {
+//CODE TO EDIT FIELD NAMES OF NEW TABLE ^
+
+/*
+if(newTableSpecificVariables[tableIndex][1] === undefined || newTableSpecificVariables[tableIndex][1] === "" || newTableSpecificVariables[tableIndex][1] === " " || newTableSpecificVariables[tableIndex][1] === null) {
+	newTableFieldsArray = contactsFieldNames.slice();
+} else {
+contactsFieldNames = newTableSpecificVariables[tableIndex][1].slice();//this statement won't run because table is just being created..not even saved yet!
+}//end if(newTableSpecificVariables[tableIndex][1] === undefined) 
+
+//*#####################this code did not work!
+*/
+//IF CREATING A NEWTABLE FOR THE FIRST TIME THERE WILL BE NO NEWFIELDS ADDED YET!
+
+//TypeError: undefined is not an object (evaluating 'newTableSpecificVariables[tableIndex][1] = contactsFieldNames.slice()')//MAR14
+//I THINK WHAT IS HAPPENING HERE IS THAT AS i have deleted tables the array keeps shrinking and now newTableSpecificVariables[tableIndex] does not exist….SO HAVE TO UPDATE ARRAY LENGTH AS I DELETE TABLES.???yep because running in a new table with 10 intact slots for newTableSpecificVariables does work!SO IF YOU DELETE A TABLE YOU HAVE TO ADD A SLOT!
+//if creating a new table from a new table loadFromTableOptions and makeContactsTable are both true!
+if(makeHitsTable && !loadFromTableOptions) {  
+//searched a main database table
+//alertx('in makeHitsTable and setUpNewTable - fieldNamesArray = ' + fieldNamesArray);
+console.log('in makeHitsTable and setUpNewTable - fieldNamesArray = ' + fieldNamesArray);
+
+newTableFieldsArray = fieldNamesArray.slice();
+newTableSpecificVariables[tableIndex][1] = fieldNamesArray.slice();
+//alertx('newTableSpecificVariables[tableIndex][1] = ' + newTableSpecificVariables[tableIndex]);
+console.log('newTableSpecificVariables[tableIndex][1] = ' + newTableSpecificVariables[tableIndex]);
+//-1 and 0 at end
+//will save a flag that indicates if new table derived from a searchmain db in aid of preventing + - icons appearing in such a table..aadding a record herevwould crash! USED A CONDITIONAL INSTEAD..DETECTING A > IN TABLEARRAY[0][0] indicates new table is from a searched main db table so want to prevent apoearancr of + - icons ..if used would crash
+
+//at this poinr fieldNamesArray should still = main db data ^ but now if both loadFromTableOptions and makeContactsTable are true, newFieldsArray should be that of the new table we are creating this new table from!
+} else if (makeHitsTable && loadFromTableOptions) {
+//searched a new table (CONTACTS)
+newTableFieldsArray = newTableFieldsArray.slice();
+newTableSpecificVariables[tableIndex][1] = newTableFieldsArray.slice();
+//alert indicated newTableFieldsArray was correct, but newTableSpecificVariables did not reflect 5 fields last one address until alerts in the save section of code…not sure why but still seems to work!!! Mar26 2022
+////not tested Mar26 to prevent extra field being added if preceding new table had an extra field
+} else if (manualContactsEntered) {
+newTableFieldsArray = contactsFieldNames.slice();
+//should this line be here.
+//newTableSpecificVariables[tableIndex][1] = contactsFieldNames.slice();
+} else {
+newTableFieldsArray = contactsFieldNames.slice();
+newTableSpecificVariables[tableIndex][1] = contactsFieldNames.slice();
+}//end if else makeHitsTable
+//should newTableSpecificVariables[tableIndex][1] = newTableFieldsArray.(slice); ??
+
+if(manualContactsEntered) {
+	numberOfNewTableAddedFields = 1;
+	numberOfDynamicFields = 1;
+	} else if(makeHitsTable) {
+	numberOfNewTableAddedFields = numberOfDynamicFields;//numberOfDynamicFields should = main db data at this point
+	numberOfDynamicFields = numberOfDynamicFields;
+	
+	} else {
+numberOfNewTableAddedFields = contactsFieldNames.length-4;
+numberOfDynamicFields = numberOfNewTableAddedFields;
+//numberOfNewTableAddedFields = 0;
+//numberOfDynamicFields = 0;
+	}//end if else manualContactsEntered
+
+newTableSpecificVariables[tableIndex][2] = numberOfNewTableAddedFields;
+
+//newTableSpecificVariables[tableID][0] = newTableEdit;//not using this variable as of Feb13
+
+//alertx("In makeContactsTable: tableIndex = " +tableIndex + "  newTableFieldsArray = " + newTableFieldsArray + " newTableSpecificVariables[" + tableIndex +"][1] = " + newTableSpecificVariables[tableIndex][1]+ ".  savedTablesArray.length = " + savedTablesArray.length + ". newTableSpecificVariables.length = " + newTableSpecificVariables.length);
+
+console.log("In makeContactsTable: tableIndex = " +tableIndex + "  newTableFieldsArray = " + newTableFieldsArray + " newTableSpecificVariables[" + tableIndex +"][1] = " + newTableSpecificVariables[tableIndex][1]+ ".  savedTablesArray.length = " + savedTablesArray.length + ". newTableSpecificVariables.length = " + newTableSpecificVariables.length);
+//newTableSpecificVariables[0][1]= undefined..so is [0][2]…created by createNewDB so I think I have messed up the initialization of the newTableSpecificVariables[tableIndex][1] array. Put []around it in saveVariables
+//*#####################this code below did not work!
+/*
+if(newTableSpecificVariables[tableIndex][2] === undefined) {
+	numberOfNewTableAddedFields = 0;
+} else {
+ numberOfNewTableAddedFields = newTableSpecificVariables[tableIndex][2];
+}//end if(newTableSpecificVariables[tableIndex][2] === undefined)
+*/
+//*#####################this code above did not work!
+
+
+//alertx("At setupNewTable: creating a newTable! In makeContactsTable: (newTableFieldsArray)..this is the field names of the newTable .. tableIndex variable now =  " + tableIndex + ".  tableID = " +tableID + "   newTableSpecificVariables[tableIndex][1] = " + newTableSpecificVariables[tableIndex][1] + " (number of dynamic fields in new table should be 0 at time of creating the new table…— numberOfNewTableAddedFields - newTableSpecificVariables[tableIndex][2] = "  + newTableSpecificVariables[tableIndex][2]);
+
+console.log("At setupNewTable: creating a newTable! In makeContactsTable: (newTableFieldsArray)..this is the field names of the newTable .. tableIndex variable now =  " + tableIndex + ".  tableID = " +tableID + "   newTableSpecificVariables[tableIndex][1] = " + newTableSpecificVariables[tableIndex][1] + " (number of dynamic fields in new table should be 0 at time of creating the new table…— numberOfNewTableAddedFields - newTableSpecificVariables[tableIndex][2] = "  + newTableSpecificVariables[tableIndex][2]);
+
+//enter newTableName
+// newTableNameWin.setAttribute('class','showing');
+// 	newTableNameSubmitBtn.onclick = function () {
+// 		newTableName = newTableNameInput.value;
+// 		newTableNameWin.setAttribute('class','hidden');
+// 		//return newTableName;
+// 	}//end of submitBtn.onclick
+	
+	//newTableNameInput.value = "";
+
+	
+//x-xxxxx—xxxx 	
+//newTableName = 	getNewTableName();
+//getNewTableName();	
+//-x—-x—-xxxxx-
+//enter newTableName
+ //await getNewTableName ();
+ //SyntaxError: Unexpected identifier 'getNewTableName'
+ //newTableNameWin.setAttribute('class','showing');
+//getNewTableName();//this function will use html window
+// if(newTableName==="") {
+// await getNewTableName();//await does not work!!!
+// 	//newTableName="Contacts";
+// }//end if newTableName === ""
+if(newTableName==="") {
+	newTableName="Contacts";
+}//end if newTableName === ""
+//alert("newTableName = " + newTableName);
+flipMenu.textContent = " ✅ New Table Name: " + newTableName;//have to repeat this for second run to get it to work.not sure why?????Date: Jan2
+//return false;
+dbName = newTableName+tableIndex;
+newTableNames[tableIndex]= dbName;//make an array variable to keep track of all new tables
+//setup tableArray for displayTable function to reflect contacts or newTable data
+//alertx("testing contactsArray after manual get contacts. " + contactsArray);
+console.log("testing contactsArray after manual get contacts. " + contactsArray);
+tableArray = tableArray.slice(0,tableTitle.length);//clear tableArray from main db data
+//tableArray.length = 0;makesberror?stops runnuing
+//tableArray= contactsTable.slice();
+
+if(makeHitsTable) {
+
+//alertx("At setupNewTable: creating a newTable!. makeHitsTable is true..searchedHitsTableArray = " + searchedHitsTableArray);
+console.log("At setupNewTable: creating a newTable!. makeHitsTable is true..searchedHitsTableArray = " + searchedHitsTableArray);
+
+
+	tableArray = searchedHitsTableArray.slice();
+	//should searchedHits be cleared here??NO BECAUSE YOU NEED THIS CURRENT FOR SAVING DATA?
+
+} else {
+	tableArray = contactsArray.slice();
+
+}//end if else makeHitsTable
+
+//TO SET UP SORTING OF CONTACTS TABLE —
+
+//RETEST SORT. CHANGE VARIABLE ???? copyOfTableTitle NAME TO copyforSortTableTitle and use makeContactsTable variable true to use it
+
+copyOfTableTitle=tableTitle.slice();//these are for sorting of contacts table. NOTE copyOfTableTitle is same as original ..this is NOT the contacts! So do I need it in sort? Should just need tableTitle.length which will be selectedContact.length
+copyOfTableArray = tableArray.slice();
+//copyOfTableArray only changes IF makeContactsTable is true so maybe don't need to change variable name?
+//above puts the contactTable data into the copyTableArray variable to be used if sorting and restoring order. Of contacts table MAYBE SHOULD USE copy Of for SortTableArray?
+
+//IF LOADING A SPECIFIC NEWTABLE tableIndex variable should be replaced with loadTableIndex as tableIndex increases by one for every new table created but loadTableIndex is static for its own specific table!!!!..this change is made Feb5 after all initial newTables have been previously created
+//newTableSpecificVariables[tableIndex][1].slice();
+
+//fieldNamesArray = contactsFieldNames.slice();
+fieldNamesArray = newTableFieldsArray.slice();
+
+
+
+console.log('tableArray = ' +tableArray+ ' fieldNamesArray = '+ fieldNamesArray + '. tableIndex = '+ tableIndex);
+
+
+//datem:Feb2 commented out numbrtOfAdditionalFields now that edit contacts table is allowed not needed in makeContactsTable?
+numberOfDynamicFields = numberOfNewTableAddedFields;
+console.log('numberOfDynamicFields = ' +numberOfDynamicFields);
+// saveNumberOfFields= numberOfFields;
+//numberOfFields=4;
+
+if(makeHitsTable) {
+	numberOfFields = newTableFieldsArray.length;
+
+} else {
+	numberOfFields = contactsFieldNames.length;
+}//end if else makeHitsTable
+
+
+saveheadNameTextContent =headName.textContent 
+console.log('In makeContactsTable: numberOfFields = ' +numberOfFields);
+headName.textContent ="CONTACT";
+//savetableTitleLength= tableTitle.length;//original tableTitle length
+//tableTitleLength = selectedContact.length;i.e. the number of selected contacts
+
+if(manualContactsEntered) {
+	tableTitle.length = contactsArray.length;
+	newTableContactsTitleLength = contactsArray.length;	
+	manualContactsEntered = false;
+	
+} else if (makeHitsTable) {
+	tableTitle.length = searchedHitsTableArray.length;
+	newTableContactsTitleLength = searchedHitsTableArray.length;
+
+} else {
+	tableTitle.length = selectedContact.length;
+	newTableContactsTitleLength = selectedContact.length;//a global variable so that sort can use it
+}//end if(manualContactsEntered)
+
+originalNumberRecords = tableTitle.length;//the contacts length! ADDED THIS Jan18 ..not tested. In aid of preventing request for table refresh! This will be returned to original in the resetFromContacts function
+
+//alertx("testing from manual contacts. tableTitle.length =  " + tableTitle.length);
+console.log("testing from manual contacts. tableTitle.length =  " + tableTitle.length);
+//saveOriginalNumberRecords = originalNumberRecords;
+// originalNumberRecords = tableTitle.length;//the contacts length! ADDED THIS Jan18 ..not tested. In aid of preventing request for table refresh! This will be returned to original in the resetFromContacts function
+blockEdit = true//flag to prevent a dblclick td edit until newtable is saved and initialized by return to home screen
+//homeScreenBtn.setAttribute('class','borderBlink');
+//homeScreenBtn2.setAttribute('class','borderBlink');
+}//end if makeContactsTable
+
+if(loadFromTableOptions && !makeHitsTable) {
+	console.log("In setupNewTable…loadFromTableOptions….loadTableIndex = " + loadTableIndex + "  makeContactsTable = " +makeContactsTable);
+	//loadTableIndex comes from addEventListener of tableScreenOptions
+if(!savedTablesArray[loadTableIndex]) {
+	alert("ERROR! YOU DID NOT SAVE THIS NEW TABLE SO IT DOES NOT EXIST!");
+	tableScreen.setAttribute('class','hidden');
+}
+
+/*
+//code below will block all table loads because data is not yet loaded!
+if(savedTablesArray[loadTableIndex][0] = null || undefined || "" || " ") {
+	alert("ERROR! An error occurred loading this table. It may not have been saved after creation or an illegal entry made? Suggest deleting this table and re-creating?");
+	
+tableScreen.setAttribute('class','showing');	
+
+//tableScreen.setAttribute('class','showing');
+return;
+}
+*/
+
+	//In setupNewTable…loadFromTableOptions….loadTableIndex = 3makeContactsTable = false
+	//NOTE! NewTableVariablesArray needs two parts..the fieldNamesArray and numberOfDynamicFields needs to be saved for each newTable!
+	console.log(" In setupNewTable, loadFromTableOptions: savedTablesArray[loadTableIndex] = " + savedTablesArray[loadTableIndex] + ".  tableArray and tableTitle.length reflect this for newTable mode code!");
+	// In setupNewTable, loadFromTableOptions: savedTablesArray[loadTableIndex] = ,,,.  tableArray and tableTitle.length reflect this for newTable mode code!
+	tableArray= savedTablesArray[loadTableIndex].slice();
+	//I BET YOU HAVE TO SAVE BEFORE YOU CAN RETRIEVE. WHAT IS SAVEDTABLESARRAY AT THIS POINT?????
+	console.log("In setup newTable: savedTablesArray["+loadTableIndex+"] = " + savedTablesArray[loadTableIndex])
+	//In setup newTable: savedTablesArray[2] = ,,,
+	
+	//originalNumberRecords = tableTitle.length;//the contacts length! ADDED THIS Jan18 ..not tested. In aid of preventing request for table refresh! This will be returned to original in the resetFromContacts function
+	originalNumberRecords = savedTablesArray[loadTableIndex].length;//the contacts length! ADDED THIS Jan18 ..not tested. In aid of preventing request for table refresh! This will be returned to original in the resetFromContacts function
+	
+	//for maintenance of sort restore order of contacts table
+	copyOfTableTitle=tableTitle.slice();//these are for sorting of contacts table. NOTE copyOfTableTitle is same as original ..this is NOT the contacts! So do I need it in sort? Should just need tableTitle.length which will be selectedContact.length
+copyOfTableArray = tableArray.slice();
+//copyOfTableArray only changes IF makeContactsTable is true so maybe don't need to change variable name?
+//above puts the contactTable data into the copyTableArray variable to be used if sorting and restoring order. Of contacts table MAYBE SHOULD USE copy Of for SortTableArray?
+
+//IF LOADING A SPECIFIC NEWTABLE tableIndex variable should be replaced with loadTableIndex as tableIndex increases by one for every new table created but loadTableIndex is static for its own specific table!!!!..this change is made Feb5 after all initial newTables have been previously created
+//TypeError: undefined is not an object (evaluating 'newTableSpecificVariables[loadTableIndex][1].slice')
+//alertx("In setUpnewTable: loadFromTableOptions..  newTableSpecificVariables[" +loadTableIndex +"][1]  = " +newTableSpecificVariables[loadTableIndex][1]);
+console.log("In setUpnewTable: loadFromTableOptions..  newTableSpecificVariables[" +loadTableIndex +"][1]  = " +newTableSpecificVariables[loadTableIndex][1]);
+//TypeError: undefined is not an object (evaluating 'newTableSpecificVariables[1][1]')
+//alert("In setUpnewTable:  newTableSpecificVariables[1][1]  = " +newTableSpecificVariables[1][1]);
+tableID = loadTableIndex;
+
+//REMOVE THIS LINE AFTER RESTORING FIELDS! Mar3 Cause of newTableFieldsArray issue because I had not made newTableSpecificVariables[tableID][1] = newTableFieldsArray.slice(); instead of just = newFieldsArray;
+
+//newTableSpecificVariables[loadTableIndex][1] = ["CONTACT NAME","DATE","TELEPHONE","EMAIL","ADDRESS","POSITION"];
+//newTableFieldsArray = ["CONTACT NAME","DATE","TELEPHONE","EMAIL","ADDRESS","POSITION"];
+//newTableSpecificVariables[loadTableIndex][2] = 2;
+
+//REMOVE ABOVE AFTER SAVE TO RESTORE MISTAKE
+
+fieldNamesArray = newTableSpecificVariables[loadTableIndex][1].slice();
+
+newTableFieldsArray = newTableSpecificVariables[loadTableIndex][1].slice();// so each tables field names array is kept current! Mar5 2022
+
+//ATTENTION FOR SEARCHEDNEWTABLE!!!!?,?,?,
+//	fieldNamesArray = contactsFieldNames.slice();
+//ATTENTION FOR SEARCHEDNEWTABLE!!!!?,?,?,
+
+	tableTitle.length = savedTablesArray[loadTableIndex].length;
+
+console.log('tableArray = ' +tableArray+ ' fieldNamesArray = '+ fieldNamesArray + 'tableIndex = '+ tableIndex + ' tableTitle.length = ' + tableTitle.length);
+//tableArray = ,,, fieldNamesArray = CONTACT NAME,DATE,TELEPHONE,EMAILtableIndex = 2 tableTitle.length = 4
+
+// ERROR LOG
+// tableArray = Doug Dyer,
+// Contact Name , Feb 06 2022 00:20, ,username@shaw.ca,(250) 658-5645,addyer@telus.net fieldNamesArray = CONTACT NAME,DATE,TELEPHONE,EMAILtableIndex = 0 tableTitle.length = 4 SHOULD BE 3?this is because savedTablesArray.length = 4
+// ERROR LOG
+//now set originalNumberRecords to that of new table! And restore after.
+originalNumberRecords = tableTitle.length;//the contacts length! ADDED THIS Jan18 ..not tested. In aid of preventing request for table refresh! This will be returned to original in the resetFromContacts function
+console.log("originalNumberRecords set to that of new table (contacts table) …" + originalNumberRecords);
+
+//tableArray = ,,, fieldNamesArray = CONTACT NAME,DATE,TELEPHONE,EMAILtableIndex = 3
+//datem:Feb2 commented out numbrtOfAdditionalFields now that edit contacts table is allowed
+//numberOfDynamicFields=0;
+//numberOfNewTableAddedFields = newTableVariablesArray[4];
+
+//LINE ADDED FEB5 not tested!!?,?,?
+numberOfNewTableAddedFields = newTableSpecificVariables[loadTableIndex][2];
+//LINE ADDED FEB5 not tested!!?,?,?
+newTableEdit = newTableSpecificVariables[loadTableIndex][0];//this variable not used anymore?
+numberOfDynamicFields = numberOfNewTableAddedFields;
+console.log('numberOfDynamicFields = ' +numberOfDynamicFields);
+// saveNumberOfFields= numberOfFields;
+//numberOfFields=4;
+//numberOfFields = contactsFieldNames.length;
+numberOfFields = fieldNamesArray.length;
+
+//alertx("loadTableIndex = " + loadTableIndex + ".  numberOfNewTableAddedFields = " + newTableSpecificVariables[loadTableIndex][2] + ".  newTableSpecificVariables[loadTableIndex][1] = " + newTableSpecificVariables[loadTableIndex][1] + ".  numberOfDynamicFields = " + numberOfDynamicFields + ". newTableSpecificVariables = " + newTableSpecificVariables+ ".  savedTablesArray.length = " + savedTablesArray.length + ". newTableSpecificVariables.length = " + newTableSpecificVariables.length);
+
+
+
+
+saveheadNameTextContent =headName.textContent 
+console.log('numberOfFields = ' +numberOfFields);
+headName.textContent ="CONTACT";
+newTableContactsTitleLength = savedTablesArray[loadTableIndex].length;//a global variable so that sort can use it NOT SURE I USE THIS VARIABLE?
+	
+}//end if loadFromTableOptions
+
+//removeFieldHeaders();
+setUpFieldHeaders();//IMPORTANT KEEP
+editCurrentTable = 1;//so dynamic field headers are created ..but this does not add them to STRows!
+
+
+/*
+//set variables so that displayTable sees a start from fresh
+while (rows.firstChild) {
+   rows.removeChild(rows.firstChild);
+}//end while
+clearTableRows();//added Jan1 for STRows
+// saveNumberOfAdditionalFields=numberOfDynamicFields;
+//redoFields();//clear field headings for fresh start
+
+displayedTable = 0;
+editCurrentTable=1;
+//above code sets variables so displayTable sees a start from fresh
+*/
+//alertx("at end of setupNewTable. makeHitsTable = " + makeHitsTable);
+console.log("at end of setupNewTable. makeHitsTable = " + makeHitsTable);
+if(makeHitsTable) {
+saveTableBtn.textContent = "Must SAVE Table!";
+saveTableBtn2.textContent = "Must SAVE Table!";
+
+} else {
+saveTableBtn.textContent = "Save CONTACTS";//DOES NOT WORK! Why? Jan1
+//saveTableBtn.textContent = "Save CONTACTS";
+			// saveTableBtn2.disabled = true;
+saveTableBtn2.textContent = "Save CONTACTS";
+}//end if else makeHitsTable
+
+if(makeContactsTable) {
+flipMenu.textContent = " ✅ New Table Name: " + newTableNames[tableIndex] + ". " + newTableName;
+}//end if makeContactsTable
+flipMenu.textContent = " ✅ New Table Name: " + tableNamed;//THIS PUTS PROPER TABLE NAME ON TOP GREY INSTRUCTION BAR FOR LOADING A NEW TABLE!
+changeDBtable();
+//FIELD HAEDERS RESTORED TO STHEADER BUT NOT YET ADDED TO STRows!
+displayTable();
+//alert("I returned here from displayContactsTable");
+
+//alertx("At end of setUpNewTable function...tableID = "+ tableID + ".  loadFromTableOptions = " + loadFromTableOptions + ".  makeContactsTable = " + makeContactsTable + ".  loadTableIndex = " + loadTableIndex + ".  newTableSpecificVariables[loadTableIndex][1] = " + newTableSpecificVariables[loadTableIndex][1] + ".  savedTablesArray[loadTableIndex] = " + savedTablesArray[loadTableIndex]+ ".  savedTablesArray.length = " + savedTablesArray.length + ". newTableSpecificVariables.length = " + newTableSpecificVariables.length + ".  newTableSpecificVariables[tableIndex][1] = " + newTableSpecificVariables[tableIndex][1]);
+
+console.log("At end of setUpNewTable function...tableID = "+ tableID + ".  loadFromTableOptions = " + loadFromTableOptions + ".  makeContactsTable = " + makeContactsTable + ".  loadTableIndex = " + loadTableIndex + ".  newTableSpecificVariables[loadTableIndex][1] = " + newTableSpecificVariables[loadTableIndex][1] + ".  savedTablesArray[loadTableIndex] = " + savedTablesArray[loadTableIndex]+ ".  savedTablesArray.length = " + savedTablesArray.length + ". newTableSpecificVariables.length = " + newTableSpecificVariables.length + ".  newTableSpecificVariables[tableIndex][1] = " + newTableSpecificVariables[tableIndex][1]);
+
+  }//end if makeContactTable || loadFromTableOptions
+fromEditFieldLabels = false;//not sure where this line should go test ..to reset fromFieldLabels condition May13 2022
+}//end setupNewTable(tableNamed) function
+
+//deleteNewTable function
+function deleteNewTable() {
+	
+		//put name of database in global variable dataBaseName
+		//let tableName = "";//made global variable
+tableChosenP.removeEventListener;
+//tableNameLi[i].removeEventListener;
+//this works but must be used in a named function..not anonymous..called by addEventListener
+	//tableNameLi[i].removeEventListener;
+		//tableNamed = newTableNames[deleteTableIndex];
+		//deleteTableIndex index of array to delete
+	//alert("savedTablesArray prior to delete: " + savedTablesArray);	
+	//code to clear head row so table is not messed up when switching between db	 
+
+	alert("⚠️ You now have the option to delete  " + tableNamed);
+		 tableChosenP.textContent = ' Table Selected to DELETE: '+ newTableNames[deleteTableIndex];
+		 tableChosenP.textContent = ' Table Selected to DELETE: '+ tableNamed;
+		 console.log('tableName = ' + newTableNames[deleteTableIndex]);
+	 //confirm choice window
+	if (window.confirm("⚠️ Table to DELETE : " + " \n" + tableNamed +  " \n" + "  CANCEL will UNDO")) {
 		
-// 		alert('Improper file format? Re-paste the backup data');
-// 		//clear textarea for next use
-// 	restoreTextArea.value = "";//May8
-// 	console.log('cancelRestoreBtn has been tapped.');
-// 	//clearDatabase(dataBaseName);
-// getJsonBtn.setAttribute('class','attentionBtn');
-// restoreFromClipboardBtn.setAttribute('class','normalBtn');	
-// finishedRestoreBtn.setAttribute('class','normalBtn');
-
-// 		restoreDBWindow.removeChild(finishedRestoreBtn);
-// 	restoreDBWindow.removeChild(cancelRestoreBtn);
-// 	restoreDBWindow.setAttribute('class','hidden');
-// 	//go back to start of restoreDB
-// 	restoreDataBase(restoredDBName);
-// 	}//end if verify !=
+			deleteFromTableOptions = true;//flag indicates deletion of new table
+//		let removedArray = savedTablesArray.splice(deleteTableIndex,1);
+		let	removedNewTableName = newTableNames.splice(deleteTableIndex,1);
+//	let removedTableSpecific = newTableSpecificVariables.splice(deleteTableIndex,1);		
+			
+	//NOTE THERE ARE 10 slots for new tables as initialized when declaring the arrays..when creating new tables old savedTables don't need to be removed from the array?? Same applies to newTableSpecificVariables!
 	
-// }//end function checkFormat
+//start testing here! Left off Mar10 use Fun with Dick and Jane
 
-// //end function check fileFormat
+removedSavedTablesArray = savedTablesArray.splice(deleteTableIndex,1);
+removedNewTableSpecificVariables = newTableSpecificVariables.splice(deleteTableIndex,1);
 
 
-//function to clear list of db names so as to refresh the list
-// function clearDBFilesList () {
-// 	for (let i = 0; i< databases.length; i++) { 
-// 				dataBaseList.removeChild(databaseNameLi[i]);
-// 			}//end for loop
-//}//end clearDBFilesList
-
-/*For both exporting and importing data, you'll need an IndexedDB instance. Say you're wanting to back up the foo database, then you could get an instance in the console like this:
-var db
-var request = window.indexedDB.open('foo')
-request.onerror = () => console.error('Could not open database')
-request.onsuccess = () => { db = request.result }
-
-Import:
-
-Copy the importFromJson function (without the prepended export statement), paste it into the DevTools Console and hit Enter.
-
-Invoke it with the IndexedDB instance and the exported data as parameters: await importFromJson(db, exportedString).
-
-Note that you actually have to pass the exported data as a string, not as a JSON object. For example: If you exported and empty database {}, you'd have to pass into the function the following: await importFromJson(db, '{}').
-*/		
-
-	//end the actual import data code
+//savedTablesArray[deleteTableIndex].length = 0;
+//newTableSpecificVariables[deleteTableIndex].length = 0;
+	
+	//alertx("removedSavedTablesArray = "  + removedSavedTablesArray + ".  savedTablesArray now = " + savedTablesArray + "removedNewTableSpecificVariables = " + removedNewTableSpecificVariables + ".  newTableSpecificVariables= " + newTableSpecificVariables + ".  savedTablesArray.length = " + savedTablesArray.length + ". newTableSpecificVariables.length = " + newTableSpecificVariables.length);	
 	
 	
-// }//end function restoreDataBase(dataBaseName)
+//now restore array length
+//[-1,[],0]
+removedNewTableSpecificVariables.length = 0;
+newTableSpecificVariables.push(removedNewTableSpecificVariables);
+removedSavedTablesArray.length = 0;
+savedTablesArray.push(removedSavedTablesArray);
+
+//alertx("After restoring array lengths: removedSavedTablesArray = "  + removedSavedTablesArray + ".  savedTablesArray now = " + savedTablesArray + "removedNewTableSpecificVariables = " + removedNewTableSpecificVariables + ".  newTableSpecificVariables= " + newTableSpecificVariables + ".  savedTablesArray.length = " + savedTablesArray.length + ". newTableSpecificVariables.length = " + newTableSpecificVariables.length);	
+//newTableSpecificVariables[10] = newTableSpecificVariables[1].splice();
+
+		
+			 dbName = dataBaseName;
+			// alert("savedTablesArray after delete: " + savedTablesArray + "… table names after delete: " + newTableNames);
+			 newTableList.removeChild(tableNameLi[deleteTableIndex]);
+	//NotFoundError: The object can not be found here.
+	console.log('Table deleted is ' + tableNamed);
+	//deleteFromTableOptions = false;flag made false after saveVariables
+	//return false;
+	tableIndex = tableIndex-1//TEST IF THIS WORKS?!!!!Date: Jan23
+	
+	
+	//tableID = tableID - 1;// ???remove???
+	
+	//tableScreen.removeChild(renameNewTableBtn);
+	
+	
+	saveVariables();//does not work variables are not saved
+	deleteFromTableOptions = false;//flag indicates deletion of new table
+	//alertx("newTableVariablesArray after deletion = " + newTableVariablesArray + ". tableIndex after deletion = " + tableIndex + ". newTableNames after deletion = " +newTableNames + ". newTableNames.length after deletion = " + newTableNames.length + ". savedTablesArray after deletion = " + savedTablesArray);
+	//alertx("newTableSpecificVariables after deletion = " + newTableSpecificVariables);
+//after deletion newTableSpecificVariables.length = 9 instead of 10. Should I add another empty element…newTableSpecificVariables.length = 10? = Feb28	
+			} else {
+				//return to fileNames screen. Need to remove the previous fileNames?
+			tableChosenP.textContent = ' DELETION of '+ newTableNames[deleteTableIndex] + " CANCELLED!";
+			
+		deleteFromTableOptions = false;//flag indicates deletion of new table	
+	//tableScreen.removeChild(renameNewTableBtn);
+
+	
+			//tableScreen.setAttribute('class','hidden');
+			//fileNamesWindow.setAttribute('class','hidden');	
+			//getFileNames();//changed to just hide the window otherwise database list keeps growing
+				}//end if window.confirm else
+				
+			//return;
+				//confirm choice window
+		 
+			}//end function deleteNewTable called by addEventListener
+			
+function renameNewTable (newTableName) {
+renameNewTableFlag = true;
+
+//tableScreen.removeChild(renameNewTableBtn);
+
+//Check if screenDark mode
+checkScreenMode();
+if(screenDark) {
+	newTableNameWin.style.backgroundColor = "black";
+	newTableNameWin.style.color = "white";
+	showNewTableNameP.style.color = "white";
+} else {
+	newTableNameWin.style.backgroundColor = "#eee";
+	newTableNameWin.style.color = "black";
+	showNewTableNameP.style.color = "black";
+}//end if else screenDark
+
+newTableNameWin.setAttribute('class', 'showing');
+//showNewTableNameP.textContent = "⚠️ After entering new title, follow the flashing button prompts to register the new table title!"
+//newTableTitle.textContent = dbName;
+newTableTitle.textContent = "RENAME THE TABLE TITLED:  \n" + newTableNames[loadTableIndex];
+
+	getNewTableName(newTableName);	
+//returnToNotesBtn.setAttribute('class','borderBlinkGrn');
+				
+	//renameNewTableFlag = false;	
+	// newTableNames[loadTableIndex].textContent = newTableName;
+	// alert("This table has been renamed: " + newTableName);
+	// console.log("newTableName = " + newTableName + " newTableNames[" + loadTableIndex +"] = " + newTableNames[loadTableIndex] +".  newTableVariablesArray = " + newTableVariablesArray + "newTableVariablesArray[1] = " + newTableVariablesArray[1]);
+	// //saveVariables();
+	// saveTableBtn.setAttribute('class','borderBlink');
+	// saveTableBtn2.setAttribute('class','borderBlink');
+	
+	// tableScreenOptions();
+	tableScreen.setAttribute('class','showing');//necessary in this version to show flashing returnToHomeScreenBtn for rename table sequence
+
+}//end function renameNewTable
+			
+			
+
+			
+//get newTableName function called from create contacts table prompt in emailBtn.onclick
+function getNewTableName(newTableName) {
+//this function also used to name a newly created table
+
+//alertx("In getNewTableName function: tableIndex = " + tableIndex);
+console.log("In getNewTableName function: tableIndex = " + tableIndex);
+
+if(!renameNewTableFlag) {
+	newTableTitle.textContent = dbName;
+	}//end if !renameNewTableFlag
+if(renameNewTableFlag) {
+	newTableNameInput.value = newTableNames[loadTableIndex];
+	showNewTableNameP.style.color = "black";
+	
+	
+
+	showNewTableNameP.textContent = "⚠️ After entering new title, follow the flashing button prompts to register the new table title!"
+}//end if renameNewTableFlag
+
+if(makeHitsTable) {
+	newTableNameInput.value = query;
+}//end if makeHitsTable
+
+	//newTableTitle.textContent = dbName;
+	//const newTableNameWin = document.querySelector('#newTableNameWin');
+	//const newTableNameInput = document.querySelector('#newName');
+	
+	// newTableNameWin.setAttribute('class','showing');
+	newTableNameSubmitBtn.onclick = function() {
+		newTableName = newTableNameInput.value;
+		
+	//alertx("New Table Name = "+ newTableName);
+	console.log("New Table Name = "+ newTableName);
+	
+	showNewTableNameP.textContent = "Last Action: " + newTableName;
+returnToNotesBtn.setAttribute('class','borderBlinkGrn');
+// displayTableBtn.setAttribute('class','attentionBtn');//because if main db table not initiated this btn will be flashing.table will get initialized in process of rename	
+if(renameNewTableFlag) {
+newTableNames[loadTableIndex] = newTableName;
+	}//end if renameNewTableFlag
+if(!renameNewTableFlag)	{
+newTableNames[tableIndex] = newTableName;
+	}// end if !renameNewTableFlag .. creating a new table!	
+
+//newTableNames[tableIndex] = newTableName;
+	newTableNameWin.setAttribute('class','hidden');
+newTableNameInput.value = "";
+	//SyntaxError: Left side of assignment is not a reference.
+		//return newTableName;
+	}//end of submitBtn.onclick
+	
+//newTableNameCancelBtn
+newTableNameCancelBtn.onclick = function () {
+
+//tableScreen.removeChild(renameNewTableBtn);//will this produvpce a object not found here error?
+
+	newTableNameInput.value = "";
+tableScreen.setAttribute('class','showing');
+	newTableNameWin.setAttribute('class', 'hidden');	
+	saveTableBtn.setAttribute('class','tdEdit');
+	//don't want to save if cancelling
+	saveTableBtn.disabled = true;
+	saveTableBtn2.disabled = true;
+	
+	saveTableBtn2.setAttribute('class','tdEdit');
+	homeScreenBtn.setAttribute('class','borderBlink');
+	homeScreenBtn2.setAttribute('class','borderBlink');
+	homeScreenBtn.disabled = false;
+	homeScreenBtn2.disabled = false;//may have been disabled to help force SAVE May1
+	returnToNotesBtn.setAttribute('class','tdEdit');//added Mar28
+	tableScreenBtn.setAttribute('class','tdEdit');//added Mar28
+	displayTableBtn.setAttribute('class','tdEdit');//added Mar28
+	flipMenu.textContent = " ✅ New Table Name: CANCELLED!";
+	showNewTableNameP.textContent = "CANCELLED";//what is this?
+if(!renameNewTableFlag) {
+	let cancelledSavedTablesArray = savedTablesArray.pop();
+	newTableNames.pop();
+let cancelledNewTableSpecificVariables = newTableSpecificVariables.pop();
+//now have to restore savedTablesArray.length as in a delete
+//now restore array length
+//[-1,[],0]
+cancelledNewTableSpecificVariables.length = 0;
+newTableSpecificVariables.push(cancelledNewTableSpecificVariables);
+cancelledSavedTablesArray.length = 0;
+savedTablesArray.push(cancelledSavedTablesArray);
+
+//alertx("savedTablesArray.length = " + savedTablesArray.length);
+//should I subtract one from tableIndex?
+//alertx("In cancel newTableNameCancelBtn.onclick function: tableIndex = " + tableIndex + "Will now subtract 1");
+
+console.log("savedTablesArray.length = " + savedTablesArray.length);
+//should I subtract one from tableIndex?
+console.log("In cancel newTableNameCancelBtn.onclick function: tableIndex = " + tableIndex + "Will now subtract 1");
+
+tableIndex = tableIndex - 1;//table not created..CANCELLED to avert a save of incorrect tableIndex if SAVE an edit tdcell
+	}//end !renameNewTableFlag .. naming a newly created table
+renameNewTableFlag = false;
+loadFromTableOptions = false;
+return;	
+}//end function newTableNameCancelBtn.onclick
+
+	// alert("in getNewTableName newTableName = "+ newTableName);
+	
+if(renameNewTableFlag) {
+flipMenu.textContent = " ✅ New Table Name: " + newTableNames[loadTableIndex] + ". " + newTableName;
+	}//end if renameTableFlag
+	
+if(!renameNewTableFlag) {	
+	flipMenu.textContent = " ✅ New Table Name: " + newTableNames[tableIndex] + ". " + newTableName;
+	}//end if !renameTableFlag	
+	
+	
+	//showNewTableNameP.textContent = "";//what is this?
+	return newTableName;
+	//newTableNameInput.value = "";
+	
+}//end function getNewTableName
+
+function redoFields () {
+//resetTable
+			refreshed = 1;//so added field name headings are not generated twice
+			editCurrentTable = 0; //Nov 22 so added field name headings are not generated twice
+			while (STrows.firstChild) {
+    STrows.removeChild(STrows.firstChild);
+}//end while
+//to maintain header after refresh
+STtableHeader.textContent = dbTableName.value;
+STtableHeader.setAttribute('class','attentionBtn');
+STrows.appendChild(STtableHeader);
+STrows.appendChild(STheadRow);
+		displayTable();
+		refreshed = 0;	
+		//return false;
+}//end function redoFields
+
+function setUpFieldHeaders () {
+	//clearHeadRow();
+	//removeFieldHeaders();
+	//trimHeadRow();
+	//deleteFirstRow();
+/*	if(!cleared) {
+		clearHeadRow(cleared);
+		cleared = false;
+	}//end if!cleared
+	*/
+	//clearHeadRow();
+	if(!mainDBedit) {
+	removeHeadRow();
+	}//end if!mainDBedit
+	
+clearTableRows();
+
+tableConstructed = 0;
+	displayedTable = 0;
+	refreshed = 0;
+	renewed = 0;
+	changeDB = false;
+	
+	//deleteFirstRow(1);
+	//clearHeadRow();//to reset STHeadRow for change to other db
+console.log('In setUpFieldHeaders function calledby load new table and displayTable (main db) btn. SetUpNewTable: in changeDB. Removed dynamic fields! ' + STheadRow);
+STheadRow.appendChild(STheadName);
+STheadRow.appendChild(secondFieldName);
+STheadRow.appendChild(STfirstDataNameTd);
+STheadRow.appendChild(STsecondDataNameTd);
+}//end function setUpFieldHeaders
+
+//************************************
+function changeDBtable () {
+	tableConstructed = 0;
+	displayedTable = 0;
+	refreshed = 0;
+	renewed = 0;
+	changeDB = false;
+	//clearHeadRow();//to reset STHeadRow for change to other db
+		//trimHeadRow();
+		if(!mainDBedit) {
+	removeHeadRow();
+}//end if!mainDBedit
+	//removeHeadRow();//VERY IMPORTANT LINE..MAKES IT WORK!!!Date: Feb12 2022..new function
+	//clearHeadRow();//to reset STHeadRow for change to other db
+	//removeFieldHeaders();
+	
+console.log('in changeDB. Removed dynamic fields! ' + STheadRow);
+STheadRow.appendChild(STheadName);
+STheadRow.appendChild(secondFieldName);
+STheadRow.appendChild(STfirstDataNameTd);
+STheadRow.appendChild(STsecondDataNameTd);
+//NOW ADDING THE FIELD LABELS TO STRows… in aid of correcting absence of field headers after an edit to main db and then loading in a new table date: Feb 16 2022 this function called by setUpNewTable after loading a newTable NOPE DID NOT CORRECT!
+
+//STrows.appendChild(STtableHeader);
+//STrows.appendChild(STheadRow);
+//field labels of static fields now restored! BUT NOT ADDED TO STRows!!
+	//clearHeadRow();
+	//STrows.appendChild(STheadRow);
+	//removeFieldHeaders();
+	//trimHeadRow();
+	//displayTable();
+}//end function changeDBtable
+//************************************
+
+//start of addingMoreContacts function
+//called by plusContactsBtn.onclick loadFromTableOptions is true
+async function addingMoreContacts (selectedContact) {
+
+//Check if screenDark mode
+checkScreenMode();
+if(screenDark) {
+	manualContactsWindow.style.backgroundColor = "black";
+	manualContactsWindow.style.color = "white";
+	showNewTableNameP.style.color = "white";
+} else {
+	manualContactsWindow.style.backgroundColor = "#eee";
+	manualContactsWindow.style.color = "black";
+	showNewTableNameP.style.color = "black";
+}//end if else screenDark
+
+//let plusContactsArray = [];
+	alert("in addingMoreContacts. selectedContact = " + selectedContact);
+plusContacts = true;
+fromAddingMoreContacts = true;//forcing a resetFields when displayTableBtn is tapped
+resetFields = true;
+showTable.setAttribute('class','hidden');
+manualContactsWindow.setAttribute('class', 'showing');	
+await getManualContacts();
+alert("Returned from getManualContacts - contactsArray = "+ contactsArray);
+// savedTablesArray[loadTableIndex] = savedTablesArray[loadTableIndex].concat(contactsArray);
+// alert("savedTablesArray["+ loadTableIndex +"] = " +savedTablesArray[loadTableIndex]);
+// tableArray = savedTablesArray[loadTableIndex].slice();
+// tableTitle.length = savedTablesArray[loadTableIndex].length;
+// 	displayTable();
+}//end of function addingMoreContacts
+
+
+
+//START function getManualContacts
+//called by manuallyCreateContacts or addingMoreContacts OR 
+//loadFromTableOptions and plusContacts are true
+async function getManualContacts () {
+// clear arrays from any prior entries
+selectedContact.length = 0;
+manualContacts.length = 0;
+enterContactBtn.setAttribute('class','borderBlinkGrn');
+let next = true;
+	let i= -1;//this might have to be var i; in function enterContactBtn.onclick??
+// let manualContacts = [];
+//for(let i = 0;i<100;i++)	{//do {
+
+//repeating cancelAll function here ? Might not be allowed?
+//NC Date:Jan9
+
+clearContactEntryBtn.onclick = function() {
+contactsNameInput.value = "";
+	telephoneInput.value = "";
+	contactsEmailInput.value = "";
+	contactsAddress.value ="";
+	statusContactEntryP.textContent = "";	 
+	 
+ }//end clearContactEntryBtn.onclick
+ 
+cancelAllBtn.onclick = function () {
+//alert("CANCEL BTN TAPPED");
+enterContactBtn.setAttribute('class','attentionBtn');
+manualContactsEntered = false;
+	//selectedContact.length = 0;
+	//TypeError: undefined is not an object (evaluating 'selectedContact.length = 0')
+	contactsNameInput.value = "";
+	telephoneInput.value = "";
+	contactsEmailInput.value = "";
+	contactsAddress.value ="";
+	statusContactEntryP.textContent = "";
+//trying to prevent keyboard pop up on cancel..does not work!!
+	contactsNameInput.value = "\n";
+	manualContactsForm.blur();
+	contactsNameInput.blur();
+	document.activeElement.blur();//remove focus from inputs so keyboard does not pop up on cancel
+statusContactEntryP.setAttribute('class','normalBtn');
+statusContactEntryP.style.backgroundColor = "black";//because after a Cancel so etimes the text would be white on grey background
+manualContactsWindow.setAttribute('class', 'hidden');
+//showTable.setAttribute('class', 'showing');
+ //added Mar27….check manual contacts still cancels ok..added to cancel addingMoreContactsManually	
+	}//end cancelAllBtn.onclick
+//NC
+//REPEATED cancelAllBtn.onclick function here ..might not be allowed?
+finishedContactsEntryBtn.disabled = true;
+ enterContactBtn.onclick = function(selectedContact) {
+ finishedContactsEntryBtn.disabled = false;
+i++
+	selectedContact[i] = "\n" + contactsNameInput.value + " " + "_"+telephoneInput.value + " " + "_"+contactsEmailInput.value + " " +
+		"_"+contactsAddress.value;
+	
+	statusContactEntryP.textContent = selectedContact[i] +  " has been submitted. Tap DONE after all contacts/records entered. After tapping DONE,  Tap HERE to register edited entries.";
+manualContacts = manualContacts.concat(selectedContact[i]);
+	// statusContactEntryP.setAttribute('class','borderBlink');
+
+	contactsNameInput.value = "";
+	telephoneInput.value = "";
+	contactsEmailInput.value = "";
+	contactsAddress.value ="";
+	 // }//end function enterContactBtn.onclick
+	// }//end for i;i++ 
+	
+	finishedContactsEntryBtn.onclick = function () {
+	statusContactEntryP.setAttribute('class','borderBlink');
+	enterContactBtn.setAttribute('class','attentionBtn');
+		next = false;;
+		//alert("Selected Contacts List = " + manualContacts);
+		statusContactEntryP.value = manualContacts;
+		//return selectedContact;
+		}//end function finishedContactsEntryBtn.onclick
+	// } 
+	// while (next);
+	
+	statusContactEntryP.onclick= function()	{
+	statusContactEntryP.textContent = "";
+statusContactEntryP.setAttribute('class','normalBtn');
+statusContactEntryP.style.backgroundColor = "black";
+manualContactsWindow.setAttribute('class', 'hidden');
+	//return selectedContact;	
+	// }//end statusContactEntryP.onclick	
+for(i=0;i<manualContacts.length;i++) {
+
+	contactsArray[i] = manualContacts[i].split('_');
+}	//end for i
+	
+//contactsArray = manualContacts.slice();	//}//end for i;i++ 
+	
+homeScreenBtn.textContent = "Clear CONTACTS Table";
+			homeScreenBtn2.textContent = "Clear CONTACTS Table";
+		//	clearFoundRecordListFunc();
+//cutname function is used in emailBtn.onclick
+//alert("contactsArray = " + contactsArray);
+// function cutName(namestr) {
+//   var newArray = namestr.split('_');
+//   return newArray;
+// }//end function cutname			
+//for(j=0;j<manualContacts.length;j++) {
+//contactsArray = manualContacts[j].split(' ');
+// console.log(Array.isArray(contactsArray[j]));
+// //alert(arr);
+//}//end for j	
+
+//use this for the copy paste notice
+//alert("Use COPY/PASTE to insert desired information into record or table data cell: \n selected Contacts: \n" + contactsArray);
+//need to update todayString!!
+ today = new Date();
+ todayS = today.toString();
+ todayString = todayS.slice(3, 21);
+ //alert('todayString = ' + todayString);
+alert("The ADDED records = " + contactsArray);
+for(k=0;k<manualContacts.length;k++) {
+contactsArray[k].splice(1, 0,todayString);
+	}//end for k
+
+//alert("now contactsArray = " + contactsArray);
+
+
+//code to send add more contacts back to addingMoreContacts
+if(plusContacts) {
+plusContacts = false;
+savedTablesArray[loadTableIndex] = savedTablesArray[loadTableIndex].concat(contactsArray);
+
+console.log("savedTablesArray["+ loadTableIndex +"] = " +savedTablesArray[loadTableIndex]);
+//alertx("savedTablesArray["+ loadTableIndex +"] = " +savedTablesArray[loadTableIndex]);
+
+tableArray = savedTablesArray[loadTableIndex].slice();
+tableTitle.length = tableArray.length;
+saveTableBtn.setAttribute('class','borderBlink');
+saveTableBtn2.setAttribute('class','borderBlink');
+homeScreenBtn.disabled = true;//to help force Save..now reset after flashing SAVE
+			 homeScreenBtn2.disabled = true;
+	displayTable();	
+	return;
+}//end if(plusContacts)
+//code to send add more contacts back to addingMoreContacts
+
+
+//confirm choice window
+		 if (window.confirm("Create Contacts Table ? : \n" + "  CANCEL will Return to Table")) {
+			 makeContactsTable= true;
+	//-xxxxxxxxxxx		 
+			//Check if screenDark mode
+checkScreenMode();
+if(screenDark) {
+	newTableNameWin.style.backgroundColor = "black";
+	newTableNameWin.style.color = "white";
+	showNewTableNameP.style.color = "white";
+} else {
+	newTableNameWin.style.backgroundColor = "#eee";
+	newTableNameWin.style.color = "black";
+	showNewTableNameP.style.color = "black";
+}//end if else screenDark
+
+newTableNameWin.setAttribute('class', 'showing');
+newTableTitle.textContent = dbName;
+
+			getNewTableName();
+		
+	//-xxxxxxxxxxx	
+			saveTableBtn.setAttribute('class','borderBlink');
+			 saveTableBtn2.setAttribute('class','borderBlink');
+			 
+			 homeScreenBtn.disabled = true;//to help force Save
+			 homeScreenBtn2.disabled = true;//to help force Save
+			 
+			 newTableFieldsBtn.disabled = true;//to prevent an inadvertant tap of Field Labels btn at this stage creating crashing
+			// saveTableBtn.disabled = true;
+			//  saveTableBtn.textContent = "Save CONTACTS";
+			// // saveTableBtn2.disabled = true;
+			//  saveTableBtn2.textContent = "Save CONTACTS";
+			//getNewTableName();
+			} else {
+				makeContactsTable=false;
+				contactsArray.length = 0;
+				manualContacts.length = 0;//this statement IS necessary to clear as the API must clear it on rerun? 
+//make clear contacts btn flash if cancel from add contacts date: April29
+if(fromAddContacts) {
+emailBtn.setAttribute('class','borderBlink');
+fromAddContacts = false;
+}
+//added from cancelAllBtn
+manualContactsEntered = false;
+	//selectedContact.length = 0;
+	//TypeError: undefined is not an object (evaluating 'selectedContact.length = 0')
+	contactsNameInput.value = "";
+	telephoneInput.value = "";
+	contactsEmailInput.value = "";
+	contactsAddress.value ="";
+	statusContactEntryP.textContent = "";
+//trying to prevent keyboard pop up on cancel..does not work!!
+	contactsNameInput.value = "\n";
+	manualContactsForm.blur();
+	contactsNameInput.blur();
+	document.activeElement.blur();//remove focus from inputs so keyboard does not pop up on cancel
+statusContactEntryP.setAttribute('class','normalBtn');
+statusContactEntryP.style.backgroundColor = "black";
+manualContactsWindow.setAttribute('class', 'hidden');
+showTable.setAttribute('class', 'showing');
+
+//added from cancelAllBtn…not checked
+	return; //to prevent run-away into setupNewTable from a cancel
+		}//end if window.confirm else
+//end prompt
+	setupNewTable();
+	//return false;//to stop run away? Reloading of DougieBase after making new table?or is the error causing this ? Feb24	
+	
+}//end statusContactEntryP.onclick	
+
+ }//end function enterContactBtn.onclick
+// alert("in do while loop next = " + next);
+//} //do while loop
+//	while (next);
+	//return contactsArray;
+}//end function getManualContacts
+
+
+//called from newTableFieldsBtn.onclick—EDIT CURRENT FIELDS btn
+async function editNewTableFieldNames () {
+//alertx("at editNewTableFieldNames");
+console.log("at editNewTableFieldNames");
+
+//alertx("At editNewTableFieldNames function: contactsFieldNames = " + contactsFieldNames);
+console.log("At editNewTableFieldNames function: contactsFieldNames = " + contactsFieldNames);
+
+if(contactsFieldNames.length === 4) {
+//fifthFieldLabel.style.display = "none";////name of fifth field manual contacts data entry
+fieldFiveNameLabel.style.display = "none";//statement instruction identifier of fifth field name in editNewTableFieldNamesWin-the other fields labels are not referenced because they are always shown
+fithFieldNameNTInput.style.display = "none";//identifier of fifth field name input in editNewTableFieldNamesWin
+//contactsAddress.style.display = "none";//data entry input of fifth field in manualContacts entry
+} else {
+//fifthFieldLabel.style.display = "unset";
+fithFieldNameNTInput.style.display = "unset";
+fieldFiveNameLabel.style.display = "unset";
+//contactsAddress.style.display = "unset";		
+}//end if(contactsFieldNames.length = 4)
+
+//Check if screenDark mode
+checkScreenMode();
+if(screenDark) {
+	editNewTableFieldNamesWindow.style.backgroundColor = "black";
+	editNewTableFieldNamesWindow.style.color = "white";
+	showNewTableNameP.style.color = "white";
+} else {
+	editNewTableFieldNamesWindow.style.backgroundColor = "#eee";
+	editNewTableFieldNamesWindow.style.color = "black";
+	showNewTableNameP.style.color = "black";
+}//end if else screenDark
+
+showTable.setAttribute('class','hidden');
+editNewTableFieldNamesWindow.setAttribute('class', 'showing');	
+
+enterNewFieldNameBtn.setAttribute('class','borderBlinkGrn');
+
+
+clearFieldNameEntryBtn.onclick = function() {
+firstFieldNameNTInput.value = "";
+	secondFieldNameNTInput.value = "";
+	thirdFieldNameNTInput.value = "";
+	fourthFieldNameNTInput.value ="";
+	fithFieldNameNTInput.value ="";
+	statusFieldNamesEntryP.textContent = "";
+enterNewFieldNameBtn.setAttribute('class','borderBlinkGrn');	//	May4 
+	 
+ }//end clearFieldNameEntryBtn.onclick
+
+cancelAllFieldNamesBtn.onclick = function () {
+//alert("CANCEL BTN TAPPED");
+enterNewFieldNameBtn.setAttribute('class','attentionBtn');
+manualContactsEntered = false;
+	//selectedContact.length = 0;
+	//TypeError: undefined is not an object (evaluating 'selectedContact.length = 0')
+	firstFieldNameNTInput.value = "";
+	secondFieldNameNTInput.value = "";
+	thirdFieldNameNTInput.value = "";
+	fourthFieldNameNTInput.value ="";
+	fithFieldNameNTInput.value ="";
+	statusFieldNamesEntryP.textContent = "";
+	contactsFieldNames.length = 0;//so that field names of a new table are reset to default..i.e. if add contacts 	 
+actionRenameBtn.setAttribute('class','tdEdit');//in case flashing from a cancelled edit field names
+
+//actionLoadBtn.textContent = "EDIT FIELD NAMES";
+//actionRenameBtn.textContent = "USE CURRENT FIELD NAMES";
+//actionCancelBtn.textContent = "CANCEL";
+//actionDeleteBtn.style.display = "none";
+//actionRenameBtn.style.display = "unset";
+actionLoadBtn.style.display = "unset";
+actionLoadBtn.setAttribute('class','tdEdit');
+
+statusContactEntryP.setAttribute('class','normalBtn');
+statusContactEntryP.style.backgroundColor = "black";
+manualContactsWindow.setAttribute('class', 'hidden');
+editNewTableFieldNamesWindow.setAttribute('class', 'hidden');	
+fromAddContacts = false;//flag to tell editNewTableFieldNames to flash and return to ADD CONTACTS added May7
+//showTable.setAttribute('class', 'showing');
+ //added Mar27….check manual contacts still cancels ok..added to cancel addingMoreContactsManually	
+	}//end cancelAllFieldNamesBtn
+
+finishedFieldNamesEntryBtn.disabled = true;
+enterNewFieldNameBtn.onclick = function() {
+ finishedFieldNamesEntryBtn.disabled = false;
+ enterNewFieldNameBtn.setAttribute('class','attentionBtn');
+ /*
+i++
+	selectedContact[i] = "\n" + contactsNameInput.value + " " + "_"+telephoneInput.value + " " + "_"+contactsEmailInput.value + " " +
+		"_"+contactsAddress.value;
+	
+	statusContactEntryP.textContent = selectedContact[i] +  " has been submitted. Tap DONE after all contacts entered.After tapping DONE,  Tap HERE to register edited entries.";
+*/
+
+console.log("firstFieldNameNTInput = " + firstFieldNameNTInput.value);
+
+//allow for only 4 fields
+if(contactsFieldNames.length === 4 ) {
+contactsFieldNames = "\n" +  firstFieldNameNTInput.value + " "+ "_"+secondFieldNameNTInput.value + " "+ "_" + thirdFieldNameNTInput.value + " "+ "_"+fourthFieldNameNTInput.value;
+} else {
+
+contactsFieldNames = "\n" +  firstFieldNameNTInput.value + " "+ "_"+secondFieldNameNTInput.value + " "+ "_" + thirdFieldNameNTInput.value + " "+ "_"+fourthFieldNameNTInput.value + " "+ "_" + fithFieldNameNTInput.value;
+
+}//end if else contactsFieldNames===4
+
+
+contactsFieldNames = cutName(contactsFieldNames);
+console.log(Array.isArray(contactsFieldNames));
+
+
+
+// contactsFieldNames[0]=firstFieldNameNTInput.value;
+// contactsFieldNames[1]=secondFieldNameNTInput.value;
+// contactsFieldNames[2]=thirdFieldNameNTInput.value;
+// contactsFieldNames[3]=fourthFieldNameNTInput=.value;
+// contactsFieldNames[0]=document. getElementById("firstFieldNameNT").value;
+// contactsFieldNames[1]=document. getElementById("secondFieldNameNT").value;
+// contactsFieldNames[2]=document. getElementById("thirdFieldNameNT").value;
+// contactsFieldNames[3]=document. getElementById("fourthFieldNameNT").value;
+// if(manualContactsEntered) {
+// contactsFieldNames[4]=document. getElementById("fithFieldNameNT").value;
+// //not tested Mar26 to prevent extra field being added if preceding new table had an extra field
+// contactsFieldNames.length = 5;	
+// }//end if manualContactsEntered 
+
+statusFieldNamesEntryP.textContent =  contactsFieldNames +  " The above Field Names have been entered! Tap DONE after all field names entered. ";
+
+//return contactsFieldNames;
+}//end enterNewFieldNameBtn.onclick
+
+finishedFieldNamesEntryBtn.onclick = function () {
+alert("Field names submitted are: " +  contactsFieldNames);
+editNewTableFieldNamesWindow.setAttribute('class', 'hidden');	
+if(fromAddContacts) {
+	fromAddContacts = false;
+ addContactsBtn.setAttribute('class','borderBlink');
+	showTable.setAttribute('class','hidden');
+} else {
+showTable.setAttribute('class','showing');
+emailBtn.setAttribute('class','borderBlink');
+}//end if else fromAddContacts
+
+return contactsFieldNames;
+	
+}//end function finishedFieldNamesEntryBtn.onclick
+
+}//end function editNewTableFieldNames
+
+
+//check if more than 10 tables..notification to delete a table (allowedNumberOfTables)
+function checkTableLimit () {
+//alertx("In checkTableLimit function: tableIndex = " + tableIndex);
+console.log("In checkTableLimit function: tableIndex = " + tableIndex);
+//tableIndex won't increase to 10 until a contacts table is made so savedTablesArray - 1
+//alertx("tableIndex= " + newTableVariablesArray[0] + "savedTablesArray.length = " + savedTablesArray.length);
+
+tableIndex= newTableVariablesArray[0];
+if (tableIndex === savedTablesArray.length -1) {
+alert("⚠️You have exceeded the limit for number of allowed tables. Delete some first!");
+tableScreenOptions();
+tableLimit = true;	
+//tableScreen.setAttribute('class','showing');
+return tableLimit;
+} else {
+console.log("Still room for more tables!");
+tableLimit = false;
+return tableLimit;
+}//end if else (tableIndex > savedTablesArray.length)
+}//end function check table limit
+
+//experimental function to print element disabled its use May20 2022..did not work well and caused bugs..so this function is not currently called
+function print_this(elem) {
+  document.body.classList.add('print-element')
+  elem.classList.add('print')
+  window.print()
+  document.body.classList.remove('print-element')
+  elem.classList.remove('print')
+}
+
+//EXPERIMENTING WITH SAVING FORM DATA FROM BUTTERFLY
+
+//EXPERIMENTING WITH SAVING FORM DATA FROM BUTTERFLY
+
 
 
  /* DISABLED/ENABLED SERVICE WORKER CODE FOR TESTING NEW CODE IN THIS VERSION !!!!*/
@@ -10367,11 +14844,11 @@ Note that you actually have to pass the exported data as a string, not as a JSON
 
 
 //DISABLED ENABLED SERVICE WORKER
+// /*
 
-
-if('serviceWorker' in navigator) {
+ if('serviceWorker' in navigator) {
     navigator.serviceWorker
-             .register('/DougieBaseVer37sw.js')
+             .register('/DougieBaseVer40sw.js')
              .then(function() { console.log('Service Worker Registered'); });
 			alert('Service Worker Registered!');
 		
@@ -10383,6 +14860,7 @@ if('serviceWorker' in navigator) {
 	document.getElementById("percent").value = '(No Service Worker installed! )';
 }//end if else service worker
 
+//*/
 	//what about the manifest file? triggered by oninstall? A2HS?	 
 //If the service worker API is supported in the browser, it is registered against the site using the ServiceWorkerContainer.register() method. Its contents reside in the sw.js file, and can be executed after the registration is successful. It's the only piece of Service Worker code that sits inside the app.js file; everything else that is Service Worker-specific is written in the sw.js file itself.
 
@@ -10390,3 +14868,4 @@ if('serviceWorker' in navigator) {
 
 
 };//end window.onload function
+//}//end if(!newDBGuidance) {
