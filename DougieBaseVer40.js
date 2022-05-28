@@ -1,4 +1,4 @@
-//DougieBaseVer40.js May 27 2022 noAlertsplusContactshitsTablefixADDCONTACTSDougieBaseVer40 May18 plusContactshitsTablefixADDCONTACTSDougieBaseVer40.js May17 May15 May 13 May9 hitsTablefixADDCONTACTSDougieBaseVer40.js May5  from fixADDCONTACTSDougieBaseVer40.js May1  testCancelsweetAlertnoAlertsmoreBlock+DougieBaseVer40.jsApri25 2022
+//DougieBaseVer40.js May28 noAlertsplusContactshitsTablefixADDCONTACTSDougieBaseVer40 May18 fixed share data error May28 2022 tableLimit plusContactshitsTablefixADDCONTACTSDougieBaseVer40.js May17 May15 May 13 May9 hitsTablefixADDCONTACTSDougieBaseVer40.js May5  from fixADDCONTACTSDougieBaseVer40.js May1  testCancelsweetAlertnoAlertsmoreBlock+DougieBaseVer40.jsApri25 2022
 //NOTE ALERTS REMOVED HAVE A x after alert SO USE FIND REPLACE SEARCH TO RESTORE THEM!! i.e. //alertx("message data…") can be restored by search and replace for //alertx and replace with alert
 //moreBlock+DougieBaseVer40.js April17 April15 fallBackApril15moreBlock+DougieBaseVer40.js Copy of moreBlock+DougieBaseVer40.js fallBackApril14moreBlock+DougieBaseVer40.js moreBlock+DougieBaseVer40.js April10 for testing and when works back to block… from block+DougieBaseVer40.js DougieBaseVer40.js from shareDeleteRecordNewTableDougieBaseVer37.js WILL THIS FILE AUTOMATICALLY SYNC WITH ICLOUD.YES!deleteRecordNewTableDougieBaseVer37.js NOTE ALERTS REMOVED HAVE A > AFTER THE " SO USE FIND REPLACE SEARCH TO RESTORE THEM!! i.e. //alert("> message data…") can be restored by search and replace for //alert("> …) .. MUST PUT A SPACE AFTER THE> CHARACTER! fromNewTablehitsTableDougieBaseVer37.js pushContactsFormtableIndexaddContactsDougieBaseVer37 ADD CONTACTS number of dynamicfields = 1 now createnewDB resets newTableSpecificVariables and savedTablesArray to 0 savedTablesArray.length increases by 1 as each table is created fixed manal contact entry fields fixed + contacts deletingTableField variable added Marc19  contactsFormtableIndexaddContactsDougieBaseVer37.js manual contacts now works Mar13 tableIndexaddContactsDougieBaseVer37.js from deleteNTtableIndexaddContactsDougieBaseVer37.js Mar11 from delete last and first and middle tables works!  tableIndexaddContactsDougieBaseVer37.js Mar9 2022 deleteItemtableIndexaddContactsDougieBaseVer37.js from tableIndexaddContactsDougieBaseVer37 WORKS Mar8 FOR CRETION NEWBB BEFORE ANY DB LOADED MAR6 from createNewaddContactsDougieBaseVer37 from addContactsDougieBaseVer37 from Copy of addContactsDougieBaseVer37 based on date: Feb22 2022 worksKeepTestPlayWithNewTableContactsDougieBaseVer37 Feb 17 2022 Feb 13 2022 from testPlayWithNewTableContactsDougieBaseVer37 Feb10 from playWithSTRowsEditTDNewTableContactsDougieBaseVer37.js FEB6 FEB4 2022 from workingOnEditTDNewTableContactsDougieBaseVer37.js currentJan19ContactsDougieBaseVer37.js now adding newTable variables ..Jan11 go to fallBackJan11 if meeses up workingOnContactsDougieBaseVer37.js Jan2 THIS VERSION WORKS WITH SAFARI CONTACT PICKER!  contacts table working with search sort Dec24 Added whatsNew window  Working on retrieving contact info. See functions at bottom. ADD style="color:black" IN HTML  Dec22 moved getMemory function from html file to .js file from Dec10 2021 mobileFriendlyDougieBaseVer37.js from DougieBaseVer36.js Dec5 sw11 from messWith Dec2 DougieBaseVer36.js Dec1 from flashFileNameDougieBaseVer36.js from createNewDBDougieBaseVer36 Nov30 Nov28 added addToDynamicFields.setAttribute('class','borderBlink') to border in editMoreFields function and addNoteBtn.setAttribute('class','borderBlink'); in saveBtn.onclick for createNewDB renameBtn.setAttribute('class','borderBlink'); in preferences displayDataBtn.setAttribute('class','borderBlink'); in function renameTitle Nov28 borderBlink css is in the html file  Nov 27 fine tuned flow of createNewDB Nov24 fixed create newDB bug! Nov 22 edit notes displayed n real time Nov17 added tableScreenOptions to editTableTrigger to not mess up table display Nov14 from spDougieBaseVer36.js landscape table search and preview edid Date:Nov9 save preferences from Date:Nov4 added Easter egg and save settings preferencesDougieBaseVer36.js from fixEditDougieBaseVer35.js from 
 //changed addEventListener to copy instead of dblclick Oct16 made default double click Oct31 2021  clearBkgrdDougieBaseVer34.js clear background and fixed crashes that occur if user makes illogical moves Oct12 2021 use to update workingCopy and Safarii etc
@@ -12123,18 +12123,19 @@ const resultPara = document.querySelector('#resultPara');
 //const finishedShareBtn = document.querySelector('#finishedShare');
 
 //backingUpDBWin.appendChild(resultPara);
-
-const shareData = {
+//changed const shareData = { to JUST SHAREDATA  so shareData will change with each db shared!
+shareData = {
     title: 'DougieBase database',
-    text: 'Copy and then Paste the '+ dataBaseName + ' database data  below into the textArea in the restore database section of DougiBase : \n\n\n' + string + variableText,
+    text: 'Copy and then Paste the '+ dataBaseName + ' database data  below into the textArea in the restore database section of DougieBase : \n\n\n' + string + variableText,
     url: 'http://eeyorepooh.weebly.com/'
   }//shareData
-  
+  alert("In share this database: string = " + string + " dataBaseName = " + dataBaseName);
+  resultPara.textContent = 'Tap above to share Database: ' + dataBaseName ;
   // Share must be triggered by "user activation"
   shareBtn.addEventListener('click', async () => {
     try {
       await navigator.share(shareData)
-      resultPara.textContent = 'Database: ' + dataBaseName + ' shared successfully'
+      resultPara.textContent = 'Last Database shared: ' + dataBaseName + ' shared successfully'
     } catch(err) {
       resultPara.textContent = 'Error: ' + err
     }
@@ -14806,7 +14807,9 @@ console.log("In checkTableLimit function: tableIndex = " + tableIndex);
 //alertx("tableIndex= " + newTableVariablesArray[0] + "savedTablesArray.length = " + savedTablesArray.length);
 
 tableIndex= newTableVariablesArray[0];
-if (tableIndex === savedTablesArray.length -1) {
+//alertx("tableIndex = " + tableIndex + "savedTablesArray.length = " + savedTablesArray.length);
+
+if (tableIndex !== -1 && tableIndex === savedTablesArray.length -1) {
 alert("⚠️You have exceeded the limit for number of allowed tables. Delete some first!");
 tableScreenOptions();
 tableLimit = true;	
@@ -14833,6 +14836,170 @@ function print_this(elem) {
 //EXPERIMENTING WITH SAVING FORM DATA FROM BUTTERFLY
 
 
+//end of addingMoreContacts function
+
+//if(loadFromTableOptions && newTableEdit) {
+	
+//}
+//beginning function flash
+// function flash () {
+	
+//   if(flashYellow) {
+// 	  NotesEditBtn.setAttribute('class','colorBtn');
+// 	  flashYellow = false;
+//   } else {
+// 	  NotesEditBtn.setAttribute('class','attentionBtn');
+//   }//end if flashYellow
+  
+// }//end function flash
+// //ENDfunction flash
+
+
+//end of trim after colon
+
+// //function clickedSaveTableBtns
+// function clickedSaveTable () {
+// 			let abortSave = false;
+// 			if(!originalOrder) {
+				
+// 			let warning = document.createElement('p');
+// 		showTable.appendChild(warning);	warning.setAttribute('class','simulator');
+// 				warning.textContent = 'THE ORIGINAL RECORD LIST ORDER HAS BEEN CHANGED!';
+// 				if(!window.confirm('The original record list order will be lost. Tap CANCEL to abort. Reset to original order in Sort.')) {
+// 				showTable.removeChild(warning);	showTable.setAttribute('class', 'hidden');
+// 					sortTable();
+// 					abortSave = true;
+// 					} else {
+// 						showTable.removeChild(warning);
+// 						originalOrder = true;
+// 						abortSave = false;
+// 						//carryOnSave();
+// 				}//end if else confirm alert
+				
+// 			}//end if !originalOrder
+// 			if (!abortSave) {carryOnSave();}
+			
+// 		function carryOnSave ()	{
+// 			saveTableBtn.setAttribute('class', 'normalBtn');
+// 			saveTableBtn.textContent = 'SAVED';
+// 				saveTableBtn2.setAttribute('class', 'normalBtn');
+// 				saveTableBtn2.textContent = 'SAVED';
+// 			//should copyOfTableArray be set here???Mar16
+// 		//reset copyOfTableArray fixes reset!Mar15 alpha sort might not change tableArray, only HTML so alpha sort won't lose the original order but reverse sort does so this will protect against losing original order if reverse sort and save is pressed
+// copyOfTableArray = tableArray.slice(0,tableTitle.length);
+// copyOfTableTitle = tableTitle.slice();
+// console.log('copyOfTableArray = ' + copyOfTableArray);
+// console.log('copyOfTableTitle = ' + copyOfTableTitle);
+
+// // update copy to reflect new originalMar 15 not tested!			
+// 			//save all necessary arrays to notes_os
+// 	for(let i = 0;i<tableTitle.length;i++) {
+// 			for(let j=0;j<numberOfFields;j++) {
+// 				console.log('tableArray[' +i + '][' + j +'] = ' + tableArray[i][j]);
+				
+// 			}//end for j =
+			
+			
+// 		}//end for i =
+// 		dataVobj.tableArray = tableArray;
+// 		console.log('At saving current table values! and going to saveVariables. dataVobj.tableArray = ' + dataVobj.tableArray);
+// 		saveVariables();
+// 		//so that data appears after returning to Home Screen followiNg a displayTable function after having deleted a table record!!! Otherwise you have to reset tData in preferences.Date:Dec19g OR MAYBE IF DELETEDrecord Don't erase table rowas back in displayTable
+// 		//prefWindow.setAttribute('class','showing');//instead of displayData whiCh repeats record list twice!
+// 		options();//this seems to do the job!!
+// 		//displayData();//might have to REMOVE if still repeating record list after a delete table record???THERE IS SOME ISSUE WITH CONCURRENT RUNNING OF TWO ITERATIONS OF DISPLAY DATA!!!!
+// 	//the if else for save warning were added here Mar13..remove if messes up!!
+// 		}//end function carryOnSave
+		
+// 	}//end clickedSaveTable
+
+//original function isolateLink
+// function isolateLink(textContainingLink) {
+// 	console.log('in isolateLink function');
+// 	let startLink = textContainingLink.indexOf('http');
+// console.log('startLink = ' + startLink);
+// //correct startLink
+// 	//LEFT OFF HERE MAY31
+// 	preLinkInfo = textContainingLink.slice(0,startLink);
+// 	console.log('preLinkInfo = ' + preLinkInfo);
+// 	let endLink = 0;
+// 	let occurences = 0;
+// let position = textContainingLink.indexOf('/');
+
+// while (position !== -1) {
+//   occurences++
+//   position = textContainingLink.indexOf('/', position + 1);
+//   if (position >1) {endLink = position}//end if position>1
+// }//end while position !== -1
+
+// console.log('count of occurences = ' + occurences);  
+// console.log('position = ' + position);
+// console.log('endLink = ' + endLink);
+// //position will =-1 because of while condition
+// // The method slice() takes two arguments: the start index where you will start copying and the end index where the copying ends. The second argument is not included, which means when you copy an array from index 1 to index 5, it will only copy from index 1 to index 4.
+
+// let link = textContainingLink.slice(startLink,endLink+1);
+// console.log('link = ' + link);
+// return link;
+// }//end function isolateLink()
+
+// //function check fileFormat
+// function checkFormat (json) {
+// 	var verify = json.slice(0,2);
+// 	var verifyEnd = json.slice(-2);
+	
+// 	console.log('verify = ' + verify);
+// 	console.log('verifyEnd = ' + verifyEnd);
+// 	if(verify !== "{\"" || verifyEnd !== "}]}") {
+		
+// 		alert('Improper file format? Re-paste the backup data');
+// 		//clear textarea for next use
+// 	restoreTextArea.value = "";//May8
+// 	console.log('cancelRestoreBtn has been tapped.');
+// 	//clearDatabase(dataBaseName);
+// getJsonBtn.setAttribute('class','attentionBtn');
+// restoreFromClipboardBtn.setAttribute('class','normalBtn');	
+// finishedRestoreBtn.setAttribute('class','normalBtn');
+
+// 		restoreDBWindow.removeChild(finishedRestoreBtn);
+// 	restoreDBWindow.removeChild(cancelRestoreBtn);
+// 	restoreDBWindow.setAttribute('class','hidden');
+// 	//go back to start of restoreDB
+// 	restoreDataBase(restoredDBName);
+// 	}//end if verify !=
+	
+// }//end function checkFormat
+
+// //end function check fileFormat
+
+
+//function to clear list of db names so as to refresh the list
+// function clearDBFilesList () {
+// 	for (let i = 0; i< databases.length; i++) { 
+// 				dataBaseList.removeChild(databaseNameLi[i]);
+// 			}//end for loop
+//}//end clearDBFilesList
+
+/*For both exporting and importing data, you'll need an IndexedDB instance. Say you're wanting to back up the foo database, then you could get an instance in the console like this:
+var db
+var request = window.indexedDB.open('foo')
+request.onerror = () => console.error('Could not open database')
+request.onsuccess = () => { db = request.result }
+
+Import:
+
+Copy the importFromJson function (without the prepended export statement), paste it into the DevTools Console and hit Enter.
+
+Invoke it with the IndexedDB instance and the exported data as parameters: await importFromJson(db, exportedString).
+
+Note that you actually have to pass the exported data as a string, not as a JSON object. For example: If you exported and empty database {}, you'd have to pass into the function the following: await importFromJson(db, '{}').
+*/		
+
+	//end the actual import data code
+	
+	
+// }//end function restoreDataBase(dataBaseName)
+
 
  /* DISABLED/ENABLED SERVICE WORKER CODE FOR TESTING NEW CODE IN THIS VERSION !!!!*/
  
@@ -14844,9 +15011,9 @@ function print_this(elem) {
 
 
 //DISABLED ENABLED SERVICE WORKER
-// /*
 
- if('serviceWorker' in navigator) {
+
+ /* if('serviceWorker' in navigator) {
     navigator.serviceWorker
              .register('/DougieBaseVer40sw.js')
              .then(function() { console.log('Service Worker Registered'); });
@@ -14859,8 +15026,7 @@ function print_this(elem) {
 	console.log('No Service worker installed!');
 	document.getElementById("percent").value = '(No Service Worker installed! )';
 }//end if else service worker
-
-//*/
+*/	
 	//what about the manifest file? triggered by oninstall? A2HS?	 
 //If the service worker API is supported in the browser, it is registered against the site using the ServiceWorkerContainer.register() method. Its contents reside in the sw.js file, and can be executed after the registration is successful. It's the only piece of Service Worker code that sits inside the app.js file; everything else that is Service Worker-specific is written in the sw.js file itself.
 
