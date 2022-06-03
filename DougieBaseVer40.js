@@ -1,4 +1,4 @@
-//DougieBaseVer40.js May28 fixed tableLimit  noAlertsplusContactshitsTablefixADDCONTACTSDougieBaseVer40 May18 fixed share data error May28 2022 tableLimit plusContactshitsTablefixADDCONTACTSDougieBaseVer40.js May17 May15 May 13 May9 hitsTablefixADDCONTACTSDougieBaseVer40.js May5  from fixADDCONTACTSDougieBaseVer40.js May1  testCancelsweetAlertnoAlertsmoreBlock+DougieBaseVer40.jsApri25 2022
+//DougieBaseVer40.js June3 fixed search bug May28 fixed tableLimit noAlertsplusContactshitsTablefixADDCONTACTSDougieBaseVer40 May18 fixed share data error May28 2022 tableLimit plusContactshitsTablefixADDCONTACTSDougieBaseVer40.js May17 May15 May 13 May9 hitsTablefixADDCONTACTSDougieBaseVer40.js May5  from fixADDCONTACTSDougieBaseVer40.js May1  testCancelsweetAlertnoAlertsmoreBlock+DougieBaseVer40.jsApri25 2022
 //NOTE ALERTS REMOVED HAVE A x after alert SO USE FIND REPLACE SEARCH TO RESTORE THEM!! i.e. //alertx("message data…") can be restored by search and replace for //alertx and replace with alert
 //moreBlock+DougieBaseVer40.js April17 April15 fallBackApril15moreBlock+DougieBaseVer40.js Copy of moreBlock+DougieBaseVer40.js fallBackApril14moreBlock+DougieBaseVer40.js moreBlock+DougieBaseVer40.js April10 for testing and when works back to block… from block+DougieBaseVer40.js DougieBaseVer40.js from shareDeleteRecordNewTableDougieBaseVer37.js WILL THIS FILE AUTOMATICALLY SYNC WITH ICLOUD.YES!deleteRecordNewTableDougieBaseVer37.js NOTE ALERTS REMOVED HAVE A > AFTER THE " SO USE FIND REPLACE SEARCH TO RESTORE THEM!! i.e. //alert("> message data…") can be restored by search and replace for //alert("> …) .. MUST PUT A SPACE AFTER THE> CHARACTER! fromNewTablehitsTableDougieBaseVer37.js pushContactsFormtableIndexaddContactsDougieBaseVer37 ADD CONTACTS number of dynamicfields = 1 now createnewDB resets newTableSpecificVariables and savedTablesArray to 0 savedTablesArray.length increases by 1 as each table is created fixed manal contact entry fields fixed + contacts deletingTableField variable added Marc19  contactsFormtableIndexaddContactsDougieBaseVer37.js manual contacts now works Mar13 tableIndexaddContactsDougieBaseVer37.js from deleteNTtableIndexaddContactsDougieBaseVer37.js Mar11 from delete last and first and middle tables works!  tableIndexaddContactsDougieBaseVer37.js Mar9 2022 deleteItemtableIndexaddContactsDougieBaseVer37.js from tableIndexaddContactsDougieBaseVer37 WORKS Mar8 FOR CRETION NEWBB BEFORE ANY DB LOADED MAR6 from createNewaddContactsDougieBaseVer37 from addContactsDougieBaseVer37 from Copy of addContactsDougieBaseVer37 based on date: Feb22 2022 worksKeepTestPlayWithNewTableContactsDougieBaseVer37 Feb 17 2022 Feb 13 2022 from testPlayWithNewTableContactsDougieBaseVer37 Feb10 from playWithSTRowsEditTDNewTableContactsDougieBaseVer37.js FEB6 FEB4 2022 from workingOnEditTDNewTableContactsDougieBaseVer37.js currentJan19ContactsDougieBaseVer37.js now adding newTable variables ..Jan11 go to fallBackJan11 if meeses up workingOnContactsDougieBaseVer37.js Jan2 THIS VERSION WORKS WITH SAFARI CONTACT PICKER!  contacts table working with search sort Dec24 Added whatsNew window  Working on retrieving contact info. See functions at bottom. ADD style="color:black" IN HTML  Dec22 moved getMemory function from html file to .js file from Dec10 2021 mobileFriendlyDougieBaseVer37.js from DougieBaseVer36.js Dec5 sw11 from messWith Dec2 DougieBaseVer36.js Dec1 from flashFileNameDougieBaseVer36.js from createNewDBDougieBaseVer36 Nov30 Nov28 added addToDynamicFields.setAttribute('class','borderBlink') to border in editMoreFields function and addNoteBtn.setAttribute('class','borderBlink'); in saveBtn.onclick for createNewDB renameBtn.setAttribute('class','borderBlink'); in preferences displayDataBtn.setAttribute('class','borderBlink'); in function renameTitle Nov28 borderBlink css is in the html file  Nov 27 fine tuned flow of createNewDB Nov24 fixed create newDB bug! Nov 22 edit notes displayed n real time Nov17 added tableScreenOptions to editTableTrigger to not mess up table display Nov14 from spDougieBaseVer36.js landscape table search and preview edid Date:Nov9 save preferences from Date:Nov4 added Easter egg and save settings preferencesDougieBaseVer36.js from fixEditDougieBaseVer35.js from 
 //changed addEventListener to copy instead of dblclick Oct16 made default double click Oct31 2021  clearBkgrdDougieBaseVer34.js clear background and fixed crashes that occur if user makes illogical moves Oct12 2021 use to update workingCopy and Safarii etc
@@ -542,7 +542,7 @@ for (var i = 0; i < 10; i++) {
 savedTablesArray[i] = new Array(4);
 
 }//number of fields means all fields for savedTablesArray there are 4 fields maybe should change back to numberOfFields????
-
+//savedTablesArray.length = 10;//tried to force length of 10 to fix tableLimit error but did not work savedTablesArray.length still 3 or whatever in Test New Table!!!!
 //Create a new array for searched hits
 //SearchedHitsTableArray :
 
@@ -6355,6 +6355,9 @@ if (makeContactsTable || loadFromTableOptions) {
 	if(!makeContactsTable && !loadFromTableOptions) {
 	matchedRecord.addEventListener('click', function (e) {
 			//remove if messes up tdying to prevent repeat registration of addEventListener
+			
+//should I remove the addEventlistener when highlightTable is tapped June1 2022???	
+
 			resultList.appendChild(addP);
 			//let once = true;
   // for (let i = 0;i < tableTitle.length; ++i) {
@@ -6365,6 +6368,8 @@ if (makeContactsTable || loadFromTableOptions) {
 		   fromSearchRecord = true;
 		   fullViewItem();
 		   //highlight in table in case you go to table after search
+	//REMEMBER IF GOING TO FULLVIEWEDIT FROM A SEARCH OF A MAIN TABLE THAT THE fromSearchRecord variable is made true! Does it need to be made false so ewhere after that? Date June1 2022	  
+	
 		   
 		   searchWindow.setAttribute('class','hidden');
 		   
@@ -6441,6 +6446,9 @@ console.log("Highlight just tapped: about to go to displayTable..searchedHitsTab
 		renewed = 0;
 		refreshed = 0;
 		if(hits.length>1) {hits.length = 0;}
+		
+//should this be hits.length>=1????Date June1 2022
+
 	}//end function highlightTable
 // flipMenu.textContent = "Click to show / hide TABLE MENU";
 
@@ -8531,6 +8539,7 @@ console.log("At end of build record rows from a table edit. tableArray = " +tabl
 //above code is buildRecordRows function
 //show the table previously created using the tableArray variable
 function displayTable () {
+//end function displayTable ..!!!! showTable IS AT LINE 10853
 //flag to only allow transit through mainDBedit code once	
 if(makeContactsTable) {
 		flipMenu.textContent = " ✅ New Table Name: " + newTableNames[tableIndex] + ". " + newTableName;
@@ -8985,6 +8994,7 @@ console.log('Now just creating records!');
 	//iterate through all records
 	//tableTitle.length can also be counter
 	for(let i = 0; i< tableTitle.length; i++) {
+	//end for i = to show all records IS AT LINE 9648!!!!!!!!!!!!!!
 	// 	if (i >counter) {
 		//ReferenceError: Can't find variable: e
 	//   e.preventDefault();
@@ -9030,9 +9040,17 @@ if (fromSearchRecord) {
 //CODE TO CREATE NEWTABLE FROM SEARCH HITS WILL GO HERE!!!!
 
 				STrecordItem.setAttribute('class','highlightgreen');
+				
+//document.querySelector('#tableWin').children[i].scrollIntoView({block: "end"});
+	//const element = document.getElementById("tableWin");
+ // element.scrollIntoView();			
+
+	//	tableArray[i].scrollIntoView(true);	
+		//STrecordItem.scrollIntoView(true);	
+			
 			//hitsArray[k] = tableArray[i]
 			}//if i=hits[j]
-			
+//document.querySelector('#STforRows').children[i].scrollIntoView(true);			
 		}//end for loop j -hits.length
 document.querySelector('#STforRows').children[i].scrollIntoView(true);
 	
@@ -9651,6 +9669,15 @@ if (searchedHitsTableArray.length > 0) {
 		//const homeScreenBtn = document.querySelector('#homeScreenBtn');
 		homeScreenBtn.onclick = function () {
 emailBtn.setAttribute('class','tdEdit');//if cancel CONTACTS or ignore flashing CONTACTS AND GO TO HOME SCRN CONTACTS BTN WILL STAY FLASHING!
+
+//alertx("homeScreenBtn.onclick: fromSearchRecord = " + fromSearchRecord + " hits.length = " + hits.length);
+console.log("homeScreenBtn.onclick: fromSearchRecord = " + fromSearchRecord + " hits.length = " + hits.length);
+
+
+//reset fromSearchRecord to false and hits.length to 0 to fix search bug if using a td referenced search followed by a first column tableTitle search Date: Jun2 2022
+fromSearchRecord = false;
+hits.length = 0;
+
 		//alertx("searchedHitsTableArray = " + searchedHitsTableArray);
 	//alertx("homeScreeBtn.onclick..loadFromTableOptions = " + loadFromTableOptions +  ".  loadTableIndex = " + loadTableIndex + ".  newTableSpecificVariables[loadTableIndex][1] = " + newTableSpecificVariables[loadTableIndex][1] + ".  savedTablesArray[loadTableIndex] = " + savedTablesArray[loadTableIndex]);
 	
@@ -9716,6 +9743,11 @@ flipMenu.textContent = "Tap - Click to show / hide TABLE MENU";
 		//const homeScreenBtn2 = document.querySelector('#homeScreenBtn2');
 		homeScreenBtn2.onclick = function () {
 emailBtn.setAttribute('class','tdEdit');//if cancel CONTACTS or ignore flashing CONTACTS AND GO TO HOME SCRN CONTACTS BTN WILL STAY FLASHING!
+
+//reset fromSearchRecord to false and hits.length to 0 to fix search bug if using a td referenced search followed by a first column tableTitle search Date: Jun2 2022
+fromSearchRecord = false;
+hits.length = 0;
+
 		
 if(hitsTable) {
 emailBtn.textContent = "CONTACTS";
@@ -10245,6 +10277,11 @@ newTableSpecificVariables[loadTableIndex][2] = numberOfNewTableAddedFields;
 	//return to search table window
 			const toSearchScreenBtn = document.querySelector('#toSearchScr');
 		toSearchScreenBtn.onclick = function () {
+		
+//reset fromSearchRecord to false and hits.length to 0 to fix search bug if using a td referenced search followed by a first column tableTitle search Date: Jun2 2022
+fromSearchRecord = false;
+hits.length = 0;
+
 				fromViewSort = false;//turn off sort flag
 			console.log('toSearchScreenBtn clicked');
 			
@@ -10674,7 +10711,9 @@ newTableTitle.textContent = dbName;
 console.log("contactsFieldNames = " + contactsFieldNames);
 
 setupNewTable();
-alert("tableIndex = " + tableIndex);
+
+//alertx("tableIndex = " + tableIndex);
+console.log("tableIndex = " + tableIndex);
 //works to here
 //NOTE savedTableArray NOT created until saveBtn.onclick if makeContactsTable = true! So at point of saveBtn.onclick prior to first save savedTablesArray is empty!
 
@@ -11655,7 +11694,11 @@ function sortTableArray (chosenSort,typeSort) {
 		//should this be refreshTable?
 		//displayTable();
 		if(!sortW3) {
-			alert("Restoring sort: makeContactsTable = " + makeContactsTable + ".  loadFromTableOptions = " + loadFromTableOptions);
+		
+			//alertx("Restoring sort: makeContactsTable = " + makeContactsTable + ".  loadFromTableOptions = " + loadFromTableOptions);
+			console.log("Restoring sort: makeContactsTable = " + makeContactsTable + ".  loadFromTableOptions = " + loadFromTableOptions);
+			
+			
 			if(makeContactsTable || loadFromTableOptions) {tableTitle.length=newTableContactsTitleLength}//end if makeContactsTable
 		//	makeContactsTable is true and loadFromTableOptions is FALSE when coming back from alpha sort!AFTER USING CONTACTS BTN 
 		//loadFromTableOptions is TRUE after alpha sort when comijng from loadFromTableOptions and the rstore WORKS!
@@ -14133,8 +14176,12 @@ savedTablesArray.push(removedSavedTablesArray);
 	
 	saveVariables();//does not work variables are not saved
 	deleteFromTableOptions = false;//flag indicates deletion of new table
+	
 	//alertx("newTableVariablesArray after deletion = " + newTableVariablesArray + ". tableIndex after deletion = " + tableIndex + ". newTableNames after deletion = " +newTableNames + ". newTableNames.length after deletion = " + newTableNames.length + ". savedTablesArray after deletion = " + savedTablesArray);
 	//alertx("newTableSpecificVariables after deletion = " + newTableSpecificVariables);
+	console.log("newTableVariablesArray after deletion = " + newTableVariablesArray + ". tableIndex after deletion = " + tableIndex + ". newTableNames after deletion = " +newTableNames + ". newTableNames.length after deletion = " + newTableNames.length + ". savedTablesArray after deletion = " + savedTablesArray);
+	console.log("newTableSpecificVariables after deletion = " + newTableSpecificVariables);
+	
 //after deletion newTableSpecificVariables.length = 9 instead of 10. Should I add another empty element…newTableSpecificVariables.length = 10? = Feb28	
 			} else {
 				//return to fileNames screen. Need to remove the previous fileNames?
@@ -14807,8 +14854,13 @@ console.log("In checkTableLimit function: tableIndex = " + tableIndex);
 //alertx("tableIndex= " + newTableVariablesArray[0] + "savedTablesArray.length = " + savedTablesArray.length);
 
 tableIndex= newTableVariablesArray[0];
-//alertx("tableIndex = " + tableIndex + "savedTablesArray.length = " + savedTablesArray.length);
 
+//alertx("tableIndex = " + tableIndex + "savedTablesArray.length = " + savedTablesArray.length);
+console.log("tableIndex = " + tableIndex + "savedTablesArray.length = " + savedTablesArray.length);
+
+
+//changed this line to fix tableLimit issue
+//if (tableIndex !== -1 && tableIndex === savedTablesArray.length -1)
 if (tableIndex !== -1 && tableIndex === 9) {
 alert("⚠️You have exceeded the limit for number of allowed tables. Delete some first!");
 tableScreenOptions();
