@@ -15065,7 +15065,7 @@ Note that you actually have to pass the exported data as a string, not as a JSON
 //DISABLED ENABLED SERVICE WORKER
 
 
- /* if('serviceWorker' in navigator) {
+  if('serviceWorker' in navigator) {
     navigator.serviceWorker
              .register('/DougieBaseVer40sw.js')
              .then(function() { console.log('Service Worker Registered'); });
@@ -15078,7 +15078,7 @@ Note that you actually have to pass the exported data as a string, not as a JSON
 	console.log('No Service worker installed!');
 	document.getElementById("percent").value = '(No Service Worker installed! )';
 }//end if else service worker
-*/	
+
 	//what about the manifest file? triggered by oninstall? A2HS?	 
 //If the service worker API is supported in the browser, it is registered against the site using the ServiceWorkerContainer.register() method. Its contents reside in the sw.js file, and can be executed after the registration is successful. It's the only piece of Service Worker code that sits inside the app.js file; everything else that is Service Worker-specific is written in the sw.js file itself.
 
