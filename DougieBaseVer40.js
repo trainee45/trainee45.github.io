@@ -1,4 +1,4 @@
-//DougieBaseVer40.js June3 fixed search bug May28 fixed tableLimit noAlertsplusContactshitsTablefixADDCONTACTSDougieBaseVer40 May18 fixed share data error May28 2022 tableLimit plusContactshitsTablefixADDCONTACTSDougieBaseVer40.js May17 May15 May 13 May9 hitsTablefixADDCONTACTSDougieBaseVer40.js May5  from fixADDCONTACTSDougieBaseVer40.js May1  testCancelsweetAlertnoAlertsmoreBlock+DougieBaseVer40.jsApri25 2022
+//DougieBaseVer40.js June4 saveBtn2 fixed and flashing displayTableBtn when CONVERT file format June3 fixed search bug May28 fixed tableLimit noAlertsplusContactshitsTablefixADDCONTACTSDougieBaseVer40 May18 fixed share data error May28 2022 tableLimit plusContactshitsTablefixADDCONTACTSDougieBaseVer40.js May17 May15 May 13 May9 hitsTablefixADDCONTACTSDougieBaseVer40.js May5  from fixADDCONTACTSDougieBaseVer40.js May1  testCancelsweetAlertnoAlertsmoreBlock+DougieBaseVer40.jsApri25 2022
 //NOTE ALERTS REMOVED HAVE A x after alert SO USE FIND REPLACE SEARCH TO RESTORE THEM!! i.e. //alertx("message data…") can be restored by search and replace for //alertx and replace with alert
 //moreBlock+DougieBaseVer40.js April17 April15 fallBackApril15moreBlock+DougieBaseVer40.js Copy of moreBlock+DougieBaseVer40.js fallBackApril14moreBlock+DougieBaseVer40.js moreBlock+DougieBaseVer40.js April10 for testing and when works back to block… from block+DougieBaseVer40.js DougieBaseVer40.js from shareDeleteRecordNewTableDougieBaseVer37.js WILL THIS FILE AUTOMATICALLY SYNC WITH ICLOUD.YES!deleteRecordNewTableDougieBaseVer37.js NOTE ALERTS REMOVED HAVE A > AFTER THE " SO USE FIND REPLACE SEARCH TO RESTORE THEM!! i.e. //alert("> message data…") can be restored by search and replace for //alert("> …) .. MUST PUT A SPACE AFTER THE> CHARACTER! fromNewTablehitsTableDougieBaseVer37.js pushContactsFormtableIndexaddContactsDougieBaseVer37 ADD CONTACTS number of dynamicfields = 1 now createnewDB resets newTableSpecificVariables and savedTablesArray to 0 savedTablesArray.length increases by 1 as each table is created fixed manal contact entry fields fixed + contacts deletingTableField variable added Marc19  contactsFormtableIndexaddContactsDougieBaseVer37.js manual contacts now works Mar13 tableIndexaddContactsDougieBaseVer37.js from deleteNTtableIndexaddContactsDougieBaseVer37.js Mar11 from delete last and first and middle tables works!  tableIndexaddContactsDougieBaseVer37.js Mar9 2022 deleteItemtableIndexaddContactsDougieBaseVer37.js from tableIndexaddContactsDougieBaseVer37 WORKS Mar8 FOR CRETION NEWBB BEFORE ANY DB LOADED MAR6 from createNewaddContactsDougieBaseVer37 from addContactsDougieBaseVer37 from Copy of addContactsDougieBaseVer37 based on date: Feb22 2022 worksKeepTestPlayWithNewTableContactsDougieBaseVer37 Feb 17 2022 Feb 13 2022 from testPlayWithNewTableContactsDougieBaseVer37 Feb10 from playWithSTRowsEditTDNewTableContactsDougieBaseVer37.js FEB6 FEB4 2022 from workingOnEditTDNewTableContactsDougieBaseVer37.js currentJan19ContactsDougieBaseVer37.js now adding newTable variables ..Jan11 go to fallBackJan11 if meeses up workingOnContactsDougieBaseVer37.js Jan2 THIS VERSION WORKS WITH SAFARI CONTACT PICKER!  contacts table working with search sort Dec24 Added whatsNew window  Working on retrieving contact info. See functions at bottom. ADD style="color:black" IN HTML  Dec22 moved getMemory function from html file to .js file from Dec10 2021 mobileFriendlyDougieBaseVer37.js from DougieBaseVer36.js Dec5 sw11 from messWith Dec2 DougieBaseVer36.js Dec1 from flashFileNameDougieBaseVer36.js from createNewDBDougieBaseVer36 Nov30 Nov28 added addToDynamicFields.setAttribute('class','borderBlink') to border in editMoreFields function and addNoteBtn.setAttribute('class','borderBlink'); in saveBtn.onclick for createNewDB renameBtn.setAttribute('class','borderBlink'); in preferences displayDataBtn.setAttribute('class','borderBlink'); in function renameTitle Nov28 borderBlink css is in the html file  Nov 27 fine tuned flow of createNewDB Nov24 fixed create newDB bug! Nov 22 edit notes displayed n real time Nov17 added tableScreenOptions to editTableTrigger to not mess up table display Nov14 from spDougieBaseVer36.js landscape table search and preview edid Date:Nov9 save preferences from Date:Nov4 added Easter egg and save settings preferencesDougieBaseVer36.js from fixEditDougieBaseVer35.js from 
 //changed addEventListener to copy instead of dblclick Oct16 made default double click Oct31 2021  clearBkgrdDougieBaseVer34.js clear background and fixed crashes that occur if user makes illogical moves Oct12 2021 use to update workingCopy and Safarii etc
@@ -6865,6 +6865,8 @@ numberOfNewTableAddedFields = newTableSpecificVariables[loadTableIndex][2];
 	 console.log("Returned from saveVariables after converting old file type.");
 	 tableScreenBtn.setAttribute('class','borderBlink');
 	 tableScreenBtn.textContent = "CONVERT";
+
+	displayTableBtn.setAttribute('class','attentionBtn');//so not flashing at same time as homeScreenBtn when Converting file format DATE:JUNE4
 	
 }//end if(dataVobj.hasOwnProperty('tableSpecific'))
 
@@ -10073,7 +10075,9 @@ console.log("About to save! newTableFieldsArray = " + newTableFieldsArray + ". t
 	//for saveTableBtn2
 	
 	saveTableBtn2.onclick = function () { 
-homeScreenBtn.disabled = false;//to help force Save..now reset after flashing SAVE
+	//tableIndex = 7;testing fixing screw ups
+	resetFields = true;//if you hit SAVE twice fields can get messed up
+	homeScreenBtn.disabled = false;//to help force Save..now reset after flashing SAVE
 			 homeScreenBtn2.disabled = false;
 newTableFieldsBtn.disabled = false;//to prevent an inadvertant tap of Field Labels btn at this stage creating crashing..reset
 	
@@ -10085,57 +10089,78 @@ saveTableBtn2.setAttribute('class','tdEdit');
 renameNewTableFlag = false;
 
 }//end if(renameNewTableFlag)
-
-			if(makeContactsTable || loadFromTableOptions) {
+	
+	//alertx("saveTableBtn.onclick (table screen) .. loadFromTableOptions = " + loadFromTableOptions +  ".  loadTableIndex = " + loadTableIndex + ".  newTableSpecificVariables[loadTableIndex][1] = " + newTableSpecificVariables[loadTableIndex][1] + ".  savedTablesArray[loadTableIndex] = " + savedTablesArray[loadTableIndex]);
+	
+	console.log("saveTableBtn.onclick (table screen) .. loadFromTableOptions = " + loadFromTableOptions +  ".  loadTableIndex = " + loadTableIndex + ".  newTableSpecificVariables[loadTableIndex][1] = " + newTableSpecificVariables[loadTableIndex][1] + ".  savedTablesArray[loadTableIndex] = " + savedTablesArray[loadTableIndex]);
+		console.log("NOTE savedTableArray NOT created until saveBtn.onclick if makeContactsTable = true! So at point of saveBtn.onclick prior to first save savedTablesArray is empty!Just tapped saveTableBtn.onclick… savedTablesArray[0] = " + savedTablesArray[0]);
+//NOTE savedTableArray NOT created until saveBtn.onclick if makeContactsTable = true! So at point of saveBtn.onclick prior to first save savedTablesArray is empty!
+// ERROR HERE		
+// Just tapped saveTableBtn.onclick… savedTablesArray[0] = Doug Dyer,
+// Contact Name , Feb 06 2022 00:20, ,username@shaw.ca,(250) 658-5645,addyer@telus.net BETWEEN EDIT (REFRESH BTN AND BACK TO SAVE SOMETHING HAPPENS??)also check originalNumberRecords set to that of new table (contacts table) …4 see line 12119 4 is main db should be 3 line 12116 tableArray = Doug Dyer,
+// Contact Name , Feb 06 2022 00:20, ,username@shaw.ca,(250) 658-5645,addyer@telus.net fieldNamesArray = CONTACT NAME,DATE,TELEPHONE,EMAILtableIndex = 0 tableTitle.length = 4 should be 3?
+//ERROR HERE!!!!	savedTablesArray is wrong before going to saveVariables!!	
+		console.log('Save Table btn tapped: makeContactsTable = ' + makeContactsTable + ' loadFromTableOptions = ' + loadFromTableOptions);
+		//alert(" I removed parameter! saveTableBtn.onclick..savedTablesArray[0] = " + savedTablesArray[0]);
+		//alert("newTableName =  " + newTableName);
+		//Date:Jan25Remove if messes up
+		if(makeContactsTable || loadFromTableOptions) {
 		flipMenu.textContent = " ✅ New Table Name: " + newTableNames[tableIndex] + ". " + newTableName;
-	}//end if makeContactsTable
-	//flipMenu.textContent = " ✅ New Table Name: " + newTableName;//have to repeat this for second run to get it to work.not sure why?????Date: Jan2
+		}//end if makeContactsTable ||vloadFromTableOptions
+		//flipMenu.textContent = " ✅ New Table Name: " + newTableName;//have to repeat this for second run to get it to work.not sure why?????Date: Jan2
 		let abortSave = false;
+		//before dtavObject.tableArray is assingned new values of an edited table make check that saveTableBtn is not being pushed from a contacts table and if it is go to saveNewTable function first to restore original tableArray values and copyTableArray values, and setup the savedTables array values etc.
+		
 		//return menu bar in table back to original if post search
 		//flipMenu.textContent = "Click - Tap to show / hide TABLE MENU";
 		
 		if(!makeContactsTable && !loadFromTableOptions) {
 		flipMenu.textContent = "Click - Tap to show / hide TABLE MENU";
-	}//end if !makeContactsTable
-		
-		//function clickedSaveTableBtns
+		}//end if !makeContactsTable
 		
 		
-		//NCJan10..If messed up go back to fallBackJan10
+	
+	
+	//NCJan10..If messed up go back to fallBackJan10
 	// prompt to give choice for saving a contacts table or return to table
  //confirm choice window
  if(makeContactsTable || loadFromTableOptions) {
 	 //NCJan10..If messed up go back to fallBackJan10
-		 if (window.confirm("SAVE Contacts Table ? : \n" + "  CANCEL will Return to Table")) {
-		 if(!makeHitsTable && loadFromTableOptions) {
+	 //when makeContactsTable and loadFromTableOptions are true tableArray is in newTable mode so have to restore to main db mode prior to any save!ResetFromContacts does this AND also sets savedOriginal to false
+		 if (window.confirm("SAVE Contacts - New Table ? : \n" + "  CANCEL will Return to Table")) {
+			 if(!makeHitsTable && loadFromTableOptions) {
 				 makeContactsTable = false;
-//return homeBtn to normal
-//homeScreenBtn was disabled in eMailBtn.onclick in choice prompt after getNewTableName	
-homeScreenBtn.disabled = false;
-homeScreenBtn2.disabled = false;
-homeScreenBtn.textContent = "RETURN to Home Screen";
-homeScreenBtn2.textContent = "RETURN to Home Screen";
+				 //HAVE TO SAVE THE ORIGINAL IF DOING A SAVE DIRECT FROM LOADFROMTABLEOPTIONS!!!?//you do want to save a newTable if an edit has been made!,
 
-			resetFromContacts;}//end if loadFromTableOptions
-			 if(makeContactsTable) {loadFromTableOptions = false;saveNewTable();}//end if makeContactsTable
+	//return homeBtn to normal
+	homeScreenBtn.disabled = false;
+homeScreenBtn2.disabled = false;
+	homeScreenBtn.textContent = "RETURN to Home Screen";
+	homeScreenBtn2.textContent = "RETURN to Home Screen";
+	
+			resetFromContacts();
+	}//end if loadFromTableOptions
+			 if(makeContactsTable) {loadFromTableOptions = false;
+			 saveNewTable();
+	}//end if makeContactsTable saveNewTable takes you to resetFromContacts it also creates savedTablesArray[tableIndex]? If abort save should tableIndex be brought back to tableIndex-1 ?
 			
 			
 			homeScreenBtn.textContent = "Clear CONTACTS Table";
 			 homeScreenBtn2.textContent = "Clear CONTACTS Table";
-		
+//MUST DISABLE SEARCH SORT EDIT AFTER THE SAVE BECAUSE tableArray has beebpn reset to db values prior to saveVariables…otherwise db values are erased by contacts!! Date: Jan30 the search sort with tableArray set to db values will mess up a sort of contacts or new table.	
 	toSortScrBtn.style.backgroundColor = "lightgrey";
 	toSortScrBtn.disabled = true;
 	toEditTableScrBtn.style.backgroundColor = "lightgrey";
 	toEditTableScrBtn.disabled = true;
 	toSearchScreenBtn.style.backgroundColor = "lightgrey";
 	toSearchScreenBtn.disabled = true;
-	
 //homeScreenBtn was disabled in eMailBtn.onclick in choice prompt after getNewTableName	
 homeScreenBtn.disabled = false;
-homeScreenBtn2.disabled = false;	homeScreenBtn.setAttribute('class','borderBlink');
+homeScreenBtn2.disabled = false;
+	homeScreenBtn.setAttribute('class','borderBlink');
 	homeScreenBtn2.setAttribute('class','borderBlink');
 	
-	blockEdit = true;//flag to prevent savedTablesArray getting messed up prevent dblClick edit of td cell if just finished editing layout of table via editBtn.onclick..because otherwise tableArray will no longer be in newTable mode and savedTablesArray will get messed up
+	blockEdit = true;//flag to prevent savedTablesArray getting messed up prevent dblClick edit of td cell if just finished editing layout of table via editBtn.onclick..because otherwise tableArray will no longer be in newTable mode and savedTablesArray will get messed up DOES NOT SEEM TO WORK AFTER A SAVE POST DELETE FIELD.
 	
 /*	} else {
 	toSortScrBtn.style.backgroundColor = "rgb(240, 248, 255)";
@@ -10144,22 +10169,25 @@ homeScreenBtn2.disabled = false;	homeScreenBtn.setAttribute('class','borderBlink
 	toEditTableScrBtn.disabled = false;
 	toSearchScreenBtn.style.backgroundColor = "rgb(240, 248, 255)";
 	toSearchScreenBtn.disabled = false;
-	*/	
-
+*/	
+		 
+			
+			 
+			// saveNewTable();
 			// return//.?temporary to prevent saving variables until code written for it Jan12022
 			} else {
-				saveTableBtn.setAttribute('class', 'normalBtn');
 				saveTableBtn.textContent = "SAVE";
 			// saveTableBtn2.disabled = true;
 			saveTableBtn2.textContent = "SAVE";
+			saveTableBtn.setAttribute('class', 'normalBtn');
 			saveTableBtn2.setAttribute('class', 'normalBtn');
+			
 //homeScreenBtn was disabled in eMailBtn.onclick in choice prompt after getNewTableName	
 homeScreenBtn.disabled = false;
 homeScreenBtn2.disabled = false;
 homeScreenBtn.setAttribute('class','borderBlink');
 homeScreenBtn2.setAttribute('class','borderBlink');
 
-			
 if(loadFromTableOptions || makeContactsTable) {
 	emailBtn.style.display = "none";
 	newTableFieldsBtn.style.display = "none";
@@ -10181,10 +10209,10 @@ newTableSpecificVariables.push(cancelledNewTableSpecificVariables);
 cancelledSavedTablesArray.length = 0;
 savedTablesArray.push(cancelledSavedTablesArray);
 
-alert("savedTablesArray.length = " + savedTablesArray.length);
+console.log("savedTablesArray.length = " + savedTablesArray.length);
+//alertx("savedTablesArray.length = " + savedTablesArray.length);
 
 	}//end if makeContactsTable
-
 
 			//resetFromContacts();
 				//makeContactsTable=false;
@@ -10194,29 +10222,31 @@ alert("savedTablesArray.length = " + savedTablesArray.length);
 	resetFromContacts();//will this fix CANCEL SAVE errors and issues..not tested as of April25 2022
 				
 //if makeContactsTable AND new table not saved we need to delete this new table from the listing	
-				
-				
+
 				//displayTable();
 				//return//.?temporary to prevent saving variables until code written for it Jan12022
 		}//end if window.confirm else
 		//end prompt
-	}//end if makeContactsTable to ask to save contactsTable. ?should this go in saveVariables function?
-	console.log("Back from saveNewTable, or just continuing in saveTableBtn.onclick");
+	}//end if makeContactsTable makeContactsTable || loadFromTableOptionsto ask to save contactsTable. ?should this go in saveVariables function?
 	
-			//let abortSave = false;
+	
+		console.log("Back from saveNewTable, OR just continuing in saveTableBtn.onclick")
+		//function clickedSaveTableBtns
+			// let abortSave = false;declared at top of function saveTableBtn.onclick
 			if(!originalOrder) {
 				
 			let warning = document.createElement('p');
 		showTable.appendChild(warning);	warning.setAttribute('class','simulator');
 				warning.textContent = 'THE ORIGINAL RECORD LIST ORDER HAS BEEN CHANGED!';
-				if(!window.confirm('The original record list order will be lost. Tap CANCEL to abort. Reset to original order in Sort.')) {
+				if(!window.confirm('⚠️ The original record list order might be lost. Tap CANCEL to abort. Reset to original order in Sort.')) {
 				showTable.removeChild(warning);	showTable.setAttribute('class', 'hidden');
 					sortTable();
 					abortSave = true;
 					} else {
 						showTable.removeChild(warning);
 						originalOrder = true;
-		if(!makeContactsTable) {abortSave = false;}//end if !makeContactsTable
+						if(!makeContactsTable){
+						abortSave = false;}//end if !makeContactsTable
 						//carryOnSave();
 				}//end if else confirm alert
 				
@@ -10224,18 +10254,21 @@ alert("savedTablesArray.length = " + savedTablesArray.length);
 			if (!abortSave) {carryOnSave2();}
 			
 		function carryOnSave2 ()	{
-			saveTableBtn.setAttribute('class', 'normalBtn');
+		//alert("In carryOnSave.. tableListExists = " + tableListExists);
+	
+		saveTableBtn.setAttribute('class', 'normalBtn');
 			saveTableBtn.textContent = 'SAVED';
 				saveTableBtn2.setAttribute('class', 'normalBtn');
 				saveTableBtn2.textContent = 'SAVED';
-//NCJan10..If messed up go back to fallBackJan10 above
 			//should copyOfTableArray be set here???Mar16
 		//reset copyOfTableArray fixes reset!Mar15 alpha sort might not change tableArray, only HTML so alpha sort won't lose the original order but reverse sort does so this will protect against losing original order if reverse sort and save is pressed
+		//tableArray at this point should be original database because resetFromContacts.. (restoreOriginal) was called by saveNewTable in prep for saveVariables..so now copyOfTableArray will also be original db so restoreSort will be using the wrong copyOfTableArray..i.e. originalDb instead of contacts.. so make copyOfTableArray = tableArray(contacts) in Sort itself! ?won't tableArray also be originaldb now instead of contacts because of saveVariables after contacts table is constructed…because saveNew calls restoreFromContacts to equate tableArray to original db prior to saveVariables!!! At this point after save makeContactsTable should still be true!
 copyOfTableArray = tableArray.slice(0,tableTitle.length);
 copyOfTableTitle = tableTitle.slice();
 console.log('copyOfTableArray = ' + copyOfTableArray);
-console.log('copyOfTableTitle = ' + copyOfTableTitle);
 
+console.log('copyOfTableTitle = ' + copyOfTableTitle);
+//copyOfTableTitle = 2> TSX500,3> Standard and Poors,4> Additional Note
 // update copy to reflect new originalMar 15 not tested!			
 			//save all necessary arrays to notes_os
 	for(let i = 0;i<tableTitle.length;i++) {
@@ -10246,29 +10279,50 @@ console.log('copyOfTableTitle = ' + copyOfTableTitle);
 			
 			
 		}//end for i =
+		//reset datav.object to save potential edits
 		
 newTableVariablesArray[0] = tableIndex;
 newTableVariablesArray[1] = newTableNames;
 newTableVariablesArray[2] = tableListExists;
 
-newTableSpecificVariables[loadTableIndex][0] = newTableEdit;
-newTableSpecificVariables[loadTableIndex][1] = newTableFieldsArray.slice();
-newTableSpecificVariables[loadTableIndex][2] = numberOfNewTableAddedFields;
+//should loadTablIndex be tableID because you can come here from either makeContactsTable or loadTableIndex at any time? Mar2 
+
+newTableSpecificVariables[tableID][0] = newTableEdit;
+newTableSpecificVariables[tableID][1] = newTableFieldsArray.slice();
+
+//newTableFieldsArray is wrong at this point..after a tdEdit it = the [0][1] instead of the tableID[1]
+newTableSpecificVariables[tableID][2] = numberOfNewTableAddedFields;
+
+//alertx("About to save! newTableFieldsArray = " + newTableFieldsArray + ". tableID = " + tableID + "tableIndex = " + tableIndex + ". newTableSpecificVariables[tableID][1] = " + newTableSpecificVariables[tableID][1]);
+
+console.log("About to save! newTableFieldsArray = " + newTableFieldsArray + ". tableID = " + tableID + "tableIndex = " + tableIndex + ". newTableSpecificVariables[tableID][1] = " + newTableSpecificVariables[tableID][1]);
+
+// newTableSpecificVariables[loadTableIndex][0] = newTableEdit;
+// newTableSpecificVariables[loadTableIndex][1] = newTableFieldsArray;
+// newTableSpecificVariables[loadTableIndex][2] = numberOfNewTableAddedFields;
 
 
 		dataVobj.tableArray = tableArray;
 		dataVobj.newTableVariables = newTableVariablesArray;
 		dataVobj.tableSpecific = newTableSpecificVariables;
 		
-		console.log('At saving current table values! and going to saveVariables. dataVobj.tableArray = ' + dataVobj.tableArray);
+		console.log('At saving current table values! and going to saveVariables. dataVobj.tableArray = ' + dataVobj.tableArray + "  \n dataVobj.savedTables = " + dataVobj.savedTables + "dataVobj.newTableVariables = " + newTableVariablesArray + "newTableSpecificVariables[tableIndex] = " + newTableSpecificVariables[tableIndex]);
+//	If loadFromTableOptions tableArray will be contacts so SAVE WILL DESTROY DB	
+		//At saving current table values! and going to saveVariables. dataVobj.tableArray = 2> CN3205, Dec 21 2021 01:38,Yard3 Track 2,Tsunami2 TSU-1100 ,4,128 dataVobj.savedTables = name,DATE,tel,email,name2,DATE,tel2,email2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+//alert("going to saveVariables");
+
+		//return false;
 		saveVariables();
-		//so that data appears after returning to Home Screen followiNg a displayTable function after having deleted a table record!!! Otherwise you have to reset tData in preferences.Date:Dec19g OR MAYBE IF DELETEDrecord Don't erase table rowas back in displayTable
+		//so that data appears after returning to Home Screen followiNg a displayTable function after having deleted a table record!!! Otherwise you have to 'reset tData in preferences.Date:Dec19g OR MAYBE IF DELETEDrecord Don't erase table rowas back in displayTable
 		//prefWindow.setAttribute('class','showing');//instead of displayData whiCh repeats record list twice!
+		
+		//HAVE TO MAKE SURE SORT AND SEARCH ARE DISABLES IF THERE IS ASAVE IN LOADFROMTABLEOPTIONS
 		options();//this seems to do the job!!
 		//displayData();//might have to REMOVE if still repeating record list after a delete table record???THERE IS SOME ISSUE WITH CONCURRENT RUNNING OF TWO ITERATIONS OF DISPLAY DATA!!!!
 	//the if else for save warning were added here Mar13..remove if messes up!!
 		}//end function carryOnSave2
 		
+
 	}//end saveTableBtn(2).onclick
 		
 		
