@@ -920,12 +920,13 @@ tbody {
 }
 
 @media screen and (orientation: landscape) {
-   #editWin, #editNewFieldWin, #displayFullNote, #createTableWin, #deleteFieldWin {
-    /*position: relative;*/
+   #editWin, #editNewFieldWin, #displayFullNote, #createTableWin, #deleteFieldWin, #tableScrn {
+    /*position: relative;ADDED #tableScrn July 6 2022*/
 	top: -10px;/*was 0px*/
     height: 70vh;/*was 75vh 100vh*/
    /* background-color: red;*/
 	background-color: #eee;
+	overflow: scroll;/*added July6 2022*/
   }
   
   #tableWin, #searchWin {
