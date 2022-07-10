@@ -814,6 +814,13 @@ word-wrap: break-word;
 
   border-left: 0;*/
 }
+
+.stHeadRow {
+	background-color: lightpink;
+	font-weight: bold;
+	color: black;
+}
+
 tbody {
   z-index: 10;
   position: relative;

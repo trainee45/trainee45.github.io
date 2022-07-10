@@ -1,4 +1,4 @@
-//DougieBaseVer40.js fixContactsBugDougieBaseVer40.js Jun7 fixed dbl tap deleting instead of editing a new table ..deleteRecordNewTable = false; .. June6 fixed repeat record entry in contacts tables if repeating creating a contacts table DougieBaseVer40.js June4 saveBtn2 fixed and flashing displayTableBtn when CONVERT file format June3 fixed search bug May28 fixed tableLimit noAlertsplusContactshitsTablefixADDCONTACTSDougieBaseVer40 May18 fixed share data error May28 2022 tableLimit plusContactshitsTablefixADDCONTACTSDougieBaseVer40.js May17 May15 May 13 May9 hitsTablefixADDCONTACTSDougieBaseVer40.js May5  from fixADDCONTACTSDougieBaseVer40.js May1  testCancelsweetAlertnoAlertsmoreBlock+DougieBaseVer40.jsApri25 2022
+//DougieBaseVer40.js from eMailDougieBaseVer40.js email now active  fixContactsBugDougieBaseVer40.js Jun7 fixed dbl tap deleting instead of editing a new table ..deleteRecordNewTable = false; .. June6 fixed repeat record entry in contacts tables if repeating creating a contacts table DougieBaseVer40.js June4 saveBtn2 fixed and flashing displayTableBtn when CONVERT file format June3 fixed search bug May28 fixed tableLimit noAlertsplusContactshitsTablefixADDCONTACTSDougieBaseVer40 May18 fixed share data error May28 2022 tableLimit plusContactshitsTablefixADDCONTACTSDougieBaseVer40.js May17 May15 May 13 May9 hitsTablefixADDCONTACTSDougieBaseVer40.js May5  from fixADDCONTACTSDougieBaseVer40.js May1  testCancelsweetAlertnoAlertsmoreBlock+DougieBaseVer40.jsApri25 2022
 //NOTE ALERTS REMOVED HAVE A x after alert SO USE FIND REPLACE SEARCH TO RESTORE THEM!! i.e. //alertx("message data…") can be restored by search and replace for //alertx and replace with alert
 //moreBlock+DougieBaseVer40.js April17 April15 fallBackApril15moreBlock+DougieBaseVer40.js Copy of moreBlock+DougieBaseVer40.js fallBackApril14moreBlock+DougieBaseVer40.js moreBlock+DougieBaseVer40.js April10 for testing and when works back to block… from block+DougieBaseVer40.js DougieBaseVer40.js from shareDeleteRecordNewTableDougieBaseVer37.js WILL THIS FILE AUTOMATICALLY SYNC WITH ICLOUD.YES!deleteRecordNewTableDougieBaseVer37.js NOTE ALERTS REMOVED HAVE A > AFTER THE " SO USE FIND REPLACE SEARCH TO RESTORE THEM!! i.e. //alert("> message data…") can be restored by search and replace for //alert("> …) .. MUST PUT A SPACE AFTER THE> CHARACTER! fromNewTablehitsTableDougieBaseVer37.js pushContactsFormtableIndexaddContactsDougieBaseVer37 ADD CONTACTS number of dynamicfields = 1 now createnewDB resets newTableSpecificVariables and savedTablesArray to 0 savedTablesArray.length increases by 1 as each table is created fixed manal contact entry fields fixed + contacts deletingTableField variable added Marc19  contactsFormtableIndexaddContactsDougieBaseVer37.js manual contacts now works Mar13 tableIndexaddContactsDougieBaseVer37.js from deleteNTtableIndexaddContactsDougieBaseVer37.js Mar11 from delete last and first and middle tables works!  tableIndexaddContactsDougieBaseVer37.js Mar9 2022 deleteItemtableIndexaddContactsDougieBaseVer37.js from tableIndexaddContactsDougieBaseVer37 WORKS Mar8 FOR CRETION NEWBB BEFORE ANY DB LOADED MAR6 from createNewaddContactsDougieBaseVer37 from addContactsDougieBaseVer37 from Copy of addContactsDougieBaseVer37 based on date: Feb22 2022 worksKeepTestPlayWithNewTableContactsDougieBaseVer37 Feb 17 2022 Feb 13 2022 from testPlayWithNewTableContactsDougieBaseVer37 Feb10 from playWithSTRowsEditTDNewTableContactsDougieBaseVer37.js FEB6 FEB4 2022 from workingOnEditTDNewTableContactsDougieBaseVer37.js currentJan19ContactsDougieBaseVer37.js now adding newTable variables ..Jan11 go to fallBackJan11 if meeses up workingOnContactsDougieBaseVer37.js Jan2 THIS VERSION WORKS WITH SAFARI CONTACT PICKER!  contacts table working with search sort Dec24 Added whatsNew window  Working on retrieving contact info. See functions at bottom. ADD style="color:black" IN HTML  Dec22 moved getMemory function from html file to .js file from Dec10 2021 mobileFriendlyDougieBaseVer37.js from DougieBaseVer36.js Dec5 sw11 from messWith Dec2 DougieBaseVer36.js Dec1 from flashFileNameDougieBaseVer36.js from createNewDBDougieBaseVer36 Nov30 Nov28 added addToDynamicFields.setAttribute('class','borderBlink') to border in editMoreFields function and addNoteBtn.setAttribute('class','borderBlink'); in saveBtn.onclick for createNewDB renameBtn.setAttribute('class','borderBlink'); in preferences displayDataBtn.setAttribute('class','borderBlink'); in function renameTitle Nov28 borderBlink css is in the html file  Nov 27 fine tuned flow of createNewDB Nov24 fixed create newDB bug! Nov 22 edit notes displayed n real time Nov17 added tableScreenOptions to editTableTrigger to not mess up table display Nov14 from spDougieBaseVer36.js landscape table search and preview edid Date:Nov9 save preferences from Date:Nov4 added Easter egg and save settings preferencesDougieBaseVer36.js from fixEditDougieBaseVer35.js from 
 //changed addEventListener to copy instead of dblclick Oct16 made default double click Oct31 2021  clearBkgrdDougieBaseVer34.js clear background and fixed crashes that occur if user makes illogical moves Oct12 2021 use to update workingCopy and Safarii etc
@@ -144,6 +144,14 @@
 //these variables are experimental..belong to make contacts table code Dec29
 //let namestr = "";
 //will save a flag that indicates if new table derived from a searchmain db in aid of preventing + - icons appearing in such a table..aadding a record herevwould crash!
+//to ACTIVATE EMAIL ADDRESS
+let eMailFieldNameIndex = 0;
+let eMailActive = false;//flag to indicate if email set to active
+let eMailAlertFlag = false;
+let STsecondDataNameTdListener = false;//flag to indicate remove listener in returnToHomeScreen
+
+//to ACTIVATE EMAIL ADDRESS
+
 let mainDBArray = [];//for error check savedOriginal
 let fromEditFieldLabels = false;//to force a simple contacts list with just 4 fields
 let fromAddContacts = false;//flag to tell editNewTableFieldNames to flash and return to ADD CONTACTS
@@ -7337,6 +7345,15 @@ showTable.setAttribute('class','hidden');
 	}; //end clearTableWindow.onclick
 	
   displayTableBtn.onclick = function () {
+  if(STsecondDataNameTdListener) {
+	STsecondDataNameTd.removeEventListener('dblclick',STsecondDataNameTd.fn, false);
+	eMailActive = false;
+	STsecondDataNameTd.setAttribute('class','stHeadRow');
+	
+	//STsecondDataNameTdListener = false;
+}//end if(STsecondDataNameTdListener)
+
+
   
   if(!savedOriginal) {saveOriginal();}//May12 2022
   
@@ -7393,7 +7410,7 @@ console.log('At start displayTableBtn.onclick. This means a table exists..rerun 
 //removeHeadRow();//VERY IMPORTANT LINE..MAKES IT WORK!!!Date: Feb12 2022..new function
 //check screen mode
 if(loadFromTableOptions) {
-	alert("why is loadFromTableOptions true when I press displayTable? Which implies main db? Should loadFromTableOptions be made false at first of tableScreenOptions? It is made false in resetFromContacts! This happens if EDIT of a new table is cancelled by a return to home screen or displayTableBtn is pressed after EDIT BTN IN TABLE MENU IS PRESSED.or after a rename table?")
+	//alertx("why is loadFromTableOptions true when I press displayTable? Which implies main db? Should loadFromTableOptions be made false at first of tableScreenOptions? It is made false in resetFromContacts! This happens if EDIT of a new table is cancelled by a return to home screen or displayTableBtn is pressed after EDIT BTN IN TABLE MENU IS PRESSED.or after a rename table?")
 	setUpFieldHeaders();//changeDB is false coming back from setUpNewDB
 	resetFields = true;//added May6 2022 because fields got messed up after a rename of table??
 	//deleteFirstRow();
@@ -8699,9 +8716,22 @@ if(fromRestore) {
 	console.log('In start displayTable function. edit = ' + edit);//demonstrate that fieldNamesArray is intacty
 	for(let j=0;j<numberOfFields;j++) {
 				console.log('fieldNamesArray[' +j+ '] = ' + fieldNamesArray[j]);
+	
+	//ADDEVENTLISTENER IF FIELDNAME = "EMAIL"
+	if (fieldNamesArray[j] === "EMAIL") {
+	STsecondDataNameTdListener = true//flag set here so variable is correct if tapping homeBtn in table without having used dbltap on the EMAIL field. Not sure I understand why!!!
+	console.log("fieldNamesArray[j] = EMAIL");
+	//alertx("STsecondDataNameTdListener = " + STsecondDataNameTdListener + ". fieldNamesArray[3] = " + fieldNamesArray[3]);
+	eMailFieldNameIndex = j;
+	console.log("eMailFieldNameIndex = " + j);
+		//fieldNamesArray[j].addEventListener(dblclick, function() {eMailActive =true; alert("eMail address now active! Double click on email address to SEND EMAIL!")});//end addEventListener
+	}//end if (fieldNamesArray.textContent === 'EMAIL')
+	//ADDEVENTLISTENER IF FIELDNAME = "EMAIL"			
+
 				
 			}//end for j =
-			
+	//alert("eMailFieldNameIndex = " + eMailFieldNameIndex + " eMailActive = " + eMailActive);	
+		
 	console.log('In start displayTable function, and tableConstructed has just been set to 1 at line 4486, immediately after entering displayTable(). This line might get removed?!'); 
 console.log('At displayTable: refreshed variable is set to 0 in showBtn.onclick (Display Table Btn) and set to 1 at end of displayTable if there is a cell edit. ..refreshed (edit data cell) = ' + refreshed + ' renewed (added record) = ' + renewed +'. displayedTable variable = ' + displayedTable + '. tableConstructed = ' + tableConstructed + '. edit = ' + edit + '. editCurrentTable = ' + editCurrentTable + '.');	
 if(renewed ===1) {
@@ -8750,6 +8780,48 @@ if(renewed ===1) {
 	STheadName.textContent = fieldNamesArray[0];//listName header first column
 	STfirstDataNameTd.textContent = fieldNamesArray[2];
 	STsecondDataNameTd.textContent = fieldNamesArray[3];
+	
+	// 	//ADDEVENTLISTENER IF FIELDNAME = "EMAIL"
+	if (STsecondDataNameTd.textContent === "EMAIL") {
+	// emailAlertFlag = true;
+	// console.log("fieldNamesArray[j] = EMAIL");
+	
+	// eMailFieldNameIndex = 3;
+	// console.log("eMailFieldNameIndex = " + 3);
+	
+	
+// STsecondDataNameTd.addEventListener('dblclick', function() {
+// STsecondDataNameTdListener = true;
+// 	eMailActive =true; 
+// if(!eMailAlertFlag) {
+// 	alert("eMail address now active! Double click on email address to SEND EMAIL!");
+// eMailAlertFlag = true;
+// 	}//end if(!eMailAlertFlag) 
+// STsecondDataNameTd.removeEventListener;
+// 	});//end addEventListener
+	
+STsecondDataNameTd.addEventListener('dblclick', STsecondDataNameTd.fn=function fn() {
+STsecondDataNameTdListener = true;
+	eMailActive =true; 
+	STsecondDataNameTd.setAttribute('class','borderBlink');
+if(!eMailAlertFlag) {
+	alert("eMail address now active! Double click on email address to SEND EMAIL!");
+eMailAlertFlag = true;
+	}//end if(!eMailAlertFlag) 
+	
+//STsecondDataNameTd.removeEventListener('dblclick',STsecondDataNameTd.fn, false);
+
+	}, false);//end addEventListener
+	
+	
+	
+	
+	}//end if (STsecondDataNameTd.textContent === 'EMAIL')
+	// //ADDEVENTLISTENER IF FIELDNAME = "EMAIL"
+	
+	
+	
+	
 	//create the added fields required
 	//AND displayedTable = 0 because otherwise buildRecordRows has reconstructed the header row
 	
@@ -8938,6 +9010,8 @@ console.log('In displayTable! fromDeleteField = ' + fromDeleteField);
 if (fromDeleteField) {
 	//if coming from deleteField but deleteField was cancelled
 	console.log('in displayTable fromDeleteField: fromeDeleteField = ' + fromDeleteField);
+	
+	
 	fromDeleteField = false;
 	addFieldHeaders();
 }//end if fromDeleteField
@@ -9355,6 +9429,29 @@ if(!linkLabel) {
 			console.log("trigger = " + trigger);
 	STrecordTd.addEventListener(trigger, function () {
 	
+//code to send email IF eMailActive = true	
+if(c===3 && eMailActive) {
+let eMailAddress = STrecordTd.textContent;
+
+//eMailActive = false;//should i comment this out so more than one email can be sent?
+
+//STsecondDataNameTd.removeEventListener;
+STsecondDataNameTd.removeEventListener('dblclick',STsecondDataNameTd.fn, false);//added this July8 should it be removed?
+//STsecondDataNameTd.style.backGroundColor="lightpink";
+//STsecondDataNameTd.setAttribute('class','stHeadRow');
+//window.open( String( 'mailto:recipient^example.com' ).replace('^', '@') )
+
+window.open( String( 'mailto:' + eMailAddress));
+eMailAlertFlag = false;
+return false;//added July7 2022
+//window.open('mailto:STrecordTd.textContent');	
+}//end if(c===3 && eMailActive) 
+
+
+//code to send email IF eMailActive = true	
+	
+	
+	
 	if(blockEdit) {
 		alert("Before editing this data cell, Tap Return to Home Screen first to initialize the table layout you just edited or created!");
 		//blockEdit = false;
@@ -9447,7 +9544,7 @@ return;
 		STrecordTd.appendChild(editTDInputBtn);
 		editTDInputBtn.onclick = function (){
 			console.log('editInputBtn tapped!');
-		//STrecordTd.disable = true;//to prevent repeat input
+		//STrecordTd.disable = true;//to prevent repeat inputc 
 	if(!toggleTdInputBtn) {	editTDInputBtn.setAttribute('class','attentionBtn');
 			editTDInputBtn.textContent = 'Enter new value';
 			editTDInput.value = '';
@@ -9553,7 +9650,7 @@ if (!makeContactsTable && !loadFromTableOptions) {
 		//keep record id for field 0
 		if (c === 0) {
 			tableArray[i][c] = recordId + '> ' + editTDInput.value;
-		} else {//end if c===0
+		} else {//end if c=== 0
 		tableArray[i][c] = editTDInput.value;
 	//THIS SHOULD MEAN THAT LINKS CAN BE ADDED TO THE LAST 2 DATA FIELDS IN THE TABLE..JUST NOT THE FIRST TITLE FIELD (BECAUSE tableArray[][] had a > added to it, and the second fixed field is the date field so don't even touch that one!)
 		}//end if c===0 else
@@ -9578,6 +9675,16 @@ if (!makeContactsTable && !loadFromTableOptions) {
 	editTD.textContent = 'Current value: '+ tableArray[i][c];
 		
 	refreshBtn.onclick = function () {
+	
+	//code to prevent persisting email active
+	
+	if(STsecondDataNameTdListener) {
+STsecondDataNameTd.removeEventListener('dblclick',STsecondDataNameTd.fn, false);
+	//STsecondDataNameTd.removeEventListener;
+	STsecondDataNameTdListener = false;
+	eMailActive = false;
+}//end if(STsecondDataNameTdListener)
+
 		//there is a glitch here somewhere. The STHeadRow can get messed up if refreshed = 1 after an edit of the current displayed table. Do I need editCurrentTable set to 0 here?????!!!!!
 		//keeping track of Save Btn Date: Feb 26 2021
 		console.log('refreshBtn just clicked. Now on way to displayTable')
@@ -9679,7 +9786,16 @@ emailBtn.setAttribute('class','tdEdit');//if cancel CONTACTS or ignore flashing 
 
 //alertx("homeScreenBtn.onclick: fromSearchRecord = " + fromSearchRecord + " hits.length = " + hits.length);
 console.log("homeScreenBtn.onclick: fromSearchRecord = " + fromSearchRecord + " hits.length = " + hits.length);
+//alertx("STsecondDataNameTdListener = " + STsecondDataNameTdListener + "  fieldNamesArray[3] = " + fieldNamesArray[3] + "  eMailActive = " + eMailActive);
 
+if(STsecondDataNameTdListener) {
+STsecondDataNameTd.removeEventListener('dblclick',STsecondDataNameTd.fn, false);
+	//STsecondDataNameTd.removeEventListener;
+	STsecondDataNameTdListener = false;
+	eMailActive = false;
+	STsecondDataNameTd.setAttribute('class','stHeadRow');
+	
+}//end if(STsecondDataNameTdListener)
 
 //reset fromSearchRecord to false and hits.length to 0 to fix search bug if using a td referenced search followed by a first column tableTitle search Date: Jun2 2022
 fromSearchRecord = false;
@@ -9750,6 +9866,14 @@ flipMenu.textContent = "Tap - Click to show / hide TABLE MENU";
 		//const homeScreenBtn2 = document.querySelector('#homeScreenBtn2');
 		homeScreenBtn2.onclick = function () {
 emailBtn.setAttribute('class','tdEdit');//if cancel CONTACTS or ignore flashing CONTACTS AND GO TO HOME SCRN CONTACTS BTN WILL STAY FLASHING!
+//alertx("STsecondDataNameTdListener = " + STsecondDataNameTdListener);
+if(STsecondDataNameTdListener) {
+STsecondDataNameTd.removeEventListener('dblclick',STsecondDataNameTd.fn, false);
+	//STsecondDataNameTd.removeEventListener;
+	STsecondDataNameTdListener = false;
+	eMailActive = false;
+	STsecondDataNameTd.setAttribute('class','stHeadRow');
+}//end if(STsecondDataNameTdListener)
 
 //reset fromSearchRecord to false and hits.length to 0 to fix search bug if using a td referenced search followed by a first column tableTitle search Date: Jun2 2022
 fromSearchRecord = false;
@@ -9827,6 +9951,7 @@ homeScreenBtn.textContent = "RETURN to Home Screen";
 		//$("#flip").css({"background-color": "yellow", "border": "red"});
 	//$$LEFT OFF HERE,!!!	
 	saveTableBtn.onclick = function () { 
+	eMailActive = false;//flag set here to prevent an email if just editing a td
 	//tableIndex = 7;testing fixing screw ups
 	resetFields = true;//if you hit SAVE twice fields can get messed up
 	homeScreenBtn.disabled = false;//to help force Save..now reset after flashing SAVE
@@ -10336,6 +10461,13 @@ console.log("About to save! newTableFieldsArray = " + newTableFieldsArray + ". t
 	//return to search table window
 			const toSearchScreenBtn = document.querySelector('#toSearchScr');
 		toSearchScreenBtn.onclick = function () {
+if(STsecondDataNameTdListener) {
+STsecondDataNameTd.removeEventListener('dblclick',STsecondDataNameTd.fn, false);
+	//STsecondDataNameTd.removeEventListener;
+	STsecondDataNameTdListener = false;
+	eMailActive = false;
+	STsecondDataNameTd.setAttribute('class','stHeadRow');
+}//end if(STsecondDataNameTdListener)
 		
 //reset fromSearchRecord to false and hits.length to 0 to fix search bug if using a td referenced search followed by a first column tableTitle search Date: Jun2 2022
 fromSearchRecord = false;
