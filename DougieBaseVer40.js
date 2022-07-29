@@ -12449,7 +12449,7 @@ function restoreDataBase(restoredDBName) {
 		 restoreTextArea.textContent = "FIRST TAP ONCE. SUBMIT btn turns green, then PASTE backup text here....";
 		 restoreTextArea.onclick = function() {
 			//clear text area prior to paste
-			nowDo.textContent = "Now PASTE data into TextArea box!";
+			nowDo.textContent = "Now PASTE data into TextArea box…THEN tap SUBMIT button!";
 			 restoreTextArea.textContent = "";	getJsonBtn.setAttribute('class','attentionBtn');
 			}//end restoreTextArea.onclick
 		 
