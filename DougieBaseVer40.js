@@ -15263,57 +15263,7 @@ Note that you actually have to pass the exported data as a string, not as a JSON
 
 //DISABLED ENABLED SERVICE WORKER
 
-/* vv Code added to updateSW Date July 29 2022 remove to restore */ 
-let newWorker;
 
-  function showUpdateBar() {
-    let snackbar = document.getElementById('snackbar');
-    snackbar.className = 'show';
-  }
-
-  // The click event on the pop up notification
-  document.getElementById('reload').addEventListener('click', function(){
-    newWorker.postMessage({ action: 'skipWaiting' });
-  });
-
-  if ('serviceWorker' in navigator) {
-
-    navigator.serviceWorker.register('/DougieBaseVer40sw.js').then(reg => {
-      reg.addEventListener('updatefound', () => {
-        // A wild service worker has appeared in reg.installing!
-        newWorker = reg.installing;
-
-        newWorker.addEventListener('statechange', () => {
-          // Has network.state changed?
-          switch (newWorker.state) {
-            case 'installed':
-              if (navigator.serviceWorker.controller) {
-                // new update available
-                showUpdateBar();
-              }
-              // No update available
-              break;
-          }
-        });
-      });
-    });
-
-    let refreshing;
-    navigator.serviceWorker.addEventListener('controllerchange', function () {
-      if (refreshing) return;
-      window.location.reload();
-      refreshing = true;
-    });
-  }
-
-
-/* ^^ Code added to updateSW Date July 29 2022 remove to restore */ 
-
-
-
-/* vv original Code removed to updateSW Date July 29 2022 ADD to restore */ 
-
-/*
   if('serviceWorker' in navigator) {
     navigator.serviceWorker
              .register('/DougieBaseVer40sw.js')
@@ -15327,9 +15277,6 @@ let newWorker;
 	console.log('No Service worker installed!');
 	document.getElementById("percent").value = '(No Service Worker installed! )';
 }//end if else service worker
-*/
-
-/* ^^ original Code removed to updateSW Date July 29 2022 ADD to restore */ 
 
 	//what about the manifest file? triggered by oninstall? A2HS?	 
 //If the service worker API is supported in the browser, it is registered against the site using the ServiceWorkerContainer.register() method. Its contents reside in the sw.js file, and can be executed after the registration is successful. It's the only piece of Service Worker code that sits inside the app.js file; everything else that is Service Worker-specific is written in the sw.js file itself.

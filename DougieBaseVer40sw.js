@@ -14,7 +14,7 @@
 // Names of the two caches used in this version of the service worker.
 // Change to v2, etc. when you update any of the local resources, which will
 // in turn trigger the install event again.
-const PRECACHE = 'precache-v27';
+const PRECACHE = 'precache-v23';
 const RUNTIME = 'runtime';
 
 // A list of local resources we always want to be cached.
@@ -43,26 +43,9 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(PRECACHE)
       .then(cache => cache.addAll(PRECACHE_URLS))
-      
- /* vv Code commented out to updateSW Date July 29 2022 uncomment to restore */      
-      
-    //  .then(self.skipWaiting())
-      
- /* ^^ Code commented out to updateSW Date July 29 2022 remove comment to restore */ 
- 
+      .then(self.skipWaiting())
   );
 });
-
-/* vv Code added to updateSW Date July 29 2022 remove to restore */ 
-
-self.addEventListener('message', function (event) {
-  if (event.data.action === 'skipWaiting') {
-    self.skipWaiting();
-  }
-});
-
-/* ^^ Code added to updateSW Date July 29 2022 remove to restore */ 
-
 
 // The activate handler takes care of cleaning up old caches.
 self.addEventListener('activate', event => {
