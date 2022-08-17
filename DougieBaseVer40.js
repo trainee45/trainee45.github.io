@@ -1304,7 +1304,7 @@ if(screenDark) {
 
 console.log("In start createNewDB: newDBGuidance = " + newDBGuidance + "newDBflag = " + newDBflag + " xtraField = " + xtraField);
 //for guidance creating newDB
-newDBGuideP.textContent = "Type the name of your database into the text entry element and then tap 'Start creating new database'. The Preferences button in the main menu will now be high-lighted green indicating you must now OPEN PREFERENCES..";
+newDBGuideP.textContent = "Type the name of your database into the text entry element and then tap 'Start creating new database'. Follow the flashing button prompts! The Preferences button in the main menu will now be high-lighted green indicating you must now OPEN PREFERENCES..";
 createNewDBWindow.appendChild(newDBGuideP);
 //end for guidance creating newDB
 	submitNameButton.onclick = function() {
