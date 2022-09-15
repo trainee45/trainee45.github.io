@@ -15310,7 +15310,13 @@ Note that you actually have to pass the exported data as a string, not as a JSON
   if('serviceWorker' in navigator) {
     navigator.serviceWorker
              .register('/DougieBaseVer40sw.js')
-             .then(function() { console.log('Service Worker Registered'); });
+             .then(function() { 
+             registration.onupdatefound = function()
+		{
+			console.log("ServiceWorker update found.");
+			alert("A new version is available - please close this browser tab or app window and re-open to update ... ");
+		}
+             console.log('Service Worker Registered'); });
 			alert('Service Worker Registered!');
 		
   
