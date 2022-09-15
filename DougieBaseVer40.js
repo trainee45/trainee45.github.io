@@ -1,4 +1,4 @@
-//DougieBaseVer40.js from createNewDougieBaseVer40.js from eMailDougieBaseVer40.js email now active  fixContactsBugDougieBaseVer40.js Jun7 fixed dbl tap deleting instead of editing a new table ..deleteRecordNewTable = false; .. June6 fixed repeat record entry in contacts tables if repeating creating a contacts table DougieBaseVer40.js June4 saveBtn2 fixed and flashing displayTableBtn when CONVERT file format June3 fixed search bug May28 fixed tableLimit noAlertsplusContactshitsTablefixADDCONTACTSDougieBaseVer40 May18 fixed share data error May28 2022 tableLimit plusContactshitsTablefixADDCONTACTSDougieBaseVer40.js May17 May15 May 13 May9 hitsTablefixADDCONTACTSDougieBaseVer40.js May5  from fixADDCONTACTSDougieBaseVer40.js May1  testCancelsweetAlertnoAlertsmoreBlock+DougieBaseVer40.jsApri25 2022
+//DougieBaseVer40.js in current repository Sept14 2022 editSearchedNoteDougieBaseVer40.js As of Sept 11 2022, can now edit the single record view obtained as a result of a record search. Still testing..seems to work change SW to ver 26 before sending to github! - from createNewDougieBaseVer40.js from eMailDougieBaseVer40.js email now active  fixContactsBugDougieBaseVer40.js Jun7 fixed dbl tap deleting instead of editing a new table ..deleteRecordNewTable = false; .. June6 fixed repeat record entry in contacts tables if repeating creating a contacts table DougieBaseVer40.js June4 saveBtn2 fixed and flashing displayTableBtn when CONVERT file format June3 fixed search bug May28 fixed tableLimit noAlertsplusContactshitsTablefixADDCONTACTSDougieBaseVer40 May18 fixed share data error May28 2022 tableLimit plusContactshitsTablefixADDCONTACTSDougieBaseVer40.js May17 May15 May 13 May9 hitsTablefixADDCONTACTSDougieBaseVer40.js May5  from fixADDCONTACTSDougieBaseVer40.js May1  testCancelsweetAlertnoAlertsmoreBlock+DougieBaseVer40.jsApri25 2022
 //NOTE ALERTS REMOVED HAVE A x after alert SO USE FIND REPLACE SEARCH TO RESTORE THEM!! i.e. //alertx("message data…") can be restored by search and replace for //alertx and replace with alert
 //moreBlock+DougieBaseVer40.js April17 April15 fallBackApril15moreBlock+DougieBaseVer40.js Copy of moreBlock+DougieBaseVer40.js fallBackApril14moreBlock+DougieBaseVer40.js moreBlock+DougieBaseVer40.js April10 for testing and when works back to block… from block+DougieBaseVer40.js DougieBaseVer40.js from shareDeleteRecordNewTableDougieBaseVer37.js WILL THIS FILE AUTOMATICALLY SYNC WITH ICLOUD.YES!deleteRecordNewTableDougieBaseVer37.js NOTE ALERTS REMOVED HAVE A > AFTER THE " SO USE FIND REPLACE SEARCH TO RESTORE THEM!! i.e. //alert("> message data…") can be restored by search and replace for //alert("> …) .. MUST PUT A SPACE AFTER THE> CHARACTER! fromNewTablehitsTableDougieBaseVer37.js pushContactsFormtableIndexaddContactsDougieBaseVer37 ADD CONTACTS number of dynamicfields = 1 now createnewDB resets newTableSpecificVariables and savedTablesArray to 0 savedTablesArray.length increases by 1 as each table is created fixed manal contact entry fields fixed + contacts deletingTableField variable added Marc19  contactsFormtableIndexaddContactsDougieBaseVer37.js manual contacts now works Mar13 tableIndexaddContactsDougieBaseVer37.js from deleteNTtableIndexaddContactsDougieBaseVer37.js Mar11 from delete last and first and middle tables works!  tableIndexaddContactsDougieBaseVer37.js Mar9 2022 deleteItemtableIndexaddContactsDougieBaseVer37.js from tableIndexaddContactsDougieBaseVer37 WORKS Mar8 FOR CRETION NEWBB BEFORE ANY DB LOADED MAR6 from createNewaddContactsDougieBaseVer37 from addContactsDougieBaseVer37 from Copy of addContactsDougieBaseVer37 based on date: Feb22 2022 worksKeepTestPlayWithNewTableContactsDougieBaseVer37 Feb 17 2022 Feb 13 2022 from testPlayWithNewTableContactsDougieBaseVer37 Feb10 from playWithSTRowsEditTDNewTableContactsDougieBaseVer37.js FEB6 FEB4 2022 from workingOnEditTDNewTableContactsDougieBaseVer37.js currentJan19ContactsDougieBaseVer37.js now adding newTable variables ..Jan11 go to fallBackJan11 if meeses up workingOnContactsDougieBaseVer37.js Jan2 THIS VERSION WORKS WITH SAFARI CONTACT PICKER!  contacts table working with search sort Dec24 Added whatsNew window  Working on retrieving contact info. See functions at bottom. ADD style="color:black" IN HTML  Dec22 moved getMemory function from html file to .js file from Dec10 2021 mobileFriendlyDougieBaseVer37.js from DougieBaseVer36.js Dec5 sw11 from messWith Dec2 DougieBaseVer36.js Dec1 from flashFileNameDougieBaseVer36.js from createNewDBDougieBaseVer36 Nov30 Nov28 added addToDynamicFields.setAttribute('class','borderBlink') to border in editMoreFields function and addNoteBtn.setAttribute('class','borderBlink'); in saveBtn.onclick for createNewDB renameBtn.setAttribute('class','borderBlink'); in preferences displayDataBtn.setAttribute('class','borderBlink'); in function renameTitle Nov28 borderBlink css is in the html file  Nov 27 fine tuned flow of createNewDB Nov24 fixed create newDB bug! Nov 22 edit notes displayed n real time Nov17 added tableScreenOptions to editTableTrigger to not mess up table display Nov14 from spDougieBaseVer36.js landscape table search and preview edid Date:Nov9 save preferences from Date:Nov4 added Easter egg and save settings preferencesDougieBaseVer36.js from fixEditDougieBaseVer35.js from 
 //changed addEventListener to copy instead of dblclick Oct16 made default double click Oct31 2021  clearBkgrdDougieBaseVer34.js clear background and fixed crashes that occur if user makes illogical moves Oct12 2021 use to update workingCopy and Safarii etc
@@ -3344,12 +3344,14 @@ deleteRecord = 0; //flag used in refreshTable() SHOULD THIS BE MOVED ABOVE TO CO
 function fullViewItem(e) {
 //make full view window appear	!!!!
 displayFullNote.setAttribute('class','showing');
-
+const editFromSearchBtn = document.querySelector('#editFromSearch');
+editFromSearchBtn.style.display = 'none';
 //TypeError: undefined is not an object (evaluating 'e.target')
   
 //Sept20 2021: tableTittle label #> probably represents original note-id when first creted. searchNote from search function represents the i array index of the current tableArray. If there have been record deletions these two numbers might be different because indexedDB does not delete the id number when creating a new record but instead just creates a new one incremented from the original id list. Might this become a source of error in retriving the full view note from search????? fullViewBtn.textContent = 'View Entire Note - Record#: '+ noteNumber; noteNumber is derived from note-data-id when item is created..se displayData()…listItem.setAttribute('data-note-id', cursor.value.id);
 if (fromSearchRecord) {
 	noteId = Number(searchNote);
+	editFromSearchBtn.style.display = 'unset';
 	fromSearchRecord = false;
 	}//end if fromSearching
 		else {
@@ -3378,7 +3380,8 @@ console.log('Will display item # ' + data.id + ' ' + data.body);
 const textToBeCompletelyViewed = document.querySelector('#fullTxt');
 const finishedReading = document.querySelector('#finishedReading');
 const fullViewP = document.querySelector('p.fullViewInstruction'); //removed this because button off screen if note title >3 lines
-
+//const editFromSearchBtn = document.querySelector('#editFromSearch');
+//editFromSearchBtn.style.display = 'none';
 //Check if screenDark mode
 checkScreenMode();
 if(screenDark) {
@@ -3418,7 +3421,14 @@ if(xtraField === 0) {
  
 doneReadingButton = document.querySelector('#okReturn');
 goToSearchBtn = document.querySelector('#goToSearch');
+// editFromSearchBtn = document.querySelector('#editFromSearch');
  
+ editFromSearchBtn.onclick = function () {
+ fromSearchRecord = true;
+ editFromSearchBtn.style.display = 'none';
+ displayFullNote.setAttribute('class','hidden');
+ editItem();
+ }
  doneReadingButton.onclick = function () {
 	toggley = false;//so on return to fullView function there is no 'stall' on viewing after tap
 	//textToBeCompletelyViewed.textContent = "";
@@ -3455,6 +3465,13 @@ searchWindow.setAttribute('class','showing');
 finishedReading.setAttribute('class','hidden'); displayFullNote.setAttribute('class','hidden');
 	searchRecords();//to help asthetics of search screen..extra p element won't appear otherwise
 };//end function goToSearchBtn.onclick
+
+
+//adding capability to EDIT note from searched item vv
+
+//editFromSearchBtn.onclick = editItem;
+
+//adding capability to EDIT note from searched item ^^
 
 //might this Alert be cause of program hang up when viewing complete note???
 	//alert('Scroll up or down if RETURN TO NOTES Button is not on screen! (Move scroll bar on right to bottom of screen.)');
@@ -3629,8 +3646,16 @@ fromNewTable = false;
 	//trying to fix field header display going awry if edit notes before table initiated	
 	
 	//from updating an entry in the database
-	let noteId = Number(e.target.parentNode.getAttribute('data-note-id'));
+	
 
+if (fromSearchRecord) {
+	noteId = Number(searchNote);
+	fromSearchRecord = false;
+	}//end if fromSearching
+		else {
+			let noteId = Number(e.target.parentNode.getAttribute('data-note-id'));
+		}//end if from searching
+		
   // open a database transaction and delete the task, finding it using the id we retrieved above. First Activate the notes-os for readwrite actions.
   let transaction = db.transaction([objectStoreName], 'readwrite');
   //reference/put the activated 'notes-os' object store into the variable objectStore
@@ -3646,7 +3671,8 @@ request.onsuccess = function(event) {
 	//original note in data variable
 	var data = event.target.result;
 	//create the tools for doing the edit
-	console.log('Will edit item # ' + data.id + ' ' + data.body);
+	//TypeError: undefined is not an object (evaluating 'data.id')
+	//console.log('Will edit item # ' + data.id + ' ' + data.body);
 	//reference editTitle input this works even if spelled Tile??!!!?why?
 	const editTitle = document.querySelector('#editTitle');
 	const editInput = document.querySelector('#changes');
