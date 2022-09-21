@@ -1,4 +1,4 @@
-//DougieBaseVer40.js in current repository Sept14 2022 editSearchedNoteDougieBaseVer40.js As of Sept 11 2022, can now edit the single record view obtained as a result of a record search. Still testing..seems to work change SW to ver 26 before sending to github! - from createNewDougieBaseVer40.js from eMailDougieBaseVer40.js email now active  fixContactsBugDougieBaseVer40.js Jun7 fixed dbl tap deleting instead of editing a new table ..deleteRecordNewTable = false; .. June6 fixed repeat record entry in contacts tables if repeating creating a contacts table DougieBaseVer40.js June4 saveBtn2 fixed and flashing displayTableBtn when CONVERT file format June3 fixed search bug May28 fixed tableLimit noAlertsplusContactshitsTablefixADDCONTACTSDougieBaseVer40 May18 fixed share data error May28 2022 tableLimit plusContactshitsTablefixADDCONTACTSDougieBaseVer40.js May17 May15 May 13 May9 hitsTablefixADDCONTACTSDougieBaseVer40.js May5  from fixADDCONTACTSDougieBaseVer40.js May1  testCancelsweetAlertnoAlertsmoreBlock+DougieBaseVer40.jsApri25 2022
+//DougieBaseVer40.js fix!editSearchedNoteDougieBaseVer40.js Think this is fixed ? Sept 20 2022 editSearchedNoteDougieBaseVer40.js As of Sept 11 2022, can now edit the single record view obtained as a result of a record search. Still testing..seems to work change SW to ver 26 before sending to github! - from createNewDougieBaseVer40.js from eMailDougieBaseVer40.js email now active  fixContactsBugDougieBaseVer40.js Jun7 fixed dbl tap deleting instead of editing a new table ..deleteRecordNewTable = false; .. June6 fixed repeat record entry in contacts tables if repeating creating a contacts table DougieBaseVer40.js June4 saveBtn2 fixed and flashing displayTableBtn when CONVERT file format June3 fixed search bug May28 fixed tableLimit noAlertsplusContactshitsTablefixADDCONTACTSDougieBaseVer40 May18 fixed share data error May28 2022 tableLimit plusContactshitsTablefixADDCONTACTSDougieBaseVer40.js May17 May15 May 13 May9 hitsTablefixADDCONTACTSDougieBaseVer40.js May5  from fixADDCONTACTSDougieBaseVer40.js May1  testCancelsweetAlertnoAlertsmoreBlock+DougieBaseVer40.jsApri25 2022
 //NOTE ALERTS REMOVED HAVE A x after alert SO USE FIND REPLACE SEARCH TO RESTORE THEM!! i.e. //alertx("message data…") can be restored by search and replace for //alertx and replace with alert
 //moreBlock+DougieBaseVer40.js April17 April15 fallBackApril15moreBlock+DougieBaseVer40.js Copy of moreBlock+DougieBaseVer40.js fallBackApril14moreBlock+DougieBaseVer40.js moreBlock+DougieBaseVer40.js April10 for testing and when works back to block… from block+DougieBaseVer40.js DougieBaseVer40.js from shareDeleteRecordNewTableDougieBaseVer37.js WILL THIS FILE AUTOMATICALLY SYNC WITH ICLOUD.YES!deleteRecordNewTableDougieBaseVer37.js NOTE ALERTS REMOVED HAVE A > AFTER THE " SO USE FIND REPLACE SEARCH TO RESTORE THEM!! i.e. //alert("> message data…") can be restored by search and replace for //alert("> …) .. MUST PUT A SPACE AFTER THE> CHARACTER! fromNewTablehitsTableDougieBaseVer37.js pushContactsFormtableIndexaddContactsDougieBaseVer37 ADD CONTACTS number of dynamicfields = 1 now createnewDB resets newTableSpecificVariables and savedTablesArray to 0 savedTablesArray.length increases by 1 as each table is created fixed manal contact entry fields fixed + contacts deletingTableField variable added Marc19  contactsFormtableIndexaddContactsDougieBaseVer37.js manual contacts now works Mar13 tableIndexaddContactsDougieBaseVer37.js from deleteNTtableIndexaddContactsDougieBaseVer37.js Mar11 from delete last and first and middle tables works!  tableIndexaddContactsDougieBaseVer37.js Mar9 2022 deleteItemtableIndexaddContactsDougieBaseVer37.js from tableIndexaddContactsDougieBaseVer37 WORKS Mar8 FOR CRETION NEWBB BEFORE ANY DB LOADED MAR6 from createNewaddContactsDougieBaseVer37 from addContactsDougieBaseVer37 from Copy of addContactsDougieBaseVer37 based on date: Feb22 2022 worksKeepTestPlayWithNewTableContactsDougieBaseVer37 Feb 17 2022 Feb 13 2022 from testPlayWithNewTableContactsDougieBaseVer37 Feb10 from playWithSTRowsEditTDNewTableContactsDougieBaseVer37.js FEB6 FEB4 2022 from workingOnEditTDNewTableContactsDougieBaseVer37.js currentJan19ContactsDougieBaseVer37.js now adding newTable variables ..Jan11 go to fallBackJan11 if meeses up workingOnContactsDougieBaseVer37.js Jan2 THIS VERSION WORKS WITH SAFARI CONTACT PICKER!  contacts table working with search sort Dec24 Added whatsNew window  Working on retrieving contact info. See functions at bottom. ADD style="color:black" IN HTML  Dec22 moved getMemory function from html file to .js file from Dec10 2021 mobileFriendlyDougieBaseVer37.js from DougieBaseVer36.js Dec5 sw11 from messWith Dec2 DougieBaseVer36.js Dec1 from flashFileNameDougieBaseVer36.js from createNewDBDougieBaseVer36 Nov30 Nov28 added addToDynamicFields.setAttribute('class','borderBlink') to border in editMoreFields function and addNoteBtn.setAttribute('class','borderBlink'); in saveBtn.onclick for createNewDB renameBtn.setAttribute('class','borderBlink'); in preferences displayDataBtn.setAttribute('class','borderBlink'); in function renameTitle Nov28 borderBlink css is in the html file  Nov 27 fine tuned flow of createNewDB Nov24 fixed create newDB bug! Nov 22 edit notes displayed n real time Nov17 added tableScreenOptions to editTableTrigger to not mess up table display Nov14 from spDougieBaseVer36.js landscape table search and preview edid Date:Nov9 save preferences from Date:Nov4 added Easter egg and save settings preferencesDougieBaseVer36.js from fixEditDougieBaseVer35.js from 
 //changed addEventListener to copy instead of dblclick Oct16 made default double click Oct31 2021  clearBkgrdDougieBaseVer34.js clear background and fixed crashes that occur if user makes illogical moves Oct12 2021 use to update workingCopy and Safarii etc
@@ -2889,8 +2889,18 @@ if (viewDateWritten) {dateP.textContent = cursor.value.created;}	//end if viewDa
 	  
 	    //code to flash attentionBtn
   }//end if newDBGuidance
-  
-      NotesEditBtn.onclick = editItem;
+   noteId = noteNumber;//added Sept20 2022..not sure this is necessary?
+     // NotesEditBtn.onclick = editItem;
+    NotesEditBtn.onclick = editItem; 
+    
+    //code below causes error
+    
+   // NotesEditBtn.onclick = function (e)  {
+	//   fromSearchRecord = false;//to fix issue of retaining previous record id from a searched record edit
+	//  // noteId = noteNumber;
+	//    editItem();
+   // }//end function NotesEditBtn.onclick =
+   
 	  //set up Full Note View button
 	  
 	  //clearTimeout(flashing);
@@ -3427,7 +3437,7 @@ goToSearchBtn = document.querySelector('#goToSearch');
  fromSearchRecord = true;
  editFromSearchBtn.style.display = 'none';
  displayFullNote.setAttribute('class','hidden');
- editItem();
+ editItem(e,noteId);
  }
  doneReadingButton.onclick = function () {
 	toggley = false;//so on return to fullView function there is no 'stall' on viewing after tap
@@ -3623,8 +3633,9 @@ doneSettingsButton = document.querySelector('#okSettingsViewed');
 //define the editItem function
 //you should combine the clear and the write into a single transaction
 
-function editItem(e) {
+function editItem(e,noteId) {
 //trying to fix fields getting messed up in displayTable if viewing main db table after viewing a new table Mar7
+//alert("noteId =  " + noteId);
 if(fromNewTable) {
 resetFields = true;//flag used at reconstuction of displayTable
 fromNewTable = false;
@@ -3646,16 +3657,25 @@ fromNewTable = false;
 	//trying to fix field header display going awry if edit notes before table initiated	
 	
 	//from updating an entry in the database
-	
+//if(!fromSearchRecord) {
+//TypeError: undefined is not an object (evaluating 'e.target')
+//SyntaxError: Cannot declare a let variable twice: 'noteId'.
+
+//code below added Sept 20 2022 to fix edit from search vrs edit from display data issue.
+if(!fromSearchRecord) {
+noteId = Number(e.target.parentNode.getAttribute('data-note-id'));	
+// alert("noteId =  " + noteId)
+ }
+// //	}//end if(!fromSearchRecord) {
 
 if (fromSearchRecord) {
-	noteId = Number(searchNote);
-	fromSearchRecord = false;
-	}//end if fromSearching
-		else {
-			let noteId = Number(e.target.parentNode.getAttribute('data-note-id'));
-		}//end if from searching
-		
+noteId = Number(searchNote);
+    fromSearchRecord = false;
+//	alert('fromSearchRecord - noteId = ' + noteId + " fromSearchRecord variable = " + fromSearchRecord);
+	}
+
+
+
   // open a database transaction and delete the task, finding it using the id we retrieved above. First Activate the notes-os for readwrite actions.
   let transaction = db.transaction([objectStoreName], 'readwrite');
   //reference/put the activated 'notes-os' object store into the variable objectStore
@@ -3849,6 +3869,8 @@ editNewFieldWindow.setAttribute('class','hidden');
   cancelCommitBtn.onclick = cancelEditNewField;
   function cancelEditNewField () {
 	  commitButton.setAttribute('class','tdEdit'); 
+	  //to correct error of retaining previous record for edit if coming from search
+	  fromSearchRecord = false;
 //editWindow.removeChild(xtraFieldBtn);//Jan 11 
 //fix xtraFieldBtn bug
 if (xtraFieldBtnExists) {
@@ -15310,13 +15332,7 @@ Note that you actually have to pass the exported data as a string, not as a JSON
   if('serviceWorker' in navigator) {
     navigator.serviceWorker
              .register('/DougieBaseVer40sw.js')
-             .then(function() { 
-             registration.onupdatefound = function()
-		{
-			console.log("ServiceWorker update found.");
-			alert("A new version is available - please close this browser tab or app window and re-open to update ... ");
-		}
-             console.log('Service Worker Registered'); });
+             .then(function() { console.log('Service Worker Registered'); });
 			alert('Service Worker Registered!');
 		
   
