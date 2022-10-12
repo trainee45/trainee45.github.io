@@ -1,4 +1,4 @@
-//DougieBaseVer40.js fix!editSearchedNoteDougieBaseVer40.js Think this is fixed ? Sept 20 2022 editSearchedNoteDougieBaseVer40.js As of Sept 11 2022, can now edit the single record view obtained as a result of a record search. Still testing..seems to work change SW to ver 26 before sending to github! - from createNewDougieBaseVer40.js from eMailDougieBaseVer40.js email now active  fixContactsBugDougieBaseVer40.js Jun7 fixed dbl tap deleting instead of editing a new table ..deleteRecordNewTable = false; .. June6 fixed repeat record entry in contacts tables if repeating creating a contacts table DougieBaseVer40.js June4 saveBtn2 fixed and flashing displayTableBtn when CONVERT file format June3 fixed search bug May28 fixed tableLimit noAlertsplusContactshitsTablefixADDCONTACTSDougieBaseVer40 May18 fixed share data error May28 2022 tableLimit plusContactshitsTablefixADDCONTACTSDougieBaseVer40.js May17 May15 May 13 May9 hitsTablefixADDCONTACTSDougieBaseVer40.js May5  from fixADDCONTACTSDougieBaseVer40.js May1  testCancelsweetAlertnoAlertsmoreBlock+DougieBaseVer40.jsApri25 2022
+//DougieBaseVer42.js use for github retryTOTALDougieBaseVer42.js Oct11 2022 AGE (TOTAL) if COST in header will add $ to result after adding now will add even if entry is NaN works if all items in column are numbers use search phrasex—for (let k = 4; k < numberOfFields; k++) { — TOTALDougieBaseVer42.js DougieBaseVer42.js Date Oct 5 .. use this to update github! Oct4 2022 from restoreFromLocalFileDougieBaseVer40.js fallBack2Sept29restoreFromLocalFileDougieBaseVer40.js restoreFromLocalFileDougieBaseVer40 Date Sept25 2022 WORKS! Added Scroll to bottom in manage window DougieBaseVer40.js fix!editSearchedNoteDougieBaseVer40.js Think this is fixed ? Sept 20 2022 editSearchedNoteDougieBaseVer40.js As of Sept 11 2022, can now edit the single record view obtained as a result of a record search. Still testing..seems to work change SW to ver 26 before sending to github! - from createNewDougieBaseVer40.js from eMailDougieBaseVer40.js email now active  fixContactsBugDougieBaseVer40.js Jun7 fixed dbl tap deleting instead of editing a new table ..deleteRecordNewTable = false; .. June6 fixed repeat record entry in contacts tables if repeating creating a contacts table DougieBaseVer40.js June4 saveBtn2 fixed and flashing displayTableBtn when CONVERT file format June3 fixed search bug May28 fixed tableLimit noAlertsplusContactshitsTablefixADDCONTACTSDougieBaseVer40 May18 fixed share data error May28 2022 tableLimit plusContactshitsTablefixADDCONTACTSDougieBaseVer40.js May17 May15 May 13 May9 hitsTablefixADDCONTACTSDougieBaseVer40.js May5  from fixADDCONTACTSDougieBaseVer40.js May1  testCancelsweetAlertnoAlertsmoreBlock+DougieBaseVer40.jsApri25 2022
 //NOTE ALERTS REMOVED HAVE A x after alert SO USE FIND REPLACE SEARCH TO RESTORE THEM!! i.e. //alertx("message data…") can be restored by search and replace for //alertx and replace with alert
 //moreBlock+DougieBaseVer40.js April17 April15 fallBackApril15moreBlock+DougieBaseVer40.js Copy of moreBlock+DougieBaseVer40.js fallBackApril14moreBlock+DougieBaseVer40.js moreBlock+DougieBaseVer40.js April10 for testing and when works back to block… from block+DougieBaseVer40.js DougieBaseVer40.js from shareDeleteRecordNewTableDougieBaseVer37.js WILL THIS FILE AUTOMATICALLY SYNC WITH ICLOUD.YES!deleteRecordNewTableDougieBaseVer37.js NOTE ALERTS REMOVED HAVE A > AFTER THE " SO USE FIND REPLACE SEARCH TO RESTORE THEM!! i.e. //alert("> message data…") can be restored by search and replace for //alert("> …) .. MUST PUT A SPACE AFTER THE> CHARACTER! fromNewTablehitsTableDougieBaseVer37.js pushContactsFormtableIndexaddContactsDougieBaseVer37 ADD CONTACTS number of dynamicfields = 1 now createnewDB resets newTableSpecificVariables and savedTablesArray to 0 savedTablesArray.length increases by 1 as each table is created fixed manal contact entry fields fixed + contacts deletingTableField variable added Marc19  contactsFormtableIndexaddContactsDougieBaseVer37.js manual contacts now works Mar13 tableIndexaddContactsDougieBaseVer37.js from deleteNTtableIndexaddContactsDougieBaseVer37.js Mar11 from delete last and first and middle tables works!  tableIndexaddContactsDougieBaseVer37.js Mar9 2022 deleteItemtableIndexaddContactsDougieBaseVer37.js from tableIndexaddContactsDougieBaseVer37 WORKS Mar8 FOR CRETION NEWBB BEFORE ANY DB LOADED MAR6 from createNewaddContactsDougieBaseVer37 from addContactsDougieBaseVer37 from Copy of addContactsDougieBaseVer37 based on date: Feb22 2022 worksKeepTestPlayWithNewTableContactsDougieBaseVer37 Feb 17 2022 Feb 13 2022 from testPlayWithNewTableContactsDougieBaseVer37 Feb10 from playWithSTRowsEditTDNewTableContactsDougieBaseVer37.js FEB6 FEB4 2022 from workingOnEditTDNewTableContactsDougieBaseVer37.js currentJan19ContactsDougieBaseVer37.js now adding newTable variables ..Jan11 go to fallBackJan11 if meeses up workingOnContactsDougieBaseVer37.js Jan2 THIS VERSION WORKS WITH SAFARI CONTACT PICKER!  contacts table working with search sort Dec24 Added whatsNew window  Working on retrieving contact info. See functions at bottom. ADD style="color:black" IN HTML  Dec22 moved getMemory function from html file to .js file from Dec10 2021 mobileFriendlyDougieBaseVer37.js from DougieBaseVer36.js Dec5 sw11 from messWith Dec2 DougieBaseVer36.js Dec1 from flashFileNameDougieBaseVer36.js from createNewDBDougieBaseVer36 Nov30 Nov28 added addToDynamicFields.setAttribute('class','borderBlink') to border in editMoreFields function and addNoteBtn.setAttribute('class','borderBlink'); in saveBtn.onclick for createNewDB renameBtn.setAttribute('class','borderBlink'); in preferences displayDataBtn.setAttribute('class','borderBlink'); in function renameTitle Nov28 borderBlink css is in the html file  Nov 27 fine tuned flow of createNewDB Nov24 fixed create newDB bug! Nov 22 edit notes displayed n real time Nov17 added tableScreenOptions to editTableTrigger to not mess up table display Nov14 from spDougieBaseVer36.js landscape table search and preview edid Date:Nov9 save preferences from Date:Nov4 added Easter egg and save settings preferencesDougieBaseVer36.js from fixEditDougieBaseVer35.js from 
 //changed addEventListener to copy instead of dblclick Oct16 made default double click Oct31 2021  clearBkgrdDougieBaseVer34.js clear background and fixed crashes that occur if user makes illogical moves Oct12 2021 use to update workingCopy and Safarii etc
@@ -144,6 +144,35 @@
 //these variables are experimental..belong to make contacts table code Dec29
 //let namestr = "";
 //will save a flag that indicates if new table derived from a searchmain db in aid of preventing + - icons appearing in such a table..aadding a record herevwould crash!
+
+//references for TOTAL FIELD
+let totalFieldNameListener = "false";
+let totalFieldNameIndex;
+let addField = 0;
+let fieldSUM = 0;
+let totalActive = false;
+let sumField;
+
+//references for TOTAL FIELD
+
+//references for RESTORE FROM LOCAL FILE
+let restoreFromLocalFile = false;
+let selectedFileData = "";
+// const continueFromFileSelectionBtn = document.createElement('button');//this btn is in HTML script
+// const cancelFromFileSelectionBtn = document.createElement('button');//in HTML SCRIPT
+const restoreFromFilesWin = document.querySelector('#restoreFromFilesWin');
+const restoreFromFileBtn = document.querySelector('#restoreFromFile');//made global
+const restoreFromClipboardBtn = document.querySelector('#restoreFromClipboard');//made global
+const finishedRestoreBtn = document.createElement('button');//made global
+const cancelRestoreBtn = document.createElement('button');//made global
+//const cancelFromFileSelectionBtn = document.createElement('button');//made global in HTML script
+
+//references the file input selector if you need it?
+const fileSelector = document.querySelector('#fileSelector');
+const getJsonBtn =  document.querySelector('#getJson');//made global so finished btn could change its attribute
+//const fileData = document.querySelector('#fileData');//the p on restoreFromFilesWin that shows the backup data
+//references for RESTORE FROM LOCAL FILE
+
 //to ACTIVATE EMAIL ADDRESS
 let refreshing = false;//flag for reset during createNewDB
 let eMailFieldNameIndex = 0;
@@ -167,6 +196,7 @@ let fromNewTable = false;//flag for preventing fields layout mess up
 let resetFields = false;//flag fields layout mess up see editItem()
 let fromAddingMoreContacts = false;//forcing a resetFields when displayTableBtn is tapped
 const tableNameText = document.querySelector('#tableName');
+const editTDTriggerBtn = document.querySelector('#editTDTrigger');//this is the btn in preferences used to switch between copy and dblclick for edit table data cells. The trigger variable is declared at start of prgm AND THE tdEditTriggerP var is also made global because it is used in tableScreenOptions..not just in the function options
 // const printBtn = document.querySelector("#print");
 
 //variable references for promptBox date April25 2022
@@ -419,6 +449,7 @@ let doneRelabelBtn = document.createElement('button');//made global see addField
 let trigger = 'dblclick'; //was 'copy' set the addEventListener in edit td cell of table. The other option is dblclick Oct 20 2021
 
 const tdEditTriggerP = document.querySelector('#tdEditTrigger');//made global because it is used in tableScreenOptions as well as function options (preferences Dec20 2021)
+const totalInfoP = document.querySelector('#totalInfoP');//made global because it is used in tableScreenOptions as well as function options (preferences Dec20 2021)
 
 let dbName;//global variable for database name..currently notes_dbx replaced with dataBaseName
 let dataBaseName = "";//make global variable so can use in viewSettings
@@ -968,7 +999,7 @@ const restoreInstructionsP = document.querySelector('#restoreInstructionsP');//m
 const restoreDBNameInput = document.querySelector('#restoreDBNameInput');
 let restoredDBName = "";//made global variable
 const restoreDBNameBtn = document.querySelector('#restoreDBNameBtn');
-const getJsonBtn =  document.querySelector('#getJson');//made global so finished btn could change its attribute
+//const getJsonBtn =  document.querySelector('#getJson');//made global so finished btn could change its attribute
 const restoreTextArea = document.querySelector('#restoreTextAreaClip');//HTML textarea to paste backup clip
 const readyNotice = document.createElement('p');//in restoreDataBase announce job done
 let fromRestore = false;//flag to indicate from restore to logically navigate the createNewDB code
@@ -1409,8 +1440,19 @@ databaseNameMLi[i] = document.createElement('li');
 		dbNameInfo.textContent = dataBaseName;
 		selectedDBinfoP.appendChild(dbNameInfo);
 		// fileChosenP.textContent = ' Database Selected: '+ databases[i].name;
+		
 		console.log('dataBaseName = ' + dataBaseName);
-			
+		
+//code below added Sept26 to scroll to bottom of element with id = 'id of element'
+		
+	const scrollToBottom = (id) => {
+	 const element = document.getElementById(id);
+   element.scrollTop = element.scrollHeight;
+}	
+scrollToBottom('manageFilesWin');//this is a function expression..element id is passed as a parameter to the scrollToBottom function expression.
+
+
+	
 			} else {
 				//return to fileNames screen. Need to remove the previous fileNames?
 			for (let i = 0; i< databases.length; i++) { 
@@ -4112,13 +4154,15 @@ addNoteBtn.setAttribute('class','attentionBtn');
 	const scrollTableBtn = document.querySelector('#scrollTable');
 	const bkgrdImageBtn = document.querySelector('#bkgrdImage');
 	const bodyImage = document.querySelector('#bodyImage');
-	const editTDTriggerBtn = document.querySelector('#editTDTrigger');//this is the btn in preferences used to switch between copy and dblclick for edit table data cells. The trigger variable is declared at start of prgm AND THE tdEditTriggerP var is also made global because it is used in tableScreenOptions..not just in the function options
+	//const editTDTriggerBtn = document.querySelector('#editTDTrigger');//this is the btn in preferences used to switch between copy and dblclick for edit table data cells. The trigger variable is declared at start of prgm AND THE tdEditTriggerP var is also made global because it is used in tableScreenOptions..not just in the function options made global
 	// const tdEditTriggerP = document.querySelector('#tdEditTrigger');//made global
 	//set font color for dark mode Dec20
 	if(screenDark) {
 		tdEditTriggerP.style.color = "orange";
+		totalInfoP.style.color = "orange";
 	} else {
 		tdEditTriggerP.style.color = "blue";
+		totalInfoP.style.color = "blue";
 	}//end if screenDark
 	//set font color for dark mode
 	
@@ -4424,6 +4468,8 @@ if(DTBtnTappedOnce ===0) {
 		
 		//go to display table to update table to prevent table being messed up if you change databases at this point Nov17 2021
 			tableScreenOptions();
+			//added Oct5
+			resetFields = true;//flag used in displayTable to keep fields being messed up if edit notes after viewing a new table
 			
 	};//end editTDTriggerBtn.onclick
 
@@ -7070,6 +7116,7 @@ if(screenDark) {
 	promptBox.style.color = "white";
 	$("#flip").css({"background-color": "lightgrey", "color":"black", "border-color": "red"});//these don't work
 	tdEditTriggerP.style.color = "orange";
+	totalInfoP.style.color = "orange";
 	//set font color for dark mode Dec20
 		
 	//bodyImage.setAttribute('class','showDark');
@@ -7082,6 +7129,7 @@ if(screenDark) {
 	promptBox.style.color = "black";
 	$("#flip").css({"background-color": "lightgrey", "color":"black", "border-color": "black"});//these don't work
 	tdEditTriggerP.style.color = "blue";
+	totalInfoP.style.color = "blue";
 	}//end check screen mode
 	
 	
@@ -8167,6 +8215,10 @@ createTable.appendChild(buildRecordsP);
 buildRecordsP.setAttribute('class', 'simulator');
 //buildRecordsP.disabled = false;
 buildRecordsP.textContent = ' Enter titles of '+ numberOfDynamicFields + ' dynamic fields (By tapping the green buttons). When satisfied with entries tap here to continue!';
+	blockEdit = true;//ADDED Oct10 2022 to nitialize table before doing a double tap on the edited field title  REMOVE IF MESSES UPflag to prevent savedTablesArray getting messed up
+	
+	homeScreenBtn.setAttribute('class','borderBlink');
+	homeScreenBtn2.setAttribute('class','borderBlink');
 	
 	}//end submitBtn.onclick needs to be here instead of higher up
 
@@ -8791,7 +8843,37 @@ if(fromRestore) {
 	console.log("eMailFieldNameIndex = " + j);
 		//fieldNamesArray[j].addEventListener(dblclick, function() {eMailActive =true; alert("eMail address now active! Double click on email address to SEND EMAIL!")});//end addEventListener
 	}//end if (fieldNamesArray.textContent === 'EMAIL')
-	//ADDEVENTLISTENER IF FIELDNAME = "EMAIL"			
+	//ADDEVENTLISTENER IF FIELDNAME = "EMAIL"
+	
+//ADDEVENTLISTENER IF FIELDNAME = "TOTAL"
+	//if (fieldNamesArray[j] === "TOTAL" && !totalActive) {
+	if (fieldNamesArray[j].includes("TOTAL") || fieldNamesArray[j].includes("AVERAGE") || fieldNamesArray[j].includes("EMAIL")) {
+	
+	//alertx("ok at TOTAL||AVERAGE||EMAIL " + fieldNamesArray[j]);
+	
+	totalFieldNameListener = true;//flag set here so variable is correct if tapping homeBtn in table without having used dbltap on the EMAIL field. Not sure I understand why!!!
+	console.log("fieldNamesArray[j] INCLUDES TOTAL");
+	
+	//totalFieldNameIndex = j;
+	console.log("totalFieldNameIndex = " + j);
+	totalInfoP.style.display = "unset";
+ //sumField = document.querySelector("fieldNamesArray[totalFieldNameIndex]");
+ //TypeError: null is not an object (evaluating 'sumField.addEventListener')
+ // sumField.addEventListener('dblclick', sumField.fn = function fn() {
+	// 	totalActive =true; 
+	// 	alert("Summing contents of TOTAL column!");
+	// 	});//end addEventListener	
+//STsecondDataNameTd.addEventListener('dblclick', STsecondDataNameTd.fn=function fn() {
+//TypeError: undefined is not a function (near '...fieldNamesArray[totalFieldNameIndex].addEventListener...')
+
+// fieldNamesArray[totalFieldNameIndex].addEventListener('dblclick', fieldNamesArray[totalFieldNameIndex].fn=function fn() {
+// 		totalActive =true; 
+// // 		alert("Summing contents of TOTAL column!");
+// 	});//end addEventListener
+		
+		
+	}//end if (fieldNamesArray.textContent === 'TOTAL')
+	//ADDEVENTLISTENER IF FIELDNAME = "TOTAL"			
 
 				
 			}//end for j =
@@ -8869,6 +8951,16 @@ STsecondDataNameTd.addEventListener('dblclick', STsecondDataNameTd.fn=function f
 STsecondDataNameTdListener = true;
 	eMailActive =true; 
 	STsecondDataNameTd.setAttribute('class','borderBlink');
+	
+if(trigger === 'copy') {
+	alert("The trigger to edit a data cell MUST BE IN DBL-CLICK mode in order to use the active email function. Return to Preferences and reset the edit mode to DBL-CLICK");
+	
+	showTable.setAttribute('class','hidden');
+	prefWindow.setAttribute('class','showing');
+	editTDTriggerBtn.setAttribute('class','borderBlink');
+	return;
+}//end if(trigger === 'copy')	
+	
 if(!eMailAlertFlag) {
 	alert("eMail address now active! Double click on email address to SEND EMAIL!");
 eMailAlertFlag = true;
@@ -8996,6 +9088,62 @@ fromDeleteField = false;// turn off this flag so that addFields is not called ag
 	const STnextFieldHeading = document.createElement('td');
 	STnextFieldHeading.textContent = fieldNamesArray[k];	
 	STheadRow.appendChild(STnextFieldHeading);
+	//if field heading is TOTAL addzevent listener
+	//alertx("fieldNamesArray[k] = " + fieldNamesArray[k] + "fieldNamesArray[k].includes(TOTAL)" + fieldNamesArray[k].includes("TOTAL"));
+	
+	if(fieldNamesArray[k].includes("TOTAL") || fieldNamesArray[k].includes("AVERAGE")){
+	//alertx("adding event listener");
+	//totalFieldNameIndex = k;
+	//if (STnextFieldHeading.textContent === "TOTAL") {
+		STnextFieldHeading.addEventListener('dblclick', function () {
+		//check table is initialized
+		if(blockEdit) {
+		alert("Before tapping this Field Title, Tap Return to Home Screen first to initialize the table layout you just edited or created!");
+		//blockEdit = false;
+		return false;
+	}
+			totalActive = true;
+			totalFieldNameIndex = k;
+			
+	if(fieldNamesArray[k].includes("TOTAL")) {		summing();
+		} else if (fieldNamesArray[k].includes("AVERAGE")) {
+			averaging();
+		}//end if else if if(fieldNamesArray[k].includes("TOTAL")) {
+			//fieldNamesArray[totalFieldNameIndex].textContent = " TOTAL = " + $(fieldSUM);
+			
+			//STnextFieldHeading.textContent = " TOTAL = " + fieldSUM;
+			
+	if (fieldNamesArray[k].includes("COST")) {
+		STnextFieldHeading.textContent = fieldNamesArray[k]+ " $" + fieldSUM;
+		// } else if (fieldNamesArray[k].includes("AGE")) {
+		// alert("fieldNamesArray[k] = " + fieldNamesArray[k] + " so why am I adding yrs? STnextFieldHeading.textContent = " + STnextFieldHeading.textContent );
+		
+		// 	STnextFieldHeading.textContent = fieldNamesArray[k]+ " " + fieldSUM + " yrs";
+		
+		} else {	
+			STnextFieldHeading.textContent = fieldNamesArray[k]+ " " + fieldSUM + "   ";
+			}//end if else (fieldNamesArray[j].includes("COST")) {
+			
+if (fieldNamesArray[k].includes("UNITS")) {
+		//alertx("fieldNamesArray[k] = " + fieldNamesArray[k] + " so why am I adding yrs? STnextFieldHeading.textContent = " + STnextFieldHeading.textContent );
+		
+			STnextFieldHeading.textContent = fieldNamesArray[k]+ " " + fieldSUM + " units";
+			}//end if (fieldNamesArray[k].includes("AGE")) {
+			
+if (fieldNamesArray[k] === "AGE" + " (TOTAL)" || fieldNamesArray[k] === "AGE" + " (AVERAGE)") {
+		//alertx("fieldNamesArray[k] = " + fieldNamesArray[k] + " so why am I adding yrs? STnextFieldHeading.textContent = " + STnextFieldHeading.textContent );
+		
+			STnextFieldHeading.textContent = fieldNamesArray[k]+ " " + fieldSUM + " yrs";
+			}//end if (fieldNamesArray[k].includes("AGE")) {
+			
+			
+			totalFieldNameIndex = 0;
+			fieldSUM = 0;
+			STnextFieldHeading.removeEventListener;
+			
+			});//end addEventListener
+		
+		}//end if (STnextFieldHeading.textContent === "TOTAL || "AVERAGING) {
 
 		}//end for loop
 	//}//end if !makeContactsTable && !loadFromTableOptions) || newTableEdit	
@@ -9014,6 +9162,8 @@ fromDeleteField = false;// turn off this flag so that addFields is not called ag
 		//for other cases other than deleted field
 		//if comming from makeContactsTable we don't want extra fields added so put this condition into if !fieldDeleted Dec31 2021 did not wok
 		//adding || loadFromTableOptions did add the field headers to the edited new table if new table was the first edit .. and ..after an edit from db main
+	
+		
 		//alert("> AFTER DYNAMIC FIELDS CREATED! displayedTable will = 1 being set to 1 here. displayedTable = " +displayedTable + " refreshed = " + refreshed + " loadFromTableOptions = " + loadFromTableOptions + " makeContactsTable = " + makeContactsTable + " fieldDeleted = " + fieldDeleted + " edit = " + edit + " changeDB =  " + changeDB + " editCurrentTable = " + editCurrentTable);
 		
 		if(!fieldDeleted && !makeContactsTable || loadFromTableOptions) {
@@ -9109,6 +9259,59 @@ for (let k = 4; k < numberOfFields; k++) {
 	const STnextFieldHeading = document.createElement('td');
 	STnextFieldHeading.textContent = fieldNamesArray[k];	
 	STheadRow.appendChild(STnextFieldHeading);
+	//if field heading is TOTAL addzevent listener
+	
+	
+//	if (STnextFieldHeading.textContent === "TOTAL") {
+
+if(fieldNamesArray[k].includes("TOTAL")|| fieldNamesArray[k].includes("AVERAGE")) {
+	//alertx("adding event listener"); 
+		STnextFieldHeading.addEventListener('dblclick', function () {
+		//check if table initialized
+		if(blockEdit) {
+		alert("Before tapping this Field Title, Tap Return to Home Screen first to initialize the table layout you just edited or created!");
+		//blockEdit = false;
+		return false;
+	}
+	
+			totalActive = true;
+			totalFieldNameIndex = k;
+			//summing();
+			if(fieldNamesArray[k].includes("TOTAL")) {
+			summing();
+		} else if (fieldNamesArray[k].includes("AVERAGE")) {
+			averaging();
+		}//end if else if if(fieldNamesArray[k].includes("TOTAL")) {
+			//STnextFieldHeading.textContent = " TOTAL = " + fieldSUM;
+			
+	if (fieldNamesArray[k].includes("COST")) {
+		STnextFieldHeading.textContent = fieldNamesArray[k]+ " $" + fieldSUM;
+		// } else if (fieldNamesArray[k].includes("AGE")) {
+		// 	STnextFieldHeading.textContent = fieldNamesArray[k]+ " " + fieldSUM + " yrs";
+		} else {	
+			
+			STnextFieldHeading.textContent = fieldNamesArray[k]+ " " + fieldSUM;
+			}//end if (fieldNamesArray[k].includes("COST")) {
+			
+if (fieldNamesArray[k].includes("UNITS")) {
+		//alertx("fieldNamesArray[k] = " + fieldNamesArray[k] + " so why am I adding yrs? STnextFieldHeading.textContent = " + STnextFieldHeading.textContent );
+		
+			STnextFieldHeading.textContent = fieldNamesArray[k]+ " " + fieldSUM + " units";
+			}//end if (fieldNamesArray[k].includes("AGE")) {
+			
+if (fieldNamesArray[k] === "AGE" + " (TOTAL)" || fieldNamesArray[k] === "AGE" + " (AVERAGE)") {
+		//alertx("fieldNamesArray[k] = " + fieldNamesArray[k] + " so why am I adding yrs? STnextFieldHeading.textContent = " + STnextFieldHeading.textContent );
+		
+			STnextFieldHeading.textContent = fieldNamesArray[k]+ " " + fieldSUM + " yrs";
+			}//end if (fieldNamesArray[k].includes("AGE")) {
+				
+			fieldSUM = 0;
+			totalFieldNameIndex = 0;	STnextFieldHeading.removeEventListener;
+			
+			//fieldNamesArray[totalFieldNameIndex].textContent = " TOTAL = " + fieldSUM;
+			});//end addEventListener
+		
+		}//end if (STnextFieldHeading.textContent === "TOTAL")
 
 }//end for loop
 
@@ -9847,6 +10050,8 @@ if (searchedHitsTableArray.length > 0) {
 		//should this code be near tableScreen section so you can return to home screen direct from displayTable??
 		//const homeScreenBtn = document.querySelector('#homeScreenBtn');
 		homeScreenBtn.onclick = function () {
+		totalInfoP.style.display = "none";
+		fieldSUM = 0;//clear to 0 in case TOTAL function has been used
 emailBtn.setAttribute('class','tdEdit');//if cancel CONTACTS or ignore flashing CONTACTS AND GO TO HOME SCRN CONTACTS BTN WILL STAY FLASHING!
 
 //alertx("homeScreenBtn.onclick: fromSearchRecord = " + fromSearchRecord + " hits.length = " + hits.length);
@@ -9930,6 +10135,8 @@ flipMenu.textContent = "Tap - Click to show / hide TABLE MENU";
 		
 		//const homeScreenBtn2 = document.querySelector('#homeScreenBtn2');
 		homeScreenBtn2.onclick = function () {
+		totalInfoP.style.display = "none";
+		fieldSUM = 0;//clear to 0 in case TOTAL function has been used
 emailBtn.setAttribute('class','tdEdit');//if cancel CONTACTS or ignore flashing CONTACTS AND GO TO HOME SCRN CONTACTS BTN WILL STAY FLASHING!
 //alertx("STsecondDataNameTdListener = " + STsecondDataNameTdListener);
 if(STsecondDataNameTdListener) {
@@ -10016,6 +10223,7 @@ homeScreenBtn.textContent = "RETURN to Home Screen";
 		//$("#flip").css({"background-color": "yellow", "border": "red"});
 	//$$LEFT OFF HERE,!!!	
 	saveTableBtn.onclick = function () { 
+	fieldSUM = 0;//clear to 0 in case TOTAL function has been used
 	eMailActive = false;//flag set here to prevent an email if just editing a td
 	//tableIndex = 7;testing fixing screw ups
 	resetFields = true;//if you hit SAVE twice fields can get messed up
@@ -10270,6 +10478,7 @@ console.log("About to save! newTableFieldsArray = " + newTableFieldsArray + ". t
 	//for saveTableBtn2
 	
 	saveTableBtn2.onclick = function () { 
+	fieldSUM = 0;//clear to 0 in case TOTAL function has been used
 	//tableIndex = 7;testing fixing screw ups
 	resetFields = true;//if you hit SAVE twice fields can get messed up
 	homeScreenBtn.disabled = false;//to help force Save..now reset after flashing SAVE
@@ -10526,6 +10735,7 @@ console.log("About to save! newTableFieldsArray = " + newTableFieldsArray + ". t
 	//return to search table window
 			const toSearchScreenBtn = document.querySelector('#toSearchScr');
 		toSearchScreenBtn.onclick = function () {
+		fieldSUM = 0;//clear to 0 in case TOTAL function has been used
 if(STsecondDataNameTdListener) {
 STsecondDataNameTd.removeEventListener('dblclick',STsecondDataNameTd.fn, false);
 	//STsecondDataNameTd.removeEventListener;
@@ -10551,6 +10761,8 @@ hits.length = 0;
 	
 	//const toEditTableScrBtn = document.querySelector('#toEditTableScr');
 		toEditTableScrBtn.onclick = function () {
+		//blockEdit = true;//ADDED OCT10 2022..remove if messes up flag to prevent savedTablesArray getting messed up
+		fieldSUM = 0;//clear to 0 in case TOTAL function has been used
 		if (loadFromTableOptions & DTBtnTappedOnce === 0) {
 		alert('Before editing this table you need to initialize the main database table first by tapping DISPLAY TABLE at least once!');	//tableScreen.setAttribute('class','hidden');
 			//createTableWindow.setAttribute('class', 'hidden');	
@@ -10603,6 +10815,7 @@ if(makeContactsTable) {
 //-xxxx-xxx
 	
 		toSortScrBtn.onclick = function () {
+		fieldSUM = 0;//clear to 0 in case TOTAL function has been used
 			
 			//return menu bar in table back to original if post search
 			//flipMenu.textContent = "Click - Tap to show / hide TABLE MENU";
@@ -10620,6 +10833,7 @@ if(makeContactsTable) {
 	
 	//relabel newTableFields..Field Labels btn
 	newTableFieldsBtn.onclick = async function () {
+	fieldSUM = 0;//clear to 0 in case TOTAL function has been used
 fromEditFieldLabels = true;	newTableFieldsBtn.setAttribute('class','tdEdit');
 	checkTableLimit();
 if (tableLimit) {
@@ -10724,6 +10938,7 @@ await
 	if(hitsTable) {emailBtn.textContent = "HITS>TABLE";}
 	
 emailBtn.onclick = async function () {
+fieldSUM = 0;//clear to 0 in case TOTAL function has been used
 //SHOULD THESE VARIABLES BE CLEARED AT THE START OF CONTACTS SO REPEAT RECORDS DON'T HAPPE??? Date Jun6
 
 contactsArray.length = 0;
@@ -11120,6 +11335,7 @@ deleteRecordNewTableBtn.style.display = "unset";
 	}//end if else (!tableArray[0][0].includes(">"))
 	
 	plusContactsBtn.onclick = function () {
+	fieldSUM = 0;//clear to 0 in case TOTAL function has been used
 	contactsArray.length = 0;
 	manualContacts.length = 0;//clear from a previous use
 	//moved from addingMoreContactsvv
@@ -11139,6 +11355,7 @@ contactsFieldNames = newTableFieldsArray.slice();
 	//delete a record from a new table
 //or use visibility:hidden
 deleteRecordNewTableBtn.onclick = function () {
+fieldSUM = 0;//clear to 0 in case TOTAL function has been used
 	deleteRecordNewTable = true;//set flag for record deletion to run delete code in display table
 	//blockEdit = true;//to stop a double click from deleting a record again
 	alert("Double-tap on the record you wish to delete!");
@@ -11152,6 +11369,32 @@ deleteRecordNewTableBtn.onclick = function () {
 	
 //alert below is outside displayTable code and won't run??	Dec31	
 //alert("At end of displayTable: tableArray = " + tableArray);	
+
+//do sum if totalActive
+//do sum if totalActive line 11202
+// alert("totalFieldNameListener = " + totalFieldNameListener + "fieldNamesArray[totalFieldNameIndex] = " + fieldNamesArray[totalFieldNameIndex]);
+// //TypeError: null is not an object (evaluating 'sumField.addEventListener')
+// if(totalFieldNameListener) {
+
+// // sumField.addEventListener('dblclick', sumField.fn = function fn() {
+// 	totalActive =true; 
+// // 		alert("Summing contents of TOTAL column!");
+// // 		});//end addEventListener	
+// }//end if totalFieldNameListener
+// if(totalFieldNameListener) {
+// alert("summing");
+// 	for (i =0;i <tableTitle.length;++i) {
+// 	fieldSUM = fieldSUM + tableArray[i][totalFieldNameIndex];
+
+// fieldNamesArray[totalFieldNameIndex].textContent = " TOTAL = " + fieldSUM;
+// 	}//end for loop
+// 	totalFieldNameListener = false;
+// 	displayTable();
+// }//end ifTotalActive
+
+//in RETURN TO HOME Btn reset variables and remove addeventListener
+
+//do sum if totalActive
 
 }//end function displayTable ..!!!! showTable
 
@@ -12490,10 +12733,13 @@ backupFilesWin.setAttribute('class','hidden');
 
 //start function restoreDataBase(dataBaseName)
 function restoreDataBase(restoredDBName) {
+cancelRestoreBtn.disabled = false;//in case disabled by CANCEL in restore from FILES window
 //textarea.style.display = "unset";	restoreTextArea.setAttribute('style', 'border: 5px solid red; text-align: center');
 	if(loadSampleDb || loadTutorialDb) {
 		alert("Remember to Tap the Text-Area box ONCE only to CONTINUE. This initiates loading of database sample.");
 		//change html text to reflect SAMPLE
+		restoreFromFileBtn.style.display = "none";
+//ReferenceError: Cannot access uninitialized variable.
 		nowDo.style.color = "black";
 		nowDo.textContent = "TAP TextArea element box TO INITIATE LOADING OF DATABASE SAMPLE. \nTHEN TAP SUBMIT.";
 		restoreTextArea.textContent = "TAP HERE TO INITIATE LOADING OF DATABASE SAMPLE. \nTHEN TAP SUBMIT.";
@@ -12504,18 +12750,21 @@ function restoreDataBase(restoredDBName) {
 		restoreTextArea.setAttribute('style', 'border: 3px solid blue');
 		nowDo.textContent = "THANK YOU!. \nNOW TAP SUBMIT to load SAMPLE DATABASE..";
 		restoreTextArea.textContent = "THANK YOU!. \nNOW TAP SUBMIT to load SAMPLE DATABASE..";
-	getJsonBtn.setAttribute('class','attentionBtn');
+	getJsonBtn.setAttribute('class','borderBlinkGrn');
 			}//end restoreTextArea.onclick
 	
 	 } else { 
-		 alert("Remember to FIRST TAP Text-Area box ONCE. SUBMIT btn turns green, then PASTE backup text");
-		 restoreTextArea.setAttribute('style', 'border: 3px solid blue');
-		 nowDo.textContent = "FIRST TAP Text-Area box ONCE. SUBMIT btn turns green, then PASTE backup text into text area...";
+		 alert("Remember IF RESTORING FROM CLIPBOARD to FIRST TAP Text-Area box ONCE. SUBMIT btn turns green, then PASTE backup text");
+		 restoreTextArea.setAttribute('style', 'border: 5px solid blue');
+		 nowDo.textContent = "IF RESTORING FROM CLIPBOARD FIRST TAP Text-Area box ONCE. SUBMIT btn turns green, then PASTE backup text into text area...";
 		 restoreTextArea.textContent = "FIRST TAP ONCE. SUBMIT btn turns green, then PASTE backup text here....";
 		 restoreTextArea.onclick = function() {
+		 //user chooses restore via clipboard so remove restore via FILES btn
+		 restoreFromFileBtn.style.display = "none";
+		 nowDo.setAttribute('class','borderBlinkGrn');
 			//clear text area prior to paste
 			nowDo.textContent = "Now PASTE data into TextArea box…THEN tap SUBMIT button!";
-			 restoreTextArea.textContent = "";	getJsonBtn.setAttribute('class','attentionBtn');
+			 restoreTextArea.textContent = "";	getJsonBtn.setAttribute('class','borderBlinkGrn');
 			}//end restoreTextArea.onclick
 		 
 	}//end if loadSampleDb || loadTutorialDb else	
@@ -12525,8 +12774,27 @@ function restoreDataBase(restoredDBName) {
 	 
 	console.log('In restoreDataBase(dataBaseName) function');
 	//alert('restoreDataBase(dataBaseName ). ' + dataBaseName);
-		const restoreFromClipboardBtn = document.querySelector('#restoreFromClipboard');
+	
+	//const restoreFromFileBtn = document.querySelector('#restoreFromFile');//made global
+	
+	//	const restoreFromClipboardBtn = document.querySelector('#restoreFromClipboard');//made global
 fromRestore = true;	restoreDBWindow.setAttribute('class','showing');
+
+//code for restoring from FILE
+restoreFromFileBtn.onclick = function () {
+cancelRestoreBtn.disabled = true;//this is the CANCEL BTN in the restore db window, because error if pressed in restore from FILES window
+
+	restoreFromLocalFile = true;
+	restoreFromFileBtn.style.display = "none";
+	restoreTextArea.style.display = "none";
+	//nowDo.style.display = "none";
+	nowDo.textContent = "RESTORING FROM FILES! After selecting the file tap the Submit button."
+	restoreInfo2P.textContent = "RESTORING DATABASE FROM FILES"
+	selectStorageFile(selectedFileData);
+	json = selectedFileData;
+	
+}//end function restoreFromFileBtn.onclick
+//code for restoring from FILE
 
 //Check if screenDark mode
 checkScreenMode();
@@ -12553,12 +12821,24 @@ if (loadSampleDb || loadTutorialDb) {
 	restoreInfo1P.textContent = "First! Tap the RED text-area input element ONCE to initialize. The Submit button will turn green. Tap the SUBMIT button, tap RESTORE DATABASE button, the CONFIRMATION window appears. ";
 	restoreInfo2P.textContent ="Summary to create the database SAMPLE: Tap the Text-Area input window. Tap the SUBMIT button, tap RESTORE DATABASE button, tap FINISHED, then tap the name of the SAMPLE database in the database list of file names in the Change DB window."
 	getJsonBtn.textContent = "SUBMIT Sample DB data";
+	
+	//if restore from local file
+} else if (restoreFromLocalFile && formatFailed) {
+//formatFailed = false;
+	//restoreFromLocalFile = false;	//added Sept 26 not tested	
+	restoreDBWinTitle.textContent = "Restoring a database from its Backup stored in a local or remote file.";
+	restoreInstructionsP.textContent = "The data has been fetched from the selected file.. Tap 'Submit Backup data'. Tap RESTORE your database. Tap FINISHED. Tap on restored file name in database list in the Current File Names window to view file.";
+	restoreInfo1P.textContent = "Select the desired file containing the database backup. The Submit button will turn green telling you DougieBase is ready to recieve the backup data.. Tap the SUBMIT button and your database will be restored.";
+	restoreInfoP.textContent = "Dougiebase will create a new shell to structure the restored data from your external storage source."
+	restoreInfo2P.textContent = "DATABASE (RESTORED FROM SELECTED FILE) has incorrect format! Try again."
+
+	//if restore from local file
 } else {
-	restoreDBWinTitle.textContent = "Restore a database from its Backup via the Clipboard";
-	restoreInstructionsP.textContent = "Paste Backup data into the text area element. Tap 'Submit Backup data'. Tap RESTORE your database. Tap FINISHED. Tap on restored file name in database list in the Current File Names window to view file.";
-	restoreInfo1P.textContent = "FIRST! Tap the blue text input area to initialize the Paste area. The Submit button will turn green telling you DougieBase is ready for PASTE. After Pasting, Tap the SUBMIT button and your database will be restored.";
-	restoreInfoP.textContent = "Dougiebase will create a new shell to structure the restored data. Enter the previously saved backup data of the database to be restored into the text area window below using Copy/Paste from the clipboard or from your external storage source."
-	restoreInfo2P.textContent = "Copy backup data text from your storage source to the clipboard, and then Paste the Backup data for the database you are restoring, into the Text Area below:"
+	restoreDBWinTitle.textContent = "Restore a database from its Backup via the Clipboard OR from FILES";
+	restoreInstructionsP.textContent = "Paste Backup data from CLIPBOARD into the text area element. OR tap RESTORE FROM LOCAL FILE button. Tap 'Submit Backup data'. Tap RESTORE your database. Tap FINISHED. Tap on restored file name in database list in the Current File Names window to view file.";
+	restoreInfo1P.textContent = "TO RESTORE FROM CLIPBOARD: FIRST! Tap the blue text input area to initialize the Paste area. The Submit button will turn green telling you DougieBase is ready for PASTE. After Pasting, Tap the SUBMIT button and your database will be restored.";
+	restoreInfoP.textContent = "Dougiebase will create a new shell to structure the restored data. IF RESTORING FROM CLIPBOARD: Enter the previously saved backup data of the database to be restored into the text area window below using Copy/Paste from the clipboard or from your external storage source. IF RESTORING FROM FILES: Tap the \'RESTORE your DataBase from a local FILE\' button."
+	restoreInfo2P.textContent = "RESTORING FROM CLIPBOARD: Copy backup data text from your storage source to the clipboard, and then Paste the Backup data for the database you are restoring, into the Text Area below vv"
 	getJsonBtn.textContent = "SUBMIT Backup data";
 }//end if else loadSampleDb || loadTutorialDb
 
@@ -12585,9 +12865,10 @@ if (loadSampleDb || loadTutorialDb) {
 	//  }//end getJsonBtn.onclick function
 			//alert('end restoreDBNameBtn.onclick function');
 	//MORE JAVASCRIPT FOR RESTORE DB OPTION IS AT BOTTOM OF HTML FILE		
-	const finishedRestoreBtn = document.createElement('button');
+	//const finishedRestoreBtn = document.createElement('button');//made global
 	finishedRestoreBtn.disabled=true;
-	const cancelRestoreBtn = document.createElement('button');
+	
+	//const cancelRestoreBtn = document.createElement('button');//made global
 			
 	// const restoreDBNameBtn = document.querySelector('#restoreDBNameBtn');
 	// restoreDBNameBtn.onclick = function (json) {
@@ -12607,9 +12888,14 @@ if (loadSampleDb || loadTutorialDb) {
 	cancelRestoreBtn.textContent = 'CANCEL';	restoreDBWindow.appendChild(cancelRestoreBtn);
 	//added restoredDBName var to function finishedBtn.onclick so name is known to selectedDBInfoP May29 2021
 	finishedRestoreBtn.onclick = function (restoredDBName) {
+	restoreFromFileBtn.style.display = "unset";
+	restoreTextArea.style.display = "unset";
+	//nowDo.style.display = "unset";
 		dbRestored = true;//flag to allow notification of restore in getFileNames May12
 	//clear textarea for next use
 	// loadSampleDb = false;
+	restoreFromLocalFile = false;	//added Sept 26 not tested	
+	nowDo.setAttribute('class','attentionBtn');
 	nowDo.textContent = "FIRST TAP Text-Area box ONCE. SUBMIT btn turns green, then PASTE backup text into text area...";
 	restoreTextArea.textContent = "FIRST TAP ONCE. SUBMIT btn turns green, then PASTE backup text here...."
 	restoreTextArea.value = "";//May8
@@ -12655,8 +12941,11 @@ finishedRestoreBtn.setAttribute('class','normalBtn');
 	}//end finishedRestoreBtn.onclick
 		
 cancelRestoreBtn.onclick = function () {
+restoreFromFileBtn.style.display = "unset";
+nowDo.setAttribute('class','attentionBtn');
 	loadSampleDb = false;
 	loadTutorialDb = false;
+	formatFailed = false;
 	//clear textarea for next use
 	restoreTextArea.textContent = "Paste Backup data here"
 	restoreTextArea.value = "";//May8
@@ -12667,7 +12956,9 @@ cancelRestoreBtn.onclick = function () {
 //getJsonBtn.setAttribute('class','attentionBtn');
 restoreFromClipboardBtn.setAttribute('class','normalBtn');	
 finishedRestoreBtn.setAttribute('class','normalBtn');
-		restoreDBWindow.removeChild(finishedRestoreBtn);
+restoreFromLocalFile = false;	//added Sept 26 not tested	
+
+	restoreDBWindow.removeChild(finishedRestoreBtn);
 	restoreDBWindow.removeChild(cancelRestoreBtn);
 	restoreDBWindow.setAttribute('class','hidden');
 		//getFileNames();//remove to return to notes? RETURN TO NOTES WINDOW
@@ -12679,6 +12970,9 @@ finishedRestoreBtn.setAttribute('class','normalBtn');
 			json = copySampleDbData.value;
 		} else if (loadTutorialDb) {
 			json = tutorialSampleDbData.value;
+		} else if (restoreFromLocalFile) {
+			json = selectedFileData;
+			//restoreFromLocalFile = false;
 		} else {
 			json = restoreTextArea.value;
 		}//end if else loadSampleDb || loadTutorialDb
@@ -12690,13 +12984,16 @@ finishedRestoreBtn.setAttribute('class','normalBtn');
 	//resetVariables();//NOT SURE IF THIS SHOULD BE HERE.?
 	getJsonBtn.setAttribute('class','colorBtn');
 	getJsonBtn.textContent = "SUBMITTED!";
-	
+	nowDo.setAttribute('class','attentionBtn');
+	restoreFromClipboardBtn.setAttribute('class','borderBlinkGrn');
 if(formatFailed) {
 			formatFailed = false;
 			getJsonBtn.textContent = "SUBMIT Backup data";
-			getJsonBtn.setAttribute('class','attentionBtn');	
+		getJsonBtn.setAttribute('class','attentionBtn');	
+		restoreFromClipboardBtn.setAttribute('class','attentionBtn');	
+			
 		}//end if formatFailed
-	restoreFromClipboardBtn.setAttribute('class','attentionBtn');
+	
 	
 }//end getJsonBtn.onclick function
 	
@@ -12729,7 +13026,7 @@ finishedRestoreBtn.disabled=false;
 	// }//end restoreTextArea.onclick
 getJsonBtn.setAttribute('class','normalBtn');
 getJsonBtn.textContent = "SUBMIT Backup data";
-
+restoreFromLocalFile = false;	//added Sept26 not tested
 restoreFromClipboardBtn.setAttribute('class','normalBtn');	
 finishedRestoreBtn.setAttribute('class','normalBtn');
 		restoreDBWindow.removeChild(finishedRestoreBtn);
@@ -12751,7 +13048,7 @@ finishedRestoreBtn.setAttribute('class','normalBtn');
 	
 	restoreFromClipboardBtn.textContent = "Your Database has been RESTORED!";
 	restoreFromClipboardBtn.setAttribute('class','colorBtn');	
-	finishedRestoreBtn.setAttribute('class','attentionBtn');
+	finishedRestoreBtn.setAttribute('class','borderBlinkGrn');
 	
 		
 request.onupgradeneeded = function(e) {
@@ -12783,6 +13080,9 @@ request.onsuccess = function importFromJson(e,restoredDBName, json) {
 			json = copySampleDbData.value;
 		} else if (loadTutorialDb) {
 			json = tutorialSampleDbData.value;
+		} else if (restoreFromLocalFile) {
+			json = selectedFileData;
+			//restoreFromLocalFile = false;	
 		} else {
 			json = restoreTextArea.value;
 		}//end if else loadSampleDb || loadTutorialDb
@@ -12833,6 +13133,7 @@ console.log('json = ' + json);
 //start function checkRestore
 //function check fileFormat
 function checkFormat (json) {
+//alertx("Verifying format of json: " + json);
 	var verify = json.slice(0,2);
 	var verifyEnd = json.slice(-3);
 	
@@ -12840,7 +13141,7 @@ function checkFormat (json) {
 	console.log('verifyEnd = ' + verifyEnd);
 	if(verify !== "{\"" || verifyEnd !== "}]}") {
 		
-		alert('Improper file format? Re-paste the backup data');
+		alert('Improper file format? Re-submit the backup data');
 		//clear textarea for next use
 	restoreTextArea.textContent = "Paste Backup data here";
 	restoreTextArea.value = "";//May8
@@ -12848,6 +13149,7 @@ function checkFormat (json) {
 	console.log('fileFormat check failed.. cancel code initiated. Going back to restoreDataBase()');
 	formatFailed = true;
 	//clearDatabase(dataBaseName);
+restoreFromFileBtn.style.display = "unset";
 getJsonBtn.setAttribute('class','normalBtn');
 getJsonBtn.textContent = "SUBMIT Backup data";
 restoreFromClipboardBtn.setAttribute('class','normalBtn');	
@@ -15138,6 +15440,199 @@ return tableLimit;
 }//end if else (tableIndex > savedTablesArray.length)
 }//end function check table limit
 
+//function for selecting storage file for database restore
+//selectStorageFile
+function selectStorageFile(selectedFileData) {
+//Check if screenDark mode
+checkScreenMode();
+if(screenDark) {
+	restoreFromFilesWin.style.backgroundColor = "black";
+	restoreFromFilesWin.style.color = "white";
+	// restoreInfo2P.style.color = "black";
+	// restoreInfoP.style.color = "white";
+	// restoreInfo1P.style.color="white";
+	// nowDo.style.color = "black";
+} else {
+	restoreFromFilesWin.style.backgroundColor = "#eee";
+	restoreFromFilesWin.style.color = "black";
+}//end if else screenDark
+// const restoreFromFilesWin = document.querySelector('#restoreFromFilesWin');
+// //references the file input selector if you need it?
+// const fileSelector = document.querySelector('#fileSelector');
+// const fileData = document.querySelector('#fileData');//the p on restoreFromFilesWin that shows the backup data
+//fileSelector
+restoreFromFilesWin.setAttribute('class','showing');
+//const cancelFromFileSelectionBtn = document.createElement('button');//made global
+
+restoreFromFilesWin.appendChild(cancelFromFileSelectionBtn);
+cancelFromFileSelectionBtn.textContent = "CANCEL";
+cancelFromFileSelectionBtn.onclick = function () {
+restoreFromFilesWin.removeChild(cancelFromFileSelectionBtn);
+// restoreFromFileBtn.style.display = "unset";
+// nowDo.setAttribute('class','attentionBtn');
+// 	loadSampleDb = false;
+// 	loadTutorialDb = false;
+// 	formatFailed = false;
+// 	//clear textarea for next use
+// 	restoreTextArea.textContent = "Paste Backup data here"
+// 	restoreTextArea.value = "";//May8
+// 	console.log('cancelFromFileSelectionBtn has been tapped.');
+// 	//clearDatabase(dataBaseName);
+// 	getJsonBtn.textContent = "SUBMIT Backup data";
+// 	getJsonBtn.setAttribute('class','normalBtn');
+// //getJsonBtn.setAttribute('class','attentionBtn');
+// restoreFromClipboardBtn.setAttribute('class','normalBtn');	
+// finishedRestoreBtn.setAttribute('class','normalBtn');
+// restoreFromLocalFile = false;	//added Sept 26 not tested	
+// restoreFromFilesWin.removeChild(cancelFromFileSelectionBtn);
+// restoreFromFilesWin.removeChild(continueFromFileSelectionBtn);
+// 	restoreDBWindow.removeChild(finishedRestoreBtn);
+// 	restoreDBWindow.removeChild(cancelRestoreBtn);
+	
+restoreFromFilesWin.setAttribute('class','hidden');
+	//restoreDBWindow.setAttribute('class','hidden');
+	
+		//getFileNames();//remove to return to notes? RETURN TO NOTES WINDOW
+		
+//Additional code to complete CANCEL
+
+restoreFromFileBtn.style.display = "unset";
+nowDo.setAttribute('class','attentionBtn');
+	loadSampleDb = false;
+	loadTutorialDb = false;
+	formatFailed = false;
+	//clear textarea for next use
+	restoreTextArea.textContent = "Paste Backup data here"
+	restoreTextArea.value = "";//May8
+	console.log('cancelRestoreBtn has been tapped.');
+	//clearDatabase(dataBaseName);
+	getJsonBtn.textContent = "SUBMIT Backup data";
+	getJsonBtn.setAttribute('class','normalBtn');
+//getJsonBtn.setAttribute('class','attentionBtn');
+restoreFromClipboardBtn.setAttribute('class','normalBtn');	
+finishedRestoreBtn.setAttribute('class','normalBtn');
+restoreFromLocalFile = false;	//added Sept 26 not tested	
+
+	restoreDBWindow.removeChild(finishedRestoreBtn);
+	restoreDBWindow.removeChild(cancelRestoreBtn);
+	restoreDBWindow.setAttribute('class','hidden');
+	
+	//Additional code to complete CANCEL
+	
+		//getFileNames();//remove to return to notes? RETURN TO NOTES WINDOW
+	}//end cancelFromFileSelectionBtn.onclick
+// const cancelFromFileSelectionBtn = document.createElement('button');
+//   cancelFromFileSelectionBtn.textContent = "CANCEL";
+//   restoreFromFilesWin.appendChild(cancelFromFileSelectionBtn);
+	// let file = fileSelector.files[0];
+
+ //  let reader = new FileReader();
+
+ //  reader.readAsText(file);
+
+ //  reader.onload = function() {
+ //    alert(reader.result);
+ //    console.log(reader.result)
+ //    selectedFileData = reader.result;
+ // restoreFromFilesWin.setAttribute('class','hidden');
+ //    return selectedFileData;
+    
+ //  };
+
+ //  reader.onerror = function() {
+ //    console.log(reader.error);
+ //  };
+
+}//end function selectStorageFile()
+
+//summing function for TOTAL field if dblclicked
+
+function summing () {
+//alertx("summing : tableTitle.length = " + tableTitle.length + " totalFieldNameIndex = " + totalFieldNameIndex);
+
+	for (i =0;i <tableTitle.length;i++) {
+	
+	if ( isNaN( Number(tableArray[i][totalFieldNameIndex]) )) {
+     //    num = 0
+     // }
+	//	if (Number(tableArray[i][totalFieldNameIndex])=== NaN) {
+	
+	
+		//i++;
+		alert("Addition column contains a non number!");
+		i++;
+		//break;
+		}
+	fieldSUM = fieldSUM + Number(tableArray[i][totalFieldNameIndex]);
+	//totalFieldNameIndex replaced with k
+//if (fieldSUM === NaN) {
+//alert("The array contains a non number so unable to complete sum!");	
+//}
+//alert("fieldSUM = " + fieldSUM);
+//alert("typeof fieldSUM = " + typeof(fieldSUM));
+//fieldNamesArray[totalFieldNameIndex].textContent = " TOTAL = " + fieldSUM;
+// fieldNamesArray[totalFieldNameIndex].textContent = " TOTAL = ";
+	}//end for loop
+	totalFieldNameListener = false;
+	resetFields = true;//flag used in displayTable to keep fields being messed up
+	return fieldSUM;
+	//alert("fieldNamesArray[totalFieldNameIndex].textContent = " + fieldNamesArray[totalFieldNameIndex].textContent);
+}//end function summing
+
+function averaging () {
+//alertx("averaging : tableTitle.length = " + tableTitle.length + " totalFieldNameIndex = " + totalFieldNameIndex);
+
+	for (i =0;i <tableTitle.length;i++) {
+	
+	if ( isNaN( Number(tableArray[i][totalFieldNameIndex]) )) {
+    
+		alert("Averaging column contains a non number!");
+		i++;
+		//break;
+		}//end if ( isNaN( Number(tableArray[i][totalFieldNameIndex]) )) {
+		
+	fieldSUM = fieldSUM + Number(tableArray[i][totalFieldNameIndex]);
+	
+	
+	}//end for loop
+	
+	totalFieldNameListener = false;
+	resetFields = true;//flag used in displayTable to keep fields being messed up
+	fieldSUM = fieldSUM/tableTitle.length;
+	return fieldSUM;
+
+}//end function averaging
+
+
+//readFile(input) function called in HTML when tapping on the input element. The function below is not found I think because traditiona functions can not be hoisted? This function works when called from the script in HTML
+
+// function readFile(input) {
+//   let file = input.files[0];
+// alert(`File name: ${file.name}`);
+//   let reader = new FileReader();
+
+//   reader.readAsText(file);
+
+//   reader.onload = function() {
+//     //alertx(reader.result);
+//     console.log(reader.result)
+//    fileData.textContent = reader.result; 
+//    json = reader.result;
+//    selectedFileData = reader.result;
+//   };
+
+//   reader.onerror = function() {
+//     console.log(reader.error);
+//   };
+// const continueFromFileSelectionBtn = document.createElement('button');
+// restoreFromFilesWin.appendChild(continueFromFileSelectionBtn);
+// continueFromFileSelectionBtn.onclick = function () {
+// restoreFromFilesWin.removeChild(continueFromFileSelectionBtn);
+// restoreFromFilesWin.setAttribute('class','hidden');
+// }//end function continueFromFileSelectionBtn.onclick
+// }//end function readFile
+
+
 //experimental function to print element disabled its use May20 2022..did not work well and caused bugs..so this function is not currently called
 function print_this(elem) {
   document.body.classList.add('print-element')
@@ -15331,7 +15826,7 @@ Note that you actually have to pass the exported data as a string, not as a JSON
 
   if('serviceWorker' in navigator) {
     navigator.serviceWorker
-             .register('/DougieBaseVer40sw.js')
+             .register('/DougieBaseVer42sw.js')
              .then(function() { console.log('Service Worker Registered'); });
 			alert('Service Worker Registered!');
 		

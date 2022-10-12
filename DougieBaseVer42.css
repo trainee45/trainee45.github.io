@@ -1,4 +1,4 @@
-/*DougieBaseVer40.css editNTFieldNamesDougieBaseVer40.css DougieBaseVer40.css from experimentalDougieBaseVer37.css added #manualContactsWin Jan6 2022 Dec22 from DougieBaseVer36.css Dec5 from Copy of DougieBaseVer36 Nov14 from spDougieBaseVer36.css landscape table search and preview edit Date:Nov9 save preferences added chooseColoursWin from. tdEdit Oct 16.*/
+/*DougieBaseVer42.css Date- Oct4 2022 DougieBaseVer40.css date Sept24 2022 added #restoreFromFilesWin editNTFieldNamesDougieBaseVer40.css DougieBaseVer40.css from experimentalDougieBaseVer37.css added #manualContactsWin Jan6 2022 Dec22 from DougieBaseVer36.css Dec5 from Copy of DougieBaseVer36 Nov14 from spDougieBaseVer36.css landscape table search and preview edit Date:Nov9 save preferences added chooseColoursWin from. tdEdit Oct 16.*/
 /*clearBkgrdDougieBaseVer34.css in WorkingCopy allow background image*/
 /* //Date:Oct5 2021 Removed Double tap to avoid magnification in Manage files view full screen search select filenames. iOS15 safari has no way to disable double tap for magnification. More cosmetics with dataBaseName titles added .titleBanner to CSS*/
 /*font color of button text is blue in iOS 15 why? Forced it to black large Oct2 2021 touch-action: manipulation; to prevent double tap zoom … DID NOT WORK added titleBanner for About db
@@ -412,7 +412,7 @@ To get to edit date or other cell contents and the return btn and save btn to ap
 	
 	
 /*prefWin was here moved to sort search group June 14 trying to fix prefWin position in Safari portrait copySampleDb Aug 14 Put #newFieldWin in the prefWin category Aug27*/
-#reNameWin, #aboutDBWin, #whatsNewWin, #memoryWindow, #fileNames, #createNewDBWin, #manageFilesWin, #backupFilesWin, #backingUpDBWin, #restoreDBWin, #copySampleDb, #tutorialSampleDb, #newTableNameWin, #promptBox {
+#reNameWin, #aboutDBWin, #whatsNewWin, #memoryWindow, #fileNames, #createNewDBWin, #manageFilesWin, #backupFilesWin, #backingUpDBWin, #restoreDBWin, #copySampleDb, #tutorialSampleDb, #newTableNameWin, #promptBox, #restoreFromFilesWin {
 	position: fixed; /*was absolute relative fixed didn't work */
         top: 250px; /* 200px 100% was 190 then 100%*/
         transform: translate(-50%,-50%);
@@ -433,6 +433,11 @@ top: 300px;
 height: 475px;/*was 300 px*/
 text-align: center;
 overflow: scroll;	
+}
+
+#restoreFromFilesWin {
+top: 300px;
+height: 425px;	
 }
 	
 /*#prefWin {
