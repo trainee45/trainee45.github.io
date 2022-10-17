@@ -1,4 +1,4 @@
-//DougieBaseVer42.js use for github retryTOTALDougieBaseVer42.js Oct11 2022 AGE (TOTAL) if COST in header will add $ to result after adding now will add even if entry is NaN works if all items in column are numbers use search phrasex—for (let k = 4; k < numberOfFields; k++) { — TOTALDougieBaseVer42.js DougieBaseVer42.js Date Oct 5 .. use this to update github! Oct4 2022 from restoreFromLocalFileDougieBaseVer40.js fallBack2Sept29restoreFromLocalFileDougieBaseVer40.js restoreFromLocalFileDougieBaseVer40 Date Sept25 2022 WORKS! Added Scroll to bottom in manage window DougieBaseVer40.js fix!editSearchedNoteDougieBaseVer40.js Think this is fixed ? Sept 20 2022 editSearchedNoteDougieBaseVer40.js As of Sept 11 2022, can now edit the single record view obtained as a result of a record search. Still testing..seems to work change SW to ver 26 before sending to github! - from createNewDougieBaseVer40.js from eMailDougieBaseVer40.js email now active  fixContactsBugDougieBaseVer40.js Jun7 fixed dbl tap deleting instead of editing a new table ..deleteRecordNewTable = false; .. June6 fixed repeat record entry in contacts tables if repeating creating a contacts table DougieBaseVer40.js June4 saveBtn2 fixed and flashing displayTableBtn when CONVERT file format June3 fixed search bug May28 fixed tableLimit noAlertsplusContactshitsTablefixADDCONTACTSDougieBaseVer40 May18 fixed share data error May28 2022 tableLimit plusContactshitsTablefixADDCONTACTSDougieBaseVer40.js May17 May15 May 13 May9 hitsTablefixADDCONTACTSDougieBaseVer40.js May5  from fixADDCONTACTSDougieBaseVer40.js May1  testCancelsweetAlertnoAlertsmoreBlock+DougieBaseVer40.jsApri25 2022
+//DougieBaseVer42.js Oct16 2022 incorporating moreTablesBtnDougieBaseVer42.js Oct11 2022 retryTOTALDougieBaseVer42.js Oct11 2022 AGE (TOTAL) if COST in header will add $ to result after adding now will add even if entry is NaN works if all items in column are numbers use search phrasex—for (let k = 4; k < numberOfFields; k++) { — TOTALDougieBaseVer42.js DougieBaseVer42.js Date Oct 5 .. use this to update github! Oct4 2022 from restoreFromLocalFileDougieBaseVer40.js fallBack2Sept29restoreFromLocalFileDougieBaseVer40.js restoreFromLocalFileDougieBaseVer40 Date Sept25 2022 WORKS! Added Scroll to bottom in manage window DougieBaseVer40.js fix!editSearchedNoteDougieBaseVer40.js Think this is fixed ? Sept 20 2022 editSearchedNoteDougieBaseVer40.js As of Sept 11 2022, can now edit the single record view obtained as a result of a record search. Still testing..seems to work change SW to ver 26 before sending to github! - from createNewDougieBaseVer40.js from eMailDougieBaseVer40.js email now active  fixContactsBugDougieBaseVer40.js Jun7 fixed dbl tap deleting instead of editing a new table ..deleteRecordNewTable = false; .. June6 fixed repeat record entry in contacts tables if repeating creating a contacts table DougieBaseVer40.js June4 saveBtn2 fixed and flashing displayTableBtn when CONVERT file format June3 fixed search bug May28 fixed tableLimit noAlertsplusContactshitsTablefixADDCONTACTSDougieBaseVer40 May18 fixed share data error May28 2022 tableLimit plusContactshitsTablefixADDCONTACTSDougieBaseVer40.js May17 May15 May 13 May9 hitsTablefixADDCONTACTSDougieBaseVer40.js May5  from fixADDCONTACTSDougieBaseVer40.js May1  testCancelsweetAlertnoAlertsmoreBlock+DougieBaseVer40.jsApri25 2022
 //NOTE ALERTS REMOVED HAVE A x after alert SO USE FIND REPLACE SEARCH TO RESTORE THEM!! i.e. //alertx("message data…") can be restored by search and replace for //alertx and replace with alert
 //moreBlock+DougieBaseVer40.js April17 April15 fallBackApril15moreBlock+DougieBaseVer40.js Copy of moreBlock+DougieBaseVer40.js fallBackApril14moreBlock+DougieBaseVer40.js moreBlock+DougieBaseVer40.js April10 for testing and when works back to block… from block+DougieBaseVer40.js DougieBaseVer40.js from shareDeleteRecordNewTableDougieBaseVer37.js WILL THIS FILE AUTOMATICALLY SYNC WITH ICLOUD.YES!deleteRecordNewTableDougieBaseVer37.js NOTE ALERTS REMOVED HAVE A > AFTER THE " SO USE FIND REPLACE SEARCH TO RESTORE THEM!! i.e. //alert("> message data…") can be restored by search and replace for //alert("> …) .. MUST PUT A SPACE AFTER THE> CHARACTER! fromNewTablehitsTableDougieBaseVer37.js pushContactsFormtableIndexaddContactsDougieBaseVer37 ADD CONTACTS number of dynamicfields = 1 now createnewDB resets newTableSpecificVariables and savedTablesArray to 0 savedTablesArray.length increases by 1 as each table is created fixed manal contact entry fields fixed + contacts deletingTableField variable added Marc19  contactsFormtableIndexaddContactsDougieBaseVer37.js manual contacts now works Mar13 tableIndexaddContactsDougieBaseVer37.js from deleteNTtableIndexaddContactsDougieBaseVer37.js Mar11 from delete last and first and middle tables works!  tableIndexaddContactsDougieBaseVer37.js Mar9 2022 deleteItemtableIndexaddContactsDougieBaseVer37.js from tableIndexaddContactsDougieBaseVer37 WORKS Mar8 FOR CRETION NEWBB BEFORE ANY DB LOADED MAR6 from createNewaddContactsDougieBaseVer37 from addContactsDougieBaseVer37 from Copy of addContactsDougieBaseVer37 based on date: Feb22 2022 worksKeepTestPlayWithNewTableContactsDougieBaseVer37 Feb 17 2022 Feb 13 2022 from testPlayWithNewTableContactsDougieBaseVer37 Feb10 from playWithSTRowsEditTDNewTableContactsDougieBaseVer37.js FEB6 FEB4 2022 from workingOnEditTDNewTableContactsDougieBaseVer37.js currentJan19ContactsDougieBaseVer37.js now adding newTable variables ..Jan11 go to fallBackJan11 if meeses up workingOnContactsDougieBaseVer37.js Jan2 THIS VERSION WORKS WITH SAFARI CONTACT PICKER!  contacts table working with search sort Dec24 Added whatsNew window  Working on retrieving contact info. See functions at bottom. ADD style="color:black" IN HTML  Dec22 moved getMemory function from html file to .js file from Dec10 2021 mobileFriendlyDougieBaseVer37.js from DougieBaseVer36.js Dec5 sw11 from messWith Dec2 DougieBaseVer36.js Dec1 from flashFileNameDougieBaseVer36.js from createNewDBDougieBaseVer36 Nov30 Nov28 added addToDynamicFields.setAttribute('class','borderBlink') to border in editMoreFields function and addNoteBtn.setAttribute('class','borderBlink'); in saveBtn.onclick for createNewDB renameBtn.setAttribute('class','borderBlink'); in preferences displayDataBtn.setAttribute('class','borderBlink'); in function renameTitle Nov28 borderBlink css is in the html file  Nov 27 fine tuned flow of createNewDB Nov24 fixed create newDB bug! Nov 22 edit notes displayed n real time Nov17 added tableScreenOptions to editTableTrigger to not mess up table display Nov14 from spDougieBaseVer36.js landscape table search and preview edid Date:Nov9 save preferences from Date:Nov4 added Easter egg and save settings preferencesDougieBaseVer36.js from fixEditDougieBaseVer35.js from 
 //changed addEventListener to copy instead of dblclick Oct16 made default double click Oct31 2021  clearBkgrdDougieBaseVer34.js clear background and fixed crashes that occur if user makes illogical moves Oct12 2021 use to update workingCopy and Safarii etc
@@ -7153,6 +7153,7 @@ const newTableNameCancelBtn = document.querySelector('#newTableNameCancelBtn'); 
  //from newBtn.onclick..originalNumberRecords = undefined tableTitle.length = 3
  
  const homeScreenBtn = document.querySelector('#homeScreenBtn');
+ const moreTablesBtn = document.querySelector('#moreTablesBtn');
  const homeScreenBtn2 = document.querySelector('#homeScreenBtn');
  
  //NC Jan9
@@ -10201,6 +10202,78 @@ homeScreenBtn.textContent = "RETURN to Home Screen";
 			showTable.setAttribute('class', 'hidden');
 		// LEFT OFF HERE DEC 24 2020 have to figure out refreshed = 0 and refreshed = 1 so field headers are generated or not	deleteWindow.setAttribute('class','hidden');
 	}//end homeScreenBtn2.onclick
+	
+//moreTablesBtn
+moreTablesBtn.onclick = function () {
+		totalInfoP.style.display = "none";
+		fieldSUM = 0;//clear to 0 in case TOTAL function has been used
+emailBtn.setAttribute('class','tdEdit');//if cancel CONTACTS or ignore flashing CONTACTS AND GO TO HOME SCRN CONTACTS BTN WILL STAY FLASHING!
+
+if(STsecondDataNameTdListener) {
+STsecondDataNameTd.removeEventListener('dblclick',STsecondDataNameTd.fn, false);
+	//STsecondDataNameTd.removeEventListener;
+	STsecondDataNameTdListener = false;
+	eMailActive = false;
+	STsecondDataNameTd.setAttribute('class','stHeadRow');
+	
+}//end if(STsecondDataNameTdListener)
+fromSearchRecord = false;
+hits.length = 0;
+
+if(hitsTable) {
+emailBtn.textContent = "CONTACTS";
+hitsTable = false;
+makeHitsTable = false;
+resetFields = true;//field headers got messed up after making a new table from a new table
+}//end if hitsTable
+if(deleteFromTableOptions) {	tableScreen.removeChild(renameNewTableBtn);
+	}//end if(deleteFromTableOptions) 
+		homeScreenBtn.setAttribute('class','tdEdit');
+	
+homeScreenBtn2.setAttribute('class','tdEdit');
+blockEdit = false;//so td edit will work again
+		
+	
+			
+			if(changeDB && !mainDBedit) {
+			removeHeadRow();//VERY IMPORTANT LINE..MAKES IT WORK!!!Date: Feb12 2022..new function This line placed here Feb13 to prevent field headers from disappearing if displayTableBtn tapped twice in a row
+		//	proved that this line is responsible for the STHeadRow disappearing when loading a newTable after a main db edit, but the header that appears has 5 dynamic fields of the previous main db!
+		}//end if changeDB
+homeScreenBtn.textContent = "RETURN to Home Screen";
+homeScreenBtn2.textContent = "RETURN to Home Screen";
+flipMenu.textContent = "Tap - Click to show / hide TABLE MENU";		
+	if(makeContactsTable) {
+		homeScreenBtn.setAttribute('class','normalBtn');	
+		homeScreenBtn2.setAttribute('class','normalBtn');	
+	}//end if makeContactsTable
+	
+		if(makeContactsTable || loadFromTableOptions) {
+				//NCJan10..If messed up go back to fallBackJan10
+				//clearHeadRow();	
+		//trimHeadRow();
+	//	clearTableRows();
+		//removeDynamicFields();
+		changeDB = true;//IMPORTANT KEEP setupNewTable makes this false so it needs to be made true here for field headers to be set up properly after showing a newTable but the 2nd homebtn #2 did not need it so not sure????
+				
+		resetFromContacts();
+			}//end if makeContactsTable
+	
+			fromViewSort = false;//turn off sort flag
+			console.log('homeScreenBtn clicked');
+			
+	saveTableBtn.setAttribute('class','normalBtn');	
+	saveTableBtn2.setAttribute('class','normalBtn');	
+	flipMenu.setAttribute('class','normalBtn');
+	$("#flip").css({"background-color": "lightgrey", "border-color": "black"});
+	
+			showTable.setAttribute('class', 'hidden');
+			//tableScreen.setAttribute('class','showing');
+			tableScreen.setAttribute('class','showing');
+			
+			tableScreenOptions();
+		
+		}//end moreTablesBtn.onclick
+//moreTablesBtn
 	
 		
 		// //return to search table window
