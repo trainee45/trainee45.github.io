@@ -1,4 +1,4 @@
-/*DougieBaseVer42sw.js Date - Oct4 2022 DougieBaseVer40sw.js from DougieBaseVer39sw.js Feb 14 2022 Dec25 Dec10 from mobileFriendlyDougieBaseVer37sw.js from Copy of tryThisSw.js Nov16
+/*DougieBaseVer43sw.js DougieBaseVer42sw.js Date - Oct4 2022 DougieBaseVer40sw.js from DougieBaseVer39sw.js Feb 14 2022 Dec25 Dec10 from mobileFriendlyDougieBaseVer37sw.js from Copy of tryThisSw.js Nov16
  Copyright 2016 Google Inc. All Rights Reserved.
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
 // Names of the two caches used in this version of the service worker.
 // Change to v2, etc. when you update any of the local resources, which will
 // in turn trigger the install event again.
-const PRECACHE = 'precache-v32';
+const PRECACHE = 'precache-v33';
 const RUNTIME = 'runtime';
 
 // A list of local resources we always want to be cached.
@@ -28,9 +28,9 @@ const PRECACHE_URLS = [
        '/index.html',//directory path to project folder/app name.html file
 	   
 	    // 'https://github.com/trainee45/trainee45.github.io/TableNotesVer29.html',//directory path to project folder/app name.html file
-       '/DougieBaseVer42.js',//directory path to project folder/app name.js file
-       '/DougieBaseVer42.css',////directory path to project folder/app name.css file
-	   '/smallDeviceDougieBaseVer42.css',//tested in Inspect Dec10 2021
+       '/DougieBaseVer43.js',//directory path to project folder/app name.js file
+       '/DougieBaseVer43.css',////directory path to project folder/app name.css file
+	   '/smallDeviceDougieBaseVer43.css',//tested in Inspect Dec10 2021
 	   '/trainsDBTableNotes.webmanifest',////directory path to project folder/app name.trainmanifest file
 	   '/jquery-3.6.0.min.js',////directory path to project folder/app name.jQuery file
 	    '/eeyore.JPG',//add this file to github repository

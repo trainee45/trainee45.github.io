@@ -1,4 +1,4 @@
-//DougieBaseVer42.js Oct19 Oct16 2022 incorporating moreTablesBtnDougieBaseVer42.js Oct11 2022 retryTOTALDougieBaseVer42.js Oct11 2022 AGE (TOTAL) if COST in header will add $ to result after adding now will add even if entry is NaN works if all items in column are numbers use search phrasex—for (let k = 4; k < numberOfFields; k++) { — TOTALDougieBaseVer42.js DougieBaseVer42.js Date Oct 5 .. use this to update github! Oct4 2022 from restoreFromLocalFileDougieBaseVer40.js fallBack2Sept29restoreFromLocalFileDougieBaseVer40.js restoreFromLocalFileDougieBaseVer40 Date Sept25 2022 WORKS! Added Scroll to bottom in manage window DougieBaseVer40.js fix!editSearchedNoteDougieBaseVer40.js Think this is fixed ? Sept 20 2022 editSearchedNoteDougieBaseVer40.js As of Sept 11 2022, can now edit the single record view obtained as a result of a record search. Still testing..seems to work change SW to ver 26 before sending to github! - from createNewDougieBaseVer40.js from eMailDougieBaseVer40.js email now active  fixContactsBugDougieBaseVer40.js Jun7 fixed dbl tap deleting instead of editing a new table ..deleteRecordNewTable = false; .. June6 fixed repeat record entry in contacts tables if repeating creating a contacts table DougieBaseVer40.js June4 saveBtn2 fixed and flashing displayTableBtn when CONVERT file format June3 fixed search bug May28 fixed tableLimit noAlertsplusContactshitsTablefixADDCONTACTSDougieBaseVer40 May18 fixed share data error May28 2022 tableLimit plusContactshitsTablefixADDCONTACTSDougieBaseVer40.js May17 May15 May 13 May9 hitsTablefixADDCONTACTSDougieBaseVer40.js May5  from fixADDCONTACTSDougieBaseVer40.js May1  testCancelsweetAlertnoAlertsmoreBlock+DougieBaseVer40.jsApri25 2022
+//DougieBaseVer43.js Nov9 2022 from bugDatesdynamicTelephoneDougieBaseVer42.js FIXED Activation glitches? Nov7 fixed bug in dates when adding record (+) to a new table dynamicTelephoneDougieBaseVer42.js.. not yet published.. Oct29 2022 need to add code at moreTables and homescreenBtn2 and refresh..DONE .. telephoneDougieBaseVer42.js RESET BLINK IF TELEPHONE OR EMAIL HAD BEEN ACTIVATED Oct 22 2022 this version works WILL TEST SOME MORE added code for telephone similar to email at displayTable that was missing.  DougieBaseVer42.js Oct19 Oct16 2022 incorporating moreTablesBtnDougieBaseVer42.js Oct11 2022 retryTOTALDougieBaseVer42.js Oct11 2022 AGE (TOTAL) if COST in header will add $ to result after adding now will add even if entry is NaN works if all items in column are numbers use search phrasex—for (let k = 4; k < numberOfFields; k++) { — TOTALDougieBaseVer42.js DougieBaseVer42.js Date Oct 5 .. use this to update github! Oct4 2022 from restoreFromLocalFileDougieBaseVer40.js fallBack2Sept29restoreFromLocalFileDougieBaseVer40.js restoreFromLocalFileDougieBaseVer40 Date Sept25 2022 WORKS! Added Scroll to bottom in manage window DougieBaseVer40.js fix!editSearchedNoteDougieBaseVer40.js Think this is fixed ? Sept 20 2022 editSearchedNoteDougieBaseVer40.js As of Sept 11 2022, can now edit the single record view obtained as a result of a record search. Still testing..seems to work change SW to ver 26 before sending to github! - from createNewDougieBaseVer40.js from eMailDougieBaseVer40.js email now active  fixContactsBugDougieBaseVer40.js Jun7 fixed dbl tap deleting instead of editing a new table ..deleteRecordNewTable = false; .. June6 fixed repeat record entry in contacts tables if repeating creating a contacts table DougieBaseVer40.js June4 saveBtn2 fixed and flashing displayTableBtn when CONVERT file format June3 fixed search bug May28 fixed tableLimit noAlertsplusContactshitsTablefixADDCONTACTSDougieBaseVer40 May18 fixed share data error May28 2022 tableLimit plusContactshitsTablefixADDCONTACTSDougieBaseVer40.js May17 May15 May 13 May9 hitsTablefixADDCONTACTSDougieBaseVer40.js May5  from fixADDCONTACTSDougieBaseVer40.js May1  testCancelsweetAlertnoAlertsmoreBlock+DougieBaseVer40.jsApri25 2022
 //NOTE ALERTS REMOVED HAVE A x after alert SO USE FIND REPLACE SEARCH TO RESTORE THEM!! i.e. //alertx("message data…") can be restored by search and replace for //alertx and replace with alert
 //moreBlock+DougieBaseVer40.js April17 April15 fallBackApril15moreBlock+DougieBaseVer40.js Copy of moreBlock+DougieBaseVer40.js fallBackApril14moreBlock+DougieBaseVer40.js moreBlock+DougieBaseVer40.js April10 for testing and when works back to block… from block+DougieBaseVer40.js DougieBaseVer40.js from shareDeleteRecordNewTableDougieBaseVer37.js WILL THIS FILE AUTOMATICALLY SYNC WITH ICLOUD.YES!deleteRecordNewTableDougieBaseVer37.js NOTE ALERTS REMOVED HAVE A > AFTER THE " SO USE FIND REPLACE SEARCH TO RESTORE THEM!! i.e. //alert("> message data…") can be restored by search and replace for //alert("> …) .. MUST PUT A SPACE AFTER THE> CHARACTER! fromNewTablehitsTableDougieBaseVer37.js pushContactsFormtableIndexaddContactsDougieBaseVer37 ADD CONTACTS number of dynamicfields = 1 now createnewDB resets newTableSpecificVariables and savedTablesArray to 0 savedTablesArray.length increases by 1 as each table is created fixed manal contact entry fields fixed + contacts deletingTableField variable added Marc19  contactsFormtableIndexaddContactsDougieBaseVer37.js manual contacts now works Mar13 tableIndexaddContactsDougieBaseVer37.js from deleteNTtableIndexaddContactsDougieBaseVer37.js Mar11 from delete last and first and middle tables works!  tableIndexaddContactsDougieBaseVer37.js Mar9 2022 deleteItemtableIndexaddContactsDougieBaseVer37.js from tableIndexaddContactsDougieBaseVer37 WORKS Mar8 FOR CRETION NEWBB BEFORE ANY DB LOADED MAR6 from createNewaddContactsDougieBaseVer37 from addContactsDougieBaseVer37 from Copy of addContactsDougieBaseVer37 based on date: Feb22 2022 worksKeepTestPlayWithNewTableContactsDougieBaseVer37 Feb 17 2022 Feb 13 2022 from testPlayWithNewTableContactsDougieBaseVer37 Feb10 from playWithSTRowsEditTDNewTableContactsDougieBaseVer37.js FEB6 FEB4 2022 from workingOnEditTDNewTableContactsDougieBaseVer37.js currentJan19ContactsDougieBaseVer37.js now adding newTable variables ..Jan11 go to fallBackJan11 if meeses up workingOnContactsDougieBaseVer37.js Jan2 THIS VERSION WORKS WITH SAFARI CONTACT PICKER!  contacts table working with search sort Dec24 Added whatsNew window  Working on retrieving contact info. See functions at bottom. ADD style="color:black" IN HTML  Dec22 moved getMemory function from html file to .js file from Dec10 2021 mobileFriendlyDougieBaseVer37.js from DougieBaseVer36.js Dec5 sw11 from messWith Dec2 DougieBaseVer36.js Dec1 from flashFileNameDougieBaseVer36.js from createNewDBDougieBaseVer36 Nov30 Nov28 added addToDynamicFields.setAttribute('class','borderBlink') to border in editMoreFields function and addNoteBtn.setAttribute('class','borderBlink'); in saveBtn.onclick for createNewDB renameBtn.setAttribute('class','borderBlink'); in preferences displayDataBtn.setAttribute('class','borderBlink'); in function renameTitle Nov28 borderBlink css is in the html file  Nov 27 fine tuned flow of createNewDB Nov24 fixed create newDB bug! Nov 22 edit notes displayed n real time Nov17 added tableScreenOptions to editTableTrigger to not mess up table display Nov14 from spDougieBaseVer36.js landscape table search and preview edid Date:Nov9 save preferences from Date:Nov4 added Easter egg and save settings preferencesDougieBaseVer36.js from fixEditDougieBaseVer35.js from 
 //changed addEventListener to copy instead of dblclick Oct16 made default double click Oct31 2021  clearBkgrdDougieBaseVer34.js clear background and fixed crashes that occur if user makes illogical moves Oct12 2021 use to update workingCopy and Safarii etc
@@ -178,9 +178,20 @@ let refreshing = false;//flag for reset during createNewDB
 let eMailFieldNameIndex = 0;
 let eMailActive = false;//flag to indicate if email set to active
 let eMailAlertFlag = false;
+let eMailAlertFlag2 = false;
 let STsecondDataNameTdListener = false;//flag to indicate remove listener in returnToHomeScreen
 
 //to ACTIVATE EMAIL ADDRESS
+
+//to ACTIVATE Telephone number
+//let refreshing = false;//flag for reset during createNewDB
+let telephoneNumberFieldNameIndex = 0;
+let telephoneActive = false;//flag to indicate if email set to active
+let telephoneAlertFlag = false;
+let telephoneAlertFlag2 = false;
+let STfirstDataNameTdListener = false;//flag to indicate remove listener in returnToHomeScreen
+
+//to ACTIVATE telephone number
 
 let mainDBArray = [];//for error check savedOriginal
 let fromEditFieldLabels = false;//to force a simple contacts list with just 4 fields
@@ -2360,6 +2371,7 @@ displayTableBtn.setAttribute('class','borderBlinkGrn');
 searchBtn.onclick = searchRecords;
 
 newDBBtn.onclick = function () {
+//THIS IS THE NEW/CHANGE DB button in main menu!
 savedOriginal = false;//reset for loading in a new db
 fromEditFieldLabels = false;
 tableLimit = false;//reset this flag if leaving a database so the new db gets to start afresh re number of tables relative to limit date:April27
@@ -2387,6 +2399,34 @@ contactsFieldNames.length = 0;//clear the new table field names to reset for a n
 		editNote = false;
 	}
 	//code above prevent table being messed up if you do an edit then change databases before updating the table
+	
+//CODE BELOW OK BUT WHY DID I NOT ALSO ADD STSECONDDATANAMETDLISTENER???
+//function below will cover everything?
+if(telephoneActive || eMailActive || STfirstDataNameTdListener || STsecondDataNameTdListener) {
+resetFixedFieldActivity();	
+}// end if(telephoneActive || eMailActive) {
+	
+if(STfirstDataNameTdListener) {
+STfirstDataNameTd.removeEventListener('dblclick',STfirstDataNameTd.fn, false);
+	//STfirstDataNameTd.removeEventListener;
+	STfirstDataNameTdListener = false;
+	telephoneActive = false;
+	
+STfirstDataNameTd.removeEventListener;
+ STfirstDataNameTd.setAttribute('class','stHeadRow');
+	
+}//end if(STfirstDataNameTdListener)
+
+if(STsecondDataNameTdListener) {
+STsecondDataNameTd.removeEventListener('dblclick',STsecondDataNameTd.fn, false);
+	//STsecondDataNameTd.removeEventListener;
+	STsecondDataNameTdListener = false;
+	eMailActive = false;
+	STsecondDataNameTd.setAttribute('class','stHeadRow');
+	
+}//end if(STsecondDataNameTdListener)
+
+
 	getFileNames()};//this function call starts DougieBase off with current filenames as opening screen!
 manageBtn.onclick = function () {
 	manageDbListExists = true;//flag to prevent manageDbList from repeating
@@ -4270,8 +4310,8 @@ if(setup === 3)	{
 	
 	if(trigger === 'dblclick') {
 		editTDTriggerBtn.textContent = "Select-Copy";
-		timeDateFlagP.textContent = "Double Tap to EDIT the Table data cells.";
-	tdEditTriggerP.textContent = "Double Tap on the table's data cell to EDIT its contents.";	//editTDTriggerBtn.setAttribute('class','colorBtn');
+		timeDateFlagP.textContent = "CURRENT SETTING: Double Tap to EDIT the Table data cells.";
+	tdEditTriggerP.textContent = "Double Tap on the table's data cell to initiate EDIT mode and EDIT its contents. This is the default trigger choice. To change edit trigger to 'Select-Copy' go to Preferences.\r\nFIXED fields = columns 1-4; DYNAMIC fields = columns 5 and up.\r\nUse keywords TOTAL AVERAGE COST in field title (Dynamic fields only) for added functionality! (COST needs to be used with TOTAL or AVERAGE). Use TELEPHONE (in 3rd FIXED field only) or use EMAIL (in 4th FIXED field only) for activating telephone calling or email addresses. TELEPHONE and EMAIL keywords can also be used in ANY DYNAMIC field. See documentation.";	//editTDTriggerBtn.setAttribute('class','colorBtn');
 	} else {
 		editTDTriggerBtn.textContent = "Double Tap/Click";
 		timeDateFlagP.textContent = "Use Select-Copy action to EDIT the Table data cells.";
@@ -4450,19 +4490,23 @@ if(DTBtnTappedOnce ===0) {
 
 // const tdEditTriggerP = document.querySelector('#tdEditTrigger');
 	editTDTriggerBtn.onclick = function () {
+	//reset borderblink if blinking initiated by a TELEPHONE EMAIL keyword activation
+	
+	editTDTriggerBtn.setAttribute('class','tdEdit');
+	
 		editNote = true;//flag to refreshTable if notes editededitNote = false;//flag to refreshTable if notes edited also triggers table refresh if edit TD cell action is changed in preferences so ittakes effect imediately if changed in preferences. Otherwise you would have to wait for table refresh before new trigger is effective. 
 		if(trigger==='copy') {
 			trigger = 'dblclick';
 			editTDTriggerBtn.textContent = "Select-Copy";
-		timeDateFlagP.textContent = "Double Tap to EDIT the Table data cells.";
-	tdEditTriggerP.textContent = "Double Tap on the table's data cell to EDIT its contents.";	editTDTriggerBtn.setAttribute('class','colorBtn');
+		timeDateFlagP.textContent = "CURRENT SETTING: Double Tap to EDIT the Table data cells.";
+	tdEditTriggerP.textContent = "Double Tap on the table's data cell to initiate EDIT mode and EDIT its contents. This is the default trigger choice. To change edit trigger to 'Select-Copy' go to Preferences.\r\nFIXED fields = columns 1-4; DYNAMIC fields = columns 5 and up.\r\nUse keywords TOTAL AVERAGE COST in field title (Dynamic fields only) for added functionality! (COST needs to be used with TOTAL or AVERAGE). Use TELEPHONE (in 3rd FIXED field only) or use EMAIL (in 4th FIXED field only) for activating telephone calling or email addresses. TELEPHONE and EMAIL keywords can also be used in ANY DYNAMIC field. See documentation.";//note ` quote to enable \n	editTDTriggerBtn.setAttribute('class','colorBtn');
 		}//end if trigger === 'copy'
 		
 		else if(trigger === 'dblclick') {
 			trigger = 'copy';
 			editTDTriggerBtn.textContent = "Double Tap/Click";
 		timeDateFlagP.textContent = "Use Select-Copy action to EDIT the Table data cells.";
-	tdEditTriggerP.textContent = "To edit date or other cell contents 'SELECT' the contents, then tap 'COPY', Clear/Initialize the input element, then enter new text into the input element. (or 'paste' to enter original).";	editTDTriggerBtn.setAttribute('class','colorBtn');
+	tdEditTriggerP.textContent = "To edit date or other cell contents 'SELECT' the contents, then tap 'COPY', Clear/Initialize the input element, then enter new text into the input element. (or 'paste' to enter original). NOTE: TELEPHONE and EMAIL keywords ONLY WORK IN DBL-CLICK EDIT MODE!";	editTDTriggerBtn.setAttribute('class','colorBtn');
 			
 		}//end if trigger==='dblclick'
 		
@@ -7348,6 +7392,14 @@ if(loadFromTableOptions) {//&& editCurrentTable === 1
 	
 	 refreshTableP.textContent = "You have added a new Record since last creation of Table, OR you have edited a note, OR you have changed the edit table Trigger action. To update tap UPDATE TABLE button.";
 	 refreshTableBtn.onclick = function () {
+	 
+	 //CODE TO RESET BLINK IF TELEPHONE OR EMAIL HAD BEEN ACTIVATED
+if(telephoneActive || eMailActive || STfirstDataNameTdListener || STsecondDataNameTdListener) {
+resetActiveFieldHeaders();
+resetFixedFieldActivity();
+}//end if(telephoneActive || eMailActive) {
+
+//CODE TO RESET BLINK IF TELEPHONE OR EMAIL HAD BEEN ACTIVATED
 		 
 		// originalNumberRecords = tableTitle.length;//reset originalNumberRecords to reflect updated table
 		//tableScreen referenced at top of code
@@ -7358,7 +7410,7 @@ if(loadFromTableOptions) {//&& editCurrentTable === 1
 		 displayTableBtn.textContent = "DISPLAY TABLE";
 		 displayTableBtn.disabled = false;
 		 clearTableWindow.disabled = false;//Feb 12
-		 clearTableWindow.textContent = "TAP HERE TO CREATE MAINTABLE or to EDIT an existing one."
+		 clearTableWindow.textContent = "TAP HERE TO CREATE MAIN TABLE or to EDIT an existing one."
 		 refreshTable();
 	 }//end refreshTableBtn.onclick
 
@@ -7459,6 +7511,8 @@ showTable.setAttribute('class','hidden');
 	}; //end clearTableWindow.onclick
 	
   displayTableBtn.onclick = function () {
+  //alertx("at displayTableBtn : STfirstDataNameTd.textContent = " + STfirstDataNameTd.textContent + "  STsecondDataNameTdListener = " + STsecondDataNameTdListener + " STfirstDataNameTdListener = " + STfirstDataNameTdListener);
+  
   if(STsecondDataNameTdListener) {
 	STsecondDataNameTd.removeEventListener('dblclick',STsecondDataNameTd.fn, false);
 	eMailActive = false;
@@ -7466,8 +7520,32 @@ showTable.setAttribute('class','hidden');
 	
 	//STsecondDataNameTdListener = false;
 }//end if(STsecondDataNameTdListener)
+//alertx("displayTableBtn tapped: telephoneActive = " + telephoneActive);
 
+if(STfirstDataNameTdListener) {
+STfirstDataNameTd.removeEventListener('dblclick',STfirstDataNameTd.fn, false);
+	//STfirstDataNameTd.removeEventListener;
+	STfirstDataNameTdListener = false;
+	telephoneActive = false;
+STfirstDataNameTd.removeEventListener;	STfirstDataNameTd.setAttribute('class','stHeadRow');
+	
+}//end if(STfirstDataNameTdListener)
 
+//code to force rerun of displayTable function if telephone or email active in dynamic fields so TELEPHONE headind is registered again enabling addEventListener
+// if(telephoneActive || eMailActive) {
+// telephoneActive = false;
+// eMailActive = false;
+// //tableConstructed = 0;
+// alert("Going to displayTable()");
+// // refreshed = false;
+// // displayedTable = false;
+// // fromDeleteField = false;
+// //editCurrentTable = 1;
+// resetFields = true;//neccessary to format headings correctly BUT so now have to repeat code to register TELEPHONE in header in the resetFields code MAYBE THIS IS ALL I NEED ..DON'T NEED ? Make sure fields are setAttribute stHeadRow in the resetFields code?
+// displayTable();
+// //showTable.setAttribute('class', 'showing');
+	
+// }//end if(telephoneActive || eMailActive) {
   
   if(!savedOriginal) {saveOriginal();}//May12 2022
   
@@ -8565,11 +8643,15 @@ function buildRecordRows () {
 			if(!loadFromTableOptions) {
 			recordTd.textContent = dateTable[i];
 			tableArray[i][c] = dateTable[i];
-			} else if (loadFromTableOptions) {recordTd.textContent = todayString;
-			tableArray[i][c] = todayString;}//end else if loadFromTableOptions
+			} else if (loadFromTableOptions) {//recordTd.textContent = todayString;
+			recordTd.textContent = tableArray[i][1];
+			//tableArray[i][c] = todayString;
+			
+			tableArray[tableTitle.length-1][c] = todayString;
+			}//end else if loadFromTableOptions
 			// alert('tableArray[' +i + '],[' +c +'] ' + tableArray[[i],[c]]);
 
-
+//Offending code causes all dates to be current in an edited new table!!! Date:Oct30 2022
 
 
 		}//end if c=1 first td (title) dateP has to come from a date array variable in notes
@@ -8834,10 +8916,10 @@ if(fromRestore) {
 	console.log('In start displayTable function. edit = ' + edit);//demonstrate that fieldNamesArray is intacty
 	for(let j=0;j<numberOfFields;j++) {
 				console.log('fieldNamesArray[' +j+ '] = ' + fieldNamesArray[j]);
-	
+	//for dynamicTELEPHONE && j<5..so I don't have to rewrite code for STsecondDataNameTdListener
 	//ADDEVENTLISTENER IF FIELDNAME = "EMAIL"
-	if (fieldNamesArray[j] === "EMAIL") {
-	STsecondDataNameTdListener = true//flag set here so variable is correct if tapping homeBtn in table without having used dbltap on the EMAIL field. Not sure I understand why!!!
+	if (fieldNamesArray[j] === "EMAIL" && j<5) {
+	STsecondDataNameTdListener = true//flag set here so variable is correct if tapping homeBtn in table without having used dbltap on the EMAIL field. Not sure I understand why!!!see telephone..needed to add this code for telephone..it allows a removal of listener at displayBtn etc !!!important line !!!
 	console.log("fieldNamesArray[j] = EMAIL");
 	//alertx("STsecondDataNameTdListener = " + STsecondDataNameTdListener + ". fieldNamesArray[3] = " + fieldNamesArray[3]);
 	eMailFieldNameIndex = j;
@@ -8846,10 +8928,22 @@ if(fromRestore) {
 	}//end if (fieldNamesArray.textContent === 'EMAIL')
 	//ADDEVENTLISTENER IF FIELDNAME = "EMAIL"
 	
+	
+//ADDEVENTLISTENER IF FIELDNAME = "TELEPHONE"
+	if (fieldNamesArray[j] === "TELEPHONE" && j<5) {
+	STfirstDataNameTdListener = true//flag set here so variable is correct if tapping homeBtn in table without having used dbltap on the EMAIL field. Not sure I understand why!!!? Because because TdListener = true allows removal of listener code at displayBtn etc. yes!?
+	console.log("fieldNamesArray[j] = TELEPHONE");
+	//alertx("STsecondDataNameTdListener = " + STsecondDataNameTdListener + ". fieldNamesArray[3] = " + fieldNamesArray[3]);
+	telephoneFieldNameIndex = j;
+	console.log("telephoneFieldNameIndex = " + j);
+		//fieldNamesArray[j].addEventListener(dblclick, function() {eMailActive =true; alert("eMail address now active! Double click on email address to SEND EMAIL!")});//end addEventListener
+	}//end if (fieldNamesArray.textContent === 'TELEPHONE')
+	//ADDEVENTLISTENER IF FIELDNAME = "TELEPHONE"
+	
 //ADDEVENTLISTENER IF FIELDNAME = "TOTAL"
 	//if (fieldNamesArray[j] === "TOTAL" && !totalActive) {
-	if (fieldNamesArray[j].includes("TOTAL") || fieldNamesArray[j].includes("AVERAGE") || fieldNamesArray[j].includes("EMAIL")) {
-	
+	if (fieldNamesArray[j].includes("TOTAL") || fieldNamesArray[j].includes("AVERAGE") || fieldNamesArray[j].includes("EMAIL") || fieldNamesArray[j].includes("TELEPHONE")) {
+	//DOES ABOVE NEED fieldNamesArray[j].includes("EMAIL") INCLUDED?
 	//alertx("ok at TOTAL||AVERAGE||EMAIL " + fieldNamesArray[j]);
 	
 	totalFieldNameListener = true;//flag set here so variable is correct if tapping homeBtn in table without having used dbltap on the EMAIL field. Not sure I understand why!!!
@@ -8929,6 +9023,8 @@ if(renewed ===1) {
 	STfirstDataNameTd.textContent = fieldNamesArray[2];
 	STsecondDataNameTd.textContent = fieldNamesArray[3];
 	
+	//alertx("at start displayTable .. STsecondDataNameTd.textContent = " + STsecondDataNameTd.textContent);
+	
 	// 	//ADDEVENTLISTENER IF FIELDNAME = "EMAIL"
 	if (STsecondDataNameTd.textContent === "EMAIL") {
 	// emailAlertFlag = true;
@@ -8951,6 +9047,9 @@ if(renewed ===1) {
 STsecondDataNameTd.addEventListener('dblclick', STsecondDataNameTd.fn=function fn() {
 STsecondDataNameTdListener = true;
 	eMailActive =true; 
+//NOV7
+telephoneActive = false;
+STfirstDataNameTd.setAttribute('class','stHeadRow');
 	STsecondDataNameTd.setAttribute('class','borderBlink');
 	
 if(trigger === 'copy') {
@@ -8961,7 +9060,10 @@ if(trigger === 'copy') {
 	editTDTriggerBtn.setAttribute('class','borderBlink');
 	return;
 }//end if(trigger === 'copy')	
-	
+	//j<4 so this applies only to fixed fields
+	//j<4 so this applies only to fixed fields BUT J NOT FOUND ERROR SO REMOVED! Date:Nov6
+//if(!eMailAlertFlag && j<4) {
+
 if(!eMailAlertFlag) {
 	alert("eMail address now active! Double click on email address to SEND EMAIL!");
 eMailAlertFlag = true;
@@ -8977,7 +9079,42 @@ eMailAlertFlag = true;
 	}//end if (STsecondDataNameTd.textContent === 'EMAIL')
 	// //ADDEVENTLISTENER IF FIELDNAME = "EMAIL"
 	
+if (STfirstDataNameTd.textContent === "TELEPHONE") {
+
+//alertx("about to addEventListener: STfirstDataNameTd.textContent = " + STfirstDataNameTd.textContent);
 	
+STfirstDataNameTd.addEventListener('dblclick', STfirstDataNameTd.fn=function fn() {
+STfirstDataNameTdListener = true;
+	telephoneActive =true; 
+//Nov7
+eMailActive = false;
+STsecondDataNameTd.setAttribute('class','stHeadRow');
+	STfirstDataNameTd.setAttribute('class','borderBlink');
+	
+if(trigger === 'copy') {
+	alert("The trigger to edit a data cell MUST BE IN DBL-CLICK mode in order to use the active telephone number function. Return to Preferences and reset the edit mode to DBL-CLICK");
+	
+	showTable.setAttribute('class','hidden');
+	prefWindow.setAttribute('class','showing');
+	editTDTriggerBtn.setAttribute('class','borderBlink');
+	return;
+}//end if(trigger === 'copy')	
+//j<4 so this applies only to fixed fields BUT J NOT FOUND ERROR SO REMOVED! Date:Nov6
+//if(!telephoneAlertFlag && j<4) {
+
+if(!telephoneAlertFlag) {
+	alert("Telephone number now active! Double click on telephone number to CALL!");
+telephoneAlertFlag = true;
+	}//end if(telephoneAlertFlag) 
+	
+
+	}, false);//end addEventListener
+	
+	
+	
+	
+	}//end if (STfirstDataNameTd.textContent === 'TELEPHONE')
+	// //ADDEVENTLISTENER IF FIELDNAME = "TELEPHONE"	
 	
 	
 	//create the added fields required
@@ -9092,6 +9229,12 @@ fromDeleteField = false;// turn off this flag so that addFields is not called ag
 	//if field heading is TOTAL addzevent listener
 	//alertx("fieldNamesArray[k] = " + fieldNamesArray[k] + "fieldNamesArray[k].includes(TOTAL)" + fieldNamesArray[k].includes("TOTAL"));
 	
+//SHOULD I RESET BLINK OF ACTIVE field header here as well? It does get reset if resetFields has been made True when homeBtn moreNotesBtn tapped. 
+//to reset field header if blinking
+	// STnextFieldHeading.setAttribute('class','stHeadRow');//resets cancels blinking if previously applied by an addEventListener
+	
+	
+	
 	if(fieldNamesArray[k].includes("TOTAL") || fieldNamesArray[k].includes("AVERAGE")){
 	//alertx("adding event listener");
 	//totalFieldNameIndex = k;
@@ -9103,6 +9246,19 @@ fromDeleteField = false;// turn off this flag so that addFields is not called ag
 		//blockEdit = false;
 		return false;
 	}
+	
+//IF EMAIL OR TELEPHONE ACTIVE SWITCH THESE OFF SO TAPPING IN TOTAL OR A ERAGING TD CELLS DOES NOT CAUSE PHONE OR EMAIL API TO START UP.vvvvvDATE NOV5 2022
+
+//CODE TO RESET BLINK IF TELEPHONE OR EMAIL HAD BEEN ACTIVATED
+if(telephoneActive || eMailActive) {
+resetActiveFieldHeaders();
+}//end if(telephoneActive || eMailActive) {
+
+//CODE TO RESET BLINK IF TELEPHONE OR EMAIL HAD BEEN ACTIVATED
+
+//IF EMAIL OR TELEPHONE ACTIVE SWITCH THESE OFF SO TAPPING IN TOTAL OR A ERAGING TD CELLS DOES NOT CAUSE PHONE OR EMAIL API TO START UP.^^^^^^^^^
+
+
 			totalActive = true;
 			totalFieldNameIndex = k;
 			
@@ -9145,6 +9301,68 @@ if (fieldNamesArray[k] === "AGE" + " (TOTAL)" || fieldNamesArray[k] === "AGE" + 
 			});//end addEventListener
 		
 		}//end if (STnextFieldHeading.textContent === "TOTAL || "AVERAGING) {
+		
+//ADDING CODE FOR TELEPHONE AND EMAIL IN DYNAMIC HEADERS	vvv
+if(fieldNamesArray[k].includes("TELEPHONE") || fieldNamesArray[k].includes("EMAIL")){
+
+//alertx("at fieldNamesArray contains TELEPHONE..adding eventListener");
+//STfirstDataNameTd.addEventListener('dblclick', STfirstDataNameTd.fn=function fn() {
+	STnextFieldHeading.addEventListener('dblclick', STnextFieldHeading.fn=function fn() {
+		//check table is initialized
+		if(blockEdit) {
+		alert("Before tapping this Field Title, Tap Return to Home Screen first to initialize the table layout you just edited or created!");
+		//blockEdit = false;
+		return false;
+	}
+			
+STnextFieldHeading.setAttribute('class','borderBlink');
+//alertx("trigger = " + trigger + " prefVariablesArray[9] = " + prefVariablesArray[9]);
+//check edit mode trigger
+if(trigger === 'copy') {
+	alert("The trigger to edit a data cell MUST BE IN DBL-CLICK mode in order to use the active telephone number function. Return to Preferences and reset the edit mode to DBL-CLICK");
+	
+	showTable.setAttribute('class','hidden');
+	prefWindow.setAttribute('class','showing');
+	editTDTriggerBtn.setAttribute('class','borderBlink');
+	return;
+}//end if(trigger === 'copy')	
+	
+	
+	if(fieldNamesArray[k].includes("TELEPHONE")) {
+			telephoneActive = true;
+			telephoneAlertFlag2 = false;
+			eMailAlertFlag2 = true;
+		} else if (fieldNamesArray[k].includes("EMAIL")) {
+			eMailActive = true;
+			eMailAlertFlag2 = false;
+			telephoneAlertFlag2 = true;
+		}//end if else if	
+		
+//STsecondDataNameTd.removeEventListener('dblclick',STsecondDataNameTd.fn, false);
+//k is 4 or > so this applies only to dynamic fields
+if(!eMailAlertFlag2) {
+	alert("eMail address now active! Double click on email address to SEND EMAIL!");
+eMailAlertFlag2 = true;
+	}//end if(!eMailAlertFlag) 
+	
+if(!telephoneAlertFlag2) {
+	alert("Telephone number is now active! Double click on telephone number to PHONE!");
+telephoneAlertFlag2 = true;
+	}//end if(!eMailAlertFlag) 
+
+STnextFieldHeading.removeEventListener('dblclick', STnextFieldHeading.fn, false);
+
+//STnextFieldHeading.setAttribute('class','stHeadRow');
+//STnextFieldHeading.setAttribute('class','borderBlink')
+
+});//end STnextFieldHeading.addEventListener
+
+}//end if(fieldNamesArray[k].includes("TELEPHONE") ||
+
+
+//ADDING CODE FOR TELEPHONE AND EMAIL IN DYNAMIC HEADERS	^^^
+		
+		
 
 		}//end for loop
 	//}//end if !makeContactsTable && !loadFromTableOptions) || newTableEdit	
@@ -9259,12 +9477,16 @@ STheadRow.appendChild(STsecondDataNameTd);
 for (let k = 4; k < numberOfFields; k++) {
 	const STnextFieldHeading = document.createElement('td');
 	STnextFieldHeading.textContent = fieldNamesArray[k];	
+	//to reset field header if blinking
+	STnextFieldHeading.setAttribute('class','stHeadRow');//resets cancels blinking if previously applied by an addEventListener
+	
 	STheadRow.appendChild(STnextFieldHeading);
 	//if field heading is TOTAL addzevent listener
 	
 	
 //	if (STnextFieldHeading.textContent === "TOTAL") {
 
+//reapply eventListeners
 if(fieldNamesArray[k].includes("TOTAL")|| fieldNamesArray[k].includes("AVERAGE")) {
 	//alertx("adding event listener"); 
 		STnextFieldHeading.addEventListener('dblclick', function () {
@@ -9313,6 +9535,67 @@ if (fieldNamesArray[k] === "AGE" + " (TOTAL)" || fieldNamesArray[k] === "AGE" + 
 			});//end addEventListener
 		
 		}//end if (STnextFieldHeading.textContent === "TOTAL")
+		
+//ADDING CODE FOR TELEPHONE AND EMAIL IN //ADDING CODE FOR TELEPHONE AND EMAIL IN DYNAMIC HEADERS	vvv must includ in resetFields section!
+if(fieldNamesArray[k].includes("TELEPHONE") || fieldNamesArray[k].includes("EMAIL")){
+
+//alertx("at fieldNamesArray contains TELEPHONE..adding eventListener");
+//STfirstDataNameTd.addEventListener('dblclick', STfirstDataNameTd.fn=function fn() {
+	STnextFieldHeading.addEventListener('dblclick', STnextFieldHeading.fn=function fn() {
+		//check table is initialized
+		if(blockEdit) {
+		alert("Before tapping this Field Title, Tap Return to Home Screen first to initialize the table layout you just edited or created!");
+		//blockEdit = false;
+		return false;
+	}
+			
+STnextFieldHeading.setAttribute('class','borderBlink');
+//check trigger
+//alert("trigger = " + trigger + " prefVariablesArray[9] = " + prefVariablesArray[9]);
+
+if(trigger === 'copy') {
+	alert("The trigger to edit a data cell MUST BE IN DBL-CLICK mode in order to use the active telephone number function. Return to Preferences and reset the edit mode to DBL-CLICK");
+	
+	showTable.setAttribute('class','hidden');
+	prefWindow.setAttribute('class','showing');
+	editTDTriggerBtn.setAttribute('class','borderBlink');
+	return;
+}//end if(trigger === 'copy')	
+	if(fieldNamesArray[k].includes("TELEPHONE")) {
+			telephoneActive = true;
+			telephoneAlertFlag2 = false;
+			eMailAlertFlag2 = true;
+		} else if (fieldNamesArray[k].includes("EMAIL")) {
+			eMailActive = true;
+			eMailAlertFlag2 = false;
+			telephoneAlertFlag2 = true;
+		}//end if else if	
+		
+//STsecondDataNameTd.removeEventListener('dblclick',STsecondDataNameTd.fn, false);
+//k is 4 or > so this applies only to dynamic fields
+if(!eMailAlertFlag2) {
+	alert("eMail address now active! Double click on email address to SEND EMAIL!");
+eMailAlertFlag2 = true;
+	}//end if(!eMailAlertFlag) 
+	
+if(!telephoneAlertFlag2) {
+	alert("Telephone number is now active! Double click on telephone number to PHONE!");
+telephoneAlertFlag2 = true;
+	}//end if(!eMailAlertFlag) 
+
+STnextFieldHeading.removeEventListener('dblclick', STnextFieldHeading.fn, false);
+
+//STnextFieldHeading.setAttribute('class','stHeadRow');
+//STnextFieldHeading.setAttribute('class','borderBlink')
+
+});//end STnextFieldHeading.addEventListener
+
+}//end if(fieldNamesArray[k].includes("TELEPHONE") ||
+
+
+
+//Date:Oct25 this works so now need more debugging!!
+//ADDING CODE FOR TELEPHONE AND EMAIL IN DYNAMIC HEADERS	^^^
 
 }//end for loop
 
@@ -9698,31 +9981,133 @@ if(!linkLabel) {
 			console.log("trigger = " + trigger);
 	STrecordTd.addEventListener(trigger, function () {
 	
+//IF EMAIL OR TELEPHONE ACTIVE SWITCH THESE OFF SO TAPPING IN TOTAL OR AVERAGING TD CELLS DOES NOT CAUSE PHONE OR EMAIL API TO START UP.vvvvvDATE NOV5 2022
+
+//CODE TO RESET BLINK IF TELEPHONE OR EMAIL HAD BEEN ACTIVATED
+//fieldNamesArray[k].includes("TELEPHONE")
+
+//if(telephoneActive && fieldNamesArray[c] !== "TELEPHONE" || eMailActive && fieldNamesArray[c] !== "EMAIL") {
+
+// if(telephoneActive && !(fieldNamesArray[c].includes("TELEPHONE") || eMailActive && !(fieldNamesArray[c].includes("EMAIL"))) ) {
+
+// resetActiveFieldHeaders();
+// }//end if(telephoneActive || eMailActive) {
+
+//DATE NOV7
+console.log("telephoneActive = " + telephoneActive + " eMailActive = " + eMailActive);
+
+if(telephoneActive && !(fieldNamesArray[c].includes("TELEPHONE"))) {
+console.log("at if telephoneActive - resettingActiveFieldHeaders " + " c = " + c);
+
+resetActiveFieldHeaders();//resetActiveFieldHeaders only applies to DYNAMIC FIELDS this loops through all fields and so of course some woll not contain keyword and will do a reset^instead try making keywords TELEPHONE AND EMAIL  = false when tapping a TOTAL FIELD
+//telephoneActive = true;
+}//end if(telephoneActive 
+
+if(eMailActive && !(fieldNamesArray[c].includes("EMAIL"))) {
+console.log("if eMailActive - resettingActiveFieldHeaders " + "c = " + c);
+resetActiveFieldHeaders();
+//eMailActive = true;
+}//end if(emailActive 
+
+//CODE TO RESET BLINK IF TELEPHONE OR EMAIL HAD BEEN ACTIVATED
+
+//IF EMAIL OR TELEPHONE ACTIVE SWITCH THESE OFF SO TAPPING IN TOTAL OR AVERAGING TD CELLS DOES NOT CAUSE PHONE OR EMAIL API TO START UP.^^^^^^^^^	
+	
 //code to send email IF eMailActive = true	
 if(c===3 && eMailActive) {
 let eMailAddress = STrecordTd.textContent;
 
 //eMailActive = false;//should i comment this out so more than one email can be sent?
-
+//Nov7 DON'T REMOVE EVENT LISTENER BECAUSE NO WAY OF REINSTATING IT WITHOUT RUNNING DISPLAYTABLE AGAIN.
 //STsecondDataNameTd.removeEventListener;
-STsecondDataNameTd.removeEventListener('dblclick',STsecondDataNameTd.fn, false);//added this July8 should it be removed?
+//STsecondDataNameTd.removeEventListener('dblclick',STsecondDataNameTd.fn, false);//added this July8 should it be removed?
 //STsecondDataNameTd.style.backGroundColor="lightpink";
 //STsecondDataNameTd.setAttribute('class','stHeadRow');
 //window.open( String( 'mailto:recipient^example.com' ).replace('^', '@') )
+//<a href="tel:+919876543210">Call</a>;
 
 window.open( String( 'mailto:' + eMailAddress));
 eMailAlertFlag = false;
+//STsecondDataNameTd.setAttribute('class','stHeadRow');//to reset flashing because now activation deactivated via resetActive Field Headers!
+//resetActiveFieldHeaders();//added Nov6 because going to TELEPHONE right after did not work anymore
 return false;//added July7 2022
 //window.open('mailto:STrecordTd.textContent');	
 }//end if(c===3 && eMailActive) 
 
 
 //code to send email IF eMailActive = true	
-	
-	
+
+//alertx("telephoneActive = " + telephoneActive);
+//code to call number IF telephoneActive = true	
+if(c===2 && telephoneActive) {
+let telephoneNumber = STrecordTd.textContent;
+//alertx("Telephone number to dial is: " + telephoneNumber);
+//eMailActive = false;//should i comment this out so more than one email can be sent?
+//alertx("at c==2 && telephoneActive : STfirstDataNameTdListener = " + STfirstDataNameTdListener);
+
+//Nov7 DON'T REMOVE EVENT LISTENER BECAUSE NO WAY OF REINSTATING IT WITHOUT RUNNING DISPLAYTABLE AGAIN.
+
+//STsecondDataNameTd.removeEventListener;
+
+//Nov7
+
+//STfirstDataNameTd.removeEventListener('dblclick',STfirstDataNameTd.fn, false);
+
+// Example:
+// canvas.addEventListener('click', function abc(event) {
+//     click++;
+//     if (click >= 50) {
+//         // remove event listener function `abc`
+//         canvas.removeEventListener('click', abc);
+//     }
+//window.onmousemove = null
+//<a href="tel:+919876543210">Call</a>;
+//window.onmousemove = function(e){console.log("mouse cursor:", e.clientX, e.clientY)}
+
+
+window.open( String( 'tel:' + telephoneNumber));
+telephoneAlertFlag = false;
+//STfirstDataNameTd.removeEventListener;
+
+//alertx("about to remove eventListener .. at window.open…tel..STfirstDataNameTd.textContent = " + STfirstDataNameTd.textContent);
+//STfirstDataNameTd.setAttribute('class','stHeadRow');
+//eventListener on field title STfirstDataNameTd has been removed. Header still flashes and dblclick on td tel number still brings up dialer
+//resetActiveFieldHeaders();//added Nov6 because going to TELEPHONE right after did not work anymore
+
+return false;//added July7 2022
+//window.open('mailto:STrecordTd.textContent');	
+}//end if(c===3 && telephoneActive) 
+
+if(c>3 && telephoneActive) {
+let telephoneNumber = STrecordTd.textContent;
+window.open( String( 'tel:' + telephoneNumber));
+telephoneAlertFlag = false;
+
+//NOV7
+
+//STnextFieldHeading.removeEventListener('dblclick', STnextFieldHeading.fn);
+STnextFieldHeading.setAttribute('class','stHeadRow');
+//code to call telephone number IF telephoneActive = true	
+return false;	
+}//end if(c>3 && telephoneActive) 	
+
+if(c>3 && eMailActive) {
+
+let eMailAddress = STrecordTd.textContent;
+
+window.open( String( 'mailto:' + eMailAddress));
+eMailAlertFlag = false;
+STnextFieldHeading.removeEventListener('dblclick', STnextFieldHeading.fn);
+STnextFieldHeading.setAttribute('class','stHeadRow');
+return false;//added July7 2022
+//window.open('mailto:STrecordTd.textContent');	
+
+//STfirstDataNameTd.removeEventListener;
+
+}//end if(c>3 && telephoneActive) 	
 	
 	if(blockEdit) {
-		alert("Before editing this data cell, Tap Return to Home Screen first to initialize the table layout you just edited or created!");
+		alert("Before editing/activating this data cell, Tap Return to Home Screen first to initialize the table layout you just edited or created!");
 		//blockEdit = false;
 		return false;
 	}
@@ -9870,6 +10255,13 @@ if (!makeContactsTable && !loadFromTableOptions) {
 	//PUT NEW ENTY INTO DYNAMIC FIELDS TABLE ARRAY. THESE DO NOT HAVE TO BE SAVED IN NOTES
 	if (c > 3) {
 		//working in dynamic fields
+		
+		//ADD CODE HERE TO SUM TD CELLS HORIZONTALLY ALL IN THE ROW
+		//if(editTDInput.value === sumAcross) {
+			//sumAcross(rowSum);
+			//editTDInput.value = editTDInput.value + rowSum;
+		//}//end if(editTDInput.value === sumAcross
+		
 		tableArray[i][c] = editTDInput.value;
 		console.log('c is > 3 so tableArray[][] is set to editTDInput.value');
 		console.log('tableArray[i][c] = ' + tableArray[i][c]);
@@ -9953,6 +10345,24 @@ STsecondDataNameTd.removeEventListener('dblclick',STsecondDataNameTd.fn, false);
 	STsecondDataNameTdListener = false;
 	eMailActive = false;
 }//end if(STsecondDataNameTdListener)
+
+if(STfirstDataNameTdListener) {
+STfirstDataNameTd.removeEventListener('dblclick',STfirstDataNameTd.fn, false);
+	//STfirstDataNameTd.removeEventListener;
+	STfirstDataNameTdListener = false;
+	telephoneActive = false;
+STfirstDataNameTd.removeEventListener;	
+ STfirstDataNameTd.setAttribute('class','stHeadRow');
+	
+}//end if(STfirstDataNameTdListener)
+
+//CODE TO RESET BLINK IF TELEPHONE OR EMAIL HAD BEEN ACTIVATED
+if(telephoneActive || eMailActive || STfirstDataNameTdListener || STsecondDataNameTdListener) {
+resetActiveFieldHeaders();
+resetFixedFieldActivity();
+}//end if(telephoneActive || eMailActive) {
+
+//CODE TO RESET BLINK IF TELEPHONE OR EMAIL HAD BEEN ACTIVATED
 
 		//there is a glitch here somewhere. The STHeadRow can get messed up if refreshed = 1 after an edit of the current displayed table. Do I need editCurrentTable set to 0 here?????!!!!!
 		//keeping track of Save Btn Date: Feb 26 2021
@@ -10068,6 +10478,161 @@ STsecondDataNameTd.removeEventListener('dblclick',STsecondDataNameTd.fn, false);
 	
 }//end if(STsecondDataNameTdListener)
 
+if(STfirstDataNameTdListener) {
+STfirstDataNameTd.removeEventListener('dblclick',STfirstDataNameTd.fn, false);
+	//STfirstDataNameTd.removeEventListener;
+	STfirstDataNameTdListener = false;
+	telephoneActive = false;
+	STfirstDataNameTd.setAttribute('class','stHeadRow');
+	
+}//end if(STfirstDataNameTdListener)
+//DO I NEED THIS NOW THAT CODE IS IN DISPLAYTABLEBTN???
+// if(telephoneActive || eMailActive) {
+// STnextFieldHeading.removeEventListener('dblclick', STnextFieldHeading.fn);
+// //for (let k = 4; k < numberOfFields; k++) {
+// STnextFieldHeading.setAttribute('class','stHeadRow');//this line does not work!
+
+if(telephoneActive || eMailActive) {
+resetActiveFieldHeaders();
+//}//end if telephone active
+// alert("did it work? STOP")
+// return
+// telephoneActive = false;//so now code in displayTableBtn won't run good!
+// eMailActive = false;
+// // 	//to reset attribute stHeadRow if telephone activated in dynamic fields return to displayTable with resetFields true BUT NOW CAN'T REINSTATE DBLCLICK ADDEVENTLISTENER!
+// //resetFields = true;
+// // 	//tableConstructed = false;
+// //displayTable();//NEED THIS TO RESET FIELD ATTRIBUTE TO NON BLINK so maybe just put setAttribute to stHeadRow in the resetField code? AND REMOVE displayTable because this will repeat records!
+// // }//end if(telephoneActive || eMailActive) {
+
+
+// //TO RESET BLINK IF EMAIL TELEPHONE ACTIVE
+// 	clearHeadRow();
+// console.log('Removed dynamic fields! ' + STheadRow);
+
+// //TRY THIS,! Date: Feb17 2022
+// //addFieldHeaders();
+// //TRY THIS,! Date: Feb17 2022
+
+
+// //
+// STheadRow.appendChild(STheadName);
+// STheadRow.appendChild(secondFieldName);
+// STheadRow.appendChild(STfirstDataNameTd);
+// STheadRow.appendChild(STsecondDataNameTd);
+// //field labels of static fields now restored!
+// for (let k = 4; k < numberOfFields; k++) {
+// 	const STnextFieldHeading = document.createElement('td');
+// 	STnextFieldHeading.textContent = fieldNamesArray[k];	
+// 	//to reset field header if blinking
+// 	STnextFieldHeading.setAttribute('class','stHeadRow');//resets cancels blinking if previously applied by an addEventListener
+	
+// 	STheadRow.appendChild(STnextFieldHeading);
+	
+// 	//reapply eventListeners
+// if(fieldNamesArray[k].includes("TOTAL")|| fieldNamesArray[k].includes("AVERAGE")) {
+// 	//alertx("adding event listener"); 
+// 		STnextFieldHeading.addEventListener('dblclick', function () {
+// 		//check if table initialized
+// 		if(blockEdit) {
+// 		alert("Before tapping this Field Title, Tap Return to Home Screen first to initialize the table layout you just edited or created!");
+// 		//blockEdit = false;
+// 		return false;
+// 	}
+	
+// 			totalActive = true;
+// 			totalFieldNameIndex = k;
+// 			//summing();
+// 			if(fieldNamesArray[k].includes("TOTAL")) {
+// 			summing();
+// 		} else if (fieldNamesArray[k].includes("AVERAGE")) {
+// 			averaging();
+// 		}//end if else if if(fieldNamesArray[k].includes("TOTAL")) {
+// 			//STnextFieldHeading.textContent = " TOTAL = " + fieldSUM;
+			
+// 	if (fieldNamesArray[k].includes("COST")) {
+// 		STnextFieldHeading.textContent = fieldNamesArray[k]+ " $" + fieldSUM;
+// 		// } else if (fieldNamesArray[k].includes("AGE")) {
+// 		// 	STnextFieldHeading.textContent = fieldNamesArray[k]+ " " + fieldSUM + " yrs";
+// 		} else {	
+			
+// 			STnextFieldHeading.textContent = fieldNamesArray[k]+ " " + fieldSUM;
+// 			}//end if (fieldNamesArray[k].includes("COST")) {
+			
+// if (fieldNamesArray[k].includes("UNITS")) {
+// 		//alertx("fieldNamesArray[k] = " + fieldNamesArray[k] + " so why am I adding yrs? STnextFieldHeading.textContent = " + STnextFieldHeading.textContent );
+		
+// 			STnextFieldHeading.textContent = fieldNamesArray[k]+ " " + fieldSUM + " units";
+// 			}//end if (fieldNamesArray[k].includes("AGE")) {
+			
+// if (fieldNamesArray[k] === "AGE" + " (TOTAL)" || fieldNamesArray[k] === "AGE" + " (AVERAGE)") {
+// 		//alertx("fieldNamesArray[k] = " + fieldNamesArray[k] + " so why am I adding yrs? STnextFieldHeading.textContent = " + STnextFieldHeading.textContent );
+		
+// 			STnextFieldHeading.textContent = fieldNamesArray[k]+ " " + fieldSUM + " yrs";
+// 			}//end if (fieldNamesArray[k].includes("AGE")) {
+				
+// 			fieldSUM = 0;
+// 			totalFieldNameIndex = 0;	STnextFieldHeading.removeEventListener;
+			
+// 			//fieldNamesArray[totalFieldNameIndex].textContent = " TOTAL = " + fieldSUM;
+// 			});//end addEventListener
+		
+// 		}//end if (STnextFieldHeading.textContent === "TOTAL")
+		
+// //ADDING CODE FOR TELEPHONE AND EMAIL IN //ADDING CODE FOR TELEPHONE AND EMAIL IN DYNAMIC HEADERS	vvv must includ in resetFields section!
+// if(fieldNamesArray[k].includes("TELEPHONE") || fieldNamesArray[k].includes("EMAIL")){
+// alert("at fieldNamesArray contains TELEPHONE..adding eventListener");
+// //STfirstDataNameTd.addEventListener('dblclick', STfirstDataNameTd.fn=function fn() {
+// 	STnextFieldHeading.addEventListener('dblclick', STnextFieldHeading.fn=function fn() {
+// 		//check table is initialized
+// 		if(blockEdit) {
+// 		alert("Before tapping this Field Title, Tap Return to Home Screen first to initialize the table layout you just edited or created!");
+// 		//blockEdit = false;
+// 		return false;
+// 	}
+			
+// STnextFieldHeading.setAttribute('class','borderBlink');
+// 	if(fieldNamesArray[k].includes("TELEPHONE")) {
+// 			telephoneActive = true;
+// 			telephoneAlertFlag2 = false;
+// 			eMailAlertFlag2 = true;
+// 		} else if (fieldNamesArray[k].includes("EMAIL")) {
+// 			eMailActive = true;
+// 			eMailAlertFlag2 = false;
+// 			telephoneAlertFlag2 = true;
+// 		}//end if else if	
+		
+// //STsecondDataNameTd.removeEventListener('dblclick',STsecondDataNameTd.fn, false);
+// //k is 4 or > so this applies only to dynamic fields
+// if(!eMailAlertFlag2) {
+// 	alert("eMail address now active! Double click on email address to SEND EMAIL!");
+// eMailAlertFlag2 = true;
+// 	}//end if(!eMailAlertFlag) 
+	
+// if(!telephoneAlertFlag2) {
+// 	alert("Telephone number is now active! Double click on telephone number to PHONE!");
+// telephoneAlertFlag2 = true;
+// 	}//end if(!eMailAlertFlag) 
+
+// STnextFieldHeading.removeEventListener('dblclick', STnextFieldHeading.fn, false);
+
+// //STnextFieldHeading.setAttribute('class','stHeadRow');
+// //STnextFieldHeading.setAttribute('class','borderBlink')
+
+// });//end STnextFieldHeading.addEventListener
+
+// }//end if(fieldNamesArray[k].includes("TELEPHONE") ||
+
+
+
+// //Date:Oct25 this works so now need more debugging!!
+// //ADDING CODE FOR TELEPHONE AND EMAIL IN DYNAMIC HEADERS	^^^
+// 	}//end for loop
+	
+}//end if(telephoneActive || eMailActive) {
+//TO RESET BLINK IF EMAIL TELEPHONE ACTIVE	
+	
+
 //reset fromSearchRecord to false and hits.length to 0 to fix search bug if using a td referenced search followed by a first column tableTitle search Date: Jun2 2022
 fromSearchRecord = false;
 hits.length = 0;
@@ -10148,6 +10713,23 @@ STsecondDataNameTd.removeEventListener('dblclick',STsecondDataNameTd.fn, false);
 	STsecondDataNameTd.setAttribute('class','stHeadRow');
 }//end if(STsecondDataNameTdListener)
 
+if(STfirstDataNameTdListener) {
+STfirstDataNameTd.removeEventListener('dblclick',STfirstDataNameTd.fn, false);
+	//STfirstDataNameTd.removeEventListener;
+	STfirstDataNameTdListener = false;
+	telephoneActive = false;
+	STfirstDataNameTd.setAttribute('class','stHeadRow');
+	
+}//end if(STfirstDataNameTdListener)
+
+//CODE TO RESET BLINK IF TELEPHONE OR EMAIL HAD BEEN ACTIVATED
+if(telephoneActive || eMailActive) {
+resetActiveFieldHeaders();
+}//end if(telephoneActive || eMailActive) {
+
+//CODE TO RESET BLINK IF TELEPHONE OR EMAIL HAD BEEN ACTIVATED
+
+
 //reset fromSearchRecord to false and hits.length to 0 to fix search bug if using a td referenced search followed by a first column tableTitle search Date: Jun2 2022
 fromSearchRecord = false;
 hits.length = 0;
@@ -10205,6 +10787,8 @@ homeScreenBtn.textContent = "RETURN to Home Screen";
 	
 //moreTablesBtn
 moreTablesBtn.onclick = function () {
+//alertx("moreTablesBtn tapped .. STsecondDataNameTdListener = " + STsecondDataNameTdListener);
+
 		totalInfoP.style.display = "none";
 		fieldSUM = 0;//clear to 0 in case TOTAL function has been used
 emailBtn.setAttribute('class','tdEdit');//if cancel CONTACTS or ignore flashing CONTACTS AND GO TO HOME SCRN CONTACTS BTN WILL STAY FLASHING!
@@ -10217,6 +10801,26 @@ STsecondDataNameTd.removeEventListener('dblclick',STsecondDataNameTd.fn, false);
 	STsecondDataNameTd.setAttribute('class','stHeadRow');
 	
 }//end if(STsecondDataNameTdListener)
+
+if(STfirstDataNameTdListener) {
+STfirstDataNameTd.removeEventListener('dblclick',STfirstDataNameTd.fn, false);
+	//STfirstDataNameTd.removeEventListener;
+	STfirstDataNameTdListener = false;
+	telephoneActive = false;
+	
+//alertx("moreTablesBtn tapped: STfirstDataNameTdListener = " + STfirstDataNameTdListener);
+	STfirstDataNameTd.setAttribute('class','stHeadRow');
+	
+}//end if(STfirstDataNameTdListener)
+
+//CODE TO RESET BLINK IF TELEPHONE OR EMAIL HAD BEEN ACTIVATED
+if(telephoneActive || eMailActive) {
+resetActiveFieldHeaders();
+}//end if(telephoneActive || eMailActive) {
+
+//CODE TO RESET BLINK IF TELEPHONE OR EMAIL HAD BEEN ACTIVATED
+
+
 fromSearchRecord = false;
 hits.length = 0;
 
@@ -10298,6 +10902,7 @@ flipMenu.textContent = "Tap - Click to show / hide TABLE MENU";
 	saveTableBtn.onclick = function () { 
 	fieldSUM = 0;//clear to 0 in case TOTAL function has been used
 	eMailActive = false;//flag set here to prevent an email if just editing a td
+	telephoneActive = false;
 	//tableIndex = 7;testing fixing screw ups
 	resetFields = true;//if you hit SAVE twice fields can get messed up
 	homeScreenBtn.disabled = false;//to help force Save..now reset after flashing SAVE
@@ -10816,6 +11421,15 @@ STsecondDataNameTd.removeEventListener('dblclick',STsecondDataNameTd.fn, false);
 	eMailActive = false;
 	STsecondDataNameTd.setAttribute('class','stHeadRow');
 }//end if(STsecondDataNameTdListener)
+
+if(STfirstDataNameTdListener) {
+STfirstDataNameTd.removeEventListener('dblclick',STfirstDataNameTd.fn, false);
+	//STfirstDataNameTd.removeEventListener;
+	STfirstDataNameTdListener = false;
+	telephoneActive = false;
+	STfirstDataNameTd.setAttribute('class','stHeadRow');
+	
+}//end if(STfirstDataNameTdListener)
 		
 //reset fromSearchRecord to false and hits.length to 0 to fix search bug if using a td referenced search followed by a first column tableTitle search Date: Jun2 2022
 fromSearchRecord = false;
@@ -11694,7 +12308,7 @@ function myDeleteFunction() {
 //LEFT OFF HERE NOV 26
 function editMoreFields () {
 //called by editBtn.onclick	
-    //  const addToDynamicFields = document.createElement('p');//referenced with createTable elements above
+    //  const addToDynamicFields = document.createElement('p');//referenced with createTable elements  above
 	  addToDynamicFields.textContent = 'How many more fields do you wish to ADD to current number of Dynamic Fields?';
 	//  const moreFieldsInput = document.createElement('input');
 	//  const fieldsBtn = document.createElement('button');
@@ -12753,7 +13367,6 @@ shareData = {
     url: 'http://eeyorepooh.weebly.com/'
   }//shareData
   //alertx("In share this database: string = " + string + " dataBaseName = " + dataBaseName);
-  
   resultPara.textContent = 'Tap above to share Database: ' + dataBaseName ;
   // Share must be triggered by "user activation"
   shareBtn.addEventListener('click', async () => {
@@ -12785,7 +13398,7 @@ shareData = {
 		}//end prompt choice of using sharesheet
 		
 
-		alert('The database named..' + dataBaseName + ' has been copied to the clipboard! You can now PASTE it into your external BACKUP storage file. If on iOS: You can choose an option from the native share sheet. MAIL allows you to send your database via email to whomever. If you have the DougieBase extension DougieBase SAVE to FILES installed in your shortcuts, this will save your database directly to an iCloud folder labelled DougieBaseBKUPS. (Create a folder named DougieBaseBKUPS in iCloud first)');
+		alert('The database named..' + dataBaseName + ' has been copied to the clipboard! You can now PASTE it into your external BACKUP storage file. If on iOS: You can choose an option from the native share sheet. MAIL allows you to send your database via email to whomever. If you have the DougieBase extension DougieBase SAVE to FILES installed in your shortcuts, this will save your database directly to an iCloud folder labelled DougieBaseBKUPS. (Create a folder named DougieBaseBKUPS in iCloud first).');
 	
 			
 	}//end function finishedCopyBtn.onclick DONE BTN
@@ -15627,17 +16240,21 @@ function summing () {
 	for (i =0;i <tableTitle.length;i++) {
 	
 	if ( isNaN( Number(tableArray[i][totalFieldNameIndex]) )) {
-     //    num = 0
-     // }
-	//	if (Number(tableArray[i][totalFieldNameIndex])=== NaN) {
+    
+//  if ( isNaN( Number(tableArray[i][totalFieldNameIndex])) || Number(tableArray[i][totalFieldNameIndex]) === 0) {
+	
+    //Number(tableArray[i][totalFieldNameIndex] if = Edit will be made a number = 0 which is NaN so condition not met. Therefore added || Number(tableArray[i][totalFieldNameIndex]) === 0 to cover EDIT entries
 	
 	
 		//i++;
-		alert("Addition column contains a non number!");
+		alert("Addition column in record " + (i+1) + " contains a non number!");
 		i++;
 		//break;
-		}
+		}//end if ( isNaN( Number(tableArray[i][totalFieldNameIndex])) || Number(tableArray[i][totalFieldNameIndex]) === 0) {
+		
 	fieldSUM = fieldSUM + Number(tableArray[i][totalFieldNameIndex]);
+	
+	//alertx("i = " +i + " fieldSUM = " + fieldSUM);
 	//totalFieldNameIndex replaced with k
 //if (fieldSUM === NaN) {
 //alert("The array contains a non number so unable to complete sum!");	
@@ -15653,29 +16270,245 @@ function summing () {
 	//alert("fieldNamesArray[totalFieldNameIndex].textContent = " + fieldNamesArray[totalFieldNameIndex].textContent);
 }//end function summing
 
-function averaging () {
-//alertx("averaging : tableTitle.length = " + tableTitle.length + " totalFieldNameIndex = " + totalFieldNameIndex);
 
+
+function averaging () {
+//DATE:OCT30 This function WORKS!
+//alertx("averaging : tableTitle.length = " + tableTitle.length + " totalFieldNameIndex = " + totalFieldNameIndex);
+let nonNumberCount = 0;
+//let keepTDentry = [];
 	for (i =0;i <tableTitle.length;i++) {
 	
-	if ( isNaN( Number(tableArray[i][totalFieldNameIndex]) )) {
+//alertx("tableArray[" +i + "][totalFieldNameIndex] = " + tableArray[i][totalFieldNameIndex] + " Number(tableArray[i][totalFieldNameIndex]) = " + Number(tableArray[i][totalFieldNameIndex]));
+
+	//if ( isNaN( Number(tableArray[i][totalFieldNameIndex]) )) {
+	//looks like the Number()function converts a non 0 null or "" to 0?
+	//Number(tableArray[i][totalFieldNameIndex]) if TEXT is NaN, but if null,"" Number() converts it to 0 which is a number so isNaN is false!
+	
+if ( isNaN( Number(tableArray[i][totalFieldNameIndex])) || Number(tableArray[i][totalFieldNameIndex]) === 0) {
+	
+    //Number(tableArray[i][totalFieldNameIndex] if = Edit will be made a number = 0 which is NaN so condition not met. Therefore added || Number(tableArray[i][totalFieldNameIndex]) === 0 to cover EDIT entries
+   // keepTDentry[nonNumberCount] = tableArray[i][totalFieldNameIndex];//store the original entry to replace after calculation
+    nonNumberCount++;//increase the count number
     
-		alert("Averaging column contains a non number!");
+  //  alertx("increment nonNumberCount = " + nonNumberCount);
+    //tableArray[i][totalFieldNameIndex] = 0;
+   // fieldSUM = fieldSUM + Number(tableArray[i][totalFieldNameIndex]);//probably don't need this line?
+		alert("Averaging column in record " + (i+1) + " contains a non number! Averaging will ignore this record for the calculation.");
+		//tableArray[i][totalFieldNameIndex] = keepTDentry[nonNumberCount];
+	//if(i<tableTitle.length)	{
 		i++;
+	//	}//end if(i<tableTitle.length)	{
 		//break;
+		//continue;//breaking out of the for loop skipping this iteration
 		}//end if ( isNaN( Number(tableArray[i][totalFieldNameIndex]) )) {
+		
+	//alertx("before addition fieldSUM = "+ fieldSUM);
+	
+	if(isNaN(Number(tableArray[i][totalFieldNameIndex])) ) {
+		continue;
+	}
 		
 	fieldSUM = fieldSUM + Number(tableArray[i][totalFieldNameIndex]);
 	
-	
+//alertx("i = " + i + " fieldSUM =  " + fieldSUM);	
+
 	}//end for loop
 	
 	totalFieldNameListener = false;
 	resetFields = true;//flag used in displayTable to keep fields being messed up
+//alertx("nonNumberCount = " + nonNumberCount + " tableTitle.length = " + tableTitle.length);
+
+	if(nonNumberCount>0) {
+	
+	//alert("subtracting nonNumberCount from tableTitle.length. Number of records averaged should be : " + (tableTitle.length-nonNumberCount));
+	//missing brackets caused an error
+	//alert("fieldSUM about to be divided…= " + fieldSUM);
+	
+	fieldSUM = fieldSUM/(tableTitle.length-nonNumberCount);	//make average only of records summed..a 0 will not increase the sum
+	nonNumberCount = 0;//reset count for next averaging
+	
+	//alertx("fieldSUM(average) should be : " + fieldSUM);
+	//keepTDentry.length = 0;
+	} else {
 	fieldSUM = fieldSUM/tableTitle.length;
-	return fieldSUM;
+	}//end if(nonNumberCount>0) {
+	
+	return fieldSUM;//fieldSUM now represents average..not total
 
 }//end function averaging
+
+//function below is CODE TO RESET BLINK IF TELEPHONE OR EMAIL HAD BEEN ACTIVATED
+//function to reset active field headers
+function resetActiveFieldHeaders () {
+telephoneActive = false;//so now code in displayTableBtn won't run good!
+eMailActive = false;
+// 	//to reset attribute stHeadRow if telephone activated in dynamic fields return to displayTable with resetFields true BUT NOW CAN'T REINSTATE DBLCLICK ADDEVENTLISTENER!
+//resetFields = true;
+// 	//tableConstructed = false;
+//displayTable();//NEED THIS TO RESET FIELD ATTRIBUTE TO NON BLINK so maybe just put setAttribute to stHeadRow in the resetField code? AND REMOVE displayTable because this will repeat records!
+// }//end if(telephoneActive || eMailActive) {
+
+
+//TO RESET BLINK IF EMAIL TELEPHONE ACTIVE
+	clearHeadRow();
+console.log('Removed dynamic fields! ' + STheadRow);
+
+//TRY THIS,! Date: Feb17 2022
+//addFieldHeaders();
+//TRY THIS,! Date: Feb17 2022
+
+
+//
+STheadRow.appendChild(STheadName);
+STheadRow.appendChild(secondFieldName);
+STheadRow.appendChild(STfirstDataNameTd);
+STheadRow.appendChild(STsecondDataNameTd);
+//field labels of static fields now restored!
+for (let k = 4; k < numberOfFields; k++) {
+	const STnextFieldHeading = document.createElement('td');
+	STnextFieldHeading.textContent = fieldNamesArray[k];	
+	//to reset field header if blinking
+	STnextFieldHeading.setAttribute('class','stHeadRow');//resets cancels blinking if previously applied by an addEventListener
+	
+	STheadRow.appendChild(STnextFieldHeading);
+	
+	//reapply eventListeners
+if(fieldNamesArray[k].includes("TOTAL")|| fieldNamesArray[k].includes("AVERAGE")) {
+	//alertx("adding event listener"); 
+		STnextFieldHeading.addEventListener('dblclick', function () {
+		//check if table initialized
+		if(blockEdit) {
+		alert("Before tapping this Field Title, Tap Return to Home Screen first to initialize the table layout you just edited or created!");
+		//blockEdit = false;
+		return false;
+	}
+	
+			totalActive = true;
+			totalFieldNameIndex = k;
+			//summing();
+			if(fieldNamesArray[k].includes("TOTAL")) {
+			summing();
+		} else if (fieldNamesArray[k].includes("AVERAGE")) {
+			averaging();
+		}//end if else if if(fieldNamesArray[k].includes("TOTAL")) {
+			//STnextFieldHeading.textContent = " TOTAL = " + fieldSUM;
+			
+	if (fieldNamesArray[k].includes("COST")) {
+		STnextFieldHeading.textContent = fieldNamesArray[k]+ " $" + fieldSUM;
+		// } else if (fieldNamesArray[k].includes("AGE")) {
+		// 	STnextFieldHeading.textContent = fieldNamesArray[k]+ " " + fieldSUM + " yrs";
+		} else {	
+			
+			STnextFieldHeading.textContent = fieldNamesArray[k]+ " " + fieldSUM;
+			}//end if (fieldNamesArray[k].includes("COST")) {
+			
+if (fieldNamesArray[k].includes("UNITS")) {
+		//alertx("fieldNamesArray[k] = " + fieldNamesArray[k] + " so why am I adding yrs? STnextFieldHeading.textContent = " + STnextFieldHeading.textContent );
+		
+			STnextFieldHeading.textContent = fieldNamesArray[k]+ " " + fieldSUM + " units";
+			}//end if (fieldNamesArray[k].includes("AGE")) {
+			
+if (fieldNamesArray[k] === "AGE" + " (TOTAL)" || fieldNamesArray[k] === "AGE" + " (AVERAGE)") {
+		//alertx("fieldNamesArray[k] = " + fieldNamesArray[k] + " so why am I adding yrs? STnextFieldHeading.textContent = " + STnextFieldHeading.textContent );
+		
+			STnextFieldHeading.textContent = fieldNamesArray[k]+ " " + fieldSUM + " yrs";
+			}//end if (fieldNamesArray[k].includes("AGE")) {
+				
+			fieldSUM = 0;
+			totalFieldNameIndex = 0;	STnextFieldHeading.removeEventListener;
+			
+			//fieldNamesArray[totalFieldNameIndex].textContent = " TOTAL = " + fieldSUM;
+			});//end addEventListener
+		
+		}//end if (STnextFieldHeading.textContent === "TOTAL")
+		
+//ADDING CODE FOR TELEPHONE AND EMAIL IN //ADDING CODE FOR TELEPHONE AND EMAIL IN DYNAMIC HEADERS	vvv must includ in resetFields section!
+if(fieldNamesArray[k].includes("TELEPHONE") || fieldNamesArray[k].includes("EMAIL")){
+
+//alertx("at fieldNamesArray contains TELEPHONE..adding eventListener");
+//STfirstDataNameTd.addEventListener('dblclick', STfirstDataNameTd.fn=function fn() {
+	STnextFieldHeading.addEventListener('dblclick', STnextFieldHeading.fn=function fn() {
+		//check table is initialized
+		if(blockEdit) {
+		alert("Before tapping this Field Title, Tap Return to Home Screen first to initialize the table layout you just edited or created!");
+		//blockEdit = false;
+		return false;
+	}
+			
+STnextFieldHeading.setAttribute('class','borderBlink');
+	if(fieldNamesArray[k].includes("TELEPHONE")) {
+			telephoneActive = true;
+			telephoneAlertFlag2 = false;
+			eMailAlertFlag2 = true;
+		} else if (fieldNamesArray[k].includes("EMAIL")) {
+			eMailActive = true;
+			eMailAlertFlag2 = false;
+			telephoneAlertFlag2 = true;
+		}//end if else if	
+		
+//STsecondDataNameTd.removeEventListener('dblclick',STsecondDataNameTd.fn, false);
+//k is 4 or > so this applies only to dynamic fields
+if(!eMailAlertFlag2) {
+	alert("eMail address now active! Double click on email address to SEND EMAIL!");
+eMailAlertFlag2 = true;
+	}//end if(!eMailAlertFlag) 
+	
+if(!telephoneAlertFlag2) {
+	alert("Telephone number is now active! Double click on telephone number to PHONE!");
+telephoneAlertFlag2 = true;
+	}//end if(!eMailAlertFlag) 
+
+STnextFieldHeading.removeEventListener('dblclick', STnextFieldHeading.fn, false);
+
+//STnextFieldHeading.setAttribute('class','stHeadRow');
+//STnextFieldHeading.setAttribute('class','borderBlink')
+
+});//end STnextFieldHeading.addEventListener
+
+}//end if(fieldNamesArray[k].includes("TELEPHONE") ||
+
+
+
+//Date:Oct25 this works so now need more debugging!!
+//ADDING CODE FOR TELEPHONE AND EMAIL IN DYNAMIC HEADERS	^^^
+	}//end for loop	
+}//end function resetActiveFieldHeaders ()
+
+//FUNCTION TO RESET FIXED FIELD HEADERS ACTIVITY FOR TELEPHONE EMAIL
+function resetFixedFieldActivity () {
+//alertx("In resetFixedFieldActivity function!");
+
+	totalInfoP.style.display = "none";
+		fieldSUM = 0;//clear to 0 in case TOTAL function has been used
+emailBtn.setAttribute('class','tdEdit');//if cancel CONTACTS or ignore flashing CONTACTS AND GO TO HOME SCRN CONTACTS BTN WILL STAY FLASHING!
+
+if(STsecondDataNameTdListener) {
+STsecondDataNameTd.removeEventListener('dblclick',STsecondDataNameTd.fn, false);
+	//STsecondDataNameTd.removeEventListener;
+	STsecondDataNameTdListener = false;
+	eMailActive = false;
+	STsecondDataNameTd.setAttribute('class','stHeadRow');
+	
+}//end if(STsecondDataNameTdListener)
+
+if(STfirstDataNameTdListener) {
+STfirstDataNameTd.removeEventListener('dblclick',STfirstDataNameTd.fn, false);
+	//STfirstDataNameTd.removeEventListener;
+	STfirstDataNameTdListener = false;
+	telephoneActive = false;
+	
+//alertx("moreTablesBtn tapped: STfirstDataNameTdListener = " + STfirstDataNameTdListener);
+	STfirstDataNameTd.setAttribute('class','stHeadRow');
+	
+}//end if(STfirstDataNameTdListener)
+
+//CODE TO RESET BLINK IF TELEPHONE OR EMAIL HAD BEEN ACTIVATED
+if(telephoneActive || eMailActive) {
+resetActiveFieldHeaders();
+}//end if(telephoneActive || eMailActive) {
+
+}//end function resetFixedFieldActivity () {
 
 
 //readFile(input) function called in HTML when tapping on the input element. The function below is not found I think because traditiona functions can not be hoisted? This function works when called from the script in HTML
@@ -15900,7 +16733,7 @@ Note that you actually have to pass the exported data as a string, not as a JSON
 
   if('serviceWorker' in navigator) {
     navigator.serviceWorker
-             .register('/DougieBaseVer42sw.js')
+             .register('/DougieBaseVer43sw.js')
              .then(function() { console.log('Service Worker Registered'); });
 			alert('Service Worker Registered!');
 		
