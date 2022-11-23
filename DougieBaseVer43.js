@@ -1,4 +1,4 @@
-//DougieBaseVer43.js Nov9 2022 from bugDatesdynamicTelephoneDougieBaseVer42.js FIXED Activation glitches? Nov7 fixed bug in dates when adding record (+) to a new table dynamicTelephoneDougieBaseVer42.js.. not yet published.. Oct29 2022 need to add code at moreTables and homescreenBtn2 and refresh..DONE .. telephoneDougieBaseVer42.js RESET BLINK IF TELEPHONE OR EMAIL HAD BEEN ACTIVATED Oct 22 2022 this version works WILL TEST SOME MORE added code for telephone similar to email at displayTable that was missing.  DougieBaseVer42.js Oct19 Oct16 2022 incorporating moreTablesBtnDougieBaseVer42.js Oct11 2022 retryTOTALDougieBaseVer42.js Oct11 2022 AGE (TOTAL) if COST in header will add $ to result after adding now will add even if entry is NaN works if all items in column are numbers use search phrasex—for (let k = 4; k < numberOfFields; k++) { — TOTALDougieBaseVer42.js DougieBaseVer42.js Date Oct 5 .. use this to update github! Oct4 2022 from restoreFromLocalFileDougieBaseVer40.js fallBack2Sept29restoreFromLocalFileDougieBaseVer40.js restoreFromLocalFileDougieBaseVer40 Date Sept25 2022 WORKS! Added Scroll to bottom in manage window DougieBaseVer40.js fix!editSearchedNoteDougieBaseVer40.js Think this is fixed ? Sept 20 2022 editSearchedNoteDougieBaseVer40.js As of Sept 11 2022, can now edit the single record view obtained as a result of a record search. Still testing..seems to work change SW to ver 26 before sending to github! - from createNewDougieBaseVer40.js from eMailDougieBaseVer40.js email now active  fixContactsBugDougieBaseVer40.js Jun7 fixed dbl tap deleting instead of editing a new table ..deleteRecordNewTable = false; .. June6 fixed repeat record entry in contacts tables if repeating creating a contacts table DougieBaseVer40.js June4 saveBtn2 fixed and flashing displayTableBtn when CONVERT file format June3 fixed search bug May28 fixed tableLimit noAlertsplusContactshitsTablefixADDCONTACTSDougieBaseVer40 May18 fixed share data error May28 2022 tableLimit plusContactshitsTablefixADDCONTACTSDougieBaseVer40.js May17 May15 May 13 May9 hitsTablefixADDCONTACTSDougieBaseVer40.js May5  from fixADDCONTACTSDougieBaseVer40.js May1  testCancelsweetAlertnoAlertsmoreBlock+DougieBaseVer40.jsApri25 2022
+//DougieBaseVer43.js Nov22 2022 retryisolateNumbersumAcrossDougieBaseVer43.js Nov21 2022 removing alerts in the keyword functions..USE FIND '//alertxy' and replace with 'alert' to restore for troubleshooting  experimentretryisolateNumbersumAcrossDougieBaseVer43.js corrects for space difference in main and new tables  retryisolateNumbersumAcrossDougieBaseVer43.js DATE: Nov16 IF THIS SCREWS UP REVERT BACK TO isolateNumbersumAcrossDougieBaseVer43.js Nov17 in editTDBtn.onclick addEventListener put in code to check if rowSummed and if so update sum across!  sumAcrossDougieBaseVer43.js sumAcross works and total of last column if rowSummed, works BUT TOTAL  in other DYNAMICfields is messed up because rowSummed is always true so will put conditional in summing() to exclude last field ..new rule TOALfor rowSummed only works in last field !  DougieBaseVer43.js Nov9 2022 from bugDatesdynamicTelephoneDougieBaseVer42.js FIXED Activation glitches? Nov7 fixed bug in dates when adding record (+) to a new table dynamicTelephoneDougieBaseVer42.js.. not yet published.. Oct29 2022 need to add code at moreTables and homescreenBtn2 and refresh..DONE .. telephoneDougieBaseVer42.js RESET BLINK IF TELEPHONE OR EMAIL HAD BEEN ACTIVATED Oct 22 2022 this version works WILL TEST SOME MORE added code for telephone similar to email at displayTable that was missing.  DougieBaseVer42.js Oct19 Oct16 2022 incorporating moreTablesBtnDougieBaseVer42.js Oct11 2022 retryTOTALDougieBaseVer42.js Oct11 2022 AGE (TOTAL) if COST in header will add $ to result after adding now will add even if entry is NaN works if all items in column are numbers use search phrasex—for (let k = 4; k < numberOfFields; k++) { — TOTALDougieBaseVer42.js DougieBaseVer42.js Date Oct 5 .. use this to update github! Oct4 2022 from restoreFromLocalFileDougieBaseVer40.js fallBack2Sept29restoreFromLocalFileDougieBaseVer40.js restoreFromLocalFileDougieBaseVer40 Date Sept25 2022 WORKS! Added Scroll to bottom in manage window DougieBaseVer40.js fix!editSearchedNoteDougieBaseVer40.js Think this is fixed ? Sept 20 2022 editSearchedNoteDougieBaseVer40.js As of Sept 11 2022, can now edit the single record view obtained as a result of a record search. Still testing..seems to work change SW to ver 26 before sending to github! - from createNewDougieBaseVer40.js from eMailDougieBaseVer40.js email now active  fixContactsBugDougieBaseVer40.js Jun7 fixed dbl tap deleting instead of editing a new table ..deleteRecordNewTable = false; .. June6 fixed repeat record entry in contacts tables if repeating creating a contacts table DougieBaseVer40.js June4 saveBtn2 fixed and flashing displayTableBtn when CONVERT file format June3 fixed search bug May28 fixed tableLimit noAlertsplusContactshitsTablefixADDCONTACTSDougieBaseVer40 May18 fixed share data error May28 2022 tableLimit plusContactshitsTablefixADDCONTACTSDougieBaseVer40.js May17 May15 May 13 May9 hitsTablefixADDCONTACTSDougieBaseVer40.js May5  from fixADDCONTACTSDougieBaseVer40.js May1  testCancelsweetAlertnoAlertsmoreBlock+DougieBaseVer40.jsApri25 2022
 //NOTE ALERTS REMOVED HAVE A x after alert SO USE FIND REPLACE SEARCH TO RESTORE THEM!! i.e. //alertx("message data…") can be restored by search and replace for //alertx and replace with alert
 //moreBlock+DougieBaseVer40.js April17 April15 fallBackApril15moreBlock+DougieBaseVer40.js Copy of moreBlock+DougieBaseVer40.js fallBackApril14moreBlock+DougieBaseVer40.js moreBlock+DougieBaseVer40.js April10 for testing and when works back to block… from block+DougieBaseVer40.js DougieBaseVer40.js from shareDeleteRecordNewTableDougieBaseVer37.js WILL THIS FILE AUTOMATICALLY SYNC WITH ICLOUD.YES!deleteRecordNewTableDougieBaseVer37.js NOTE ALERTS REMOVED HAVE A > AFTER THE " SO USE FIND REPLACE SEARCH TO RESTORE THEM!! i.e. //alert("> message data…") can be restored by search and replace for //alert("> …) .. MUST PUT A SPACE AFTER THE> CHARACTER! fromNewTablehitsTableDougieBaseVer37.js pushContactsFormtableIndexaddContactsDougieBaseVer37 ADD CONTACTS number of dynamicfields = 1 now createnewDB resets newTableSpecificVariables and savedTablesArray to 0 savedTablesArray.length increases by 1 as each table is created fixed manal contact entry fields fixed + contacts deletingTableField variable added Marc19  contactsFormtableIndexaddContactsDougieBaseVer37.js manual contacts now works Mar13 tableIndexaddContactsDougieBaseVer37.js from deleteNTtableIndexaddContactsDougieBaseVer37.js Mar11 from delete last and first and middle tables works!  tableIndexaddContactsDougieBaseVer37.js Mar9 2022 deleteItemtableIndexaddContactsDougieBaseVer37.js from tableIndexaddContactsDougieBaseVer37 WORKS Mar8 FOR CRETION NEWBB BEFORE ANY DB LOADED MAR6 from createNewaddContactsDougieBaseVer37 from addContactsDougieBaseVer37 from Copy of addContactsDougieBaseVer37 based on date: Feb22 2022 worksKeepTestPlayWithNewTableContactsDougieBaseVer37 Feb 17 2022 Feb 13 2022 from testPlayWithNewTableContactsDougieBaseVer37 Feb10 from playWithSTRowsEditTDNewTableContactsDougieBaseVer37.js FEB6 FEB4 2022 from workingOnEditTDNewTableContactsDougieBaseVer37.js currentJan19ContactsDougieBaseVer37.js now adding newTable variables ..Jan11 go to fallBackJan11 if meeses up workingOnContactsDougieBaseVer37.js Jan2 THIS VERSION WORKS WITH SAFARI CONTACT PICKER!  contacts table working with search sort Dec24 Added whatsNew window  Working on retrieving contact info. See functions at bottom. ADD style="color:black" IN HTML  Dec22 moved getMemory function from html file to .js file from Dec10 2021 mobileFriendlyDougieBaseVer37.js from DougieBaseVer36.js Dec5 sw11 from messWith Dec2 DougieBaseVer36.js Dec1 from flashFileNameDougieBaseVer36.js from createNewDBDougieBaseVer36 Nov30 Nov28 added addToDynamicFields.setAttribute('class','borderBlink') to border in editMoreFields function and addNoteBtn.setAttribute('class','borderBlink'); in saveBtn.onclick for createNewDB renameBtn.setAttribute('class','borderBlink'); in preferences displayDataBtn.setAttribute('class','borderBlink'); in function renameTitle Nov28 borderBlink css is in the html file  Nov 27 fine tuned flow of createNewDB Nov24 fixed create newDB bug! Nov 22 edit notes displayed n real time Nov17 added tableScreenOptions to editTableTrigger to not mess up table display Nov14 from spDougieBaseVer36.js landscape table search and preview edid Date:Nov9 save preferences from Date:Nov4 added Easter egg and save settings preferencesDougieBaseVer36.js from fixEditDougieBaseVer35.js from 
 //changed addEventListener to copy instead of dblclick Oct16 made default double click Oct31 2021  clearBkgrdDougieBaseVer34.js clear background and fixed crashes that occur if user makes illogical moves Oct12 2021 use to update workingCopy and Safarii etc
@@ -146,14 +146,22 @@
 //will save a flag that indicates if new table derived from a searchmain db in aid of preventing + - icons appearing in such a table..aadding a record herevwould crash!
 
 //references for TOTAL FIELD
-let totalFieldNameListener = "false";
-let totalFieldNameIndex;
+let totalFieldNameListener = false;
+let totalFieldNameIndex;////not sure this is used anymore? Date Nov13 2022
 let addField = 0;
 let fieldSUM = 0;
 let totalActive = false;
 let sumField;
-
+let strippedOff = ""//used in summing()
 //references for TOTAL FIELD
+//references for summing td cells in record row
+let rowSUM = 0;//used for summing horizontal row
+let rowSummed = false;//flag (false) to tell edit td cell routine to update row total. Also used by summing function to trim off txt to leave a true number for summing. Function summing () ..May have to save this variable!?currently app checks summed td cell for includes sumRowTxt and if so sets rowSummed to true…works
+//let sumRowTxt = "Sum across = ";
+let sumRowTxt = "Total to date = $";
+//let sumRowTxt = "Spent to date = $";//what ever txt is here becomes txt in sum of row td. In future may allow user to enter this by input and save in variables of the specific database?
+let showRULEonce = false;//flag for alert notice to be displayed once on first initializing sumAcross
+//references for summing td cells in record row
 
 //references for RESTORE FROM LOCAL FILE
 let restoreFromLocalFile = false;
@@ -1088,7 +1096,7 @@ databaseNameLi[i] = document.createElement('li');
 	 //code to blink border if newDBGuidance = true Nov29 does not work?
 	 console.log('At getFilenames - newDBGuidance = ' + newDBGuidance);
 	 if (newDBGuidance) {
-		 databaseNameLi[i].setAttribute('class','blinkBorder');
+		 databaseNameLi[i].setAttribute('class','borderBlink');
 	 }//end if newDBGuidance
 	 
 //changed dblclick to just click in addEventListener to avoid magnification Date: Oct5 2021	
@@ -2372,7 +2380,9 @@ searchBtn.onclick = searchRecords;
 
 newDBBtn.onclick = function () {
 //THIS IS THE NEW/CHANGE DB button in main menu!
+rowSummed = false;//this flag indicates if total is summing in last field or other fields see summing()
 savedOriginal = false;//reset for loading in a new db
+originalOrder = true;//flag that gives warning if not SAVED after a sort is reset
 fromEditFieldLabels = false;
 tableLimit = false;//reset this flag if leaving a database so the new db gets to start afresh re number of tables relative to limit date:April27
 DTBtnTappedOnce = 0;//to prevent fields header being messed up if switching db and doing an edititem Mar5 2022
@@ -4499,7 +4509,7 @@ if(DTBtnTappedOnce ===0) {
 			trigger = 'dblclick';
 			editTDTriggerBtn.textContent = "Select-Copy";
 		timeDateFlagP.textContent = "CURRENT SETTING: Double Tap to EDIT the Table data cells.";
-	tdEditTriggerP.textContent = "Double Tap on the table's data cell to initiate EDIT mode and EDIT its contents. This is the default trigger choice. To change edit trigger to 'Select-Copy' go to Preferences.\r\nFIXED fields = columns 1-4; DYNAMIC fields = columns 5 and up.\r\nUse keywords TOTAL AVERAGE COST in field title (Dynamic fields only) for added functionality! (COST needs to be used with TOTAL or AVERAGE). Use TELEPHONE (in 3rd FIXED field only) or use EMAIL (in 4th FIXED field only) for activating telephone calling or email addresses. TELEPHONE and EMAIL keywords can also be used in ANY DYNAMIC field. See documentation.";//note ` quote to enable \n	editTDTriggerBtn.setAttribute('class','colorBtn');
+	tdEditTriggerP.textContent = "Double Tap on the table's data cell to initiate EDIT mode and EDIT its contents. This is the default trigger choice. To change edit trigger to 'Select-Copy' go to Preferences.\r\nFIXED fields = columns 1-4; DYNAMIC fields = columns 5 and up.\r\nUse keywords TOTAL AVERAGE COST or $ in field title (Dynamic fields only) for added functionality! (COST needs to be used with TOTAL or AVERAGE). Use TELEPHONE (in 3rd FIXED field only) or use EMAIL (in 4th FIXED field only) for activating telephone calling or email addresses. TELEPHONE and EMAIL keywords can also be used in ANY DYNAMIC field. The sumAcross keyword placed in the last column of the table will SUM all numbers (100 but NOT 100% or 100!) in that record across the table. See documentation.";//note ` quote to enable \n	editTDTriggerBtn.setAttribute('class','colorBtn');
 		}//end if trigger === 'copy'
 		
 		else if(trigger === 'dblclick') {
@@ -9262,15 +9272,19 @@ resetActiveFieldHeaders();
 			totalActive = true;
 			totalFieldNameIndex = k;
 			
-	if(fieldNamesArray[k].includes("TOTAL")) {		summing();
+	if(fieldNamesArray[k].includes("TOTAL")) {		summing(k);
 		} else if (fieldNamesArray[k].includes("AVERAGE")) {
-			averaging();
+			averaging(k);
 		}//end if else if if(fieldNamesArray[k].includes("TOTAL")) {
 			//fieldNamesArray[totalFieldNameIndex].textContent = " TOTAL = " + $(fieldSUM);
 			
 			//STnextFieldHeading.textContent = " TOTAL = " + fieldSUM;
 			
-	if (fieldNamesArray[k].includes("COST")) {
+//DATE: NOV20 REMOVED rowSummed from $ conditionals so $ only appears if COST keyword ?or $ appears in the field title.
+			
+	//if (fieldNamesArray[k].includes("COST") || rowSummed) {
+	
+	if (fieldNamesArray[k].includes("COST") || fieldNamesArray[k].includes("$") ) {
 		STnextFieldHeading.textContent = fieldNamesArray[k]+ " $" + fieldSUM;
 		// } else if (fieldNamesArray[k].includes("AGE")) {
 		// alert("fieldNamesArray[k] = " + fieldNamesArray[k] + " so why am I adding yrs? STnextFieldHeading.textContent = " + STnextFieldHeading.textContent );
@@ -9294,7 +9308,7 @@ if (fieldNamesArray[k] === "AGE" + " (TOTAL)" || fieldNamesArray[k] === "AGE" + 
 			}//end if (fieldNamesArray[k].includes("AGE")) {
 			
 			
-			totalFieldNameIndex = 0;
+		//	totalFieldNameIndex = 0;//not sure this is used anymore? Date Nov13 2022
 			fieldSUM = 0;
 			STnextFieldHeading.removeEventListener;
 			
@@ -9489,6 +9503,14 @@ for (let k = 4; k < numberOfFields; k++) {
 //reapply eventListeners
 if(fieldNamesArray[k].includes("TOTAL")|| fieldNamesArray[k].includes("AVERAGE")) {
 	//alertx("adding event listener"); 
+	
+	// //CHECK IF ROWS SUMMED
+	// if(tableArray[i][k].includes(sumRowTxt)	) {
+	// 				rowSummed = true;
+	// 			} else {
+	// 				rowSummed = false;
+	// 				}//end if else
+	// //CHECK IF ROWS SUMMED
 		STnextFieldHeading.addEventListener('dblclick', function () {
 		//check if table initialized
 		if(blockEdit) {
@@ -9507,7 +9529,12 @@ if(fieldNamesArray[k].includes("TOTAL")|| fieldNamesArray[k].includes("AVERAGE")
 		}//end if else if if(fieldNamesArray[k].includes("TOTAL")) {
 			//STnextFieldHeading.textContent = " TOTAL = " + fieldSUM;
 			
-	if (fieldNamesArray[k].includes("COST")) {
+	//if (fieldNamesArray[k].includes("COST") ) {
+	//	STnextFieldHeading.textContent = fieldNamesArray[k]+ " $" + fieldSUM;
+		
+		
+			
+	if (fieldNamesArray[k].includes("COST" || fieldNamesArray[k].includes("$"))) {
 		STnextFieldHeading.textContent = fieldNamesArray[k]+ " $" + fieldSUM;
 		// } else if (fieldNamesArray[k].includes("AGE")) {
 		// 	STnextFieldHeading.textContent = fieldNamesArray[k]+ " " + fieldSUM + " yrs";
@@ -9792,9 +9819,30 @@ refreshed = 0; */
 	
 			console.log('In displayTable.  tableArray['+i+']['+c+'] = ' + tableArray[i][c]);
 			
+	// //CHECK IF ROWS SUMMED date Nov13
+	// if(tableArray[i][c].includes(sumRowTxt)	) {
+	// 			rowSummed = true;
+	// 			}//end if(tableArray[i][c].includes(sumRowTxt)	) {
+	//alert("checking for rowSummed");
+	//if(tableArray[i][c].includes(sumRowTxt)	) {
+			//		rowSummed = true;
+//TypeError: undefined is not an object (evaluating 'tableArray[i][c].includes')
+//PROBABLY NEED TO STORE rowSummed variable in tableVariables array?
+					
+				//} else {
+				//	rowSummed = false;
+			//		}//end if else
+	//CHECK IF ROWS SUMMED
 	//check if link
 //at this point tableArray[i][cx4] is automatically generated back in the buildRecord rows section and as of May30 will not contain any links. Actual links can be added in buildRecord rows for c>3 via input into the dynamic fields. What happens if edit table puts a link in a fixed field. As of May 30 it is not active?FIXED see notes in documentation
 console.log('STrecordTd.textContent = ' + STrecordTd.textContent)
+
+	//CHECK IF ROWS SUMMED date Nov13
+//alertx("checking if rowSummed!")
+	//alert("checking for rowSummed");
+	//if(tableArray[i][c].includes(sumRowTxt)	) {
+				//	rowSummed = true;
+				//	}//end if(tableArray[i][c].includes(sumRowTxt)	) {
 // if(STrecordTd.textContent.includes('http:'||'https:'||'www')) {
 //CHECK FOR PRESENCE OF A LINK!	if so set the linked flag to true
 if(STrecordTd.textContent.includes('http:')||STrecordTd.textContent.includes('https:')||STrecordTd.textContent.includes('www')) {	
@@ -10196,7 +10244,8 @@ return;
 		//code above to add date input to double click TD date cell
 		
 		STrecordTd.appendChild(editTDInputBtn);
-		editTDInputBtn.onclick = function (){
+		
+editTDInputBtn.onclick = function (){
 			console.log('editInputBtn tapped!');
 		//STrecordTd.disable = true;//to prevent repeat inputc 
 	if(!toggleTdInputBtn) {	editTDInputBtn.setAttribute('class','attentionBtn');
@@ -10211,11 +10260,8 @@ return;
 			if (c===1){
 				//dealing with the Date field
 				//editTDInputBtn.textContent = 'OK?';//}
-			
-			//STrecordTd.disable = false;
-			
-			//date inpuT code
-			
+				
+
 		//STrecordTd.removeChild(dateSelect);
 		
 		//trim seconds off time if tableDateTime
@@ -10257,14 +10303,93 @@ if (!makeContactsTable && !loadFromTableOptions) {
 		//working in dynamic fields
 		
 		//ADD CODE HERE TO SUM TD CELLS HORIZONTALLY ALL IN THE ROW
+		
+	//	if(editTDInput.value === "sumAcross" ||  editTDInput.value.includes("Sum across = ")) {
+//NOV16 if dbltapping last field and sumAcross entered		
+if(c===numberOfFields-1 && editTDInput.value === "sumAcross" ||c===numberOfFields-1 && editTDInput.value === "Sum across" || c===numberOfFields-1 && editTDInput.value === "sum across" ||c===numberOfFields-1 && editTDInput.value ===  "sum Across" || c===numberOfFields-1 && editTDInput.value === "SumAcross" || c===numberOfFields-1 && editTDInput.value === "Sumacross") {
+		
+		// if(c===numberOfFields-1 && editTDInput.value === "railroadCrossing") {
+		
+		rowSummed = true;//flag to tell edit td cell routine to update row total. May have to save this variable!?
+		//alertxy("showRULEonce = " + showRULEonce);
+		
+		if(!showRULEonce) {
+			showRULEonce = true;
+			alert("RULE: 'sumAcross' keyword inserted in last column of the FIRST record of the table and then subsequent records, will initiate summing of all numerical entries in DYNAMIC fields only, across that record row of the table. Any character(s) added to the number entry will exclude that number from the 'sum across' addition. The TOTAL keyword in the field heading of the last column in the table will facilitate adding all numerical entries vertically in the table column, IF THE LAST DATA CELL (last column) OF THE FIRST RECORD  was initialized with the 'sumAcross' keyword. The TOTAL keyword in field headings of all other columns (DYNAMIC fields only) works as indicated.");
+		}//end if(!showRULEonce) {
+rowSUM = sumAcross(i,c);
+
+//alertxy("rowSUM = " + rowSUM);
+
+//editTDInput.value =  "Sum across = " + rowSUM;
+//editTDInput.value =  sumRowTxt + rowSUM;
+editTDInput.value = tableArray[i][0] + ": " + sumRowTxt + rowSUM;
+rowSUM = 0;//reset rowSum
+}//end if(editTDInput.value === "sumAcross" ||  editTDInput.value.contains("Sum across = ") {
 		//if(editTDInput.value === sumAcross) {
 			//sumAcross(rowSum);
 			//editTDInput.value = editTDInput.value + rowSum;
 		//}//end if(editTDInput.value === sumAcross
-		
+//NOTE THIS CODE IS IN THE ADDEVENTLISTENER(ONCLICK FUNCTION SO I AND C WILL BE FIXED)		
 		tableArray[i][c] = editTDInput.value;
 		console.log('c is > 3 so tableArray[][] is set to editTDInput.value');
 		console.log('tableArray[i][c] = ' + tableArray[i][c]);
+		
+//when editing a td cell check if a horizontak row total needs updating i.e. rowSummed is true
+//see if rowSummed variable can be set to true so as to avoid having to store it
+//for (k = 4;k<numberOfFields;k++) {
+				//if(tableArray[i][k].includes("Sum across = ")	) {
+	//NOTE AT THIS POINT C ITERATION value  IS FIXED  SO A K ELEMENT MIGHT NOT YET EXIST AND IF SO tableArray[i][k]MIGHT BE AS YET UNDEFINED GENERATING THIS ERROR!	so make k = c here.don't need to iterate through k because sumAcross puts sumRowTxt in each cell that it is entered in. .does that fix it?		
+	//TypeError: undefined is not an object (evaluating 'tableArray[i][k].includes')	
+	//alertxy("In addEventListener editTDcell: checking if rowSummed so an update will be done. tableArray[i][numberOfFields-1] = " + tableArray[i][numberOfFields-1]);
+		
+	if(tableArray[i][numberOfFields-1]===undefined || tableArray[i][numberOfFields-1] === 0 || tableArray[i][numberOfFields-1] === "") {
+		tableArray[i][numberOfFields-1] = "EDIT";
+	}//end if(tableArray[i][numberOfFields-1]===undefined) {
+	
+	//alertxy("tableArray[i][numberOfFields-1] = " + tableArray[i][numberOfFields-1]); 
+	
+	//TypeError: undefined is not an object (evaluating 'tableArray[i][k].includes')	
+				if(tableArray[i][numberOfFields-1].includes(sumRowTxt)	) {
+					rowSummed = true;
+				} else {
+					rowSummed = false;
+					}//end if else
+		//		}//end for (k = 4;k<numberOfFields;k++) {
+				
+//MAYBE TRY THIS:.. just check last columns data cell for sumRowTxt
+// if(tableArray[i][numberOfFields-1].includes(sumRowTxt)	) {
+// 					rowSummed = true;
+// 				} else {
+// 					rowSummed = false;
+// 					}//end if else
+				
+//alertxy("rowSummed = " + rowSummed);
+
+//FOR UPDATING SUM OF ALL COLUMN ENTRIES IN THE ROW IF THERE IS AN EDIT!
+		if(rowSummed) {
+			//for (k = 4;k<numberOfFields;k++) {
+				//if(tableArray[i][k].includes("Sum across = ")	) {
+		//this allows the sumAcrossbtotal to be in any DYNAMIC column ..not just the last..but not sure this will ever be required if always putting the sumAcross total in the end column	
+		//this will update by calling the sumAcross function getting the updated rowSUM, and will tack on the record item label first column id label and put it all in the td cell that had contained the sumRowTxt(which should be the last column if user follows the sumAcross rule)
+				//if(tableArray[i][k].includes(sumRowTxt)	) {
+					rowSUM = sumAcross(i,c);
+					
+					//alertxy("in if rowSummed - rowSUM = " + rowSUM + "   i = " + i);
+					//tableArray[i][k] = "Sum across = " + rowSUM;
+					//tableArray[i][k] =  sumRowTxt + rowSUM;
+					tableArray[i][numberOfFields-1] = tableArray[i][0] + ": " + sumRowTxt + rowSUM;
+					
+	//trim white spaces at end if any were added..why does parseString.length increase by 1 	?	MAYBE rowSUM GETS an extra space why? BUT THIS WORKED.. TRIMMED OFF WHITESPACE!	
+	tableArray[i][numberOfFields-1] = tableArray[i][numberOfFields-1].trim();
+		
+	//alertxy("In rowSummed after an edit and tableArray[i][numberOfFields-1] is being reconstructed: tableArray[i][numberOfFields-1] = " + tableArray[i][numberOfFields-1] + " tableArray[i][numberOfFields-1].length = " + tableArray[i][numberOfFields-1].length + " SHOULD STILL BE 32 for West Jet");
+	
+	//alertxy("tableArray[i][0].length = " + tableArray[i][0].length + " sumRowTxt.length = " + sumRowTxt.length + " rowSUM.length = " + rowSUM.length);					
+			//	}//end if(editTDInput.value.includes("Sum across 
+			//	}//end if(editTDInput.value.includes("Sum across 
+			//	}//end for (k = 4;k<numberOfFields;k++)
+		}//end if(rowSummed) {
 		
 	}//end if c  3
 	//new edited entry of dynamic fields now entered in tableArray
@@ -10443,10 +10568,31 @@ newTableFieldsArray = newTableSpecificVariables[tableID][1];
 		}//end editTDInputBtn.onclick
 		
 	});//end addEventListener
+	
+	
+// 	//CHECK IF ROWS SUMMED date Nov13
+// //alertx("checking if rowSummed!")
+// 	//alert("checking for rowSummed");
+// if(tableArray[i][c].includes(sumRowTxt)	) {
+// 				rowSummed = true;
+// 				}//end if(tableArray[i][c].includes(sumRowTxt)	) {
+					
+//TypeError: undefined is not an object (evaluating 'tableArray[i][c].includes') GOT THIS ERROR WHEN THIS CODE WAS AT LINE 9815
+//PROBABLY NEED TO STORE rowSummed variable in tableVariables array?
+		// alert("does this code ever run? rowSummed = " + rowSummed);			
+		// 		} else {
+		// 			rowSummed = false;
+		// 			alert("in else part does this code ever run? rowSummed = " + rowSummed);
+		// 			}//end if else
+	//CHECK IF ROWS SUMMED
 			
 		}//end for c =
 			
 		}//end for i = to show all records
+		
+		
+
+	
 		
 //alertx("In displayTable, recreating record rows: fromSearch is true..before removing duplicates..searchedHitsTableArray = " + searchedHitsTableArray);	
 
@@ -10463,6 +10609,9 @@ if (searchedHitsTableArray.length > 0) {
 		homeScreenBtn.onclick = function () {
 		totalInfoP.style.display = "none";
 		fieldSUM = 0;//clear to 0 in case TOTAL function has been used
+		rowSummed = false;
+		originalOrder = true;//reset this flag so that a warning does not appear in an unrelated database if you sorted a previous table and did not go to SAVE afterwards while in that table but instead went to a new db then clear this flag!
+		 showRULEonce = false;//flag for alert notice to be displayed once on first initializing sumAcross
 emailBtn.setAttribute('class','tdEdit');//if cancel CONTACTS or ignore flashing CONTACTS AND GO TO HOME SCRN CONTACTS BTN WILL STAY FLASHING!
 
 //alertx("homeScreenBtn.onclick: fromSearchRecord = " + fromSearchRecord + " hits.length = " + hits.length);
@@ -10703,6 +10852,10 @@ flipMenu.textContent = "Tap - Click to show / hide TABLE MENU";
 		homeScreenBtn2.onclick = function () {
 		totalInfoP.style.display = "none";
 		fieldSUM = 0;//clear to 0 in case TOTAL function has been used
+		rowSummed = false;
+		originalOrder = true;//reset this flag so that a warning does not appear in an unrelated database if you sorted a previous table and did not go to SAVE afterwards while in that table but instead went to a new db then clear this flag!
+		showRULEonce = false;//flag for alert notice to be displayed once on first initializing sumAcross
+		
 emailBtn.setAttribute('class','tdEdit');//if cancel CONTACTS or ignore flashing CONTACTS AND GO TO HOME SCRN CONTACTS BTN WILL STAY FLASHING!
 //alertx("STsecondDataNameTdListener = " + STsecondDataNameTdListener);
 if(STsecondDataNameTdListener) {
@@ -10791,6 +10944,10 @@ moreTablesBtn.onclick = function () {
 
 		totalInfoP.style.display = "none";
 		fieldSUM = 0;//clear to 0 in case TOTAL function has been used
+		rowSummed = false;
+		originalOrder = true;//reset this flag so that a warning does not appear in an unrelated database if you sorted a previous table and did not go to SAVE afterwards while in that table but instead went to a new db then clear this flag!
+		showRULEonce = false;//flag for alert notice to be displayed once on first initializing sumAcross
+		
 emailBtn.setAttribute('class','tdEdit');//if cancel CONTACTS or ignore flashing CONTACTS AND GO TO HOME SCRN CONTACTS BTN WILL STAY FLASHING!
 
 if(STsecondDataNameTdListener) {
@@ -11066,7 +11223,7 @@ console.log("savedTablesArray.length = " + savedTablesArray.length);
 			let warning = document.createElement('p');
 		showTable.appendChild(warning);	warning.setAttribute('class','simulator');
 				warning.textContent = 'THE ORIGINAL RECORD LIST ORDER HAS BEEN CHANGED!';
-				if(!window.confirm('⚠️ The original record list order might be lost. Tap CANCEL to abort. Reset to original order in Sort.')) {
+				if(!window.confirm('⚠️ The original record list order might be lost. Tap CANCEL to abort SAVE. Reset to original order in Sort. OK to SAVE anyway.(SAVE does not retain sort)')) {
 				showTable.removeChild(warning);	showTable.setAttribute('class', 'hidden');
 					sortTable();
 					abortSave = true;
@@ -12082,6 +12239,20 @@ fieldSUM = 0;//clear to 0 in case TOTAL function has been used
 //in RETURN TO HOME Btn reset variables and remove addeventListener
 
 //do sum if totalActive
+
+// //CHECK IF ROWS SUMMED date Nov13
+// alert("checking if rowSummed!")
+// 	//alert("checking for rowSummed");
+// 	if(tableArray[i][c].includes(sumRowTxt)	) {
+// 					rowSummed = true;
+// //TypeError: undefined is not an object (evaluating 'tableArray[i][c].includes') GOT THIS ERROR WHEN THIS CODE WAS AT LINE 9815
+// //PROBABLY NEED TO STORE rowSummed variable in tableVariables array?
+// 		alert("does this code ever run? rowSummed = " + rowSummed);			
+// 				} else {
+// 					rowSummed = false;
+// 					alert("in else part does this code ever run? rowSummed = " + rowSummed);
+// 					}//end if else
+// 	//CHECK IF ROWS SUMMED
 
 }//end function displayTable ..!!!! showTable
 
@@ -13364,7 +13535,7 @@ const resultPara = document.querySelector('#resultPara');
 shareData = {
     title: 'DougieBase database',
     text: 'If restoring from EMAIL: Copy and then Paste the '+ dataBaseName + ' database data  below into the textArea in the restore database section of DougieBase : \n\n\n' + string + variableText,
-    url: 'http://eeyorepooh.weebly.com/'
+    url: 'https://trainee45.github.io/'
   }//shareData
   //alertx("In share this database: string = " + string + " dataBaseName = " + dataBaseName);
   resultPara.textContent = 'Tap above to share Database: ' + dataBaseName ;
@@ -15850,7 +16021,7 @@ contactsArray[k].splice(1, 0,todayString);
 	}//end for k
 
 //alert("now contactsArray = " + contactsArray);
-
+//Date: Nov22 2022 - A BUG OCCURRED HERE WHERE ALERT APPEARED BUT PROGRAM STOPPED RUNNIG RETURNING TO TEXTASTIC EDITOR .. BUT COULD NOT REPRODUCE ? Aftre clearing out some databases??
 
 //code to send add more contacts back to addingMoreContacts
 if(plusContacts) {
@@ -16234,7 +16405,7 @@ restoreFromLocalFile = false;	//added Sept 26 not tested
 
 //summing function for TOTAL field if dblclicked
 
-function summing () {
+function Xsumming () {
 //alertx("summing : tableTitle.length = " + tableTitle.length + " totalFieldNameIndex = " + totalFieldNameIndex);
 
 	for (i =0;i <tableTitle.length;i++) {
@@ -16270,73 +16441,365 @@ function summing () {
 	//alert("fieldNamesArray[totalFieldNameIndex].textContent = " + fieldNamesArray[totalFieldNameIndex].textContent);
 }//end function summing
 
+function summing (k) {
+//alertxy("At function summing(): totalFieldNameIndex =  " + totalFieldNameIndex + " tableArray[0][totalFieldNameIndex] = " + tableArray[0][totalFieldNameIndex]);
+//CHECK IF ROWS SUMMED date Nov13
+//At point when summing() is called, the iteration through records is done so i is noi known. Therefotpre just use 0 first records data cell..which MAKES A NEW RULE! To initiate total of sumAcross records you must initialize the first record's last td cell (last column) so as to put sumRowTxt in this data cell, allowing rowSummed variable to be made true.!
+//CHECK THAT FIRST RECORD'S LAST TD CELL (LAST COLUMN ENTRY) CONTAINS sumRowTxt. sumRowTxt will have been put there by a previous initialization of summing across first record's columns horizontally when this data cell is first initialized by using the keyword sumAcross as the entry for the input element in this data cell. This code line only checks the first record for sumRowTxt because tableArray[i][fieldNameI dex] must be a specific array element or you get TypeError: undefined is not an object (evaluating 'tableArray[i][totalFieldNameIndex].includes')!
+
+	if(tableArray[0][totalFieldNameIndex].includes(sumRowTxt)	) {
+				rowSummed = true;
+				}//end if(tableArray[i][c].includes(sumRowTxt)	) {
+//TypeError: undefined is not an object (evaluating 'tableArray[i][totalFieldNameIndex].includes')
 
 
-function averaging () {
-//DATE:OCT30 This function WORKS!
-//alertx("averaging : tableTitle.length = " + tableTitle.length + " totalFieldNameIndex = " + totalFieldNameIndex);
-let nonNumberCount = 0;
-//let keepTDentry = [];
-	for (i =0;i <tableTitle.length;i++) {
-	
-//alertx("tableArray[" +i + "][totalFieldNameIndex] = " + tableArray[i][totalFieldNameIndex] + " Number(tableArray[i][totalFieldNameIndex]) = " + Number(tableArray[i][totalFieldNameIndex]));
+//ALSO CHECKING LAST FIELD IN FIRST RECORD INDICATES SUMACROSS IS ACTIVE SO THAT A NUBER WITH A CHARACTER (PRESUMABLY ADDED TO EXCLUDE IT FROM A SUM ACROSS ADDITION) WILL BE INCLUDED IN A TOTAL OF THAT COLUMN. THIS WILL PRESERVE THE FUNCTIONALITY OF TOTAL IN ANY COLUMN EVEN IF A NUMBER  WAS MARKED TO BE EXCLUDED FROM SUM ACROSS.
 
-	//if ( isNaN( Number(tableArray[i][totalFieldNameIndex]) )) {
-	//looks like the Number()function converts a non 0 null or "" to 0?
-	//Number(tableArray[i][totalFieldNameIndex]) if TEXT is NaN, but if null,"" Number() converts it to 0 which is a number so isNaN is false!
-	
-if ( isNaN( Number(tableArray[i][totalFieldNameIndex])) || Number(tableArray[i][totalFieldNameIndex]) === 0) {
-	
-    //Number(tableArray[i][totalFieldNameIndex] if = Edit will be made a number = 0 which is NaN so condition not met. Therefore added || Number(tableArray[i][totalFieldNameIndex]) === 0 to cover EDIT entries
-   // keepTDentry[nonNumberCount] = tableArray[i][totalFieldNameIndex];//store the original entry to replace after calculation
-    nonNumberCount++;//increase the count number
-    
-  //  alertx("increment nonNumberCount = " + nonNumberCount);
-    //tableArray[i][totalFieldNameIndex] = 0;
-   // fieldSUM = fieldSUM + Number(tableArray[i][totalFieldNameIndex]);//probably don't need this line?
-		alert("Averaging column in record " + (i+1) + " contains a non number! Averaging will ignore this record for the calculation.");
-		//tableArray[i][totalFieldNameIndex] = keepTDentry[nonNumberCount];
-	//if(i<tableTitle.length)	{
-		i++;
-	//	}//end if(i<tableTitle.length)	{
-		//break;
-		//continue;//breaking out of the for loop skipping this iteration
-		}//end if ( isNaN( Number(tableArray[i][totalFieldNameIndex]) )) {
-		
-	//alertx("before addition fieldSUM = "+ fieldSUM);
-	
-	if(isNaN(Number(tableArray[i][totalFieldNameIndex])) ) {
-		continue;
-	}
-		
-	fieldSUM = fieldSUM + Number(tableArray[i][totalFieldNameIndex]);
-	
-//alertx("i = " + i + " fieldSUM =  " + fieldSUM);	
+	if(tableArray[0][totalFieldNameIndex].includes(sumRowTxt) || tableArray[0][fieldNamesArray.length-1].includes(sumRowTxt)	) {
+				rowSummed = true;
+				}//end if(tableArray[i][c].includes(sumRowTxt)	) {
 
-	}//end for loop
+//let parseString = tableArray[i][totalFieldNameIndex];
+//let parseString = tableArray[i][k];
+//alertx("summing : tableTitle.length = " + tableTitle.length + " totalFieldNameIndex = " + totalFieldNameIndex);
+//alertxy("rowSummed = " + rowSummed + " totalFieldNameIndex " + totalFieldNameIndex);
+
+//if(rowSummed && totalFieldNameIndex===fieldNamesArray.length-1 && tableArray[0][totalFieldNameIndex].includes(sumRowTxt)	) {//might I need this extra conditional in some circumstaces??
+//if rowSummed and we are tapping the last column header — we need to strip off the non-numerical charcters i.e. sumRowTxt before adding. Use isolateNumber() because this code uses parseString which includes the txt of sumRowTxt.
+if(rowSummed && totalFieldNameIndex===fieldNamesArray.length-1) {
+
+//alertxy("horizontal summing is initialized and we are tapping the field header of the last column so will strip off non-numerical characters prior to addition! TOTAL of vertical column.");
+
+isolateNumber();//THIS FUNCTION WILL DEAL WITH rowSumTxt..includeAllNumbers() wil not
+}//end if(rowSummed && totalFieldNameIndex===fieldNamesArray.length-1) {)
+
+//if rowSummed variable is true BUT NOT dbl-click action was not in last column of table OR rowSummed = false do normal column summing without stripping off non-numerical characters of sumRowTxt  use justAddNumbers() function. However justAddNumbers() function forces use of juststraight numbers in orderto be included in the TOTAL. justAddNumbers() function will NOT INCLUDE numbers marked with a character(s) to exclude that number from being included in the sumAcross sum (if for example you do not want to include a column of the table in a sumAcross calculation…all the numbers in that column could be marked for exclusion in a sumAcross calculation by adding a character(s) i.e. 100% 100! 100mice  .. I think also 100 mice? etc.) But these marked numbers would be included in the vertical TOTALLING of the table column IF THE includeAllNumbers() function is used. At the moment I am going to just use the includeAllNumbers function. The justAddNumbers() function is probably redundant and not necessary.
+
+ if(rowSummed && totalFieldNameIndex!==fieldNamesArray.length-1 || !rowSummed) {
+ //alertxy("Either rowSummed is false - We are NOT tapping the LAST column field header, OR  the summing ACROSS columns function has not been initiated via keyword sumAcross…OR ..rowSummed is true (summing across is enabled) but we are not dbl-clicking the last column so we do not have to strip off non-numerical characters prior to addition. Currently using the includeAllNumbers function");
+ 
+// justAddNumbers();
+includeAllNumbers();
+	
+	}//end if(!rowSummed)
+	
+//DO I ALSO NEED A CONDITION WHERE rowSummed is false … horizontal sumAcross addition has not been initialized but we are dbl-clicking the last column .. so don't try stripping off non-numerical characters which might give an error???
+
+// if(!rowSummed && totalFieldNameIndex===fieldNamesArray.length-1) {
+// alert("Dbl-clicked last column field header BUT rowSummed = false..horizontal addition not enabled …Don't need to strip off non-numerical characters");
+// justAddNumbers();
+// }//end if(!rowSummed && totalFieldNameIndex===fieldNamesArray.length-1) {
 	
 	totalFieldNameListener = false;
 	resetFields = true;//flag used in displayTable to keep fields being messed up
-//alertx("nonNumberCount = " + nonNumberCount + " tableTitle.length = " + tableTitle.length);
+	return fieldSUM;
+	
+	//return fieldSUM = fieldSUM.toFixed(2);
+//	TypeError: fieldSUM.toFixed is not a function. (In 'fieldSUM.toFixed(2)', 'fieldSUM.toFixed' is undefined)
+	//alert("fieldNamesArray[totalFieldNameIndex].textContent = " + fieldNamesArray[totalFieldNameIndex].textContent);
+}//end function summing
 
-	if(nonNumberCount>0) {
+
+function averaging () {
+//this function totals all entries containing a number .i.e 100%
+//DATE:OCT30 This function WORKS!
+//alertx("averaging : tableTitle.length = " + tableTitle.length + " totalFieldNameIndex = " + totalFieldNameIndex);
+
+//MIGHT USE THIS CODE!!
+function containsOnlyNumbers(str) {
+  return /^\d+$/.test(str);
+}
+
+console.log(containsOnlyNumbers('hello123')); // false
+console.log(containsOnlyNumbers('3453')); // true
+console.log(containsOnlyNumbers('3 apples')); // false
+console.log(containsOnlyNumbers('')); // false
+
+function onlyLetters(str) {
+  return /^[a-zA-Z]+$/.test(str);
+}
+
+console.log(onlyLetters('hello')); // 👉️ true
+console.log(onlyLetters('hello123')); // 👉️ false
+console.log(onlyLetters('one,two')); // 👉️ false
+console.log(onlyLetters('')); // 👉️ false
+
+//MIGHT USE THIS CODE!!
+
+
+let nonNumberCount = 0;
+fieldSUM = 0;
+//let keepTDentry = [];
+	for (i =0;i <tableTitle.length;i++) {
 	
-	//alert("subtracting nonNumberCount from tableTitle.length. Number of records averaged should be : " + (tableTitle.length-nonNumberCount));
-	//missing brackets caused an error
-	//alert("fieldSUM about to be divided…= " + fieldSUM);
+	if (tableArray[i][totalFieldNameIndex] === "" || tableArray[i][totalFieldNameIndex] === undefined || tableArray[i][totalFieldNameIndex] === "EDIT" || tableArray[i][totalFieldNameIndex] === " " || tableArray[i][totalFieldNameIndex] === 0) {
+	alert("Averaging column in record " + (i+1) + " contains a non number— null, EDIT or undefined! Averaging will ignore this record for the calculation.");
 	
-	fieldSUM = fieldSUM/(tableTitle.length-nonNumberCount);	//make average only of records summed..a 0 will not increase the sum
+	//alertxy("i = " + i);
+	
+	nonNumberCount++;//increase the count number
+		continue;
+	}//end else if (onlyLetters(tableArray[i][totalFieldNameIndex])) {
+	
+	//scenario for straight number
+else if ( !isNaN( Number(tableArray[i][totalFieldNameIndex]) )) {
+	fieldSUM = fieldSUM + Number(tableArray[i][totalFieldNameIndex]);
+	
+	//alertxy("i = " + i);
+	
+	 continue;
+	}//end if(!thenum.isNaN) {
+	
+		//scenario for EDIT where value in array = ""
+	
+	//scenario only letters i.e. Great
+	else if (onlyLetters(tableArray[i][totalFieldNameIndex])) {
+		nonNumberCount++;//increase the count number
+		alert("Averaging column in record " + (i+1) + " contains a non number! Averaging will ignore this record for the calculation.");
+		
+	//alertxy("i = " + i);
+	
+		continue;
+		
+	}//end if
+	
+	// //scenario for EDIT where value in array = ""
+	// else if (tableArray[i][totalFieldNameIndex] === "" || tableArray[i][totalFieldNameIndex] === undefined || tableArray[i][totalFieldNameIndex] === "EDIT" || tableArray[i][totalFieldNameIndex] === " ") {
+	// alert("Averaging column in record " + (i+1) + " contains a non number— null, EDIT or undefined! Averaging will ignore this record for the calculation.");
+	// alert("i = " + i);
+	// nonNumberCount++;//increase the count number
+	// 	continue;
+	// }//end else if (onlyLetters(tableArray[i][totalFieldNameIndex])) {
+	else {
+	
+		//alertxy("now i = " + i);
+		
+	let thenum = tableArray[i][totalFieldNameIndex].match(/\d+/)[0] // "3"
+	
+	alert("This entry might not be a straight number! the number = " + thenum);
+	//nonNumberCount++;//increase the count number
+	//tableArray[i][totalFieldNameIndex]
+	if(!isNaN(Number(thenum)) ){
+	fieldSUM = fieldSUM + Number(thenum);
+	
+	//alertxy("i = " + i);
+	
+	 continue;
+	}//end if(!isNaN(Number(thenum)) ){
+	
+	//alertxy("i = " + i);
+	
+	continue;
+	} //end if else if else
+
+}//end for loop
+
+if (nonNumberCount>0) {
+fieldSUM = fieldSUM/(tableTitle.length-nonNumberCount);	//make average only of records summed..a 0 will not increase the sum
+alert("Number of data cells excluded from the calculation (non-numerical data) = " + nonNumberCount);//removed -  " fieldSUM = " + fieldSUM
 	nonNumberCount = 0;//reset count for next averaging
 	
 	//alertx("fieldSUM(average) should be : " + fieldSUM);
 	//keepTDentry.length = 0;
 	} else {
 	fieldSUM = fieldSUM/tableTitle.length;
-	}//end if(nonNumberCount>0) {
-	
-	return fieldSUM;//fieldSUM now represents average..not total
+	}//end if else (nonNumberCount>0) {
+	//`const result = num.toFixed(2)`
+	return fieldSUM = fieldSUM.toFixed(2);//fieldSUM now represents average..not total
 
 }//end function averaging
+
+function includeAllNumbers () {
+//this function totals all entries containing a number .i.e 100%
+//DATE:OCT30 This function WORKS!
+//alertx("averaging : tableTitle.length = " + tableTitle.length + " totalFieldNameIndex = " + totalFieldNameIndex);
+
+//MIGHT USE THIS CODE!!
+function containsOnlyNumbers(str) {
+  return /^\d+$/.test(str);
+}
+
+console.log(containsOnlyNumbers('hello123')); // false
+console.log(containsOnlyNumbers('3453')); // true
+console.log(containsOnlyNumbers('3 apples')); // false
+console.log(containsOnlyNumbers('')); // false
+
+function onlyLetters(str) {
+  return /^[a-zA-Z]+$/.test(str);
+}
+
+console.log(onlyLetters('hello')); // 👉️ true
+console.log(onlyLetters('hello123')); // 👉️ false
+console.log(onlyLetters('one,two')); // 👉️ false
+console.log(onlyLetters('')); // 👉️ false
+
+//MIGHT USE THIS CODE!!
+
+
+let nonNumberCount = 0;
+fieldSUM = 0;
+//let keepTDentry = [];
+	for (i =0;i <tableTitle.length;i++) {
+	
+	if (tableArray[i][totalFieldNameIndex] === "" || tableArray[i][totalFieldNameIndex] === undefined || tableArray[i][totalFieldNameIndex] === "EDIT" || tableArray[i][totalFieldNameIndex] === " " || tableArray[i][totalFieldNameIndex] === 0) {
+	alert("Totaling column in record " + (i+1) + " contains a non number— null, EDIT or undefined! Averaging will ignore this record for the calculation.");
+	
+	//alertxy("i = " + i);
+	
+	nonNumberCount++;//increase the count number
+		continue;
+	}//end else if (onlyLetters(tableArray[i][totalFieldNameIndex])) {
+	
+	//scenario for straight number
+else if ( !isNaN( Number(tableArray[i][totalFieldNameIndex]) )) {
+	fieldSUM = fieldSUM + Number(tableArray[i][totalFieldNameIndex]);
+	
+	//alertxy("i = " + i);
+	
+	 continue;
+	}//end if(!thenum.isNaN) {
+	
+		//scenario for EDIT where value in array = ""
+	
+	//scenario only letters i.e. Great
+	else if (onlyLetters(tableArray[i][totalFieldNameIndex])) {
+		nonNumberCount++;//increase the count number
+		alert("Totalling column in record " + (i+1) + " contains a non number! Summing will ignore this record for the calculation.");
+		
+	//alertxy("i = " + i);
+	
+		continue;
+		
+	}//end if
+	
+	
+	else {
+	
+		//alertxy("now i = " + i);
+		
+	let thenum = tableArray[i][totalFieldNameIndex].match(/\d+/)[0] // "3"
+	alert("This entry might not be a straight number! the number = " + thenum);
+	//nonNumberCount++;//increase the count number
+	//tableArray[i][totalFieldNameIndex]
+	if(!isNaN(Number(thenum)) ){
+	fieldSUM = fieldSUM + Number(thenum);
+	
+	//alertxy("i = " + i);
+	
+	 continue;
+	}//end if(!isNaN(Number(thenum)) ){
+	
+	//alertxy("i = " + i);
+	
+	continue;
+	} //end if else if else
+
+}//end for loop
+
+//alertxy("nonNumberCount = " + nonNumberCount + " fieldSUM = " + fieldSUM);
+
+if (nonNumberCount>0) {
+//fieldSUM = fieldSUM/(tableTitle.length-nonNumberCount);	//make average only of records summed..a 0 will not increase the sum
+alert(nonNumberCount + " record entries in this column were NOT INCLUDED in the SUM!");
+	nonNumberCount = 0;//reset count for next averaging
+	
+	//alertx("fieldSUM(average) should be : " + fieldSUM);
+	//keepTDentry.length = 0;
+	//} else {
+	//fieldSUM = fieldSUM/tableTitle.length;
+	}//end if else (nonNumberCount>0) {
+	//`const result = num.toFixed(2)`
+	return fieldSUM = fieldSUM.toFixed(2);//fieldSUM now represents average..not total
+
+}//end function includeAllNumbers
+
+
+//alertx("tableArray[" +i + "][totalFieldNameIndex] = " + tableArray[i][totalFieldNameIndex] + " Number(tableArray[i][totalFieldNameIndex]) = " + Number(tableArray[i][totalFieldNameIndex]));
+
+	//if ( isNaN( Number(tableArray[i][totalFieldNameIndex]) )) {
+	//looks like the Number()function converts a non 0 null or "" to 0?
+	//Number(tableArray[i][totalFieldNameIndex]) if TEXT is NaN, but if null,"" Number() converts it to 0 which is a number so isNaN is false!
+	
+//if ( isNaN( Number(tableArray[i][totalFieldNameIndex])) || Number(tableArray[i][totalFieldNameIndex]) === 0) {
+	
+ //IF EXTRACTED NUMBER
+	//thenum = "foo3bar5".match(/\d+/)[0] // "3"
+	
+	//if thenum evaluates to null i.e. = great then do the code for a non number and add 1 to the non number count and then skip this iteration (continue) without adding to fieldSUM
+	//SyntaxError: No identifiers allowed directly after numeric literal
+// 	let analizeTxt = tableArray[i][totalFieldNameIndex] + Number(1);
+// 	alert("analizeTxt.match(/\d+/)[0] = " + analizeTxt.match(/\d+/)[0]);
+// 	//IF NON NUMBER LIKE GREAT
+// 	//if(analizeTxt.match(/\d+/)[0]===Number(1)) {
+// 	// if(isNaN(tableArray[i][totalFieldNameIndex]) && analizeTxt.match(/\d+/)[0] === Number(1)) {
+// 	if(isNaN(tableArray[i][totalFieldNameIndex])) {
+// 		nonNumberCount++;//increase the count number
+// 		alert("Averaging column in record " + (i+1) + " contains a non number! Averaging will ignore this record for the calculation.");
+// 	alert("i = " + i);
+// 		continue;
+		
+// 	}//end if(tableArray[i][totalFieldNameIndex].match(/\d+/)[0]===1)
+// 	//the scenario of 100%
+// 	else if(analizeTxt.match(/\d+/)[0]) {
+// 	alert("now i = " + i);
+// 	thenum = tableArray[i][totalFieldNameIndex].match(/\d+/)[0] // "3"
+// 	alert("This entry might not be a straight number! thenum = " + thenum);
+// 	nonNumberCount++;//increase the count number
+// 	//tableArray[i][totalFieldNameIndex]
+// 	if(!isNaN(Number(thenum)) ){
+// 	fieldSUM = fieldSUM + Number(thenum);
+// 	 continue;
+// 	}//end if(!thenum.isNaN) { else
+// 	} else {//end if(isNaN(tableArray[i][totalFieldNameIndex])) {
+//     //Number(tableArray[i][totalFieldNameIndex] if = Edit will be made a number = 0 which is NaN so condition not met. Therefore added || Number(tableArray[i][totalFieldNameIndex]) === 0 to cover EDIT entries
+//    // keepTDentry[nonNumberCount] = tableArray[i][totalFieldNameIndex];//store the original entry to replace after calculation
+//    // nonNumberCount++;//increase the count number
+    
+//   //  alertx("increment nonNumberCount = " + nonNumberCount);
+//     //tableArray[i][totalFieldNameIndex] = 0;
+//    // fieldSUM = fieldSUM + Number(tableArray[i][totalFieldNameIndex]);//probably don't need this line?
+// 	//	alert("Averaging column in record " + (i+1) + " contains a non number! Averaging will ignore this record for the calculation.");
+// 		//tableArray[i][totalFieldNameIndex] = keepTDentry[nonNumberCount];
+// 	//if(i<tableTitle.length)	{
+// 	//	i++;
+// 	//	}//end if(i<tableTitle.length)	{
+// 		//break;
+// 		//continue;//breaking out of the for loop skipping this iteration
+// 		//}//end if ( isNaN( Number(tableArray[i][totalFieldNameIndex]) )) {
+		
+// 	//alertx("before addition fieldSUM = "+ fieldSUM);
+	
+// 	//if(isNaN(Number(tableArray[i][totalFieldNameIndex])) ) {
+// 	//	continue;
+	
+// //	} //MAYBE SHOULD NOT REMOVE ASSUME THIS IS END OF IF(IS NAN)
+		
+// 	fieldSUM = fieldSUM + Number(tableArray[i][totalFieldNameIndex]);
+// 	}//end else if block
+// //alertx("i = " + i + " fieldSUM =  " + fieldSUM);	
+
+
+
+
+
+
+
+
+// 	}//end for loop
+	
+	
+// 	fieldSUM = fieldSUM/(tableTitle.length-nonNumberCount);	//make average only of records summed..a 0 will not increase the sum
+// 	nonNumberCount = 0;//reset count for next averaging
+	
+// 	//alertx("fieldSUM(average) should be : " + fieldSUM);
+// 	//keepTDentry.length = 0;
+// 	} else {
+// 	fieldSUM = fieldSUM/tableTitle.length;
+// 	}//end if else (nonNumberCount>0) {
+	
+// 	return fieldSUM;//fieldSUM now represents average..not total
+
+// }//end function averaging
 
 //function below is CODE TO RESET BLINK IF TELEPHONE OR EMAIL HAD BEEN ACTIVATED
 //function to reset active field headers
@@ -16394,7 +16857,7 @@ if(fieldNamesArray[k].includes("TOTAL")|| fieldNamesArray[k].includes("AVERAGE")
 		}//end if else if if(fieldNamesArray[k].includes("TOTAL")) {
 			//STnextFieldHeading.textContent = " TOTAL = " + fieldSUM;
 			
-	if (fieldNamesArray[k].includes("COST")) {
+	if (fieldNamesArray[k].includes("COST")|| fieldNamesArray[k].includes("$")) {
 		STnextFieldHeading.textContent = fieldNamesArray[k]+ " $" + fieldSUM;
 		// } else if (fieldNamesArray[k].includes("AGE")) {
 		// 	STnextFieldHeading.textContent = fieldNamesArray[k]+ " " + fieldSUM + " yrs";
@@ -16510,6 +16973,177 @@ resetActiveFieldHeaders();
 
 }//end function resetFixedFieldActivity () {
 
+// function sumAcross (i,c) {
+// 	for (let c=4;c<numberOfFields;c++) {
+// 	rowSum = tableArray[i][c] + rowSum;
+// 	return rowSum;
+// 	}//end for (let i=4;i<fieldNames.length;i++) {
+	
+// }//end function sumAcross
+
+function sumAcross (i,c) {
+
+//this function totals only entries that are straight numbers .i.e 100 BUT NOT 100%. This allows adding non number literals to a number so the value in the cell is NOT INCLUDED in the sum.
+rowSUM = 0;//reset for each run of this function
+	for (let c=4;c<numberOfFields;c++) {
+	
+	if ( isNaN( Number(tableArray[i][c])) || Number(tableArray[i][c]) === 0) {
+	c++;
+	//	}//end if(i<tableTitle.length)	{
+		//break;
+		//continue;//breaking out of the for loop skipping this iteration
+		}//end if ( isNaN( Number(tableArray[i][c]) )) {
+		
+	//alertx("before addition fieldSUM = "+ fieldSUM);
+	
+	if(isNaN(Number(tableArray[i][c])) ) {
+		continue;
+	}//end if
+		
+	rowSUM = rowSUM + Number(tableArray[i][c]);
+	
+//alertx("i = " + i + " fieldSUM =  " + fieldSUM);	
+
+	}//end for loop
+	
+	//alertxy("In sumAcross function: rowSUm =  " + rowSUM);
+	
+	return rowSUM;//
+
+}//end function sumAcross
+
+
+
+
+//function isolateNumber used by summing()
+function XisolateNumber () {
+//there is a scenario where some entries in column are string  number and other entries are already a number!
+
+
+
+for (i =0;i <tableTitle.length;i++) {
+	let parseString = tableArray[i][totalFieldNameIndex];
+//TypeError: undefined is not an object (evaluating 'parseString.length')
+	
+	let deleteCount = tableArray[i][0].length + 2 + sumRowTxt.length;
+	let start = deleteCount;
+	let removeNumber = parseString.length - deleteCount;
+	
+let strippedOff = parseString.slice(start)
+
+	
+	if ( isNaN( Number(strippedOff) )) {
+    
+
+		alert("Addition column in record " + (i+1) + " contains a non number!");
+		i++;
+		//break;
+		}//end if ( isNaN( Number(tableArray[i][totalFieldNameIndex])) || Number(tableArray[i][totalFieldNameIndex]) === 0) {
+		
+	fieldSUM = fieldSUM + Number(strippedOff);
+}//end for loop			
+}//end function isolateNumber
+
+//function isolateNumber used by summing() called if last column and it contains rowSumTxt
+function isolateNumber () {
+//there is a scenario where some entries in column are string  number and other entries are already a number!
+for (i =0;i <tableTitle.length;i++) {
+if(!isNaN(tableArray[i][totalFieldNameIndex])) {
+//this scenario won't happen here because function is only called if in last coloumn and it contains rowSumTxt
+	strippedOff = tableArray[i][totalFieldNameIndex];
+	
+	//alertxy("this entry is a number so we use it! strippedOff = " + strippedOff);
+
+	} else if (tableArray[i][totalFieldNameIndex] === undefined) {
+		strippedOff = 0;
+	
+	} else {
+
+//for (i =0;i <tableTitle.length;i++) {
+	let parseString = tableArray[i][totalFieldNameIndex];
+//TypeError: undefined is not an object (evaluating 'parseString.length')
+//?need to adjust tableArray[i][0].length for a load fronTableOptions db??	
+//In simple contacts a space is added at end of tableArray[i][totalFieldNameIndex] that I don't think .length takes into account so maybe need to strip tableArray[i][totalFieldNameIndex] of spaces?
+//let trimElement = tableArray[i][0].trim();
+
+let deleteCount = tableArray[i][0].length + 2 + sumRowTxt.length;
+//a main table and a new table have record field 0 formatted with spacing differently by 1 space - not sure why? Probably something to do with adding the #> to the first record field ? because to display the data in the td cell I added a space after #> ???.Should be able to use trim() to fix but so far not successful so line below is temporary fudged fix!
+//alertxy("loadFromTableOptions = " + loadFromTableOptions);
+
+if(makeContactsTable || loadFromTableOptions) { 
+	 deleteCount = tableArray[i][0].length + 1 + sumRowTxt.length;
+	}//end if(makeContactsTable || loadFromTableOptions) { 
+	//let deleteCount = trimElement.length + 2 + sumRowTxt.length;
+	
+	let start = deleteCount;
+	
+	//alertxy("tableArray[i][0] = " + tableArray[i][0] + " tableArray[i][0].length = " + tableArray[i][0].length + " deleteCount = " + deleteCount);
+	
+	//alertxy("sumRowTxt = " + sumRowTxt + " sumRowTxt.length = " + sumRowTxt.length);
+	
+	//alertxy("totalFieldNameIndex = " + totalFieldNameIndex + " tableArray[i][" +totalFieldNameIndex +"] = " + tableArray[i][totalFieldNameIndex] + " parseString = " + parseString + " start = " + start);
+	
+	let removeNumber = parseString.length - deleteCount;
+	
+ strippedOff = parseString.slice(start);
+ 
+//alertxy("After isolating number strippedOff =  " + strippedOff);
+	
+	if ( isNaN( Number(strippedOff) )) {
+    
+
+		alert("Addition column in record " + (i+1) + " contains a non number!");
+		i++;
+		//break;
+		continue;//should this be here????
+		}//end if ( isNaN( Number(tableArray[i][totalFieldNameIndex])) || Number(tableArray[i][totalFieldNameIndex]) === 0) {
+	}//end if else
+		
+	fieldSUM = fieldSUM + Number(strippedOff);
+	
+	//alertxy("fieldSUM = "  + fieldSUM);
+	//fieldSUM = fieldSUM.toFixed(2);
+	//TypeError: fieldSUM.toFixed is not a function. (In 'fieldSUM.toFixed(2)', 'fieldSUM.toFixed' is undefined)
+	//ReferenceError: Can't find variable: strippedOff
+}//end for loop			
+}//end function isolateNumber
+
+function justAddNumbers () {
+	for (i =0;i <tableTitle.length;i++) {
+	
+	if ( isNaN( Number(tableArray[i][totalFieldNameIndex]) )) {
+    
+//  if ( isNaN( Number(tableArray[i][totalFieldNameIndex])) || Number(tableArray[i][totalFieldNameIndex]) === 0) {
+	
+    //Number(tableArray[i][totalFieldNameIndex] if = Edit will be made a number = 0 which is NaN so condition not met. Therefore added || Number(tableArray[i][totalFieldNameIndex]) === 0 to cover EDIT entries
+	
+	
+		//i++;
+		alert("Addition column in record " + (i+1) + " contains a non number!");
+		i++;
+		//break;
+		}//end if ( isNaN( Number(tableArray[i][totalFieldNameIndex])) || Number(tableArray[i][totalFieldNameIndex]) === 0) {
+	if(isNaN(Number(tableArray[i][totalFieldNameIndex])) ) {
+		continue;
+	}
+		
+	fieldSUM = fieldSUM + Number(tableArray[i][totalFieldNameIndex]);
+	
+	//alertxy("i = " + i + " fieldSUM = " + fieldSUM);
+	
+}//end for loop	
+	//alertx("i = " +i + " fieldSUM = " + fieldSUM);
+	//totalFieldNameIndex replaced with k
+//if (fieldSUM === NaN) {
+//alert("The array contains a non number so unable to complete sum!");	
+//}
+//alert("fieldSUM = " + fieldSUM);
+//alert("typeof fieldSUM = " + typeof(fieldSUM));
+//fieldNamesArray[totalFieldNameIndex].textContent = " TOTAL = " + fieldSUM;
+// fieldNamesArray[totalFieldNameIndex].textContent = " TOTAL = ";
+//alertxy("rowSummed false or rowSummed true but not last field : fieldSUM = " + fieldSUM);
+
+}//end function just add numbers
 
 //readFile(input) function called in HTML when tapping on the input element. The function below is not found I think because traditiona functions can not be hoisted? This function works when called from the script in HTML
 
