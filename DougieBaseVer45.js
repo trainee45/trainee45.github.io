@@ -890,7 +890,7 @@ if (!window.indexedDB) {
 if (window.indexedDB) {
     console.log("Your browser supports a stable version of IndexedDB. Should work.");
 }
-alert("Running MESSED UPtrying3Copy of improveBudgetDougieBaseVer44.js");
+//alert("Running MESSED UPtrying3Copy of improveBudgetDougieBaseVer44.js");
 //how to test if user using dark mode
 var usingDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 console.log("At start 543 first reference User is using dark mode: " + usingDarkMode);
