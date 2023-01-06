@@ -969,7 +969,7 @@ scrolling.appendChild(bottomBtn);
 
 scrollBtn.onclick = function () {
 //alert("scrollBtn tapped! scrollHere = " + scrollHere);
-
+//alert("recordId = " + recordId + ". scrollHere = " + scrollHere);
 if(scrollHere) {
 
 //alert("recordId = " + recordId);
@@ -7315,6 +7315,12 @@ $("#flip").css({"border-color": "red"});
 
 //alertx("Highlight just tapped: about to go to displayTable..searchedHitsTableArray = " + searchedHitsTableArray + "number of Hits = " + hits);
 console.log("Highlight just tapped: about to go to displayTable..searchedHitsTableArray = " + searchedHitsTableArray + "number of Hits = " + hits);
+
+//set up scrollBtn in NOTES to scroll to a searched record JAN 6 2023
+recordId = matchedRecordIndex;
+scrollHere = true;//added Dec4
+//set up scrollBtn in NOTES to scroll to a searched record JAN 6 2023
+//alert("recordId = " + recordId + ". scrollHere = " + scrollHere);
 
 		displayTable();
 		renewed = 0;
