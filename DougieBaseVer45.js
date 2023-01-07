@@ -7062,6 +7062,7 @@ console.log('caseSensitive = ' + caseSensitive);
 		//remove above if screw up Jan 22 2021
 	console.log('searchTitleInput = ' + searchTitleInput.value);
 		let searchFor = searchTitleInput.value;
+		searchFor = searchFor.trim();//added Jan6 2023 so a space at end of 1st field search does not mess up found item!
 		//let searchedRecordTitle = [];
 		if (!caseSensitive) {
 			query = searchFor.toLowerCase();
