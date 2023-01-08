@@ -969,12 +969,14 @@ scrolling.appendChild(bottomBtn);
 
 scrollBtn.onclick = function () {
 //alert("scrollBtn tapped! scrollHere = " + scrollHere);
+//set up scrollBtn in NOTES to scroll to a searched record JAN 6 2023
+
 //alert("recordId = " + recordId + ". scrollHere = " + scrollHere);
 if(scrollHere) {
 
 //alert("recordId = " + recordId);
 //alert(" recordId * 500 = " + 450*(recordId-1));
-scrollAmount = 485*(recordId-2);//fudged amt I made to fit tried 480 475 450 500
+scrollAmount = 485*(recordId-2);//450!fudged amt I made to fit tried 500 480 475 450 
 //alert("scrollAmount = " + scrollAmount);
 window.scrollBy(0, scrollAmount);
 scrollHere = false;	
@@ -7187,7 +7189,7 @@ if(makeContactsTable || loadFromTableOptions) {liMatchedRecord.textContent = "Th
 }else{liMatchedRecord.textContent = "If record containing search phrase found it will appear below:"}//end if makeContactsTable
 
 if(matchedRecordIndex === -1) {
-	liMatchedRecord.textContent = searchTitleInput.value + " .. Record not found";
+	liMatchedRecord.textContent = searchTitleInput.value + " .. Record  not found";
 	//NotFoundError: The object can not be found here.	  resultList.removeChild(matchedRecord);
 	  }//end if matchedRecordIndex = -1
 	  // liMatchedRecord.textContent = tableTitle[matchedRecordIndex];
@@ -17514,9 +17516,13 @@ includeAllNumbers();
 	
 	totalFieldNameListener = false;
 	resetFields = true;//flag used in displayTable to keep fields being messed up
+
 //if(budgetSheet) {
+//ADDED JAN2 2023 to correct error where any TOTAL in any column added this info to the STtableHeader
+if(totalFieldNameIndex===fieldNamesArray.length-1) {
 	STtableHeader.textContent = dbTableName.value
 	 + " \n " + fieldNamesArray[fieldNamesArray.length-1] +  " : $" + fieldSUM;
+	 }//end if(totalFieldNameIndex===fieldNamesArray.length-1) {
 	
 	//STtableHeader.textContent = dbTableName.value
 	// + " \n  $" + fieldSUM;
