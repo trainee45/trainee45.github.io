@@ -1,4 +1,4 @@
-//DougieBaseVer45.js JAN6 2023 scrollbtn in NOTES  goes to searched record in table blockedMESSED UPtrying3Copy of improveBudgetDougieBaseVer44.js Copy of improveBudgetDougieBaseVer44.js USE FIND '//alertblk' and replace with 'alert' to restore for troubleshooting blocked by browser USE FIND '//alertcm' and replace with 'alert' to restore for troubleshooting changeMonth code  improveBudgetDougieBaseVer44.js added code to keep table scrolled to view edited cell, sampleBudgetDougieBaseVer44.js DougieBaseVer44.js Dec4 2022 calculationAlertsrenameDBDougieBaseVer43.js DougieBaseVer43.js Date: Dec3 scrollBtn added scroll to last  edited record in NOTES  (scrollBtn.onclick) added preferences option to toggle calculation Alerts  Nov28;did adding delay(5000); in getManualContacts fix the plusContacts? Hope so ..NOPE STILL NOT FIXED IS IT Nov27 added blue color to TOTAL Nov26 2022 Nov22 2022 tested with create new db added info for Cost to date in notes made changes in both css files to accomodate reNAME FILEMAME retryisolateNumbersumAcrossDougieBaseVer43.js Nov21 2022 alerts for rename filename can be retrieved using alertrnf removing alerts in the keyword functions..USE FIND '//alertxy' and replace with 'alert' to restore for troubleshooting  experimentretryisolateNumbersumAcrossDougieBaseVer43.js corrects for space difference in main and new tables  retryisolateNumbersumAcrossDougieBaseVer43.js DATE: Nov16 IF THIS SCREWS UP REVERT BACK TO isolateNumbersumAcrossDougieBaseVer43.js Nov17 in editTDBtn.onclick addEventListener put in code to check if rowSummed and if so update sum across!  sumAcrossDougieBaseVer43.js sumAcross works and total of last column if rowSummed, works BUT TOTAL  in other DYNAMICfields is messed up because rowSummed is always true so will put conditional in summing() to exclude last field ..new rule TOALfor rowSummed only works in last field !  DougieBaseVer43.js Nov9 2022 from bugDatesdynamicTelephoneDougieBaseVer42.js FIXED Activation glitches? Nov7 fixed bug in dates when adding record (+) to a new table dynamicTelephoneDougieBaseVer42.js.. not yet published.. Oct29 2022 need to add code at moreTables and homescreenBtn2 and refresh..DONE .. telephoneDougieBaseVer42.js RESET BLINK IF TELEPHONE OR EMAIL HAD BEEN ACTIVATED Oct 22 2022 this version works WILL TEST SOME MORE added code for telephone similar to email at displayTable that was missing.  DougieBaseVer42.js Oct19 Oct16 2022 incorporating moreTablesBtnDougieBaseVer42.js Oct11 2022 retryTOTALDougieBaseVer42.js Oct11 2022 AGE (TOTAL) if COST in header will add $ to result after adding now will add even if entry is NaN works if all items in column are numbers use search phrasex—for (let k = 4; k < numberOfFields; k++) { — TOTALDougieBaseVer42.js DougieBaseVer42.js Date Oct 5 .. use this to update github! Oct4 2022 from restoreFromLocalFileDougieBaseVer40.js fallBack2Sept29restoreFromLocalFileDougieBaseVer40.js restoreFromLocalFileDougieBaseVer40 Date Sept25 2022 WORKS! Added Scroll to bottom in manage window DougieBaseVer40.js fix!editSearchedNoteDougieBaseVer40.js Think this is fixed ? Sept 20 2022 editSearchedNoteDougieBaseVer40.js As of Sept 11 2022, can now edit the single record view obtained as a result of a record search. Still testing..seems to work change SW to ver 26 before sending to github! - from createNewDougieBaseVer40.js from eMailDougieBaseVer40.js email now active  fixContactsBugDougieBaseVer40.js Jun7 fixed dbl tap deleting instead of editing a new table ..deleteRecordNewTable = false; .. June6 fixed repeat record entry in contacts tables if repeating creating a contacts table DougieBaseVer40.js June4 saveBtn2 fixed and flashing displayTableBtn when CONVERT file format June3 fixed search bug May28 fixed tableLimit noAlertsplusContactshitsTablefixADDCONTACTSDougieBaseVer40 May18 fixed share data error May28 2022 tableLimit plusContactshitsTablefixADDCONTACTSDougieBaseVer40.js May17 May15 May 13 May9 hitsTablefixADDCONTACTSDougieBaseVer40.js May5  from fixADDCONTACTSDougieBaseVer40.js May1  testCancelsweetAlertnoAlertsmoreBlock+DougieBaseVer40.jsApri25 2022
+//DougieBaseVer45.js Jan20 highlightDateDougieBaseVer45 DougieBaseVer45.js Jan18 savedOriginal = false;//to trigger updating saved table arrays removed two <form> in HTML which caused crashes with add contacts/ recordsJAN6 2023 scrollbtn in NOTES  goes to searched record in table blockedMESSED UPtrying3Copy of improveBudgetDougieBaseVer44.js Copy of improveBudgetDougieBaseVer44.js USE FIND '//alertblk' and replace with 'alert' to restore for troubleshooting blocked by browser USE FIND '//alertcm' and replace with 'alert' to restore for troubleshooting changeMonth code  improveBudgetDougieBaseVer44.js added code to keep table scrolled to view edited cell, sampleBudgetDougieBaseVer44.js DougieBaseVer44.js Dec4 2022 calculationAlertsrenameDBDougieBaseVer43.js DougieBaseVer43.js Date: Dec3 scrollBtn added scroll to last  edited record in NOTES  (scrollBtn.onclick) added preferences option to toggle calculation Alerts  Nov28;did adding delay(5000); in getManualContacts fix the plusContacts? Hope so ..NOPE STILL NOT FIXED IS IT Nov27 added blue color to TOTAL Nov26 2022 Nov22 2022 tested with create new db added info for Cost to date in notes made changes in both css files to accomodate reNAME FILEMAME retryisolateNumbersumAcrossDougieBaseVer43.js Nov21 2022 alerts for rename filename can be retrieved using alertrnf removing alerts in the keyword functions..USE FIND '//alertxy' and replace with 'alert' to restore for troubleshooting  experimentretryisolateNumbersumAcrossDougieBaseVer43.js corrects for space difference in main and new tables  retryisolateNumbersumAcrossDougieBaseVer43.js DATE: Nov16 IF THIS SCREWS UP REVERT BACK TO isolateNumbersumAcrossDougieBaseVer43.js Nov17 in editTDBtn.onclick addEventListener put in code to check if rowSummed and if so update sum across!  sumAcrossDougieBaseVer43.js sumAcross works and total of last column if rowSummed, works BUT TOTAL  in other DYNAMICfields is messed up because rowSummed is always true so will put conditional in summing() to exclude last field ..new rule TOALfor rowSummed only works in last field !  DougieBaseVer43.js Nov9 2022 from bugDatesdynamicTelephoneDougieBaseVer42.js FIXED Activation glitches? Nov7 fixed bug in dates when adding record (+) to a new table dynamicTelephoneDougieBaseVer42.js.. not yet published.. Oct29 2022 need to add code at moreTables and homescreenBtn2 and refresh..DONE .. telephoneDougieBaseVer42.js RESET BLINK IF TELEPHONE OR EMAIL HAD BEEN ACTIVATED Oct 22 2022 this version works WILL TEST SOME MORE added code for telephone similar to email at displayTable that was missing.  DougieBaseVer42.js Oct19 Oct16 2022 incorporating moreTablesBtnDougieBaseVer42.js Oct11 2022 retryTOTALDougieBaseVer42.js Oct11 2022 AGE (TOTAL) if COST in header will add $ to result after adding now will add even if entry is NaN works if all items in column are numbers use search phrasex—for (let k = 4; k < numberOfFields; k++) { — TOTALDougieBaseVer42.js DougieBaseVer42.js Date Oct 5 .. use this to update github! Oct4 2022 from restoreFromLocalFileDougieBaseVer40.js fallBack2Sept29restoreFromLocalFileDougieBaseVer40.js restoreFromLocalFileDougieBaseVer40 Date Sept25 2022 WORKS! Added Scroll to bottom in manage window DougieBaseVer40.js fix!editSearchedNoteDougieBaseVer40.js Think this is fixed ? Sept 20 2022 editSearchedNoteDougieBaseVer40.js As of Sept 11 2022, can now edit the single record view obtained as a result of a record search. Still testing..seems to work change SW to ver 26 before sending to github! - from createNewDougieBaseVer40.js from eMailDougieBaseVer40.js email now active  fixContactsBugDougieBaseVer40.js Jun7 fixed dbl tap deleting instead of editing a new table ..deleteRecordNewTable = false; .. June6 fixed repeat record entry in contacts tables if repeating creating a contacts table DougieBaseVer40.js June4 saveBtn2 fixed and flashing displayTableBtn when CONVERT file format June3 fixed search bug May28 fixed tableLimit noAlertsplusContactshitsTablefixADDCONTACTSDougieBaseVer40 May18 fixed share data error May28 2022 tableLimit plusContactshitsTablefixADDCONTACTSDougieBaseVer40.js May17 May15 May 13 May9 hitsTablefixADDCONTACTSDougieBaseVer40.js May5  from fixADDCONTACTSDougieBaseVer40.js May1  testCancelsweetAlertnoAlertsmoreBlock+DougieBaseVer40.jsApri25 2022
 //NOTE ALERTS REMOVED HAVE A x after alert SO USE FIND REPLACE SEARCH TO RESTORE THEM!! i.e. //alertx("message data…") can be restored by search and replace for //alertx and replace with alert
 //moreBlock+DougieBaseVer40.js April17 April15 fallBackApril15moreBlock+DougieBaseVer40.js Copy of moreBlock+DougieBaseVer40.js fallBackApril14moreBlock+DougieBaseVer40.js moreBlock+DougieBaseVer40.js April10 for testing and when works back to block… from block+DougieBaseVer40.js DougieBaseVer40.js from shareDeleteRecordNewTableDougieBaseVer37.js WILL THIS FILE AUTOMATICALLY SYNC WITH ICLOUD.YES!deleteRecordNewTableDougieBaseVer37.js NOTE ALERTS REMOVED HAVE A > AFTER THE " SO USE FIND REPLACE SEARCH TO RESTORE THEM!! i.e. //alert("> message data…") can be restored by search and replace for //alert("> …) .. MUST PUT A SPACE AFTER THE> CHARACTER! fromNewTablehitsTableDougieBaseVer37.js pushContactsFormtableIndexaddContactsDougieBaseVer37 ADD CONTACTS number of dynamicfields = 1 now createnewDB resets newTableSpecificVariables and savedTablesArray to 0 savedTablesArray.length increases by 1 as each table is created fixed manal contact entry fields fixed + contacts deletingTableField variable added Marc19  contactsFormtableIndexaddContactsDougieBaseVer37.js manual contacts now works Mar13 tableIndexaddContactsDougieBaseVer37.js from deleteNTtableIndexaddContactsDougieBaseVer37.js Mar11 from delete last and first and middle tables works!  tableIndexaddContactsDougieBaseVer37.js Mar9 2022 deleteItemtableIndexaddContactsDougieBaseVer37.js from tableIndexaddContactsDougieBaseVer37 WORKS Mar8 FOR CRETION NEWBB BEFORE ANY DB LOADED MAR6 from createNewaddContactsDougieBaseVer37 from addContactsDougieBaseVer37 from Copy of addContactsDougieBaseVer37 based on date: Feb22 2022 worksKeepTestPlayWithNewTableContactsDougieBaseVer37 Feb 17 2022 Feb 13 2022 from testPlayWithNewTableContactsDougieBaseVer37 Feb10 from playWithSTRowsEditTDNewTableContactsDougieBaseVer37.js FEB6 FEB4 2022 from workingOnEditTDNewTableContactsDougieBaseVer37.js currentJan19ContactsDougieBaseVer37.js now adding newTable variables ..Jan11 go to fallBackJan11 if meeses up workingOnContactsDougieBaseVer37.js Jan2 THIS VERSION WORKS WITH SAFARI CONTACT PICKER!  contacts table working with search sort Dec24 Added whatsNew window  Working on retrieving contact info. See functions at bottom. ADD style="color:black" IN HTML  Dec22 moved getMemory function from html file to .js file from Dec10 2021 mobileFriendlyDougieBaseVer37.js from DougieBaseVer36.js Dec5 sw11 from messWith Dec2 DougieBaseVer36.js Dec1 from flashFileNameDougieBaseVer36.js from createNewDBDougieBaseVer36 Nov30 Nov28 added addToDynamicFields.setAttribute('class','borderBlink') to border in editMoreFields function and addNoteBtn.setAttribute('class','borderBlink'); in saveBtn.onclick for createNewDB renameBtn.setAttribute('class','borderBlink'); in preferences displayDataBtn.setAttribute('class','borderBlink'); in function renameTitle Nov28 borderBlink css is in the html file  Nov 27 fine tuned flow of createNewDB Nov24 fixed create newDB bug! Nov 22 edit notes displayed n real time Nov17 added tableScreenOptions to editTableTrigger to not mess up table display Nov14 from spDougieBaseVer36.js landscape table search and preview edid Date:Nov9 save preferences from Date:Nov4 added Easter egg and save settings preferencesDougieBaseVer36.js from fixEditDougieBaseVer35.js from 
 //changed addEventListener to copy instead of dblclick Oct16 made default double click Oct31 2021  clearBkgrdDougieBaseVer34.js clear background and fixed crashes that occur if user makes illogical moves Oct12 2021 use to update workingCopy and Safarii etc
@@ -144,6 +144,8 @@
 //these variables are experimental..belong to make contacts table code Dec29
 //let namestr = "";
 //will save a flag that indicates if new table derived from a searchmain db in aid of preventing + - icons appearing in such a table..aadding a record herevwould crash!
+//let clickedMoreTables = false;//flag to fix undefined error in displayTable if coming from more notes after an add note procedure
+let recordAdded = false;//flag to update tableArray to fix undefined error if going from more notes to displayTable
 let originalDBName = "";//used in rename database deleting original file
 // let blockedName = "";//trying to avoid glitch if attempting to delete a db more than once
 // let blocked2Name = "";
@@ -259,7 +261,7 @@ const actionDeleteBtn = document.querySelector('#actionDelete');
 const actionCancelBtn = document.querySelector('#actionCancel');
 //variable references for promptBox
 
-const manualContactsForm = document.querySelector('#contacts');
+//const manualContactsForm = document.querySelector('#contacts');form.onsubmit is used for addData so any other form with any kind of submit btn will divert program flow to addData and this caused the crash when adding contacts with the + btn! SO REMOVED THE FORM WITH ID =CONTACTS IN HTML AND AL REFERENCES TO IT IN JS I.E. manualContactsForm.BLUR ,!!?,?,?,
 const emailBtn = document.querySelector('#email');//made global because referenced by tableScreenOptions Mar7
 const newTableFieldsBtn = document.querySelector('#newTableFields');
 const displayTableBtn = document.querySelector('#displayTable');
@@ -810,8 +812,8 @@ if(makeContactsTable || loadFromTableOptions) {
 addNoteBtn.setAttribute('class','attentionBtn');
 let today = new Date();
 let todayS = today.toString();
-let todayString = todayS.slice(3, 21);
-//alert('todayString = ' + todayString);
+let todayString = todayS.slice(3, 21);//21
+//alert("todayS = " + todayS + ". todayString = " + todayString);
 //let todayDate = today.slice(1,20);
 //const scrollBtn = document.querySelector('#scrollBtn');
 const scrolling = document.querySelector('#scrolling');
@@ -2908,7 +2910,7 @@ alert('Installing DougieBase.. Install version = ' + ver);
 //if (setup === 1) {getDataBaseName();}
 
 form.onsubmit = addData;//from addNote window This is theCreateNewNote button in the Add new note window. The reference is to the input submit in the form element of the add new note window in HTML
-
+//const manualContactsForm = document.querySelector('#contacts');form.onsubmit is used for addData so any other form with any kind of submit btn will divert program flow to addData and this caused the crash when adding contacts with the + btn! SO REMOVED THE FORM WITH ID =CONTACTS IN HTML AND AL REFERENCES TO IT IN JS I.E. manualContactsForm.BLUR ,!!?,?,?,
 
 
 saveBtn.onclick = function () {
@@ -3305,6 +3307,7 @@ else if (xtraField === 1) {
 
 	//xtraFieldData = newFieldName + ': \n' + inputXtraFieldData.value;//+ xtraFieldData maybe should be + inputExtraFieldData.value;
 	//changed created: new Date to todayString
+	
 	  newItem = { title: titleInput.value,
 		 created: todayString, body: bodyInput.value, xtraField: xtraFieldData, variable1: dbTableName.value, variable2: variable2Array, dataV: dataVobj}; 
 		 	  //changed variable2: setup to variable2Array
@@ -3343,6 +3346,9 @@ idx = index(name), deleteIndex(name) */
   /*customerData.forEach(function(customer) {
 	  var request = objectStore.add(customer);*/
   request.onsuccess = function() {
+  //ADDED THIS LINE JAN18 2023 to update the save table arrays so that the tableArray variables are restored to updated info after an ADD Note
+  savedOriginal = false;//to trigger updating saved table arrays to enable restoring to main db mode has uptodate info following an ADD Note btn tap.
+  
     // Clear the form inputs from the addNote window to be ready for adding the next entry in addNote
 	console.log('At request.onsuccess of addData after adding newItem');
     titleInput.value = '';
@@ -7814,6 +7820,7 @@ console.log("In PickOldNew…after retrieving dataVobj…….tableIndex = " + ta
 
 displayData();
 
+
 }//end if setup=1 wrapper to set all variables of a pre-existing database
 	
 	
@@ -9486,6 +9493,9 @@ console.log("At end of build record rows from a table edit. tableArray = " +tabl
 //above code is buildRecordRows function
 //show the table previously created using the tableArray variable
 function displayTable () {
+
+let currentDate = todayS.slice(3, 10);
+//alert("currentDate = " + currentDate);
 //end function displayTable ..!!!! showTable IS AT LINE 10853
 //flag to only allow transit through mainDBedit code once	
 //if(budgetSheet) {
@@ -9980,6 +9990,14 @@ fromDeleteField = false;// turn off this flag so that addFields is not called ag
 	STheadRow.appendChild(STnextFieldHeading);
 	//if field heading is TOTAL addzevent listener
 	//alertx("fieldNamesArray[k] = " + fieldNamesArray[k] + "fieldNamesArray[k].includes(TOTAL)" + fieldNamesArray[k].includes("TOTAL"));
+//code to set field heading light blue if = today's date
+//alert("budgetSheet = "  +budgetSheet + ". fieldNamesArray[k] = " + fieldNamesArray[k] + ". currentDate = " + currentDate);
+if (budgetSheet && fieldNamesArray[k].trim() === currentDate.trim()) {
+STnextFieldHeading.style.backgroundColor = "lightblue";
+//STnextFieldHeading.textContent = "CURRENT DATE  " + currentDate.trim();
+}//end if (budgetSheet && fieldNamesArray[k].includes())
+
+//code to set field heading light blue if = today's date
 	
 //SHOULD I RESET BLINK OF ACTIVE field header here as well? It does get reset if resetFields has been made True when homeBtn moreNotesBtn tapped. 
 //to reset field header if blinking
@@ -10245,14 +10263,24 @@ STheadRow.appendChild(secondFieldName);
 STheadRow.appendChild(STfirstDataNameTd);
 STheadRow.appendChild(STsecondDataNameTd);
 //field labels of static fields now restored!
+
 for (let k = 4; k < numberOfFields; k++) {
 	const STnextFieldHeading = document.createElement('td');
 	STnextFieldHeading.textContent = fieldNamesArray[k];	
 	//to reset field header if blinking
+	
+
+
 	STnextFieldHeading.setAttribute('class','stHeadRow');//resets cancels blinking if previously applied by an addEventListener
 	
 	STheadRow.appendChild(STnextFieldHeading);
 	//if field heading is TOTAL addzevent listener
+//code to set field heading light blue if = today's date
+if (budgetSheet && fieldNamesArray[k].trim() === currentDate.trim()) {
+STnextFieldHeading.style.backgroundColor = "lightblue";
+}//end if (budgetSheet && fieldNamesArray[k].includes())
+
+//code to set field heading light blue if = today's date
 	
 	
 //	if (STnextFieldHeading.textContent === "TOTAL") {
@@ -10576,16 +10604,39 @@ refreshed = 0; */
 
 		//put text of the tableArray[][] in the data cell	
 	//	TypeError: undefined is not an object (evaluating 'tableArray[i][c]')Feb23 after create new db!
-		
-	//	The undefined property indicates that a variable has not been assigned a value, or not declared at all.
-		
-	STrecordTd.textContent = tableArray[i][c];//tableTitle (global) array has to be constructed in displayData of indexedDBNotes	This is the info from displayData that was put into the tableArray n buildRecordRows when constructing the table
 	
-	//to allow table edit to avoid dblclick and to work in a blank td cell as will be the case if adding a dynamic field in edit table enter a text string to facilitate the copy paste iOS process to allow data entry. Oct 19 2021
+
+//alert("loadFromTableOptions = " +loadFromTableOptions + ". tableArray[i][c] = " + tableArray[i][c] + ". dataBaseName = " + dataBaseName + ". dbName = " +dbName );
+//loadTheDataBase (dataBaseName)	
+// if(clickedMoreTables) {
+// dataBaseName = dbName;
+// loadTheDataBase(dataBaseName);
+// clickedMoreTables = false;
+// displayTable();
+// }
+//TRY THIS CODE TO FIX TYPE ERROR DATE: Jan16 2023	
+// if(tableArray[i][c]=== undefined || tableArray[i][c]===0 || tableArray[i][c]=== " " || tableArray[i][c]=== null || tableArray[i][c]=== "") {
+// 	tableArray[i][c] = "EDIT";
+// 		STrecordTd.textContent = tableArray[i][c];
+// 	} else {//end if tableArray[i][c]===undefined
+// 		//put text of the tableArray[][] in the data cell	
+// 	//	TypeError: undefined is not an object (evaluating 'tableArray[i][c]')Feb23 after create new db!
+// 	//TypeError: undefined is not an object (evaluating 'tableArray[i][c]')	date:Jan16 2023
+// 	STrecordTd.textContent = tableArray[i][c];//tableTitle (global) array has to be constructed in displayData of indexedDBNotes	This is the info from displayData that was put into the tableArray n buildRecordRows when constructing the table
+// 	}//end if(tableArray[i][c]=== undefined || tableArray[i][c]===0 || tableArray[i][c]=== " " || tableArray[i][c]=== null || tableArray[i][c]=== "") 
+//TRY THIS CODE TO FIX TYPE ERROR DATE: Jan16 2023		
+	
+
+STrecordTd.textContent = tableArray[i][c];
+	
+		
+	// STrecordTd.textContent = tableArray[i][c];//tableTitle (global) array has to be constructed in displayData of indexedDBNotes	This is the info from displayData that was put into the tableArray n buildRecordRows when constructing the table
+	
+	// //to allow table edit to avoid dblclick and to work in a blank td cell as will be the case if adding a dynamic field in edit table enter a text string to facilitate the copy paste iOS process to allow data entry. Oct 19 2021
 	
 	if(tableArray[i][c]=== undefined || tableArray[i][c]===0 || tableArray[i][c]=== " " || tableArray[i][c]=== null || tableArray[i][c]=== "") {
 		STrecordTd.textContent = "EDIT"
-	}//end if tableArray[i][c]===undefined
+	 }//end if tableArray[i][c]===undefined
 	
 	//to allow table edit to avoid dblclick
 	
@@ -11796,6 +11847,7 @@ homeScreenBtn.textContent = "RETURN to Home Screen";
 	
 //moreTablesBtn
 moreTablesBtn.onclick = function () {
+clickedMoreTables = true;
 //alertx("moreTablesBtn tapped .. STsecondDataNameTdListener = " + STsecondDataNameTdListener);
 
 		totalInfoP.style.display = "none";
@@ -12164,6 +12216,20 @@ console.log("About to save! newTableFieldsArray = " + newTableFieldsArray + ". t
 	//the if else for save warning were added here Mar13..remove if messes up!!
 		}//end function carryOnSave
 		
+// 	If a new note or record is added update the 
+// 	tableArray = saveTableArray.slice();
+// copyOfTableArray = saveCopyOfTableArray.slice(); 
+if(recordAdded) {
+saveTableArray = tableArray.slice();
+copyOfTableArray = tableArray.slice();
+saveCopyOfTableArray = saveTableArray.slice();
+
+//alert("After refresh table copyOfTableArray now = " + copyOfTableArray);
+recordAdded = false;
+tableConstructed = 0;
+displayedTable = 0;	
+	}//end if(recordAdded) 
+		
 }//end saveTableBtn.onclick
 	//saveTableBtn2.onclick = clickedSaveTable();
 	
@@ -12417,6 +12483,20 @@ console.log("About to save! newTableFieldsArray = " + newTableFieldsArray + ". t
 		//displayData();//might have to REMOVE if still repeating record list after a delete table record???THERE IS SOME ISSUE WITH CONCURRENT RUNNING OF TWO ITERATIONS OF DISPLAY DATA!!!!
 	//the if else for save warning were added here Mar13..remove if messes up!!
 		}//end function carryOnSave2
+		
+// 	If a new note or record is added update the 
+// 	tableArray = saveTableArray.slice();
+// copyOfTableArray = saveCopyOfTableArray.slice(); 
+if(recordAdded) {
+saveTableArray = tableArray.slice();
+copyOfTableArray = tableArray.slice();
+saveCopyOfTableArray = saveTableArray.slice();
+
+//alert("After refresh table copyOfTableArray now = " + copyOfTableArray);
+recordAdded = false;
+tableConstructed = 0;
+displayedTable = 0;	
+	}//end if(recordAdded) 
 		
 
 	}//end saveTableBtn(2).onclick
@@ -15904,7 +15984,7 @@ manualContactsEntered = false;
 	statusContactEntryP.textContent = "";
 //trying to prevent keyboard pop up on cancel..does not work!!
 	contactsNameInput.value = "\n";
-	manualContactsForm.blur();
+	//manualContactsForm.blur();
 	contactsNameInput.blur();
 	document.activeElement.blur();//remove focus from inputs so keyboard does not pop up on cancel .. does not work
 statusContactEntryP.setAttribute('class','normalBtn');//stop flashing but bckgrnd reset to black below
@@ -16944,7 +17024,7 @@ manualContactsEntered = false;
 	statusContactEntryP.textContent = "";
 //trying to prevent keyboard pop up on cancel..does not work!!
 	contactsNameInput.value = "\n";
-	manualContactsForm.blur();
+	//manualContactsForm.blur();
 	contactsNameInput.blur();
 	document.activeElement.blur();//remove focus from inputs so keyboard does not pop up on cancel
 statusContactEntryP.setAttribute('class','normalBtn');
@@ -17103,7 +17183,7 @@ manualContactsEntered = false;
 	statusContactEntryP.textContent = "";
 //trying to prevent keyboard pop up on cancel..does not work!!
 	contactsNameInput.value = "\n";
-	manualContactsForm.blur();
+	//manualContactsForm.blur();
 	contactsNameInput.blur();
 	document.activeElement.blur();//remove focus from inputs so keyboard does not pop up on cancel
 statusContactEntryP.setAttribute('class','normalBtn');
@@ -17914,6 +17994,15 @@ for (let k = 4; k < numberOfFields; k++) {
 	STnextFieldHeading.setAttribute('class','stHeadRow');//resets cancels blinking if previously applied by an addEventListener
 	
 	STheadRow.appendChild(STnextFieldHeading);
+	
+//code to set field heading light blue if = today's date
+if (budgetSheet && fieldNamesArray[k].includes(currentDate)) {
+STnextFieldHeading.style.backgroundColor = "lightblue";
+
+}//end if (budgetSheet && fieldNamesArray[k].includes())
+
+//code to set field heading light blue if = today's date
+
 	
 	//reapply eventListeners
 if(fieldNamesArray[k].includes("TOTAL")|| fieldNamesArray[k].includes("AVERAGE")) {
