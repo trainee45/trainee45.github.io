@@ -10577,6 +10577,8 @@ refreshed = 0; */
 		//put text of the tableArray[][] in the data cell	
 	//	TypeError: undefined is not an object (evaluating 'tableArray[i][c]')Feb23 after create new db!
 		
+	//	The undefined property indicates that a variable has not been assigned a value, or not declared at all.
+		
 	STrecordTd.textContent = tableArray[i][c];//tableTitle (global) array has to be constructed in displayData of indexedDBNotes	This is the info from displayData that was put into the tableArray n buildRecordRows when constructing the table
 	
 	//to allow table edit to avoid dblclick and to work in a blank td cell as will be the case if adding a dynamic field in edit table enter a text string to facilitate the copy paste iOS process to allow data entry. Oct 19 2021
