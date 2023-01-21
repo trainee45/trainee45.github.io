@@ -815,6 +815,7 @@ let todayS = today.toString();
 let todayString = todayS.slice(3, 21);//21
 //alert("todayS = " + todayS + ". todayString = " + todayString);
 //let todayDate = today.slice(1,20);
+let currentDate = todayS.slice(3, 10);
 //const scrollBtn = document.querySelector('#scrollBtn');
 const scrolling = document.querySelector('#scrolling');
 const scrollBtn = document.createElement('button');
@@ -9493,8 +9494,9 @@ console.log("At end of build record rows from a table edit. tableArray = " +tabl
 //above code is buildRecordRows function
 //show the table previously created using the tableArray variable
 function displayTable () {
-
-let currentDate = todayS.slice(3, 10);
+today = new Date();
+todayS = today.toString();
+currentDate = todayS.slice(3, 10);
 //alert("currentDate = " + currentDate);
 //end function displayTable ..!!!! showTable IS AT LINE 10853
 //flag to only allow transit through mainDBedit code once	
