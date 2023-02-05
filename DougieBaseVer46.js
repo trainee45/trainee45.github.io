@@ -1,4 +1,4 @@
-//DougieBaseVer45.js Jan20 highlightDateDougieBaseVer45 DougieBaseVer45.js Jan18 savedOriginal = false;//to trigger updating saved table arrays removed two <form> in HTML which caused crashes with add contacts/ recordsJAN6 2023 scrollbtn in NOTES  goes to searched record in table blockedMESSED UPtrying3Copy of improveBudgetDougieBaseVer44.js Copy of improveBudgetDougieBaseVer44.js USE FIND '//alertblk' and replace with 'alert' to restore for troubleshooting blocked by browser USE FIND '//alertcm' and replace with 'alert' to restore for troubleshooting changeMonth code  improveBudgetDougieBaseVer44.js added code to keep table scrolled to view edited cell, sampleBudgetDougieBaseVer44.js DougieBaseVer44.js Dec4 2022 calculationAlertsrenameDBDougieBaseVer43.js DougieBaseVer43.js Date: Dec3 scrollBtn added scroll to last  edited record in NOTES  (scrollBtn.onclick) added preferences option to toggle calculation Alerts  Nov28;did adding delay(5000); in getManualContacts fix the plusContacts? Hope so ..NOPE STILL NOT FIXED IS IT Nov27 added blue color to TOTAL Nov26 2022 Nov22 2022 tested with create new db added info for Cost to date in notes made changes in both css files to accomodate reNAME FILEMAME retryisolateNumbersumAcrossDougieBaseVer43.js Nov21 2022 alerts for rename filename can be retrieved using alertrnf removing alerts in the keyword functions..USE FIND '//alertxy' and replace with 'alert' to restore for troubleshooting  experimentretryisolateNumbersumAcrossDougieBaseVer43.js corrects for space difference in main and new tables  retryisolateNumbersumAcrossDougieBaseVer43.js DATE: Nov16 IF THIS SCREWS UP REVERT BACK TO isolateNumbersumAcrossDougieBaseVer43.js Nov17 in editTDBtn.onclick addEventListener put in code to check if rowSummed and if so update sum across!  sumAcrossDougieBaseVer43.js sumAcross works and total of last column if rowSummed, works BUT TOTAL  in other DYNAMICfields is messed up because rowSummed is always true so will put conditional in summing() to exclude last field ..new rule TOALfor rowSummed only works in last field !  DougieBaseVer43.js Nov9 2022 from bugDatesdynamicTelephoneDougieBaseVer42.js FIXED Activation glitches? Nov7 fixed bug in dates when adding record (+) to a new table dynamicTelephoneDougieBaseVer42.js.. not yet published.. Oct29 2022 need to add code at moreTables and homescreenBtn2 and refresh..DONE .. telephoneDougieBaseVer42.js RESET BLINK IF TELEPHONE OR EMAIL HAD BEEN ACTIVATED Oct 22 2022 this version works WILL TEST SOME MORE added code for telephone similar to email at displayTable that was missing.  DougieBaseVer42.js Oct19 Oct16 2022 incorporating moreTablesBtnDougieBaseVer42.js Oct11 2022 retryTOTALDougieBaseVer42.js Oct11 2022 AGE (TOTAL) if COST in header will add $ to result after adding now will add even if entry is NaN works if all items in column are numbers use search phrasex—for (let k = 4; k < numberOfFields; k++) { — TOTALDougieBaseVer42.js DougieBaseVer42.js Date Oct 5 .. use this to update github! Oct4 2022 from restoreFromLocalFileDougieBaseVer40.js fallBack2Sept29restoreFromLocalFileDougieBaseVer40.js restoreFromLocalFileDougieBaseVer40 Date Sept25 2022 WORKS! Added Scroll to bottom in manage window DougieBaseVer40.js fix!editSearchedNoteDougieBaseVer40.js Think this is fixed ? Sept 20 2022 editSearchedNoteDougieBaseVer40.js As of Sept 11 2022, can now edit the single record view obtained as a result of a record search. Still testing..seems to work change SW to ver 26 before sending to github! - from createNewDougieBaseVer40.js from eMailDougieBaseVer40.js email now active  fixContactsBugDougieBaseVer40.js Jun7 fixed dbl tap deleting instead of editing a new table ..deleteRecordNewTable = false; .. June6 fixed repeat record entry in contacts tables if repeating creating a contacts table DougieBaseVer40.js June4 saveBtn2 fixed and flashing displayTableBtn when CONVERT file format June3 fixed search bug May28 fixed tableLimit noAlertsplusContactshitsTablefixADDCONTACTSDougieBaseVer40 May18 fixed share data error May28 2022 tableLimit plusContactshitsTablefixADDCONTACTSDougieBaseVer40.js May17 May15 May 13 May9 hitsTablefixADDCONTACTSDougieBaseVer40.js May5  from fixADDCONTACTSDougieBaseVer40.js May1  testCancelsweetAlertnoAlertsmoreBlock+DougieBaseVer40.jsApri25 2022
+//DougieBaseVer46.js Feb2 2023 tryAgainCreateNewDBDougieBaseVer45 Feb3 2023 fixed date highlight if day <10 Feb2 USE FIND '//alertflm' and replace with 'alert' to restore for troubleshooting file list management Feb1 2023  smoothCreateNewDBDougieBaseVer45.js tagNewDBDougieBaseVer45.js fallBack2Jan29tagNewDBDougieBaseVer45 tagNewDBDougieBaseVer45.js DougieBaseVer45.js fixed objectStore mess ! Jan 24 2023 Jan22 2023 needs updated css file!  fixRenameDbDougieBaseVer45 DougieBaseVer45.js Jan20 highlightDateDougieBaseVer45 DougieBaseVer45.js Jan18 savedOriginal = false;//to trigger updating saved table arrays removed two <form> in HTML which caused crashes with add contacts/ recordsJAN6 2023 scrollbtn in NOTES  goes to searched record in table blockedMESSED UPtrying3Copy of improveBudgetDougieBaseVer44.js Copy of improveBudgetDougieBaseVer44.js USE FIND '//alertblk' and replace with 'alert' to restore for troubleshooting blocked by browser USE FIND '//alertcm' and replace with 'alert' to restore for troubleshooting changeMonth code  improveBudgetDougieBaseVer44.js added code to keep table scrolled to view edited cell, sampleBudgetDougieBaseVer44.js DougieBaseVer44.js Dec4 2022 calculationAlertsrenameDBDougieBaseVer43.js DougieBaseVer43.js Date: Dec3 scrollBtn added scroll to last  edited record in NOTES  (scrollBtn.onclick) added preferences option to toggle calculation Alerts  Nov28;did adding delay(5000); in getManualContacts fix the plusContacts? Hope so ..NOPE STILL NOT FIXED IS IT Nov27 added blue color to TOTAL Nov26 2022 Nov22 2022 tested with create new db added info for Cost to date in notes made changes in both css files to accomodate reNAME FILEMAME retryisolateNumbersumAcrossDougieBaseVer43.js Nov21 2022 alerts for rename filename can be retrieved using alertrnf removing alerts in the keyword functions..USE FIND '//alertxy' and replace with 'alert' to restore for troubleshooting  experimentretryisolateNumbersumAcrossDougieBaseVer43.js corrects for space difference in main and new tables  retryisolateNumbersumAcrossDougieBaseVer43.js DATE: Nov16 IF THIS SCREWS UP REVERT BACK TO isolateNumbersumAcrossDougieBaseVer43.js Nov17 in editTDBtn.onclick addEventListener put in code to check if rowSummed and if so update sum across!  sumAcrossDougieBaseVer43.js sumAcross works and total of last column if rowSummed, works BUT TOTAL  in other DYNAMICfields is messed up because rowSummed is always true so will put conditional in summing() to exclude last field ..new rule TOALfor rowSummed only works in last field !  DougieBaseVer43.js Nov9 2022 from bugDatesdynamicTelephoneDougieBaseVer42.js FIXED Activation glitches? Nov7 fixed bug in dates when adding record (+) to a new table dynamicTelephoneDougieBaseVer42.js.. not yet published.. Oct29 2022 need to add code at moreTables and homescreenBtn2 and refresh..DONE .. telephoneDougieBaseVer42.js RESET BLINK IF TELEPHONE OR EMAIL HAD BEEN ACTIVATED Oct 22 2022 this version works WILL TEST SOME MORE added code for telephone similar to email at displayTable that was missing.  DougieBaseVer42.js Oct19 Oct16 2022 incorporating moreTablesBtnDougieBaseVer42.js Oct11 2022 retryTOTALDougieBaseVer42.js Oct11 2022 AGE (TOTAL) if COST in header will add $ to result after adding now will add even if entry is NaN works if all items in column are numbers use search phrasex—for (let k = 4; k < numberOfFields; k++) { — TOTALDougieBaseVer42.js DougieBaseVer42.js Date Oct 5 .. use this to update github! Oct4 2022 from restoreFromLocalFileDougieBaseVer40.js fallBack2Sept29restoreFromLocalFileDougieBaseVer40.js restoreFromLocalFileDougieBaseVer40 Date Sept25 2022 WORKS! Added Scroll to bottom in manage window DougieBaseVer40.js fix!editSearchedNoteDougieBaseVer40.js Think this is fixed ? Sept 20 2022 editSearchedNoteDougieBaseVer40.js As of Sept 11 2022, can now edit the single record view obtained as a result of a record search. Still testing..seems to work change SW to ver 26 before sending to github! - from createNewDougieBaseVer40.js from eMailDougieBaseVer40.js email now active  fixContactsBugDougieBaseVer40.js Jun7 fixed dbl tap deleting instead of editing a new table ..deleteRecordNewTable = false; .. June6 fixed repeat record entry in contacts tables if repeating creating a contacts table DougieBaseVer40.js June4 saveBtn2 fixed and flashing displayTableBtn when CONVERT file format June3 fixed search bug May28 fixed tableLimit noAlertsplusContactshitsTablefixADDCONTACTSDougieBaseVer40 May18 fixed share data error May28 2022 tableLimit plusContactshitsTablefixADDCONTACTSDougieBaseVer40.js May17 May15 May 13 May9 hitsTablefixADDCONTACTSDougieBaseVer40.js May5  from fixADDCONTACTSDougieBaseVer40.js May1  testCancelsweetAlertnoAlertsmoreBlock+DougieBaseVer40.jsApri25 2022
 //NOTE ALERTS REMOVED HAVE A x after alert SO USE FIND REPLACE SEARCH TO RESTORE THEM!! i.e. //alertx("message data…") can be restored by search and replace for //alertx and replace with alert
 //moreBlock+DougieBaseVer40.js April17 April15 fallBackApril15moreBlock+DougieBaseVer40.js Copy of moreBlock+DougieBaseVer40.js fallBackApril14moreBlock+DougieBaseVer40.js moreBlock+DougieBaseVer40.js April10 for testing and when works back to block… from block+DougieBaseVer40.js DougieBaseVer40.js from shareDeleteRecordNewTableDougieBaseVer37.js WILL THIS FILE AUTOMATICALLY SYNC WITH ICLOUD.YES!deleteRecordNewTableDougieBaseVer37.js NOTE ALERTS REMOVED HAVE A > AFTER THE " SO USE FIND REPLACE SEARCH TO RESTORE THEM!! i.e. //alert("> message data…") can be restored by search and replace for //alert("> …) .. MUST PUT A SPACE AFTER THE> CHARACTER! fromNewTablehitsTableDougieBaseVer37.js pushContactsFormtableIndexaddContactsDougieBaseVer37 ADD CONTACTS number of dynamicfields = 1 now createnewDB resets newTableSpecificVariables and savedTablesArray to 0 savedTablesArray.length increases by 1 as each table is created fixed manal contact entry fields fixed + contacts deletingTableField variable added Marc19  contactsFormtableIndexaddContactsDougieBaseVer37.js manual contacts now works Mar13 tableIndexaddContactsDougieBaseVer37.js from deleteNTtableIndexaddContactsDougieBaseVer37.js Mar11 from delete last and first and middle tables works!  tableIndexaddContactsDougieBaseVer37.js Mar9 2022 deleteItemtableIndexaddContactsDougieBaseVer37.js from tableIndexaddContactsDougieBaseVer37 WORKS Mar8 FOR CRETION NEWBB BEFORE ANY DB LOADED MAR6 from createNewaddContactsDougieBaseVer37 from addContactsDougieBaseVer37 from Copy of addContactsDougieBaseVer37 based on date: Feb22 2022 worksKeepTestPlayWithNewTableContactsDougieBaseVer37 Feb 17 2022 Feb 13 2022 from testPlayWithNewTableContactsDougieBaseVer37 Feb10 from playWithSTRowsEditTDNewTableContactsDougieBaseVer37.js FEB6 FEB4 2022 from workingOnEditTDNewTableContactsDougieBaseVer37.js currentJan19ContactsDougieBaseVer37.js now adding newTable variables ..Jan11 go to fallBackJan11 if meeses up workingOnContactsDougieBaseVer37.js Jan2 THIS VERSION WORKS WITH SAFARI CONTACT PICKER!  contacts table working with search sort Dec24 Added whatsNew window  Working on retrieving contact info. See functions at bottom. ADD style="color:black" IN HTML  Dec22 moved getMemory function from html file to .js file from Dec10 2021 mobileFriendlyDougieBaseVer37.js from DougieBaseVer36.js Dec5 sw11 from messWith Dec2 DougieBaseVer36.js Dec1 from flashFileNameDougieBaseVer36.js from createNewDBDougieBaseVer36 Nov30 Nov28 added addToDynamicFields.setAttribute('class','borderBlink') to border in editMoreFields function and addNoteBtn.setAttribute('class','borderBlink'); in saveBtn.onclick for createNewDB renameBtn.setAttribute('class','borderBlink'); in preferences displayDataBtn.setAttribute('class','borderBlink'); in function renameTitle Nov28 borderBlink css is in the html file  Nov 27 fine tuned flow of createNewDB Nov24 fixed create newDB bug! Nov 22 edit notes displayed n real time Nov17 added tableScreenOptions to editTableTrigger to not mess up table display Nov14 from spDougieBaseVer36.js landscape table search and preview edid Date:Nov9 save preferences from Date:Nov4 added Easter egg and save settings preferencesDougieBaseVer36.js from fixEditDougieBaseVer35.js from 
 //changed addEventListener to copy instead of dblclick Oct16 made default double click Oct31 2021  clearBkgrdDougieBaseVer34.js clear background and fixed crashes that occur if user makes illogical moves Oct12 2021 use to update workingCopy and Safarii etc
@@ -145,6 +145,15 @@
 //let namestr = "";
 //will save a flag that indicates if new table derived from a searchmain db in aid of preventing + - icons appearing in such a table..aadding a record herevwould crash!
 //let clickedMoreTables = false;//flag to fix undefined error in displayTable if coming from more notes after an add note procedure
+// const createNew = document.querySelector("#createNew");
+// const bodyInput = document.querySelector("#body");
+//  bodyInput.addEventListener('focus', function () {createNew.setAttribute('class','borderBlinkGrn')});
+let ranOnce = false;//to prevent rerun used in create new db to strip off extension
+let creationDONE = false;//flag for below
+		//SHOULD I put flag to indicate createNew db is now finished so next getFileNames will initiate removing .createNewDB DATE: Jan28 2023
+let creationDONEName = "";
+let flashing = false;//flag toggle flashing tagged was default true filename ON or OFF
+let firstLOAD = false;//flag used in createDB SO FAR DOES NOT WORK 
 let recordAdded = false;//flag to update tableArray to fix undefined error if going from more notes to displayTable
 let originalDBName = "";//used in rename database deleting original file
 // let blockedName = "";//trying to avoid glitch if attempting to delete a db more than once
@@ -403,6 +412,7 @@ const tutorialContinueBtn = document.querySelector('#tutorialContinueBtn');
 const sampleBudgetWin = document.querySelector('#sampleBudgetDb');
 const sampleBudgetDbData = document.querySelector('#sampleBudgetDbData');
 const sampleBudgetContinueBtn = document.querySelector('#sampleBudgetContinueBtn');
+const flashBtn = document.querySelector('#flash');
 
 //end sampleBudget database references
 
@@ -1057,7 +1067,7 @@ const fileChosenP = document.querySelector('#fileChosen');
 const newDBButton = document.querySelector('#newDBBtn');
 //const createNewDBWindow = document.querySelector('#createNewDBWin');//referenced this earlier because it is used onwindow open
 const newDBTitleInput = document.querySelector('#newDBTitle');
-const submitNameButton = document.querySelector('#submitName');
+const submitNameButton = document.querySelector('#submitName');//Start Creating new DataBase
 const cancelNewDBButton = document.querySelector('#cancelNewDBBtn');
 const cancelFileNamesWindowBtn = document.querySelector('#cancelFileNamesWin');
 const manageDataBaseList = document.querySelector('#manageDataBaseList');
@@ -1188,6 +1198,65 @@ databaseNameLi[i] = document.createElement('li');
 if(databases[i].name === "Monthly Expenses - TEMPLATE.bs") {
 databaseNameLi[i].style.backgroundColor = "lightgreen";	databaseNameLi[i].setAttribute('class','borderBlink');
 }//end if(databases[i].name === "Monthly Expenses - TEMPLATE.bs")
+
+// if(databases[i].name.includes(".creatingDB") && newDBflag || databases[i].name.includes(".creatingDB") && newDBGuidance){
+// databaseNameLi[i].style.backgroundColor = "lightgrey";	databaseNameLi[i].setAttribute('class','borderBlink');
+// }//end if(databases[i].name.includes(".creatingDB" && newDBFlag
+//IF COMING FROM RELOAD PAGE AFTER FIRST SEGMENT OF CREATENEWDB FLASH THE NEW DB FILENAME IN THE LIST
+if(!newDBflag && newDBGuidance === undefined && databases[i].name.includes(".creatingDB")){
+databaseNameLi[i].style.backgroundColor = "lightgreen";	databaseNameLi[i].setAttribute('class','borderBlink');
+
+//databaseNameLi[i].textContent =  ". DELETE this" at this stage there is no textContent?? Does not work a yway?? Why?
+ }//end if(!newDBflag && newDBGuidance === undefined && databases[i].name.includes(".creatingDB"))
+
+// if(creationDONE) {
+// //code to remove .creatingDB which maybe should be changed to -creatingDB in case js thinks its a method!	
+// //code to rename db with tag removed
+// //dataBaseName = databases[i].name;
+// dataBaseName = dbTableName.value;//helps insure dataBaseName is not wiped out in creation new db process
+// alert("dataBaseName = " + dataBaseName);
+// //renameDataBaseFileName(dataBaseName);
+// dbFileName.textContent = dataBaseName.substring(0, dataBaseName.length-11);//trim off .creatingDB
+// renamedFileName = dbFileName.textContent; 
+// reNamedDBFileName = true;
+// dbTitle.textContent = renamedFileName;
+// dbTableName.value = renamedFileName//dbTableName is stored in variable1 and represents the variable in view settings that reflects the table name 
+// saveVariables();
+// backupDataBase(dataBaseName);//go to backup with original name!! And new filename is now in variable 	 renamedFileName = dbFileName.textContent
+
+
+// //NOW NEED TO RETURN TO FILE NAMES WITH RESTORE BTN BLINKING
+// //code to rename db with tag removed
+
+// //creationDONE = false;
+// }//end if(creationDONE)
+// if(databases[i].name.includes(".creatingDB") && !newDBFlag || databases[i].name.includes(".creatingDB") && !newDBGuidance) {
+// alert("condition met");
+// databaseNameLi[i].style.backgroundColor = "yellow";	//databaseNameLi[i].setAttribute('class','borderBlink');
+// //code to rename db with tag removed
+// dataBaseName = databases[i].name;
+// //renameDataBaseFileName(dataBaseName);
+// dbFileName.textContent = dataBaseName.substring(0, dataBaseName.length-11);//trim off .creatingDB
+// renamedFileName = dbFileName.textContent; 
+// reNamedDBFileName = true;
+// dbTitle.textContent = renamedFileName;
+// dbTableName.value = renamedFileName//dbTableName is stored in variable1 and represents the variable in view settings that reflects the table name 
+// saveVariables();
+// backupDataBase(dataBaseName);//go to backup with original name!! And new filename is now in variable 	 renamedFileName = dbFileName.textContent
+// //string = manipulateString(string);
+// //NOW NEED TO RETURN TO FILE NAMES WITH RESTORE BTN BLINKING
+// //code to rename db with tag removed
+
+
+// // }//end if(databases[i].name.includes(".creatingDB" && !newDBFlag)
+
+//if(flashing && databases[i].name.includes("-tag"||"*" ||"!" || "✅" ||"♥️"||"🔴"||"❗️")) {
+
+// 
+if(flashing && databases[i].name.includes("*") || flashing && databases[i].name.includes("!") || flashing && databases[i].name.includes("-tag") || flashing && databases[i].name.includes("✅") || flashing && databases[i].name.includes("♥️") || flashing && databases[i].name.includes("🔴") || flashing && databases[i].name.includes("❗️")) {
+databaseNameLi[i].style.backgroundColor = "yellow";	databaseNameLi[i].setAttribute('class','borderBlink');
+}//end if(databases[i].name 
+
 // if(screenDark) {
 // 	databaseNameLi[i].style.color = "black";
 // 	  } else {
@@ -1196,7 +1265,7 @@ databaseNameLi[i].style.backgroundColor = "lightgreen";	databaseNameLi[i].setAtt
 //for (c = 0;c<blockedName.length;c++) {
 //if(databases[i].name === blockedName[c]) {
 	
-
+//ON RETURN FROM LOAD(DATABASENAME) AFTER A REBOOT, blockedName[0] = Red Peppers
 
 if(databases[i].name === blockedName[0]||databases[i].name === blockedName[1]||databases[i].name === blockedName[2]||databases[i].name === blockedName[3]||
 databases[i].name === blockedName[4] ||
@@ -1219,14 +1288,14 @@ databases[i].name === blockedName[15]) {
 // 	}else if(dbDeleted3) {dbDeleted4 = true;dbDeletedName4 = dataBaseName;}
 //CODE HERE TO AUTOMATICALLY DELETE ORIGINAL DB ?
 
-
+//A BLOCKED FILE WILL GREY OUT IF THE PROGRAM HAS NOT REBOOTED, BUT IF AFTER A REBOOT, blockedName[] IS NOT KNOWN SO YOU HAVE TO CHECK IN LOAD THE DATABASE
 
 	 databaseNameLi[i].textContent = databases[i].name + " BLOCKED BY BROWSER! ";
 
  databaseNameLi[i].setAttribute('class','blocked');
 	 databaseNameLi[i].style.backgroundColor = "lightgrey";//does not work ? It worked!
- 
-	 
+// } else if (databases[i].name.includes(".creatingDB") && !newDBflag) {//firstLOAD did not work
+// 	 databaseNameLi[i].textContent = databases[i].name + "… DELETE this";//this does not work because reload sets all variables to default false
 	 } else {
 	 databaseNameLi[i].textContent = databases[i].name;
 	 }//end if else (databases[i].name === blockedName)
@@ -1238,17 +1307,18 @@ databases[i].name === blockedName[15]) {
 // }//end if(databases[i].name === "Monthly Expenses - TEMPLATE.bs")
  
 	 //CODE BELOW YOU WANT IN THE EVENT LISTENER BLOCK OTHERWISE ALL FILENAMES WILL BE DECORATED FOR NEWDB whoops NO
-	 if (newDBGuidance) {
-	//	if(databases[i].name = newDBName) { databaseNameLi[i].setAttribute('class','borderBlink');//?can't style a li?
-		 databaseNameLi[i].style.backgroundColor = "lightgreen";
-		 //}//end if(databases[i].name = newDBName)
-	 }//end if newDBGuidance
+	//  if (newDBGuidance) {
+	// //	if(databases[i].name = newDBName) { databaseNameLi[i].setAttribute('class','borderBlink');//?can't style a li?
+	// 	 databaseNameLi[i].style.backgroundColor = "lightgreen";
+	// 	 //}//end if(databases[i].name = newDBName)
+	//  }//end if newDBGuidance
 	 
 //changed dblclick to just click in addEventListener to avoid magnification Date: Oct5 2021	
 
 databaseNameLi[i].addEventListener('click', function () {
 		//put name of database in global variable dataBaseName
-		checkIfBlocked = i;
+		checkIfBlocked = i;////IF DOING A DELETE THAT IS BLOCKED dbTableName (Variable1: is set to dataBaseName + .blocked..see deleteDataBase function
+		
 		dataBaseName = databases[i].name;
 
 if(dataBaseName.slice(-2) === "bs") {
@@ -1287,9 +1357,9 @@ databases[i].name === blockedName[13] ||
 databases[i].name === blockedName[14] ||
 databases[i].name === blockedName[15]) {
 
+//THIS ALL IS CORRECT IF RED PEPPERS BLOCKED AND YOU REBOOT AND SELECT FROM GETFILENAMES. IF YOU SELECT FROM MANAGE FILES : without another reboot, works as advertised! But now try a reboot afresh and select from MANAGE files….select and tap delete database:..AND IT WORKS,! The database Red Peppers is deleted!!! SO A SCENARIO IN WHICH Red Peppers is renamed to Green Peppers works and other files load in as they should, and the Red Peppers file waits for deletion as it should.
 
-
-//if (blocked && blockedName === dataBaseName) {
+//if (blocked && blockedName === dataBaseName) { AND IF THE PROGRAM HAS NOT REBOOTED! so blockedName[] is known
 
 	alert(dataBaseName + ": The file is still blocked by the browser. Waiting for browser's Lock to time-out!");
 	return;
@@ -1331,7 +1401,7 @@ databases[i].name === blockedName[15]) {
 			newTableNames.length = 0;
 			tableListExists = false;
 			
-		loadTheDataBase(dataBaseName);
+		loadTheDataBase(dataBaseName);//WILL CHECK FOR A BLOCKED FILE IF REBOOTING FROM START!
 			
 			console.log('Sending dataBaseName ' + dataBaseName + ' to loadTheDataBase function');
 			} else {
@@ -1350,6 +1420,7 @@ databases[i].name === blockedName[15]) {
 	 console.log('Database to load is ' + dataBaseName);
  		
 	}//end for i = 0;i < databases.length
+	
 	dbListExists = true;//flag to prevent list repeating. A one time switch
 	//alert("databases[1].name = "+ databases[1].name + " blockedName === " + blockedName + "dbDeleted1 = " +dbDeleted1 + " blocked = " + blocked + " blocked2 = " + blocked2 + " dbDeletedName1 = " + dbDeletedName1);
 	//alert("databases[1].name = "+ databases[1].name + " blockedName === " + blockedName + "dbDeleted1 = " +dbDeleted1 + " blocked = " + blocked + " blocked2 = " + blocked2);
@@ -1520,6 +1591,31 @@ dataVobj.tableSpecific = newTableSpecificVariables;
 	createNewDB();
 }//end function newDBButton.onclick
 
+flashBtn.onclick = function () {
+	//toggle flashing tagged filename
+	
+	if(!flashing) {
+	flashBtn.textContent = "Turn flashing OFF";
+	timeDateFlagP.textContent = "Tagged files now flashing.";
+	flashBtn.style.backgroundColor = "yellow";
+		flashing = true;
+		//window.location.reload();
+		fileNamesWindow.setAttribute('class','hidden');
+		getFileNames();
+	} else {
+		flashBtn.textContent =
+		"Flash tagged filenames";
+		timeDateFlagP.textContent = "Flashing filenames now OFF.";
+		flashBtn.style.backgroundColor = "lightgreen";
+		flashing = false;
+		//window.location.reload();
+		fileNamesWindow.setAttribute('class','hidden');
+		getFileNames();
+		}//end if (!flashing) 
+		
+	}//end flashBtn.onclick = function ()
+//toggle flashing filenames
+
 //cancel fileNamesScreen
 cancelFileNamesWindowBtn.onclick = function(databases) {	
 	dataBaseName = "";
@@ -1661,7 +1757,29 @@ if(screenDark) {
 	
 	
 }//end loadSampleBudgetBtn.onclick
-	
+
+// if(creationDONE && !ranOnce) {
+// //code to remove .creatingDB which maybe should be changed to -creatingDB in case js thinks its a method!	
+// //code to rename db with tag removed
+// //dataBaseName = databases[i].name;
+// dataBaseName = dbTableName.value;//helps insure dataBaseName is not wiped out in creation new db process
+// alert("dataBaseName = " + dataBaseName);
+// //renameDataBaseFileName(dataBaseName);
+// dbFileName.textContent = dataBaseName.substring(0, dataBaseName.length-11);//trim off .creatingDB
+// renamedFileName = dbFileName.textContent; 
+// reNamedDBFileName = true;
+// dbTitle.textContent = renamedFileName;
+// dbTableName.value = renamedFileName//dbTableName is stored in variable1 and represents the variable in view settings that reflects the table name 
+// saveVariables();
+// backupDataBase(dataBaseName);//go to backup with original name!! And new filename is now in variable 	 renamedFileName = dbFileName.textContent
+
+
+// //NOW NEED TO RETURN TO FILE NAMES WITH RESTORE BTN BLINKING
+// //code to rename db with tag removed
+
+// //creationDONE = false;
+// let ranOnce = true;//to prevent rerun
+// }//end if(creationDONE)	
 
 }//end function getFileNames
 
@@ -1696,9 +1814,14 @@ console.log("In start createNewDB: newDBGuidance = " + newDBGuidance + "newDBfla
 //for guidance creating newDB
 newDBGuideP.textContent = "Type the name of your database into the text entry element and then tap 'Start creating new database'. Follow the flashing button prompts! The Preferences button in the main menu will now be high-lighted green indicating you must now OPEN PREFERENCES..";
 createNewDBWindow.appendChild(newDBGuideP);
+newDBTitleInput.onfocus = function () {
+	submitNameButton.setAttribute('class','borderBlink');
+}
 //end for guidance creating newDB
 	submitNameButton.onclick = function() {
-		dataBaseName = newDBTitleInput.value;
+	submitNameButton.setAttribute('class','attentionBtn');
+		dataBaseName = newDBTitleInput.value + ".creatingDB";
+		firstLOAD = true;
 		// createNewDBWindow.setAttribute('class','hidden');
 		
 		//for guidance creating newDB
@@ -1778,6 +1901,14 @@ databaseNameMLi[i] = document.createElement('li');
 if(databases[i].name === "Monthly Expenses - TEMPLATE.bs") {
 databaseNameMLi[i].style.backgroundColor = "lightgreen";	databaseNameMLi[i].setAttribute('class','borderBlink');
 }//end if(databases[i].name === "Monthly Expenses - TEMPLATE.bs")
+
+if(!newDBflag && newDBGuidance === undefined && databases[i].name.includes(".creatingDB")){
+databaseNameMLi[i].style.backgroundColor = "lightgrey";	databaseNameMLi[i].setAttribute('class','borderBlink');
+
+//databaseNameLi[i].textContent =  ". DELETE this" at this stage there is no textContent?? Does not work a yway?? Why?
+ }//end if(!newDBflag && newDBGuidance === undefined && databases[i].name.includes(".creatingDB"))
+
+
 
 if(databases[i].name === blockedName[0]||databases[i].name === blockedName[1]||databases[i].name === blockedName[2]||databases[i].name === blockedName[3]||
 databases[i].name === blockedName[4] ||
@@ -2005,6 +2136,15 @@ if (dataBaseName === "") {
 	manageDataBases();
 	return;
 }//end if database name === ""	
+alert("objectStoreName = " + objectStoreName + ". dataBaseName = " + dataBaseName);
+
+if (objectStoreName !== dataBaseName + "_os" ) {
+	alert("⚠️ You need to OPEN and view " + dataBaseName + " from the database file names list first, before you can RENAME the file in MANAGE. Returning to the database list.");
+	//manageFilesWindow.setAttribute('class','showing');
+	manageFilesWindow.setAttribute('class','hidden');
+	getFileNames();
+	return;
+}//end if database name === ""	
 	 //confirm choice window
 		 if (window.confirm("DataBase to RENAME is: " + " \n" + dataBaseName +  " \n" + "  CANCEL will UNDO")) {
 			// for (let i = 0; i< databases.length; i++) { 
@@ -2029,6 +2169,7 @@ if (dataBaseName === "") {
 	renameDataBaseFileName(dataBaseName);	
 	dbFileNameRenamed = true;//flag to make notice in Current Database File Names window
 			//backupDataBase(dataBaseName);
+			//keep track of what old filename was
 			dbFileNameRenamedName = dataBaseName;//preserve for deleted notice in getFileNames May10
 	// if(dbDeleted) {
 	// 	selectedDBinfoP.textContent = dataBaseName + ' successfully DELETED!'}//end if dbDeleted	
@@ -2458,6 +2599,7 @@ let	dataVobj = {
 newTableNames.length =0;
 savedOriginal = false;
 fromEditFieldLabels = false;
+displayDataBtn.setAttribute('class', 'normalBtn');//because can still be blinking if you create a new db after having renamed another table name in a previous db date: Jan22 2023
 }//end resetVariables function
 
 
@@ -2493,7 +2635,8 @@ if (blocked[0] && blockedName[0] === dataBaseName || blocked[1] && blockedName[1
 	// 	else if(blocked && blocked2) {blocked3 =true}
 	// 	else if(blocked && !blocked2) {blocked2 = true;}
 	// 	else if(blocked && blocked2 && blocked3) {blocked4 = true;}
-     };
+     };//end req.onblocked = function of opening database
+     
     req.onsuccess = function (e) {
 		console.log('In onsuccess of open(dataBaseName. Will now db.close() via e.target.result.close.. and try to delete database');
         // close the formerly blocked connection:
@@ -2546,11 +2689,13 @@ if (blocked[0] && blockedName[0] === dataBaseName || blocked[1] && blockedName[1
   // blocked = false;
   // blockedName = "";
    dataBaseList.removeChild(dataBaseList.firstChild);
-};//end while
+		};//end while
 			getFileNames();//added May8 REMOVE IF MESSES UP 
-        };//end onsuccess
+        };//end onsuccess of deleting database
+        
 		//added e to function brakets May13
-        req.onblocked = function (e) {
+		
+        req.onblocked = function (e) { //of deleting database
    blocked[deleteCount] = true;
    blockedName[deleteCount] = dataBaseName;
    deleteCount = deleteCount + 1;
@@ -2562,8 +2707,12 @@ if (blocked[0] && blockedName[0] === dataBaseName || blocked[1] && blockedName[1
   //alertblk("At delete database.onblocked: dbTableName.value = " + dbTableName.value + ". dataBaseName = " + dataBaseName);
  // dbTableName.value = dbTableName.value +".blocked" ;
  dbTableName.value = dataBaseName +".blocked" ;
-  saveVariables() ;   
-  //HAVE TO REMOVE CODE BELOW!?,?,!!      
+ //alertflm("in deletedb : objectStoreName = " + objectStoreName + ". dbTableName.value = " + dbTableName.value);
+ //dbTableName will now still contain .blocked but need to get it remembered for the next file load?
+  saveVariables() ;  //this gives error ?undefined error? 
+  //HAVE TO REMOVE CODE BELOW!?,?,!!  This line is new since ver44 Jan 23 2023 which works but won't remember
+  
+      
        // for(i=0;i<4;i++) {
 // if(!blocked[deleteCount]) {
 // 	blocked[deleteCount] = true;
@@ -2586,7 +2735,13 @@ if (blocked[0] && blockedName[0] === dataBaseName || blocked[1] && blockedName[1
 		// if(blocked2) {blocked3 = true;}
 		// if(blocked3) {blocked4 = true;}
             console.log('In onblocked of delete(dataBaseName)…still blocked');
+            
+        
+ if(creationDONE) { 
+ 	alert("⚠️ Sorry. The data files '" + dataBaseName + "' used to create the new database are still blocked by the browser and therefore DougieBase is unable to delete them. Do not open or access the '" +dataBaseName +"' file until deletion is complete! DougieBase will automatically delete the file when the lock times out. InvalidStateError: Failed to read the result property from IDBRequest: The request has not finished.");
+ } else {
 			alert('⚠️ Sorry. Database ' + dataBaseName + '- is still blocked by browser and therefore DougieBase is unable to delete it. Do not open or use ' +dataBaseName + ' file until deletion is complete! Opening another database will/might force close ' + dataBaseName + ' and its DELETION process will complete. Wait for browser to time-out its lock on ' + dataBaseName + ' before trying to re-access.   InvalidStateError: Failed to read the result property from IDBRequest: The request has not finished.');
+			}//end  if(creationDONE)
 			
 			// if(blocked && blockedName === "") {blockedName = dataBaseName}
 			// if(blocked2 && blocked2Name === "") {blocked2Name = dataBaseName}
@@ -2608,11 +2763,11 @@ if (blocked[0] && blockedName[0] === dataBaseName || blocked[1] && blockedName[1
 
 			while (dataBaseList.firstChild) {
    dataBaseList.removeChild(dataBaseList.firstChild);
-};//end while
+		};//end while
 			getFileNames();
 			//remove above if messes up
-        };
-    };
+        };//end of blocked while deleting database
+    };//end of on success of opening database
 	
 	
 	
@@ -2723,12 +2878,29 @@ if (blocked && blockedName === dataBaseName) {
 flipMenu.textContent = "Tap - Click to show / hide TABLE MENU";//clear flipMenu so search phrase from previous database does not show 
 	const loadingDataBase= document.querySelector('#openDB');
 	console.log('Name of database to load is ' + dataBaseName);
+	
+	
+// 	if(dataBaseName.includes(".creatingDB")) {
+// databaseNameLi[i].style.backgroundColor = "lightgrey";	databaseNameLi[i].setAttribute('class','borderBlink');
+// }//end if(databases[i].name
+	
 	//special case
 	if(dataBaseName === "notes_dbx") {
 		objectStoreName = "notes_os";
+	// } else if (dataBaseName.includes(".creatingDB")&& firstLOAD) {
+	// //dataBaseName = dataBaseName.slice(0, -11);
+	// objectStoreName = dataBaseName + "_os";
+	// firstLOAD = false;
+	// alert("objectStoreName = " + objectStoreName + ". newDBflag = " + newDBflag + ". newDBGuidance = " +newDBGuidance);
+	// } else if (dataBaseName.includes(".creatingDB")) {
+	// dataBaseName = dataBaseName.slice(0, -11);
+	// objectStoreName = dataBaseName + "_os";
+	// alert("objectStoreName = " + objectStoreName + ". newDBflag = " + newDBflag + ". newDBGuidance = " +newDBGuidance);
 	} else {//end if dataBaseName = notes_dbx
 objectStoreName = dataBaseName + "_os";
 }//end if else
+
+
 console.log('objectStoreName = ' + objectStoreName);
 if(newDBflag) {
 	// newDBflag = false;
@@ -2763,10 +2935,15 @@ getDataBaseName(1,dataBaseName,objectStoreName).then(function(result) {
 		dbTableName.value = data.variable1;
 	}//end if changeDB
 	
-	
+//IF DOING A DELETE THAT IS BLOCKED dbTableName is set to dataBaseName + .blocked..see deleteDataBase function
 	//checking that filename was not blocked previously
+	//alertflm("In loadTheDatabase: data.variable1 =  " +data.variable1 + " data.variable1.value = " + data.variable1.value);//RedPeppers .blocked
 	if(data.variable1.includes(".blocked")) {
+	
 	blockedName[checkIfBlocked] = dataBaseName;
+	//remove alert after troubleshoot
+	//alertflm("blockedName[" +checkIfBlocked + "] = " +  blockedName[checkIfBlocked]);//blockedName[0] = Red Peppers
+	
 	getFileNames();	
 	}
 	//IF CREATING NEW DATABASE, data = undefined after onupgradeneeded and return from getDataBaseName. PickOldNew function does not run. IF NOW YOU FOLLOW THE CREATING NEW DATABASE INSTRUCTION: Tap SAVE, GOING TO SaveVariables..
@@ -2916,8 +3093,10 @@ form.onsubmit = addData;//from addNote window This is theCreateNewNote button in
 
 saveBtn.onclick = function () {
 	
-	
-	
+if (newDBGuidance) {
+		//clearInterval(flashing);	
+		NotesEditBtn.setAttribute('class','tdEdit');//want to restore notes edit btn to normal after it was set blinking in create new db	
+	}//end if (newDBGuidance)
 	
 	
 //disable SAVE if in a newTable ? Is this good or bad? Will you need this save btn to edit newTables??Date: Jan30 2022
@@ -3046,6 +3225,7 @@ STsecondDataNameTd.removeEventListener('dblclick',STsecondDataNameTd.fn, false);
 
 	getFileNames()};//this function call starts DougieBase off with current filenames as opening screen!
 manageBtn.onclick = function () {
+fileNamesWindow.setAttribute('class','hidden');	//added Jan 24 2023
  manageBtn.setAttribute('class','tdEdit')//reset if blinking from changeMonth in new budget sheet
  firstManageBtn.setAttribute('class','tdEdit');
 	manageDbListExists = true;//flag to prevent manageDbList from repeating
@@ -3574,7 +3754,13 @@ if (viewDateWritten) {dateP.textContent = cursor.value.created;}	//end if viewDa
      noteNumber = listItem.getAttribute('data-note-id'); // Set an event handler so that when the button is clicked, the deleteItem()
       // function is run
 	//NotesEditBtn.setAttribute('class','attentionBtn');//REMOVE  
-  if(newDBGuidance) {
+//DATE FEB3 trying to flash edit btn in notes record	
+	
+  //if(newDBGuidance) {
+	//  NotesEditBtn.setAttribute('class','attentionBtn');
+	  //code to flash attentionBtn
+	  
+if(newDBGuidance) {
 	  NotesEditBtn.setAttribute('class','attentionBtn');
 	  //code to flash attentionBtn
 	  
@@ -3595,9 +3781,17 @@ if (viewDateWritten) {dateP.textContent = cursor.value.created;}	//end if viewDa
 	    //code to flash attentionBtn
   }//end if newDBGuidance
    noteId = noteNumber;//added Sept20 2022..not sure this is necessary?
-     // NotesEditBtn.onclick = editItem;
-    NotesEditBtn.onclick = editItem; 
+   
+   
+     NotesEditBtn.onclick = editItem;
+  //  NotesEditBtn.onclick = editItem; 
     
+    
+    // NotesEditBtn.onclick = function () {
+    // NotesEditBtn.setAttribute('class','tdEdit');
+	//  editItem();   
+    // }//end NotesEditBtn.on lick = function ()
+     
     //code below causes error
     
    // NotesEditBtn.onclick = function (e)  {
@@ -4541,6 +4735,7 @@ cancelCommitBtn = document.querySelector('#cancelCommit');
  //REMOVE ABOVE IF MESSED UP NOV14
  
   commitButton.onclick = function () {
+  NotesEditBtn.setAttribute('class','tdEdit');
 	 commitButton.setAttribute('class','tdEdit'); 
 	  if (newDBGuidance) {
 		//clearInterval(flashing);	
@@ -4783,6 +4978,7 @@ addNoteBtn.setAttribute('class','attentionBtn');
   addNoteBtn.disabled = false;
   settingsBtn.setAttribute('class', 'normalBtn');//preferences
   prefBtnGreen = false;
+  
 }//end if (newDBGuidance === undefined && !newDBflag && xtraField === 0)
 //restore statusbquo after finishing creating new db
 
@@ -4796,7 +4992,7 @@ addNoteBtn.setAttribute('class','attentionBtn');
 	const reNameWin = document.querySelector('#reNameWin');
 	const dbTitle = document.querySelector('#dbTitle');
 	const newTitle = document.querySelector('#newTitle');
-	const prefWindow = document.querySelector('#prefWin');//'div id="prefWin"
+	const prefWindow = document.querySelector('#prefWin');//'div id="prefWin" //IS THIS DECLARED TWICE???
 	const prefLandscapeP = document.querySelector('#prefLandscape');
 	const clearPrefWindow = document.querySelector('#clearPrefWindow');
 	const changeColoursBtn = document.querySelector('#background');
@@ -4938,7 +5134,7 @@ if(setup === 3)	{
 	if(trigger === 'dblclick') {
 		editTDTriggerBtn.textContent = "Select-Copy";
 		timeDateFlagP.textContent = "CURRENT SETTING: Double Tap to EDIT the Table data cells.";
-	tdEditTriggerP.textContent = "Double Tap on the table's data cell to initiate EDIT mode and EDIT its contents. This is the default trigger choice. To change edit trigger to 'Select-Copy' go to Preferences.\r\nFIXED fields = columns 1-4; DYNAMIC fields = columns 5 and up.\r\nUse keywords TOTAL AVERAGE COST in field title (Dynamic fields only) for added functionality! (COST needs to be used with TOTAL or AVERAGE). Use TELEPHONE (in 3rd FIXED field only) or use EMAIL (in 4th FIXED field only) for activating telephone calling or email addresses. TELEPHONE and EMAIL keywords can also be used in ANY DYNAMIC field. The sumAcross keyword placed in the last column of the table will SUM all numbers (100 but NOT 100% or 100!) in that record across the table. See documentation or ABOUT section.";	//editTDTriggerBtn.setAttribute('class','colorBtn');
+	tdEditTriggerP.textContent = "Double Tap on the table's data cell to initiate EDIT mode and EDIT its contents. This is the default trigger choice. To change edit trigger to 'Select-Copy' go to Preferences.\r\nFIXED fields = columns 1-4; DYNAMIC fields = columns 5 and up.\r\nUse keywords TOTAL AVERAGE COST in field title (Dynamic fields only) for added functionality! (COST needs to be used with TOTAL or AVERAGE). Use TELEPHONE (in 3rd FIXED field only) or use EMAIL (in 4th FIXED field only) for activating telephone calling or email addresses. TELEPHONE and EMAIL keywords can also be used in ANY DYNAMIC field. The sumAcross keyword placed in the last column of the table will SUM all numbers (100 but NOT 100% or 100!) in that record across the table. Avaiable tags to flash filename are: -tag,*,!,✅,♥️,🔴,❗️. See documentation or ABOUT section.";	//editTDTriggerBtn.setAttribute('class','colorBtn');
 	} else {
 		editTDTriggerBtn.textContent = "Double Tap/Click";
 		timeDateFlagP.textContent = "Use Select-Copy action to EDIT the Table data cells.";
@@ -5126,7 +5322,7 @@ if(DTBtnTappedOnce ===0) {
 			trigger = 'dblclick';
 			editTDTriggerBtn.textContent = "Select-Copy";
 		timeDateFlagP.textContent = "CURRENT SETTING: Double Tap to EDIT the Table data cells.";
-	tdEditTriggerP.textContent = "Double Tap on the table's data cell to initiate EDIT mode and EDIT its contents. This is the default trigger choice. To change edit trigger to 'Select-Copy' go to Preferences.\r\nFIXED fields = columns 1-4; DYNAMIC fields = columns 5 and up.\r\nUse keywords TOTAL AVERAGE COST or $ in field title (Dynamic fields only) for added functionality! (COST needs to be used with TOTAL or AVERAGE). Use TELEPHONE (in 3rd FIXED field only) or use EMAIL (in 4th FIXED field only) for activating telephone calling or email addresses. TELEPHONE and EMAIL keywords can also be used in ANY DYNAMIC field. The sumAcross keyword placed in the last column of the table will SUM all numbers (100 but NOT 100% or 100!) in that record across the table. See documentation or the ABOUT section.";//note ` quote to enable \n	editTDTriggerBtn.setAttribute('class','colorBtn');
+	tdEditTriggerP.textContent = "Double Tap on the table's data cell to initiate EDIT mode and EDIT its contents. This is the default trigger choice. To change edit trigger to 'Select-Copy' go to Preferences.\r\nFIXED fields = columns 1-4; DYNAMIC fields = columns 5 and up.\r\nUse keywords TOTAL AVERAGE COST or $ in field title (Dynamic fields only) for added functionality! (COST needs to be used with TOTAL or AVERAGE). Use TELEPHONE (in 3rd FIXED field only) or use EMAIL (in 4th FIXED field only) for activating telephone calling or email addresses. TELEPHONE and EMAIL keywords can also be used in ANY DYNAMIC field. The sumAcross keyword placed in the last column of the table will SUM all numbers (100 but NOT 100% or 100!) in that record across the table. Avaiable tags to flash filename are: -tag,*,!,✅,♥️,🔴,❗️. See documentation or the ABOUT section.";//note ` quote to enable \n	editTDTriggerBtn.setAttribute('class','colorBtn');
 		}//end if trigger === 'copy'
 		
 		else if(trigger === 'dblclick') {
@@ -5523,6 +5719,28 @@ if(newDBGuidance) {//was if(newDBflag..changed to if(newDBGuidance))
 	}//end calculationAlertsBtn.onclick
 //toggle calculation alerts
 
+// flashBtn.onclick = function () {
+// 	//toggle flashing tagged filename
+// Turn flashing OFF	
+// 	if(!flashing) {
+// 	flashBtn.textContent = "Turn flashing OFF";
+// 	timeDateFlagP.textContent = "Tagged files now flashing.";
+// 	flashBtn.style.backgroundColor = "yellow";
+// 		flashing = true;
+// 	} else {
+// 		flashBtn.textContent =
+// 		"Flash tagged filenames";
+// 		timeDateFlagP.textContent = "Flashing filenames now OFF.";
+// 		flashBtn.style.backgroundColor = "lightgreen";
+// 		flashing = false;
+// 		}//end if (!flashing) 
+		
+// 	}//end flashBtn.onclick = function ()
+//toggle flashing filenames
+
+
+
+
 	displayDataBtn.onclick = function () {
 		prefWindow.setAttribute('class','hidden');	
 		displayData();
@@ -5556,7 +5774,14 @@ if(newDBGuidance) {//was if(newDBflag..changed to if(newDBGuidance))
 	
 	//function renameTitle
 	function renameTitle () {
+	
+	let doneBtn = document.createElement('button');
+      doneBtn.textContent = 'DONE';
+      reNameWin.appendChild(doneBtn);
+     doneBtn.style.display = "none";//DONE btn won't show until after title input taken careof 
+      
 		if(newDBflag) {
+		// doneBtn.style.display = "none";//DO E btn won't show until after title input taken careof
 			renameBtn.setAttribute('class','normalBtn');
 		//} //end if newDBflag
 		displayDataBtn.setAttribute('class','borderBlink');
@@ -5599,19 +5824,22 @@ if(screenDark) {
 	// alert("dbTableName.value = " + dbTableName.value + " dbTitle.textContent = " + dbTitle.textContent + " dbName = " + dbName);
 	 //dbTableName.value set to 'Notes' at top of code
 const newTitlePara = document.createElement('p');
- 
+ newTitlePara.setAttribute('class','borderBlinkGrn');//to emthazize importance of sequence for entering database name
 	if(newDBflag) {
+	// newTitlePara.setAttribute('class','borderBlink');//to emthazize importance of sequence for entering database name
 	dbTitle.textContent = dbTableName.value;
-	newTitlePara.textContent = "Re-enter the new database name here - tap input element and enter SPACE bar for default entry."
+	newTitlePara.textContent = "Re-enter the new database name here - tap input element above for default entry."
 	//newTitle.value = dbTitle.textContent;
 	//newTitle.value = dbName;
 	newTitle.value = dataBaseName;
+	
+	// doneBtn.style.display = "unset";
 	}//end if(newDBflag) {  
 	 
 if(!newDBflag) {
 	 //added Nov24 2022 to set table name to database name as default
 	 //dbTableName.value = dbName;
-	 newTitlePara.textContent = "Re-enter the new database name here - tap input element and enter SPACE bar for default entry. The database table is now named : "
+	 newTitlePara.textContent = "Re-enter the new database name here - tap input element above and enter SPACE bar for default entry. The database table is now named : "
 	 newTitle.value = dbName;
 	 //REMOVE ABOVE LINE IF MESSED UP!!!!
 	 
@@ -5629,7 +5857,11 @@ if(!newDBflag) {
 	 
 	// newTitlePara.textContent = "⚠️ After entering new title, follow the flashing button prompts to register the new table title!"
 	 //get new title
-	 newTitle.addEventListener('input', function () {dbTitle.textContent = newTitle.value;
+	// newTitle.addEventListener('input', function () {
+	 
+	 newTitle.addEventListener('focus', function () {
+	 doneBtn.style.display = "unset";
+	 dbTitle.textContent = newTitle.value;
 	 
 	 //code below does not work!
 	 // if(newTitle.value === '\n'|| '\r') {
@@ -5667,10 +5899,11 @@ if(!newDBflag) {
 	 reNameWin.appendChild(newTitlePara);
 	 
 	 
-	 let doneBtn = document.createElement('button');
-      doneBtn.textContent = 'DONE';
-      reNameWin.appendChild(doneBtn);
+	 // let doneBtn = document.createElement('button');
+     //  doneBtn.textContent = 'DONE';
+     //  reNameWin.appendChild(doneBtn);
 	  doneBtn.onclick = function () {
+	  newTitlePara.setAttribute('class','attentionBtn');//to emthazize importance of sequence for entering database name
 		 document.getElementById("dbTableName").innerHTML = dbTableName.value;
 		//get ready for next instance of rename dbTablName
 	//alertrnf("dbTableName.value = " + dbTableName.value);
@@ -5693,6 +5926,7 @@ reNameWin.removeChild(cancelTableTitleBtn);
  if(!newDBflag) {  
   cancelTableTitleBtn.onclick = function () {
 	 newTitle.value ="";
+	 newTitlePara.setAttribute('class','attentionBtn');//to emthazize importance of sequence for entering database name Date; Jan22 2023
 	 reNameWin.removeChild(newTitlePara);
 		reNameWin.removeChild(previousTitlePara);
         reNameWin.removeChild(doneBtn);
@@ -6132,8 +6366,8 @@ if(screenDark) {
   	tableScreenBtnGrn = true;//flag used in saveVariables
   if(newDBGuidance) {
 	  alert('After tapping Reset Display in Preferences, tap EDIT (highlighted Green) in the NOTES window to enter data in the SECOND DATA FIELD of Notes, then AFTER doing this, tap SAVE in the Main menu!');
-  //NotesEditBtn.setAttribute('class','tdEdit');
-  NotesEditBtn.setAttribute('class','borderBlinkGrn');
+  NotesEditBtn.setAttribute('class','tdEdit');
+ // NotesEditBtn.setAttribute('class','borderBlinkGrn');
 }//end if(newDBGuidance)
 
   //ReferenceError: Can't find variable: NotesEditBtn so make global
@@ -6662,6 +6896,9 @@ function saveVariables () {
 //In SaveVariables, doing transaction. objectStoreName variable = Stuffed Rabbits_os
 console.log('In SaveVariables, doing transaction. objectStoreName variable = ' + objectStoreName);
 //TypeError: undefined is not an object (evaluating 'db.transaction')
+//alertflm("objectStoreName = " + objectStoreName);
+
+//AFTER A CREATE NEW DB,(NEW Database) THEN RENAMING THE NEW DB, the alert reveals objectStoreName = Green Peppers_os!! …whoops!  So now if you do transaction below you are in the wrong database!!
 let transaction = db.transaction([objectStoreName], 'readwrite');
 //  let objectStoreV = transaction.objectStore('notesVariables_os');
   
@@ -7065,7 +7302,7 @@ if(screenDark) {
 //LEFT OFF HERE JAN22 now need to make caseSensitive Btn!!	
 console.log('caseSensitive = ' + caseSensitive);
 	searchForRecordBtn.onclick = function () {	highLightTableBtn.setAttribute('class','attentionBtn');
-		//remove if screw up..trying to prevent repeaT alerts after addEventListener registers more than once on target element. addP does help but not alwaysthe trick because a new element is created each time? Will keep for aesthetics. I think what happens is if you just clear the input and then enter another record for search, the record title is put in the same li element as before and a second addEventListener is added to this element. BUT if after entering the record title as input AND THEN go to table to see highlight OR go to view full record, the next record title that is searched for is put in a new addP and no extra addEventListener is registered. I think because searchRecord() is called afresh when coming from table or viewFullNote. n So how to avoid clearing the input without going to table or viewFullWindow??Suggest disable clearInput Btn after a tap and Renable after tapping all the other" btns
+		//remove if screw up..trying to prevent repeaT alerts after addEventListener registers more than once on target element. addP does help but not alwaysthe trick because a new element is created each time? Will keep for aesthetics. I think what happens is if you just clear the input and then enter another record for search, the record title is put in the same li element as before and a second addEventListener is added to this element. BUT if after entering the record title as input AND THEN go to table to see highlight OR go to view full record, the next record title that is searched for is put in a new addP and no extra addEventListener is registered. I think because searchRecordc() is called afresh when coming from table or viewFullNote. n So how to avoid clearing the input without going to table or viewFullWindow??Suggest disable clearInput Btn after a tap and Renable after tapping all the other" btns
 		
 		resultList.appendChild(addP);
 		//remove above if screw up Jan 22 2021
@@ -7946,7 +8183,7 @@ const newTableNameCancelBtn = document.querySelector('#newTableNameCancelBtn'); 
  	
 /*if(tableIndex === -1) {
  newTableNames.length = 0;
- 	}//end if(newDBflag 
+ 	}//end if(newDBflag f
  */
  
  for (let i = 0; i< newTableNames.length; i++) {
@@ -8153,6 +8390,8 @@ tableScreen.setAttribute('class','showing');//referenced at top of code referenc
 
 if(!tableExists) {
 	displayTableBtn.disabled = true;
+	alert("8346>do i disable homecscreen btn here to?");
+	returnToNotesBtn.disabled = true;
 	// } else {
 	// 	displayTableBtn.disabled = false;
 	}//end if !tableExists
@@ -8732,10 +8971,14 @@ newOrEdit.appendChild(deleteFieldBtn);
 newOrEdit.appendChild(goHomeBtn);
 
 newBtn.onclick = function() {
+returnToNotesBtn.disabled = false;;
 	//code for guiding create newDB
 		//will set newDBGuidance = false in new table code section
 		if (newDBGuidance) {
 		newDBGuidance = false;
+		creationDONE = true;//flag for below
+		creationDONEName = dataBaseName;
+		//SHOULD I put flag to indicate createNew db is now finished so next getFileNames will initiate removing .createNewDB DATE: Jan28 2023
 		//alert("Remember to create the table for the new database BEFORE ADDING ANY NEW RECORDS!");
 		
 		//disable ADD NOTE and activate TABLE
@@ -8773,8 +9016,10 @@ newBtn.onclick = function() {
 	console.log('tableTitle[] = ' + tableTitle);
 	console.log('paraBody[] = ' + paraBody);
 	console.log('displayXtraFieldData[] = ' + displayXtraFieldData);
+	
 	makeTable();
 }//end function newBtn.onclick
+
 editBtn.onclick = function () {
 	deleteFieldBtn.setAttribute('class','attentionBtn');
 	if(!loadFromTableOptions) {
@@ -8885,6 +9130,9 @@ goHomeBtn.onclick = function () {
 		
 //added this line May5 2022 to avoid displayTableBtn showing new table screen and not cancelling loadFromTableOptions
 //resetFromContacts(); NOPE DOES NOT WORK,!! Messes up displayTable from main db table
+
+
+
 		}//end gohomeScreenBtn.onclick
 
 //start function makeTable called by editBtn.onclick
@@ -9043,6 +9291,14 @@ buildRecordsP.textContent = ' Enter titles of '+ numberOfDynamicFields + ' dynam
 //var additionalFieldsArray = Create2DArray(counter,numberOfDynamicFields);
 
 buildRecordsP.onclick = function () {
+//WOULD BE NICE IF i could scroll to bottom!
+const scrollToBottom = (id) => {
+	 const element = document.getElementById(id);
+   element.scrollTop = element.scrollHeight;
+}	
+scrollToBottom('createTable');//this is a function expression..element id is passed as a parameter to the scrollToBottom function expression.
+//WOULD BE NICE IF i could scroll to bottom!
+
 	console.log('At buildRecordsP.onclick');
 	if (edit === 1) {
 		addFieldsDirectionP.textContent = 'Make changes to labels of added fields below.';
@@ -9496,7 +9752,12 @@ console.log("At end of build record rows from a table edit. tableArray = " +tabl
 function displayTable () {
 today = new Date();
 todayS = today.toString();
-currentDate = todayS.slice(3, 10);
+ currentDate = todayS.slice(3, 8);
+// alert("currentDate = " + currentDate + "today.getMonth() = " + today.getMonth())
+ currentDate = currentDate + today.getDate();
+
+//alert("currentDate " + currentDate);
+
 //alert("currentDate = " + currentDate);
 //end function displayTable ..!!!! showTable IS AT LINE 10853
 //flag to only allow transit through mainDBedit code once	
@@ -9994,6 +10255,7 @@ fromDeleteField = false;// turn off this flag so that addFields is not called ag
 	//alertx("fieldNamesArray[k] = " + fieldNamesArray[k] + "fieldNamesArray[k].includes(TOTAL)" + fieldNamesArray[k].includes("TOTAL"));
 //code to set field heading light blue if = today's date
 //alert("budgetSheet = "  +budgetSheet + ". fieldNamesArray[k] = " + fieldNamesArray[k] + ". currentDate = " + currentDate);
+//NOTE THAT CURRENT DATE IS MONTH 01 02 etc whereas field label is 1,2,3,… 11 so at 10, 11 date lightblue will work but not for days under 10!!
 if (budgetSheet && fieldNamesArray[k].trim() === currentDate.trim()) {
 STnextFieldHeading.style.backgroundColor = "lightblue";
 //STnextFieldHeading.textContent = "CURRENT DATE  " + currentDate.trim();
@@ -10637,7 +10899,12 @@ STrecordTd.textContent = tableArray[i][c];
 	// //to allow table edit to avoid dblclick and to work in a blank td cell as will be the case if adding a dynamic field in edit table enter a text string to facilitate the copy paste iOS process to allow data entry. Oct 19 2021
 	
 	if(tableArray[i][c]=== undefined || tableArray[i][c]===0 || tableArray[i][c]=== " " || tableArray[i][c]=== null || tableArray[i][c]=== "") {
-		STrecordTd.textContent = "EDIT"
+			if(budgetSheet) {
+			STrecordTd.textContent = "    ";
+		
+			 } else {
+			 STrecordTd.textContent = "EDIT"; 
+			 }
 	 }//end if tableArray[i][c]===undefined
 	
 	//to allow table edit to avoid dblclick
@@ -11548,6 +11815,32 @@ STfirstDataNameTd.removeEventListener('dblclick',STfirstDataNameTd.fn, false);
 // //for (let k = 4; k < numberOfFields; k++) {
 // STnextFieldHeading.setAttribute('class','stHeadRow');//this line does not work!
 
+
+//NOT SURE WHERE TO PUT THIS - RETURN TO GETFILENAMES AFTER FINISHED CREATING NEW DB IN ORDER TO INITIATE REMOVAL OF .creatingDB tag
+if(creationDONE && !ranOnce) {
+//code to remove .creatingDB which maybe should be changed to -creatingDB in case js thinks its a method!	
+//code to rename db with tag removed
+//dataBaseName = databases[i].name;
+dataBaseName = dbTableName.value;//helps insure dataBaseName is not wiped out in creation new db process
+alert("Finishing up: Now removing '.createDB' extension from " + dataBaseName + " and restoring newly created database into DougieBase.");
+//renameDataBaseFileName(dataBaseName);
+dbFileName.textContent = dataBaseName.substring(0, dataBaseName.length-11);//trim off .creatingDB
+renamedFileName = dbFileName.textContent; 
+reNamedDBFileName = true;
+dbTitle.textContent = renamedFileName;
+dbTableName.value = renamedFileName//dbTableName is stored in variable1 and represents the variable in view settings that reflects the table name 
+saveVariables();
+backupDataBase(dataBaseName);//go to backup with original name!! And new filename is now in variable 	 renamedFileName = dbFileName.textContent
+
+
+//NOW NEED TO RETURN TO FILE NAMES WITH RESTORE BTN BLINKING
+//code to rename db with tag removed
+
+//creationDONE = false;
+ranOnce = true;//to prevent rerun
+}//end if(creationDONE)	
+
+
 if(telephoneActive || eMailActive) {
 resetActiveFieldHeaders();
 //}//end if telephone active
@@ -11783,6 +12076,38 @@ STfirstDataNameTd.removeEventListener('dblclick',STfirstDataNameTd.fn, false);
 	STfirstDataNameTd.setAttribute('class','stHeadRow');
 	
 }//end if(STfirstDataNameTdListener)
+
+//NOT SURE WHERE TO PUT THIS - RETURN TO GETFILENAMES AFTER FINISHED CREATING NEW DB IN ORDER TO INITIATE REMOVAL OF .creatingDB tag
+
+if(creationDONE && !ranOnce) {
+//code to remove .creatingDB which maybe should be changed to -creatingDB in case js thinks its a method!	
+//code to rename db with tag removed
+//dataBaseName = databases[i].name;
+dataBaseName = dbTableName.value;//helps insure dataBaseName is not wiped out in creation new db process
+alert("Finishing up: Now removing '.createDB' extension from " + dataBaseName + " and restoring newly created database into DougieBase.");
+//renameDataBaseFileName(dataBaseName);
+dbFileName.textContent = dataBaseName.substring(0, dataBaseName.length-11);//trim off .creatingDB
+renamedFileName = dbFileName.textContent; 
+reNamedDBFileName = true;
+dbTitle.textContent = renamedFileName;
+dbTableName.value = renamedFileName//dbTableName is stored in variable1 and represents the variable in view settings that reflects the table name 
+saveVariables();
+backupDataBase(dataBaseName);//go to backup with original name!! And new filename is now in variable 	 renamedFileName = dbFileName.textContent
+
+
+//NOW NEED TO RETURN TO FILE NAMES WITH RESTORE BTN BLINKING
+//code to rename db with tag removed
+
+//creationDONE = false;
+ranOnce = true;//to prevent rerun
+}//end if(creationDONE)	
+
+
+// if(creationDONE) {
+// alert("Now going back to filenames list to remove .createNewDB tag!");
+// 	getFileNames();
+// }//end if(creationDONE)
+
 
 //CODE TO RESET BLINK IF TELEPHONE OR EMAIL HAD BEEN ACTIVATED
 if(telephoneActive || eMailActive) {
@@ -14467,11 +14792,23 @@ alert("Copying to Clipboard. On the next Backup screen, first tap the green high
 
 doneCopyBtn.onclick = function () {
 
-if(reNamedDBFileName) {
+//alertflm("reNamedDBFileName = " + reNamedDBFileName + " creationDONE = " + creationDONE);
+
+if(reNamedDBFileName && creationDONE) {
 //reNamedDBFileName = false;
-	alert("The database has been renamed. ( " + renamedFileName + " ) When restored to DougieBase it will appear in the filename list with its new name. DougieBase will delete the original ( " + dataBaseName + " ) (as this file has now been rendered dysfunctional) when the browser releases its lock on it.")
+
+		alert("The newly created database has had its '.creatingDB' extension stripped from its filename and has been copied to the clipboard. To complete the process RESTORE " + renamedFileName + " to DougieBase by 'pasting from the clipboard' into the text-area element of the RESTORE section.");
+		alert("DougieBase will automatically delete the file " + dataBaseName + " and all data remnants used in creating the new database (as this file has now been rendered dysfunctional) when the browser releases its lock on the file.");
+		}//end if(reNamedDBFileName && creationDONE) {
+else if(reNamedDBFileName && !creationDONE) {
+	alert("The database has been renamed. ( " + renamedFileName + " ) When restored to DougieBase it will appear in the filename list with its new name. DougieBase will delete the original ( " + dataBaseName + " ) (as this file has now been rendered dysfunctional) when the browser releases its lock on it.");
+	}//END else if(reNamedDBFileName && !creationDONE) 
+	
+if(reNamedDBFileName || creationDONE) {
+	
 	closeDataBase (dataBaseName);
-// }//end if(reNamedDBFileName) {
+// }//end if(reNamedDBFileName) 
+
 //CODE HERE TO AUTOMATICALLY DELETE ORIGINAL DB ?
 originalDBName = dataBaseName;//probably won't use originalDBName??
 resetFields = true;//to avoid fields messed up after restore and view
@@ -14489,13 +14826,18 @@ deleteDataBase(dataBaseName);
 //alertblk("After an autodelete and returning from deletedatabase:  blockedName[0] = " + blockedName[0]  + " dbDeleted[0] = " + dbDeleted[0] + " dbDeleted[1] = " + dbDeleted[1] + " dbDeleted[2] = " + dbDeleted[2] + " blocked[0] = " + blocked[0] + " blocked[1] = " + blocked[1] + " blocked[2] = " + blocked[2] + " dbDeletedName[0] = " + dbDeletedName[0] + " dbDeletedName[1] = " + dbDeletedName[1] + " dbDeletedName[2] = " + dbDeletedName[2]);
 
 
-}//end if(reNamedDBFileName) {	
+}//end if(reNamedDBFileName || creationDONE) 
 	
 			//enable disable DONE btn in backup window
 		//	doneCopyBtn.disabled = true;
 			//enable disable DONE btn in backup window
+			
+if(!creationDONE) {		
 	shareBtn.disabled = false;
-	shareBtn.style.display = "unset";		doneCopyBtn.setAttribute('class','normalBtn');
+	shareBtn.style.display = "unset";
+	}//end if(!creationDONE) 	
+	
+		doneCopyBtn.setAttribute('class','normalBtn');
 			textarea.setAttribute('class','normalBtn');
 			//textarea.setAttribute('class','hidden');
 	//so return to notes and backup info p can be visualized..otherwise they are covered by textarea		
@@ -14518,8 +14860,11 @@ nameOfDataBase = renamedFileName;
 //REMEMBER renamedFileName WAS STRIPPED OF .bs in backup code
 dbTableName.value = renamedFileName;
 //saveVariables();//added Nov24 TEST BEFORE LEAVING THIS LINE! Does not work because idb looks for objectStoreName which has been changed by rename db and this db has not been loaded into DougieBase yet so the objectStoreName is not found from saveVariables when it tries to load in the newly named db
-}//end if(!reNamedDBFileName) {
-		
+}//end if(reNamedDBFileName) {
+
+
+//CODE BELOW IS NOT USED FOR CREATE NEW DATA BASE .. BUT IS USED FOR BACKUP AND RENAME FILENAMES	
+if(!creationDONE) {
  //confirm choice window
 	if (window.confirm("SHARE this database ( " + nameOfDataBase + " ) using the Share Sheet options" + " \n"  +  " ..tap OK \n\n" + "  CANCEL  will RETURN TO HOME SCREEN!")) {		
 //CODE FOR SHARE SHEET
@@ -14578,7 +14923,7 @@ restoreDataBaseBtn.textContent = "RESTORE " + renamedFileName;
 } else {
 //if not sharing and just storing new budget sheet in clipboard for pasting to some external storage, show msg re restoring new budget sheet and reset loadSampleBudget to false..Date: Dec 17 2023
 
-if(loadSampleBudget) {
+if(loadSampleBudget) {//should this be repeated above?
 	alert("After returning to the file names list window you may tap the RESTORE DATABASE button to load in and use your new BUDGET SHEET. DELETE the ‘Monthly Expenses TEMPLATE' file anytime after the browser has released its LOCK on it. The TEMPLATE is embedded in DougieBase and can be used to create a new Budget Sheet for any month, any time you need it by tapping 'Load Budget Sheet TEMPLATE' from the 'New/Change DB' (filenames) window.");
 	loadSampleBudget = false;//added Dec15 to reset flashing TABLE  tn etc 
 }//end if(loadSampleBudget)
@@ -14587,16 +14932,34 @@ if(loadSampleBudget) {
 		backupFilesWin.setAttribute('class','hidden');
 		resultPara.textContent = "";
 		
-		}//end prompt choice of using sharesheet
+//CODE TO SET RESTOREBTN FLASHING
+	if(reNamedDBFileName){
+	restoreDataBaseBtn.setAttribute('class','borderBlink');
+	restoreDataBaseBtn.textContent = "RESTORE " + renamedFileName;
+	}//end if(reNamedDBFileName)
 		
+		}//end prompt choice of using sharesheet END PROMPT
+//PUT END if(!creationDONE)	 wrapper here?	
+ }//end if(!creationDONE)MAYBE FINISHEDSHAREBTN.ONCLICK SHOULD BE REMOVED FROM THE EXCLUDEDCREATE NEW DATABASE WRAPPER AS A PRESS OF THIS BTN RUNS ITS FUNCTION CODE REGARDLESS?
+//END IF(!creationDONE) 
+//CODE ABOVE IS NOT USED FOR CREATE NEW DATA BASE .. BUT IS USED FOR BACKUP AND RENAME FILENAMES
+
+
+
 if(!reNamedDBFileName) {
 		//dbNameInfo.textContent = renamedFileName;
 		alert('The database named..' + dataBaseName + ' has been copied to the clipboard! You can now PASTE it into your external BACKUP storage file. If on iOS: You can choose an option from the native share sheet. MAIL allows you to send your database via email to whomever. If you have the DougieBase extension DougieBase SAVE to FILES installed in your shortcuts, this will save your database directly to an iCloud folder labelled DougieBaseBKUPS. (Create a folder named DougieBaseBKUPS in iCloud first).');
 	}//end if !reNamedDBFileName
-	else if(reNamedDBFileName){
+	else if(reNamedDBFileName && !creationDONE){
 	//dbNameInfo.textContent = dataBaseName;
 	//renamedFileName HAS BEEN STRIPPED OF .bs but .bs is saved in the json string. SEE manipulateString() function
-	alert('The database renamed..' + renamedFileName + ' has been copied to the clipboard! You can now PASTE it into your external BACKUP storage file. If on iOS: You can choose an option from the native share sheet. MAIL allows you to send your database via email to whomever. If you have the DougieBase extension DougieBase SAVE to FILES installed in your shortcuts, this will save your database directly to an iCloud folder labelled DougieBaseBKUPS. (Create a folder named DougieBaseBKUPS in iCloud first).');
+	alert('The database renamed..' + renamedFileName + ' has been copied to the clipboard! You can now PASTE it into your external BACKUP storage file. If on iOS: You can choose an option from the native share sheet. MAIL allows you to send your database via email to whomever. If you have the DougieBase extension DougieBase SAVE to FILES installed in your shortcuts, this will save your database directly to an iCloud folder labelled DougieBaseBKUPS. (Create a folder named DougieBaseBKUPS in iCloud first).You can still RESTORE the database with its new filename even if not on wifi by simply PASTING it into the textarea element in the RESTORE section of DougieBase.');
+	//CODE TO SET RESTOREBTN FLASHING
+//if(reNamedDBFileName && !creationDONE){
+restoreDataBaseBtn.setAttribute('class','borderBlink');
+restoreDataBaseBtn.textContent = "RESTORE " + renamedFileName;
+//}//end if(reNamedDBFileName)
+	
 	}//end else if(reNamedDBFileName) {
 	
 			
@@ -14608,21 +14971,69 @@ if(!reNamedDBFileName) {
 // backingUpDBWin.setAttribute('class','hidden');
 // backupFilesWin.setAttribute('class','hidden');
 //  } //end function finishedShareBtn.onclick
+
+// if(creationDONE) 
+// 	finishedShareBtn.setAttribute('class','borderBlinkGrn');
+// }//END if(creationDONE) {
+if(creationDONE) {
+finishedShareBtn.setAttribute('class','borderBlinkGrn');
+} else {
+finishedShareBtn.setAttribute('class','borderBlink');
+}//end if(creationDONE) 
+
 finishedShareBtn.onclick = function () {
+finishedShareBtn.setAttribute('class','tdEdit');
 if(loadSampleBudget) {
 	alert("After returning to the file names list window you may tap the RESTORE DATABASE button to load in and use your new BUDGET SHEET. DELETE the ‘Monthly Expenses TEMPLATE' file anytime after the browser has released its LOCK on it. The TEMPLATE is embedded in DougieBase and can be used to create a new Budget Sheet for any month, any time you need it by tapping 'Load Budget Sheet TEMPLATE' from the 'New/Change DB' (filenames) window.");
 	loadSampleBudget = false;//added Dec15 to reset flashing TABLE  tn etc 
 }//end if(loadSampleBudget)
 resultPara.textContent = "";
 
-if(reNamedDBFileName) {
+if(reNamedDBFileName && !creationDONE) {
 alert("Now RESTORE the database with its new File Name (" + renamedFileName + ") from your external storage back to DougieBase. It will be listed using its new name. Delete the original file with its old name (" + dataBaseName + ") as it has now been rendered dysfunctional. (Requires waiting for the browser to release its LOCK on the original file) ");	
 }//end if(reNamedDBFileName)
+
+if(creationDONE) {
+creationDONE = false;
+resultPara.textContent = "";
+	alert("Now RESTORE the newly created database to DougieBase by tapping the Text-Area element when the RESTORE Window appears, and 'PASTE' the data into the text-area element of the RESTORE window. (REMEMBER NOT TO 'COPY' ANYTHING UNTIL THE PASTE PROCESS IS FINISHED!) Your new database will now be listed among the current database filenames.");
+	backingUpDBWin.setAttribute('class','hidden');
+backupFilesWin.setAttribute('class','hidden');
+creationDONE = false;
+restoreDataBase(restoredDBName);//remove if does not work and re-instate RESTOREBTN FLASHING JAN31 2023
+}//end if(creationDONE)
+
 //	 shareBtn.style.display = "none";
 //resultPara.style.display = "none";
 backingUpDBWin.setAttribute('class','hidden');
 backupFilesWin.setAttribute('class','hidden');
  } //end function finishedShareBtn.onclick
+ 
+//  }//end if(!creationDONE)MAYBE FINISHEDSHAREBTN.ONCLICK SHOULD BE REMOVED FROM THE EXCLUDEDCREATE NEW DATABASE WRAPPER AS A PRESS OF THIS BTN RUNS ITS FUNCTION CODE REGARDLESS?
+// //END IF(!creationDONE) 
+// //CODE ABOVE IS NOT USED FOR CREATE NEW DATA BASE .. BUT IS USED FOR BACKUP AND RENAME FILENAMES
+
+//CODE BELOW APPLIES ONLY TO CREATE NEW DATABASE 
+// if(creationDONE) {
+// finishedShareBtn.setAttribute('class','borderBlinkGrn');
+// finishedShareBtn.onclick = function () {
+// finishedShareBtn.setAttribute('class','tdEdit');
+// 	resultPara.textContent = "";
+// 	// alert("Now RESTORE the newly created database to DougieBase by tapping the RESTORE btn below and 'PASTE' the data into the text-area element of the RESTORE window. (REMEMBER NOT TO 'COPY' ANYTHING UNTIL THE PASTE PROCESS IS FINISHED!) Your new database will now be listed among the current database filenames.");
+// 	backingUpDBWin.setAttribute('class','hidden');
+// backupFilesWin.setAttribute('class','hidden');
+// // creationDONE = false;
+// // restoreDataBase(restoredDBName);//remove if does not work and re-instate RESTOREBTN FLASHING JAN31 2023
+// 	}//end finishedShareBtn.onclick = function ()
+// 	//CODE TO SET RESTOREBTN FLASHING
+// // if(reNamedDBFileName){
+// // restoreDataBaseBtn.setAttribute('class','borderBlink');
+// // restoreDataBaseBtn.textContent = "RESTORE " + renamedFileName;
+// // }//end if(reNamedDBFileName)
+
+// //CODE ABOVE APPLIES ONLY TO CREATE NEW DATABASE 
+// }//END if(creationDONE) { 
+ 
 // reNamedDBFileName = false;
 }//end function backup database	
 
@@ -14793,7 +15204,11 @@ if (loadSampleDb || loadTutorialDb || loadSampleBudget) {
 	finishedRestoreBtn.onclick = function (restoredDBName) {
 	restoreFromFileBtn.style.display = "unset";
 	restoreTextArea.style.display = "unset";
+	
+	//to prevent a mess if CANCEL is tapped after template is created DATE: JAN22 2023	
+	cancelRestoreBtn.style.display = "unset";
 	//nowDo.style.display = "unset";
+	
 		dbRestored = true;//flag to allow notification of restore in getFileNames May12
 	//clear textarea for next use
 	// loadSampleDb = false;
@@ -14990,6 +15405,10 @@ finishedRestoreBtn.setAttribute('class','normalBtn');
 	restoreFromClipboardBtn.textContent = "Your Database has been RESTORED!";
 	restoreFromClipboardBtn.setAttribute('class','colorBtn');	
 	finishedRestoreBtn.setAttribute('class','borderBlinkGrn');
+
+//Should CANCEL btn here be display "none "	until finished btn is tapped at which point CANCELbtn is unset
+
+cancelRestoreBtn.style.display = "none";	
 	
 //NOTE IF DOUGIEBASE DELETED THE DB FILE AND LOCKS IT, THE LOAD IF THE FILE IS TAPPED IN GETFILENAMES..(SHOULD BE GREYED OUT?) the program can't find the file and assumes does not exist and goes to onupgrade needed thus thinking we are creating a new db so now in createnewdb code flow		
 request.onupgradeneeded = function(e) {
@@ -17506,7 +17925,7 @@ function Xsumming () {
 	
 	
 		//i++;
-		alert("Addition column in record " + (i+1) + " contains a non number!");
+		alert("is this the alert?Addition column in record " + (i+1) + " contains a non number!");
 		i++;
 		//break;
 		}//end if ( isNaN( Number(tableArray[i][totalFieldNameIndex])) || Number(tableArray[i][totalFieldNameIndex]) === 0) {
@@ -18276,8 +18695,11 @@ if(makeContactsTable || loadFromTableOptions) {
 	
 	if ( isNaN( Number(strippedOff) )) {
     
-
+		if(calculationAlerts) {
 		alert("Addition column in record " + (i+1) + " contains a non number!");
+		}//end if(calculationAlerts) 
+		
+		
 		i++;
 		//break;
 		continue;//should this be here????
@@ -18304,7 +18726,10 @@ function justAddNumbers () {
 	
 	
 		//i++;
+		if(calculationAlerts) {
 		alert("Addition column in record " + (i+1) + " contains a non number!");
+		}//end if(calculationAlerts) 
+		
 		i++;
 		//break;
 		}//end if ( isNaN( Number(tableArray[i][totalFieldNameIndex])) || Number(tableArray[i][totalFieldNameIndex]) === 0) {
@@ -18515,7 +18940,7 @@ monthSelectWin.setAttribute('class', 'showing');
 	monthSelect.value = "Tap HERE first!"	
 const monthSelectInfoP = document.createElement("p");
 const yearAndMonthInfoP = document.createElement("p");
-	monthSelect.setAttribute('type','date');
+	monthSelect.setAttribute('type','date');//this creates the datePicker API
 	monthSelectWin.appendChild(monthSelect);
 	
 	
@@ -18612,7 +19037,7 @@ fixedFieldsBS[3] = "Comments";
 
 //for 30 day month
 if(month === "Sept" || month === "April" || month === "June" || month === "Nov") {
-for (var i = 0; i < 30; i++) {
+for (var i = 00; i < 30; i++) {
 	bs30FieldNamesArray[i] = month + " " + (i+1).toString();
 }//end for loop
 //alertcm("fixedFieldsBS = " + fixedFieldsBS);
@@ -18629,7 +19054,7 @@ fieldNamesArray = fieldNamesArray.concat(addToMonthsArray);
 // resetFields = true;
 } else if (month === "Feb") {
 //for Feb month
-	for (var i = 0; i < 28; i++) {
+	for (var i = 00; i < 28; i++) {
 	febFieldsNamesArray[i] = month + " " + (i+1).toString();
 	}//end for loop
 fieldNamesArray = fixedFieldsBS.concat(febFieldsNamesArray);
@@ -18650,7 +19075,7 @@ fieldNamesArray = fieldNamesArray.concat(addToMonthsArray);
 
 //for 31 day month
 } else {
-for (var i = 0; i < 31; i++) {
+for (var i = 00; i < 31; i++) {
 	bs31FieldNamesArray[i] = month + " " + (i+1).toString();
 }//end for loop
 fieldNamesArray = fixedFieldsBS.concat(bs31FieldNamesArray);
@@ -18947,7 +19372,7 @@ Note that you actually have to pass the exported data as a string, not as a JSON
 
   if('serviceWorker' in navigator) {
     navigator.serviceWorker
-             .register('/DougieBaseVer45sw.js')
+             .register('/DougieBaseVer46sw.js')
              .then(function() { console.log('Service Worker Registered'); });
 			alert('Service Worker Registered!');
 		
