@@ -19370,7 +19370,7 @@ Note that you actually have to pass the exported data as a string, not as a JSON
              .then(function()*/
 /*add the '.' before the slash? Same in start url in manifest…'./index.html' DID NOT CHANGE THIS BECAUSE AS OF AUG 1 app seems to be working off line and after a reboot…not sure what is going on??? REMOVED '.' Aug 3 in both js and manifest*/
 
-//NEW SERVICE WORKER!! Feb6 2023
+//NEW SERVICE WORKER!! Feb6 2023 This is published on github but I know new js is loaded in but I don't think the new service worker registered and I have not seen any newWorker button? It must still be using original service worker?? Will see what happens next?
 function invokeServiceWorkerUpdateFlow(registration) {
     // TODO implement your own UI notification element
     //safari does not support notifications
