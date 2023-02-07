@@ -2136,7 +2136,8 @@ if (dataBaseName === "") {
 	manageDataBases();
 	return;
 }//end if database name === ""	
-alert("objectStoreName = " + objectStoreName + ". dataBaseName = " + dataBaseName);
+
+//alert("objectStoreName = " + objectStoreName + ". dataBaseName = " + dataBaseName);
 
 if (objectStoreName !== dataBaseName + "_os" ) {
 	alert("⚠️ You need to OPEN and view " + dataBaseName + " from the database file names list first, before you can RENAME the file in MANAGE. Returning to the database list.");
@@ -19096,6 +19097,9 @@ monthSelectWin.removeChild(doneDateBtn);
 
 	monthSelectWin.setAttribute('class', 'hidden');
 numberOfFields = fieldNamesArray.length;
+//DO I NEED TO CALCULATE numberOfDynamicFields FOR BUDGET SHEET HERE? DATE: FEB 6 2023
+numberOfDynamicFields = numberOfFields -4;
+//DO I NEED TO CALCULATE numberOfDynamicFields FOR BUDGET SHEET HERE? DATE: FEB 6 2023
 refreshed = 0;
 displayedTable = 0;
 resetFields = true;
@@ -19366,23 +19370,108 @@ Note that you actually have to pass the exported data as a string, not as a JSON
              .then(function()*/
 /*add the '.' before the slash? Same in start url in manifest…'./index.html' DID NOT CHANGE THIS BECAUSE AS OF AUG 1 app seems to be working off line and after a reboot…not sure what is going on??? REMOVED '.' Aug 3 in both js and manifest*/
 
+//NEW SERVICE WORKER!! Feb6 2023
+function invokeServiceWorkerUpdateFlow(registration) {
+    // TODO implement your own UI notification element
+    //safari does not support notifications
+    const newWorkerBtn = document.createElement('button');
+    const skipNewWorkerBtn = document.createElement('button');
+    newWorkerBtn.textContent = "New version of the app is available. Refresh now?";
+    skipNewWorkerBtn.textContent ="SKIP";
+    
+    document.appendChild(newWorkerBtn);
+    document.appendChild(skipNewWorkerBtn);
+   // notification.show("New version of the app is available. Refresh now?");
+    newWorkerBtn.addEventListener('click', () => {
+    document.removeChild(newWorkerBtn);
+    document.removeChild(skipNewWorkerBtn);
+        if (registration.waiting) {
+            // let waiting Service Worker know it should became active
+            registration.waiting.postMessage('SKIP_WAITING');
+        }
+    })
+
+
+skipNewWorkerBtn.addEventListener('click', () => {
+document.removeChild(newWorkerBtn);
+    document.removeChild(skipNewWorkerBtn);
+    return;	
+});
+
+}//end function invokeServiceWorkerUpdateFlow(registration) 
+
+// check if the browser supports serviceWorker at all
+if ('serviceWorker' in navigator) {
+    // wait for the page to load
+    window.addEventListener('load', async () => {
+        // register the service worker from the file specified
+        const registration = await navigator.serviceWorker.register('/swDougieBaseVer46sw.js')
+
+        // ensure the case when the updatefound event was missed is also handled
+        // by re-invoking the prompt when there's a waiting Service Worker
+      
+        if (registration.waiting) {
+            invokeServiceWorkerUpdateFlow(registration)
+        }
+
+        // detect Service Worker update available and wait for it to become installed
+        registration.addEventListener('updatefound', () => {
+            if (registration.installing) {
+                // wait until the new Service worker is actually installed (ready to take over)
+                registration.installing.addEventListener('statechange', () => {
+                    if (registration.waiting) {
+                        // if there's an existing controller (previous Service Worker), show the prompt
+                        if (navigator.serviceWorker.controller) {
+                            invokeServiceWorkerUpdateFlow(registration)
+                        } else {
+                            // otherwise it's the first install, nothing to do
+                            console.log('Service Worker initialized for the first time')
+                            alert("Service Worker initialized for the first time");
+                        }
+                    }
+                })
+            }
+        })
+
+        let refreshing = false;
+
+        // detect controller change and refresh the page
+        navigator.serviceWorker.addEventListener('controllerchange', () => {
+            if (!refreshing) {
+                window.location.reload()
+                refreshing = true
+            }
+        })
+    })
+}
+
+
+
+//DISABLED ENABLED SERVICE WORKER
+//END NEW SERVICE WORKER FEB6 2023
+
+
+
 
 //DISABLED ENABLED SERVICE WORKER
 
+//ORIGINAL SERVICE WORKER BELOW v
 
-  if('serviceWorker' in navigator) {
-    navigator.serviceWorker
-             .register('/DougieBaseVer46sw.js')
-             .then(function() { console.log('Service Worker Registered'); });
-			alert('Service Worker Registered!');
+//   if('serviceWorker' in navigator) {
+//     navigator.serviceWorker
+//              .register('/DougieBaseVer46sw.js')
+//              .then(function() { console.log('Service Worker Registered'); });
+// 			alert('Service Worker Registered!');
 		
   
-		 } else {//end if service worker
-	//StorageManager.estimate()..https://developer.mozilla.org/en-US/docs/Web/API/StorageManager/estimate
+// 		 } else {//end if service worker
+// 	//StorageManager.estimate()..https://developer.mozilla.org/en-US/docs/Web/API/StorageManager/estimate
 	
-	console.log('No Service worker installed!');
-	document.getElementById("percent").value = '(No Service Worker installed! )';
-}//end if else service worker
+// 	console.log('No Service worker installed!');
+// 	document.getElementById("percent").value = '(No Service Worker installed! )';
+// }//end if else service worker
+
+//ORIGINAL SERVICE WORKER ABOVE ^
 
 	//what about the manifest file? triggered by oninstall? A2HS?	 
 //If the service worker API is supported in the browser, it is registered against the site using the ServiceWorkerContainer.register() method. Its contents reside in the sw.js file, and can be executed after the registration is successful. It's the only piece of Service Worker code that sits inside the app.js file; everything else that is Service Worker-specific is written in the sw.js file itself.
