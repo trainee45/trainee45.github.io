@@ -19371,81 +19371,83 @@ Note that you actually have to pass the exported data as a string, not as a JSON
 /*add the '.' before the slash? Same in start url in manifest…'./index.html' DID NOT CHANGE THIS BECAUSE AS OF AUG 1 app seems to be working off line and after a reboot…not sure what is going on??? REMOVED '.' Aug 3 in both js and manifest*/
 
 //NEW SERVICE WORKER!! Feb6 2023 This is published on github but I know new js is loaded in but I don't think the new service worker registered and I have not seen any newWorker button? It must still be using original service worker?? Will see what happens next?
-function invokeServiceWorkerUpdateFlow(registration) {
-    // TODO implement your own UI notification element
-    //safari does not support notifications
-    const newWorkerBtn = document.createElement('button');
-    const skipNewWorkerBtn = document.createElement('button');
-    newWorkerBtn.textContent = "New version of the app is available. Refresh now?";
-    skipNewWorkerBtn.textContent ="SKIP";
+//DATE FEB9 2023- removed new sw and replaced with old sw!
+
+// function invokeServiceWorkerUpdateFlow(registration) {
+//     // TODO implement your own UI notification element
+//     //safari does not support notifications
+//     const newWorkerBtn = document.createElement('button');
+//     const skipNewWorkerBtn = document.createElement('button');
+//     newWorkerBtn.textContent = "New version of the app is available. Refresh now?";
+//     skipNewWorkerBtn.textContent ="SKIP";
     
-    document.appendChild(newWorkerBtn);
-    document.appendChild(skipNewWorkerBtn);
-   // notification.show("New version of the app is available. Refresh now?");
-    newWorkerBtn.addEventListener('click', () => {
-    document.removeChild(newWorkerBtn);
-    document.removeChild(skipNewWorkerBtn);
-        if (registration.waiting) {
-            // let waiting Service Worker know it should became active
-            registration.waiting.postMessage('SKIP_WAITING');
-        }
-    })
+//     document.appendChild(newWorkerBtn);
+//     document.appendChild(skipNewWorkerBtn);
+//    // notification.show("New version of the app is available. Refresh now?");
+//     newWorkerBtn.addEventListener('click', () => {
+//     document.removeChild(newWorkerBtn);
+//     document.removeChild(skipNewWorkerBtn);
+//         if (registration.waiting) {
+//             // let waiting Service Worker know it should became active
+//             registration.waiting.postMessage('SKIP_WAITING');
+//         }
+//     })
 
 
-skipNewWorkerBtn.addEventListener('click', () => {
-document.removeChild(newWorkerBtn);
-    document.removeChild(skipNewWorkerBtn);
-    return;	
-});
+// skipNewWorkerBtn.addEventListener('click', () => {
+// document.removeChild(newWorkerBtn);
+//     document.removeChild(skipNewWorkerBtn);
+//     return;	
+// });
 
-}//end function invokeServiceWorkerUpdateFlow(registration) 
+// }//end function invokeServiceWorkerUpdateFlow(registration) 
 
-// check if the browser supports serviceWorker at all
-if ('serviceWorker' in navigator) {
-    // wait for the page to load
-    window.addEventListener('load', async () => {
-        // register the service worker from the file specified
-        const registration = await navigator.serviceWorker.register('/swDougieBaseVer46sw.js')
-          .then(function() { console.log('Service Worker Registered'); });
-			alert('Service Worker Registered!');
-//alert('Service Worker Registered!');//I added this line from old sw but not sure if its in the right place?
-        // ensure the case when the updatefound event was missed is also handled
-        // by re-invoking the prompt when there's a waiting Service Worker
+// // check if the browser supports serviceWorker at all
+// if ('serviceWorker' in navigator) {
+//     // wait for the page to load
+//     window.addEventListener('load', async () => {
+//         // register the service worker from the file specified
+//         const registration = await navigator.serviceWorker.register('/swDougieBaseVer46sw.js')
+//           .then(function() { console.log('Service Worker Registered'); });
+// 			alert('Service Worker Registered!');
+// //alert('Service Worker Registered!');//I added this line from old sw but not sure if its in the right place?
+//         // ensure the case when the updatefound event was missed is also handled
+//         // by re-invoking the prompt when there's a waiting Service Worker
       
-        if (registration.waiting) {
-            invokeServiceWorkerUpdateFlow(registration)
-        }
+//         if (registration.waiting) {
+//             invokeServiceWorkerUpdateFlow(registration)
+//         }
 
-        // detect Service Worker update available and wait for it to become installed
-        registration.addEventListener('updatefound', () => {
-            if (registration.installing) {
-                // wait until the new Service worker is actually installed (ready to take over)
-                registration.installing.addEventListener('statechange', () => {
-                    if (registration.waiting) {
-                        // if there's an existing controller (previous Service Worker), show the prompt
-                        if (navigator.serviceWorker.controller) {
-                            invokeServiceWorkerUpdateFlow(registration)
-                        } else {
-                            // otherwise it's the first install, nothing to do
-                            console.log('Service Worker initialized for the first time')
-                            alert("Service Worker initialized for the first time");
-                        }
-                    }
-                })
-            }
-        })
+//         // detect Service Worker update available and wait for it to become installed
+//         registration.addEventListener('updatefound', () => {
+//             if (registration.installing) {
+//                 // wait until the new Service worker is actually installed (ready to take over)
+//                 registration.installing.addEventListener('statechange', () => {
+//                     if (registration.waiting) {
+//                         // if there's an existing controller (previous Service Worker), show the prompt
+//                         if (navigator.serviceWorker.controller) {
+//                             invokeServiceWorkerUpdateFlow(registration)
+//                         } else {
+//                             // otherwise it's the first install, nothing to do
+//                             console.log('Service Worker initialized for the first time')
+//                             alert("Service Worker initialized for the first time");
+//                         }
+//                     }
+//                 })
+//             }
+//         })
 
-        let refreshing = false;
+//         let refreshing = false;
 
-        // detect controller change and refresh the page
-        navigator.serviceWorker.addEventListener('controllerchange', () => {
-            if (!refreshing) {
-                window.location.reload()
-                refreshing = true
-            }
-        })
-    })
-}
+//         // detect controller change and refresh the page
+//         navigator.serviceWorker.addEventListener('controllerchange', () => {
+//             if (!refreshing) {
+//                 window.location.reload()
+//                 refreshing = true
+//             }
+//         })
+//     })
+// }
 
 
 
@@ -19459,19 +19461,19 @@ if ('serviceWorker' in navigator) {
 
 //ORIGINAL SERVICE WORKER BELOW v
 
-//   if('serviceWorker' in navigator) {
-//     navigator.serviceWorker
-//              .register('/DougieBaseVer46sw.js')
-//              .then(function() { console.log('Service Worker Registered'); });
-// 			alert('Service Worker Registered!');
+  if('serviceWorker' in navigator) {
+    navigator.serviceWorker
+             .register('/DougieBaseVer46sw.js')
+             .then(function() { console.log('Service Worker Registered'); });
+			alert('Service Worker Registered!');
 		
   
-// 		 } else {//end if service worker
-// 	//StorageManager.estimate()..https://developer.mozilla.org/en-US/docs/Web/API/StorageManager/estimate
+		 } else {//end if service worker
+	//StorageManager.estimate()..https://developer.mozilla.org/en-US/docs/Web/API/StorageManager/estimate
 	
-// 	console.log('No Service worker installed!');
-// 	document.getElementById("percent").value = '(No Service Worker installed! )';
-// }//end if else service worker
+	console.log('No Service worker installed!');
+	document.getElementById("percent").value = '(No Service Worker installed! )';
+}//end if else service worker
 
 //ORIGINAL SERVICE WORKER ABOVE ^
 
