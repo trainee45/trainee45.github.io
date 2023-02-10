@@ -19406,7 +19406,7 @@ if ('serviceWorker' in navigator) {
     window.addEventListener('load', async () => {
         // register the service worker from the file specified
         const registration = await navigator.serviceWorker.register('/swDougieBaseVer46sw.js')
-
+alert('Service Worker Registered!');//I added this line from old sw but not sure if its in the right place?
         // ensure the case when the updatefound event was missed is also handled
         // by re-invoking the prompt when there's a waiting Service Worker
       
