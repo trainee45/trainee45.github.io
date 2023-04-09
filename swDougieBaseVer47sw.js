@@ -1,4 +1,4 @@
-/*DougieBaseVer46sw.js Feb2 2023 DougieBaseVer45sw.js Dec28 2022 DougieBaseVer44sw.js Dec4 2022 DougieBaseVer43sw.js DougieBaseVer42sw.js Date Nov 22 2022 - Oct4 2022 DougieBaseVer40sw.js from DougieBaseVer39sw.js Feb 14 2022 Dec25 Dec10 from mobileFriendlyDougieBaseVer37sw.js from Copy of tryThisSw.js Nov16
+/*swDougieBaseVer47sw.js swDougieBaseVer46sw.js Feb6 2023 DougieBaseVer45sw.js Dec28 2022 DougieBaseVer44sw.js Dec4 2022 DougieBaseVer43sw.js DougieBaseVer42sw.js Date Nov 22 2022 - Oct4 2022 DougieBaseVer40sw.js from DougieBaseVer39sw.js Feb 14 2022 Dec25 Dec10 from mobileFriendlyDougieBaseVer37sw.js from Copy of tryThisSw.js Nov16
  Copyright 2016 Google Inc. All Rights Reserved.
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
 // Names of the two caches used in this version of the service worker.
 // Change to v2, etc. when you update any of the local resources, which will
 // in turn trigger the install event again.
-const PRECACHE = 'precache-v43';
+const PRECACHE = 'precache-v45';
 const RUNTIME = 'runtime';
 
 // A list of local resources we always want to be cached.
@@ -28,9 +28,9 @@ const PRECACHE_URLS = [
        '/index.html',//directory path to project folder/app name.html file
 	   
 	    // 'https://github.com/trainee45/trainee45.github.io/TableNotesVer29.html',//directory path to project folder/app name.html file
-       '/DougieBaseVer46.js',//directory path to project folder/app name.js file
-       '/DougieBaseVer46.css',////directory path to project folder/app name.css file
-	   '/smallDeviceDougieBaseVer46.css',//tested in Inspect Dec10 2021
+       '/DougieBaseVer47.js',//directory path to project folder/app name.js file
+       '/DougieBaseVer47.css',////directory path to project folder/app name.css file
+	   '/smallDeviceDougieBaseVer47.css',//tested in Inspect Dec10 2021
 	   '/trainsDBTableNotes.webmanifest',////directory path to project folder/app name.trainmanifest file
 	   '/jquery-3.6.0.min.js',////directory path to project folder/app name.jQuery file
 	    '/eeyore.JPG',//add this file to github repository
@@ -43,9 +43,66 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(PRECACHE)
       .then(cache => cache.addAll(PRECACHE_URLS))
-      .then(self.skipWaiting())
+     // .then(self.skipWaiting())
   );
 });
+
+//The browser checks for the new Service Worker version periodically, as well as on the navigator.serviceWorker.register() call on every visit that happens at least 24 hours after the last Service Worker update. When the change is detected (it's a byte-by-byte content comparison), the new Service Worker is being installed (its install event handler is executed) as well as it is signaled to the app by updatefound event we can handle:
+
+// get the ServiceWorkerRegistration instance
+const registration = await navigator.serviceWorker.getRegistration();
+// (it is also returned from navigator.serviceWorker.register() function)
+
+if (registration) { // if there is a SW active
+    registration.addEventListener('updatefound', () => {
+        console.log('Service Worker update detected!');
+        alert("Service Worker update detected!");
+    });
+}//end if registration
+
+//So far so good. Is this handler a good place to trigger our update UX (like that "new version available" notification)? No, it's not. At this point we only know the browser detected the Service Worker file change. The new Service Worker instance is not yet ready for activation, because its install handler is not yet complete.We must wait until the new instance is ready for activation (its state is installed):
+// our new instance is visible under installing property, because it is in 'installing' state
+// let's wait until it changes its state
+registration.installing.addEventListener('statechange', () => {
+    if (registration.waiting) {
+    //THIS CODE ADDED BY ME AS THE USER INTERFACE
+    //signal our new Service Worker instance when the user (or our heuristic) decided it's a good time to apply the update. It's the Service Worker that needs to call skipWaiting and we can only communicate with it by sending it a message with postMessage API:
+    if (window.confirm("UPDATE SERVICE WORKER NOW? : \n" + "  CANCEL will Return to program")) {
+    registration.waiting.postMessage('SKIP_WAITING');
+    
+    } else {
+	    return;
+    }//end if (window.confirm(
+    
+    
+    
+        // our new instance is now waiting for activation (its state is 'installed')
+        // we now may invoke our update UX safely
+    } else {
+    alert("Installation failed? SW state is 'redundant");
+        // apparently installation must have failed (SW state is 'redundant')
+        // it makes no sense to think about this update any more
+    }
+});
+
+
+//To receive the message in the Service Worker, we need to register a message event handler:
+
+self.addEventListener('message', (event) => {
+    if (event.data === 'SKIP_WAITING') {
+        self.skipWaiting();
+    }
+});
+
+
+
+//And at the Service Worker side (ensure not to have self.skipWaiting() call in the install handler):
+//Given we have controllerchange event handler ready at the app side, as we sketched it already, sending SKIP_WAITING message to the new Service Worker will cause it to activate and subsequently all the tabs to refresh, removing any inconsistency risk
+
+
+
+
+
 
 // The activate handler takes care of cleaning up old caches.
 self.addEventListener('activate', event => {

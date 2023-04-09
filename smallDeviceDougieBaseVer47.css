@@ -1,4 +1,4 @@
-/*smallDeviceDougieBaseVer46.css Feb2 2023 smallDeviceDougieBaseVer45.css Dec28 2022 added .blocked smallDeviceDougieBaseVer44.css Dec4 2022 smallDeviceDougieBaseVer43.css smallDeviceDougieBaseVer42.css smallDeviceDougieBaseVer40.css date Sept24 2022 added #restoreFromFilesWin from experimentalsmallDeviceDougieBaseVer37 added #manualContactsWin Jan6 2022Dec22 mobileFriendlyDougieBaseVer37.css from DougieBaseVer36.css from Copy of DougieBaseVer36 Nov14 from spDougieBaseVer36.css landscape table search and preview edit Date:Nov9 save preferences added chooseColoursWin from. tdEdit Oct 16.*/
+/*smallDeviceDougieBaseVer47.css Feb 27 2023 smallDeviceDougieBaseVer46.css Feb2 2023 smallDeviceDougieBaseVer45.css Dec28 2022 added .blocked smallDeviceDougieBaseVer44.css Dec4 2022 smallDeviceDougieBaseVer43.css smallDeviceDougieBaseVer42.css smallDeviceDougieBaseVer40.css date Sept24 2022 added #restoreFromFilesWin from experimentalsmallDeviceDougieBaseVer37 added #manualContactsWin Jan6 2022Dec22 mobileFriendlyDougieBaseVer37.css from DougieBaseVer36.css from Copy of DougieBaseVer36 Nov14 from spDougieBaseVer36.css landscape table search and preview edit Date:Nov9 save preferences added chooseColoursWin from. tdEdit Oct 16.*/
 /*clearBkgrdDougieBaseVer34.css in WorkingCopy allow background image*/
 /* //Date:Oct5 2021 Removed Double tap to avoid magnification in Manage files view full screen search select filenames. iOS15 safari has no way to disable double tap for magnification. More cosmetics with dataBaseName titles added .titleBanner to CSS*/
 /*font color of button text is blue in iOS 15 why? Forced it to black large Oct2 2021 touch-action: manipulation; to prevent double tap zoom … DID NOT WORK added titleBanner for About db
@@ -590,7 +590,7 @@ height: 425px;
 	color: black;
 	border-radius: 10px;/*for dark mod*/
 	padding: 5px;	/*for dark mode*/	
-		
+	text-align: center;	
 	}
 	
 	
@@ -794,6 +794,12 @@ input, .custom {
 /*input:focus {
   color: black;
   background-color: yellow;
+}*/
+
+/*p:empty also makes many <p><p> elements I used for layout to disappear messing up some layouts so I removed it*/
+
+/*p:empty{
+  display: none;
 }*/
 
 .myBtn {
