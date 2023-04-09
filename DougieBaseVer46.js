@@ -5826,6 +5826,7 @@ if(screenDark) {
 	 //dbTableName.value set to 'Notes' at top of code
 const newTitlePara = document.createElement('p');
  newTitlePara.setAttribute('class','borderBlinkGrn');//to emthazize importance of sequence for entering database name
+ newTitlePara.style.color = "black";//added Feb 12 2023
 	if(newDBflag) {
 	// newTitlePara.setAttribute('class','borderBlink');//to emthazize importance of sequence for entering database name
 	dbTitle.textContent = dbTableName.value;
