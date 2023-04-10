@@ -1003,7 +1003,7 @@ height: 125 px;
   }
   
   #tableWin {
-	  height: 700px;
+	  height: 900px;/*was 700px prior to April 2023*/
   }
 }
 
