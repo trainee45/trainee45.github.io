@@ -20536,7 +20536,7 @@ if ('serviceWorker' in navigator) {
                         } else {
                             // otherwise it's the first install, nothing to do
                             console.log('Service Worker initialized for the first time')
-                            alert("Service Worker initialized for the first time");
+                            //alert("Service Worker initialized for the first time");
                         }
                     }
                 })
