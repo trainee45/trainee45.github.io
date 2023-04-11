@@ -56,7 +56,7 @@ const registration = await navigator.serviceWorker.getRegistration();
 if (registration) { // if there is a SW active
     registration.addEventListener('updatefound', () => {
         console.log('Service Worker update detected!');
-        alert("Service Worker update detected!");
+        //alert("Service Worker update detected!");
     });
 }//end if registration
 
@@ -67,19 +67,30 @@ registration.installing.addEventListener('statechange', () => {
     if (registration.waiting) {
     //THIS CODE ADDED BY ME AS THE USER INTERFACE
     //signal our new Service Worker instance when the user (or our heuristic) decided it's a good time to apply the update. It's the Service Worker that needs to call skipWaiting and we can only communicate with it by sending it a message with postMessage API:
-    if (window.confirm("UPDATE SERVICE WORKER NOW? : \n" + "  CANCEL will Return to program")) {
+    //service worker has no access to DOM so remove window.confirm
+    //if (window.confirm("UPDATE SERVICE WORKER NOW? : \n" + "  CANCEL will Return to program")) {
+    
+    if (Notification.permission === 'granted') {
+  new Notification('New update available!');
+} else if (Notification.permission !== 'denied') {
+  Notification.requestPermission().then(function(permission) {
+    if (permission === 'granted') {
+      new Notification('New update is available!');
+    }
+  });
+}
     registration.waiting.postMessage('SKIP_WAITING');
     
-    } else {
-	    return;
-    }//end if (window.confirm(
+   // } else {
+	 //   return;
+   // }//end if (window.confirm(
     
     
     
         // our new instance is now waiting for activation (its state is 'installed')
         // we now may invoke our update UX safely
     } else {
-    alert("Installation failed? SW state is 'redundant");
+    console.log("Installation failed? SW state is 'redundant");
         // apparently installation must have failed (SW state is 'redundant')
         // it makes no sense to think about this update any more
     }
