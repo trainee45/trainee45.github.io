@@ -20512,6 +20512,7 @@ newWorkerBtn.style.display = "none";
 
 // check if the browser supports serviceWorker at all
 if ('serviceWorker' in navigator) {
+alert("Checking for a service worker available")
     // wait for the page to load
     window.addEventListener('load', async () => {
         // register the service worker from the file specified
