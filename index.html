@@ -5,9 +5,9 @@
     <title>index.html</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
    <!-- <link rel="stylesheet" type="text/css" href="DougieBaseVer37.css">-->
-	<link rel="stylesheet" type="text/css" media="screen and (min-width: 480px)" href="DougieBaseVer47.css" />
+	<link rel="stylesheet" type="text/css" media="screen and (min-width: 480px)" href="DougieBaseVer48.css" />
 	
-	<link rel="stylesheet" type="text/css" media="screen and (max-width: 480px)" href="smallDeviceDougieBaseVer47.css" />
+	<link rel="stylesheet" type="text/css" media="screen and (max-width: 480px)" href="smallDeviceDougieBaseVer48.css" />
 	
 	
 	<link rel="manifest" href="trainsDBTableNotes.webmanifest">
@@ -19,7 +19,7 @@
 
  <script src="jquery-3.6.0.min.js"></script>
 
-    <script src="DougieBaseVer47.js" defer></script>
+    <script src="DougieBaseVer48.js" defer></script>
     
    <!--  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.9/dist/sweetalert2.all.min.js"></script>
     <script src="sweetalert2.all.min.js"></script> -->
@@ -159,7 +159,7 @@ color: black;
 	
 	  
     <header>
-      <h1 id ="versionHeader">DougieBase Version 47sw45</h1>
+      <h1 id ="versionHeader">DougieBase Version 48sw46</h1>
     </header>
 	<p><button id = "newSW" style="display:none">New Service Worker</button><button id = "skip" style ="display:none">SKIP</button></p>
 <div id = "scrolling">
@@ -775,9 +775,9 @@ color: black;
 				<p class = "highlight" id = "versionInfoP">Revisions and version numbers.  Scroll up     ⬆️ </p>
 		   <ul>
 			   <li>Obtain an estimate of how much memory is available in the database storage if your Browser accomodates this feature.</li>
-			   <li>This is Version 47, service worker 45</li> 
+			   <li>This is Version 48, service worker 46</li> 
 			   <li>Search references the first title field, and all other fields since version 33.1.</li>
-			   <li>Last revision: April 10 2023. For information about latest changes tap the 'What's New' button.</li>
+			   <li>Last revision: April 25 2023. For information about latest changes tap the 'What's New' button.</li>
 			   <li><span style = "text-decoration: underline">A note about Tables:</span><br> There are 3 classes of tables in DougieBase. <br>1. The MAIN table is derived from each DougieBase database and is automatically generated when a new database is created. This is the table shown when you tap the DISPLAY TABLE btn on the Table Options information screen. A MAIN table can be edited, records and dynamic fields added or deleted, searched and sorted.<br>2.  The second class of table is one created from found records in a SEARCH of a MAIN database table. Data can be searched and sorted, but new records can not be added or deleted. If you need to ADD a record you have to revert back to the MAIN database table, from which it originated, and ADD/ or DELETE records to/from the MAIN table, and then repeat the SEARCH to recreate the changed table with the now added record.<br>3. The third class of table references CONTACTS only, .. Contacts that you want to be associated with the database. CONTACTS tables can be created in 3 ways:<br> A. By tapping the CONTACTS button in the menu of a MAIN database table - this method allows access to the CONTACTS app on your device. <br>B. By tapping the CREATE TABLE button on the Table Information window that shows after tapping the TABLE button on the home screen main menu bar. The CREATE TABLE option has the same facility as the CONTACTS button in the Table window menu.<br>C. By tapping the ADD CONTACTS/RECORDS  button on the main database HOME screen menu. - This allows manual entry of Contacts data from a form sheet. There is no access to the ContactsPickerAPI (Contacts) on your device. <br> CONTACTS tables generate 4 FIXED Fields - Name, DATE, Telephone, Email, and 1 DYNAMIC field .. Address … depending on your browser's capability to access the Address field from the ContactPicker API. The 3 types of Contacts tables allow editing of data in the table data cells, adding and deleting (Contacts) records,..(by tapping the + and - icons in the Table menu), and adding and deleting fields, by tapping the EDIT button in the Table menu. Editing of Field Names in the CONTACTS tables, by tapping the EDIT button in the Table menu, allows creation of CUSTOMIZED tables, thus facilitating their use for other purposes than just Contacts.</li>
 	 <li><span style = "text-decoration: underline">CUSTOM TABLES:</span> Custom tables can be created in two ways:<br> 1.By using a CONTACTS table as a template, relabeling the FIELD names using the EDIT button, will create customized tables. The EDIT button allows renaming of FIELD headings, and ADDING or DELETING of fields, facilitating the creation of CUSTOM tables for any purpose.<br>2. The ADD CONTACTS/RECORDS button in the Main menu allows labelling of the table field names on the fly, as you create the table and enter record data into the fields from a FORM input screen.</li>
 	    <li><span style = "text-decoration: underline"> Field Labels:</span><br> The FIELD LABELS button on the Table screen menu allows editing of the Contacts or new Table fields. CANCEL in this window resets fields to default values for a Contacts table. See documentation.</li>
@@ -1082,8 +1082,8 @@ Any table created using the ADD CONTACTS/RECORDS btn from the Main Menu will hav
 		    <div class = "edWinScroll" style="height: 300px">
 				<p class = "highlight" id = "newVersionInfoP">Revisions and version numbers.  Scroll up     ⬆️ </p>
 		   <ul>
-			   <li>Last revision: April 10 2023</li>
-			   <li>This is Version 47, service worker 45</li> 
+			   <li>Last revision: April 25 2023</li>
+			   <li>This is Version 48, service worker 46</li> 
 			   <li>Improved workflow of creating a new database, including online prompts and flashing 'Do this next indicators'</li>
 			   
 			   <li>Now compatible with 'Dark Mode'.</li>
@@ -1116,6 +1116,7 @@ Any table created using the ADD CONTACTS/RECORDS btn from the Main Menu will hav
 	     <li>By appending these tags to a filename: ✅, -tag , * , ! ,♥️,🔴,❗️the filename will flash when listed. (If flashing is enabled by tapping the 'Flash tagged filenames' button in the DataBase List window). Add or remove tags using RENAME Database in the MANAGE FILES window. </li>
 	     <!-- ✅, "-tag" , "*" , "!" ,♥️,🔴,❗️ -->
 	     <li>Back Up reminders and Save warnings added if enabled in Preferences.</li>
+	     <li>Bug fixes and stability improvements.</li>
 			   
 		   </ul>
 	   </div>
