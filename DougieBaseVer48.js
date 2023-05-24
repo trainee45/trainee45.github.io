@@ -1,4 +1,4 @@
-//DougieBaseVer48.js reverted to origina sw April25 2023 workingOnDougieBaseVer48.js DougieBaseVer48.js DougieBaseVer47.js added this line from Bing to correct error if $ sign preceded number in summing TOTAL April 21 publish April 8 2023 removedAlertsscrollRESTOREDougieBaseVer47 scrollRESTOREDougieBaseVer47.js DougieBaseVer47.js removeAlertstemplateBlockedfixRepeatBudgetSheetDougieBaseVer47 for publishing Mar 25 2023 Mar 21 2023 improved scrolling a bit..fixed glitch where new table caused listing of 2 tables one that did not exist  templateBlockedfixRepeatBudgetSheetDougieBaseVer47 scroll to flashing restore btn now works!  Mar16 2023 if solved convert fixRepeat… fixRepeatBudgetSheetDougieBaseVer47.js index.html with this js now contains updated budget template Mar 6 2023 DougieBaseVer47.js Feb 27 2023mMar 2 2023 date highlight corrected (have to use 3 letter dates in conditionals) fixed some bkup warnings..disabled for create new db  tryAgainbackupClickDougieBaseVer46 fixed summing and averaging again FEB 27 2023 FixtryAgainbackupClickDougieBaseVer46 tryAgainbackupClickDougieBaseVer46 corrected errors in SUMMING and AVERAGING routines Feb26 2023 Feb24 Feb25  backupClickDougieBaseVer46 USE FIND '//alertbkup' and replace with 'alert' to restore for troubleshooting bkup warnings simulateClickDougieBaseVer46.js use latest fallBack -  fallBackFeb22simulateClickDougieBaseVer46 polishing CANCEL btns use fallBackFeb19simulateClickDougieBaseVer46 file.. looking good still testing Feb19 2023 deleteDataBase(dataBaseName);//added in getDataBaseName Feb18 to cover scenario where a reboot is done prior to a locked file being deleted, and so that when rebooted DougieBase knows to delete the file again after the browser releases its lock. Tested..seems to work. DougieBaseVer46.js Feb2 2023 tryAgainCreateNewDBDougieBaseVer45 Feb3 2023 fixed date highlight if day <10 Feb2 USE FIND '//alertflm' and replace with 'alert' to restore for troubleshooting file list management Feb1 2023  smoothCreateNewDBDougieBaseVer45.js tagNewDBDougieBaseVer45.js fallBack2Jan29tagNewDBDougieBaseVer45 tagNewDBDougieBaseVer45.js DougieBaseVer45.js fixed objectStore mess ! Jan 24 2023 Jan22 2023 needs updated css file!  fixRenameDbDougieBaseVer45 DougieBaseVer45.js Jan20 highlightDateDougieBaseVer45 DougieBaseVer45.js Jan18 savedOriginal = false;//to trigger updating saved table arrays removed two <form> in HTML which caused crashes with add contacts/ recordsJAN6 2023 scrollbtn in NOTES  goes to searched record in table blockedMESSED UPtrying3Copy of improveBudgetDougieBaseVer44.js Copy of improveBudgetDougieBaseVer44.js USE FIND '//alertblk' and replace with 'alert' to restore for troubleshooting blocked by browser USE FIND '//alertcm' and replace with 'alert' to restore for troubleshooting changeMonth code  improveBudgetDougieBaseVer44.js added code to keep table scrolled to view edited cell, sampleBudgetDougieBaseVer44.js DougieBaseVer44.js Dec4 2022 calculationAlertsrenameDBDougieBaseVer43.js DougieBaseVer43.js Date: Dec3 scrollBtn added scroll to last  edited record in NOTES  (scrollBtn.onclick) added preferences option to toggle calculation Alerts  Nov28;did adding delay(5000); in getManualContacts fix the plusContacts? Hope so ..NOPE STILL NOT FIXED IS IT Nov27 added blue color to TOTAL Nov26 2022 Nov22 2022 tested with create new db added info for Cost to date in notes made changes in both css files to accomodate reNAME FILEMAME retryisolateNumbersumAcrossDougieBaseVer43.js Nov21 2022 alerts for rename filename can be retrieved using alertrnf removing alerts in the keyword functions..USE FIND '//alertxy' and replace with 'alert' to restore for troubleshooting  experimentretryisolateNumbersumAcrossDougieBaseVer43.js corrects for space difference in main and new tables  retryisolateNumbersumAcrossDougieBaseVer43.js DATE: Nov16 IF THIS SCREWS UP REVERT BACK TO isolateNumbersumAcrossDougieBaseVer43.js Nov17 in editTDBtn.onclick addEventListener put in code to check if rowSummed and if so update sum across!  sumAcrossDougieBaseVer43.js sumAcross works and total of last column if rowSummed, works BUT TOTAL  in other DYNAMICfields is messed up because rowSummed is always true so will put conditional in summing() to exclude last field ..new rule TOALfor rowSummed only works in last field !  DougieBaseVer43.js Nov9 2022 from bugDatesdynamicTelephoneDougieBaseVer42.js FIXED Activation glitches? Nov7 fixed bug in dates when adding record (+) to a new table dynamicTelephoneDougieBaseVer42.js.. not yet published.. Oct29 2022 need to add code at moreTables and homescreenBtn2 and refresh..DONE .. telephoneDougieBaseVer42.js RESET BLINK IF TELEPHONE OR EMAIL HAD BEEN ACTIVATED Oct 22 2022 this version works WILL TEST SOME MORE added code for telephone similar to email at displayTable that was missing.  DougieBaseVer42.js Oct19 Oct16 2022 incorporating moreTablesBtnDougieBaseVer42.js Oct11 2022 retryTOTALDougieBaseVer42.js Oct11 2022 AGE (TOTAL) if COST in header will add $ to result after adding now will add even if entry is NaN works if all items in column are numbers use search phrasex—for (let k = 4; k < numberOfFields; k++) { — TOTALDougieBaseVer42.js DougieBaseVer42.js Date Oct 5 .. use this to update github! Oct4 2022 from restoreFromLocalFileDougieBaseVer40.js fallBack2Sept29restoreFromLocalFileDougieBaseVer40.js restoreFromLocalFileDougieBaseVer40 Date Sept25 2022 WORKS! Added Scroll to bottom in manage window DougieBaseVer40.js fix!editSearchedNoteDougieBaseVer40.js Think this is fixed ? Sept 20 2022 editSearchedNoteDougieBaseVer40.js As of Sept 11 2022, can now edit the single record view obtained as a result of a record search. Still testing..seems to work change SW to ver 26 before sending to github! - from createNewDougieBaseVer40.js from eMailDougieBaseVer40.js email now active  fixContactsBugDougieBaseVer40.js Jun7 fixed dbl tap deleting instead of editing a new table ..deleteRecordNewTable = false; .. June6 fixed repeat record entry in contacts tables if repeating creating a contacts table DougieBaseVer40.js June4 saveBtn2 fixed and flashing displayTableBtn when CONVERT file format June3 fixed search bug May28 fixed tableLimit noAlertsplusContactshitsTablefixADDCONTACTSDougieBaseVer40 May18 fixed share data error May28 2022 tableLimit plusContactshitsTablefixADDCONTACTSDougieBaseVer40.js May17 May15 May 13 May9 hitsTablefixADDCONTACTSDougieBaseVer40.js May5  from fixADDCONTACTSDougieBaseVer40.js May1  testCancelsweetAlertnoAlertsmoreBlock+DougieBaseVer40.jsApri25 2022
+//DougieBaseVer48.js production version Mayb24 2023 Copy of backupSampleGlitchDougieBaseVer48backupSampleGlitchDougieBaseVer48 DougieBaseVer48.js last glitch-dataNotBackedUp = false;//flag for SAVE warning so backup option and save alert does not appear which if ok'd will mess up file! Date May 22 and line 7891-if(bkupAlertsFlag && !blockEdit && !newDBGuidance && !convertingOldFile) {reverted to original PUBLISHED April25 2023 sw April25 2023 workingOnDougieBaseVer48.js DougieBaseVer48.js DougieBaseVer47.js added this line from Bing to correct error if $ sign preceded number in summing TOTAL April 21 publish April 8 2023 removedAlertsscrollRESTOREDougieBaseVer47 scrollRESTOREDougieBaseVer47.js DougieBaseVer47.js removeAlertstemplateBlockedfixRepeatBudgetSheetDougieBaseVer47 for publishing Mar 25 2023 Mar 21 2023 improved scrolling a bit..fixed glitch where new table caused listing of 2 tables one that did not exist  templateBlockedfixRepeatBudgetSheetDougieBaseVer47 scroll to flashing restore btn now works!  Mar16 2023 if solved convert fixRepeat… fixRepeatBudgetSheetDougieBaseVer47.js index.html with this js now contains updated budget template Mar 6 2023 DougieBaseVer47.js Feb 27 2023mMar 2 2023 date highlight corrected (have to use 3 letter dates in conditionals) fixed some bkup warnings..disabled for create new db  tryAgainbackupClickDougieBaseVer46 fixed summing and averaging again FEB 27 2023 FixtryAgainbackupClickDougieBaseVer46 tryAgainbackupClickDougieBaseVer46 corrected errors in SUMMING and AVERAGING routines Feb26 2023 Feb24 Feb25  backupClickDougieBaseVer46 USE FIND '//alertbkup' and replace with 'alert' to restore for troubleshooting bkup warnings simulateClickDougieBaseVer46.js use latest fallBack -  fallBackFeb22simulateClickDougieBaseVer46 polishing CANCEL btns use fallBackFeb19simulateClickDougieBaseVer46 file.. looking good still testing Feb19 2023 deleteDataBase(dataBaseName);//added in getDataBaseName Feb18 to cover scenario where a reboot is done prior to a locked file being deleted, and so that when rebooted DougieBase knows to delete the file again after the browser releases its lock. Tested..seems to work. DougieBaseVer46.js Feb2 2023 tryAgainCreateNewDBDougieBaseVer45 Feb3 2023 fixed date highlight if day <10 Feb2 USE FIND '//alertflm' and replace with 'alert' to restore for troubleshooting file list management Feb1 2023  smoothCreateNewDBDougieBaseVer45.js tagNewDBDougieBaseVer45.js fallBack2Jan29tagNewDBDougieBaseVer45 tagNewDBDougieBaseVer45.js DougieBaseVer45.js fixed objectStore mess ! Jan 24 2023 Jan22 2023 needs updated css file!  fixRenameDbDougieBaseVer45 DougieBaseVer45.js Jan20 highlightDateDougieBaseVer45 DougieBaseVer45.js Jan18 savedOriginal = false;//to trigger updating saved table arrays removed two <form> in HTML which caused crashes with add contacts/ recordsJAN6 2023 scrollbtn in NOTES  goes to searched record in table blockedMESSED UPtrying3Copy of improveBudgetDougieBaseVer44.js Copy of improveBudgetDougieBaseVer44.js USE FIND '//alertblk' and replace with 'alert' to restore for troubleshooting blocked by browser USE FIND '//alertcm' and replace with 'alert' to restore for troubleshooting changeMonth code  improveBudgetDougieBaseVer44.js added code to keep table scrolled to view edited cell, sampleBudgetDougieBaseVer44.js DougieBaseVer44.js Dec4 2022 calculationAlertsrenameDBDougieBaseVer43.js DougieBaseVer43.js Date: Dec3 scrollBtn added scroll to last  edited record in NOTES  (scrollBtn.onclick) added preferences option to toggle calculation Alerts  Nov28;did adding delay(5000); in getManualContacts fix the plusContacts? Hope so ..NOPE STILL NOT FIXED IS IT Nov27 added blue color to TOTAL Nov26 2022 Nov22 2022 tested with create new db added info for Cost to date in notes made changes in both css files to accomodate reNAME FILEMAME retryisolateNumbersumAcrossDougieBaseVer43.js Nov21 2022 alerts for rename filename can be retrieved using alertrnf removing alerts in the keyword functions..USE FIND '//alertxy' and replace with 'alert' to restore for troubleshooting  experimentretryisolateNumbersumAcrossDougieBaseVer43.js corrects for space difference in main and new tables  retryisolateNumbersumAcrossDougieBaseVer43.js DATE: Nov16 IF THIS SCREWS UP REVERT BACK TO isolateNumbersumAcrossDougieBaseVer43.js Nov17 in editTDBtn.onclick addEventListener put in code to check if rowSummed and if so update sum across!  sumAcrossDougieBaseVer43.js sumAcross works and total of last column if rowSummed, works BUT TOTAL  in other DYNAMICfields is messed up because rowSummed is always true so will put conditional in summing() to exclude last field ..new rule TOALfor rowSummed only works in last field !  DougieBaseVer43.js Nov9 2022 from bugDatesdynamicTelephoneDougieBaseVer42.js FIXED Activation glitches? Nov7 fixed bug in dates when adding record (+) to a new table dynamicTelephoneDougieBaseVer42.js.. not yet published.. Oct29 2022 need to add code at moreTables and homescreenBtn2 and refresh..DONE .. telephoneDougieBaseVer42.js RESET BLINK IF TELEPHONE OR EMAIL HAD BEEN ACTIVATED Oct 22 2022 this version works WILL TEST SOME MORE added code for telephone similar to email at displayTable that was missing.  DougieBaseVer42.js Oct19 Oct16 2022 incorporating moreTablesBtnDougieBaseVer42.js Oct11 2022 retryTOTALDougieBaseVer42.js Oct11 2022 AGE (TOTAL) if COST in header will add $ to result after adding now will add even if entry is NaN works if all items in column are numbers use search phrasex—for (let k = 4; k < numberOfFields; k++) { — TOTALDougieBaseVer42.js DougieBaseVer42.js Date Oct 5 .. use this to update github! Oct4 2022 from restoreFromLocalFileDougieBaseVer40.js fallBack2Sept29restoreFromLocalFileDougieBaseVer40.js restoreFromLocalFileDougieBaseVer40 Date Sept25 2022 WORKS! Added Scroll to bottom in manage window DougieBaseVer40.js fix!editSearchedNoteDougieBaseVer40.js Think this is fixed ? Sept 20 2022 editSearchedNoteDougieBaseVer40.js As of Sept 11 2022, can now edit the single record view obtained as a result of a record search. Still testing..seems to work change SW to ver 26 before sending to github! - from createNewDougieBaseVer40.js from eMailDougieBaseVer40.js email now active  fixContactsBugDougieBaseVer40.js Jun7 fixed dbl tap deleting instead of editing a new table ..deleteRecordNewTable = false; .. June6 fixed repeat record entry in contacts tables if repeating creating a contacts table DougieBaseVer40.js June4 saveBtn2 fixed and flashing displayTableBtn when CONVERT file format June3 fixed search bug May28 fixed tableLimit noAlertsplusContactshitsTablefixADDCONTACTSDougieBaseVer40 May18 fixed share data error May28 2022 tableLimit plusContactshitsTablefixADDCONTACTSDougieBaseVer40.js May17 May15 May 13 May9 hitsTablefixADDCONTACTSDougieBaseVer40.js May5  from fixADDCONTACTSDougieBaseVer40.js May1  testCancelsweetAlertnoAlertsmoreBlock+DougieBaseVer40.jsApri25 2022
 //NOTE ALERTS REMOVED HAVE A x after alert SO USE FIND REPLACE SEARCH TO RESTORE THEM!! i.e. //alertx("message data…") can be restored by search and replace for //alertx and replace with alert
 //moreBlock+DougieBaseVer40.js April17 April15 fallBackApril15moreBlock+DougieBaseVer40.js Copy of moreBlock+DougieBaseVer40.js fallBackApril14moreBlock+DougieBaseVer40.js moreBlock+DougieBaseVer40.js April10 for testing and when works back to block… from block+DougieBaseVer40.js DougieBaseVer40.js from shareDeleteRecordNewTableDougieBaseVer37.js WILL THIS FILE AUTOMATICALLY SYNC WITH ICLOUD.YES!deleteRecordNewTableDougieBaseVer37.js NOTE ALERTS REMOVED HAVE A > AFTER THE " SO USE FIND REPLACE SEARCH TO RESTORE THEM!! i.e. //alert("> message data…") can be restored by search and replace for //alert("> …) .. MUST PUT A SPACE AFTER THE> CHARACTER! fromNewTablehitsTableDougieBaseVer37.js pushContactsFormtableIndexaddContactsDougieBaseVer37 ADD CONTACTS number of dynamicfields = 1 now createnewDB resets newTableSpecificVariables and savedTablesArray to 0 savedTablesArray.length increases by 1 as each table is created fixed manal contact entry fields fixed + contacts deletingTableField variable added Marc19  contactsFormtableIndexaddContactsDougieBaseVer37.js manual contacts now works Mar13 tableIndexaddContactsDougieBaseVer37.js from deleteNTtableIndexaddContactsDougieBaseVer37.js Mar11 from delete last and first and middle tables works!  tableIndexaddContactsDougieBaseVer37.js Mar9 2022 deleteItemtableIndexaddContactsDougieBaseVer37.js from tableIndexaddContactsDougieBaseVer37 WORKS Mar8 FOR CRETION NEWBB BEFORE ANY DB LOADED MAR6 from createNewaddContactsDougieBaseVer37 from addContactsDougieBaseVer37 from Copy of addContactsDougieBaseVer37 based on date: Feb22 2022 worksKeepTestPlayWithNewTableContactsDougieBaseVer37 Feb 17 2022 Feb 13 2022 from testPlayWithNewTableContactsDougieBaseVer37 Feb10 from playWithSTRowsEditTDNewTableContactsDougieBaseVer37.js FEB6 FEB4 2022 from workingOnEditTDNewTableContactsDougieBaseVer37.js currentJan19ContactsDougieBaseVer37.js now adding newTable variables ..Jan11 go to fallBackJan11 if meeses up workingOnContactsDougieBaseVer37.js Jan2 THIS VERSION WORKS WITH SAFARI CONTACT PICKER!  contacts table working with search sort Dec24 Added whatsNew window  Working on retrieving contact info. See functions at bottom. ADD style="color:black" IN HTML  Dec22 moved getMemory function from html file to .js file from Dec10 2021 mobileFriendlyDougieBaseVer37.js from DougieBaseVer36.js Dec5 sw11 from messWith Dec2 DougieBaseVer36.js Dec1 from flashFileNameDougieBaseVer36.js from createNewDBDougieBaseVer36 Nov30 Nov28 added addToDynamicFields.setAttribute('class','borderBlink') to border in editMoreFields function and addNoteBtn.setAttribute('class','borderBlink'); in saveBtn.onclick for createNewDB renameBtn.setAttribute('class','borderBlink'); in preferences displayDataBtn.setAttribute('class','borderBlink'); in function renameTitle Nov28 borderBlink css is in the html file  Nov 27 fine tuned flow of createNewDB Nov24 fixed create newDB bug! Nov 22 edit notes displayed n real time Nov17 added tableScreenOptions to editTableTrigger to not mess up table display Nov14 from spDougieBaseVer36.js landscape table search and preview edid Date:Nov9 save preferences from Date:Nov4 added Easter egg and save settings preferencesDougieBaseVer36.js from fixEditDougieBaseVer35.js from 
 //changed addEventListener to copy instead of dblclick Oct16 made default double click Oct31 2021  clearBkgrdDougieBaseVer34.js clear background and fixed crashes that occur if user makes illogical moves Oct12 2021 use to update workingCopy and Safarii etc
@@ -1385,6 +1385,8 @@ databaseNameLi[i].addEventListener('click', function () {
 //If messes up resort to fallBack2Feb24tryAgainbackupClickDougieBaseVer46
 //alert("In addEventListener of getFileNames - bkupAlertsFlag = " + bkupAlertsFlag);
 //at getFileNames..if selecting a new file after using or editing a previous one variables dataNotBackedUp and dbTableName.value are known. No point backing up a blocked file which is about to be deleted! Mar9 BUT REMBER DOUGIEBASE DOES NOT KNOW VALUE OF dbTableName until after it loads in the file and 
+//alert("bkupAlertsFlag = " + bkupAlertsFlag + " loadSampleDb = " + loadSampleDb + " ");
+
 if(bkupAlertsFlag && dataNotBackedUp && !(dbTableName.value.includes("blocked"))) {
 	if (window.confirm("You have recently saved data to " + dbTableName.value + " that is not backed up! BACKUP RECENTLY SAVED DATA ? : \n" + "  CANCEL will continue without backup.")) {
 	dataBaseName = dbTableName.value;
@@ -2722,7 +2724,8 @@ if (dataBaseName === "") {
 }//end if database name === ""
 // //error code to make sure a file name is selected if backing up to prevent issue where a blank filename is created in the filenames list	
 console.log('Backup Button clicked. backupFilesWin hidden.');	backupFilesWin.setAttribute('class','hidden');
-	
+alert("Backup Button clicked - variable values: loadSampleDb = " + loadSampleDb + " dataAltered = " + dataAltered + " bkupAlertsFlag = " + bkupAlertsFlag + " dataNotBackedUp = " + dataNotBackedUp + " convertingOldFile = " + convertingOldFile);
+
 	backupDataBase(dataBaseName);
 	
 }//end backupBtn.onclick //backupDataBase(dataBaseName);
@@ -7887,7 +7890,7 @@ if (!deleteTableRecord) {
 //alertbkup("bkupAlertsFlag = " + bkupAlertsFlag);
 //alert("After save - blockEdit = " + blockEdit + " loadFromTableOptions = " + loadFromTableOptions);
 
-if(bkupAlertsFlag && !blockEdit && !newDBGuidance) {//to allow backupBtn to appear if saving a new table edit .added !blockEdit to avoid scenario of tapping bkup before resetting a clearTableBtn in editing a new table. This also hides backup btn for new tables..maybe not what you want?
+if(bkupAlertsFlag && !blockEdit && !newDBGuidance && !convertingOldFile) {//to allow backupBtn to appear if saving a new table edit .added !blockEdit to avoid scenario of tapping bkup before resetting a clearTableBtn in editing a new table. This also hides backup btn for new tables..maybe not what you want?
 
  //code for backup request
  backupBtn1.style.display = "unset";
@@ -8715,7 +8718,9 @@ numberOfNewTableAddedFields = newTableSpecificVariables[loadTableIndex][2];
 	 console.log("Returned from saveVariables after converting old file type.");
 	 tableScreenBtn.setAttribute('class','borderBlink');
 	 tableScreenBtn.textContent = "CONVERT";
-
+	 
+//bkupAlertsFlag = false;//so backup option and dave alert does not appear which if ok'd will mess up file! Date May 22 2023
+dataNotBackedUp = false;//flag for SAVE warning so backup option and dave alert does not appear which if ok'd will mess up file! Date May 22 2023
 	displayTableBtn.setAttribute('class','attentionBtn');//so not flashing at same time as homeScreenBtn when Converting file format DATE:JUNE4
 	
 }//end if(dataVobj.hasOwnProperty('tableSpecific'))
@@ -8751,6 +8756,9 @@ numberOfNewTableAddedFields = newTableSpecificVariables[loadTableIndex][2];
 	 console.log("Returned from saveVariables after converting old file type.");
 	 tableScreenBtn.setAttribute('class','borderBlink');
 	 tableScreenBtn.textContent = "CONVERT";
+	
+	//bkupAlertsFlag = false;//so backup option and dave alert does not appear which if ok'd will mess up file! Date May 22 
+	dataNotBackedUp = false;//flag for SAVE warning so backup option and dave alert does not appear which if ok'd will mess up file! Date May 22 
  }//end if else dataVobj has ownproperty savedTables
  
  
@@ -15303,6 +15311,7 @@ function sleepUntil(f, timeoutMs) {
 //function backup database
 function backupDataBase(dataBaseName) {
 //alert("ln function backupDataBase .. reNamedDBFileName = " + reNamedDBFileName + " dataBaseName = " + dataBaseName);
+//alert("In backupDataBase - dataBaseName = " + dataBaseName + " dataBaseName.length = " + dataBaseName.length + " dbName = " + dbName + " dbNameInfo.textContent = " + dbNameInfo.textContent);
 
 	finishedShareBtn.style.display = "none";//otherwise being able to tap this btn now highlights the textarea
 	
@@ -15368,6 +15377,7 @@ if(screenDark) {
 	// if(reNamedDBFileName) {
 		
 	// }//end if reNamedDBFileName
+	//alert("copyClipBoardBtn.onclick - variable values: loadSampleDb = " + loadSampleDb + " dataAltered = " + dataAltered + " bkupAlertsFlag = " + bkupAlertsFlag + " dataNotBackedUp = " + dataNotBackedUp + " convertingOldFile = " + convertingOldFile + " string = " + string);
 	
 	copyToClipboard(string);	copyClipboardBtn.setAttribute('class','normalBtn');
 	// doneCopyBtn.disabled = false;	doneCopyBtn.setAttribute('class','attentionBtn');
@@ -15421,7 +15431,7 @@ var json;
 //alertbkup("dbName = " + dbName);
 //var textarea;
  // const textarea = document.querySelector('#textAreaClip')
-  
+//alert("Now will create json - About to open dbName - dbName = " + dbName + " dbName.length = " + dbName.length); 
 ;(async () => {
 try {
 //alert("At backups copy to clipboard export object— dbName = " + dbName);
@@ -15494,7 +15504,7 @@ try {
   console.log(' ')
  // console.log(json)
   //string won't = anything here? Because json has not yet been put into textArea?
-  
+// alert("DataBase has been exported - json = " + json); 
   //iosCopyToClipboard(textarea,json) PUTS json INTO THE TEXTAREA (el)
    string = textarea.value;
 iosCopyToClipboard(textarea,json)
@@ -15508,13 +15518,14 @@ iosCopyToClipboard(textarea,json)
   console.log(' ')
   string = textarea.value;
   console.log("returned from iosCopyToClipboard! string now = " + string );
+//  alert("returned from iosCopyToClipboard! string now = " + string );
   
   //alertbkup("returned from iosCopyToClipboard! Which puts json into the textArea! string now = " + string + " json = " + json + " Now tapping copyClipboardBtn.onclick should put textarea content into the clipboard.");
   
   //alertrnf("at line 13452 string = " + string);
 // copyToClipboard(textarea.value)
 } catch(error) {
-  console.error(error)
+  console.error(error)//
 }
 })()
 
@@ -15571,6 +15582,8 @@ iosCopyToClipboard(textarea,json)
 //the el (element) is textArea so code below puts json into the textArea!
 function iosCopyToClipboard(el,json) {
 //alertrnf("In iosCopyToClipboard function");
+//alert("In iosCopyToClipboard function");
+
 	console.log('In iosCopyToClipboard function.')
     var oldContentEditable = el.contentEditable,
         oldReadOnly = el.readOnly,
@@ -15592,6 +15605,8 @@ console.log('in iosCopyToClipboard function. json = '+ json);
 console.log("el.textContent = " + el.textContent);
 textarea.value = json;
 console.log('in iosCopyToClipboard function. textarea.value = '+ textarea.value);
+
+//alert('in iosCopyToClipboard function. textarea.value = '+ textarea.value);
 //el.textContent = json; in iosCopyToClipboard function. textarea.value =  above has made textArea = json!
 
  //success =   document.execCommand('copy');
@@ -15610,6 +15625,7 @@ console.log('in iosCopyToClipboard function. textarea.value = '+ textarea.value)
 function copyToClipboard(string) {
 //alertrnf("In copyToClipboard function");
 //alertrnf("at line 13549 string = " + string);
+//alert("In copyToClipboard(string) - variable values: loadSampleDb = " + loadSampleDb + " dataAltered = " + dataAltered + " bkupAlertsFlag = " + bkupAlertsFlag + " dataNotBackedUp = " + dataNotBackedUp + " convertingOldFile = " + convertingOldFile + " string =" + string);
  // const textarea = document.querySelector('#textAreaClip') //Aug20
   let result;
 
@@ -15662,7 +15678,7 @@ alert("Copying to Clipboard. On the next Backup screen, first tap the green high
 //textarea.disabled = true;//so return to notes btn will work without highlighting selecting textarea Apr1
 
 doneCopyBtn.onclick = function () {
-
+//alert("doneCopyBtn.onclick clicked - variable values: loadSampleDb = " + loadSampleDb + " dataAltered = " + dataAltered + " bkupAlertsFlag = " + bkupAlertsFlag + " dataNotBackedUp = " + dataNotBackedUp + " convertingOldFile = " + convertingOldFile + " string = " + string);
 //alertflm("reNamedDBFileName = " + reNamedDBFileName + " creationDONE = " + creationDONE);
 
 if(reNamedDBFileName && creationDONE) {
@@ -16279,6 +16295,7 @@ selectedDBinfoP.setAttribute('class','simulator');
 	getJsonBtn.onclick = function (){
 		if (loadSampleDb) {
 			json = copySampleDbData.value;
+			string = json;
 		} else if (loadTutorialDb) {
 			json = tutorialSampleDbData.value;
 		} else if (loadSampleBudget) {
