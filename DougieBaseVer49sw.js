@@ -1,4 +1,4 @@
-/*DougieBaseVer48sw.js sw47 reverted to original sw April25 2023  DougieBaseVer47sw.js Feb 27 2023 DougieBaseVer46sw.js Feb2 2023 DougieBaseVer45sw.js Dec28 2022 DougieBaseVer44sw.js Dec4 2022 DougieBaseVer43sw.js DougieBaseVer42sw.js Date Nov 22 2022 - Oct4 2022 DougieBaseVer40sw.js from DougieBaseVer39sw.js Feb 14 2022 Dec25 Dec10 from mobileFriendlyDougieBaseVer37sw.js from Copy of tryThisSw.js Nov16
+/*DougieBaseVer49sw.js DougieBaseVer48sw.js sw47 reverted to original sw April25 2023  DougieBaseVer47sw.js Feb 27 2023 DougieBaseVer46sw.js Feb2 2023 DougieBaseVer45sw.js Dec28 2022 DougieBaseVer44sw.js Dec4 2022 DougieBaseVer43sw.js DougieBaseVer42sw.js Date Nov 22 2022 - Oct4 2022 DougieBaseVer40sw.js from DougieBaseVer39sw.js Feb 14 2022 Dec25 Dec10 from mobileFriendlyDougieBaseVer37sw.js from Copy of tryThisSw.js Nov16
  Copyright 2016 Google Inc. All Rights Reserved.
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -28,9 +28,9 @@ const PRECACHE_URLS = [
        '/index.html',//directory path to project folder/app name.html file
 	   
 	    // 'https://github.com/trainee45/trainee45.github.io/TableNotesVer29.html',//directory path to project folder/app name.html file
-       '/DougieBaseVer48.js',//directory path to project folder/app name.js file
-       '/DougieBaseVer48.css',////directory path to project folder/app name.css file
-	   '/smallDeviceDougieBaseVer48.css',//tested in Inspect Dec10 2021
+       '/DougieBaseVer49.js',//directory path to project folder/app name.js file
+       '/DougieBaseVer49.css',////directory path to project folder/app name.css file
+	   '/smallDeviceDougieBaseVer49.css',//tested in Inspect Dec10 2021
 	   '/trainsDBTableNotes.webmanifest',////directory path to project folder/app name.trainmanifest file
 	   '/jquery-3.6.0.min.js',////directory path to project folder/app name.jQuery file
 	    '/eeyore.JPG',//add this file to github repository

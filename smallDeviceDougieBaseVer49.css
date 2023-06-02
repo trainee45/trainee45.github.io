@@ -1,4 +1,4 @@
-/*smallDeviceDougieBaseVer48.css smallDeviceDougieBaseVer47.css Feb 27 2023 smallDeviceDougieBaseVer46.css Feb2 2023 smallDeviceDougieBaseVer45.css Dec28 2022 added .blocked smallDeviceDougieBaseVer44.css Dec4 2022 smallDeviceDougieBaseVer43.css smallDeviceDougieBaseVer42.css smallDeviceDougieBaseVer40.css date Sept24 2022 added #restoreFromFilesWin from experimentalsmallDeviceDougieBaseVer37 added #manualContactsWin Jan6 2022Dec22 mobileFriendlyDougieBaseVer37.css from DougieBaseVer36.css from Copy of DougieBaseVer36 Nov14 from spDougieBaseVer36.css landscape table search and preview edit Date:Nov9 save preferences added chooseColoursWin from. tdEdit Oct 16.*/
+/*smallDeviceDougieBaseVer49.css smallDeviceDougieBaseVer48.css smallDeviceDougieBaseVer47.css Feb 27 2023 smallDeviceDougieBaseVer46.css Feb2 2023 smallDeviceDougieBaseVer45.css Dec28 2022 added .blocked smallDeviceDougieBaseVer44.css Dec4 2022 smallDeviceDougieBaseVer43.css smallDeviceDougieBaseVer42.css smallDeviceDougieBaseVer40.css date Sept24 2022 added #restoreFromFilesWin from experimentalsmallDeviceDougieBaseVer37 added #manualContactsWin Jan6 2022Dec22 mobileFriendlyDougieBaseVer37.css from DougieBaseVer36.css from Copy of DougieBaseVer36 Nov14 from spDougieBaseVer36.css landscape table search and preview edit Date:Nov9 save preferences added chooseColoursWin from. tdEdit Oct 16.*/
 /*clearBkgrdDougieBaseVer34.css in WorkingCopy allow background image*/
 /* //Date:Oct5 2021 Removed Double tap to avoid magnification in Manage files view full screen search select filenames. iOS15 safari has no way to disable double tap for magnification. More cosmetics with dataBaseName titles added .titleBanner to CSS*/
 /*font color of button text is blue in iOS 15 why? Forced it to black large Oct2 2021 touch-action: manipulation; to prevent double tap zoom … DID NOT WORK added titleBanner for About db
@@ -472,12 +472,14 @@ To get to edit date or other cell contents and the return btn and save btn to ap
 /*prefWin was here moved to sort search group June 14 trying to fix prefWin position in Safari portrait copySampleDb Aug 14 Put #newFieldWin in the prefWin category Aug27*/
 #reNameWin, #reNameDBWin, #aboutDBWin, #whatsNewWin, #memoryWindow, #fileNames, #createNewDBWin, #manageFilesWin, #backupFilesWin, #backingUpDBWin, #restoreDBWin, #copySampleDb, #tutorialSampleDb, #sampleBudgetDb, #new-note, #newTableNameWin, #promptBox, #restoreFromFilesWin, #monthSelectWin {
 	position: fixed; /*was absolute relative fixed didn't work */
-        top: 350px; /* was 250px 200px 100% was 190 then 100%*/
+	/*display: flex;
+  align-items: center;*/
+       top: 350px; /* was 250px 200px 100% was 190 then 100%*/
         transform: translate(-65%,-65%);/*was -50,-50*/
        width: 80vw;/*change made after Inspect Dec8*/
 	  /* max-width: 90%;*/
-       height: 450px;/*was 300px*/
-		border: 5px solid red;
+      height: 450px;/*was 450 300px*/
+		border: 5px solid blue;/*red*/
 		border-radius: 10px;
 		padding: 10px;
        /* border: none;/*was 10px solid red;*/
@@ -530,20 +532,21 @@ height: 425px;
 /*position: fixed;
 }*/
 
-#manageFilesWin, #backupFilesWin, #backingUpDBWin, #restoreDBWin, #copySampleDb, #tutorialSampleDb, #sampleBudgetDb {
-	top: 450px;/*was 340px 300 px */
-	height: 540px;
+#manageFilesWin, #backupFilesWin, #backingUpDBWin, #restoreDBWin, #copySampleDb, #tutorialSampleDb, #sampleBudgetDb, #documentationWin, #tableScrn, #tableWin, #searchWin,  #displayFullNote, #deleteWin, #editWin {
+	top: 40vh;/*was 400px 450 340px 300 px */
+	margin-top: 100px;
+	height: 60vh;/*was 450px  650px 540px*/
 	overflow: scroll;
 	
 }
 
 #fileNames {
 
-	top: 450px;/*450px was 350*/
+	top: 40vh;/*was 300px 450px was 350 50px*/
 	/*top: 250px;  200px was 190 then 100%*/
 	   
 	margin-top: 100px;
-	height: 650px;/*was 500 px*/
+	height: 60vh;/*was 450px 650px 500 px*/
 
 	overflow: scroll;
 }
@@ -988,16 +991,16 @@ tbody td {
 }
 
 @media screen and (orientation: portrait) {
-   #searchWin {
+  /* #searchWin {
    /* position: relative;*/
-    height: 80vh;/*was 50vh*/
+ /*   height: 80vh;/*was 50vh*/
     /*background-color: blue;*/
-	background-color: #eee;
+	/*background-color: #eee;
   }
-  
-  #tableWin {
+  */
+/*  #tableWin {
 	  height: 700px;
-  }
+  }*/
 }
 
 @media screen and (orientation: landscape) {
@@ -1009,24 +1012,26 @@ tbody td {
 	background-color: #eee;
   }
   
-  #tableWin, #searchWin {
+ /* #tableWin,*/ 
+ 
+/* #searchWin {
 	  height: 600px;
 	  top: 0px;/*previous setting is top: 40px;*/
-  }	
+/*  }	*/
   
-  #fileNames {
+ /* #fileNames {
 	  top: 250px;/*was 0px*/
 	 
 	/*top: 250px;  200px was 190 then 100%*/
 	   
-	margin-top: 100px;
+/*	margin-top: 100px;
 	height: 73vh;/*was 700px 500 px*/
 
-	overflow: scroll;
+/*	overflow: scroll;
    
   }
 	  
-}
+}*/
 
 @media print {
   body {
@@ -1038,5 +1043,31 @@ tbody td {
 @media (hover: none) {
   .class {
     background: lime;
+  }
+}
+
+/*for iPhone 6*/
+/*@media only screen and (max-device-height: 667px) {
+  /* Your styles here */
+  
+  
+/*@media only screen and (max-device-height: 667px) {
+  #prefWin, #deleteWin, #displayFullNote, #editWin, #editNewFieldWin, #documentationWin, #tableWin, #tableScrn, #createTableWin, #searchWin, #deleteFieldWin, #sortWin, #newFieldWin, #chooseColoursWin, #manualContactsWin,#editNewTableFieldNamesWin {
+   position: fixed;
+    background-color: rgb(238, 238, 238);
+	top: 10px;
+	/*display: flex;
+  align-items: center;*/
+	/*bottom: 50px;*/
+	/*height:  50vh;
+	width: 90vw;/*480px*/
+	/*transform: translate(-65%, -65%); 
+	overflow: scroll;
+	border-width: 5px;  
+border-style: solid;  
+border-color: solid red;  
+border-image: ;  
+border-radius: 10px;  
+padding: 10px;  
   }
 }
