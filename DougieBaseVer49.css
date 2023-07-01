@@ -1,4 +1,4 @@
-/*DougieBaseVer49.css DougieBaseVer48.css DougieBaseVer47.css Feb 27 2023 DougieBaseVer46.css Feb2 2023 DougieBaseVer45.css added .blocked Dec28 2022 DougieBaseVer44.css DougieBaseVer43.css from DougieBaseVer42.css Date- Oct4 2022 DougieBaseVer40.css date Sept24 2022 added #restoreFromFilesWin editNTFieldNamesDougieBaseVer40.css DougieBaseVer40.css from experimentalDougieBaseVer37.css added #manualContactsWin Jan6 2022 Dec22 from DougieBaseVer36.css Dec5 from Copy of DougieBaseVer36 Nov14 from spDougieBaseVer36.css landscape table search and preview edit Date:Nov9 save preferences added chooseColoursWin from. tdEdit Oct 16.*/
+/*DougieBaseVer49.css June29 2023 faqDougieBaseVer49.css DougieBaseVer49.css DougieBaseVer48.css DougieBaseVer47.css Feb 27 2023 DougieBaseVer46.css Feb2 2023 DougieBaseVer45.css added .blocked Dec28 2022 DougieBaseVer44.css DougieBaseVer43.css from DougieBaseVer42.css Date- Oct4 2022 DougieBaseVer40.css date Sept24 2022 added #restoreFromFilesWin editNTFieldNamesDougieBaseVer40.css DougieBaseVer40.css from experimentalDougieBaseVer37.css added #manualContactsWin Jan6 2022 Dec22 from DougieBaseVer36.css Dec5 from Copy of DougieBaseVer36 Nov14 from spDougieBaseVer36.css landscape table search and preview edit Date:Nov9 save preferences added chooseColoursWin from. tdEdit Oct 16.*/
 /*clearBkgrdDougieBaseVer34.css in WorkingCopy allow background image*/
 /* //Date:Oct5 2021 Removed Double tap to avoid magnification in Manage files view full screen search select filenames. iOS15 safari has no way to disable double tap for magnification. More cosmetics with dataBaseName titles added .titleBanner to CSS*/
 /*font color of button text is blue in iOS 15 why? Forced it to black large Oct2 2021 touch-action: manipulation; to prevent double tap zoom … DID NOT WORK added titleBanner for About db
@@ -341,7 +341,7 @@ li p {
 	} 
 	
 	/*added prefWin here June14 to fix positioning in Safari portrait mode made top = 40px in prefWin group. This seems to work ok June21 REMOVE #newFieldWin AUG27*/
-#prefWin, #deleteWin, #displayFullNote, #editWin, #editNewFieldWin, #documentationWin, #tableWin, #tableScrn, #createTableWin, #searchWin, #deleteFieldWin, #sortWin, #newFieldWin, #chooseColoursWin, #manualContactsWin, #editNewTableFieldNamesWin, #editItemListWin {
+#prefWin, #deleteWin, #displayFullNote, #editWin, #editNewFieldWin, #documentationWin,  #tableWin, #tableScrn, #createTableWin, #searchWin, #deleteFieldWin, #sortWin, #newFieldWin, #chooseColoursWin, #manualContactsWin, #editNewTableFieldNamesWin, #editItemListWin {
         position: fixed; /*was absolute, "relative fixed positions relative tp viewport*/
        top: 40px; width: 480px; margin: 0 auto;   /*top 0 locates at very top corner viewport. top 20 allows position below banner top: 100%; was 190 then 100%*/
 	   margin-top: 430px; /*460 works with portrait but off bottom in landscape..so try */
@@ -373,6 +373,27 @@ li p {
 		/*height:1100px;/*added June21*/
 	}
 	
+	#faqWin {
+	position: fixed; /*was absolute, "relative fixed positions relative tp viewport*/
+       top: 40px; width: 480px; margin: 0 auto;   /*top 0 locates at very top corner viewport. top 20 allows position below banner top: 100%; was 190 then 100%*/
+	   margin-top: 430px; /*460 works with portrait but off bottom in landscape..so try */
+        transform: translate(-50%,-50%);
+       width: 500px; 
+       height: 800px; /*1350was 1400px*/
+	   overflow: scroll;/*still need scroll if note is too large to fit on screen*/
+		border: 5px solid red;
+		border-radius: 10px;
+		padding: 10px;
+       /* border: none;/*was 10px solid red;*/
+        /*border-radius: 10px; */
+        background-color: black;
+        /*background-color: #eee;/*this is what it was*/
+        /*background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.1)); */
+		
+			/*disable double tap zoom OCT 2 2021 DID NOT WORK RUINED FUNCTIONALITY*/
+			/*touch-action: manipulation;*/
+				
+	}
 
 	
 	/*allow for prefWindow in landscape mode
@@ -515,6 +536,8 @@ height: 425px;
 	overflow: scroll;
 	
 }
+
+
 
 #fileNames {
 
@@ -987,6 +1010,8 @@ tbody {
 height: 125 px;	
 }
 
+
+
 @media only screen and (max-height: 800px) {
   #prefWin {
     background-color: yellow;
@@ -1010,7 +1035,7 @@ height: 125 px;
 }
 
 @media screen and (orientation: landscape) {
-   #editWin, #editNewFieldWin, #displayFullNote, #createTableWin, #deleteFieldWin, #tableScrn {
+   #editWin, #editNewFieldWin, #displayFullNote, #createTableWin, #createNewDBWin, #deleteFieldWin, #tableScrn {
     /*position: relative;ADDED #tableScrn July 6 2022*/
 	top: -10px;/*was 0px*/
     height: 70vh;/*was 75vh 100vh*/
@@ -1056,3 +1081,4 @@ height: 125 px;
   }
 }
 */
+
