@@ -1,4 +1,4 @@
-/*DougieBaseVer49sw.js sw50 June30 2023 added FAQ and tweeked responsive coding  DougieBaseVer48sw.js sw49 June14 2023 sw47 reverted to original sw April25 2023  DougieBaseVer47sw.js Feb 27 2023 DougieBaseVer46sw.js Feb2 2023 DougieBaseVer45sw.js Dec28 2022 DougieBaseVer44sw.js Dec4 2022 DougieBaseVer43sw.js DougieBaseVer42sw.js Date Nov 22 2022 - Oct4 2022 DougieBaseVer40sw.js from DougieBaseVer39sw.js Feb 14 2022 Dec25 Dec10 from mobileFriendlyDougieBaseVer37sw.js from Copy of tryThisSw.js Nov16
+/*DougieBaseVer49sw.js sw51 sw50 June30 2023 added FAQ and tweeked responsive coding  DougieBaseVer48sw.js sw49 June14 2023 sw47 reverted to original sw April25 2023  DougieBaseVer47sw.js Feb 27 2023 DougieBaseVer46sw.js Feb2 2023 DougieBaseVer45sw.js Dec28 2022 DougieBaseVer44sw.js Dec4 2022 DougieBaseVer43sw.js DougieBaseVer42sw.js Date Nov 22 2022 - Oct4 2022 DougieBaseVer40sw.js from DougieBaseVer39sw.js Feb 14 2022 Dec25 Dec10 from mobileFriendlyDougieBaseVer37sw.js from Copy of tryThisSw.js Nov16
  Copyright 2016 Google Inc. All Rights Reserved.
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
 // Names of the two caches used in this version of the service worker.
 // Change to v2, etc. when you update any of the local resources, which will
 // in turn trigger the install event again.
-const PRECACHE = 'precache-v50';
+const PRECACHE = 'precache-v51';
 const RUNTIME = 'runtime';
 
 // A list of local resources we always want to be cached.
