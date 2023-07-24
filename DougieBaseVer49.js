@@ -10356,7 +10356,7 @@ function saveTable () {
 		}//end of if edit
 		//change color of to make changes direction to green from pink
 		saveTableP.setAttribute('class','edBan');
-		saveTableP.textContent ='To make changes or add columns go back to Edit from the displayed table.';// Make Changes button!'; 
+		saveTableP.textContent ='To make changes or add columns go back to Edit from the displayed table. Scroll ⬇️';// Make Changes button!'; 
 		//tableArray[1][4] = ' + tableArray[1][4];
 		// alert('255 .. tableArray[0][6] = ' + tableArray[0][6]);
 		// alert('In SAVE table function : 190? tableArray[2][6] = ' + tableArray[2][6]);
@@ -16139,6 +16139,7 @@ resultPara.textContent = "";
 	alert("Now RESTORE the newly created database to DougieBase by tapping the Text-Area element when the RESTORE Window appears, and 'PASTE' the data into the text-area element of the RESTORE window. (REMEMBER NOT TO 'COPY' ANYTHING UNTIL THE PASTE PROCESS IS FINISHED!) Your new database will now be listed among the current database filenames.");
 	backingUpDBWin.setAttribute('class','hidden');
 backupFilesWin.setAttribute('class','hidden');
+fileNamesWindow.setAttribute('class','hidden');//added July23 2023 to lessen visual confusion having file listbin background of backing up
 creationDONE = false;
 restoreDataBase(restoredDBName);//remove if does not work and re-instate RESTOREBTN FLASHING JAN31 2023
 }//end if(creationDONE)
