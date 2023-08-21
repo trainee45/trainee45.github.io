@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>index.html</title>
      <style>
-      /*This CSS for FAQ WINDOW only works if placed here. Does not work if put in external css file in DougieBase */
+      /*This CSS for FAQ WINDOW and CALCULATOR WINDOW only works if placed here. Does not work if put in external css file in DougieBase why?*/
         body{
             
             background-color: rgb(153, 218, 196);
@@ -51,25 +51,30 @@
         .accordion.active .accordion__answer {
             display: block;
         }
+       
     </style>
+    <style>
+     
+    </style>     
+         
 	<meta name="viewport" content="width=device-width, initial-scale=1">
    <!-- <link rel="stylesheet" type="text/css" href="DougieBaseVer37.css">-->
-	<link rel="stylesheet" type="text/css" media="screen and (min-width: 480px)" href="DougieBaseVer49.css"/>
+	<link rel="stylesheet" type="text/css" media="screen and (min-width: 480px)" href="DougieBaseVer50.css"/>
 	
-	<link rel="stylesheet" type="text/css" media="screen and (max-width: 480px)" href="smallDeviceDougieBaseVer49.css" />
+	<link rel="stylesheet" type="text/css" media="screen and (max-width: 480px)" href="smallDeviceDougieBaseVer50.css" />
 	
 	
 	<link rel="manifest" href="trainsDBTableNotes.webmanifest">
 
 
-<!--Latest version for publishing THIS VERSION PUBLISHED JULY21 2023 sw 52 July12 sw51 July 1 2023. This version, July14-15, not yet published, fixed CSS of createNewDBWin, has a new FAQ. Added some more FAQs that reflect changes made to DougieBase SAVE to FILES adding timestamp to filename, and correcting alert 'Copying to Clipboard' (July 6 2023) (July2} April 8 2023 index.html Latest version for publishing Mar 25 2023 from removedAlertsscrollRESTOREDougieBaseVer47 scrollRESTOREDougieBaseVer47.js from TEMPLATEindex.html restore From Fileindex.html  Date Sept25 2022 Restore from FILES works! 	Date:Nov21 Nov14 landscape table and search and preview edit Nov4 2021 added easter egg and save settings Oct 31 2021. Ver 35.3removed access to word documentation help manual fixEditDougieBaseVer35.html USE THIS VERSION AS OF Sept 29 2021 2021 This version has been installed on github pages ! Added links to documentation docx and pdf<script src="fileNamesTableNotesVer21.js" defer type="text/javascript"></script> Added p info statement to Create Table window -->
+<!--from rewriteloadImageindex.html. Allows storing of image url in field labelled IMAGE . Next update want to open image in its own image window. This version published Aug 21 2023. loadImageindex.html SEE CODE SECTIONS editTDInputBtn.onclick and  //PUT CODE HERE BELOW TO ATTACH IMAGE TO TD CELL IF FIELD HEADER =IMAGE AND TD TEXT CONTENT CONTAINS URL from addingCalculatorindex.html DougieBaseVer50sw53 (as of July28 2023 NOT YET PUBLISHED)…WORKING ON : adding calculator..Latest version for publishing THIS VERSION PUBLISHED JULY21 2023 sw 52 July12 sw51 July 1 2023. Added scroll arrow and hid file list window in backup of create new db (copied to github) This version, July14-15, not yet published, fixed CSS of createNewDBWin, has a new FAQ. Added some more FAQs that reflect changes made to DougieBase SAVE to FILES adding timestamp to filename, and correcting alert 'Copying to Clipboard' (July 6 2023) (July2} April 8 2023 index.html Latest version for publishing Mar 25 2023 from removedAlertsscrollRESTOREDougieBaseVer47 scrollRESTOREDougieBaseVer47.js from TEMPLATEindex.html restore From Fileindex.html  Date Sept25 2022 Restore from FILES works! 	Date:Nov21 Nov14 landscape table and search and preview edit Nov4 2021 added easter egg and save settings Oct 31 2021. Ver 35.3removed access to word documentation help manual fixEditDougieBaseVer35.html USE THIS VERSION AS OF Sept 29 2021 2021 This version has been installed on github pages ! Added links to documentation docx and pdf<script src="fileNamesTableNotesVer21.js" defer type="text/javascript"></script> Added p info statement to Create Table window -->
 
  	
 
  <script src="jquery-3.6.0.min.js"></script>
 
 
-    <script src="DougieBaseVer49.js" defer></script>
+    <script src="DougieBaseVer50.js" defer></script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script> 
     
@@ -238,7 +243,7 @@ color: black;
 	
 	  
     <header>
-      <h1 id ="versionHeader">DougieBase Version 49sw52</h1>
+      <h1 id ="versionHeader">DougieBase Version 50sw53</h1>
     </header>
 	<p><button id = "newSW" style="display:none">New Service Worker</button><button id = "skip" style ="display:none">SKIP</button></p>
 <div id = "scrolling">
@@ -261,6 +266,7 @@ color: black;
 		<button id="addContacts">Add CONTACTS/RECORDS</button>
 		<button id="backupBtn1">BACKUP ?</button>
 	    <button id = "faqBtn"> FAQ </button>
+	    <button id="calculatorBtn">CALCULATOR</button>
 		 <button id = "changeMonth2" style = "display:none"> CHANGE MONTH </button>
 	</nav>
 	
@@ -500,6 +506,9 @@ color: black;
 		<!-- <input type="file" id = "fileSelector" onchange="readFile(this)">  -->
 	<!-- ReferenceError: Can't find variable: selectStorageFile -->	 
 	<input type="file" onchange="readFile(this)"> 
+	<p></p>
+	<p>Tap the IMAGE button to select a photo or image</p>
+	<button id = "getImageBtn" onclick = "openImagePicker()"> IMAGE </button>
 
 	 </section>	 
 	<!-- End restore database from FILES window -->	
@@ -860,10 +869,15 @@ color: black;
 				<p class = "highlight" id = "versionInfoP">Revisions and version numbers.  Scroll up     ⬆️ </p>
 		   <ul>
 			   <li>Obtain an estimate of how much memory is available in the database storage if your Browser accomodates this feature.</li>
-			   <li>This is Version 49, service worker 52</li> 
+			   <li>This is Version 50, service worker 53</li> 
 			   <li>Search references the first title field, and all other fields since version 33.1.</li>
-			   <li>Last revision: July 21 2023. For information about latest changes tap the 'What's New' button.</li>
-			   <li><span style = "text-decoration: underline">A note about Tables:</span><br> There are 3 classes of tables in DougieBase. <br>1. The MAIN table is derived from each DougieBase database and is automatically generated when a new database is created. This is the table shown when you tap the DISPLAY TABLE btn on the Table Options information screen. A MAIN table can be edited, records and dynamic fields added or deleted, searched and sorted.<br>2.  The second class of table is one created from found records in a SEARCH of a MAIN database table. Data can be searched and sorted, but new records can not be added or deleted. If you need to ADD a record you have to revert back to the MAIN database table, from which it originated, and ADD/ or DELETE records to/from the MAIN table, and then repeat the SEARCH to recreate the changed table with the now added record.<br>3. The third class of table references CONTACTS only, .. Contacts that you want to be associated with the database. CONTACTS tables can be created in 3 ways:<br> A. By tapping the CONTACTS button in the menu of a MAIN database table - this method allows access to the CONTACTS app on your device. <br>B. By tapping the CREATE TABLE button on the Table Information window that shows after tapping the TABLE button on the home screen main menu bar. The CREATE TABLE option has the same facility as the CONTACTS button in the Table window menu.<br>C. By tapping the ADD CONTACTS/RECORDS  button on the main database HOME screen menu. - This allows manual entry of Contacts data from a form sheet. There is no access to the ContactsPickerAPI (Contacts) on your device. <br> CONTACTS tables generate 4 FIXED Fields - Name, DATE, Telephone, Email, and 1 DYNAMIC field .. Address … depending on your browser's capability to access the Address field from the ContactPicker API. The 3 types of Contacts tables allow editing of data in the table data cells, adding and deleting (Contacts) records,..(by tapping the + and - icons in the Table menu), and adding and deleting fields, by tapping the EDIT button in the Table menu. Editing of Field Names in the CONTACTS tables, by tapping the EDIT button in the Table menu, allows creation of CUSTOMIZED tables, thus facilitating their use for other purposes than just Contacts.</li>
+			   <li>Last revision: August 21 2023. For information about latest changes tap the 'What's New' button.</li>
+			   <li><span style = "text-decoration: underline">A note about Tables:</span><br> 
+			  <!--  <details> <summary>Click to reveal more information about using TABLES in DougieBase </summary> -->
+<details> <summary>Click to reveal more information about using TABLES in DougieBase </summary>
+	<h3>The 3 ways to create a DougieBase table:</h3>
+			   There are 3 classes of tables in DougieBase. <br>1. The MAIN table is derived from each DougieBase database and is automatically generated when a new database is created. This is the table shown when you tap the DISPLAY TABLE btn on the Table Options information screen. A MAIN table can be edited, records and dynamic fields added or deleted, searched and sorted.<br>2.  The second class of table is one created from found records in a SEARCH of a MAIN database table. Data can be searched and sorted, but new records can not be added or deleted. If you need to ADD a record you have to revert back to the MAIN database table, from which it originated, and ADD/ or DELETE records to/from the MAIN table, and then repeat the SEARCH to recreate the changed table with the now added record.<br>3. The third class of table references CONTACTS only, .. Contacts that you want to be associated with the database. CONTACTS tables can be created in 3 ways:<br> A. By tapping the CONTACTS button in the menu of a MAIN database table - this method allows access to the CONTACTS app on your device. <br>B. By tapping the CREATE TABLE button on the Table Information window that shows after tapping the TABLE button on the home screen main menu bar. The CREATE TABLE option has the same facility as the CONTACTS button in the Table window menu.<br>C. By tapping the ADD CONTACTS/RECORDS  button on the main database HOME screen menu. - This allows manual entry of Contacts data from a form sheet. There is no access to the ContactsPickerAPI (Contacts) on your device. <br> CONTACTS tables generate 4 FIXED Fields - Name, DATE, Telephone, Email, and 1 DYNAMIC field .. Address … depending on your browser's capability to access the Address field from the ContactPicker API. The 3 types of Contacts tables allow editing of data in the table data cells, adding and deleting (Contacts) records,..(by tapping the + and - icons in the Table menu), and adding and deleting fields, by tapping the EDIT button in the Table menu. Editing of Field Names in the CONTACTS tables, by tapping the EDIT button in the Table menu, allows creation of CUSTOMIZED tables, thus facilitating their use for other purposes than just Contacts.</li>
+			   </details>
 	 <li><span style = "text-decoration: underline">CUSTOM TABLES:</span> Custom tables can be created in two ways:<br> 1.By using a CONTACTS table as a template, relabeling the FIELD names using the EDIT button, will create customized tables. The EDIT button allows renaming of FIELD headings, and ADDING or DELETING of fields, facilitating the creation of CUSTOM tables for any purpose.<br>2. The ADD CONTACTS/RECORDS button in the Main menu allows labelling of the table field names on the fly, as you create the table and enter record data into the fields from a FORM input screen.</li>
 	    <li><span style = "text-decoration: underline"> Field Labels:</span><br> The FIELD LABELS button on the Table screen menu allows editing of the Contacts or new Table fields. CANCEL in this window resets fields to default values for a Contacts table. See documentation.</li>
 	    <li><span style = "text-decoration: underline"> CONTACTS btn vrs Field Labels:</span><br>To create contacts tables:
@@ -880,9 +894,11 @@ Any table created using the ADD CONTACTS/RECORDS btn from the Main Menu will hav
 	    <br/>RULE: 'sumAcross' keyword inserted in the data cell which is the last column of the FIRST record of the table and then subsequent records, will initiate summing of all numerical entries (in DYNAMIC fields only), across that record row of the table. The TOTAL keyword included in the field heading of the last column in the table will facilitate adding all numerical entries vertically in the table column, IF THE LAST DATA CELL (last column) OF THE FIRST RECORD  was initialized with the 'sumAcross' keyword. The TOTAL keyword included in field headings of all other columns (DYNAMIC fields only) works as indicated."
 	    </li>
 	    <li>If you have a column of data you do not want to be included in the summing across a record's fields, mark that number with an extra character, and it will be excluded from the sum. i.e 100 will be added in a sum across the records fields, but 100% or 100! Will NOT be included in the sum. However these numbers are included when summing or averaging numbers vertically in the column.</li>
+	     <!-- </details> -->
 	    <li>See more information in the WHAT'S NEW section (New Updates button) or in DOCUMENTATION.</li>
-			   
+		 	   
 	   </ul>
+	    <!-- </details> -->
 	   </div>
 		   <p></p>
 		   <button id="getMemory">Estimate Memory</button>
@@ -1059,6 +1075,7 @@ Any table created using the ADD CONTACTS/RECORDS btn from the Main Menu will hav
 	 <button id="bottom">vBottom</button>
 	  <button id = "changeMonth1" style = "display:none"> CHANGE MONTH </button>
 	  <button id="backupBtn2">BACKUP ?</button>
+	   <button id="calculatorBtn2">CALCULATOR</button>
 	 <div id="contactTableDiv"></div>
 	</div>
 	<!-- test jQuery -->
@@ -1088,7 +1105,7 @@ Any table created using the ADD CONTACTS/RECORDS btn from the Main Menu will hav
 	
 	<!-- <p id = "tdEditTrigger" style="color: blue">To edit date or other cell contents select the contents, then tap 'COPY', then enter new text (after <span class ="tdEdit"> Clear/Initialize </span> .) into the input element. (or 'paste' to enter original).</p> -->
 	
-	<p id = "tdEditTrigger" style="color: blue">To edit date or other table  cell contents 'Double Tap' the cell to initiate edit mode. This is the default trigger choice. To change edit trigger to 'Select-Copy' go to Preferences.<br>FIXED fields = columns 1-4; DYNAMIC fields = columns 5 and up. <br>Use keywords TOTAL AVERAGE COST in field title (Dynamic fields only) for added functionality! (COST  needs to be used with TOTAL or AVERAGE). Use TELEPHONE (in 3rd FIXED field only) or use EMAIL (in 4th FIXED field only) for activating  telephone calling or email addresses. TELEPHONE and EMAIL can also be used in ANY DYNAMIC field. The sumAcross keyword placed in the last column of the table will SUM all numbers (100 but NOT 100% or 100!) in that record across the table. Avaiable tags to flash filename are: -tag,*,!,✅,♥️,🔴,❗️. Currently some browsers will not recognize emoji's. See documentation, or ABOUT section.</p>
+	<p id = "tdEditTrigger" style="color: blue">To edit date or other table  cell contents 'Double Tap' the cell to initiate edit mode. This is the default trigger choice. To change edit trigger to 'Select-Copy' go to Preferences.<br>FIXED fields = columns 1-4; DYNAMIC fields = columns 5 and up. <br>Use keywords TOTAL AVERAGE COST in field title (Dynamic fields only) for added functionality! (COST  needs to be used with TOTAL or AVERAGE). Use TELEPHONE (in 3rd FIXED field only) or use EMAIL (in 4th FIXED field only) for activating  telephone calling or email addresses. TELEPHONE and EMAIL can also be used in ANY DYNAMIC field. The sumAcross keyword placed in the last column of the table will SUM all numbers (100 but NOT 100% or 100!) in that record across the table. Avaiable tags to flash filename are: -tag,*,!,✅,♥️,🔴,❗️. Use 'IMAGE' as field label to store images in a column. Currently some browsers will not recognize emoji's. See documentation, or ABOUT section.</p>
 	<p id = "totalInfoP" style = "display:none">Double Tap FIELD HEADER containing TELEPHONE EMAIL TOTAL COST or AVERAGE to obtain result!</p>
 	<p id = "sumAcrossInfoP" style = "display:none">Placing 'Cost to date = $' or 'Total to date = ' in first data section of NOTES provides automatic update as sum across data is edited in table.</p>
 	<p></p>
@@ -1167,8 +1184,8 @@ Any table created using the ADD CONTACTS/RECORDS btn from the Main Menu will hav
 		    <div class = "edWinScroll" style="height: 300px">
 				<p class = "highlight" id = "newVersionInfoP">Revisions and version numbers.  Scroll up     ⬆️ </p>
 		   <ul>
-			   <li>Last revision: July 21 2023</li>
-			   <li>This is Version 49, service worker 52</li> 
+			   <li>Last revision: August 21 2023</li>
+			   <li>This is Version 50, service worker 53</li> 
 			   <li>Improved workflow of creating a new database, including online prompts and flashing 'Do this next indicators'</li>
 			   
 			   <li>Now compatible with 'Dark Mode'.</li>
@@ -1202,7 +1219,9 @@ Any table created using the ADD CONTACTS/RECORDS btn from the Main Menu will hav
 	     <!-- ✅, "-tag" , "*" , "!" ,♥️,🔴,❗️ -->
 	     <li>Back Up reminders and Save warnings added if enabled in Preferences.</li>
 	      <li>Improved responsive design for small devices.</li>
-	       <li>Added FAQ section .</li>
+	       <li>Added FAQ (Frequently Asked Questions) section .</li>
+	        <li>Added an in-app CALCULATOR .</li>
+	        <li>Using IMAGE as a field name label allows storage of a URL link to an image. Images can only be stored in table columns that have (or contain) the heading IMAGE. See the FAQ 'How do I best add an image to a database in a specified IMAGE field' in the FAQ section for more information.</li>
 	     <li>Bug fixes and stability improvements.</li>
 			   
 		   </ul>
@@ -1427,17 +1446,19 @@ To receive the database file, open iMsg at the received message, and long press/
 
             </div>
         </div>
-  <!--      
+        
   <div class="accordion">
             <div class="accordion__question">
-                <p>Where is Taj Mahal located?</p>
+                <p>How do I best add an image to a database in a specified IMAGE field?</p>
 
             </div>
             <div class="accordion__answer">
-                <p>Taj Mahal is located in Agra, Uttar Pradesh.</p>
+                <p>Not all public photo storage web sites for security reasons will allow a third party app to download and view photos. Designate a field in your database to hold links to images that you have stored in the cloud. Three of the best servers for this are Dropbox and One Notes One Drive, and Box. Google Drive, Amazon Photos and Apple iCloud Drive also will work for this.  Create a field in your database and label it 'IMAGE'. Go to your photo cloud storage and obtain the link to your photo. (The link will be 'copied' to your clipboard.) In One Drive you need to use the share sheet option and email yourself the link, and 'copy' it from your email. Now 'paste' just the link (no extra words or comments) into the appropriate td data cell via the standard DougieBase EDIT process. Save the table. Now you can view the photo simply by tapping on the link. NOTE: You can put just about any link to any web page into the 'IMAGE' field data cell and it will work. The reverse is not true. Putting an IMAGE link into any field data cell not labelled 'IMAGE' will cause an error on loading the image. Also note that the field heading label needs only contain 'IMAGE'. So both 'IMAGE' and 'Locomotive IMAGE' field  labels will work.</p>
 
             </div>
         </div>
+  <!--
+        
   <div class="accordion">
             <div class="accordion__question">
                 <p>Where is Taj Mahal located?</p>
@@ -1483,7 +1504,7 @@ To receive the database file, open iMsg at the received message, and long press/
     
     <!-- remove comment as more FAQ questions are needed!  *********. -->
     
-  </div>
+  </div> <!-- end layout -->
 <!-- <script src="" type="text/javascript">
 let answers = document.querySelectorAll(".accordion");
 answers.forEach((event) => {
@@ -1499,7 +1520,52 @@ answers.forEach((event) => {
 	</div>
 	<!-- end of FAQ Win  -->
 	
-	
+<!-- CALCULATOR WINDOW  -->
+<section id="calculatorWin" class="hidden" style="display:none">
+	<div>
+	 <h2 style="color:green; text-align:center">
+    DougieBase in app CALCULATOR
+  </h2>
+<p></p>
+<table class="calculator" >
+  <tr>
+  <!-- style ="color:black;font-size:large;font-weight: bold;" -->
+    <td colspan="3"> <input class="display-box" type="text" id="result" style="color:black" disabled /> </td>
+    <!-- clearScreen() function clear all the values -->
+    <td> <input class = "calculationInput" type="button" value="CLEAR" onclick="clearCalculatorScreen()" id="btn" /> </td>
+  </tr>
+  <tr>
+    <!-- display() function display the value of clicked button -->
+    <td> <input class = "calculationInput" type="button" value="1" onclick="displayCalculator('1')" /> </td>
+    <td> <input class = "calculationInput" type="button" value="2" onclick="displayCalculator('2')" /> </td>
+    <td> <input class = "calculationInput" type="button" value="3" onclick="displayCalculator('3')" /> </td>
+    <td> <input class = "calculationInput" type="button" value="/" onclick="displayCalculator('/')" /> </td>
+  </tr>
+  <tr>
+    <td> <input class = "calculationInput" type="button" value="4" onclick="displayCalculator('4')" /> </td>
+    <td> <input class = "calculationInput" type="button" value="5" onclick="displayCalculator('5')" /> </td>
+    <td> <input class = "calculationInput" type="button" value="6" onclick="displayCalculator('6')" /> </td>
+    <td> <input class = "calculationInput" type="button" value="-" onclick="displayCalculator('-')" /> </td>
+  </tr>
+  <tr>
+    <td> <input class = "calculationInput" type="button" value="7" onclick="displayCalculator('7')" /> </td>
+    <td> <input class = "calculationInput" type="button" value="8" onclick="displayCalculator('8')" /> </td>
+    <td> <input class = "calculationInput" type="button" value="9" onclick="displayCalculator('9')" /> </td>
+    <td> <input class = "calculationInput" type="button" value="+" onclick="displayCalculator('+')" /> </td>
+  </tr>
+  <tr>
+    <td> <input class = "calculationInput" type="button" value="." onclick="displayCalculator('.')" /> </td>
+    <td> <input class = "calculationInput" type="button" value="0" onclick="displayCalculator('0')" /> </td>
+    <!-- use inAppCalculate as function name so no conflict with console calculator instead of calculate() function evaluate the mathematical expression -->
+    <td> <input class = "calculationInput" type="button" value="=" onclick="inAppCalculate()" id="btn" /> </td>
+    <td> <input class = "calculationInput" type="button" value="*" onclick="displayCalculator('*')" /> </td>
+  </tr>
+</table>
+<p></p>
+<p><button id = "doneCalculatorBtn" onclick = "showDone()"> DONE </button></p>	
+</div>
+</section>
+<!--END CALCULATOR WINDOW  -->
 	
 	
 	<div id = "promptBox" class = "hidden">
@@ -1514,7 +1580,7 @@ answers.forEach((event) => {
 	<p></p>
 	<button id = actionCancel>CANCEL</button>
 	</div>
-	
+
 	<!--monthSelect for new budget sheet  section window-->
 		
 			
@@ -1530,6 +1596,27 @@ answers.forEach((event) => {
 			
 			</div><!--end monthSelect for new budget sheet window -->
 			
+	<!-- getImage window -->
+	<section id = "getImageWin" class ="hidden">
+	<h2 id="getImageWinTitle" style = "color:white">Select desired image from PHOTOS </h2>
+	  <p></p>
+	  <div id ="getImageFromFilesInstructions" class = "simulator">
+		  <p>TAP ON THE FILE SELECTOR BUTTON AND CHOOSE DESIRED IMAGE.</p>
+		  <p id = "getImageFilesInstructionsP" class = "yellowonly"></p>
+		  <button onclick = "closegetImageWin()" >CANCEL</button>
+		 </div>
+		<!-- <input type="file" id = "fileSelector" onchange="readFile(this)">  -->
+	<!-- ReferenceError: Can't find variable: selectStorageFile -->	 
+	<input type="file" id="filePicker" accept="image/*" style="display:none;">
+    <button id = "addToDBBtn" onclick="addToDB()" style = "display:none">Add to Database</button>
+    <div>
+        <img id="selectedImage" src="" alt="Selected Image" style="display:none;">
+    </div>
+
+	 </section>	 
+	<!-- End restore database from FILES window -->	
+	<!-- End of getImage window -->
+	
 	
 	<!-- editItemListWin -->
 	 <!--  <section id="editItemListWin" class="hidden">
@@ -1566,7 +1653,11 @@ answers.forEach((event) => {
     <footer>
       <p>Copyright DougieBase Inc.. A Progressive Web App. Written in JavaScript and jQuery</p>
     </footer>
-    
+    </body>
+   <!--  <script>
+    import * as Photos from 'Photos';
+//SyntaxError: Unexpected token '*'. import call expects one or two arguments.
+    </script> -->
      <script>
         let answers=document.querySelectorAll(".accordion");
         answers.forEach((event)=>{
@@ -1579,11 +1670,19 @@ answers.forEach((event) => {
                 }
             })
         })
-    </script>
-    
- <!--  </body>  --><!-- script above had to be before </body> to work !  -->
+   //<script>add</
+  let json = "";
+const cancelFromFileSelectionBtn = document.createElement('button');
+// restoreFromFilesWin.appendChild(cancelFromFileSelectionBtn);
+const continueFromFileSelectionBtn = document.createElement('button');//this btn is in HTML script
+//const cancelFromFileSelectionBtn = document.createElement('button');//in HTML SCRIPT
+  cancelFromFileSelectionBtn.textContent = "CANCEL";
+  restoreFromFilesWin.appendChild(cancelFromFileSelectionBtn);
+const fileData = document.querySelector('#fileData');
+const addToDBBtn = document.querySelector('#addToDBBtn');
+ //script above had to be before </body> to work !  -->
   
-  <script>
+
 	  
 	  
 	 
@@ -1681,26 +1780,98 @@ function displayXfieldEdits () {
 
   // Code above shows notes edits in real time
   
+  
+  
+
+  
  //added script for restore database
  //end added script for restore database 
   
-</script>  
+//<script>add</
 
-<script>
-let json = "";
-const cancelFromFileSelectionBtn = document.createElement('button');
-// restoreFromFilesWin.appendChild(cancelFromFileSelectionBtn);
-const continueFromFileSelectionBtn = document.createElement('button');//this btn is in HTML script
-//const cancelFromFileSelectionBtn = document.createElement('button');//in HTML SCRIPT
-  cancelFromFileSelectionBtn.textContent = "CANCEL";
-  restoreFromFilesWin.appendChild(cancelFromFileSelectionBtn);
-const fileData = document.querySelector('#fileData');
 
-function readFile(input) {
+
+// function readFile(input) {
+//   let file = input.files[0];
+// alert(`File name: ${file.name}`); // e.g my.png
+
+// let blobName = `${file.name}`;
+// //SyntaxError: Unexpected token '{'. Expected ';' after variable declaration.	
+
+
+//   let reader = new FileReader();
+  
+//   // if file.name contains IMAGE {
+//   if (blobName.includes("IMAGE")) {
+//  // SyntaxError: Unexpected token '{'. Expected ')' to end an 'if' condition.
+// //reader.readAsArrayBuffer();	
+// reader.readAsBinaryString();
+// alert(reader.readAsBinaryString());
+// } else {
+// 	reader.readAsText(file);
+// 	}
+
+// function readFile(input) {
+//   let file = input.files[0];
+//   alert("In function readFile");
+//   alert(`File name: ${file.name}`); // e.g my.png
+//   alert(file.name);
+//   //let blobName = stringify(file.name);
+//   //let blobName = JSON.stringify(file.name);
+//   let blobName = file.name;
+// //return;
+//   //let blobName = ${file.name};
+//   //let blobName = `${file.name}`;
+//   //let blobName = $(file.name);
+//   //SyntaxError: Unexpected token '{'. Expected ';' after variable declaration.
+//   //alert("file.name = ",`${file.name}`);
+//  // SyntaxError: Unexpected token '{'. Expected ')' to end an argument list.
+//   //alert("file.name = ",file.name);
+// //alert("blobName = ", blobName);
+// alert("blobName = ", blobName);
+//   let reader = new FileReader();
+
+//   if (file.name.includes("IMAGE")) {
+//     reader.readAsBinaryString(file);
+    
+//     //reader.readAsBinaryString(file);
+//     alert("file read successfully as binary string");
+//     // reader.onload = function () {
+//     //   // Handle the binary string data here
+//     //   alert("Image file read successfully as binary string.");
+//     // };
+//   } else {
+//  reader.readAsArrayBuffer(file)
+//    //reader.readAsText(file);
+//     // reader.onload = function () {
+//     //   // Handle the text data here
+//     //   alert("Text file read successfully.");
+//     // };
+//   }
+// //}
+//   reader.onload = function() {
+//    // alert(reader.result);
+//     console.log(reader.result)
+//    //fileData.textContent = reader.result; 
+//    json = reader.result;
+//    selectedFileData = reader.result;
+//   // alert("json = " + json);
+//  //  alert("selectedFileData = " + selectedFileData);
+//    // reader.close();//reader.close is not a function error
+//    file.close();
+//    reader.reset();
+//   };
+
+//   reader.onerror = function() {
+//     console.log(reader.error);
+//   };
+  
+  
+  function readFile(input) {
   let file = input.files[0];
-alert(`File name: ${file.name}`); // e.g my.png
+  alert(`File name: ${file.name}`); // e.g my.png
   let reader = new FileReader();
-
+  
   reader.readAsText(file);
 
   reader.onload = function() {
@@ -1714,15 +1885,16 @@ alert(`File name: ${file.name}`); // e.g my.png
    // reader.close();//reader.close is not a function error
    file.close();
    reader.reset();
-  };
+  };//end reader.onload
 
   reader.onerror = function() {
     console.log(reader.error);
-  };
+  };//end reader.onerror
   
-  // const continueFromFileSelectionBtn = document.createElement('button');
+  // const continueFromFileSelectionBtn = document.createElement('button');  
+  
   continueFromFileSelectionBtn.textContent = "CONTINUE";
-  continueFromFileSelectionBtn.setAttribute('class','borderBlink');
+ continueFromFileSelectionBtn.setAttribute('class','borderBlink');
 restoreFromFilesWin.appendChild(continueFromFileSelectionBtn);
 
 continueFromFileSelectionBtn.onclick = function () {
@@ -1767,8 +1939,126 @@ restoreFromFilesWin.setAttribute('class','hidden');
 
 }//end function readFile
 
-</script> 
-</body><!-- I moved </body> to here from commented out above June27 2023 -->
+//<script>add</
+
+//CODE FOR GETIMAGE
+function openImagePicker(selectedImage) {
+//SyntaxError: Unexpected token '.'. Expected a ')' or a ',' after a parameter declaration.
+getImageWin.setAttribute('class','showing')
+            const filePicker = document.getElementById('filePicker');
+            var img = document.createElement('img');//from addToDB
+            var td = tableArray[0][8];
+//td.appendChild(img);
+           // var td = document.getElementById('tableArray').rows[0].cells[8];//from addToDB
+          // filePicker.click();
+          filePicker.style.display = "unset"
+        
+        filePicker.addEventListener('change', function() {
+            const selectedImage = document.getElementById('selectedImage');
+            const file = filePicker.files[0];
+            const reader = new FileReader();
+
+            reader.onloadend = function() {
+                selectedImage.src = reader.result;
+                img.src = selectedImage.src;//from addToDB
+                tdCellData = selectedImage.src;
+                selectedImage.style.display = 'block';
+            }
+
+            if (file) {
+                reader.readAsDataURL(file);
+                addToDBBtn.style.display = "unset";
+            }
+        });
+       td.appendChild(img);
+       alert("img = " + img)
+       alert("img.src = " + img.src);
+        tableArray[0][8] = img.src;
+        alert("tableArray[0][8] = " + tableArray[0][8])
+        if(fetchingImage) {
+	      addToDB(); 
+        }//end if fetchingImage
+        }//end function openFilePicker
+
+function closegetImageWin () {getImageWin.setAttribute('class','hidden');}//end closegetImageWin
+
+function addToDB (selectedImage) {
+	alert("code for adding image to database goes here");
+	alert("tdCellData = ",tdCellData);
+	//targetTdCell = tdCellData;//made global variables code to recognize IMAGE as a field title and when editing the td cell wil call openImagePicker and put the tdCellData into the targetTdCell..see editTDInputBtn.onclick function in displayTable line 12397 and line 12468
+	//return tdCellData;
+	
+//FROM BING 2
+// var img = document.createElement('img');
+// //img.src = 'path/to/image.jpg';
+// img.src = selectedImage.src;
+// var td = document.getElementById('tableArray').rows[0].cells[8];
+// td.appendChild(img);
+}//end addToDB
+//FROM BING 2	
+	
+	
+	
+	//FROM BING
+// 	var fetchOptions = new PHFetchOptions();
+// fetchOptions.includeAssetSourceTypes = PHAssetSourceType.UserLibrary;
+// var fetchResult = PHAsset.fetchAssetsWithMediaTypeOptions(PHAssetMediaType.Image, fetchOptions);
+// if (fetchResult != null && fetchResult.count() > 0) {
+//     var asset = fetchResult.firstObject();
+//     var options = new PHImageRequestOptions();
+//     options.deliveryMode = PHImageRequestOptionsDeliveryMode.HighQualityFormat;
+//     options.networkAccessAllowed = true;
+//     options.progressHandler = function(progress) {
+//         console.log("progress: " + progress);
+//     };
+//     PHImageManager.defaultManager().requestImageDataForAssetOptionsResultHandler(asset, options, function(imageData, dataUTI, orientation, info) {
+//         if (imageData != null) {
+//             var url = URL.createObjectURL(new Blob([imageData], {type: dataUTI}));
+//             console.log(url);
+//         }
+//     });
+// }
+
+// 	//FROM BING
+// }//end function addToDB
+
+//FROM BING
+
+//these functions below are for in app calculator if placed in external script they are not recognized why??
+//calculatorResult.setAttribute('class','display-box');
+//This function clear all the values
+function clearCalculatorScreen () {
+// alert("Clear btn tapped!);")
+    document.getElementById("result").value = "";
+}
+
+
+// This function display values
+function displayCalculator (value) {
+    document.getElementById("result").value += value;
+}
+
+// This function evaluates the expression and return result
+function inAppCalculate () {
+    var p = document.getElementById("result").value;
+    var q = eval(p);
+    document.getElementById("result").value = q;
+}
+
+function showDone () {
+alert("calculator button tapped");
+calculatorWin.style.display = "none"; 
+	
+}
+
+function showCalculator () {
+calculatorWin.style.display = "unset"; 	
+}
+//these functions above are for in app calculator
+
+</script>
+
+<!-- </body> --><!-- I moved </body> to here from commented out above June27 2023 -->
 <!-- <script>
 function showFile(input) {
   let file = input.files[0];
