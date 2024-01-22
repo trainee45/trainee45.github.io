@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>index.html</title>
      <style>
-      /*This CSS for FAQ WINDOW and CALCULATOR WINDOW only works if placed here. Does not work if put in external css file in DougieBase why?*/
+      /*Does this edit in WebForge copy to original file in FILES? YES IT DOES! Caution!!This CSS for FAQ WINDOW and CALCULATOR WINDOW only works if placed here. Does not work if put in external css file in DougieBase why?*/
         body{
             
             background-color: rgb(153, 218, 196);
@@ -59,23 +59,24 @@
          
 	<meta name="viewport" content="width=device-width, initial-scale=1">
    <!-- <link rel="stylesheet" type="text/css" href="DougieBaseVer37.css">-->
-	<link rel="stylesheet" type="text/css" media="screen and (min-width: 480px)" href="DougieBaseVer50.css"/>
+	<link rel="stylesheet" type="text/css" media="screen and (min-width: 480px)" href="DougieBaseVer51.css"/>
 	
-	<link rel="stylesheet" type="text/css" media="screen and (max-width: 480px)" href="smallDeviceDougieBaseVer50.css" />
+	<link rel="stylesheet" type="text/css" media="screen and (max-width: 480px)" href="smallDeviceDougieBaseVer51.css" />
 	
 	
 	<link rel="manifest" href="trainsDBTableNotes.webmanifest">
 
 
-<!--Nov 14 edited DougieBase SAVE to FILES shortcut and published to DougieBase.weebly.com site. NOTE I HAD TO DO THIS USING THE WEEBLY WEB SITE ON SAFARI BECAUSR THE APP CRASHES WHEN YOU SWITCH SITES! removed 32.25 from Special Purchase of spreadsheet template Nov 3 2023 removed   from Special Purchase Nov 3 2023 from rewriteloadImageindex.html. Allows storing of image url in field labelled IMAGE . Next update want to open image in its own image window. This version published Aug 21 2023. loadImageindex.html SEE CODE SECTIONS editTDInputBtn.onclick and  //PUT CODE HERE BELOW TO ATTACH IMAGE TO TD CELL IF FIELD HEADER =IMAGE AND TD TEXT CONTENT CONTAINS URL from addingCalculatorindex.html DougieBaseVer50sw53 (as of July28 2023 NOT YET PUBLISHED)…WORKING ON : adding calculator..Latest version for publishing THIS VERSION PUBLISHED JULY21 2023 sw 52 July12 sw51 July 1 2023. Added scroll arrow and hid file list window in backup of create new db (copied to github) This version, July14-15, not yet published, fixed CSS of createNewDBWin, has a new FAQ. Added some more FAQs that reflect changes made to DougieBase SAVE to FILES adding timestamp to filename, and correcting alert 'Copying to Clipboard' (July 6 2023) (July2} April 8 2023 index.html Latest version for publishing Mar 25 2023 from removedAlertsscrollRESTOREDougieBaseVer47 scrollRESTOREDougieBaseVer47.js from TEMPLATEindex.html restore From Fileindex.html  Date Sept25 2022 Restore from FILES works! 	Date:Nov21 Nov14 landscape table and search and preview edit Nov4 2021 added easter egg and save settings Oct 31 2021. Ver 35.3removed access to word documentation help manual fixEditDougieBaseVer35.html USE THIS VERSION AS OF Sept 29 2021 2021 This version has been installed on github pages ! Added links to documentation docx and pdf<script src="fileNamesTableNotesVer21.js" defer type="text/javascript"></script> Added p info statement to Create Table window -->
+<!--index.html Current published as of Jan22 2024 added EXPDougieBaseSaveToFILES.shortcut Jan17 2024 Current as of Jan7 2024..Jan19 testing smoothBkUp works so far! updated FAQ for 'What if shortcut prompts disappear' Jan17 2024 and added code to HTML input to maintain keyboard ..(see keyboardindex.html .. Have not yet as of Jan17 2024 written code to allow more text in a Cost to date =$ cell..ALSO NEED TO ADD CODE TO STREAMLINE DATABASE FILENAME ENTRY IN THE BACKUP DATABASE SECTION. See code in Play With folder to do this. The shortcut is written (called EXPDougieBase Save to Files) ..  Nov 14 edited DougieBase SAVE to FILES shortcut and published to DougieBase.weebly.com site. NOTE I HAD TO DO THIS USING THE WEEBLY WEB SITE ON SAFARI BECAUSR THE APP CRASHES WHEN YOU SWITCH SITES! removed 32.25 from Special Purchase of spreadsheet template Nov 3 2023 from rewriteloadImageindex.html. Allows storing of image url in field labelled IMAGE . Next update want to open image in its own image window. This version published Aug 21 2023. loadImageindex.html SEE CODE SECTIONS editTDInputBtn.onclick and  //PUT CODE HERE BELOW TO ATTACH IMAGE TO TD CELL IF FIELD HEADER =IMAGE AND TD TEXT CONTENT CONTAINS URL from addingCalculatorindex.html DougieBaseVer50sw53 (as of July28 2023 NOT YET PUBLISHED)…WORKING ON : adding calculator..Latest version for publishing THIS VERSION PUBLISHED JULY21 2023 sw 52 July12 sw51 July 1 2023. Added scroll arrow and hid file list window in backup of create new db (copied to github) This version, July14-15, not yet published, fixed CSS of createNewDBWin, has a new FAQ. Added some more FAQs that reflect changes made to DougieBase SAVE to FILES adding timestamp to filename, and correcting alert 'Copying to Clipboard' (July 6 2023) (July2} April 8 2023 index.html Latest version for publishing Mar 25 2023 from removedAlertsscrollRESTOREDougieBaseVer47 scrollRESTOREDougieBaseVer47.js from TEMPLATEindex.html restore From Fileindex.html  Date Sept25 2022 Restore from FILES works! 	Date:Nov21 Nov14 landscape table and search and preview edit Nov4 2021 added easter egg and save settings Oct 31 2021. Ver 35.3removed access to word documentation help manual fixEditDougieBaseVer35.html USE THIS VERSION AS OF Sept 29 2021 2021 This version has been installed on github pages ! Added links to documentation docx and pdf<script src="fileNamesTableNotesVer21.js" defer type="text/javascript"></script> Added p info statement to Create Table window -->
 
  	
 
  <script src="jquery-3.6.0.min.js"></script>
 
 
-    <script src="DougieBaseVer50.js" defer></script>
+    <script src="DougieBaseVer51.js" defer></script>
     
+ <!-- Is the code line below needed?? Maybe should remove?    -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script> 
     
    <!--  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.9/dist/sweetalert2.all.min.js"></script>
@@ -229,7 +230,7 @@ color: black;
 
   <h3>The iOS Console Simulator</h3>
       <label for="jscode">Enter code:</label>
-      <input type="text" id="jscode" value="alert('Hello');">
+      <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  type="text" id="jscode" value="alert('Hello');">
       <button id ="submitCode">Submit code</button>
 	   <button class = "clearInput" id ="clearInputBtn">Clear</button>
 	   <button id ="clearAllBtn">Clear All Data</button>
@@ -243,7 +244,7 @@ color: black;
 	
 	  
     <header>
-      <h1 id ="versionHeader">DougieBase Version 50sw53</h1>
+      <h1 id ="versionHeader">DougieBase Version 51sw54</h1>
     </header>
 	<p><button id = "newSW" style="display:none">New Service Worker</button><button id = "skip" style ="display:none">SKIP</button></p>
 <div id = "scrolling">
@@ -300,7 +301,7 @@ color: black;
 	<h2 id="">Create a NEW Database File </h2>
 	  <p></p>
 		  <label for="newDBTitle" class="edBan">Enter Name of New DataBase: </label>
-		  <input id="newDBTitle" type="text" name="newDBTitle" value="" class="edBan" placeholder = "Enter here !">
+		  <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  id="newDBTitle" type="text" name="newDBTitle" value="" class="edBan" placeholder = "Enter here !">
 		    <button id="submitName" class ="attentionBtn">Start Creating new DataBase</button>
 			<button id = "cancelNewDBBtn">CANCEL</button>
 			<p></p>
@@ -457,7 +458,7 @@ color: black;
 			<li>Tap FINISHED when done!</li>
 		</ul> 
 	</div>  -->
-	<!-- 	 <input id = "restoreDBNameInput" type="text" name="restoreDBNameInput" value="" placeholder = "Enter DataBaseName">
+	<!-- 	 <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  id = "restoreDBNameInput" type="text" name="restoreDBNameInput" value="" placeholder = "Enter DataBaseName">
 		 <p></p>
 		  <label for ="restoreDBNameBtn">Type a name for your restored database in the text input above.</label>
 		  <button id= "restoreDBNameBtn" name = "restoreDBNameBtn" class = "attentionBtn">Enter DataBaseName</button> -->
@@ -503,9 +504,9 @@ color: black;
 		  <p>Tap on the desired Backup File to restore in DougieBase.</p>
 		  <p id = "restoreFrom FilesInstructionsP" class = "yellowonly"></p>
 		 </div>
-		<!-- <input type="file" id = "fileSelector" onchange="readFile(this)">  -->
+		<!-- <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  type="file" id = "fileSelector" onchange="readFile(this)">  -->
 	<!-- ReferenceError: Can't find variable: selectStorageFile -->	 
-	<input type="file" onchange="readFile(this)"> 
+	<input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  type="file" onchange="readFile(this)"> 
 	<p></p>
 	<p>Tap the IMAGE button to select a photo or image</p>
 	<button id = "getImageBtn" onclick = "openImagePicker()"> IMAGE </button>
@@ -527,7 +528,7 @@ color: black;
           <div>
 			  <!-- the record title or first field in the table -->
             <label for="title">Record title</label>
-            <input id="title" type="text" required>
+            <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  id="title" type="text" required>
           </div>
 		   <p id = "tableInstruction" class = "simulator">For the first and second data fields, everything entered before a colon (:) becomes the default TABLE entry for the static fields.</p>
 		   <div>
@@ -538,7 +539,7 @@ color: black;
           <div>
             <label for="body">Note text</label>
 			<!-- first primary data field ..i.e. Location field 3 in table -->
-            <input id="body" type="text" required>
+            <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  id="body" type="text" required>
           </div>	 
 		
 	    <p id="instructionP"></p>
@@ -555,12 +556,12 @@ color: black;
 		  <label for="changes">Type changes into the Input Window. To preserve any previous text entered, first use copy/paste to capture the original data.body text as viewed above. Once the cursor is in either input window, the original text above can't be copied using copy/paste. If previously edited, the original text of the most recent edit, appears as a default value in the Input Window. This will allow retrieval of this text if required. Tap the Clear Input Window buttons to clear!</label>
 		  <p></p>
 		  <label for="editTitle" class="yellowonly">Edit Title: </label><!--was edBan -->
-		  <input id="editTitle" type="text" name="editTitle" value="" class="yellowonly">
+		  <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  id="editTitle" type="text" name="editTitle" value="" class="yellowonly">
 		    <button id="clearTitle">Clear Title</button>
 			<p></p>
 		 
 		  <label for="changes" class="yellowonly">Edit record contents: </label>
-		  <input id="changes" type="text" name="changes" value="" class="yellowonly" oninput = "displayEdits()" placeholder = "Tap here !">
+		  <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  id="changes" type="text" name="changes" value="" class="yellowonly" oninput = "displayEdits()" placeholder = "Tap here !">
 		   <button id="clear">Clear Input Window </button>
 		  <p></p>
 		  
@@ -579,7 +580,7 @@ color: black;
 		  <label for="changes">Type changes into the Input Window. To preserve any previous text entered, first use copy/paste to capture the original data.body text as viewed above. Once the cursor is in either input window, the original text above can't be copied using copy/paste. If previously edited, the original text of the most recent edit, appears as a default value in the Input Window. This will allow retrieval of this text if required. Tap the Clear Input Window buttons to clear!</label>
 		  <p></p>	  
 		 <label for="editNewFieldChanges" class="yellowonly">Edit record contents: </label>
-		  <input id="editNewFieldChanges" type="text" name="editNewFieldChanges" value="" class="yellowonly" oninput = "displayXfieldEdits()" placeholder = "Tap here !">
+		  <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  id="editNewFieldChanges" type="text" name="editNewFieldChanges" value="" class="yellowonly" oninput = "displayXfieldEdits()" placeholder = "Tap here !">
 		   <button id="clearEditNewField">Clear Input Window </button>
 		   <p></p>  
 		     <button id="commit">Commit changes</button> 
@@ -645,7 +646,7 @@ color: black;
 	
 		  <p>Enter text of search phrase into the search input element. Tap the record in the Found Record List to view its notes.</p>
 		  <label for="searchTitle" class="edBan">Search Phrase: </label>
-		 <input id = "inputSearchRecord" name = "searchTitle"
+		 <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  id = "inputSearchRecord" name = "searchTitle"
 		  type="search" enterkeyhint= "SEARCH" class = "custom"
 		  placeholder="search..">
 		  <button id="searchForRecord">FIND Record</button>
@@ -730,7 +731,7 @@ color: black;
 		<!-- caseSensitive switch  -->
 		  <div id = "caseSwitch">
 			 
- 			 <input type="range" id="caseSensitive" name="case"
+ 			 <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  type="range" id="caseSensitive" name="case"
          min="0" max="1" step = 1 value = "0">
   			<label for="case">SEARCH PHRASE: Case Sensitive?</label>
  		 <p><span id ="no">NO</span> .................. <span id ="yes">YES</span></p>
@@ -738,7 +739,7 @@ color: black;
 		 
 	<!-- return record if contains sub string -->
 		 
-		  <input type="range" id="includesSubstring" name="includesSubstring"
+		  <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  type="range" id="includesSubstring" name="includesSubstring"
          min="0" max="1" step = 1 value = "0">
   			<label for="includesSubstring">SPECIFIC or just CONTAINS ?</label>
  <p><span id ="noSS">SPECIFIC</span> ..... <span id ="yesSS">CONTAINS</span></p>
@@ -756,7 +757,7 @@ color: black;
 		<div id="reNameWin" class="hidden"><!--start rename window-->
 			<h3>The current title of this database is: <scan id="dbTitle"></scan></h3>
 			<label for="newTitle">Enter new NAME here: </label>
-			<input type="text" name="newTitle" id="newTitle" value="" required/>
+			<input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  type="text" name="newTitle" id="newTitle" value="" required/>
 			
 			</div><!--end rename window -->
 			
@@ -765,7 +766,7 @@ color: black;
 			<div id="reNameDBWin" class="hidden"><!--start rename window-->
 			<h3>The current name of this database is: <scan id="dbFileName"></scan></h3>
 			<label for="newDBFileName">Enter new DataBase name here: </label>
-			<input type="text" name="newDBFileName" id="newDBFileName" value="" required/>
+			<input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  type="text" name="newDBFileName" id="newDBFileName" value="" required/>
 			
 			</div><!--end renameDB window -->
 			
@@ -773,11 +774,11 @@ color: black;
 			<div id="newFieldWin" class="hidden">
 			<h3>Relabel or Enter Name/Label for the record's secondary NOTES data (fixed) field. This label is used for all records until Relabelled here in Preferences. Note: You must tap Reset Display Data to view and save the title change.</h3>
 			<label for="newFieldName">Enter Title for NOTES Second Data Field: </label>
-			<input type="text" name="newFieldName" id="newFieldName" value="" required/>
+			<input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  type="text" name="newFieldName" id="newFieldName" value="" required/>
 			<p id="confirm"></p>
 			<!--
 			<label for="newFieldData">Enter new Field data here :  </label>
-			<input type="text" name="newFieldData" id="newFieldData" value="" required/>
+			<input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  type="text" name="newFieldData" id="newFieldData" value="" required/>
 		-->
 			<p id="resetAddField"></p>
 			
@@ -807,7 +808,7 @@ color: black;
 
 	<div class = "titleBanner">
 	<p>Choose the colour for the Note frame:</p>
-    <input type="color" id="noteFrame" style = "text-align: left" name="noteFrame" value="#e66465">
+    <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  type="color" id="noteFrame" style = "text-align: left" name="noteFrame" value="#e66465">
     <label for="noteFrame">Note Frame</label>
 	<!-- In js noteListItemColour = noteFrame.value -->
 	</div>
@@ -816,7 +817,7 @@ color: black;
 
 	<div class = "titleBanner">
 	<p>Choose the colour for the Note's Record Title:</p>
-    <input type="color" id="noteTitle" style = "text-align: left" name="noteTitle"
+    <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  type="color" id="noteTitle" style = "text-align: left" name="noteTitle"
             value="#f6b73c">
     <label for="noteTitle">Note Title</label>
 	<!-- In js noteTitleColour = noteTitleColour.value -->
@@ -825,7 +826,7 @@ color: black;
 
 	<div class = "titleBanner">
 	<p>Choose the colour for Note's First Data Field:</p>
-    <input type="color" id="firstDataField" style = "text-align: left" name="firstDataField"
+    <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  type="color" id="firstDataField" style = "text-align: left" name="firstDataField"
             value="#f6b73c">
     <label for="firstDataField">Notes First Data Field</label>
 	<!-- In js bodyColour= bodyColour.value -->
@@ -834,7 +835,7 @@ color: black;
 
 	<div class = "titleBanner">
 	<p>Choose the colour for the Note's Second Data Field:</p>
-    <input type="color" id="secondDataField" style = "text-align: left" name="secondDataField"
+    <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  type="color" id="secondDataField" style = "text-align: left" name="secondDataField"
             value="#f6b73c">
     <label for="secondDataField">Notes Second Data Field</label>
 	</div>
@@ -842,7 +843,7 @@ color: black;
 	
 	<div class = "titleBanner">
 	<p>Choose the text colour for the Note's Font:</p>
-    <input type="color" id="notesFontColor" style = "text-align: left" name="notesFontColor"
+    <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  type="color" id="notesFontColor" style = "text-align: left" name="notesFontColor"
             value="black">
 			<label for="notesFontColor">Text Color of Notes FONT</label>
 	</div>
@@ -869,9 +870,9 @@ color: black;
 				<p class = "highlight" id = "versionInfoP">Revisions and version numbers.  Scroll up     ⬆️ </p>
 		   <ul>
 			   <li>Obtain an estimate of how much memory is available in the database storage if your Browser accomodates this feature.</li>
-			   <li>This is Version 50, service worker 53</li> 
+			   <li>This is Version 51, service worker 54</li> 
 			   <li>Search references the first title field, and all other fields since version 33.1.</li>
-			   <li>Last revision: August 21 2023. For information about latest changes tap the 'What's New' button.</li>
+			   <li>Last revision: January 22 2024. For information about latest changes tap the 'What's New' button.</li>
 			   <li><span style = "text-decoration: underline">A note about Tables:</span><br> 
 			  <!--  <details> <summary>Click to reveal more information about using TABLES in DougieBase </summary> -->
 <details> <summary>Click to reveal more information about using TABLES in DougieBase </summary>
@@ -926,7 +927,7 @@ Any table created using the ADD CONTACTS/RECORDS btn from the Main Menu will hav
 		<p>The documentation help manual is available as a PDF file. Tap on the links below to download the DougieBase Manual - Chapters 1, 2, 3, and 4, and the DougieBase SAVE to FILES iOS shortcut.
 		The files can be read online OR download them to your device.</p> 
 		<p>The DougieBase SAVE to FILES (iOS shortcut) requires there to be a folder labelled DougieBaseBKUPS in your iCloud Drive.</p>
-		<p>Tap the DONE button to return to DougieBase.
+		<p>Tap the DONE button (Scroll down ⬇️ if not on screen) to return to DougieBase.
 		</p>
 	<!-- 	<p>Download Chapter 1 WORD doc</p><a href="https://github.com/trainee45/trainee45.github.io/blob/master/DougieBase%20Chapter%201.docx" download>Download DougieBase Manual Chapter 1</a>
 		<p></p>
@@ -949,6 +950,11 @@ Any table created using the ADD CONTACTS/RECORDS btn from the Main Menu will hav
 		<p><a href="https://dougiebase.weebly.com/uploads/6/6/1/0/66103197/dougiebase_save_to_files.shortcut" download>Download DougieBase SAVE to FILES.shortcut</a></p>
 		<!-- https://github.com/trainee45/trainee45.github.io/blob/master/DougieBase%20SAVE%20to%20FILES.shortcut -->
 		<p></p>
+		<p>Download EXPDougieBase SAVE to FILES 1.shortcut</p>
+		<p><a href="https://dougiebase.weebly.com/uploads/6/6/1/0/66103197/expdougiebase_save_to_files_1.shortcut" download>EXPDougieBase SAVE to FILES 1.shortcut</a></p>
+		<!-- https://github.com/trainee45/trainee45.github.io/blob/master/DougieBase%20SAVE%20to%20FILES.shortcut -->
+		<p></p>
+		
 		
 	</div> 
 	
@@ -987,16 +993,16 @@ Any table created using the ADD CONTACTS/RECORDS btn from the Main Menu will hav
 	<p id="newOrEdit">Tap NEW to create a new Table or tap EDIT to alter an existing one.⬇️<br></p>
 	<p>Currently the table contains 4 fixed fields: Title of Record, Date Created, Primary Data, Secondary Data. Enter the number of additional fields required. After entering the titles for the first three fixed fields, press the SUBMIT button, and then enter the titles for the dynamic fields below.</p>
 	<label for="additionalFields">Current # of dynamic fields: </label>
-	<input id="additionalFields" type="number" name="additionalFields" class ="edBan"/><br>
+	<input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  id="additionalFields" type="number" name="additionalFields" class ="edBan"/><br>
 	<p><span style = "color: red">THE FIXED FIELDS:</span></p>
 	<label for="headNameFirstColumn">Enter First Column Heading/Title for record list: </label>
-	<input type="text" id="headNameFirstColumn" name="headNameFirstColumn" value="" />
+	<input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  type="text" id="headNameFirstColumn" name="headNameFirstColumn" value="" />
 	<br>
 	<label for="nameDataField1">Enter 3rd Field Name :</label>
-	<input id="nameDataField1" type="text" name="nameDataField1"/>
+	<input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  id="nameDataField1" type="text" name="nameDataField1"/>
 	<br>
 	<label for="nameDataField2">Enter 4th Field Name :</label>
-	<input id="nameDataField2" type="text" name="nameDataField2"/>
+	<input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  id="nameDataField2" type="text" name="nameDataField2"/>
 	<br>
 	
 	<button id="submitBtn">Submit</button>
@@ -1033,7 +1039,7 @@ Any table created using the ADD CONTACTS/RECORDS btn from the Main Menu will hav
 	<div id = "fieldHeaders"></div>
 	
 		<label for="myFields">Choose a field to delete from this list:</label>
-<input list="fieldList" id="myFields" name="myFields" />
+<input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  list="fieldList" id="myFields" name="myFields" />
 <button id = submitFieldSelection>SUBMIT</button>
 <datalist id = "fieldList">
  <!--  <option value="tableTitle[0]"> -->
@@ -1107,7 +1113,7 @@ Any table created using the ADD CONTACTS/RECORDS btn from the Main Menu will hav
 	
 	<p id = "tdEditTrigger" style="color: blue">To edit date or other table  cell contents 'Double Tap' the cell to initiate edit mode. This is the default trigger choice. To change edit trigger to 'Select-Copy' go to Preferences.<br>FIXED fields = columns 1-4; DYNAMIC fields = columns 5 and up. <br>Use keywords TOTAL AVERAGE COST in field title (Dynamic fields only) for added functionality! (COST  needs to be used with TOTAL or AVERAGE). Use TELEPHONE (in 3rd FIXED field only) or use EMAIL (in 4th FIXED field only) for activating  telephone calling or email addresses. TELEPHONE and EMAIL can also be used in ANY DYNAMIC field. The sumAcross keyword placed in the last column of the table will SUM all numbers (100 but NOT 100% or 100!) in that record across the table. Avaiable tags to flash filename are: -tag,*,!,✅,♥️,🔴,❗️. Use 'IMAGE' as field label to store images in a column. Currently some browsers will not recognize emoji's. See documentation, or ABOUT section.</p>
 	<p id = "totalInfoP" style = "display:none">Double Tap FIELD HEADER containing TELEPHONE EMAIL TOTAL COST or AVERAGE to obtain result!</p>
-	<p id = "sumAcrossInfoP" style = "display:none">Placing 'Cost to date = $' or 'Total to date = ' in first data section of NOTES provides automatic update as sum across data is edited in table.</p>
+	<p id = "sumAcrossInfoP" style = "display:none">Placing 'Cost to date = $' or 'Total to date = ' in first data section of NOTES provides automatic update as sum across data is edited in table. Currently a field containing 'Cost to date = $' can have no more data added to it, unless you erase the 'Cost to date = $' statement. </p>
 	<p></p>
 	<button id="homeScreenBtn2">RETURN to Home Screen</button>
 	<button id ="saveTableBtn2">SAVE TABLE</button>
@@ -1184,8 +1190,8 @@ Any table created using the ADD CONTACTS/RECORDS btn from the Main Menu will hav
 		    <div class = "edWinScroll" style="height: 300px">
 				<p class = "highlight" id = "newVersionInfoP">Revisions and version numbers.  Scroll up     ⬆️ </p>
 		   <ul>
-			   <li>Last revision: August 21 2023</li>
-			   <li>This is Version 50, service worker 53</li> 
+			   <li>Last revision: January 22 2024</li>
+			   <li>This is Version 51, service worker 54</li> 
 			   <li>Improved workflow of creating a new database, including online prompts and flashing 'Do this next indicators'</li>
 			   
 			   <li>Now compatible with 'Dark Mode'.</li>
@@ -1222,6 +1228,7 @@ Any table created using the ADD CONTACTS/RECORDS btn from the Main Menu will hav
 	       <li>Added FAQ (Frequently Asked Questions) section .</li>
 	        <li>Added an in-app CALCULATOR .</li>
 	        <li>Using IMAGE as a field name label allows storage of a URL link to an image. Images can only be stored in table columns that have (or contain) the heading IMAGE. See the FAQ 'How do I best add an image to a database in a specified IMAGE field' in the FAQ section for more information.</li>
+	      <li>Improved workflow of naming database when backing up.</li>   
 	     <li>Bug fixes and stability improvements.</li>
 			   
 		   </ul>
@@ -1234,7 +1241,7 @@ Any table created using the ADD CONTACTS/RECORDS btn from the Main Menu will hav
 			<div id="newTableNameWin" class="hidden"><!--start newTableName window-->
 			<h3>Creating the new table for database : <scan id="newTableTitle"></scan></h3>
 			<label for="newName">Enter new table name here: </label>
-			<input type="text" name="newName" id="newName" value="" placeholder="New table name" required/>
+			<input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  type="text" name="newName" id="newName" value="" placeholder="New table name" required/>
 			<button id = "newTableNameSubmitBtn">ENTER New Table Name</button>
 			<p id = "showNewTableName" class = "simulator" style = "font-weight:bold"></p>
 			<button id = "newTableNameCancelBtn">CANCEL</button>
@@ -1251,22 +1258,22 @@ Any table created using the ADD CONTACTS/RECORDS btn from the Main Menu will hav
           <div>
 			  <!-- Contacts Name, Telephone, Email address, street address -->
             <label id = "firstField" for="contactsName">Name of Contact: </label>
-            <input id="contactsName" type="text" required>
+            <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  id="contactsName" type="text" required>
           </div>
 		   <div>
 			  <!-- Contacts Name, Telephone, Email address, street address -->
             <label id = "thirdField" for="telephone">Telephone number: </label>
-            <input id="telephone" type="phone number" required>
+            <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  id="telephone" type="phone number" required>
 		</div>
 		 <div>
 			  <!-- Contacts Name, Telephone, Email address, street address -->
             <label id = "fourthField" for="contactsEmail">Email Address: </label>
-            <input id="contactsEmail" type="email" required>
+            <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  id="contactsEmail" type="email" required>
 		</div>
 		 <div>
 			  <!-- Contacts Name, Telephone, Email address, street address -->
             <label id = "fifthField" for="contactsAddress">Address: </label>
-            <input id="contactsAddress" type="text">
+            <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  id="contactsAddress" type="text">
 		</div>
 		   <p id = "manualContactsInstruction" class = "simulator">Enter data into input fields. Leave blank if unknown. Tap SUBMIT button below for each contact entry.</p>
 		   <div>
@@ -1293,30 +1300,30 @@ Any table created using the ADD CONTACTS/RECORDS btn from the Main Menu will hav
           <div>
 			  <!-- Contacts Name, Telephone, Email address, street address -->
             <label id = "firstFieldNT" for="firstFieldNameNT">First Field Name: </label>
-            <input id="firstFieldNameNT" type="text" name ="firstFieldNameNT" value = "" required placeholder = "Contacts Name">
+            <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  id="firstFieldNameNT" type="text" name ="firstFieldNameNT" value = "" required placeholder = "Contacts Name">
            <!--  <button id ="one">ENTER</button> -->
           </div>
 		   <div>
 			  <!-- Contacts Name, Telephone, Email address, street address -->
             <label for="secondFieldNameNT">Second Field Name: </label>
-            <input id="secondFieldNameNT" name = "secondFieldNameNT" type="text" placeholder = "DATE" required>
+            <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  id="secondFieldNameNT" name = "secondFieldNameNT" type="text" placeholder = "DATE" required>
             <!--  <button id ="two">ENTER</button> -->
 		</div>
 		 <div>
 			  <!-- Contacts Name, Telephone, Email address, street address -->
             <label for="thirdFieldNameNT">Third Field Name: </label>
-            <input id="thirdFieldNameNT" name = "thirdFieldNameNT" type="text" placeholder = "Telephone" required>
+            <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  id="thirdFieldNameNT" name = "thirdFieldNameNT" type="text" placeholder = "Telephone" required>
             <!--  <button id ="three">ENTER</button> -->
 		</div>
 		 <div>
 			  <!-- Contacts Name, Telephone, Email address, street address -->
             <label for="fourthFieldNameNT">Fourth Field Name: </label>
-            <input id="fourthFieldNameNT" name = "fourthFieldNameNT" type="text" placeholder = "EMAIL">
+            <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  id="fourthFieldNameNT" name = "fourthFieldNameNT" type="text" placeholder = "EMAIL">
              <!-- <button id ="four">ENTER</button> -->
            </div>
 		 <div>
               <label id = "fieldFiveNameLabel" for="fithFieldNameNT">Fifth Field Name: </label>
-            <input id="fithFieldNameNT" name = "fithFieldNameNT" type="text" placeholder = "ADDRESS">
+            <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  id="fithFieldNameNT" name = "fithFieldNameNT" type="text" placeholder = "ADDRESS">
             <!--  <button id ="five">ENTER</button> -->
 		</div>
 		 <p id = "editNewFieldNamesInstruction" class = "simulator">Enter name of each field into the input elements. Tap SUBMIT button below when finished with entries.</p>
@@ -1338,7 +1345,8 @@ Any table created using the ADD CONTACTS/RECORDS btn from the Main Menu will hav
 	 <h2 style="color:green; text-align:center">
     DougieBase FAQ
   </h2>
-<p><button id = "doneFAQ"> DONE </button></p>
+<button id = "doneFAQ"> DONE </button>
+<p style="color:green; text-align:center">  Tap item to toggle information on or off </p>
   <div class="layout">
 <div class="accordion">
             <div class="accordion__question">
@@ -1365,7 +1373,7 @@ To SEND a database file via iMsg:
 Open your FILES App in iCloudDrive/DougieBaseBKUPS, and tap on the database file you wish to send via iMsg. In this case we will use the Victoria Restaurants database. Tap on the option to open the native Action Sharesheet, and choose the iMsg icon/action. Enter the iMsg address of person you are sending the file too.
 <br><br>
 To RECEIVE a database file via iMsg:<br>
-To receive the database file, open iMsg at the received message, and tap on the file attachment icon in the message, tap on the ACTION SHARESHEET icon, and choose to <mark>open the file in your FILES app in the iCloudDrive/DougieBaseBKUPS folder</mark>. Now you can open your DougieBase app and choose RESTORE from Backup in the Current Database File Names window, and open your iCloudDrive/DougieBaseBKUPS folder and select the Victoria Restaurants database file.</p>
+To receive the database file, open iMsg at the received message, and tap on the file attachment icon in the message, tap on the ACTION SHARESHEET icon,<mark> and choose to open the file in your FILES app in the iCloudDrive/DougieBaseBKUPS folder</mark>. Now you can open your DougieBase app and choose RESTORE from Backup in the Current Database File Names window, and open your iCloudDrive/DougieBaseBKUPS folder and select the Victoria Restaurants database file.</p>
 
             </div>
         </div>
@@ -1442,7 +1450,7 @@ To receive the database file, open iMsg at the received message, and tap on the 
 
             </div>
             <div class="accordion__answer">
-                <p>The DougieBase SAVE to FILES + (delete) shortcut has been reprogrammed to take this into account. The shortcut now automatically appends the timestamp to the filename, thus altering the name to a unique filename allowing the shortcut to make the SAVE. This means you will have more than one iteration of 'filename.txt' but each with a different timestamp. You can now choose to clean up your DougieBase storage folder, and delete any 'filename.txt + timestamp' that you do not want to keep..</p>
+                <p>Keep in mind that DougieBase actions requiring use of Apple shortcuts will not work on non-Apple devices that do not support Apple Shortcuts. The DougieBase SAVE to FILES shortcut has been reprogrammed to take this into account. The shortcut now automatically appends the timestamp to the filename, thus altering the name to a unique filename allowing the shortcut to make the SAVE. This means you will have more than one iteration of 'filename.txt' but each with a different timestamp. You can now choose to clean up your DougieBase storage folder, and delete any 'filename.txt + timestamp' that you do not want to keep..</p>
 
             </div>
         </div>
@@ -1457,8 +1465,31 @@ To receive the database file, open iMsg at the received message, and tap on the 
 
             </div>
         </div>
-  <!--
         
+  <div class="accordion">
+            <div class="accordion__question">
+                <p>When running the DougieBase Save to Files shortcut, in the 'Clean up DougieBase File Folder' DataBase List section, the prompts for the shortcut disappear. How do I recover them?</p>
+
+            </div>
+            <div class="accordion__answer">
+                <p>When running DougieBase in Landscape mode, the DougieBase Save to Files shortcut will sometimes lose its prompts in the 'Clean up DougieBase File Folder' stage of the shortcut, making it seem that the shortcut just stopped running. To recover the prompts just rotate the device to Portrait mode or vice versa to Landscape mode and back. The prompts will again be visualized. As far as is determined at time of this writing this is related to a glitch in the Shortcuts app? </p>
+
+            </div>
+        </div>
+        
+         <div class="accordion">
+            <div class="accordion__question">
+                <p>The 'streamlined Save to FILES' option does not seem to work?</p>
+
+            </div>
+            <div class="accordion__answer">
+                <p> Keep in mind that some features of DougieBase that require use of Apple Shortcuts will not work on non Apple devices that do not support Apple Shortcuts. The streamlined SAVE TO FILES/iCloud/DougieBaseBKUPS requires that you also have the 'EXPDougieBase SAVE to FILES 1' Apple Shortcut installed. Tap on the HELP button to install this shortcut.</p>
+
+            </div>
+        </div>
+        
+ <!--     
+ 
   <div class="accordion">
             <div class="accordion__question">
                 <p>Where is Taj Mahal located?</p>
@@ -1469,6 +1500,7 @@ To receive the database file, open iMsg at the received message, and tap on the 
 
             </div>
         </div>
+          
  <div class="accordion">
             <div class="accordion__question">
                 <p>Where is Taj Mahal located?</p>
@@ -1503,7 +1535,7 @@ To receive the database file, open iMsg at the received message, and tap on the 
     -->
     
     <!-- remove comment as more FAQ questions are needed!  *********. -->
-    
+ <p><button id = "doneFAQ2"> DONE </button></p>   
   </div> <!-- end layout -->
 <!-- <script src="" type="text/javascript">
 let answers = document.querySelectorAll(".accordion");
@@ -1530,35 +1562,35 @@ answers.forEach((event) => {
 <table class="calculator" >
   <tr>
   <!-- style ="color:black;font-size:large;font-weight: bold;" -->
-    <td colspan="3"> <input class="display-box" type="text" id="result" style="color:black" disabled /> </td>
+    <td colspan="3"> <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  class="display-box" type="text" id="result" style="color:black" disabled /> </td>
     <!-- clearScreen() function clear all the values -->
-    <td> <input class = "calculationInput" type="button" value="CLEAR" onclick="clearCalculatorScreen()" id="btn" /> </td>
+    <td> <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  class = "calculationInput" type="button" value="CLEAR" onclick="clearCalculatorScreen()" id="btn" /> </td>
   </tr>
   <tr>
     <!-- display() function display the value of clicked button -->
-    <td> <input class = "calculationInput" type="button" value="1" onclick="displayCalculator('1')" /> </td>
-    <td> <input class = "calculationInput" type="button" value="2" onclick="displayCalculator('2')" /> </td>
-    <td> <input class = "calculationInput" type="button" value="3" onclick="displayCalculator('3')" /> </td>
-    <td> <input class = "calculationInput" type="button" value="/" onclick="displayCalculator('/')" /> </td>
+    <td> <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  class = "calculationInput" type="button" value="1" onclick="displayCalculator('1')" /> </td>
+    <td> <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  class = "calculationInput" type="button" value="2" onclick="displayCalculator('2')" /> </td>
+    <td> <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  class = "calculationInput" type="button" value="3" onclick="displayCalculator('3')" /> </td>
+    <td> <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  class = "calculationInput" type="button" value="/" onclick="displayCalculator('/')" /> </td>
   </tr>
   <tr>
-    <td> <input class = "calculationInput" type="button" value="4" onclick="displayCalculator('4')" /> </td>
-    <td> <input class = "calculationInput" type="button" value="5" onclick="displayCalculator('5')" /> </td>
-    <td> <input class = "calculationInput" type="button" value="6" onclick="displayCalculator('6')" /> </td>
-    <td> <input class = "calculationInput" type="button" value="-" onclick="displayCalculator('-')" /> </td>
+    <td> <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  class = "calculationInput" type="button" value="4" onclick="displayCalculator('4')" /> </td>
+    <td> <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  class = "calculationInput" type="button" value="5" onclick="displayCalculator('5')" /> </td>
+    <td> <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  class = "calculationInput" type="button" value="6" onclick="displayCalculator('6')" /> </td>
+    <td> <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  class = "calculationInput" type="button" value="-" onclick="displayCalculator('-')" /> </td>
   </tr>
   <tr>
-    <td> <input class = "calculationInput" type="button" value="7" onclick="displayCalculator('7')" /> </td>
-    <td> <input class = "calculationInput" type="button" value="8" onclick="displayCalculator('8')" /> </td>
-    <td> <input class = "calculationInput" type="button" value="9" onclick="displayCalculator('9')" /> </td>
-    <td> <input class = "calculationInput" type="button" value="+" onclick="displayCalculator('+')" /> </td>
+    <td> <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  class = "calculationInput" type="button" value="7" onclick="displayCalculator('7')" /> </td>
+    <td> <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  class = "calculationInput" type="button" value="8" onclick="displayCalculator('8')" /> </td>
+    <td> <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  class = "calculationInput" type="button" value="9" onclick="displayCalculator('9')" /> </td>
+    <td> <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  class = "calculationInput" type="button" value="+" onclick="displayCalculator('+')" /> </td>
   </tr>
   <tr>
-    <td> <input class = "calculationInput" type="button" value="." onclick="displayCalculator('.')" /> </td>
-    <td> <input class = "calculationInput" type="button" value="0" onclick="displayCalculator('0')" /> </td>
+    <td> <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  class = "calculationInput" type="button" value="." onclick="displayCalculator('.')" /> </td>
+    <td> <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  class = "calculationInput" type="button" value="0" onclick="displayCalculator('0')" /> </td>
     <!-- use inAppCalculate as function name so no conflict with console calculator instead of calculate() function evaluate the mathematical expression -->
-    <td> <input class = "calculationInput" type="button" value="=" onclick="inAppCalculate()" id="btn" /> </td>
-    <td> <input class = "calculationInput" type="button" value="*" onclick="displayCalculator('*')" /> </td>
+    <td> <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  class = "calculationInput" type="button" value="=" onclick="inAppCalculate()" id="btn" /> </td>
+    <td> <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  class = "calculationInput" type="button" value="*" onclick="displayCalculator('*')" /> </td>
   </tr>
 </table>
 <p></p>
@@ -1592,7 +1624,7 @@ answers.forEach((event) => {
 			
 			<!-- <h3>The current name of this database is: <scan id="dbFileName"></scan></h3>
 			<label for="newDBFileName">Enter new DataBase name here: </label>
-			<input type="text" name="newDBFileName" id="newDBFileName" value="" required/> -->
+			<input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  type="text" name="newDBFileName" id="newDBFileName" value="" required/> -->
 			
 			</div><!--end monthSelect for new budget sheet window -->
 			
@@ -1605,9 +1637,9 @@ answers.forEach((event) => {
 		  <p id = "getImageFilesInstructionsP" class = "yellowonly"></p>
 		  <button onclick = "closegetImageWin()" >CANCEL</button>
 		 </div>
-		<!-- <input type="file" id = "fileSelector" onchange="readFile(this)">  -->
+		<!-- <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  type="file" id = "fileSelector" onchange="readFile(this)">  -->
 	<!-- ReferenceError: Can't find variable: selectStorageFile -->	 
-	<input type="file" id="filePicker" accept="image/*" style="display:none;">
+	<input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  type="file" id="filePicker" accept="image/*" style="display:none;">
     <button id = "addToDBBtn" onclick="addToDB()" style = "display:none">Add to Database</button>
     <div>
         <img id="selectedImage" src="" alt="Selected Image" style="display:none;">
@@ -1628,7 +1660,7 @@ answers.forEach((event) => {
          <!--  <div> -->
 			  <!-- Contacts Name, Telephone, Email address, street address -->
           <!--   <label id = "itemName" for="itemListName">Name of Item to track in your Budget Sheet: </label>
-            <input id="itemListName" type="text" required>
+            <input ontouchstart="this.removeAttribute('readonly');"         onfocus="this.removeAttribute('readonly');"  id="itemListName" type="text" required>
           </div>
 		  
 		   <p id = "editItemListInstruction" class = "simulator">Edit data in the input field. Tap SUBMIT button below for each entry.</p>
@@ -1943,38 +1975,43 @@ restoreFromFilesWin.setAttribute('class','hidden');
 
 //CODE FOR GETIMAGE
 function openImagePicker(selectedImage) {
+//alert("In openImagePicker function")
 //SyntaxError: Unexpected token '.'. Expected a ')' or a ',' after a parameter declaration.
 getImageWin.setAttribute('class','showing')
             const filePicker = document.getElementById('filePicker');
             var img = document.createElement('img');//from addToDB
             var td = tableArray[0][8];
+            //alert("tableArray[0][8] = " + tableArray[0][8]);
 //td.appendChild(img);
            // var td = document.getElementById('tableArray').rows[0].cells[8];//from addToDB
           // filePicker.click();
           filePicker.style.display = "unset"
         
         filePicker.addEventListener('change', function() {
+        
             const selectedImage = document.getElementById('selectedImage');
             const file = filePicker.files[0];
             const reader = new FileReader();
-
+//alert("selectedImage = " + selectedImage);
             reader.onloadend = function() {
                 selectedImage.src = reader.result;
                 img.src = selectedImage.src;//from addToDB
                 tdCellData = selectedImage.src;
                 selectedImage.style.display = 'block';
+               // alert("In reader.onloadend function : img.src = " + img.src);
             }
 
             if (file) {
                 reader.readAsDataURL(file);
                 addToDBBtn.style.display = "unset";
+               // alert("In if (file) { : reader.readAsDataURL(file) "+ reader.readAsDataURL(file) );
             }
         });
        td.appendChild(img);
        alert("img = " + img)
        alert("img.src = " + img.src);
         tableArray[0][8] = img.src;
-        alert("tableArray[0][8] = " + tableArray[0][8])
+        //alert("tableArray[0][8] = " + tableArray[0][8])
         if(fetchingImage) {
 	      addToDB(); 
         }//end if fetchingImage
