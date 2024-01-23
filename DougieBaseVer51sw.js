@@ -87,6 +87,9 @@ self.addEventListener('fetch', event => {
 });
 
 //Updates
+self.addEventListener('controllerchange', function(event) {
+  window.location.reload();
+});
 
 //There is still one point to cover: how do you upgrade a Service Worker when a new version of the app containing new assets is available? The version number in the cache name is key to this:
 
