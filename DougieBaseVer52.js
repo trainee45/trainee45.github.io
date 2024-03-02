@@ -1,4 +1,4 @@
-//DougieBaseVer51.js current published version as of Jan22 2024 Copy of smoothBkUpDougieBaseVer51.js, testing flow of create new db. Jan20 2024  smoothBkUpDougieBaseVer51.js DougieBaseVer51 fixed leap year for Feb .. Jan19 testing smoothBkUp works so far! DougieBaseVer50.js published Aug 21 2023 loadImageDougieBaseVer50.js #getImageWin added Aug3 2023 Aug3 2023 from addingCalculatorDougieBaseVer50.js DougieBaseVer50.js DougieBaseVer49.js THIS VERSION PUBLISHED JULY21 2023 sw52 Latest version for publishing Added scroll arrow and hid file list window in backup of create new db (copied to github) July23 2023  July12 July 1 2023. This version, not yet published, has a new FAQ. Added some more FAQs that reflect changes made to DougieBase SAVE to FILES adding timestamp to filename, and correcting alert 'Copying to Clipboard' (July 6 2023) June29 2023 faqDougieBaseVer49.js consoleDougieBaseVer49.js DougieBaseVer49.js fixing backup Jun14 DougieBaseVer48.js production version Mayb24 2023 Copy of backupSampleGlitchDougieBaseVer48backupSampleGlitchDougieBaseVer48 DougieBaseVer48.js last glitch-dataNotBackedUp = false;//flag for SAVE warning so backup option and save alert does not appear which if ok'd will mess up file! Date May 22 and line 7891-if(bkupAlertsFlag && !blockEdit && !newDBGuidance && !convertingOldFile) {reverted to original PUBLISHED April25 2023 sw April25 2023 workingOnDougieBaseVer48.js DougieBaseVer48.js DougieBaseVer47.js added this line from Bing to correct error if $ sign preceded number in summing TOTAL April 21 publish April 8 2023 removedAlertsscrollRESTOREDougieBaseVer47 scrollRESTOREDougieBaseVer47.js DougieBaseVer47.js removeAlertstemplateBlockedfixRepeatBudgetSheetDougieBaseVer47 for publishing Mar 25 2023 Mar 21 2023 improved scrolling a bit..fixed glitch where new table caused listing of 2 tables one that did not exist  templateBlockedfixRepeatBudgetSheetDougieBaseVer47 scroll to flashing restore btn now works!  Mar16 2023 if solved convert fixRepeat… fixRepeatBudgetSheetDougieBaseVer47.js index.html with this js now contains updated budget template Mar 6 2023 DougieBaseVer47.js Feb 27 2023mMar 2 2023 date highlight corrected (have to use 3 letter dates in conditionals) fixed some bkup warnings..disabled for create new db  tryAgainbackupClickDougieBaseVer46 fixed summing and averaging again FEB 27 2023 FixtryAgainbackupClickDougieBaseVer46 tryAgainbackupClickDougieBaseVer46 corrected errors in SUMMING and AVERAGING routines Feb26 2023 Feb24 Feb25  backupClickDougieBaseVer46 USE FIND '//alertbkup' and replace with 'alert' to restore for troubleshooting bkup warnings simulateClickDougieBaseVer46.js use latest fallBack -  fallBackFeb22simulateClickDougieBaseVer46 polishing CANCEL btns use fallBackFeb19simulateClickDougieBaseVer46 file.. looking good still testing Feb19 2023 deleteDataBase(dataBaseName);//added in getDataBaseName Feb18 to cover scenario where a reboot is done prior to a locked file being deleted, and so that when rebooted DougieBase knows to delete the file again after the browser releases its lock. Tested..seems to work. DougieBaseVer46.js Feb2 2023 tryAgainCreateNewDBDougieBaseVer45 Feb3 2023 fixed date highlight if day <10 Feb2 USE FIND '//alertflm' and replace with 'alert' to restore for troubleshooting file list management Feb1 2023  smoothCreateNewDBDougieBaseVer45.js tagNewDBDougieBaseVer45.js fallBack2Jan29tagNewDBDougieBaseVer45 tagNewDBDougieBaseVer45.js DougieBaseVer45.js fixed objectStore mess ! Jan 24 2023 Jan22 2023 needs updated css file!  fixRenameDbDougieBaseVer45 DougieBaseVer45.js Jan20 highlightDateDougieBaseVer45 DougieBaseVer45.js Jan18 savedOriginal = false;//to trigger updating saved table arrays removed two <form> in HTML which caused crashes with add contacts/ recordsJAN6 2023 scrollbtn in NOTES  goes to searched record in table blockedMESSED UPtrying3Copy of improveBudgetDougieBaseVer44.js Copy of improveBudgetDougieBaseVer44.js USE FIND '//alertblk' and replace with 'alert' to restore for troubleshooting blocked by browser USE FIND '//alertcm' and replace with 'alert' to restore for troubleshooting changeMonth code  improveBudgetDougieBaseVer44.js added code to keep table scrolled to view edited cell, sampleBudgetDougieBaseVer44.js DougieBaseVer44.js Dec4 2022 calculationAlertsrenameDBDougieBaseVer43.js DougieBaseVer43.js Date: Dec3 scrollBtn added scroll to last  edited record in NOTES  (scrollBtn.onclick) added preferences option to toggle calculation Alerts  Nov28;did adding delay(5000); in getManualContacts fix the plusContacts? Hope so ..NOPE STILL NOT FIXED IS IT Nov27 added blue color to TOTAL Nov26 2022 Nov22 2022 tested with create new db added info for Cost to date in notes made changes in both css files to accomodate reNAME FILEMAME retryisolateNumbersumAcrossDougieBaseVer43.js Nov21 2022 alerts for rename filename can be retrieved using alertrnf removing alerts in the keyword functions..USE FIND '//alertxy' and replace with 'alert' to restore for troubleshooting  experimentretryisolateNumbersumAcrossDougieBaseVer43.js corrects for space difference in main and new tables  retryisolateNumbersumAcrossDougieBaseVer43.js DATE: Nov16 IF THIS SCREWS UP REVERT BACK TO isolateNumbersumAcrossDougieBaseVer43.js Nov17 in editTDBtn.onclick addEventListener put in code to check if rowSummed and if so update sum across!  sumAcrossDougieBaseVer43.js sumAcross works and total of last column if rowSummed, works BUT TOTAL  in other DYNAMICfields is messed up because rowSummed is always true so will put conditional in summing() to exclude last field ..new rule TOALfor rowSummed only works in last field !  DougieBaseVer43.js Nov9 2022 from bugDatesdynamicTelephoneDougieBaseVer42.js FIXED Activation glitches? Nov7 fixed bug in dates when adding record (+) to a new table dynamicTelephoneDougieBaseVer42.js.. not yet published.. Oct29 2022 need to add code at moreTables and homescreenBtn2 and refresh..DONE .. telephoneDougieBaseVer42.js RESET BLINK IF TELEPHONE OR EMAIL HAD BEEN ACTIVATED Oct 22 2022 this version works WILL TEST SOME MORE added code for telephone similar to email at displayTable that was missing.  DougieBaseVer42.js Oct19 Oct16 2022 incorporating moreTablesBtnDougieBaseVer42.js Oct11 2022 retryTOTALDougieBaseVer42.js Oct11 2022 AGE (TOTAL) if COST in header will add $ to result after adding now will add even if entry is NaN works if all items in column are numbers use search phrasex—for (let k = 4; k < numberOfFields; k++) { — TOTALDougieBaseVer42.js DougieBaseVer42.js Date Oct 5 .. use this to update github! Oct4 2022 from restoreFromLocalFileDougieBaseVer40.js fallBack2Sept29restoreFromLocalFileDougieBaseVer40.js restoreFromLocalFileDougieBaseVer40 Date Sept25 2022 WORKS! Added Scroll to bottom in manage window DougieBaseVer40.js fix!editSearchedNoteDougieBaseVer40.js Think this is fixed ? Sept 20 2022 editSearchedNoteDougieBaseVer40.js As of Sept 11 2022, can now edit the single record view obtained as a result of a record search. Still testing..seems to work change SW to ver 26 before sending to github! - from createNewDougieBaseVer40.js from eMailDougieBaseVer40.js email now active  fixContactsBugDougieBaseVer40.js Jun7 fixed dbl tap deleting instead of editing a new table ..deleteRecordNewTable = false; .. June6 fixed repeat record entry in contacts tables if repeating creating a contacts table DougieBaseVer40.js June4 saveBtn2 fixed and flashing displayTableBtn when CONVERT file format June3 fixed search bug May28 fixed tableLimit noAlertsplusContactshitsTablefixADDCONTACTSDougieBaseVer40 May18 fixed share data error May28 2022 tableLimit plusContactshitsTablefixADDCONTACTSDougieBaseVer40.js May17 May15 May 13 May9 hitsTablefixADDCONTACTSDougieBaseVer40.js May5  from fixADDCONTACTSDougieBaseVer40.js May1  testCancelsweetAlertnoAlertsmoreBlock+DougieBaseVer40.jsApri25 2022
+//March 1 Current published Mar1 2024 Feb 27 2024 DougieBaseVer52.js is working. Fixed error const homeScreenBtn2 = document.querySelector('#homeScreenBtn')..changed to #homeScreenBtn2;Testing all CANCEL possibilities.. continue tests! exportImportindex.html Feb15 2024. Works!DougieBaseVer52.js  exportImportindex.js Feb15 2024. Works! Now fine tuning  exportImportTablesDougieBaseVer51.js sameInstanceVariablesexpDougieBaseVer51 RETRYexpDougieBaseVer51.js this version saves to clipboard and IDB  feb7-2024RETRYexpDougieBaseVer51.js .. export and import of EXPnewTableObj works. Also save newObjectStore in IDB I think works. Now working on actual import of newTable. RETRYexpDougieBaseVer51 expDougieBaseVer51.js current published version as of Jan22 2024 Copy of smoothBkUpDougieBaseVer51.js, testing flow of create new db. Jan20 2024  smoothBkUpDougieBaseVer51.js DougieBaseVer51 fixed leap year for Feb .. Jan19 testing smoothBkUp works so far! DougieBaseVer50.js published Aug 21 2023 loadImageDougieBaseVer50.js #getImageWin added Aug3 2023 Aug3 2023 from addingCalculatorDougieBaseVer50.js DougieBaseVer50.js DougieBaseVer49.js THIS VERSION PUBLISHED JULY21 2023 sw52 Latest version for publishing Added scroll arrow and hid file list window in backup of create new db (copied to github) July23 2023  July12 July 1 2023. This version, not yet published, has a new FAQ. Added some more FAQs that reflect changes made to DougieBase SAVE to FILES adding timestamp to filename, and correcting alert 'Copying to Clipboard' (July 6 2023) June29 2023 faqDougieBaseVer49.js consoleDougieBaseVer49.js DougieBaseVer49.js fixing backup Jun14 DougieBaseVer48.js production version Mayb24 2023 Copy of backupSampleGlitchDougieBaseVer48backupSampleGlitchDougieBaseVer48 DougieBaseVer48.js last glitch-dataNotBackedUp = false;//flag for SAVE warning so backup option and save alert does not appear which if ok'd will mess up file! Date May 22 and line 7891-if(bkupAlertsFlag && !blockEdit && !newDBGuidance && !convertingOldFile) {reverted to original PUBLISHED April25 2023 sw April25 2023 workingOnDougieBaseVer48.js DougieBaseVer48.js DougieBaseVer47.js added this line from Bing to correct error if $ sign preceded number in summing TOTAL April 21 publish April 8 2023 removedAlertsscrollRESTOREDougieBaseVer47 scrollRESTOREDougieBaseVer47.js DougieBaseVer47.js removeAlertstemplateBlockedfixRepeatBudgetSheetDougieBaseVer47 for publishing Mar 25 2023 Mar 21 2023 improved scrolling a bit..fixed glitch where new table caused listing of 2 tables one that did not exist  templateBlockedfixRepeatBudgetSheetDougieBaseVer47 scroll to flashing restore btn now works!  Mar16 2023 if solved convert fixRepeat… fixRepeatBudgetSheetDougieBaseVer47.js index.html with this js now contains updated budget template Mar 6 2023 DougieBaseVer47.js Feb 27 2023mMar 2 2023 date highlight corrected (have to use 3 letter dates in conditionals) fixed some bkup warnings..disabled for create new db  tryAgainbackupClickDougieBaseVer46 fixed summing and averaging again FEB 27 2023 FixtryAgainbackupClickDougieBaseVer46 tryAgainbackupClickDougieBaseVer46 corrected errors in SUMMING and AVERAGING routines Feb26 2023 Feb24 Feb25  backupClickDougieBaseVer46 USE FIND '//alertbkup' and replace with 'alert' to restore for troubleshooting bkup warnings simulateClickDougieBaseVer46.js use latest fallBack -  fallBackFeb22simulateClickDougieBaseVer46 polishing CANCEL btns use fallBackFeb19simulateClickDougieBaseVer46 file.. looking good still testing Feb19 2023 deleteDataBase(dataBaseName);//added in getDataBaseName Feb18 to cover scenario where a reboot is done prior to a locked file being deleted, and so that when rebooted DougieBase knows to delete the file again after the browser releases its lock. Tested..seems to work. DougieBaseVer46.js Feb2 2023 tryAgainCreateNewDBDougieBaseVer45 Feb3 2023 fixed date highlight if day <10 Feb2 USE FIND '//alertflm' and replace with 'alert' to restore for troubleshooting file list management Feb1 2023  smoothCreateNewDBDougieBaseVer45.js tagNewDBDougieBaseVer45.js fallBack2Jan29tagNewDBDougieBaseVer45 tagNewDBDougieBaseVer45.js DougieBaseVer45.js fixed objectStore mess ! Jan 24 2023 Jan22 2023 needs updated css file!  fixRenameDbDougieBaseVer45 DougieBaseVer45.js Jan20 highlightDateDougieBaseVer45 DougieBaseVer45.js Jan18 savedOriginal = false;//to trigger updating saved table arrays removed two <form> in HTML which caused crashes with add contacts/ recordsJAN6 2023 scrollbtn in NOTES  goes to searched record in table blockedMESSED UPtrying3Copy of improveBudgetDougieBaseVer44.js Copy of improveBudgetDougieBaseVer44.js USE FIND '//alertblk' and replace with 'alert' to restore for troubleshooting blocked by browser USE FIND '//alertcm' and replace with 'alert' to restore for troubleshooting changeMonth code  improveBudgetDougieBaseVer44.js added code to keep table scrolled to view edited cell, sampleBudgetDougieBaseVer44.js DougieBaseVer44.js Dec4 2022 calculationAlertsrenameDBDougieBaseVer43.js DougieBaseVer43.js Date: Dec3 scrollBtn added scroll to last  edited record in NOTES  (scrollBtn.onclick) added preferences option to toggle calculation Alerts  Nov28;did adding delay(5000); in getManualContacts fix the plusContacts? Hope so ..NOPE STILL NOT FIXED IS IT Nov27 added blue color to TOTAL Nov26 2022 Nov22 2022 tested with create new db added info for Cost to date in notes made changes in both css files to accomodate reNAME FILEMAME retryisolateNumbersumAcrossDougieBaseVer43.js Nov21 2022 alerts for rename filename can be retrieved using alertrnf removing alerts in the keyword functions..USE FIND '//alertxy' and replace with 'alert' to restore for troubleshooting  experimentretryisolateNumbersumAcrossDougieBaseVer43.js corrects for space difference in main and new tables  retryisolateNumbersumAcrossDougieBaseVer43.js DATE: Nov16 IF THIS SCREWS UP REVERT BACK TO isolateNumbersumAcrossDougieBaseVer43.js Nov17 in editTDBtn.onclick addEventListener put in code to check if rowSummed and if so update sum across!  sumAcrossDougieBaseVer43.js sumAcross works and total of last column if rowSummed, works BUT TOTAL  in other DYNAMICfields is messed up because rowSummed is always true so will put conditional in summing() to exclude last field ..new rule TOALfor rowSummed only works in last field !  DougieBaseVer43.js Nov9 2022 from bugDatesdynamicTelephoneDougieBaseVer42.js FIXED Activation glitches? Nov7 fixed bug in dates when adding record (+) to a new table dynamicTelephoneDougieBaseVer42.js.. not yet published.. Oct29 2022 need to add code at moreTables and homescreenBtn2 and refresh..DONE .. telephoneDougieBaseVer42.js RESET BLINK IF TELEPHONE OR EMAIL HAD BEEN ACTIVATED Oct 22 2022 this version works WILL TEST SOME MORE added code for telephone similar to email at displayTable that was missing.  DougieBaseVer42.js Oct19 Oct16 2022 incorporating moreTablesBtnDougieBaseVer42.js Oct11 2022 retryTOTALDougieBaseVer42.js Oct11 2022 AGE (TOTAL) if COST in header will add $ to result after adding now will add even if entry is NaN works if all items in column are numbers use search phrasex—for (let k = 4; k < numberOfFields; k++) { — TOTALDougieBaseVer42.js DougieBaseVer42.js Date Oct 5 .. use this to update github! Oct4 2022 from restoreFromLocalFileDougieBaseVer40.js fallBack2Sept29restoreFromLocalFileDougieBaseVer40.js restoreFromLocalFileDougieBaseVer40 Date Sept25 2022 WORKS! Added Scroll to bottom in manage window DougieBaseVer40.js fix!editSearchedNoteDougieBaseVer40.js Think this is fixed ? Sept 20 2022 editSearchedNoteDougieBaseVer40.js As of Sept 11 2022, can now edit the single record view obtained as a result of a record search. Still testing..seems to work change SW to ver 26 before sending to github! - from createNewDougieBaseVer40.js from eMailDougieBaseVer40.js email now active  fixContactsBugDougieBaseVer40.js Jun7 fixed dbl tap deleting instead of editing a new table ..deleteRecordNewTable = false; .. June6 fixed repeat record entry in contacts tables if repeating creating a contacts table DougieBaseVer40.js June4 saveBtn2 fixed and flashing displayTableBtn when CONVERT file format June3 fixed search bug May28 fixed tableLimit noAlertsplusContactshitsTablefixADDCONTACTSDougieBaseVer40 May18 fixed share data error May28 2022 tableLimit plusContactshitsTablefixADDCONTACTSDougieBaseVer40.js May17 May15 May 13 May9 hitsTablefixADDCONTACTSDougieBaseVer40.js May5  from fixADDCONTACTSDougieBaseVer40.js May1  testCancelsweetAlertnoAlertsmoreBlock+DougieBaseVer40.jsApri25 2022
 //NOTE ALERTS REMOVED HAVE A x after alert SO USE FIND REPLACE SEARCH TO RESTORE THEM!! i.e. //alertx("message data…") can be restored by search and replace for //alertx and replace with alert
 //moreBlock+DougieBaseVer40.js April17 April15 fallBackApril15moreBlock+DougieBaseVer40.js Copy of moreBlock+DougieBaseVer40.js fallBackApril14moreBlock+DougieBaseVer40.js moreBlock+DougieBaseVer40.js April10 for testing and when works back to block… from block+DougieBaseVer40.js DougieBaseVer40.js from shareDeleteRecordNewTableDougieBaseVer37.js WILL THIS FILE AUTOMATICALLY SYNC WITH ICLOUD.YES!deleteRecordNewTableDougieBaseVer37.js NOTE ALERTS REMOVED HAVE A > AFTER THE " SO USE FIND REPLACE SEARCH TO RESTORE THEM!! i.e. //alert("> message data…") can be restored by search and replace for //alert("> …) .. MUST PUT A SPACE AFTER THE> CHARACTER! fromNewTablehitsTableDougieBaseVer37.js pushContactsFormtableIndexaddContactsDougieBaseVer37 ADD CONTACTS number of dynamicfields = 1 now createnewDB resets newTableSpecificVariables and savedTablesArray to 0 savedTablesArray.length increases by 1 as each table is created fixed manal contact entry fields fixed + contacts deletingTableField variable added Marc19  contactsFormtableIndexaddContactsDougieBaseVer37.js manual contacts now works Mar13 tableIndexaddContactsDougieBaseVer37.js from deleteNTtableIndexaddContactsDougieBaseVer37.js Mar11 from delete last and first and middle tables works!  tableIndexaddContactsDougieBaseVer37.js Mar9 2022 deleteItemtableIndexaddContactsDougieBaseVer37.js from tableIndexaddContactsDougieBaseVer37 WORKS Mar8 FOR CRETION NEWBB BEFORE ANY DB LOADED MAR6 from createNewaddContactsDougieBaseVer37 from addContactsDougieBaseVer37 from Copy of addContactsDougieBaseVer37 based on date: Feb22 2022 worksKeepTestPlayWithNewTableContactsDougieBaseVer37 Feb 17 2022 Feb 13 2022 from testPlayWithNewTableContactsDougieBaseVer37 Feb10 from playWithSTRowsEditTDNewTableContactsDougieBaseVer37.js FEB6 FEB4 2022 from workingOnEditTDNewTableContactsDougieBaseVer37.js currentJan19ContactsDougieBaseVer37.js now adding newTable variables ..Jan11 go to fallBackJan11 if meeses up workingOnContactsDougieBaseVer37.js Jan2 THIS VERSION WORKS WITH SAFARI CONTACT PICKER!  contacts table working with search sort Dec24 Added whatsNew window  Working on retrieving contact info. See functions at bottom. ADD style="color:black" IN HTML  Dec22 moved getMemory function from html file to .js file from Dec10 2021 mobileFriendlyDougieBaseVer37.js from DougieBaseVer36.js Dec5 sw11 from messWith Dec2 DougieBaseVer36.js Dec1 from flashFileNameDougieBaseVer36.js from createNewDBDougieBaseVer36 Nov30 Nov28 added addToDynamicFields.setAttribute('class','borderBlink') to border in editMoreFields function and addNoteBtn.setAttribute('class','borderBlink'); in saveBtn.onclick for createNewDB renameBtn.setAttribute('class','borderBlink'); in preferences displayDataBtn.setAttribute('class','borderBlink'); in function renameTitle Nov28 borderBlink css is in the html file  Nov 27 fine tuned flow of createNewDB Nov24 fixed create newDB bug! Nov 22 edit notes displayed n real time Nov17 added tableScreenOptions to editTableTrigger to not mess up table display Nov14 from spDougieBaseVer36.js landscape table search and preview edid Date:Nov9 save preferences from Date:Nov4 added Easter egg and save settings preferencesDougieBaseVer36.js from fixEditDougieBaseVer35.js from 
 //changed addEventListener to copy instead of dblclick Oct16 made default double click Oct31 2021  clearBkgrdDougieBaseVer34.js clear background and fixed crashes that occur if user makes illogical moves Oct12 2021 use to update workingCopy and Safarii etc
@@ -323,6 +323,16 @@ alert(clippyString + " is COPIED to Clipboard");
   
 
 //Start of actual program code .. app.js
+
+//table elements that need to be declared globally because used in IMPORT EXPORT NEW TABLES DATE:Feb29 2024
+const toSearchScreenBtn = document.querySelector('#toSearchScr');
+const toSortScrBtn = document.querySelector('#toSortScr');
+
+let fileNamesClicked = false;//flag used in IMPORT NewTable to insure file selected to import to
+let actionEXPORT = false;//flag to aid in workflow of I PORT newTable Feb11 2024
+let IMPORTnewTable = false;//flag to indicate importing newTable
+let lastTableID = 0;//to keep track of last table loaded so import btn can or can't appear Feb2 2024
+let newTableLoadedFlag = false;//set flag to indicate new table has been loaded for benefit of future use of exporting this table
 let directSaveToFILES = false;//flag indicating directSave to files app Jan19 2024
 let imageField = false;//flag used in code for a field header = IMAGE
 let successCount = 0;//used to keep track of blocked and succeesful deletions of databases
@@ -476,6 +486,8 @@ const editTDTriggerBtn = document.querySelector('#editTDTrigger');//this is the 
 const promptBox = document.querySelector('#promptBox');
 const tableNameTxt = document.querySelector('#tableNameTxt');
 const actionLoadBtn = document.querySelector('#actionLoad');
+const actionExportBtn = document.querySelector('#actionExport');
+const actionImportBtn = document.querySelector('#actionImport');
 const actionRenameBtn = document.querySelector('#actionRename');
 const actionDeleteBtn = document.querySelector('#actionDelete');
 const actionCancelBtn = document.querySelector('#actionCancel');
@@ -697,6 +709,8 @@ const newTableTitle = document.querySelector('#newTableTitle');
 const newTableNameInput = document.querySelector('#newName');
 const newTableNameSubmitBtn = document.querySelector('#newTableNameSubmitBtn');
 let newTableName = "";
+let importedTableName = "";//used in alert in saveTableBtn to acknowledge successful import. resetFromContacts loses newTableName
+let toDataBaseName ="";
 const showNewTableNameP = document.querySelector('#showNewTableName');
 //newTableName window references above
 
@@ -868,6 +882,23 @@ for (var i = 0; i < 10; i++) {
 savedTablesArray[i] = new Array(4);
 
 }//number of fields means all fields for savedTablesArray there are 4 fields maybe should change back to numberOfFields????
+
+//DECLARE VARIABLES FOR EXPnewTables
+//create the 2D array tableArray
+	var EXPnewTableArray = new Array(recordCounter);
+
+//for (var i = 0; i < recordCounter; i++) {
+	
+for (var i = 0; i < recordCounter; i++) {
+
+ EXPnewTableArray[i] = new Array(numberOfFields);
+
+}//number of fields means all fields
+//assume 10 tables?
+//FOR EXPORT TABLES FEB2 2024
+let EXPfieldNamesArray = [];
+let EXPnewTableName = "";
+let EXPnumberOfNewTableAddedFields = 0;
 //savedTablesArray.length = 10;//tried to force length of 10 to fix tableLimit error but did not work savedTablesArray.length still 3 or whatever in Test New Table!!!!
 //Create a new array for searched hits
 //SearchedHitsTableArray :
@@ -1350,6 +1381,7 @@ if (!usingDarkMode) {
 //variables and references for FileNames^
 
 function getFileNames(dataBaseName) {
+fileNamesClicked = false;//flag used IMPORT new table
 //btn persists even if ignored after rescued save, but still seen here because save code unsets the btns..so in home clear table btn at leasr set btns to tdEdit or display none?
 backupBtn1.style.display = "none";
  backupBtn2.style.display = "none";
@@ -1571,7 +1603,13 @@ databaseNameLi[i].setAttribute('class','blocked');
 //alert("In getFileNames bkupAlertsFlag = " + bkupAlertsFlag);//does not like this alert pgrm locks up
 
 databaseNameLi[i].addEventListener('click', function () {
-
+fileNamesClicked = true;//flag used IMPORT new table
+// if(actionEXPORT) {
+// promptBox.setAttribute('class','showing');
+// actionImportBtn.style.display = "unset";
+// actionImportBtn.textContent = "IMPORT " + EXPnewTableName;
+// //LEFT OFF HERE feb13
+// }//end if(actionEXPORT) {
 //BELOW CODE ADDED FEB24 to cover scenario where backup btn is ignored after initial save ignored and then rescued by first tap of changeDB, and return sends you direct to getfilenames without benefit of backup rescue code
 
 //If messes up resort to fallBack2Feb24tryAgainbackupClickDougieBaseVer46
@@ -1582,6 +1620,7 @@ databaseNameLi[i].addEventListener('click', function () {
 if(bkupAlertsFlag && dataNotBackedUp && !(dbTableName.value.includes("blocked"))) {
 	if (window.confirm("You have recently saved data to " + dbTableName.value + " that is not backed up! BACKUP RECENTLY SAVED DATA ? : \n" + "  CANCEL will continue without backup.")) {
 	dataBaseName = dbTableName.value;
+	
 	//line above reverts dataBaseName back to dbTableName.value for the backup
 	//alertbkup("After choice prompt…going to bkup - dataNotBackedUp = " + dataNotBackedUp + " dataBaseName = " + dataBaseName + " dbTableName.value = " + dbTableName.value);
 //if renamedDBName = true dbTableName.value will have had its name stripped of .bs and then in the meantime renamedDBName has been made false manipulate string called in the backup code will not be called and so the opportunity to restore dataBaseName.bs is lost. So check before going to backup that if budgetsheet dataBaseName has .bs on the end otherwise you get a path taking you through onupgradeneeded	Date:Mar 11 2023
@@ -1622,6 +1661,8 @@ reNamedDBFileName = false;//this flag prevents backup routine from going to mani
 		dataBaseName = databases[i].name;
 		
 		//alert("In getFileNames after prompt for backup of previous unsaved database - dataBaseName = " + dataBaseName + " dataBaseName should not be the previous database at this point! It should be the file just tapped.");
+		
+
 
 if(dataBaseName.slice(-2) === "bs") {
 //alert(dataBaseName + " is a Budget sheet!")	;
@@ -1686,7 +1727,7 @@ databases[i].name.includes("blocked")) {
 		 console.log('dataBaseName = ' + dataBaseName);
 	 //confirm choice window
 		 if (window.confirm("DataBase to LOAD : " + " \n" + dataBaseName +  " \n" + "  CANCEL will UNDO")) {
-		 
+		 toDataBaseName = dataBaseName;//used to acknowledge IMPORT of newtable in export import process later on
 		 if(loadSampleBudget) {
 			 tableScreenBtn.setAttribute('class','borderBlink');//prompting to go to table and tap changeMonth btn
 	//fileChosenP.setAttribute('class','tdEdit')//reset from flashing
@@ -1717,6 +1758,9 @@ databases[i].name.includes("blocked")) {
 			newTableNames.length = 0;
 			tableListExists = false;
 			
+//FOR IMPORT TABLE CODE DATE FEB14 2024 ?
+
+			
 		loadTheDataBase(dataBaseName);//WILL CHECK FOR A BLOCKED FILE IF REBOOTING FROM START!
 	//if can't find file because dataBaseName has been changed then  DougieBase will think it is creating a new database! Mar9	
 			console.log('Sending dataBaseName ' + dataBaseName + ' to loadTheDataBase function');
@@ -1725,6 +1769,41 @@ databases[i].name.includes("blocked")) {
 			for (let i = 0; i< databases.length; i++) { 
 				dataBaseList.removeChild(databaseNameLi[i]);
 			}//end for loop
+			
+//code to reset if a new table IMPORT is CANCELed
+if(actionEXPORT) {
+newDBBtn.style.display = "unset";
+addNoteBtn.style.display = "unset";
+	tableScreenBtn.style.display = "unset";
+	settingsBtn.style.display = "unset";
+aboutDBBtn.style.display = "unset";
+	manageBtn.style.display = "unset";
+	searchBtn.style.display = "unset";
+	addContactsBtn.style.display = "unset";
+	saveBtn.style.display = "unset";
+	faqBtn.style.display = "unset";
+	calculatorBtn.style.display = "unset";
+newDBButton.style.display = "unset";
+	firstManageBtn.style.display = "unset";
+	restoreDataBaseBtn.style.display = "unset";
+	loadSampleDbBtn.style.display = "unset";
+	loadSampleBudgetBtn.style.display = "unset";
+	loadTutorialDbBtn.style.display = "unset";
+	flashBtn.style.display = "unset";
+	
+	toSearchScreenBtn.style.display = "unset";
+	toEditTableScrBtn.style.display = "unset";
+	toSortScrBtn.style.display = "unset";
+	
+	actionImportBtn.style.display = "none";
+	actionEXPORT = false;
+	cancelFileNamesWindowBtn.click();//click function
+	//Left off
+	//tableTitle.length = originalNumberRecords;
+	//resetVariables();
+	//return getFileNames(dataBaseName);
+}//end if(actionEXPORT) {
+
 			fileNamesWindow.setAttribute('class','hidden');	
 			//getFileNames();//changed to just hide the window otherwise database list keeps growing
 				}//end if window.confirm else ...
@@ -2002,6 +2081,13 @@ if(blocked[15]) {
 // mustTapRestore = false;	
 // }//end if(mustTapRestore)
 // }//end if if else else
+
+//for IMPORT TABLE PROCESS .. NOT SURE WHERE BEST TO PUT THIS CODE?
+// if(actionEXPORT) {
+// actionImportBtn.style.display = "unset";
+// actionImportBtn.setAttribute('class','borderBlink');
+// promptBox.setAttribute('class','showing');	
+// }//end actionEXPORT
 	
 });//end promise.then databases
 
@@ -2094,6 +2180,34 @@ fileNamesWindow.setAttribute('class','hidden');
 while (dataBaseList.firstChild) {
    dataBaseList.removeChild(dataBaseList.firstChild);
 }//end while
+if(actionEXPORT) {
+	newDBBtn.style.display = "unset";
+addNoteBtn.style.display = "unset";
+	tableScreenBtn.style.display = "unset";
+	settingsBtn.style.display = "unset";
+aboutDBBtn.style.display = "unset";
+	manageBtn.style.display = "unset";
+	searchBtn.style.display = "unset";
+	addContactsBtn.style.display = "unset";
+	saveBtn.style.display = "unset";
+	faqBtn.style.display = "unset";
+	calculatorBtn.style.display = "unset";
+newDBButton.style.display = "unset";
+	firstManageBtn.style.display = "unset";
+	restoreDataBaseBtn.style.display = "unset";
+	loadSampleDbBtn.style.display = "unset";
+	loadSampleBudgetBtn.style.display = "unset";
+	loadTutorialDbBtn.style.display = "unset";
+	flashBtn.style.display = "unset";
+	
+	toSearchScreenBtn.style.display = "unset";
+	toEditTableScrBtn.style.display = "unset";
+	toSortScrBtn.style.display = "unset";
+	actionImportBtn.style.display = "none";
+IMPORTnewTable = false;	
+actionEXPORT = false;
+}//end if(actionEXPORT) {
+	fileNamesClicked = false;//flag used in Import new table	
 }//end cancelFileNamesWindowBtn.onclick
 
 //firstManageBtn
@@ -3130,6 +3244,7 @@ newTableNames.length =0;
 savedOriginal = false;
 fromEditFieldLabels = false;
 displayDataBtn.setAttribute('class', 'normalBtn');//because can still be blinking if you create a new db after having renamed another table name in a previous db date: Jan22 2023
+//fileNamesClicked = false;//flag used IMPORT new table
 //settingsBtn.setAttribute('class','tdEdit');//added Feb20 to cover scenario of cancelling a create new db after first record stage
 }//end resetVariables function
 
@@ -4726,9 +4841,15 @@ if(newDBGuidance) {
 	 displayXtraFieldData.length = counter;
 		 }//end if counter>0
 	 console.log('At end of displayData()..tableTitle = ' + tableTitle + ' counter = ' + counter);
+	// if(IMPORTnewTable) {
+		// alert("Successfully imported " + newTableName + " into " + dataBaseName);
+	// }
+	// alert('At end of displayData().after counter>0.tableTitle = ' + tableTitle + ' counter = ' + counter);
 	 //CODE RUNS TO HERE AND STOPS BECAUSE MEANWHILE ANOTHER BRANCH OF CODE IS COMPLETING IN GETDATABASEName
 	 //TypeError: undefined is not an object (evaluating 'data.variable2')line 3012
 	  //because js is asynchronous does code re-iterate through here while at the same time deleteItem code is running, and has not yet deleted the designated record, so tableTitle[] ends up with a 0 in its last instance making tableTitle array length one more than it should be?? Note after saving tableArray following deletion of a record from 4 record list + admin record, tableArray[4][0] = 0. so table.length = 4 instead of 3? So this is why tableTitle.length = counter statement in experiment2TableNotesVer15.js fixes the problem that occurs if going back to table from a previous run of deleteItem code?
+	  
+	  
 	  
 	//  Left off here Dec 9
     }//end else
@@ -4765,6 +4886,9 @@ console.log('At end of displayData: tableTitle = ' + tableTitle + '. tableTitle.
 			console.log('after displayData, displayXtraFieldData = '+ displayXtraFieldData);
   //note originalNumberRecords is NOT set here.
   console.log("At end of display data. Is savedTablesArray intact ? savedTablesArray = " + savedTablesArray);
+  
+   
+
 }//end displayData function
 //At end of display data. Is savedTablesArray intact ? savedTablesArray = Doug Dyer,
 //Contact Name , Feb 06 2022 00:20, ,username@shaw.ca,(250) 658-5645,addyer@telus.net,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -7880,6 +8004,8 @@ newTableVariablesArray[2] = tableListExists;
 //changed loadTableIndex to tableID Feb28 2022
 
 if(!deleteFromTableOptions) {
+//TypeError: undefined is not an object (evaluating 'newTableSpecificVariables[tableID][0] = newTableEdit')correction below did not work
+//if(newTableSpecificVariables===undefined){newTableSpecificVariables = [-1,[],0],[-1,[],0],[-1,[],0],[-1,[],0],[-1,[],0],[-1,[],0],[-1,[],0],[-1,[],0],[-1,[],0],[-1,[],0];}
 newTableSpecificVariables[tableID][0] = newTableEdit;//not using this variable as of Feb13
 //got this error when in Victoria Restaurants database editing Telephone field changing it to TELEPHONE. Also in Family Day database
 //TypeError: undefined is not an object (evaluating 'newTableFieldsArray.slice')
@@ -8720,12 +8846,47 @@ function getDataBaseName (key,dataBaseName,objectStoreName) {
 			
 	//alert('In getDataBaseName function: Successfully opened database with name: ' + dataBaseName);
 		//NotFoundError: Failed to execute 'transaction' on 'IDBDatabase': One of the specified object stores was not found.	
+		
+		//MAYBE PUT CHECK FOR SECOND OBJECTSTORE HERE FEB4 2024
+		
             db = open.result;
             tx = db.transaction([objectStoreName], "readwrite");
             var store = tx.objectStore(objectStoreName);
 		console.log('Will now try to open key id 1 first record of its objectStore:  ' + objectStoreName);
 		
             store.get(key).onsuccess =  function (event) {
+            
+            //before returning check second objectstore
+            /* 
+            objectStoreName =  "expNewTables_os";
+	tx = db.transaction([objectStoreName], "readwrite");
+            var store = tx.objectStore(objectStoreName);
+		console.log('Will now try to open key id 1 first record of its objectStore:  ' + objectStoreName);
+		
+            store.get(key).onsuccess =  function (event) {
+				console.log('onsuccess of store get key 1 Checking presence of second objectStore - event.target.result = ' + event.target.result);
+				alert("second objectstore present!");
+			//testing REMOVE DISPLAYDATA
+			//getFileNamesSwitch=false;
+				//displayData();
+				//testing REMOVE DISPLAYDATA
+              //  return resolve(event.target.result);
+            }//end store get(key).onsuccess function
+            store.get(key).onupgradeneeded =  function (event) { 
+            objectStore = db.createObjectStore(objectStoreName, { keyPath: 'id', autoIncrement:true });
+		objectStore.createIndex('EXPfieldNamesArray', 'EXPfieldNamesArray', { unique: false });
+  
+  //addind date of note creation
+  objectStore.createIndex('EXPnewTableArray', 'EXPnewTableArray', { unique: false });
+  //end code for adding date created
+  objectStore.createIndex('EXPnewTableName', 'EXPnewTableName', { unique: false });
+  objectStore.createIndex('EXPnewTableObj', 'EXPnewTableObj', { unique: false });
+  
+  objectStoreName = dataBaseName + "_os";//after creating second objectstore return objectStoreName to original Feb3 2024
+               }//end store.get(key).onupgradeneeded =  function 
+               
+               
+            */
 				console.log('onsuccess of store get key 1 Should return data to loadTheDataBase event.target.result = ' + event.target.result);
 			//testing REMOVE DISPLAYDATA
 			getFileNamesSwitch=false;
@@ -8733,15 +8894,35 @@ function getDataBaseName (key,dataBaseName,objectStoreName) {
 				//testing REMOVE DISPLAYDATA
                 return resolve(event.target.result);
             }//end store get(key)
-        }//end open.onsuccess function
+      //  }//end open.onsuccess function too many }
 		
 		
+		//NOW TRY TO OPEN SECOND OBJECTSTORE AND IF NOT PRESENT GO TO ON UGRADE NEEDED
+	// 	objectStoreName =  "expNewTables_os";
+	// tx = db.transaction([objectStoreName], "readwrite");
+    //         var store = tx.objectStore(objectStoreName);
+	// 	console.log('Will now try to open key id 1 first record of its objectStore:  ' + objectStoreName);
 		
+    //         store.get(key).onsuccess =  function (event) {
+	// 			console.log('onsuccess of store get key 1 Checking presence of second objectStore - event.target.result = ' + event.target.result);
+	// 		//testing REMOVE DISPLAYDATA
+	// 		//getFileNamesSwitch=false;
+	// 			//displayData();
+	// 			//testing REMOVE DISPLAYDATA
+    //           //  return resolve(event.target.result);
+    //         }//end store get(key)
+        }//end open.onsuccess function	
+		
+
+
+
+
 		
 		//onupgradeneeded function here
+		//SyntaxError: Unexpected identifier 'open'. Expected ')' to end an argument list.
 		open.onupgradeneeded = function (event) {
 		                console.log ('in onupgradeneeded which means database is new..not found');
-		
+	objectStoreName = dataBaseName + "_os";//after creating second objectstore return objectStoreName to original Feb3 2024	
 //alert("Should not be here unless creating a new db! backingMeUp = " + backingMeUp);
 
 		let db = event.target.result;
@@ -8760,7 +8941,18 @@ function getDataBaseName (key,dataBaseName,objectStoreName) {
   objectStore.createIndex('dataV', 'dataV', { unique: false });
   console.log('In onupgradeneeded. This means db_name not found and a new database is being created.');
   upgraded = 1;
-  //code from setup =0
+  // //code from setup =0
+  // objectStoreName = "expNewTables_os";
+  //  objectStore = db.createObjectStore(objectStoreName, { keyPath: 'id', autoIncrement:true });
+	// 	objectStore.createIndex('EXPfieldNamesArray', 'EXPfieldNamesArray', { unique: false });
+  
+  // //addind date of note creation
+  // objectStore.createIndex('EXPnewTableArray', 'EXPnewTableArray', { unique: false });
+  // //end code for adding date created
+  // objectStore.createIndex('EXPnewTableName', 'EXPnewTableName', { unique: false });
+  // objectStore.createIndex('EXPnewTableObj', 'EXPnewTableObj', { unique: false });
+  
+  // objectStoreName = dataBaseName + "_os";//after creating second objectstore return objectStoreName to original Feb3 2024
   redefineTableArray();
  // ReferenceError: Can't find variable: dataVobj so do I have to redefine dataV in upgrade needed for the new database?
  //DO I ALSO NEED redefineSavedTablesArray??
@@ -9148,7 +9340,7 @@ const newTableNameCancelBtn = document.querySelector('#newTableNameCancelBtn'); 
  
  const homeScreenBtn = document.querySelector('#homeScreenBtn');
  const moreTablesBtn = document.querySelector('#moreTablesBtn');
- const homeScreenBtn2 = document.querySelector('#homeScreenBtn');
+ const homeScreenBtn2 = document.querySelector('#homeScreenBtn2');
  
  //NC Jan9
  //CODE FOR DISPLAYING NEW TABLES
@@ -9183,7 +9375,7 @@ tableNameLi[i].textContent = newTableNames[i]+ "." + tableNumber;//maybe should 
 tableNameLi[i].addEventListener('click', function () {
 
 //CODE TO CHECK FOR FLASHING HOMEBTN BEFORE LOADING IN A NEW TABLE TO AVOID FILE DOES NOT EXIST GLITCH Mar 24 Mar24
-
+//Left off Feb28
 const attribute = homeScreenBtn.getAttribute('class');
 console.log(attribute);
 if(attribute === 'borderBlink') {
@@ -9200,28 +9392,48 @@ return;
 		tableID = loadTableIndex;
 		//TypeError: Attempted to assign to readonly property.tableName changed to tableNamed..not even declared a global variable and that worked. SO tableName must be used elsewhere????
 		deleteTableIndex = i;
-	//code to clear head row so table is not messed up when switching between db	 
+	//code to clear head row so table is not messed up when switching between db
 	
-	
+	//only allow export of a currently loaded table
+	if (tableID !== lastTableID) {
+		actionExportBtn.style.display = "none";
+	}
 		// tableChosenP.textContent = ' Table Selected: '+ newTableNames[i] + '. DOUBLE-TAPPING here will delete.';
 		 tableChosenP.textContent = ' Table Selected: '+ tableNamed;
 		 console.log('tableName = ' + newTableNames[i]);
 	 //confirm choice window
-	 
+//this code is in addEventListener so only shows after a click on desired table	 
 //code for promptBox
 promptBox.setAttribute('class','showing');
 tableNameLi[i].removeEventListener;	tableScreen.setAttribute('class','hidden');
 tableNameTxt.textContent = "SELECTED: " + tableNamed;
+if(!newTableLoadedFlag) {
+actionExportBtn.style.display = "none";//Jan27 2024
+}
 actionLoadBtn.textContent = "LOAD : " + tableNamed;
+actionExportBtn.textContent = "EXPORT : " + tableNamed;
+//actionExportBtn.style.display = "none";//Jan27 2024
+/*
+if(actionEXPORT) {
+	actionImportBtn.style.display = "unset";
+	//} else {actionImportBtn.style.display = "none";
+	}//END if(actionEXPORT) 
+*/	
+//actionImportBtn.style.display = "none";//Jan27 2024
 actionRenameBtn.textContent = "RENAME : " + tableNamed;
 actionDeleteBtn.textContent = "DELETE : " + tableNamed;
 actionRenameBtn.style.display = "unset";
 actionDeleteBtn.style.display = "unset";//in case any of these were none from addContacts or Field Labels
 actionLoadBtn.onclick = function () {
 // tableNameLi[i].removeEventListener;	tableScreen.setAttribute('class','hidden');
+//set flag to indicate new table has been loaded for benefit of future use of exporting this table
+newTableLoadedFlag = true;//where do I return this to false?..probably in tableOptions function?Jan27 2024
+
+actionExportBtn.style.display = "unset";
 promptBox.setAttribute('class','hidden');	
 	loadFromTableOptions = true;//flag indicates source of tableArray data
 	fromNewTable = true;//flag used in displayTable to keep fields being messed up if edit notes after viewing a new table
+	//alert("in actionLoadBtn. savedOriginal flag = " + savedOriginal);
 	if(!savedOriginal) {
 		saveOriginal();
 	}//works end of if(!savedOriginal)
@@ -9230,13 +9442,221 @@ promptBox.setAttribute('class','hidden');
 	homeScreenBtn2.textContent = "Clear New Table Data";
 	emailBtn.style.display = "none";
 	newTableFieldsBtn.style.display = "none";
-	
+	//^FIELDS LABELS  BTN on table screen
 		setupNewTable(tableNamed);	
 		
 	dbName = dataBaseName;
 			console.log('Table to load is ' + tableNamed); 
-	
+	console.log("In actionLoadBtn.onclick function...tableID = "+ tableID);
+	lastTableID = tableID;//to keep track of last table loaded so import btn can or can't appear Feb2 2024
 }//END FUNCTION actionLoadBtn.onclick
+
+//start of function to export a new table
+actionExportBtn.onclick = function () {
+actionEXPORT = true;//flag to help workflow date Feb11 2024 returned to false in actionImportBtn.onclick
+//check first that the table to be exported has been loaded into DougieBase
+//new flag added to actionLoadBtn
+if(!newTableLoadedFlag) {
+actionExportBtn.style.display = "none";
+alert("You must load the desired new table into DougiBase before you can EXPORT it! TAP THE LOAD BUTTON FIRST.")
+}
+// tableNameLi[i].removeEventListener;	tableScreen.setAttribute('class','hidden');
+console.log("In actionExportBtn.onclick function...tableID = "+ tableID + ".  loadFromTableOptions = " + loadFromTableOptions + ".  makeContactsTable = " + makeContactsTable + ".  loadTableIndex = " + loadTableIndex + ".  newTableSpecificVariables[loadTableIndex][1] = " + newTableSpecificVariables[loadTableIndex][1] + ".  savedTablesArray[loadTableIndex] = " + savedTablesArray[loadTableIndex]+ ".  savedTablesArray.length = " + savedTablesArray.length + ". newTableSpecificVariables.length = " + newTableSpecificVariables.length + ".  newTableSpecificVariables[tableIndex][1] = " + newTableSpecificVariables[tableIndex][1]);
+
+//create exp new tables data object
+EXPfieldNamesArray = newTableSpecificVariables[loadTableIndex][1].slice();
+EXPnewTableArray = savedTablesArray[loadTableIndex].slice();
+EXPnewTableName = newTableNames[loadTableIndex];
+EXPnumberOfNewTableAddedFields = newTableSpecificVariables[loadTableIndex][2];
+
+let EXPnewTableObj = {
+  EXPnewtableArray: EXPnewTableArray,
+  EXPfieldNamesArray: EXPfieldNamesArray,
+ EXPnewTableName: EXPnewTableName,
+EXPnumberOfNewTableAddedFields: EXPnumberOfNewTableAddedFields
+  
+//SyntaxError: Unexpected identifier 'EXPnumberOfNewTableAddedFields'. Expected '}' to end an object literal.
+ };//end declaration of EXPnewTableObj
+ 
+	
+newTableLoadedFlag = false;//where do I return this to false?..probably in tableOptions function?
+actionExportBtn.style.display = "none";
+//actionEXPORT is still true
+promptBox.setAttribute('class','hidden');
+alert("Now SELECT THE DATABASE YOU WISH TO IMPORT THE TABLE TO");
+//tableScreen.setAttribute('class','hidden');
+showTable.setAttribute('class','hidden');
+//actionImportBtn.style.display = "unset";
+if(actionEXPORT) {
+// promptBox.setAttribute('class','showing');
+
+//CODE BELOW INSURES IMPORT action will be carried through before a reversion to homescreen, which if allowed to happen would corrupt the current database Date:Feb18 2024 This code might best be relocated to after the alert to select database to import too..i.e. in actionExportBtn.onclick?		
+//if(actionEXPORT && !IMPORTnewTable) {
+	newDBBtn.style.display = "none";
+	addNoteBtn.style.display = "none";
+	tableScreenBtn.style.display = "none";
+	settingsBtn.style.display = "none";
+	aboutDBBtn.style.display = "none";
+	manageBtn.style.display = "none";
+	searchBtn.style.display = "none";
+	addContactsBtn.style.display = "none";
+	saveBtn.style.display = "none";
+	faqBtn.style.display = "none";
+	calculatorBtn.style.display = "none";
+	newDBButton.style.display = "none";
+	firstManageBtn.style.display = "none";
+	restoreDataBaseBtn.style.display = "none";
+	loadSampleDbBtn.style.display = "none";
+	loadSampleBudgetBtn.style.display = "none";
+	loadTutorialDbBtn.style.display = "none";
+	flashBtn.style.display = "none";
+	
+	// toSearchScreenBtn.style.display = "none";
+	// toEditTableScrBtn.style.display = "none";
+	// toSortScrBtn.style.display = "none";
+	toSearchScreenBtn.style.display = "none";
+	toEditTableScrBtn.style.display = "none";
+	toSortScrBtn.style.display = "none";
+	
+	//homeScreenBtn2.style.display = "none";
+//}//end if(actionEXPORT && !IMPORTnewTable)
+//Left off here
+ actionImportBtn.style.display = "unset";
+ actionImportBtn.textContent = "IMPORT " + EXPnewTableName;
+ actionImportBtn.setAttribute('class','borderBlink')
+// //LEFT OFF HERE feb13
+ }//end if(actionEXPORT) {
+//show the files selection screen and in the event listener use condition if(actionEXPORT) to flash the IMPORT BTN
+
+
+ 
+fileNamesWindow.setAttribute('class','showing');
+ getFileNames(dataBaseName);
+// promptBox.setAttribute('class','showing');
+ //Left off here Feb13 2024
+ /*
+ if(actionEXPORT) {
+ promptBox.setAttribute('class','showing');
+ actionImportBtn.style.display = "unset";
+ actionImportBtn.textContent = "IMPORT " + EXPnewTableName;
+ actionImportBtn.setAttribute('class','borderBlink')
+// //LEFT OFF HERE feb13
+ }//end if(actionEXPORT) {
+ */
+ }//END FUNCTION ^ actionExportBtn.onclick
+//Left off Feb5 use RETRYexpDougieBaseVer51.js
+//END OF FUNCTION TO EXPORT A NEW TABLE
+
+//IMPORT A NEW TABLE
+actionImportBtn.onclick = function (text) {
+if(!fileNamesClicked) {
+alert ("SELECT the database to import the table to first!");
+	return getFileNames(dataBaseName);
+}//end if(!fileNamesClicked) 
+IMPORTnewTable = true;
+makeContactsTable = false;
+loadFromTableOptions = false;
+newDBBtn.style.display = "unset";
+addNoteBtn.style.display = "unset";
+	tableScreenBtn.style.display = "unset";
+	settingsBtn.style.display = "unset";
+aboutDBBtn.style.display = "unset";
+	manageBtn.style.display = "unset";
+	searchBtn.style.display = "unset";
+	addContactsBtn.style.display = "unset";
+	saveBtn.style.display = "unset";
+	faqBtn.style.display = "unset";
+	calculatorBtn.style.display = "unset";
+newDBButton.style.display = "unset";
+	firstManageBtn.style.display = "unset";
+	restoreDataBaseBtn.style.display = "unset";
+	loadSampleDbBtn.style.display = "unset";
+	loadSampleBudgetBtn.style.display = "unset";
+	loadTutorialDbBtn.style.display = "unset";
+	flashBtn.style.display = "unset";
+	
+	
+//homeScreenBtn2.style.display = "unset";
+//navigator.clipboard.readText().then(text => {
+  // Parse the JSON string back into an object
+  // let IMPORTnewTableObj = JSON.parse(text);
+  
+  // // Now you can use IMPORTnewTableObj as your object
+  // console.log(IMPORTnewTableObj);
+  // alert("IMPORTnewTableObj = " + IMPORTnewTableObj);
+  // alert("newTableName = " + IMPORTnewTableObj.EXPnewTableName);
+  
+  //put imported values into the global variables in order to use to create the imported table
+  //  let IMPORTnewTableName = IMPORTnewTableObj.EXPnewTableName;
+  // let IMPORTtableFieldNamesArray = IMPORTnewTableObj.EXPfieldNamesArray;
+  //let IMPORTnewTableArray = IMPORTnewTableObj.EXPnewTableArray;
+  //copyOfTableArray = IMPORTnewTableObj.EXPnewTableArray.slice();
+  //ABOVE PRODUCED IMPORTnewTableArray AS UNDEFINED!
+  
+  //LETS JUST USE THE VARIABLES CREATED IN EXPORT CODE
+let IMPORTnewTableName = EXPnewTableName;
+importedTableName = IMPORTnewTableName;//used in alert below to acknowledge successful import. resetFromContacts loses newTableName
+
+  let IMPORTtableFieldNamesArray = EXPfieldNamesArray;
+  
+ let IMPORTtableArray = EXPnewTableArray;
+ // alert("IMPORTnewTableName = " + IMPORTnewTableName + " IMPORTtableFieldNamesArray = " + IMPORTtableFieldNamesArray + " IMPORTnewTableArray = " + IMPORTnewTableArray);
+  
+ // alert("IMPORTnewTableName = " + IMPORTnewTableName + " IMPORTtableFieldNamesArray = " + IMPORTtableFieldNamesArray + "  IMPORTtableArray = " + IMPORTtableArray);
+  setupNewTable();
+//ReferenceError: Can't find variable: setUpNewTable
+//alert("Did it work?");
+//Left off here Feb7 2024
+// navigator.clipboard.readText().then(text => {
+//   // text contains the contents of the clipboard
+//   console.log(text);
+//   alert("This text has been retrieved from the clipboard - " + text);
+//   return text;
+// });
+// //By serializing the data object to JSON using JSON.stringify(data), you ensure that it contains only serializable data types, which can be safely stored in IndexedDB. Later, when you retrieve the data from IndexedDB, you can deserialize it using JSON.parse() to get back the original object.
+// alert("text = " + text);
+
+// //EXPnewTableObj = JSON.parse(text);
+// let IMPORTnewTableObj = JSON.parse(text);
+// //alert("EXPnewtableArray = " + EXPnewTableObj.EXPnewtableArray );
+// alert ("EXPnewTableName =  " + IMPORTnewTableObj.EXPnewTableName);
+// // EXPnewTableObj = {
+// //   EXPnewtableArray: EXPnewTableArray,
+// //   EXPfieldNamesArray: EXPfieldNamesArray,
+// //  EXPnewTableName: EXPnewTableName 
+
+// //  };//end declaration of EXPnewTableObj
+if(actionEXPORT) {
+	promptBox.setAttribute('class','hidden');
+	saveTableBtn.textContent = "SAVE IMPORT";
+	saveTableBtn.setAttribute('class','borderBlink');
+	actionImportBtn.style.display = "none";
+	actionEXPORT = false;
+	fileNamesClicked = false;//flag used to insure database selected before IMPORT
+	homeScreenBtn.style.display = "none";
+	homeScreenBtn2.style.display = "none";
+	moreTablesBtn.style.display = "none";
+	
+	// toSortScrBtn.style.backgroundColor = "lightgrey";
+	// toSortScrBtn.disabled = true;
+	// toEditTableScrBtn.style.backgroundColor = "lightgrey";
+	// toEditTableScrBtn.disabled = true;
+	// toSearchScreenBtn.style.backgroundColor = "lightgrey";
+	// toSearchScreenBtn.disabled = true;
+	
+	
+	// toSearchScreenBtn.style.display = "none";
+	// toEditTableScrBtn.style.display = "none";
+	// toSortScrBtn.style.display = "none";
+	
+	
+	
+}//end function if(actionEXPORT) { 
+homeScreenBtn2.style.display = "none";
+//homeScreenBtn2.style.visibility = "hidden"; // Hide the element
+}//end function actionImportBtn.onclick
+//IMPORT A NEW TABLE
+
 
 actionRenameBtn.onclick = function () { 
 promptBox.setAttribute('class','hidden');	
@@ -9310,6 +9730,14 @@ refreshTableName.textContent = dbTableName.value;
  
  if(DTBtnTappedOnce ===0){
  copyOfTableArray = tableArray.slice(0,tableTitle.length);
+ 
+ /*This ^ JavaScript code creates a copy of the array tableArray by using the slice method.
+
+Here’s what each part does:
+
+	•	tableArray.slice(0, tableTitle.length): This part takes a portion of the tableArray starting from index 0 up to tableTitle.length. It creates a shallow copy of the array, meaning it doesn’t modify the original array but creates a new one with the specified elements.
+	•	copyOfTableArray = ...: This assigns the sliced portion of tableArray to the variable copyOfTableArray, effectively creating a copy of that portion of the array.
+	*/
  copyOfTableTitle = tableTitle.slice();	//displayTableBtn.setAttribute('class','attentionBtn');
 //changed to borderBlink to remind user to initiate main db table! Added !newDBGuidance may25
 if(!convertingOldFile && !newDBGuidance) {
@@ -9338,14 +9766,43 @@ returnToNotesBtn.setAttribute('class','borderBlink');
 
 //alert("At need refresh? originalNumberRecords = " + originalNumberRecords + ". tableTitle.length = " + tableTitle.length + ". editNote = " + editNote + ". loadFromTableOptions = " + loadFromTableOptions + ". editCurrentTable = " + editCurrentTable + ". edit = " + edit);
 //editCurrentTable = 0 on entering tableScreenOptions so don't use it in this condition
+
+//loadFromTableOptions = true in actionLoadBtn.onclick
+//getting ready to prepare table generator for newTable mode which uses the same variable names as main db mode so have to change their values to the new table
 if(loadFromTableOptions) {//&& editCurrentTable === 1
 	originalNumberRecords = savedTablesArray[loadTableIndex].length;
 //TypeError: undefined is not an object (evaluating 'savedTablesArray[loadTableIndex].length') if you don't SAVE a new table
 }//end if
 
-//alert("At need refresh? AFTER ORIGINALNUMBERRECORDS ADJUSTED!  originalNumberRecords = " + originalNumberRecords + ". tableTitle.length = " + tableTitle.length + ". editNote = " + editNote + ". loadFromTableOptions = " + loadFromTableOptions + ". editCurrentTable = " + editCurrentTable);
 
+//CODE BELOW MIGHT BE WRONG .. WHEN SHOULD WE REVERT TO MAINDB MODE?DATE:FEB13 commented out code below issue of refreshTable should be taken care of by if(originalNumberRecords === otherVariablesArray[1]) { below??
+/*
+if(IMPORTnewTable) {//&& editCurrentTable === 1
+	originalNumberRecords = otherVariablesArray[1];
+	tableTitle.length = otherVariablesArray[1];//this fixes tableTitle.length = tableTitle.length of the imported table? Date:Feb11 2024
+	//originalNumberRecords = tableTitle.length;
+//TypeError: undefined is not an object (evaluating 'savedTablesArray[loadTableIndex].length') if you don't SAVE a new table
+}//end if
+*/
+//alert("Now in TableScreenOptions");
+/*
+alert("In tableScreenOptions. At need refresh? Before loading in a new table original number of records should reflect the main database! originalNumberRecords = " + originalNumberRecords + ". tableTitle.length = " + tableTitle.length + ". editNote = " + editNote + ". loadFromTableOptions = " + loadFromTableOptions + ". editCurrentTable = " + editCurrentTable);
 
+alert('originalNumberRecords = '+ originalNumberRecords + ' otherVariablesArray[1] = ' + otherVariablesArray[1] + ' tableTitle.length = ' + tableTitle.length);
+ alert('editNote = ' + editNote + '  tableExists = ' + tableExists)
+ alert('at tableScreenOptions.  tableTitle = '+ tableTitle);
+*/
+//Left off here Feb11
+/*
+if(originalNumberRecords === otherVariablesArray[1]) {
+alert( "NOW IN MAINDB MODE!");
+} else {
+alert( "NOW IN NEW TABLE MODE!");	
+}//end if(originalNumberRecords === otherVariablesArray[1])  
+*/
+//checking to see if a new record has been added to main db IF IN MAINDB MODE
+//if(originalNumberRecords === otherVariablesArray[1]) {
+if(!IMPORTnewTable) {
  if (!convertingOldFile & tableExists & tableTitle.length>originalNumberRecords || editNote) {
 	 tableScreen.appendChild(refreshTableP);
 	 displayTableBtn.disabled = true;//Nov 22 so a tap of displayTableBtn doesn't cause a false display and also preverts a repeat display of the refresh notification. Also have to disable the create table option bar Feb 12 .. but doesn't do it!!
@@ -9359,7 +9816,9 @@ if(loadFromTableOptions) {//&& editCurrentTable === 1
 	 
 	 tableNeedsUpdate = true;//flag so that if removing after returnHomeBtn tapped does not produce an error Dec 29
 	 }//end if tableTitle.length>originalNumberRecords
-	
+}//end if(!IMPORTnewTable) {
+	 
+	//SHOULD LINE BELOW BE IN if tableTitle.length>originalNumberRecords SECTION? Does not matter as this info p is only appended to the tableScreenOptions window only if tableTitle.length > original number of records	
 	 refreshTableP.textContent = "You have added a new Record since last creation of Table, OR you have edited a note, OR you have changed the edit table Trigger action. To update tap UPDATE TABLE button.";
 	 refreshTableBtn.onclick = function () {
 	 
@@ -9451,7 +9910,7 @@ goHomeBtn.style.display = "none";
 		goHomeBtn.style.display = "unset";
 	}//end if !tableExists
 //LEFT OFF HERE NOV 11 !!!!!!! Fix this!	
-editBtn.textContent = 'EDIT';
+editBtn.textContent = 'EDIT'; 
 deleteFieldBtn.textContent = 'DELETE FIELD';
 if(!tableExists) {
 	editBtn.disabled = true;
@@ -9688,6 +10147,11 @@ STrows.appendChild(STheadRow);
 	tableInstructions.textContent = "INSTRUCTIONS FOR CREATING THE TABLE: \n Tap on the directions bar above to start creating a new table (NEW button will be active), or tap the EDIT button if it is activated, to make changes to a pre-existing table. The next screen is where you can add fields, delete fields, or change the text of the field labels. From this screen you can DISPLAY the current table, or return to the HOME screen. Note: If displaying the table you just created for the first time, the DISPLAY TABLE button will be highlighted in Green, indicating you must tap it prior to doing any editing, in order for the database to initialize the table. This only occurs once for the initial set up of the table.\n On the EDIT screen, the first 3 fields are FIXED fields which can not be deleted. There are 4 fixed fields (including the DATE field) that are automatically created from the Notes section when you make your first table. Their labels' headings text can be edited (the body text of the fixed fields can be edited in the Notes section), but these fields can not be deleted, nor can additional fixed fields be created. The other fields are DYNAMIC fields which you create when making your table on the Create/Edit window. At the initial table creation (after tapping the NEW button), the Green number input field is where you enter the number of dynamic fields you want to start off with. After the initial table creation, the NEW button is disabled, and returning to this window for subsequent table edits shows only the EDIT button and the DELETE FIELDS button to be active. When subsequently editing a table, the first step is to go to the number input window that appears at the bottom of the edit screen asking you to enter the number of additional fields you want to add. Enter 0 here if you do not want any more additional dynamic fields. The Green enter button indicates this is the required next button to tap. Then the Submit button above will change to Green, allowing the database to accept any text edits you made to the FIXED field labels above, and will also reveal text inputs to edit or label any additional DYNAMIC fields you added.\n USING NEW TABLES: \n DougieBase can create new tables using data from SEARCHED records OR from CONTACTS. If there are new tables for any particular database they are listed below. Tapping on the table name allows 'LOADING' or 'DELETING' the table. Tap the CONTACTS button in the table window to access your contacts on your device. (This requires the browser to have support for the javascript ContactsPickerAPI. In Safari iOS > 14.5 enable this in Safari settings/Experimental.) To customize a label for a new table use the CREATE TABLE button. This option is enabled AFTER the main database table has been initialized, by tapping the 'GREEN' DISPLAY TABLE button. ";
 
 	returnToNotesBtn.onclick = function () {
+	
+	if(newTableLoadedFlag) {
+	actionExportBtn.style.display = "none";
+   }//end if(newTableLoadedFlag)
+	
 		if(convertingOldFile) {
 			returnToNotesBtn.setAttribute('class','tdEdit');
 			returnToNotesBtn.textContent = "Return to HOME SCREEN";
@@ -10803,6 +11267,17 @@ console.log("At end of build record rows from a table edit. tableArray = " +tabl
 //above code is buildRecordRows function
 //show the table previously created using the tableArray variable
 function displayTable () {
+
+// const attributeSaveBtn = saveBtn.getAttribute('class');
+// console.log(attributeSaveBtn);
+// if(attributeSaveBtn === 'borderBlink') {
+// alert("Must tap SAVE!");
+// 	homeScreenBtn.style.display = "none";
+// 	} else {
+// 	homeScreenBtn.style.display = "unset";
+// //return;
+// }//end if else (attributeSaveBtn === 'borderBlink')
+
 today = new Date();
 todayS = today.toString();
  currentDate = todayS.slice(3, 8);
@@ -10831,6 +11306,10 @@ if (tableArray[0][2].includes("Cost to date = $") || tableArray[0][2].includes("
 if(makeContactsTable) {
 		flipMenu.textContent = " ✅ New Table Name: " + newTableNames[tableIndex] + ". " + newTableName;
 	}//end if makeContactsTable
+
+if(IMPORTnewTable) {
+	flipMenu.textContent = " ✅ New Table Name: " + EXPnewTableName;
+}//end if(IMPORTnewTable) {
 
 	//alert("Start function displayTable (I removed parameter..…savedTablesArray = " + savedTablesArray);
 	//REMOVING PARAMETER KEEPS savedTablesArray INTACT!
@@ -12952,6 +13431,22 @@ if (searchedHitsTableArray.length > 0) {
 		//const homeScreenBtn = document.querySelector('#homeScreenBtn');
 		homeScreenBtn.onclick = function () {
 		
+	//code to insure return to home screen btn is not run if save btn is flashing as in IMPORT new table
+// 	const attributeSaveBtn = saveBtn.getAttribute('class');
+// console.log(attributeSaveBtn);
+// if(attributeSaveBtn === 'borderBlink') {
+// alert("Must tap SAVE!");
+// 	homeScreenBtn.style.display = "none";
+// 	} else {
+// 	homeScreenBtn.style.display = "unset";
+// //return;
+// }//end if else (attributeSaveBtn === 'borderBlink')
+//ADDED TO HOMESCREENBTN.ONCLICK FEB17 2024 TO PREVENT A ROGUE LISTING OF A RECORD THAT IS NOT THERE WHEN DISPLAYING CRAZY CREATURES (2 records) AND ALTERNATING with a table with 3 records. Nope did not fix..also note that a similar case using Hawaiian Islands (2 records) and Testing Keyboard input(3 records) DOES NOT PRODUCE THE SAME EXTRA GHOST RECORD .. so is it just something wrong with Crazy Creatures? NEW OBSERVATION: THE + and - buttons also appear when the ghost record shows so must be in newtable mode after tapping DISPLAY TABLE ? Did the Creepy Creatures file get contaminated the time I aborted an IMPORT? Yes it did because reloading from scratch corrected the problem. This means I have to build in error code when IMPORT :table name is flashing but not tapped.(the time this happened I got error msg corrupted maindb file etc.!!!)
+		
+if(newTableLoadedFlag) {
+	actionExportBtn.style.display = "none";
+   }//end if(newTableLoadedFlag)
+   			
 backupBtn1.style.display = "none";
 backupBtn2.style.display = "none";//maybe should just be tdEdit?
 		
@@ -13227,6 +13722,10 @@ flipMenu.textContent = "Tap - Click to show / hide TABLE MENU";
 		//const homeScreenBtn2 = document.querySelector('#homeScreenBtn2');
 		homeScreenBtn2.onclick = function () {
 		
+if(newTableLoadedFlag) {
+	actionExportBtn.style.display = "none";
+   }//end if(newTableLoadedFlag)
+			
 backupBtn1.style.display = "none";
 backupBtn2.style.display = "none";//maybe should just be tdEdit?
 
@@ -13473,6 +13972,16 @@ flipMenu.textContent = "Tap - Click to show / hide TABLE MENU";
 		//$("#flip").css({"background-color": "yellow", "border": "red"});
 	//$$LEFT OFF HERE,!!!	
 	saveTableBtn.onclick = function () { 
+	
+	if(IMPORTnewTable) {
+		homeScreenBtn.style.display = "unset";
+		homeScreenBtn2.style.display = "unset";
+		moreTablesBtn.style.display = "unset";
+		toSearchScreenBtn.style.display = "unset";
+	toEditTableScrBtn.style.display = "unset";
+	toSortScrBtn.style.display = "unset";
+	}//end if(IMPORTnewTable) {
+	
 	fieldSUM = 0;//clear to 0 in case TOTAL function has been used
 	eMailActive = false;//flag set here to prevent an email if just editing a td
 	telephoneActive = false;
@@ -13506,7 +14015,7 @@ renameNewTableFlag = false;
 		//alert(" I removed parameter! saveTableBtn.onclick..savedTablesArray[0] = " + savedTablesArray[0]);
 		//alert("newTableName =  " + newTableName);
 		//Date:Jan25Remove if messes up
-		if(makeContactsTable || loadFromTableOptions) {
+		if(makeContactsTable || loadFromTableOptions || IMPORTnewTable) {
 		flipMenu.textContent = " ✅ New Table Name: " + newTableNames[tableIndex] + ". " + newTableName;
 		}//end if makeContactsTable ||vloadFromTableOptions
 		//flipMenu.textContent = " ✅ New Table Name: " + newTableName;//have to repeat this for second run to get it to work.not sure why?????Date: Jan2
@@ -13526,7 +14035,7 @@ renameNewTableFlag = false;
 	//NCJan10..If messed up go back to fallBackJan10
 	// prompt to give choice for saving a contacts table or return to table
  //confirm choice window
- if(makeContactsTable || loadFromTableOptions) {
+ if(makeContactsTable || loadFromTableOptions || IMPORTnewTable) {
 	 //NCJan10..If messed up go back to fallBackJan10
 	 //when makeContactsTable and loadFromTableOptions are true tableArray is in newTable mode so have to restore to main db mode prior to any save!ResetFromContacts does this AND also sets savedOriginal to false
 		 if (window.confirm("SAVE Contacts - New Table ? : \n" + "  CANCEL will Return to Table")) {
@@ -13542,7 +14051,8 @@ homeScreenBtn2.disabled = false;
 	
 			resetFromContacts();
 	}//end if loadFromTableOptions
-			 if(makeContactsTable) {loadFromTableOptions = false;
+			 if(makeContactsTable || IMPORTnewTable) {loadFromTableOptions = false;
+			 
 			 saveNewTable();
 	}//end if makeContactsTable saveNewTable takes you to resetFromContacts it also creates savedTablesArray[tableIndex]? If abort save should tableIndex be brought back to tableIndex-1 ?
 			
@@ -13585,6 +14095,8 @@ homeScreenBtn2.disabled = false;
 			 
 			// saveNewTable();
 			// return//.?temporary to prevent saving variables until code written for it Jan12022
+			
+			// else below means SAVE NEW TABLE HAS BEEN CANCELLED!
 			} else {
 				saveTableBtn.textContent = "SAVE";
 			// saveTableBtn2.disabled = true;
@@ -13597,19 +14109,22 @@ homeScreenBtn.disabled = false;
 homeScreenBtn2.disabled = false;
 homeScreenBtn.setAttribute('class','borderBlink');
 homeScreenBtn2.setAttribute('class','borderBlink');
-
+//SHOULD I ADD || IMPORTnewTable Date Feb11 2024
 if(loadFromTableOptions || makeContactsTable) {
 	emailBtn.style.display = "none";
 	newTableFieldsBtn.style.display = "none";
 }//end if loadFromTableOptions || makeContactsTable
 
 //saveNewTable takes you to resetFromContacts it also creates savedTablesArray[tableIndex]? If abort save should tableIndex be brought back to tableIndex-1 ? Date:April13 2022..not tested and what about newTableSpecificVariables?
-if(makeContactsTable) {
+if(makeContactsTable || IMPORTnewTable) {
 tableIndex = tableIndex-1;
 //code from CANCEL getnew TableName to reset savedTablesArray and newTableVariables array after not saving and cancelling it out
 
 let cancelledSavedTablesArray = savedTablesArray.pop();
 	newTableNames.pop();
+	
+//This code line removes the last element from the array `savedTablesArray` and assigns it to the variable `cancelledSavedTablesArray`. So, `cancelledSavedTablesArray` will contain the removed element, and `savedTablesArray` will no longer contain that element. So do the same for a cancelled IMPORT i.e. add || IMPORTnewTable Date: Feb11 2024
+	
 let cancelledNewTableSpecificVariables = newTableSpecificVariables.pop();
 //now have to restore savedTablesArray.length as in a delete
 //now restore array length
@@ -13630,7 +14145,16 @@ console.log("savedTablesArray.length = " + savedTablesArray.length);
 				abortSave = true;
 				
 	resetFromContacts();//will this fix CANCEL SAVE errors and issues..not tested as of April25 2022
-				
+	if(IMPORTnewTable) {
+		alert("Importing " + importedTableName + " into " + toDataBaseName + " CANCELLED!");
+	IMPORTnewTable = false;
+	saveTableBtn.textContent = "SAVE";
+	saveTableBtn.setAttribute('class','tdEdit');
+	actionImportBtn.style.display = "none";
+	toSearchScreenBtn.style.display = "unset";
+	toEditTableScrBtn.style.display = "unset";
+	toSortScrBtn.style.display = "unset";
+	}//end if(IMPORTnewTable)  		
 //if makeContactsTable AND new table not saved we need to delete this new table from the listing	
 
 				//displayTable();
@@ -13745,6 +14269,15 @@ recordAdded = false;
 tableConstructed = 0;
 displayedTable = 0;	
 	}//end if(recordAdded) 
+	
+//after IMPORT return everything to neutral
+if(IMPORTnewTable) {
+alert("Successfully imported " + importedTableName + " into " + toDataBaseName);
+	IMPORTnewTable = false;
+	saveTableBtn.textContent = "SAVE";
+	saveTableBtn.setAttribute('class','tdEdit');
+	actionImportBtn.style.display = "none";
+}//end if(IMPORTnewTable) {
 		
 }//end saveTableBtn.onclick
 	//saveTableBtn2.onclick = clickedSaveTable();
@@ -13752,7 +14285,19 @@ displayedTable = 0;
 	//for saveTableBtn2
 	
 	saveTableBtn2.onclick = function () { 
+	
+	if(IMPORTnewTable) {
+		homeScreenBtn.style.display = "unset";
+		homeScreenBtn2.style.display = "unset";
+		moreTablesBtn.style.display = "unset";
+		toSearchScreenBtn.style.display = "unset";
+	toEditTableScrBtn.style.display = "unset";
+	toSortScrBtn.style.display = "unset";
+	}//end if(IMPORTnewTable) {
+	
 	fieldSUM = 0;//clear to 0 in case TOTAL function has been used
+	eMailActive = false;//flag set here to prevent an email if just editing a td
+	telephoneActive = false;
 	//tableIndex = 7;testing fixing screw ups
 	resetFields = true;//if you hit SAVE twice fields can get messed up
 	homeScreenBtn.disabled = false;//to help force Save..now reset after flashing SAVE
@@ -13784,7 +14329,7 @@ renameNewTableFlag = false;
 		//alert(" I removed parameter! saveTableBtn.onclick..savedTablesArray[0] = " + savedTablesArray[0]);
 		//alert("newTableName =  " + newTableName);
 		//Date:Jan25Remove if messes up
-		if(makeContactsTable || loadFromTableOptions) {
+		if(makeContactsTable || loadFromTableOptions || IMPORTnewTable) {
 		flipMenu.textContent = " ✅ New Table Name: " + newTableNames[tableIndex] + ". " + newTableName;
 		}//end if makeContactsTable ||vloadFromTableOptions
 		//flipMenu.textContent = " ✅ New Table Name: " + newTableName;//have to repeat this for second run to get it to work.not sure why?????Date: Jan2
@@ -13804,7 +14349,7 @@ renameNewTableFlag = false;
 	//NCJan10..If messed up go back to fallBackJan10
 	// prompt to give choice for saving a contacts table or return to table
  //confirm choice window
- if(makeContactsTable || loadFromTableOptions) {
+ if(makeContactsTable || loadFromTableOptions || IMPORTnewTable) {
 	 //NCJan10..If messed up go back to fallBackJan10
 	 //when makeContactsTable and loadFromTableOptions are true tableArray is in newTable mode so have to restore to main db mode prior to any save!ResetFromContacts does this AND also sets savedOriginal to false
 		 if (window.confirm("SAVE Contacts - New Table ? : \n" + "  CANCEL will Return to Table")) {
@@ -13820,7 +14365,7 @@ homeScreenBtn2.disabled = false;
 	
 			resetFromContacts();
 	}//end if loadFromTableOptions
-			 if(makeContactsTable) {loadFromTableOptions = false;
+			 if(makeContactsTable || IMPORTnewTable) {loadFromTableOptions = false;
 			 saveNewTable();
 	}//end if makeContactsTable saveNewTable takes you to resetFromContacts it also creates savedTablesArray[tableIndex]? If abort save should tableIndex be brought back to tableIndex-1 ?
 			
@@ -13872,19 +14417,22 @@ homeScreenBtn.disabled = false;
 homeScreenBtn2.disabled = false;
 homeScreenBtn.setAttribute('class','borderBlink');
 homeScreenBtn2.setAttribute('class','borderBlink');
-
+//SHOULD I ADD || IMPORTnewTable Date Feb11 2024
 if(loadFromTableOptions || makeContactsTable) {
 	emailBtn.style.display = "none";
 	newTableFieldsBtn.style.display = "none";
 }//end if loadFromTableOptions || makeContactsTable
 
 //saveNewTable takes you to resetFromContacts it also creates savedTablesArray[tableIndex]? If abort save should tableIndex be brought back to tableIndex-1 ? Date:April13 2022..not tested and what about newTableSpecificVariables?
-if(makeContactsTable) {
+if(makeContactsTable || IMPORTnewTable) {
 tableIndex = tableIndex-1;
 //code from CANCEL getnew TableName to reset savedTablesArray and newTableVariables array after not saving and cancelling it out
 
 let cancelledSavedTablesArray = savedTablesArray.pop();
 	newTableNames.pop();
+	
+//This code line removes the last element from the array `savedTablesArray` and assigns it to the variable `cancelledSavedTablesArray`. So, `cancelledSavedTablesArray` will contain the removed element, and `savedTablesArray` will no longer contain that element. So do the same for a cancelled IMPORT i.e. add || IMPORTnewTable Date: Feb11 2024
+	
 let cancelledNewTableSpecificVariables = newTableSpecificVariables.pop();
 //now have to restore savedTablesArray.length as in a delete
 //now restore array length
@@ -13905,7 +14453,13 @@ console.log("savedTablesArray.length = " + savedTablesArray.length);
 				abortSave = true;
 				
 	resetFromContacts();//will this fix CANCEL SAVE errors and issues..not tested as of April25 2022
-				
+	if(IMPORTnewTable) {
+		alert("Importing " + importedTableName + " into " + toDataBaseName + " is CANCELLED!");
+	IMPORTnewTable = false;
+	saveTableBtn.textContent = "SAVE";
+	saveTableBtn.setAttribute('class','tdEdit');
+	actionImportBtn.style.display = "none";
+	}//end if(IMPORTnewTable)			
 //if makeContactsTable AND new table not saved we need to delete this new table from the listing	
 
 				//displayTable();
@@ -14020,6 +14574,14 @@ recordAdded = false;
 tableConstructed = 0;
 displayedTable = 0;	
 	}//end if(recordAdded) 
+//after IMPORT return everything to neutral
+if(IMPORTnewTable) {
+alert("Successfully imported " + importedTableName + " into " + toDataBaseName);
+	IMPORTnewTable = false;
+	saveTableBtn.textContent = "SAVE";
+	saveTableBtn.setAttribute('class','tdEdit');
+	actionImportBtn.style.display = "none";
+}//end if(IMPORTnewTable) {
 		
 
 	}//end saveTableBtn(2).onclick
@@ -14028,7 +14590,7 @@ displayedTable = 0;
 	console.log('At END displayTable(). This means a table now exists..rerun or not.: displayedTable = ' + displayedTable + '. tableConstructed = ' + tableConstructed + '. renewed (added record) = ' + renewed + '. refreshed (data cell edit) = ' + refreshed + '. edit = ' + edit + '. DTBtnTappedOnce = ' + DTBtnTappedOnce + '. editCurrentTable = ' + editCurrentTable + '. editCurrentTable variable is set 0 every time tableScreenOptions is run.The refreshed variable is controlled by the REFRESH Btn in the edit phase of the showTable data cell, and is also set to 1 in refreshTable function. refreshed is set to 0 in showBtn.onclick (DISPLAY TABLE) Btn, and also from a rerun..initialized to 0. The renewed variable is controlled by the refreshTable function.' + '. originalNumberOfFields = ' + originalNumberOfFields + '. numberOfFields = ' + numberOfFields + '. numberOfDynamicFields = ' + numberOfDynamicFields + '. originalNumberRecords = ' + originalNumberRecords + '. addedNumberOfRecords = ' + addedNumberOfRecords + '. See refreshTable and editBtn.onclick');
 	//moved goToSearchBtn.onclick here to see if this fixes program in limbo issue after first table appearance and then tapping goToSearchBtn???FIXED BY ADDING CALL TO SEARCH FUNCTION,!!
 	//return to search table window
-			const toSearchScreenBtn = document.querySelector('#toSearchScr');
+			// const toSearchScreenBtn = document.querySelector('#toSearchScr');
 		toSearchScreenBtn.onclick = function () {
 		fieldSUM = 0;//clear to 0 in case TOTAL function has been used
 if(STsecondDataNameTdListener) {
@@ -14095,7 +14657,7 @@ clearTableWindow.setAttribute('class','borderBlinkGrn');
 		}//end toEditTableScrBtn.onclick
 	
 	//to SORT TABLE CODE	
-	const toSortScrBtn = document.querySelector('#toSortScr');
+	// const toSortScrBtn = document.querySelector('#toSortScr');//made global
 	
 //DISABLE SORT SEARCH AND EDIT IF CREATING A CONTACTS TABLE SO RESTORE SORT ETC IS NOT MESSED UP. SORT AND SEARCH WILL ONLY BE ALLOWED IN A NEW TABLE IF IT IS LOADED FROM THE NEW TABLE LIST! But no SAVE can be allowed if either makeContactsTable OR loadFromTableOptions is true because that would corrupt the db tableArray!
 if(makeContactsTable) {
@@ -17466,7 +18028,7 @@ console.log("in resetFromContacts: tableArray is now back to original db = " + t
 newTableEdit = false;//done with this flag now that edited newTable will be saved ? Need to move this line to savevariables???? Date: Febe
 	}//end resetFromContacts function THIS IS DIFFERENT THAN CONTACTSARRAY..PROBABLY DON'T NEED SEE ALLCONTACTSINFO FUNCTION
 	
-//function saveNewTable called by saveTableBtn.onclick with loadFromTableOptions false and makeContactsTable true saving a newTable after its creation
+//function saveNewTable called by saveTableBtn.onclick with loadFromTableOptions false and makeContactsTable true and IMPORTnewTable true saving a newTable after its creation
 function saveNewTable () {
 	console.log("In saveNewTable");
 	//NCJan10..If messed up go back to fallBackJan10 below
@@ -17554,6 +18116,9 @@ if(makeHitsTable) {
 	savedTablesArray[tableIndex] = searchedHitsTableArray.slice();
 //should searchedHitsTableArray.length = 0 be here??May3
 searchedHitsTableArray.length = 0;
+//this added Feb11 2024 to update savedTablesArray after IMPORT 
+} else if (IMPORTnewTable) {
+	savedTablesArray[tableIndex] = EXPnewTableArray.slice();
 } else {
 	savedTablesArray[tableIndex] = contactsArray.slice();
 }//end if else makeHitsTable
@@ -17628,8 +18193,10 @@ newTableSpecificVariables[tableIndex][2] = numberOfNewTableAddedFields;
 	//any additional prep before saveVariables function is called goes here..below
 	//NEED TO RESTORE ORIGINAL DB VALUES OF TABLEARRAY BEFORE GOING TO SAVEVARIABLES!!
 	resetFromContacts();
-	//now tableArray etc restored, contactsArray cleared. HAVE TO RESET makeTable flag because it was set to false in resetFromContacts which is also used by returnToNotes btn.
+	//now tableArray etc restored, contactsArray cleared. HAVE TO RESET makeTable flag because it was set to false in resetFromContacts which is also used by returnToNotes btn. BUT NOT IF EXPnewTableArray? So if condition added Date Feb11 2024
+	if(!IMPORTnewTable) {
 	makeContactsTable = true;//when to make false again? Might be that leaving false in resetFromContacts is correct? Check!!!!
+		}//end if(!IMPORTnewTable) {
 	console.log("In saveNewTable, on the way back to saveBtn.onclick then saveVariables… to …after retrieving dataVobj…….tableIndex = " + tableIndex + " tableListExists = " + tableListExists + " newTableNames = " + newTableNames);
 	console.log('In saveNewTable function: makeContactsTable should now be true .It was set to false in restoreFromContacts in preparation for savingVariables, and just now reset to true…. = '+makeContactsTable); 
 
@@ -17857,8 +18424,71 @@ console.log("newTableSpecificVariables =  " + newTableSpecificVariables);
 
 //create setupNewTable(tableNamed) function called from create contacts..emaiBtn.onclick NOTE savedTableArray NOT created until saveBtn.onclick if makeContactsTable = true! So at point of saveBtn.onclick prior to first save savedTavpbkesArray is empty!
 //APRIL 7 removed async..
+
+//ALSO CALLED FROM actionLoadBtn.onclick and IMPORTBtn.onclick
  function setupNewTable() {
  
+ if(IMPORTnewTable) {
+	if(!savedOriginal) {saveOriginal();}//works
+console.log("Back from/ or past  saveOriginal function");
+ //tableArray= savedTablesArray[loadTableIndex].slice();
+	//I BET YOU HAVE TO SAVE BEFORE YOU CAN RETRIEVE. WHAT IS SAVEDTABLESARRAY AT THIS POINT?????
+	//console.log("In setup newTable from IMPORTnewTable: savedTablesArray["+loadTableIndex+"] = " + savedTablesArray[loadTableIndex])
+	//alert("EXPnewTableArray = " + EXPnewTableArray + " Number of records = " + EXPnewTableArray.length)
+	
+	tableArray = EXPnewTableArray;//should .slice() be here?
+	copyOfTableArray = tableArray.slice();
+	//IMPORTtableArray = EXPnewTableArray; 
+	//originalNumberRecords = savedTablesArray[loadTableIndex].length;
+	originalNumberRecords = EXPnewTableArray.length;
+	//alert("original number of records = " + originalNumberRecords);
+	tableID = tableIndex +1;//should be number of tables +1 this is tableIndex before adding IMPORT 
+	//tableID is the new id of the imported table. So lets increment tableIndex when we decide to a tually save the imported table to the database (carryOnSave)?
+	//tableID = newTableVariablesArray.length +1;//should be number of tables +1 BUT LENGTH OF newTableVariablesArray is always going to be 3. newTableVariablesArray[0] = tableIndex, so start with current table index and add 1, so table index will now be tableIndex + 1
+	//SO WHEN DO I INCREMENT TABLE INDEX? Why not right here it will be decremented in carryOnSave is user chooses not to Save the IMPORT 
+	tableIndex = tableIndex + 1;// Date Feb11 2024
+	copyOfTableTitle=tableTitle.slice();//these are for sorting of contacts table. 
+	copyOfTableArray = tableArray.slice();
+	fieldNamesArray = EXPfieldNamesArray;
+	//UPDATE newTableNames array
+	newTableNames[tableIndex] = EXPnewTableName;//Date:Feb11 2024
+	newTableFieldsArray = fieldNamesArray;//newTableFieldsArray is saved into newTableSpecificVariables[tableID][1] in carryOnSave (saveTableBtn.onclick)
+	tableTitle.length = EXPnewTableArray.length;
+	originalNumberRecords = tableTitle.length;
+	console.log("originalNumberRecords set to that of new table (contacts table) …" + originalNumberRecords);
+	numberOfFields = fieldNamesArray.length;
+	numberOfDynamicFields = numberOfFields - 4;
+	numberOfNewTableAddedFields = numberOfDynamicFields//this value put in newTableSpecificVariables[tableID][2] = numberOfNewTableAddedFields; in carryOnSave
+
+	newTableContactsTitleLength = tableTitle.length;
+	
+	saveheadNameTextContent =headName.textContent;
+	
+	saveheadNameTextContent = "Imported Table" + EXPnewTableName;
+	dbName = EXPnewTableName+tableIndex;//? +tableID
+	//removeFieldHeaders();
+setUpFieldHeaders();//IMPORTANT KEEP
+editCurrentTable = 1;//so dynamic field headers are created ..but this does not add them to STRows!
+saveTableBtn.textContent = "Save IMPORTED TABLE";//DOES NOT WORK! Why? Jan1
+//saveTableBtn.textContent = "Save CONTACTS";
+			// saveTableBtn2.disabled = true;
+saveTableBtn2.textContent = "Save IMPORTED TABLE";
+flipMenu.textContent = " ✅ New Table Name: " + tableNamed;//THIS PUTS PROPER TABLE NAME ON TOP GREY INSTRUCTION BAR FOR LOADING A NEW TABLE!SHOULD THIS BE EXPnewTableName ??? Date Feb10 2024
+changeDBtable();
+//FIELD HAEDERS RESTORED TO STHEADER BUT NOT YET ADDED TO STRows!
+
+//SHOULD I DISABLE CONTACTS FIELDS SEARCH SORT BUTTONS HERE BEFORE GOING TO DISPLAY TABLE? Date Feb11 2024
+
+displayTable();
+fromEditFieldLabels = false;//not sure where this line should go test ..to reset fromFieldLabels condition May13 2022
+
+//WHERE DOES newTableVariablesArray get adjusted to reflect the addition of the IMPORTED table?
+//newTableVariablesArray[0] = tableIndex;ANSWER: carryOnSave and carryOnSave2 functions (saveTableBtn.onclick)
+//newTableVariablesArray[1] = newTableNames;
+//newTableVariablesArray[2] = tableListExists;
+//newTableNames array has to have the IMPORTED table name added to it and newTableVariablesArray[0] = tableIndex; has to be updated to the new tableIndex number
+ }//end if(IMPORTnewTable) {
+ //Left off here Feb8
  //code to correct TypeError: undefined is not an object (evaluating 'newTableSpecificVariables[tableIndex][0] = tableIndex').     Current table index = 10 Name of current table = Is this table > 10
 //Reset array vv
 //tableIndex starts at 0 and savedTablesArray indexes will be 0-9 when .length is 10
@@ -20894,7 +21524,7 @@ alert("Checking for service worker in navigator");
 
    if('serviceWorker' in navigator) {
      navigator.serviceWorker
-              .register('/DougieBaseVer51sw.js')
+              .register('/DougieBaseVer52sw.js')
               .then(function() { console.log('Service Worker Registered'); });
  			alert('Service Worker Registered!');
 		
